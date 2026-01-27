@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ---- Wii Pointer Cursor ---- */
+.wii-pointer {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-10%, -5%);
+  display: none;
+}
+
+body.cursor-active .wii-pointer {
+  display: block;
+}
+
+body.cursor-active,
+body.cursor-active * {
+  cursor: none !important;
+}
+
+/* ---- Startup Black Screen ---- */
+.startup-black {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+.startup-black.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---- Safety Screen ---- */
+.safety-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.safety-screen.visible {
+  opacity: 1;
+}
+
+.safety-screen.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.safety-dialog {
+  width: 82vw;
+  max-width: 900px;
+}
+
+.safety-header {
+  background: #c7c7c7;
+  border-radius: 1vw 1vw 0 0;
+  height: 3vh;
+  min-height: 16px;
+}
+
+.safety-body {
+  background-image: url('/assets/bg-pattern.png');
+  background-color: #c8c8c8;
+  padding: 5vh 5vw 3vh;
+  text-align: center;
+}
+
+.safety-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 2.5vh;
+  background: #f5a623;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.safety-icon::after {
+  content: '!';
+  color: white;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.safety-title {
+  color: #555;
+  font-family: serif;
+  font-size: clamp(18px, 3vw, 32px);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 2.5vh;
+}
+
+.safety-text {
+  color: #777;
+  font-family: serif;
+  font-size: clamp(12px, 2vw, 20px);
+  line-height: 1.8;
+  letter-spacing: 0.03em;
+  max-width: 700px;
+  margin: 0 auto 3vh;
+}
+
+.safety-divider {
+  border: none;
+  border-top: 1px solid #aaa;
+  margin: 2vh auto;
+  width: 80%;
+}
+
+.safety-small {
+  color: #999;
+  font-family: serif;
+  font-size: clamp(10px, 1.4vw, 14px);
+  line-height: 1.6;
+}
+
+.safety-footer {
+  background: #c7c7c7;
+  border-radius: 0 0 1vw 1vw;
+  padding: 2vh 3vw;
+  display: flex;
+  justify-content: center;
+}
+
+.safety-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/assets/btn-texture.png');
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  height: 5vw;
+  min-height: 40px;
+  max-height: 60px;
+  width: 15vw;
+  min-width: 140px;
+  border: none;
+  font-family: inherit;
+  font-size: clamp(14px, 2.2vw, 22px);
+  font-weight: 500;
+  color: #474747;
+  cursor: pointer;
+  position: relative;
+  transition: transform 150ms ease;
+}
+
+.safety-btn::before {
+  content: '';
+  position: absolute;
+  left: -2.2vw;
+  top: 0;
+  width: 2.2vw;
+  min-width: 18px;
+  height: 100%;
+  background-image: url('/assets/btn-left.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.safety-btn::after {
+  content: '';
+  position: absolute;
+  right: -2.2vw;
+  top: 0;
+  width: 2.2vw;
+  min-width: 18px;
+  height: 100%;
+  background-image: url('/assets/btn-right.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.safety-btn:hover {
+  transform: scale(1.08);
+}
+
+.safety-btn:active {
+  transform: scale(1.02);
+}
+
+/* ---- Wii Menu ---- */
+.wii-menu-wrapper {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.wii-menu-wrapper.visible {
+  opacity: 1;
+}
+
+/* ---- Menu Clock ---- */
+.menu-clock {
+  position: absolute;
+  top: 1.5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.menu-clock-time {
+  font-size: clamp(16px, 3vh, 28px);
+  font-weight: 600;
+  color: #555;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+.menu-clock-date {
+  font-size: clamp(10px, 1.8vh, 16px);
+  color: #888;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ---- Channel content inner ---- */
+.channel-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: clamp(12px, 2vw, 22px);
+  font-weight: 600;
+  width: 100%;
+  height: 100%;
+}
