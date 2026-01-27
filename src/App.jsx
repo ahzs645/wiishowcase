@@ -2,10 +2,11 @@ import { useState, useEffect, useCallback } from 'react';
 import StartupBlack from './components/StartupBlack';
 import SafetyScreen from './components/SafetyScreen';
 import WiiMenu from './components/WiiMenu';
+import WiiMessageBoard from './components/WiiMessageBoard';
 import useSounds from './hooks/useSounds';
 
 export default function App() {
-  const [phase, setPhase] = useState('black'); // black | safety | menu
+  const [phase, setPhase] = useState('black'); // black | safety | menu | messageboard
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
   const [cursorActive, setCursorActive] = useState(false);
   const { play } = useSounds();
@@ -26,6 +27,18 @@ export default function App() {
 
   // Phase 2 → Phase 3: dismiss safety
   const dismissSafety = useCallback(() => {
+    play('select');
+    setPhase('menu');
+  }, [play]);
+
+  // Phase 3 → Phase 4: open message board
+  const openMessageBoard = useCallback(() => {
+    play('select');
+    setPhase('messageboard');
+  }, [play]);
+
+  // Phase 4 → Phase 3: back to menu
+  const closeMessageBoard = useCallback(() => {
     play('select');
     setPhase('menu');
   }, [play]);
@@ -77,7 +90,17 @@ export default function App() {
       )}
 
       {/* Phase 3: Wii Menu */}
-      <WiiMenu visible={phase === 'menu'} />
+      <WiiMenu
+        visible={phase === 'menu'}
+        fadeOut={phase === 'messageboard'}
+        onMailClick={openMessageBoard}
+      />
+
+      {/* Phase 4: Message Board */}
+      <WiiMessageBoard
+        visible={phase === 'messageboard'}
+        onBack={closeMessageBoard}
+      />
     </div>
   );
 }

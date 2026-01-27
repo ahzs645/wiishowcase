@@ -16,9 +16,9 @@ const CHANNELS = [
   { blank: true },
 ];
 
-export default function WiiMenu({ visible }) {
+export default function WiiMenu({ visible, fadeOut, onMailClick }) {
   return (
-    <div className={`wii-menu wii-menu-wrapper${visible ? ' visible' : ''}`}>
+    <div className={`wii-menu wii-menu-wrapper${visible ? ' visible' : ''}${fadeOut ? ' fade-out' : ''}`}>
       <Clock />
 
       <div className="wii-channel-grid-authentic">
@@ -49,6 +49,7 @@ export default function WiiMenu({ visible }) {
             src="/assets/mail-button.png"
             className="wii-corner-btn right"
             alt="Wii Message Board"
+            onClick={onMailClick}
           />
         </div>
       </div>

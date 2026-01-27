@@ -1,7 +1,6 @@
 export default function SafetyScreen({ visible, fadeOut, onDismiss }) {
   const classes = [
     'safety-screen',
-    'wii-bg-authentic',
     visible ? 'visible' : '',
     fadeOut ? 'fade-out' : '',
   ]
@@ -9,30 +8,25 @@ export default function SafetyScreen({ visible, fadeOut, onDismiss }) {
     .join(' ');
 
   return (
-    <div className={classes}>
+    <div className={classes} onClick={onDismiss}>
       <div className="safety-dialog">
-        <div className="safety-header" />
         <div className="safety-body">
-          <div className="safety-icon" />
-          <h1 className="safety-title">Health and Safety Precautions</h1>
-          <p className="safety-text">
-            Before playing, read the Health and Safety Precautions Booklet for
-            important information about your health and safety.
-          </p>
-          <hr className="safety-divider" />
-          <p className="safety-text">
-            To see the Health and Safety Precautions Booklet again, go to the
-            Wii Settings menu.
-          </p>
-          <hr className="safety-divider" />
-          <p className="safety-small">
-            Press <strong>A</strong> to continue.
-          </p>
-        </div>
-        <div className="safety-footer">
-          <button className="safety-btn" onClick={onDismiss}>
-            OK
-          </button>
+          <div className="safety-text">
+            <h2 className="safety-title">
+              <span className="safety-icon">&#9888;&nbsp;</span>
+              WARNING-HEALTH AND SAFETY
+            </h2>
+            <p className="safety-desc">
+              BEFORE PLAYING, READ YOUR OPERATIONS MANUAL
+              FOR IMPORTANT INFORMATION ABOUT YOUR HEALTH
+              AND SAFETY.
+            </p>
+            <p className="safety-bottom">
+              Also online at<br />
+              <a href="https://www.nintendo.com/healthsafety">www.nintendo.com/healthsafety</a>
+            </p>
+          </div>
+          <span className="safety-prompt">Press left click to continue.</span>
         </div>
       </div>
     </div>
