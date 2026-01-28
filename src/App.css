@@ -10,25 +10,6 @@ html, body, #root {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* ---- Wii Pointer Cursor ---- */
-.wii-pointer {
-  position: fixed;
-  width: 50px;
-  height: 50px;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-10%, -5%);
-  display: none;
-}
-
-body.cursor-active .wii-pointer {
-  display: block;
-}
-
-body.cursor-active,
-body.cursor-active * {
-  cursor: none !important;
-}
 
 /* ---- Startup Black Screen ---- */
 .startup-black {

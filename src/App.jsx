@@ -22,7 +22,7 @@ export default function App() {
 
   // Toggle body class for cursor hiding
   useEffect(() => {
-    document.body.classList.toggle('cursor-active', cursorActive);
+    document.body.classList.toggle('wii-cursor-animated', cursorActive);
   }, [cursorActive]);
 
   // Phase 2 → Phase 3: dismiss safety
@@ -67,11 +67,9 @@ export default function App() {
     >
       {/* Wii Pointer */}
       {cursorActive && (
-        <img
-          src="/assets/cursor.png"
-          className="wii-pointer"
-          style={{ display: 'block', left: cursorPos.x, top: cursorPos.y }}
-          alt=""
+        <div
+          className="wii-cursor-element"
+          style={{ left: cursorPos.x, top: cursorPos.y }}
         />
       )}
 
