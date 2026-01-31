@@ -3,6 +3,7 @@ import StartupBlack from './components/StartupBlack';
 import SafetyScreen from './components/SafetyScreen';
 import WiiMenu from './components/WiiMenu';
 import WiiMessageBoard from './components/WiiMessageBoard';
+import WiiPointer from './components/WiiPointer';
 import useSounds from './hooks/useSounds';
 
 export default function App() {
@@ -66,12 +67,7 @@ export default function App() {
       onMouseMove={handleMouseMove}
     >
       {/* Wii Pointer */}
-      {cursorActive && (
-        <div
-          className="wii-cursor-element"
-          style={{ left: cursorPos.x, top: cursorPos.y }}
-        />
-      )}
+      <WiiPointer x={cursorPos.x} y={cursorPos.y} player="P1" visible={cursorActive} />
 
       {/* Phase 1: Black screen */}
       {(phase === 'black' || phase === 'safety') && (
