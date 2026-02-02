@@ -6,6 +6,7 @@ import WiiMessageBoard from './components/WiiMessageBoard';
 import WiiPointer from './components/WiiPointer';
 import PairingScreen from './components/PairingScreen';
 import CompanionController from './components/CompanionController';
+import DevModeSelector from './components/DevModeSelector';
 import useSounds from './hooks/useSounds';
 import useWebRTC from './hooks/useWebRTC';
 
@@ -22,6 +23,8 @@ function parseHash() {
   }
   return { mode: 'host', offer: null };
 }
+
+const SCREENS = ['black', 'safety', 'menu', 'messageboard'];
 
 export default function App() {
   const [route, setRoute] = useState(parseHash);
@@ -42,9 +45,17 @@ export default function App() {
 // ---------- Host (Desktop) ----------
 
 function HostApp() {
-  const [phase, setPhase] = useState('black'); // black | safety | menu | messageboard
+  // Check URL for dev mode (?dev=true)
+  const urlParams = new URLSearchParams(window.location.search);
+  const startInDevMode = urlParams.get('dev') === 'true';
+  const startScreen = urlParams.get('screen');
+
+  const [phase, setPhase] = useState(
+    startScreen && SCREENS.includes(startScreen) ? startScreen : 'black'
+  );
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
-  const [cursorActive, setCursorActive] = useState(false);
+  const [cursorActive, setCursorActive] = useState(startInDevMode || startScreen);
+  const [devMode, setDevMode] = useState(startInDevMode);
   const [showPairing, setShowPairing] = useState(false);
 
   // Remote pointer state (from companion via WebRTC)
@@ -104,14 +115,35 @@ function HostApp() {
     disconnect,
   } = useWebRTC('host', handleRemoteMessage);
 
-  // Phase 1 → Phase 2: black fades after 1.2s
+  // Toggle dev mode with backtick key, number keys for quick screen switch
   useEffect(() => {
+    function onKeyDown(e) {
+      if (e.key === '`') {
+        setDevMode((prev) => !prev);
+        setCursorActive(true);
+      }
+      // Number keys 1-4 to switch screens when in dev mode
+      if (devMode && e.key >= '1' && e.key <= '4') {
+        const index = parseInt(e.key, 10) - 1;
+        if (SCREENS[index]) {
+          setPhase(SCREENS[index]);
+          setCursorActive(true);
+        }
+      }
+    }
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [devMode]);
+
+  // Phase 1 → Phase 2: black fades after 1.2s (skip in dev mode)
+  useEffect(() => {
+    if (devMode || startScreen) return;
     const timer = setTimeout(() => {
       setPhase('safety');
       setCursorActive(true);
     }, 1200);
     return () => clearTimeout(timer);
-  }, []);
+  }, [devMode, startScreen]);
 
   // Toggle body class for cursor hiding
   useEffect(() => {
@@ -162,6 +194,12 @@ function HostApp() {
     setShowPairing(false);
     if (peerState !== 'connected') disconnect();
   }, [peerState, disconnect]);
+
+  // Dev mode: jump to specific screen
+  const jumpToScreen = useCallback((screen) => {
+    setPhase(screen);
+    setCursorActive(true);
+  }, []);
 
   return (
     <div
@@ -217,6 +255,16 @@ function HostApp() {
         onAcceptAnswer={acceptAnswer}
         onClose={closePairing}
       />
+
+      {/* Dev Mode Selector */}
+      {devMode && (
+        <DevModeSelector
+          screens={SCREENS}
+          currentScreen={phase}
+          onSelectScreen={jumpToScreen}
+          onClose={() => setDevMode(false)}
+        />
+      )}
     </div>
   );
 }

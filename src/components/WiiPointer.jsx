@@ -110,7 +110,7 @@ export default function WiiPointer({ x, y, player = 'P1', visible = true }) {
           x="4.15"
           y="6.85"
           style={{
-            fontFamily: 'system-ui, sans-serif',
+            fontFamily: 'var(--wii-font-system, system-ui, sans-serif)',
             fontWeight: 700,
             fill: 'var(--player-accent)',
             fontSize: '3.8px',
