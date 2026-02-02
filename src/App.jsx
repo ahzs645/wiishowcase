@@ -8,7 +8,7 @@ import PairingScreen from './components/PairingScreen';
 import CompanionController from './components/CompanionController';
 import DevModeSelector from './components/DevModeSelector';
 import useSounds from './hooks/useSounds';
-import useWebRTC from './hooks/useWebRTC';
+import useMultiWebRTC from './hooks/useMultiWebRTC';
 
 /**
  * Parse hash route to determine mode.
@@ -65,62 +65,103 @@ function HostApp() {
   const [devMode, setDevMode] = useState(startInDevMode);
   const [showPairing, setShowPairing] = useState(false);
 
-  // Remote pointer state (from companion via WebRTC)
-  const [remotePointer, setRemotePointer] = useState({ x: 0.5, y: 0.5, visible: false });
-  const remotePointerTimeout = useRef(null);
+  // Remote pointer state — one per controller (up to 4)
+  const [remotePointers, setRemotePointers] = useState({});
+  const remotePointerTimeouts = useRef({});
+  const prevButtonsRefs = useRef({});
 
   const { play } = useSounds();
+  const dismissSafetyRef = useRef(null);
 
-  // Handle messages from companion
-  const handleRemoteMessage = useCallback((msg) => {
-    if (msg.type === 'pointer') {
-      setRemotePointer({
-        x: msg.x * window.innerWidth,
-        y: msg.y * window.innerHeight,
-        visible: true,
-      });
-      // Hide remote pointer if no data for 500ms
-      clearTimeout(remotePointerTimeout.current);
-      remotePointerTimeout.current = setTimeout(() => {
-        setRemotePointer((prev) => ({ ...prev, visible: false }));
+  // Handle messages from any companion (controllerId identifies which one)
+  const handleRemoteMessage = useCallback((controllerId, msg) => {
+    const updatePointer = (x, y) => {
+      setRemotePointers((prev) => ({
+        ...prev,
+        [controllerId]: { x, y, visible: true },
+      }));
+      clearTimeout(remotePointerTimeouts.current[controllerId]);
+      remotePointerTimeouts.current[controllerId] = setTimeout(() => {
+        setRemotePointers((prev) => ({
+          ...prev,
+          [controllerId]: { ...prev[controllerId], visible: false },
+        }));
       }, 500);
+    };
+
+    // Unified state message (60Hz)
+    if (msg.type === 'state') {
+      if (msg.pointer?.touching) {
+        updatePointer(
+          msg.pointer.x * window.innerWidth,
+          msg.pointer.y * window.innerHeight,
+        );
+      } else if (msg.motion) {
+        const x = ((msg.motion.rotGamma + 90) / 180) * window.innerWidth;
+        const y = ((msg.motion.rotBeta + 90) / 180) * window.innerHeight;
+        updatePointer(
+          Math.max(0, Math.min(window.innerWidth, x)),
+          Math.max(0, Math.min(window.innerHeight, y)),
+        );
+      }
+
+      // Button edge detection per controller
+      if (msg.buttons) {
+        const prev = prevButtonsRefs.current[controllerId] || {};
+        const curr = msg.buttons;
+        if (curr.A && !prev.A) {
+          play('select');
+          if (phase === 'safety') dismissSafetyRef.current?.();
+        }
+        if (curr.B && !prev.B) {
+          play('back');
+        }
+        prevButtonsRefs.current[controllerId] = { ...curr };
+      }
+      return;
+    }
+
+    // Legacy handlers
+    if (msg.type === 'pointer') {
+      updatePointer(msg.x * window.innerWidth, msg.y * window.innerHeight);
     }
     if (msg.type === 'pointer-up') {
-      setRemotePointer((prev) => ({ ...prev, visible: false }));
+      setRemotePointers((prev) => ({
+        ...prev,
+        [controllerId]: { ...prev[controllerId], visible: false },
+      }));
     }
     if (msg.type === 'button' && msg.action === 'down') {
       if (msg.button === 'A') {
-        // Simulate click at remote pointer position
         play('select');
-        if (phase === 'safety') dismissSafety();
+        if (phase === 'safety') dismissSafetyRef.current?.();
       }
       if (msg.button === 'B') {
         play('back');
       }
     }
     if (msg.type === 'orientation') {
-      // Map gyro gamma (-90..90) to screen X, beta (-90..90) to screen Y
-      const x = ((msg.gamma + 90) / 180) * window.innerWidth;
-      const y = ((msg.beta + 90) / 180) * window.innerHeight;
-      setRemotePointer({
-        x: Math.max(0, Math.min(window.innerWidth, x)),
-        y: Math.max(0, Math.min(window.innerHeight, y)),
-        visible: true,
-      });
-      clearTimeout(remotePointerTimeout.current);
-      remotePointerTimeout.current = setTimeout(() => {
-        setRemotePointer((prev) => ({ ...prev, visible: false }));
-      }, 500);
+      const x = ((msg.rotGamma + 90) / 180) * window.innerWidth;
+      const y = ((msg.rotBeta + 90) / 180) * window.innerHeight;
+      updatePointer(
+        Math.max(0, Math.min(window.innerWidth, x)),
+        Math.max(0, Math.min(window.innerHeight, y)),
+      );
     }
   }, [phase, play]);
 
   const {
-    state: peerState,
-    offer,
+    controllers,
     startHosting,
     acceptAnswer,
-    disconnect,
-  } = useWebRTC('host', handleRemoteMessage);
+    disconnectAll,
+    connectedCount,
+    availableSlots,
+  } = useMultiWebRTC(handleRemoteMessage);
+
+  // Track current pairing session (one at a time)
+  const [pairingControllerId, setPairingControllerId] = useState(null);
+  const currentPairing = pairingControllerId != null ? controllers[pairingControllerId] : null;
 
   // Toggle dev mode with backtick key, number keys for quick screen switch
   useEffect(() => {
@@ -162,6 +203,7 @@ function HostApp() {
     play('select');
     setPhase('menu');
   }, [play]);
+  dismissSafetyRef.current = dismissSafety;
 
   // Phase 3 → Phase 4: open message board
   const openMessageBoard = useCallback(() => {
@@ -191,16 +233,26 @@ function HostApp() {
     setCursorPos({ x: e.clientX, y: e.clientY });
   }, []);
 
-  // Open pairing screen and start hosting
-  const openPairing = useCallback(() => {
+  // Open pairing screen and start hosting a new controller slot
+  const openPairing = useCallback(async () => {
     setShowPairing(true);
-    startHosting();
+    const result = await startHosting();
+    if (result) {
+      setPairingControllerId(result.controllerId);
+    }
   }, [startHosting]);
 
   const closePairing = useCallback(() => {
     setShowPairing(false);
-    if (peerState !== 'connected') disconnect();
-  }, [peerState, disconnect]);
+    setPairingControllerId(null);
+  }, []);
+
+  // Handle accepting an answer for the current pairing session
+  const handleAcceptAnswer = useCallback(async (answer) => {
+    if (pairingControllerId != null) {
+      await acceptAnswer(pairingControllerId, answer);
+    }
+  }, [pairingControllerId, acceptAnswer]);
 
   // Dev mode: jump to specific screen
   const jumpToScreen = useCallback((screen) => {
@@ -217,13 +269,16 @@ function HostApp() {
       {/* Local pointer (P1) */}
       <WiiPointer x={cursorPos.x} y={cursorPos.y} player="P1" visible={cursorActive} />
 
-      {/* Remote pointer (P2) from companion */}
-      <WiiPointer
-        x={remotePointer.x}
-        y={remotePointer.y}
-        player="P2"
-        visible={remotePointer.visible}
-      />
+      {/* Remote pointers (P2-P4) from companions */}
+      {Object.entries(remotePointers).map(([id, ptr]) => (
+        <WiiPointer
+          key={id}
+          x={ptr.x}
+          y={ptr.y}
+          player={`P${parseInt(id) + 2}`}
+          visible={ptr.visible}
+        />
+      ))}
 
       {/* Phase 1: Black screen */}
       {(phase === 'black' || phase === 'safety') && (
@@ -245,7 +300,7 @@ function HostApp() {
         fadeOut={phase === 'messageboard'}
         onMailClick={openMessageBoard}
         onPairClick={openPairing}
-        peerConnected={peerState === 'connected'}
+        peerConnected={connectedCount > 0}
       />
 
       {/* Phase 4: Message Board */}
@@ -257,9 +312,12 @@ function HostApp() {
       {/* Pairing overlay */}
       <PairingScreen
         visible={showPairing}
-        offer={offer}
-        state={peerState}
-        onAcceptAnswer={acceptAnswer}
+        offer={currentPairing?.offer}
+        state={currentPairing?.state || 'creating'}
+        connectedCount={connectedCount}
+        availableSlots={availableSlots}
+        onAcceptAnswer={handleAcceptAnswer}
+        onStartPairing={openPairing}
         onClose={closePairing}
       />
 

@@ -4,20 +4,20 @@
  * Sessions auto-expire after 5 minutes.
  */
 export default function signalingPlugin() {
-  // In-memory store: sessionId -> { answer, createdAt }
-  const sessions = new Map();
-
-  // Clean up old sessions every 60s
-  setInterval(() => {
-    const now = Date.now();
-    for (const [id, data] of sessions) {
-      if (now - data.createdAt > 5 * 60 * 1000) sessions.delete(id);
-    }
-  }, 60000);
-
   return {
     name: 'vite-plugin-signaling',
     configureServer(server) {
+      // In-memory store: sessionId -> { answer, createdAt }
+      const sessions = new Map();
+
+      // Clean up old sessions every 60s
+      const cleanup = setInterval(() => {
+        const now = Date.now();
+        for (const [id, data] of sessions) {
+          if (now - data.createdAt > 5 * 60 * 1000) sessions.delete(id);
+        }
+      }, 60000);
+      cleanup.unref(); // Don't keep the process alive
       server.middlewares.use((req, res, next) => {
         const url = new URL(req.url, 'http://localhost');
 

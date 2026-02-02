@@ -302,6 +302,12 @@ html, body, #root {
   margin-bottom: 12px;
 }
 
+.pairing-count {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
 .pairing-instructions {
   font-size: 14px;
   color: #666;
@@ -498,6 +504,19 @@ html, body, #root {
   padding: 0;
 }
 
+.companion-player-badge {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  z-index: 10;
+  padding: 4px 12px;
+  border-radius: 12px;
+  background: rgba(74, 144, 217, 0.2);
+  color: #4a90d9;
+  font-size: 12px;
+  font-weight: 700;
+}
+
 .companion-gyro-btn {
   position: absolute;
   top: 12px;
@@ -566,14 +585,16 @@ html, body, #root {
   letter-spacing: 2px;
 }
 
-.companion-buttons {
+/* Vertical Wii Remote body */
+.companion-remote-body {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 24px;
-  padding: 20px;
+  gap: 14px;
+  padding: 18px 16px;
   background: #111;
   width: 100%;
+  flex-shrink: 0;
 }
 
 .companion-btn {
@@ -585,6 +606,7 @@ html, body, #root {
   display: flex;
   align-items: center;
   justify-content: center;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .companion-btn-a {
@@ -612,14 +634,26 @@ html, body, #root {
 /* D-pad */
 .companion-dpad {
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
+}
+
+.companion-dpad-center {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #2a2a2a;
+  border-radius: 2px;
+  pointer-events: none;
 }
 
 .companion-btn-dpad {
   position: absolute;
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   background: #333;
   border-radius: 4px;
 }
@@ -652,13 +686,77 @@ html, body, #root {
   transform: translateY(-50%);
 }
 
+/* Button rows */
+.companion-btn-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Minus / Plus */
+.companion-btn-minus,
+.companion-btn-plus {
+  width: 44px;
+  height: 26px;
+  border-radius: 13px;
+  background: #333;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.companion-btn-minus:active,
+.companion-btn-plus:active {
+  background: #555;
+}
+
+/* Home button */
+.companion-btn-home {
+  width: 24px;
+  height: 24px;
+  background: #555;
+}
+
+.companion-btn-home:active {
+  background: #777;
+}
+
+/* 1 and 2 buttons */
+.companion-btn-num {
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  background: #333;
+}
+
+.companion-btn-num:active {
+  background: #555;
+}
+
+/* Recenter */
+.companion-recenter {
+  padding: 6px 14px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background: transparent;
+  color: #777;
+  font-size: 11px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.companion-recenter:active {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Disconnect */
 .companion-disconnect {
-  padding: 8px 24px;
-  margin: 12px 0;
+  padding: 6px 14px;
   border: 1px solid #555;
   border-radius: 6px;
   background: transparent;
   color: #888;
-  font-size: 12px;
+  font-size: 11px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }

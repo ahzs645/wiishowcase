@@ -3,35 +3,29 @@ import { QRCodeSVG } from 'qrcode.react';
 import { generateSessionId, pollForAnswer } from '../lib/SignalingRelay';
 
 /**
- * PairingScreen — shown on the host (desktop) to pair with a companion (phone).
- *
- * Flow:
- *  1. Host generates WebRTC offer + session ID -> encodes into a QR code URL
- *  2. Phone scans QR -> opens companion page -> generates answer -> POSTs to relay
- *  3. Host polls relay for the answer -> connection established automatically
- *  4. Manual paste still works as fallback
+ * PairingScreen — shown on the host (desktop) to pair companions (phones).
+ * Supports sequential pairing of up to 4 controllers.
  */
 export default function PairingScreen({
   visible,
   offer,
   state, // 'creating' | 'waiting' | 'connected' | 'failed'
+  connectedCount,
+  availableSlots,
   onAcceptAnswer,
+  onStartPairing,
   onClose,
 }) {
   const [answerInput, setAnswerInput] = useState('');
   const [companionUrl, setCompanionUrl] = useState('');
   const sessionIdRef = useRef(null);
 
-  // Generate session ID and build companion URL
+  // Generate a new session ID each time a new offer arrives
   useEffect(() => {
     if (offer) {
-      if (!sessionIdRef.current) {
-        sessionIdRef.current = generateSessionId();
-      }
+      sessionIdRef.current = generateSessionId();
       const sid = sessionIdRef.current;
 
-      // If accessed via localhost/127.0.0.1, the phone can't reach the QR URL,
-      // so replace localhost with the first LAN IP from Vite's server info.
       let origin = window.location.origin;
       const hostname = window.location.hostname;
       if (hostname === 'localhost' || hostname === '127.0.0.1') {
@@ -42,10 +36,11 @@ export default function PairingScreen({
       }
       const base = origin + window.location.pathname;
       setCompanionUrl(`${base}#/companion/${sid}/${offer}`);
+      setAnswerInput('');
     }
   }, [offer]);
 
-  // Poll for auto-relayed answer via HTTP + BroadcastChannel
+  // Poll for auto-relayed answer
   useEffect(() => {
     if (state !== 'waiting' || !sessionIdRef.current) return;
 
@@ -63,6 +58,13 @@ export default function PairingScreen({
     }
   };
 
+  const handlePairAnother = () => {
+    sessionIdRef.current = null;
+    setCompanionUrl('');
+    setAnswerInput('');
+    onStartPairing();
+  };
+
   if (!visible) return null;
 
   return (
@@ -73,6 +75,12 @@ export default function PairingScreen({
         </button>
 
         <h2 className="pairing-title">Pair Wii Remote</h2>
+
+        {connectedCount > 0 && (
+          <p className="pairing-count">
+            {connectedCount}/4 remote{connectedCount !== 1 ? 's' : ''} connected
+          </p>
+        )}
 
         {state === 'creating' && (
           <div className="pairing-status">
@@ -127,14 +135,23 @@ export default function PairingScreen({
           <div className="pairing-status pairing-connected">
             <div className="pairing-check">&#10003;</div>
             <p>Wii Remote connected!</p>
-            <p className="pairing-hint">You can close this dialog now.</p>
+            {availableSlots > 0 ? (
+              <button className="pairing-submit" onClick={handlePairAnother} style={{ marginTop: '12px' }}>
+                Pair Another Remote
+              </button>
+            ) : (
+              <p className="pairing-hint">All 4 slots connected.</p>
+            )}
+            <p className="pairing-hint" style={{ marginTop: '8px' }}>
+              You can close this dialog at any time.
+            </p>
           </div>
         )}
 
         {state === 'failed' && (
           <div className="pairing-status pairing-failed">
             <p>Connection failed. Please try again.</p>
-            <button className="pairing-submit" onClick={onClose}>
+            <button className="pairing-submit" onClick={handlePairAnother}>
               Retry
             </button>
           </div>
