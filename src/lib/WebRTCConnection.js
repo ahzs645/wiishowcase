@@ -34,8 +34,8 @@ export function encodeSDP(description) {
  * Decode a URL-safe base64 string back into an RTCSessionDescription.
  */
 export function decodeSDP(encoded) {
-  // Restore standard base64
-  let b64 = encoded.replace(/-/g, '+').replace(/_/g, '/');
+  // Strip any whitespace from copy-paste, then restore standard base64
+  let b64 = encoded.replace(/\s/g, '').replace(/-/g, '+').replace(/_/g, '/');
   while (b64.length % 4) b64 += '=';
   const json = decodeURIComponent(escape(atob(b64)));
   const { type, sdp } = JSON.parse(json);

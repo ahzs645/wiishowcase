@@ -1,13 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
+import { generateSessionId, pollForAnswer } from '../lib/SignalingRelay';
 
 /**
  * PairingScreen — shown on the host (desktop) to pair with a companion (phone).
  *
  * Flow:
- *  1. Host generates WebRTC offer → encodes into a QR code URL
- *  2. Phone scans QR → opens companion page → generates answer code
- *  3. Host enters the answer code here → connection established
+ *  1. Host generates WebRTC offer + session ID -> encodes into a QR code URL
+ *  2. Phone scans QR -> opens companion page -> generates answer -> POSTs to relay
+ *  3. Host polls relay for the answer -> connection established automatically
+ *  4. Manual paste still works as fallback
  */
 export default function PairingScreen({
   visible,
@@ -18,14 +20,41 @@ export default function PairingScreen({
 }) {
   const [answerInput, setAnswerInput] = useState('');
   const [companionUrl, setCompanionUrl] = useState('');
+  const sessionIdRef = useRef(null);
 
+  // Generate session ID and build companion URL
   useEffect(() => {
     if (offer) {
-      // Build the companion URL with the offer in the hash
-      const base = window.location.origin + window.location.pathname;
-      setCompanionUrl(`${base}#/companion/${offer}`);
+      if (!sessionIdRef.current) {
+        sessionIdRef.current = generateSessionId();
+      }
+      const sid = sessionIdRef.current;
+
+      // If accessed via localhost/127.0.0.1, the phone can't reach the QR URL,
+      // so replace localhost with the first LAN IP from Vite's server info.
+      let origin = window.location.origin;
+      const hostname = window.location.hostname;
+      if (hostname === 'localhost' || hostname === '127.0.0.1') {
+        const lanHost = __LAN_HOST__;
+        if (lanHost) {
+          origin = `${window.location.protocol}//${lanHost}:${window.location.port}`;
+        }
+      }
+      const base = origin + window.location.pathname;
+      setCompanionUrl(`${base}#/companion/${sid}/${offer}`);
     }
   }, [offer]);
+
+  // Poll for auto-relayed answer via HTTP + BroadcastChannel
+  useEffect(() => {
+    if (state !== 'waiting' || !sessionIdRef.current) return;
+
+    const stopPolling = pollForAnswer(sessionIdRef.current, (answer) => {
+      onAcceptAnswer(answer);
+    });
+
+    return () => stopPolling();
+  }, [state, onAcceptAnswer]);
 
   const handleSubmitAnswer = () => {
     const trimmed = answerInput.trim();
@@ -69,7 +98,7 @@ export default function PairingScreen({
             </div>
 
             <div className="pairing-divider">
-              <span>then enter the answer code</span>
+              <span>or paste the answer code manually</span>
             </div>
 
             <div className="pairing-answer-input">
@@ -87,6 +116,10 @@ export default function PairingScreen({
                 Connect
               </button>
             </div>
+
+            <p className="pairing-hint" style={{ marginTop: '10px', fontSize: '13px', opacity: 0.7 }}>
+              Answer will be accepted automatically if on the same network.
+            </p>
           </>
         )}
 

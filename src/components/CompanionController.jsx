@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import useWebRTC from '../hooks/useWebRTC';
+import { postAnswer } from '../lib/SignalingRelay';
 
 /**
  * CompanionController — the phone acts as a Wii Remote.
@@ -9,9 +10,9 @@ import useWebRTC from '../hooks/useWebRTC';
  *  - Device orientation (gyro) if available
  *  - Button presses (A, B)
  *
- * URL format: #/companion/<encoded-offer>
+ * URL format: #/companion/<sessionId>/<encoded-offer>
  */
-export default function CompanionController({ encodedOffer }) {
+export default function CompanionController({ encodedOffer, sessionId }) {
   const [answerCode, setAnswerCode] = useState('');
   const [copied, setCopied] = useState(false);
   const [gyroPermission, setGyroPermission] = useState('unknown');
@@ -31,15 +32,33 @@ export default function CompanionController({ encodedOffer }) {
   );
 
   // Accept offer on mount
+  const relayIntervalRef = useRef(null);
+
   useEffect(() => {
     if (encodedOffer) {
       acceptOffer(encodedOffer).then((ans) => {
         setAnswerCode(ans);
+        // Auto-relay the answer to the host via HTTP + BroadcastChannel
+        if (sessionId) {
+          postAnswer(sessionId, ans);
+          // Resend periodically in case the host wasn't polling yet
+          relayIntervalRef.current = setInterval(() => {
+            postAnswer(sessionId, ans);
+          }, 2000);
+          setTimeout(() => clearInterval(relayIntervalRef.current), 30000);
+        }
       }).catch(() => {
         // offer decode failed
       });
     }
-  }, [encodedOffer, acceptOffer]);
+  }, [encodedOffer, acceptOffer, sessionId]);
+
+  // Stop relaying once connected
+  useEffect(() => {
+    if (state === 'connected') {
+      clearInterval(relayIntervalRef.current);
+    }
+  }, [state]);
 
   // Request gyroscope permission (iOS 13+)
   const requestGyro = useCallback(async () => {
@@ -118,11 +137,36 @@ export default function CompanionController({ encodedOffer }) {
   }, [send]);
 
   const copyAnswer = useCallback(() => {
-    if (answerCode) {
+    if (!answerCode) return;
+    // navigator.clipboard requires a secure context (HTTPS or localhost).
+    // On plain HTTP (LAN IP), fall back to the legacy execCommand approach.
+    if (navigator.clipboard?.writeText) {
       navigator.clipboard.writeText(answerCode).then(() => {
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
+      }).catch(() => {
+        fallbackCopy(answerCode);
       });
+    } else {
+      fallbackCopy(answerCode);
+    }
+
+    function fallbackCopy(text) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      try {
+        document.execCommand('copy');
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      } catch {
+        // copy failed — user can manually select the textarea
+      }
+      document.body.removeChild(ta);
     }
   }, [answerCode]);
 

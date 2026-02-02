@@ -12,16 +12,23 @@ import useWebRTC from './hooks/useWebRTC';
 
 /**
  * Parse hash route to determine mode.
- *   #/companion/<offer> → { mode: 'companion', offer }
- *   anything else       → { mode: 'host', offer: null }
+ *   #/companion/<sessionId>/<offer> → { mode: 'companion', sessionId, offer }
+ *   #/companion/<offer>             → { mode: 'companion', sessionId: null, offer } (legacy)
+ *   anything else                   → { mode: 'host' }
  */
 function parseHash() {
   const hash = window.location.hash;
-  const match = hash.match(/^#\/companion\/(.+)$/);
+  // New format: #/companion/<sessionId>/<offer>
+  const match = hash.match(/^#\/companion\/([^/]+)\/(.+)$/);
   if (match) {
-    return { mode: 'companion', offer: match[1] };
+    return { mode: 'companion', sessionId: match[1], offer: match[2] };
   }
-  return { mode: 'host', offer: null };
+  // Legacy format: #/companion/<offer>
+  const legacyMatch = hash.match(/^#\/companion\/(.+)$/);
+  if (legacyMatch) {
+    return { mode: 'companion', sessionId: null, offer: legacyMatch[1] };
+  }
+  return { mode: 'host', offer: null, sessionId: null };
 }
 
 const SCREENS = ['black', 'safety', 'menu', 'messageboard'];
@@ -36,7 +43,7 @@ export default function App() {
   }, []);
 
   if (route.mode === 'companion') {
-    return <CompanionController encodedOffer={route.offer} />;
+    return <CompanionController encodedOffer={route.offer} sessionId={route.sessionId} />;
   }
 
   return <HostApp />;
