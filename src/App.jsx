@@ -67,6 +67,7 @@ function HostApp() {
 
   // Remote pointer state — one per controller (up to 4)
   const [remotePointers, setRemotePointers] = useState({});
+  const remotePointersRef = useRef({});
   const remotePointerTimeouts = useRef({});
   const prevButtonsRefs = useRef({});
 
@@ -76,6 +77,7 @@ function HostApp() {
   // Handle messages from any companion (controllerId identifies which one)
   const handleRemoteMessage = useCallback((controllerId, msg) => {
     const updatePointer = (x, y) => {
+      remotePointersRef.current[controllerId] = { x, y, visible: true };
       setRemotePointers((prev) => ({
         ...prev,
         [controllerId]: { x, y, visible: true },
@@ -91,12 +93,14 @@ function HostApp() {
 
     // Unified state message (60Hz)
     if (msg.type === 'state') {
+      // Pointer: prefer touch, fall back to gyro, keep last position on release
       if (msg.pointer?.touching) {
         updatePointer(
           msg.pointer.x * window.innerWidth,
           msg.pointer.y * window.innerHeight,
         );
-      } else if (msg.motion) {
+      } else if (msg.motion && (msg.motion.rotGamma !== 0 || msg.motion.rotBeta !== 0)) {
+        // Only use gyro aiming if we have non-zero motion data
         const x = ((msg.motion.rotGamma + 90) / 180) * window.innerWidth;
         const y = ((msg.motion.rotBeta + 90) / 180) * window.innerHeight;
         updatePointer(
@@ -104,6 +108,7 @@ function HostApp() {
           Math.max(0, Math.min(window.innerHeight, y)),
         );
       }
+      // If neither touching nor gyro active, pointer stays at last known position
 
       // Button edge detection per controller
       if (msg.buttons) {
@@ -112,6 +117,12 @@ function HostApp() {
         if (curr.A && !prev.A) {
           play('select');
           if (phase === 'safety') dismissSafetyRef.current?.();
+          // Simulate a click at the remote pointer's current position
+          const ptr = remotePointersRef.current[controllerId];
+          if (ptr) {
+            const el = document.elementFromPoint(ptr.x, ptr.y);
+            if (el) el.click();
+          }
         }
         if (curr.B && !prev.B) {
           play('back');
@@ -135,6 +146,11 @@ function HostApp() {
       if (msg.button === 'A') {
         play('select');
         if (phase === 'safety') dismissSafetyRef.current?.();
+        const ptr = remotePointersRef.current[controllerId];
+        if (ptr) {
+          const el = document.elementFromPoint(ptr.x, ptr.y);
+          if (el) el.click();
+        }
       }
       if (msg.button === 'B') {
         play('back');

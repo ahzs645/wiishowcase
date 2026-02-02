@@ -15,7 +15,15 @@ import { postAnswer } from '../lib/SignalingRelay';
 export default function CompanionController({ encodedOffer, sessionId }) {
   const [answerCode, setAnswerCode] = useState('');
   const [copied, setCopied] = useState(false);
-  const [gyroPermission, setGyroPermission] = useState('unknown');
+  // Auto-grant on browsers that don't require explicit permission
+  const needsPermission =
+    (typeof DeviceMotionEvent !== 'undefined' &&
+     typeof DeviceMotionEvent.requestPermission === 'function') ||
+    (typeof DeviceOrientationEvent !== 'undefined' &&
+     typeof DeviceOrientationEvent.requestPermission === 'function');
+  const [gyroPermission, setGyroPermission] = useState(
+    needsPermission ? 'unknown' : 'granted'
+  );
   const [playerNumber, setPlayerNumber] = useState(null);
   const touchAreaRef = useRef(null);
   const motionRef = useRef({
