@@ -16,7 +16,7 @@ const CHANNELS = [
   { blank: true },
 ];
 
-export default function WiiMenu({ visible, fadeOut, onMailClick }) {
+export default function WiiMenu({ visible, fadeOut, onMailClick, onPairClick, peerConnected }) {
   return (
     <div className={`wii-menu wii-menu-wrapper${visible ? ' visible' : ''}${fadeOut ? ' fade-out' : ''}`}>
       <Clock />
@@ -31,6 +31,14 @@ export default function WiiMenu({ visible, fadeOut, onMailClick }) {
           />
         ))}
       </div>
+
+      {/* Pair Remote button */}
+      <button
+        className={`wii-pair-btn${peerConnected ? ' connected' : ''}`}
+        onClick={onPairClick}
+      >
+        {peerConnected ? 'Remote Connected' : 'Pair Wii Remote'}
+      </button>
 
       {/* Bottom Bar */}
       <div className="wii-bottom-bar">
