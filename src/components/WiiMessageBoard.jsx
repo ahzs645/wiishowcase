@@ -316,21 +316,19 @@ export default function WiiMessageBoard({ visible, onBack }) {
       <button className="wii-arrow-btn board-arrow-left" />
       <button className="wii-arrow-btn wii-arrow-btn-right board-arrow-right" />
 
-      {/* Bottom Bar */}
-      <div className="wii-bottom-bar">
-        <div className="wii-bottom-bar-lateral left">
-          <div className="wii-left-btn-bg" />
-          <img
-            src="/assets/settings-icon.png"
-            className="wii-corner-btn left"
-            alt="Back"
-            onClick={onBack}
-          />
+      {/* Bottom Banner */}
+      <div className="wii-bottom-banner">
+        <div className="wii-bottom-banner-scroll">
+          <wii-banner />
         </div>
-        <div className="wii-bottom-bar-center" />
-        <div className="wii-bottom-bar-lateral right">
-          <div className="wii-right-btn-bg" />
-        </div>
+        <div className="wii-left-btn-bg" />
+        <img
+          src="/assets/settings-icon.png"
+          className="wii-corner-btn left"
+          alt="Back"
+          onClick={onBack}
+        />
+        <div className="wii-right-btn-bg" />
       </div>
 
       {/* Opened Postcard Modal */}

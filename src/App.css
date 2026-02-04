@@ -133,6 +133,49 @@ html, body, #root {
   pointer-events: none;
 }
 
+/* ---- Bottom Banner ---- */
+.wii-bottom-banner {
+  --wii-bottom-banner-height: clamp(140px, 20vh, 220px);
+  --wii-bottom-banner-width: clamp(1200px, 100vw, 2400px);
+  --wii-bottom-banner-padding: 8px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--wii-bottom-banner-height);
+  z-index: 30;
+}
+
+.wii-bottom-banner-scroll {
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: var(--wii-bottom-banner-padding);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.wii-bottom-banner wii-banner {
+  --wii-banner-width: var(--wii-bottom-banner-width);
+  --wii-banner-height: calc(var(--wii-bottom-banner-height) - var(--wii-bottom-banner-padding));
+  --wii-banner-left-width: calc(var(--wii-banner-height) * 2.058);
+  --wii-banner-right-width: calc(var(--wii-banner-height) * 2.045);
+  --wii-banner-center-offset: calc(var(--wii-banner-height) * 0.406);
+  --wii-banner-center-height: calc(var(--wii-banner-height) * 0.594);
+  --wii-banner-accent-size: calc(var(--wii-banner-height) * 0.016);
+  pointer-events: none;
+}
+
+.wii-bottom-banner .wii-left-btn-bg,
+.wii-bottom-banner .wii-right-btn-bg,
+.wii-bottom-banner .wii-corner-btn {
+  z-index: 2;
+}
+
 /* ---- Message Board ---- */
 .message-board-screen {
   position: fixed;
@@ -223,6 +266,82 @@ html, body, #root {
   font-weight: 600;
   width: 100%;
   height: 100%;
+}
+
+.wii-channel-authentic.is-clickable {
+  cursor: pointer;
+}
+
+.wii-channel-authentic.is-clickable:focus-visible {
+  outline: 3px solid rgba(52, 170, 220, 0.8);
+  outline-offset: 4px;
+}
+
+/* ---- News Channel Tile ---- */
+.news-channel-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #30932f 0%, #295d10 100%);
+  color: #ffffff;
+}
+
+.news-channel-card .splash-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.news-channel-card .news-channel-tv-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: clamp(10px, 1.8vw, 18px);
+  background: linear-gradient(90deg, #30932f 0%, #295d10 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.news-channel-card .news-channel-tv-icon p {
+  color: #ffffff;
+  font-size: clamp(10px, 1.6vh, 16px);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  margin-top: clamp(6px, 1.6vh, 16px);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25), -1px -1px 0 rgba(255, 255, 255, 0.1);
+  z-index: 2;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  transform: scaleX(1.12);
+}
+
+.news-channel-card .map-image-icon,
+.news-channel-card .map-image-icon-overlay {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: auto;
+  pointer-events: none;
+}
+
+.news-channel-card .map-image-icon {
+  opacity: 0.12;
+  mix-blend-mode: plus-lighter;
+  filter: drop-shadow(0 0 12px rgb(0, 255, 60)) blur(6px);
+}
+
+.news-channel-card .map-image-icon-overlay {
+  opacity: 0.4;
+  mix-blend-mode: difference;
+  z-index: 1;
 }
 
 /* ---- Pair Remote Button ---- */
@@ -416,6 +535,34 @@ html, body, #root {
 
 .pairing-failed {
   color: #cc2f26;
+}
+
+/* ---- News Channel ---- */
+.news-channel-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  background: #000;
+}
+
+.news-channel-screen.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.news-channel-frame {
+  position: absolute;
+  inset: 0;
+}
+
+.news-channel-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #000;
 }
 
 @keyframes fadeIn {

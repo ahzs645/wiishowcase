@@ -3,6 +3,7 @@ import StartupBlack from './components/StartupBlack';
 import SafetyScreen from './components/SafetyScreen';
 import WiiMenu from './components/WiiMenu';
 import WiiMessageBoard from './components/WiiMessageBoard';
+import WiiNewsChannel from './components/WiiNewsChannel';
 import WiiPointer from './components/WiiPointer';
 import PairingScreen from './components/PairingScreen';
 import CompanionController from './components/CompanionController';
@@ -31,7 +32,7 @@ function parseHash() {
   return { mode: 'host', offer: null, sessionId: null };
 }
 
-const SCREENS = ['black', 'safety', 'menu', 'messageboard'];
+const SCREENS = ['black', 'safety', 'menu', 'messageboard', 'news'];
 
 export default function App() {
   const [route, setRoute] = useState(parseHash);
@@ -126,6 +127,9 @@ function HostApp() {
         }
         if (curr.B && !prev.B) {
           play('back');
+          if (phase === 'news') {
+            setPhase('menu');
+          }
         }
         prevButtonsRefs.current[controllerId] = { ...curr };
       }
@@ -227,9 +231,20 @@ function HostApp() {
     setPhase('messageboard');
   }, [play]);
 
+  // Open News Channel
+  const openNewsChannel = useCallback(() => {
+    play('open');
+    setPhase('news');
+  }, [play]);
+
   // Phase 4 → Phase 3: back to menu
   const closeMessageBoard = useCallback(() => {
     play('select');
+    setPhase('menu');
+  }, [play]);
+
+  const closeNewsChannel = useCallback(() => {
+    play('close');
     setPhase('menu');
   }, [play]);
 
@@ -313,8 +328,9 @@ function HostApp() {
       {/* Phase 3: Wii Menu */}
       <WiiMenu
         visible={phase === 'menu'}
-        fadeOut={phase === 'messageboard'}
+        fadeOut={phase === 'messageboard' || phase === 'news'}
         onMailClick={openMessageBoard}
+        onNewsClick={openNewsChannel}
         onPairClick={openPairing}
         peerConnected={connectedCount > 0}
       />
@@ -323,6 +339,12 @@ function HostApp() {
       <WiiMessageBoard
         visible={phase === 'messageboard'}
         onBack={closeMessageBoard}
+      />
+
+      {/* News Channel */}
+      <WiiNewsChannel
+        visible={phase === 'news'}
+        onBack={closeNewsChannel}
       />
 
       {/* Pairing overlay */}

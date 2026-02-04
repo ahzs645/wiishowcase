@@ -1,15 +1,42 @@
-export default function ChannelCard({ name, gradient, blank }) {
+export default function ChannelCard({
+  name,
+  gradient,
+  blank,
+  onClick,
+  content,
+  contentClassName,
+  contentStyle,
+}) {
   if (blank) {
     return <div className="wii-channel-authentic wii-channel-blank" />;
   }
 
+  const isClickable = typeof onClick === 'function';
+  const className = contentClassName || 'channel-inner';
+  const style = {
+    ...(gradient ? { background: gradient } : {}),
+    ...(contentStyle || {}),
+  };
+
   return (
-    <div className="wii-channel-authentic wii-channel-occupied">
+    <div
+      className={`wii-channel-authentic wii-channel-occupied${isClickable ? ' is-clickable' : ''}`}
+      onClick={onClick}
+      onKeyDown={(e) => {
+        if (!isClickable) return;
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          onClick();
+        }
+      }}
+      role={isClickable ? 'button' : undefined}
+      tabIndex={isClickable ? 0 : undefined}
+    >
       <div
-        className="wii-channel-content channel-inner"
-        style={{ background: gradient }}
+        className={`wii-channel-content ${className}`}
+        style={style}
       >
-        {name}
+        {content || name}
       </div>
       <div className="wii-channel-hover-glow" />
       <span className="wii-channel-tag">{name}</span>
