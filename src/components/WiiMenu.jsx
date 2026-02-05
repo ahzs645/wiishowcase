@@ -2,7 +2,6 @@ import Clock from './Clock';
 import ChannelCard from './ChannelCard';
 import settingsIcon from '../../Wii.css/dist/assets/settings-icon.png';
 import mailIcon from '../../Wii.css/dist/assets/track-btn/icon-email.svg';
-import channelMask from '../../Wii.css/dist/assets/channel-mask.svg';
 
 const NEWS_CHANNEL_CONTENT = (
   <div className="splash-content">
@@ -58,22 +57,21 @@ export default function WiiMenu({
     >
       <Clock />
 
-      <div
-        className="wii-channel-grid-authentic"
-        style={{ '--wii-channel-mask': `url(${channelMask})` }}
-      >
-        {CHANNELS.map((ch, i) => (
-          <ChannelCard
-            key={i}
-            name={ch.name}
-            gradient={ch.gradient}
-            blank={ch.blank}
-            onClick={ch.action === 'news' ? onNewsClick : undefined}
-            content={ch.content}
-            contentClassName={ch.contentClassName}
-          />
-        ))}
-      </div>
+      <wii-channel-holder>
+        <div className="wii-channel-holder-grid" style={{ '--wii-holder-cols': 4 }}>
+          {CHANNELS.map((ch, i) => (
+            <ChannelCard
+              key={i}
+              name={ch.name}
+              gradient={ch.gradient}
+              blank={ch.blank}
+              onClick={ch.action === 'news' ? onNewsClick : undefined}
+              content={ch.content}
+              contentClassName={ch.contentClassName}
+            />
+          ))}
+        </div>
+      </wii-channel-holder>
 
       {/* Pair Remote button */}
       <button

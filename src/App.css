@@ -291,10 +291,10 @@ html, body, #root {
   outline-offset: 4px;
 }
 
-/* ---- Channel Mask Override ---- */
-.wii-channel-content.wii-channel-ui {
-  clip-path: none;
-  border-radius: 18px;
+/* ---- Channel Holder Override ---- */
+wii-channel-holder {
+  padding: clamp(16px, 4vh, 32px) clamp(16px, 4vw, 48px);
+  padding-bottom: clamp(140px, 20vh, 220px);
 }
 
 /* ---- News Channel Tile ---- */
