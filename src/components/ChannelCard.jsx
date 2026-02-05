@@ -14,7 +14,7 @@ export default function ChannelCard({
   const isClickable = typeof onClick === 'function';
   const className = contentClassName || 'channel-inner';
   const style = {
-    ...(gradient ? { background: gradient } : {}),
+    ...(gradient ? { '--wii-channel-bg': gradient } : {}),
     ...(contentStyle || {}),
   };
 
@@ -33,7 +33,7 @@ export default function ChannelCard({
       tabIndex={isClickable ? 0 : undefined}
     >
       <div
-        className={`wii-channel-content ${className}`}
+        className={`wii-channel-content wii-channel-ui ${className}`}
         style={style}
       >
         {content || name}

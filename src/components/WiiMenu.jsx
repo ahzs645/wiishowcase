@@ -1,5 +1,8 @@
 import Clock from './Clock';
 import ChannelCard from './ChannelCard';
+import settingsIcon from '../../Wii.css/dist/assets/settings-icon.png';
+import mailIcon from '../../Wii.css/dist/assets/track-btn/icon-email.svg';
+import channelMask from '../../Wii.css/dist/assets/channel-mask.svg';
 
 const NEWS_CHANNEL_CONTENT = (
   <div className="splash-content">
@@ -16,6 +19,7 @@ const NEWS_CHANNEL_CONTENT = (
         className="map-image-icon-overlay"
       />
     </div>
+    <p className="click-to-start">Click to start</p>
   </div>
 );
 
@@ -48,10 +52,16 @@ export default function WiiMenu({
   peerConnected,
 }) {
   return (
-    <div className={`wii-menu wii-menu-wrapper${visible ? ' visible' : ''}${fadeOut ? ' fade-out' : ''}`}>
+    <div
+      className={`wii-menu wii-menu-wrapper wii-bg-striped${visible ? ' visible' : ''}${fadeOut ? ' fade-out' : ''}`}
+      style={{ backgroundColor: '#e8e8e8' }}
+    >
       <Clock />
 
-      <div className="wii-channel-grid-authentic">
+      <div
+        className="wii-channel-grid-authentic"
+        style={{ '--wii-channel-mask': `url(${channelMask})` }}
+      >
         {CHANNELS.map((ch, i) => (
           <ChannelCard
             key={i}
@@ -78,19 +88,31 @@ export default function WiiMenu({
         <div className="wii-bottom-banner-scroll">
           <wii-banner />
         </div>
-        <div className="wii-left-btn-bg" />
-        <img
-          src="/assets/settings-icon.png"
-          className="wii-corner-btn left"
-          alt="Wii Settings"
-        />
-        <div className="wii-right-btn-bg" />
-        <img
-          src="/assets/mail-button.png"
-          className="wii-corner-btn right"
-          alt="Wii Message Board"
-          onClick={onMailClick}
-        />
+        <div className="wii-track-btn wii-track-btn-sm wii-track-btn-left wii-bottom-banner-track-btn wii-bottom-banner-track-btn-left">
+          <div className="wii-track-btn-track"></div>
+          <button
+            className="wii-track-btn-circle wii-track-btn-base"
+            aria-label="Open Settings"
+            type="button"
+          >
+            <span className="wii-track-btn-icon">
+              <img src={settingsIcon} alt="" />
+            </span>
+          </button>
+        </div>
+        <div className="wii-track-btn wii-track-btn-sm wii-bottom-banner-track-btn wii-bottom-banner-track-btn-right">
+          <div className="wii-track-btn-track"></div>
+          <button
+            className="wii-track-btn-circle wii-track-btn-base"
+            aria-label="Open Mail"
+            onClick={onMailClick}
+            type="button"
+          >
+            <span className="wii-track-btn-icon">
+              <img src={mailIcon} alt="" />
+            </span>
+          </button>
+        </div>
       </div>
     </div>
   );
