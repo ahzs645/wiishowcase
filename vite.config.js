@@ -16,6 +16,7 @@ function getLanHost() {
 }
 
 export default defineConfig({
+  base: '/wiishowcase/',
   plugins: [react(), signalingPlugin()],
   define: {
     __LAN_HOST__: JSON.stringify(getLanHost()),
