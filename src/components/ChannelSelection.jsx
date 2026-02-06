@@ -3,7 +3,6 @@ import channelMask from '../../Wii.css/dist/assets/channel-mask.svg';
 
 const BASE = import.meta.env.BASE_URL;
 
-
 export default function ChannelSelection({ visible, channel, onBack, onStart }) {
   const audioRef = useRef(null);
 
@@ -44,8 +43,6 @@ export default function ChannelSelection({ visible, channel, onBack, onStart }) 
             <span>Start</span>
           </button>
         </div>
-
-
       </div>
     </div>
   );
