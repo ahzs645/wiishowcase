@@ -137,6 +137,109 @@ html, body, #root {
   pointer-events: none;
 }
 
+/* ---- Menu Zoom Transitions (channel select) ---- */
+.wii-menu-wrapper.ch-zoom-in {
+  animation: ch-zoom-in 0.25s ease-in forwards;
+  pointer-events: none;
+}
+
+.wii-menu-wrapper.ch-zoom-out {
+  animation: ch-zoom-out 0.3s ease-out forwards;
+}
+
+@keyframes ch-zoom-in {
+  0%   { transform: scale(1); opacity: 1; }
+  100% { transform: scale(4); opacity: 0; }
+}
+
+@keyframes ch-zoom-out {
+  0%   { transform: scale(3); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ---- Channel Selection Screen ---- */
+.ch-selection {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8);
+}
+
+.ch-selection.visible {
+  animation: ch-sel-appear 0.3s ease-out 0.3s forwards;
+  pointer-events: auto;
+}
+
+@keyframes ch-sel-appear {
+  0%   { opacity: 0; transform: scale(0.8); }
+  70%  { opacity: 0.4; }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.ch-sel-content {
+  position: relative;
+  width: max-content;
+}
+
+.ch-sel-video {
+  width: 65vw;
+  aspect-ratio: 1161 / 639;
+  display: block;
+  pointer-events: none;
+  margin-bottom: -4px;
+}
+
+/* Corner borders */
+.ch-sel-tl,
+.ch-sel-tr,
+.ch-sel-bl,
+.ch-sel-br {
+  background-size: contain;
+  background-repeat: no-repeat;
+  aspect-ratio: 1 / 1;
+  width: 15vw;
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ch-sel-tl {
+  background-image: url('/assets/border-topleft.png');
+  top: -1px; left: -1px;
+}
+
+.ch-sel-tr {
+  background-image: url('/assets/border-topright.png');
+  top: -1px; right: -1px;
+}
+
+.ch-sel-bl {
+  background-image: url('/assets/border-bottomleft.png');
+  bottom: -1px; left: -1px;
+  background-position: bottom center;
+}
+
+.ch-sel-br {
+  background-image: url('/assets/border-bottomright.png');
+  bottom: -1px; right: -1px;
+  background-position: bottom center;
+}
+
+/* Button bar */
+.ch-sel-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;
+  padding: 2vh 0;
+  background: linear-gradient(to bottom, #d8d8d8, #c0c0c0);
+}
+
 /* ---- Bottom Banner ---- */
 .wii-bottom-banner {
   --wii-bottom-banner-height: clamp(140px, 20vh, 220px);
@@ -361,14 +464,12 @@ html, body, #root {
   cursor: pointer;
 }
 
-/* Circle button: centered on arrow, hidden by default, expands toward screen center on hover */
+/* Circle button: hidden by default, expands toward screen center on hover */
 .channel-page-circle {
   --wii-track-btn-size: 187px;
   position: absolute;
   top: 50%;
   margin-top: calc(-187px / 2);
-  left: 50%;
-  margin-left: calc(-187px / 2);
   transform: scale(0);
   opacity: 0;
   transition: transform 150ms ease, opacity 150ms ease;
@@ -385,21 +486,23 @@ html, body, #root {
   filter: brightness(1.2);
 }
 
-/* Next: right side — circle expands leftward toward screen center */
+/* Next: right side — circle's right edge aligns with arrow, expands leftward */
 .channel-page-arrow-next {
   right: clamp(16px, 3vw, 50px);
 }
 
 .channel-page-arrow-next .channel-page-circle {
+  right: 0;
   transform-origin: right center;
 }
 
-/* Prev: left side — circle expands rightward toward screen center */
+/* Prev: left side — circle's left edge aligns with arrow, expands rightward */
 .channel-page-arrow-prev {
   left: clamp(16px, 3vw, 50px);
 }
 
 .channel-page-arrow-prev .channel-page-circle {
+  left: 0;
   transform-origin: left center;
 }
 

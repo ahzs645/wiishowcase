@@ -4,6 +4,7 @@ import SafetyScreen from './components/SafetyScreen';
 import WiiMenu from './components/WiiMenu';
 import WiiMessageBoard from './components/WiiMessageBoard';
 import WiiNewsChannel from './components/WiiNewsChannel';
+import ChannelSelection from './components/ChannelSelection';
 import WiiPointer from './components/WiiPointer';
 import PairingScreen from './components/PairingScreen';
 import CompanionController from './components/CompanionController';
@@ -32,7 +33,7 @@ function parseHash() {
   return { mode: 'host', offer: null, sessionId: null };
 }
 
-const SCREENS = ['black', 'safety', 'menu', 'messageboard', 'news'];
+const SCREENS = ['black', 'safety', 'menu', 'channel-select', 'messageboard', 'news'];
 
 export default function App() {
   const [route, setRoute] = useState(parseHash);
@@ -65,6 +66,8 @@ function HostApp() {
   const [cursorActive, setCursorActive] = useState(startInDevMode || startScreen);
   const [devMode, setDevMode] = useState(startInDevMode);
   const [showPairing, setShowPairing] = useState(false);
+  const [selectedChannel, setSelectedChannel] = useState(null);
+  const [menuZoomOut, setMenuZoomOut] = useState(false);
 
   // Remote pointer state — one per controller (up to 4)
   const [remotePointers, setRemotePointers] = useState({});
@@ -127,7 +130,12 @@ function HostApp() {
         }
         if (curr.B && !prev.B) {
           play('back');
-          if (phase === 'news') {
+          if (phase === 'channel-select') {
+            setSelectedChannel(null);
+            setMenuZoomOut(true);
+            setPhase('menu');
+            setTimeout(() => setMenuZoomOut(false), 400);
+          } else if (phase === 'news') {
             setPhase('menu');
           }
         }
@@ -231,13 +239,41 @@ function HostApp() {
     setPhase('messageboard');
   }, [play]);
 
-  // Open News Channel
-  const openNewsChannel = useCallback(() => {
+  // Open a channel selection screen
+  const openChannel = useCallback((channel) => {
     play('open');
-    setPhase('news');
+    setSelectedChannel(channel);
+    setMenuZoomOut(false);
+    setPhase('channel-select');
   }, [play]);
 
-  // Phase 4 → Phase 3: back to menu
+  // Close channel selection and return to menu
+  const closeChannel = useCallback(() => {
+    play('close');
+    setSelectedChannel(null);
+    setMenuZoomOut(true);
+    setPhase('menu');
+    setTimeout(() => setMenuZoomOut(false), 400);
+  }, [play]);
+
+  // Handle "Start" on channel selection
+  const startChannel = useCallback(() => {
+    if (!selectedChannel) return;
+    // If the channel has a special action (like 'news'), handle it
+    if (selectedChannel.action === 'news') {
+      setSelectedChannel(null);
+      play('select');
+      setPhase('news');
+      return;
+    }
+    // For channels with a target URL, navigate there
+    if (selectedChannel.target) {
+      play('select');
+      window.location.href = selectedChannel.target;
+    }
+  }, [selectedChannel, play]);
+
+  // Phase 3 → Phase 4: open message board
   const closeMessageBoard = useCallback(() => {
     play('select');
     setPhase('menu');
@@ -327,12 +363,22 @@ function HostApp() {
 
       {/* Phase 3: Wii Menu */}
       <WiiMenu
-        visible={phase === 'menu'}
+        visible={phase === 'menu' || phase === 'channel-select'}
         fadeOut={phase === 'messageboard' || phase === 'news'}
+        zoomIn={phase === 'channel-select'}
+        zoomOut={menuZoomOut}
         onMailClick={openMessageBoard}
-        onNewsClick={openNewsChannel}
+        onChannelClick={openChannel}
         onPairClick={openPairing}
         peerConnected={connectedCount > 0}
+      />
+
+      {/* Channel Selection Screen */}
+      <ChannelSelection
+        visible={phase === 'channel-select'}
+        channel={selectedChannel}
+        onBack={closeChannel}
+        onStart={startChannel}
       />
 
       {/* Phase 4: Message Board */}

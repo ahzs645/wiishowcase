@@ -13,12 +13,12 @@ import mailIcon from '../../Wii.css/dist/assets/track-btn/icon-email.svg';
 const CHANNELS_PER_PAGE = 12;
 
 const CHANNELS = [
-  { name: 'Disc Channel', content: <DiscChannelContent />, contentClassName: 'ch-disc' },
-  { name: 'Mii Channel', content: <MiiChannelContent />, contentClassName: 'ch-mii' },
-  { name: 'Photo Channel', content: <PhotoChannelContent />, contentClassName: 'ch-photo' },
-  { name: 'Wii Shop', content: <ShopChannelContent />, contentClassName: 'ch-shop' },
-  { name: 'News Channel', action: 'news', content: <NewsChannelContent />, contentClassName: 'ch-news' },
-  { name: 'Onliine Channel', content: <OnliineChannelContent />, contentClassName: 'ch-onliine' },
+  { id: 'disc', name: 'Disc Channel', content: <DiscChannelContent />, contentClassName: 'ch-disc', video: 'channelart/disc/video.gif', audio: 'channelart/disc/audio.mp3' },
+  { id: 'mii', name: 'Mii Channel', content: <MiiChannelContent />, contentClassName: 'ch-mii', video: 'channelart/mii/video.gif', audio: 'channelart/mii/audio.mp3' },
+  { id: 'photo', name: 'Photo Channel', content: <PhotoChannelContent />, contentClassName: 'ch-photo', video: 'channelart/photo/video.gif', audio: 'channelart/photo/audio.mp3' },
+  { id: 'shop', name: 'Wii Shop', content: <ShopChannelContent />, contentClassName: 'ch-shop', video: 'channelart/shop/video.gif', audio: 'channelart/shop/audio.mp3' },
+  { id: 'news', name: 'News Channel', action: 'news', content: <NewsChannelContent />, contentClassName: 'ch-news', video: 'channelart/news/video.gif', audio: 'channelart/news/audio.mp3' },
+  { id: 'onliine', name: 'Onliine Channel', content: <OnliineChannelContent />, contentClassName: 'ch-onliine', video: 'channelart/onliine/video.gif', audio: 'channelart/onliine/audio.mp3' },
   { blank: true },
   { blank: true },
   { blank: true },
@@ -58,9 +58,11 @@ const PAGES = chunkChannels(CHANNELS);
 export default function WiiMenu({
   visible,
   fadeOut,
+  zoomIn,
+  zoomOut,
   onMailClick,
   onPairClick,
-  onNewsClick,
+  onChannelClick,
   peerConnected,
 }) {
   const [currentPage, setCurrentPage] = useState(0);
@@ -86,7 +88,7 @@ export default function WiiMenu({
 
   return (
     <div
-      className={`wii-menu wii-menu-wrapper${visible ? ' visible' : ''}${fadeOut ? ' fade-out' : ''}`}
+      className={`wii-menu wii-menu-wrapper${visible ? ' visible' : ''}${fadeOut ? ' fade-out' : ''}${zoomIn ? ' ch-zoom-in' : ''}${zoomOut ? ' ch-zoom-out' : ''}`}
       style={{ backgroundColor: '#c8c8c8' }}
     >
       <div className="channel-holder-wrapper">
@@ -101,7 +103,7 @@ export default function WiiMenu({
                     name={ch.name}
                     gradient={ch.gradient}
                     blank={ch.blank}
-                    onClick={ch.action === 'news' ? onNewsClick : undefined}
+                    onClick={ch.id && onChannelClick ? () => onChannelClick(ch) : undefined}
                     content={ch.content}
                     contentClassName={ch.contentClassName}
                   />
