@@ -20,7 +20,7 @@ export default function ChannelSelection({ visible, channel, onBack, onStart }) 
 
   return (
     <div className={`ch-selection${visible ? ' visible' : ''}`}>
-      <audio ref={audioRef} loop />
+      <audio ref={audioRef} />
       <div
         className="ch-sel-content"
         style={{ '--wii-channel-mask': `url(${channelMask})` }}

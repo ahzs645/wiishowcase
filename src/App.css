@@ -443,6 +443,12 @@ html, body, #root {
   filter: none !important;
 }
 
+/* The Wii.css track button SVG is left-biased in its 187x187 viewBox (cx=85).
+   Shift the background so the visible circle is centered for symmetric left/right anchoring. */
+.channel-page-circle.wii-track-btn-base {
+  background-position: calc(50% + 8.5px) center;
+}
+
 .channel-page-arrow:hover .channel-page-circle {
   transform: scale(1);
   opacity: 1;
