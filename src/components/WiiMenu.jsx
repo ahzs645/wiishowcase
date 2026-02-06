@@ -133,7 +133,7 @@ export default function WiiMenu({
         {currentPage > 0 && (
           <div className="channel-page-arrow channel-page-arrow-prev" onClick={goPrev}>
             <button className="wii-arrow-btn wii-arrow-btn-right" type="button" aria-label="Previous page" />
-            <button className="wii-track-btn-circle wii-track-btn-base channel-page-circle" type="button" tabIndex={-1}>
+            <button className="wii-track-btn-circle wii-track-btn-base wii-track-btn-no-shadow channel-page-circle" type="button" tabIndex={-1}>
               <span className="wii-track-btn-icon">
                 <span className="wii-icon wii-icon-minus" aria-hidden="true"></span>
               </span>
@@ -143,7 +143,7 @@ export default function WiiMenu({
         {currentPage < totalPages - 1 && (
           <div className="channel-page-arrow channel-page-arrow-next" onClick={goNext}>
             <button className="wii-arrow-btn" type="button" aria-label="Next page" />
-            <button className="wii-track-btn-circle wii-track-btn-base channel-page-circle" type="button" tabIndex={-1}>
+            <button className="wii-track-btn-circle wii-track-btn-base wii-track-btn-no-shadow channel-page-circle" type="button" tabIndex={-1}>
               <span className="wii-track-btn-icon">
                 <span className="wii-icon wii-icon-plus" aria-hidden="true"></span>
               </span>

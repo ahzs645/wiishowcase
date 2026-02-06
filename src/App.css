@@ -264,7 +264,7 @@ html, body, #root {
 /* Time: inside wii-channel-holder, above the clip-path curve */
 .menu-clock-above {
   position: absolute;
-  bottom: -0.5vh;
+  bottom: -2vh;
 }
 
 /* Date: direct child of .wii-menu, in the gap below the curve */
