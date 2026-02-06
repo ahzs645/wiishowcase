@@ -68,6 +68,7 @@ function HostApp() {
   const [showPairing, setShowPairing] = useState(false);
   const [selectedChannel, setSelectedChannel] = useState(null);
   const [menuZoomOut, setMenuZoomOut] = useState(false);
+  const [zoomOrigin, setZoomOrigin] = useState(null);
 
   // Remote pointer state — one per controller (up to 4)
   const [remotePointers, setRemotePointers] = useState({});
@@ -240,9 +241,10 @@ function HostApp() {
   }, [play]);
 
   // Open a channel selection screen
-  const openChannel = useCallback((channel) => {
+  const openChannel = useCallback((channel, origin) => {
     play('open');
     setSelectedChannel(channel);
+    if (origin) setZoomOrigin(origin);
     setMenuZoomOut(false);
     setPhase('channel-select');
   }, [play]);
@@ -367,6 +369,7 @@ function HostApp() {
         fadeOut={phase === 'messageboard' || phase === 'news'}
         zoomIn={phase === 'channel-select'}
         zoomOut={menuZoomOut}
+        zoomOrigin={zoomOrigin}
         onMailClick={openMessageBoard}
         onChannelClick={openChannel}
         onPairClick={openPairing}

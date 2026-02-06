@@ -60,6 +60,7 @@ export default function WiiMenu({
   fadeOut,
   zoomIn,
   zoomOut,
+  zoomOrigin,
   onMailClick,
   onPairClick,
   onChannelClick,
@@ -89,7 +90,10 @@ export default function WiiMenu({
   return (
     <div
       className={`wii-menu wii-menu-wrapper${visible ? ' visible' : ''}${fadeOut ? ' fade-out' : ''}${zoomIn ? ' ch-zoom-in' : ''}${zoomOut ? ' ch-zoom-out' : ''}`}
-      style={{ backgroundColor: '#c8c8c8' }}
+      style={{
+        backgroundColor: '#c8c8c8',
+        transformOrigin: zoomOrigin ? `${zoomOrigin.x}px ${zoomOrigin.y}px` : undefined,
+      }}
     >
       <div className="channel-holder-wrapper">
         <wii-channel-holder>
@@ -103,7 +107,14 @@ export default function WiiMenu({
                     name={ch.name}
                     gradient={ch.gradient}
                     blank={ch.blank}
-                    onClick={ch.id && onChannelClick ? () => onChannelClick(ch) : undefined}
+                    onClick={ch.id && onChannelClick ? (e) => {
+                      const rect = e.currentTarget.getBoundingClientRect();
+                      const origin = {
+                        x: rect.left + rect.width / 2,
+                        y: rect.top + rect.height / 2,
+                      };
+                      onChannelClick(ch, origin);
+                    } : undefined}
                     content={ch.content}
                     contentClassName={ch.contentClassName}
                   />
