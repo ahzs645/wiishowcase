@@ -1,24 +1,20 @@
 import { useState, useEffect } from 'react';
 
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-const MONTHS = [
-  'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec',
-];
 
 function formatTime(date) {
-  const hours = date.getHours();
-  const minutes = String(date.getMinutes()).padStart(2, '0');
-  const ampm = hours >= 12 ? 'PM' : 'AM';
-  const h12 = hours % 12 || 12;
-  return `${h12}:${minutes} ${ampm}`;
+  const hour = date.getHours();
+  const min = String(date.getMinutes()).padStart(2, '0');
+  return `${hour}:${min}`;
 }
 
 function formatDate(date) {
-  return `${DAYS[date.getDay()]} ${MONTHS[date.getMonth()]} ${date.getDate()}`;
+  const dayName = DAYS[date.getDay()];
+  const month = date.getMonth() + 1;
+  return `${dayName} ${date.getDate()}/${month}`;
 }
 
-export default function Clock() {
+export function useDateTime() {
   const [now, setNow] = useState(new Date());
 
   useEffect(() => {
@@ -26,10 +22,21 @@ export default function Clock() {
     return () => clearInterval(id);
   }, []);
 
+  return { time: formatTime(now), date: formatDate(now) };
+}
+
+export function ClockTime({ time }) {
   return (
-    <div className="menu-clock">
-      <div className="menu-clock-time">{formatTime(now)}</div>
-      <div className="menu-clock-date">{formatDate(now)}</div>
+    <div className="menu-clock menu-clock-above">
+      <div className="menu-clock-time">{time}</div>
+    </div>
+  );
+}
+
+export function ClockDate({ date }) {
+  return (
+    <div className="menu-clock menu-clock-below">
+      <div className="menu-clock-date">{date}</div>
     </div>
   );
 }

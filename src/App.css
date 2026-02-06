@@ -246,10 +246,14 @@ html, body, #root {
   z-index: 50;
 }
 
+/* ---- Display Font (digital clock) ---- */
+@font-face {
+  font-family: 'Display';
+  src: url('/fonts/digital-7-mono.ttf');
+}
+
 /* ---- Menu Clock ---- */
 .menu-clock {
-  position: absolute;
-  top: 1.5vh;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -257,17 +261,28 @@ html, body, #root {
   pointer-events: none;
 }
 
+/* Time: inside wii-channel-holder, above the clip-path curve */
+.menu-clock-above {
+  position: absolute;
+  bottom: -0.5vh;
+}
+
+/* Date: direct child of .wii-menu, in the gap below the curve */
+.menu-clock-below {
+  position: absolute;
+  bottom: 4.5vh;
+}
+
 .menu-clock-time {
-  font-size: clamp(16px, 3vh, 28px);
-  font-weight: 600;
-  color: #555;
-  font-family: 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Display';
+  font-size: clamp(80px, 16vh, 140px);
+  color: #84868a;
 }
 
 .menu-clock-date {
-  font-size: clamp(10px, 1.8vh, 16px);
-  color: #888;
-  font-family: 'Segoe UI', Roboto, sans-serif;
+  font-size: clamp(40px, 8vh, 70px);
+  font-weight: bold;
+  color: #84868a;
 }
 
 /* ---- Channel content inner ---- */
@@ -282,13 +297,99 @@ html, body, #root {
   height: 100%;
 }
 
-.wii-channel.is-clickable {
+.wii-channel-ui.is-clickable {
   cursor: pointer;
 }
 
-.wii-channel.is-clickable:focus-visible {
+.wii-channel-ui.is-clickable:focus-visible {
   outline: 3px solid rgba(52, 170, 220, 0.8);
   outline-offset: 4px;
+}
+
+/* Empty channel (wii-channel-ui variant) */
+.wii-channel-ui-empty {
+  --wii-channel-bg: repeating-linear-gradient(
+    -45deg,
+    #e8e8e8,
+    #e8e8e8 10px,
+    #d2d6db 10px,
+    #d2d6db 20px
+  );
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* ---- Channel Pages ---- */
+.channel-holder-wrapper {
+  position: relative;
+}
+
+.channel-pages-viewport {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding-inline: calc((100% - 18vw * 4 - 15px * 3) / 2);
+}
+
+.channel-pages-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.channel-pages-viewport > .wii-channel-holder-grid {
+  flex: 0 0 auto;
+}
+
+/* ---- Page Arrows ---- */
+.channel-page-arrow {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Circle button: centered on arrow, hidden by default, expands toward screen center on hover */
+.channel-page-circle {
+  --wii-track-btn-size: 187px;
+  position: absolute;
+  top: 50%;
+  margin-top: -93px;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 150ms ease, opacity 150ms ease;
+  z-index: 2;
+}
+
+.channel-page-arrow:hover .channel-page-circle {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.channel-page-arrow:hover .wii-arrow-btn {
+  filter: brightness(1.2);
+}
+
+/* Next: right side — circle centered on arrow, expands leftward toward screen center */
+.channel-page-arrow-next {
+  right: clamp(16px, 3vw, 50px);
+}
+
+.channel-page-arrow-next .channel-page-circle {
+  right: calc(50% - 0px);
+  transform-origin: right center;
+}
+
+/* Prev: left side — circle centered on arrow, expands rightward toward screen center */
+.channel-page-arrow-prev {
+  left: clamp(16px, 3vw, 50px);
+}
+
+.channel-page-arrow-prev .channel-page-circle {
+  left: calc(50% - 0px);
+  transform-origin: left center;
 }
 
 /* ---- Channel Holder Override ---- */
@@ -307,13 +408,18 @@ wii-channel-holder.wii-channel-holder {
 
 wii-channel-holder .wii-channel-holder-content {
   padding-top: 6vh;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 wii-channel-holder .wii-channel-holder-grid {
   --wii-holder-cols: 4;
-  grid-template-columns: repeat(4, clamp(100px, 14vw, 200px));
-  justify-content: center;
-  gap: 12px;
+  grid-template-columns: 18vw 18vw 18vw 18vw;
+  gap: 0px 15px;
+}
+
+wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
+  width: 100%;
 }
 
 /* ---- News Channel Tile ---- */

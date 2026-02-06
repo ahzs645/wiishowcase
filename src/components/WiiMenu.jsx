@@ -1,7 +1,10 @@
-import Clock from './Clock';
+import { useState, useCallback, useRef } from 'react';
+import { useDateTime, ClockTime, ClockDate } from './Clock';
 import ChannelCard from './ChannelCard';
 import settingsIcon from '../../Wii.css/dist/assets/settings-icon.png';
 import mailIcon from '../../Wii.css/dist/assets/track-btn/icon-email.svg';
+
+const CHANNELS_PER_PAGE = 12;
 
 const NEWS_CHANNEL_CONTENT = (
   <div className="splash-content">
@@ -40,7 +43,35 @@ const CHANNELS = [
   { blank: true },
   { blank: true },
   { blank: true },
+  // Page 2
+  { blank: true },
+  { blank: true },
+  { blank: true },
+  { blank: true },
+  { blank: true },
+  { blank: true },
+  { blank: true },
+  { blank: true },
+  { blank: true },
+  { blank: true },
+  { blank: true },
+  { blank: true },
 ];
+
+function chunkChannels(channels) {
+  const pages = [];
+  for (let i = 0; i < channels.length; i += CHANNELS_PER_PAGE) {
+    const page = channels.slice(i, i + CHANNELS_PER_PAGE);
+    // Pad last page with blanks to fill 12 slots
+    while (page.length < CHANNELS_PER_PAGE) {
+      page.push({ blank: true });
+    }
+    pages.push(page);
+  }
+  return pages;
+}
+
+const PAGES = chunkChannels(CHANNELS);
 
 export default function WiiMenu({
   visible,
@@ -50,27 +81,78 @@ export default function WiiMenu({
   onNewsClick,
   peerConnected,
 }) {
+  const [currentPage, setCurrentPage] = useState(0);
+  const totalPages = PAGES.length;
+  const viewportRef = useRef(null);
+  const { time, date } = useDateTime();
+
+  const goNext = useCallback(() => {
+    setCurrentPage((p) => {
+      const next = Math.min(p + 1, totalPages - 1);
+      viewportRef.current?.scrollBy({ left: viewportRef.current.clientWidth, behavior: 'smooth' });
+      return next;
+    });
+  }, [totalPages]);
+
+  const goPrev = useCallback(() => {
+    setCurrentPage((p) => {
+      const prev = Math.max(p - 1, 0);
+      viewportRef.current?.scrollBy({ left: -viewportRef.current.clientWidth, behavior: 'smooth' });
+      return prev;
+    });
+  }, []);
+
   return (
     <div
       className={`wii-menu wii-menu-wrapper${visible ? ' visible' : ''}${fadeOut ? ' fade-out' : ''}`}
       style={{ backgroundColor: '#c8c8c8' }}
     >
-      <wii-channel-holder>
-        <Clock />
-        <div className="wii-channel-holder-grid">
-          {CHANNELS.map((ch, i) => (
-            <ChannelCard
-              key={i}
-              name={ch.name}
-              gradient={ch.gradient}
-              blank={ch.blank}
-              onClick={ch.action === 'news' ? onNewsClick : undefined}
-              content={ch.content}
-              contentClassName={ch.contentClassName}
-            />
-          ))}
-        </div>
-      </wii-channel-holder>
+      <div className="channel-holder-wrapper">
+        <wii-channel-holder>
+          <ClockTime time={time} />
+          <div className="channel-pages-viewport" ref={viewportRef}>
+            {PAGES.map((pageChannels, pageIdx) => (
+              <div key={pageIdx} className="wii-channel-holder-grid">
+                {pageChannels.map((ch, i) => (
+                  <ChannelCard
+                    key={pageIdx * CHANNELS_PER_PAGE + i}
+                    name={ch.name}
+                    gradient={ch.gradient}
+                    blank={ch.blank}
+                    onClick={ch.action === 'news' ? onNewsClick : undefined}
+                    content={ch.content}
+                    contentClassName={ch.contentClassName}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
+        </wii-channel-holder>
+
+        {/* Page arrows — outside web component to avoid reparenting conflict */}
+        {currentPage > 0 && (
+          <div className="channel-page-arrow channel-page-arrow-prev" onClick={goPrev}>
+            <button className="wii-arrow-btn wii-arrow-btn-right" type="button" aria-label="Previous page" />
+            <button className="wii-track-btn-circle wii-track-btn-base channel-page-circle" type="button" tabIndex={-1}>
+              <span className="wii-track-btn-icon">
+                <span className="wii-icon wii-icon-minus" aria-hidden="true"></span>
+              </span>
+            </button>
+          </div>
+        )}
+        {currentPage < totalPages - 1 && (
+          <div className="channel-page-arrow channel-page-arrow-next" onClick={goNext}>
+            <button className="wii-arrow-btn" type="button" aria-label="Next page" />
+            <button className="wii-track-btn-circle wii-track-btn-base channel-page-circle" type="button" tabIndex={-1}>
+              <span className="wii-track-btn-icon">
+                <span className="wii-icon wii-icon-plus" aria-hidden="true"></span>
+              </span>
+            </button>
+          </div>
+        )}
+      </div>
+
+      <ClockDate date={date} />
 
       {/* Bottom buttons */}
       <div className="wii-menu-bottom-buttons">
