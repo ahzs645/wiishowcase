@@ -119,6 +119,10 @@ html, body, #root {
 }
 
 /* ---- Wii Menu ---- */
+.wii-menu.wii-menu-wrapper {
+  background-image: none;
+}
+
 .wii-menu-wrapper {
   opacity: 0;
   transition: opacity 0.8s ease;
@@ -285,6 +289,11 @@ html, body, #root {
   color: #84868a;
 }
 
+/* ---- Channel SVG border on top of content ---- */
+.wii-channel-ui-svg {
+  z-index: 2;
+}
+
 /* ---- Channel content inner ---- */
 .channel-inner {
   display: flex;
@@ -322,6 +331,7 @@ html, body, #root {
 /* ---- Channel Pages ---- */
 .channel-holder-wrapper {
   position: relative;
+  filter: drop-shadow(0 3px 0 #31c1ed);
 }
 
 .channel-pages-viewport {
@@ -380,7 +390,7 @@ html, body, #root {
 
 .channel-page-arrow-next .channel-page-circle {
   left: 50%;
-  margin-left: calc(-187px + 27px);
+  margin-left: calc(-94px - 70px);
   transform-origin: right center;
 }
 
@@ -391,13 +401,24 @@ html, body, #root {
 
 .channel-page-arrow-prev .channel-page-circle {
   left: 50%;
-  margin-left: -27px;
+  margin-left: calc(-94px + 70px);
   transform-origin: left center;
 }
 
 /* ---- Channel Holder Override ---- */
 wii-channel-holder.wii-channel-holder {
-  background: #e8e8e8;
+  background-color: #e8e8e8;
+  background-image: linear-gradient(
+    to bottom,
+    #f0f0f0 25%,
+    transparent 25%,
+    transparent 50%,
+    #f0f0f0 50%,
+    #f0f0f0 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 12px 12px;
   min-height: calc(100vh - 6vh - 230px + 6.5vw);
 }
 
@@ -503,10 +524,10 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-stroke: 0.08em #95a4a1;
+  -webkit-text-stroke: clamp(1px, 0.3vw, 3px) #95a4a1;
   font-weight: 900;
   letter-spacing: -0.02em;
-  font-size: min(12vw, 50cqw);
+  font-size: clamp(24px, 5vw, 60px);
   z-index: 2;
   animation: ch-mii-title-anim 20s linear infinite;
 }
@@ -536,13 +557,13 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
 .ch-photo-title {
   color: white;
   text-shadow: 0 1px 5px black;
-  font-size: clamp(8px, 1.8vw, 20px);
+  font-size: clamp(10px, 2.2vw, 24px);
   font-weight: 700;
   line-height: 0;
-  padding: 14% 0;
+  padding: 10% 0;
   text-align: center;
   background-color: #ff6a007f;
-  margin-top: -28%;
+  margin-top: -20%;
   z-index: 3;
   position: relative;
   animation: ch-photo-title 12s linear 100ms infinite;
@@ -576,8 +597,8 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
 }
 
 @keyframes ch-photo-title {
-  0%   { margin-top: -28%; }
-  30%  { margin-top: -28%; }
+  0%   { margin-top: -20%; }
+  30%  { margin-top: -20%; }
   35%  { margin-top: 0; }
   100% { margin-top: 0; }
 }

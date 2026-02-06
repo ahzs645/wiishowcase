@@ -1,3 +1,5 @@
+const BASE = import.meta.env.BASE_URL;
+
 export default function NewsChannelContent() {
   return (
     <>
@@ -8,13 +10,13 @@ export default function NewsChannelContent() {
       <div className="ch-news-ticker">
         <div className="ch-news-header">
           <div className="ch-news-text">
-            <img src="/channelart/news/pinpoint.png" alt="" />
+            <img src={`${BASE}channelart/news/pinpoint.png`} alt="" />
             Website in development phase
           </div>
         </div>
         <div className="ch-news-header">
           <div className="ch-news-text">
-            <img src="/channelart/news/pinpoint.png" className="ch-news-scnd" alt="" />
+            <img src={`${BASE}channelart/news/pinpoint.png`} className="ch-news-scnd" alt="" />
             Developed with a lot of enthusiasm and effort
           </div>
         </div>
