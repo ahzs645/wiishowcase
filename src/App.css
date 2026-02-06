@@ -302,12 +302,16 @@ wii-channel-holder.wii-channel-holder {
       transparent 20px
     ),
     #e8e8e8;
-  min-height: calc(100vh - 220px);
+  min-height: calc(100vh - 6vh - 230px + 6.5vw);
+}
+
+wii-channel-holder .wii-channel-holder-content {
+  padding-top: 6vh;
 }
 
 wii-channel-holder .wii-channel-holder-grid {
   --wii-holder-cols: 4;
-  grid-template-columns: repeat(4, 14vw);
+  grid-template-columns: repeat(4, clamp(100px, 14vw, 200px));
   justify-content: center;
   gap: 12px;
 }
@@ -391,7 +395,7 @@ wii-channel-holder .wii-channel-holder-grid {
 /* ---- Bottom Buttons ---- */
 .wii-menu-bottom-buttons {
   position: absolute;
-  bottom: clamp(30px, 6vh, 70px);
+  bottom: 6vh;
   left: clamp(20px, 3vw, 50px);
   right: clamp(20px, 3vw, 50px);
   display: flex;
