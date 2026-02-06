@@ -52,13 +52,12 @@ export default function WiiMenu({
 }) {
   return (
     <div
-      className={`wii-menu wii-menu-wrapper wii-bg-striped${visible ? ' visible' : ''}${fadeOut ? ' fade-out' : ''}`}
-      style={{ backgroundColor: '#e8e8e8' }}
+      className={`wii-menu wii-menu-wrapper${visible ? ' visible' : ''}${fadeOut ? ' fade-out' : ''}`}
+      style={{ backgroundColor: '#c8c8c8' }}
     >
-      <Clock />
-
       <wii-channel-holder>
-        <div className="wii-channel-holder-grid" style={{ '--wii-holder-cols': 4 }}>
+        <Clock />
+        <div className="wii-channel-holder-grid">
           {CHANNELS.map((ch, i) => (
             <ChannelCard
               key={i}
@@ -73,20 +72,9 @@ export default function WiiMenu({
         </div>
       </wii-channel-holder>
 
-      {/* Pair Remote button */}
-      <button
-        className={`wii-pair-btn${peerConnected ? ' connected' : ''}`}
-        onClick={onPairClick}
-      >
-        {peerConnected ? 'Remote Connected' : 'Pair Wii Remote'}
-      </button>
-
-      {/* Bottom Banner */}
-      <div className="wii-bottom-banner">
-        <div className="wii-bottom-banner-scroll">
-          <wii-banner />
-        </div>
-        <div className="wii-track-btn wii-track-btn-sm wii-track-btn-left wii-bottom-banner-track-btn wii-bottom-banner-track-btn-left">
+      {/* Bottom buttons */}
+      <div className="wii-menu-bottom-buttons">
+        <div className="wii-track-btn wii-track-btn-left">
           <div className="wii-track-btn-track"></div>
           <button
             className="wii-track-btn-circle wii-track-btn-base"
@@ -98,7 +86,8 @@ export default function WiiMenu({
             </span>
           </button>
         </div>
-        <div className="wii-track-btn wii-track-btn-sm wii-bottom-banner-track-btn wii-bottom-banner-track-btn-right">
+
+        <div className="wii-track-btn">
           <div className="wii-track-btn-track"></div>
           <button
             className="wii-track-btn-circle wii-track-btn-base"

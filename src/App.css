@@ -282,19 +282,34 @@ html, body, #root {
   height: 100%;
 }
 
-.wii-channel-authentic.is-clickable {
+.wii-channel.is-clickable {
   cursor: pointer;
 }
 
-.wii-channel-authentic.is-clickable:focus-visible {
+.wii-channel.is-clickable:focus-visible {
   outline: 3px solid rgba(52, 170, 220, 0.8);
   outline-offset: 4px;
 }
 
 /* ---- Channel Holder Override ---- */
-wii-channel-holder {
-  padding: clamp(16px, 4vh, 32px) clamp(16px, 4vw, 48px);
-  padding-bottom: clamp(140px, 20vh, 220px);
+wii-channel-holder.wii-channel-holder {
+  background:
+    repeating-linear-gradient(
+      45deg,
+      hsla(0, 0%, 100%, 0.1),
+      hsla(0, 0%, 100%, 0.1) 10px,
+      transparent 10px,
+      transparent 20px
+    ),
+    #e8e8e8;
+  min-height: calc(100vh - 220px);
+}
+
+wii-channel-holder .wii-channel-holder-grid {
+  --wii-holder-cols: 4;
+  grid-template-columns: repeat(4, 14vw);
+  justify-content: center;
+  gap: 12px;
 }
 
 /* ---- News Channel Tile ---- */
@@ -373,12 +388,25 @@ wii-channel-holder {
   text-transform: uppercase;
 }
 
+/* ---- Bottom Buttons ---- */
+.wii-menu-bottom-buttons {
+  position: absolute;
+  bottom: clamp(30px, 6vh, 70px);
+  left: clamp(20px, 3vw, 50px);
+  right: clamp(20px, 3vw, 50px);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.wii-menu-bottom-buttons .wii-track-btn {
+  pointer-events: auto;
+}
+
 /* ---- Pair Remote Button ---- */
 .wii-pair-btn {
-  position: absolute;
-  top: 1.2vh;
-  right: 1.5vw;
-  z-index: 20;
   padding: 6px 16px;
   border: 2px solid #ccc;
   border-radius: 18px;
