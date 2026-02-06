@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react';
+import channelMask from '../../Wii.css/dist/assets/channel-mask.svg';
 
 const BASE = import.meta.env.BASE_URL;
+
 
 export default function ChannelSelection({ visible, channel, onBack, onStart }) {
   const audioRef = useRef(null);
@@ -20,12 +22,10 @@ export default function ChannelSelection({ visible, channel, onBack, onStart }) 
   return (
     <div className={`ch-selection${visible ? ' visible' : ''}`}>
       <audio ref={audioRef} loop />
-      <div className="ch-sel-content">
-        <div className="ch-sel-tl" />
-        <div className="ch-sel-tr" />
-        <div className="ch-sel-bl" />
-        <div className="ch-sel-br" />
-
+      <div
+        className="ch-sel-content"
+        style={{ '--wii-channel-mask': `url(${channelMask})` }}
+      >
         {channel?.video && (
           <img
             src={visible ? `${BASE}${channel.video}` : ''}
@@ -44,6 +44,8 @@ export default function ChannelSelection({ visible, channel, onBack, onStart }) 
             <span>Start</span>
           </button>
         </div>
+
+
       </div>
     </div>
   );
