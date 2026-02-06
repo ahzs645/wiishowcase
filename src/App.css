@@ -281,7 +281,7 @@ html, body, #root {
 
 .menu-clock-date {
   font-size: clamp(40px, 8vh, 70px);
-  font-weight: bold;
+  font-weight: 500;
   color: #84868a;
 }
 
@@ -356,11 +356,12 @@ html, body, #root {
   --wii-track-btn-size: 187px;
   position: absolute;
   top: 50%;
-  margin-top: -93px;
+  margin-top: -80px;
   transform: scale(0);
   opacity: 0;
   transition: transform 150ms ease, opacity 150ms ease;
   z-index: 2;
+  filter: none !important;
 }
 
 .channel-page-arrow:hover .channel-page-circle {
@@ -378,7 +379,8 @@ html, body, #root {
 }
 
 .channel-page-arrow-next .channel-page-circle {
-  right: calc(50% - 0px);
+  left: 50%;
+  margin-left: calc(-187px + 27px);
   transform-origin: right center;
 }
 
@@ -388,21 +390,14 @@ html, body, #root {
 }
 
 .channel-page-arrow-prev .channel-page-circle {
-  left: calc(50% - 0px);
+  left: 50%;
+  margin-left: -27px;
   transform-origin: left center;
 }
 
 /* ---- Channel Holder Override ---- */
 wii-channel-holder.wii-channel-holder {
-  background:
-    repeating-linear-gradient(
-      45deg,
-      hsla(0, 0%, 100%, 0.1),
-      hsla(0, 0%, 100%, 0.1) 10px,
-      transparent 10px,
-      transparent 20px
-    ),
-    #e8e8e8;
+  background: #e8e8e8;
   min-height: calc(100vh - 6vh - 230px + 6.5vw);
 }
 
@@ -422,80 +417,397 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
   width: 100%;
 }
 
-/* ---- News Channel Tile ---- */
-.news-channel-card {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(90deg, #30932f 0%, #295d10 100%);
-  color: #ffffff;
+/* ---- 4:3 Viewport ---- */
+@media (max-aspect-ratio: 4 / 3) {
+  .channel-pages-viewport {
+    padding-inline: calc((100% - 16vw * 4 - 15px * 3) / 2);
+  }
+
+  wii-channel-holder .wii-channel-holder-grid {
+    grid-template-columns: 16vw 16vw 16vw 16vw;
+  }
 }
 
-.news-channel-card .splash-content {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-}
-
-.news-channel-card .news-channel-tv-icon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* ==== Channel Content (shared) ==== */
+.ch-disc,
+.ch-mii,
+.ch-photo,
+.ch-shop,
+.ch-news,
+.ch-onliine {
+  position: relative;
   width: 100%;
   height: 100%;
-  border-radius: clamp(10px, 1.8vw, 18px);
-  background: linear-gradient(90deg, #30932f 0%, #295d10 100%);
-  position: relative;
   overflow: hidden;
 }
 
-.news-channel-card .news-channel-tv-icon p {
-  color: #ffffff;
-  font-size: clamp(10px, 1.6vh, 16px);
-  font-weight: 700;
-  letter-spacing: 0.22em;
-  margin-top: clamp(6px, 1.6vh, 16px);
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25), -1px -1px 0 rgba(255, 255, 255, 0.1);
-  z-index: 2;
-  text-transform: uppercase;
-  width: 100%;
-  text-align: center;
-  transform: scaleX(1.12);
-}
-
-.news-channel-card .map-image-icon,
-.news-channel-card .map-image-icon-overlay {
+/* ---- Disc Channel ---- */
+.ch-disc-bg {
   position: absolute;
-  top: 18%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120%;
-  height: auto;
-  pointer-events: none;
+  inset: 0;
+  background-color: #fff;
+  background-image: linear-gradient(to bottom, #f2f2f2, #fff);
+  background-position-y: 50%;
+  background-size: 100% 50%;
+  background-repeat: no-repeat;
+  filter: blur(3px);
 }
 
-.news-channel-card .map-image-icon {
-  opacity: 0.12;
-  mix-blend-mode: plus-lighter;
-  filter: drop-shadow(0 0 12px rgb(0, 255, 60)) blur(6px);
+.ch-disc-align {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.news-channel-card .map-image-icon-overlay {
-  opacity: 0.4;
-  mix-blend-mode: difference;
+.ch-disc-img {
+  height: 70%;
+  opacity: 0.5;
+  animation: ch-disc-anim 12s linear infinite;
+}
+
+@keyframes ch-disc-anim {
+  0%   { transform: rotateY(0deg); }
+  20%  { transform: rotateY(180deg); }
+  50%  { transform: rotateY(180deg); }
+  70%  { transform: rotateY(360deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+/* ---- Mii Channel ---- */
+.ch-mii-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+  z-index: 1;
+  animation: ch-mii-filter 20s linear infinite;
+}
+
+@keyframes ch-mii-filter {
+  0%   { filter: contrast(100%) brightness(100%); }
+  45%  { filter: contrast(100%) brightness(100%); }
+  50%  { filter: contrast(20%) brightness(170%); }
+  95%  { filter: contrast(20%) brightness(170%); }
+  100% { filter: contrast(100%) brightness(100%); }
+}
+
+.ch-mii-title {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom, white, #bddfde);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 0.08em #95a4a1;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  font-size: min(12vw, 50cqw);
+  z-index: 2;
+  animation: ch-mii-title-anim 20s linear infinite;
+}
+
+@keyframes ch-mii-title-anim {
+  0%   { opacity: 0; }
+  47%  { opacity: 0; }
+  50%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* ---- Photo Channel ---- */
+.ch-photo {
+  background-image: url('/channelart/photo/bg.png');
+  background-size: 40%;
+}
+
+.ch-photo-container {
+  opacity: 0;
+  animation: ch-photo-container 12s linear 100ms infinite;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.ch-photo-title {
+  color: white;
+  text-shadow: 0 1px 5px black;
+  font-size: clamp(8px, 1.8vw, 20px);
+  font-weight: 700;
+  line-height: 0;
+  padding: 14% 0;
+  text-align: center;
+  background-color: #ff6a007f;
+  margin-top: -28%;
+  z-index: 3;
+  position: relative;
+  animation: ch-photo-title 12s linear 100ms infinite;
+}
+
+.ch-photo img {
+  border: 2px #eee solid;
+  box-shadow: 0 1px 6px black;
+  position: absolute;
+  height: 45%;
   z-index: 1;
 }
 
-.news-channel-card .click-to-start {
-  color: #d6ffdf;
-  font-size: clamp(9px, 1.2vh, 13px);
+.ch-photo-fore {
+  transform: rotate(10deg) translateX(-50%);
+  bottom: 10%; left: 50%;
+  z-index: 2 !important;
+  animation: ch-photo-fore 12s linear 100ms infinite;
+}
+
+.ch-photo-bl {
+  transform: rotate(-7deg);
+  bottom: 4%; left: 4%;
+  animation: ch-photo-bl 12s linear 100ms infinite;
+}
+
+.ch-photo-br {
+  transform: rotate(2deg);
+  bottom: 3%; right: 0;
+  animation: ch-photo-br 12s linear 100ms infinite;
+}
+
+@keyframes ch-photo-title {
+  0%   { margin-top: -28%; }
+  30%  { margin-top: -28%; }
+  35%  { margin-top: 0; }
+  100% { margin-top: 0; }
+}
+
+@keyframes ch-photo-fore {
+  0%   { opacity: 0; bottom: 35%; }
+  10%  { opacity: 0; bottom: 35%; }
+  15%  { opacity: 1; bottom: 35%; }
+  30%  { bottom: 35%; }
+  35%  { bottom: 10%; }
+  100% { bottom: 10%; }
+}
+
+@keyframes ch-photo-bl {
+  0%   { opacity: 0; bottom: 15%; }
+  5%   { opacity: 0; bottom: 15%; }
+  10%  { opacity: 1; bottom: 15%; }
+  30%  { bottom: 15%; }
+  35%  { bottom: 4%; }
+  100% { bottom: 4%; }
+}
+
+@keyframes ch-photo-br {
+  0%   { opacity: 0; bottom: 15%; }
+  5%   { opacity: 1; bottom: 15%; }
+  30%  { bottom: 15%; }
+  35%  { bottom: 3%; }
+  100% { bottom: 3%; }
+}
+
+@keyframes ch-photo-container {
+  0%   { opacity: 0; }
+  3%   { opacity: 1; }
+  90%  { opacity: 1; }
+  95%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* ---- Wii Shop Channel ---- */
+.ch-shop {
+  background-color: white;
+}
+
+.ch-shop-gradient {
+  background-image: linear-gradient(-70deg, white, #ffffff11, white);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.ch-shop-grid {
+  background-image: url('/channelart/shop/ch-grid.png');
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: 140%;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  animation: ch-shop-grid-anim 15s linear infinite;
+}
+
+@keyframes ch-shop-grid-anim {
+  0%   { opacity: 0; background-position: top right; }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { opacity: 0; background-position: bottom left; }
+}
+
+.ch-shop-logo {
+  opacity: 0;
+  z-index: 3;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  animation: ch-shop-logo-anim 15s linear infinite;
+}
+
+@keyframes ch-shop-logo-anim {
+  0%   { opacity: 0; }
+  40%  { opacity: 0; }
+  50%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.ch-shop-logo img {
+  height: 55%;
+}
+
+.ch-shop-logo span {
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  font-size: clamp(6px, 1.2vw, 14px);
+  line-height: 1.6;
+  background-image: linear-gradient(to bottom, #09beff, #009eff);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* ---- News Channel ---- */
+.ch-news-gradient {
+  background-image: linear-gradient(60deg, #1a5507, #208920, #1a5407);
+  position: absolute;
+  inset: 0;
+  filter: brightness(90%);
+}
+
+.ch-news-bg {
+  background-image: url('/channelart/news/bg.png');
+  background-size: 15%;
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+}
+
+.ch-news-map {
+  background-image: url('/channelart/news/map.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: -5%;
+  left: 0; right: 0;
+  height: 90%;
+  opacity: 0.3;
+  animation: ch-news-map-anim 10s linear infinite;
+}
+
+@keyframes ch-news-map-anim {
+  0%   { opacity: 0.3; }
+  55%  { opacity: 0.3; }
+  60%  { opacity: 0.5; }
+  95%  { opacity: 0.5; }
+  100% { opacity: 0.3; }
+}
+
+.ch-news-title {
+  position: absolute;
+  top: 5%; left: 0; right: 0;
+  display: flex;
+  justify-content: center;
+  color: white;
+  text-shadow: 0 1px 4px black;
+  font-size: clamp(8px, 1.8vw, 20px);
   font-weight: 700;
-  margin-top: clamp(6px, 1.2vh, 12px);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  z-index: 2;
+}
+
+.ch-news-ticker {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  z-index: 2;
+}
+
+.ch-news-header {
+  background-color: #33333377;
+  margin-bottom: 4%;
+  overflow: hidden;
+}
+
+.ch-news-text {
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: clamp(5px, 1vw, 12px);
+  font-weight: 600;
+  white-space: nowrap;
+  animation: ch-news-ticker-scroll 10s linear infinite;
+}
+
+.ch-news-text img {
+  height: clamp(8px, 1.6vw, 18px);
+  margin: 0 4%;
+}
+
+.ch-news-text img.ch-news-scnd {
+  margin-left: 20%;
+}
+
+@keyframes ch-news-ticker-scroll {
+  from { transform: translateX(110%); }
+  to   { transform: translateX(-110%); }
+}
+
+/* ---- Onliine Channel ---- */
+.ch-onliine-gradient {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to bottom, #585858, #2f2f2f);
+}
+
+.ch-onliine-logo {
+  height: 75%;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.ch-onliine-circles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.ch-onliine-circle {
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 50%;
+  aspect-ratio: 1;
+  opacity: 0;
+  position: absolute;
+}
+
+.ch-onliine-circle:nth-child(1) { animation: ch-onliine-circle-anim 4s ease-out 1s infinite; }
+.ch-onliine-circle:nth-child(2) { animation: ch-onliine-circle-anim 5s ease-out 3s infinite; }
+.ch-onliine-circle:nth-child(3) { animation: ch-onliine-circle-anim 3s ease-out 10s infinite; }
+.ch-onliine-circle:nth-child(4) { animation: ch-onliine-circle-anim 6s ease-out 6s infinite; }
+
+@keyframes ch-onliine-circle-anim {
+  0%   { opacity: 0; transform: scale(1); }
+  80%  { opacity: 0.4; transform: scale(1.3); }
+  99%  { opacity: 0; transform: scale(1.3); }
+  100% { opacity: 0; transform: scale(1); }
 }
 
 /* ---- Bottom Buttons ---- */

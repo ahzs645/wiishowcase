@@ -1,42 +1,24 @@
 import { useState, useCallback, useRef } from 'react';
 import { useDateTime, ClockTime, ClockDate } from './Clock';
 import ChannelCard from './ChannelCard';
+import DiscChannelContent from './channels/DiscChannelContent';
+import MiiChannelContent from './channels/MiiChannelContent';
+import PhotoChannelContent from './channels/PhotoChannelContent';
+import ShopChannelContent from './channels/ShopChannelContent';
+import NewsChannelContent from './channels/NewsChannelContent';
+import OnliineChannelContent from './channels/OnliineChannelContent';
 import settingsIcon from '../../Wii.css/dist/assets/settings-icon.png';
 import mailIcon from '../../Wii.css/dist/assets/track-btn/icon-email.svg';
 
 const CHANNELS_PER_PAGE = 12;
 
-const NEWS_CHANNEL_CONTENT = (
-  <div className="splash-content">
-    <div className="news-channel-tv-icon">
-      <p>News Channel</p>
-      <img
-        src="/news-channel/assets/images/world-map.png"
-        alt="World Map Icon"
-        className="map-image-icon"
-      />
-      <img
-        src="/news-channel/assets/images/world-map.png"
-        alt="World Map Icon"
-        className="map-image-icon-overlay"
-      />
-    </div>
-    <p className="click-to-start">Click to start</p>
-  </div>
-);
-
 const CHANNELS = [
-  { name: 'Disc Channel', gradient: 'linear-gradient(135deg, #4a90d9, #357abd)' },
-  { name: 'Mii Channel', gradient: 'linear-gradient(135deg, #ff9500, #e08600)' },
-  { name: 'Photo Channel', gradient: 'linear-gradient(135deg, #5856D6, #4240a8)' },
-  { name: 'Wii Shop', gradient: 'linear-gradient(135deg, #7dc832, #5ea01e)' },
-  { name: 'Forecast Channel', gradient: 'linear-gradient(135deg, #ff3b30, #cc2f26)' },
-  {
-    name: 'News Channel',
-    action: 'news',
-    content: NEWS_CHANNEL_CONTENT,
-    contentClassName: 'news-channel-card',
-  },
+  { name: 'Disc Channel', content: <DiscChannelContent />, contentClassName: 'ch-disc' },
+  { name: 'Mii Channel', content: <MiiChannelContent />, contentClassName: 'ch-mii' },
+  { name: 'Photo Channel', content: <PhotoChannelContent />, contentClassName: 'ch-photo' },
+  { name: 'Wii Shop', content: <ShopChannelContent />, contentClassName: 'ch-shop' },
+  { name: 'News Channel', action: 'news', content: <NewsChannelContent />, contentClassName: 'ch-news' },
+  { name: 'Onliine Channel', content: <OnliineChannelContent />, contentClassName: 'ch-onliine' },
   { blank: true },
   { blank: true },
   { blank: true },
