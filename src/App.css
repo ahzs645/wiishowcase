@@ -366,7 +366,9 @@ html, body, #root {
   --wii-track-btn-size: 187px;
   position: absolute;
   top: 50%;
-  margin-top: -80px;
+  margin-top: calc(-187px / 2);
+  left: 50%;
+  margin-left: calc(-187px / 2);
   transform: scale(0);
   opacity: 0;
   transition: transform 150ms ease, opacity 150ms ease;
@@ -383,25 +385,21 @@ html, body, #root {
   filter: brightness(1.2);
 }
 
-/* Next: right side — circle centered on arrow, expands leftward toward screen center */
+/* Next: right side — circle expands leftward toward screen center */
 .channel-page-arrow-next {
   right: clamp(16px, 3vw, 50px);
 }
 
 .channel-page-arrow-next .channel-page-circle {
-  left: 50%;
-  margin-left: calc(-94px - 70px);
   transform-origin: right center;
 }
 
-/* Prev: left side — circle centered on arrow, expands rightward toward screen center */
+/* Prev: left side — circle expands rightward toward screen center */
 .channel-page-arrow-prev {
   left: clamp(16px, 3vw, 50px);
 }
 
 .channel-page-arrow-prev .channel-page-circle {
-  left: 50%;
-  margin-left: calc(-94px + 70px);
   transform-origin: left center;
 }
 
@@ -557,8 +555,8 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
 .ch-photo-title {
   color: white;
   text-shadow: 0 1px 5px black;
-  font-size: clamp(10px, 2.2vw, 24px);
-  font-weight: 700;
+  font-size: clamp(12px, 2.6vw, 28px);
+  font-weight: 600;
   line-height: 0;
   padding: 10% 0;
   text-align: center;
@@ -570,7 +568,7 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
 }
 
 .ch-photo img {
-  border: 2px #eee solid;
+  border: clamp(3px, 0.5vw, 6px) #eee solid;
   box-shadow: 0 1px 6px black;
   position: absolute;
   height: 45%;
@@ -694,7 +692,7 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
 .ch-shop-logo span {
   font-weight: 900;
   letter-spacing: -0.02em;
-  font-size: clamp(6px, 1.2vw, 14px);
+  font-size: clamp(9px, 1.8vw, 20px);
   line-height: 1.6;
   background-image: linear-gradient(to bottom, #09beff, #009eff);
   -webkit-text-fill-color: transparent;
@@ -769,14 +767,14 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
   color: white;
   display: flex;
   align-items: center;
-  font-size: clamp(5px, 1vw, 12px);
+  font-size: clamp(8px, 1.6vw, 18px);
   font-weight: 600;
   white-space: nowrap;
   animation: ch-news-ticker-scroll 10s linear infinite;
 }
 
 .ch-news-text img {
-  height: clamp(8px, 1.6vw, 18px);
+  height: clamp(12px, 2.2vw, 24px);
   margin: 0 4%;
 }
 
