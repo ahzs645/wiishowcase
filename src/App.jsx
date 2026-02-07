@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import StartupBlack from './components/StartupBlack';
 import SafetyScreen from './components/SafetyScreen';
-import WiiMenu from './components/WiiMenu';
+import WiiMenu, { SELECTABLE_CHANNELS } from './components/WiiMenu';
 import WiiMessageBoard from './components/WiiMessageBoard';
 import WiiNewsChannel from './components/WiiNewsChannel';
 import ChannelSelection from './components/ChannelSelection';
@@ -258,6 +258,17 @@ function HostApp() {
     setTimeout(() => setMenuZoomOut(false), 400);
   }, [play]);
 
+  // Navigate to prev/next channel in selection screen
+  const switchChannel = useCallback((direction) => {
+    if (!selectedChannel) return;
+    const idx = SELECTABLE_CHANNELS.findIndex((ch) => ch.id === selectedChannel.id);
+    if (idx === -1) return;
+    const nextIdx = idx + direction;
+    if (nextIdx < 0 || nextIdx >= SELECTABLE_CHANNELS.length) return;
+    play('select');
+    setSelectedChannel(SELECTABLE_CHANNELS[nextIdx]);
+  }, [selectedChannel, play]);
+
   // Handle "Start" on channel selection
   const startChannel = useCallback(() => {
     if (!selectedChannel) return;
@@ -382,6 +393,10 @@ function HostApp() {
         channel={selectedChannel}
         onBack={closeChannel}
         onStart={startChannel}
+        hasPrev={selectedChannel ? SELECTABLE_CHANNELS.findIndex((ch) => ch.id === selectedChannel.id) > 0 : false}
+        hasNext={selectedChannel ? SELECTABLE_CHANNELS.findIndex((ch) => ch.id === selectedChannel.id) < SELECTABLE_CHANNELS.length - 1 : false}
+        onPrev={() => switchChannel(-1)}
+        onNext={() => switchChannel(1)}
       />
 
       {/* Phase 4: Message Board */}

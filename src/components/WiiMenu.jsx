@@ -55,6 +55,9 @@ function chunkChannels(channels) {
 
 const PAGES = chunkChannels(CHANNELS);
 
+// Channels that have an id (i.e. are selectable, not blank)
+export const SELECTABLE_CHANNELS = CHANNELS.filter((ch) => ch.id);
+
 export default function WiiMenu({
   visible,
   fadeOut,

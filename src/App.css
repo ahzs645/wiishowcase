@@ -182,12 +182,31 @@ html, body, #root {
   100% { opacity: 1; transform: scale(1); }
 }
 
-.ch-sel-content {
+.ch-sel-arrow {
+  top: 35%;
+  z-index: 3;
+}
+
+.ch-sel-wrapper {
   position: relative;
   width: 65vw;
-  -webkit-mask: var(--wii-channel-mask) no-repeat center / 100% 100%;
-  mask: var(--wii-channel-mask) no-repeat center / 100% 100%;
+}
+
+.ch-sel-frame {
+  position: relative;
+  width: 100%;
   overflow: hidden;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='806 0 391 217' preserveAspectRatio='none'%3E%3Cpath fill='%23fff' d='M1002 3.5C1069.66 3.5 1125.47 3.49908 1164.54 5.64062L1168.27 5.85449L1168.28 5.85547C1173.85 6.21006 1179.13 8.51403 1183.18 12.3643C1187.22 16.209 1189.78 21.3508 1190.42 26.8926C1193.03 47.9647 1194.5 82.1481 1194.5 108.5C1194.5 134.842 1193.03 169.009 1190.42 190.083L1190.42 190.084C1189.79 195.635 1187.22 200.786 1183.18 204.636C1179.13 208.486 1173.85 210.79 1168.28 211.145L1168.27 211.146C1129.06 213.501 1071.84 213.5 1002 213.5C932.156 213.5 874.944 213.501 835.73 211.146L835.722 211.145C830.146 210.79 824.873 208.486 820.824 204.636C816.776 200.786 814.21 195.635 813.576 190.084V190.083C810.97 169.009 809.5 134.882 809.5 108.5C809.5 82.108 810.972 47.9647 813.579 26.8926C814.217 21.3508 816.782 16.209 820.824 12.3643C824.873 8.51402 830.146 6.21006 835.722 5.85547L835.73 5.85449L839.459 5.64062C878.532 3.49908 934.339 3.5 1002 3.5Z'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='806 0 391 217' preserveAspectRatio='none'%3E%3Cpath fill='%23fff' d='M1002 3.5C1069.66 3.5 1125.47 3.49908 1164.54 5.64062L1168.27 5.85449L1168.28 5.85547C1173.85 6.21006 1179.13 8.51403 1183.18 12.3643C1187.22 16.209 1189.78 21.3508 1190.42 26.8926C1193.03 47.9647 1194.5 82.1481 1194.5 108.5C1194.5 134.842 1193.03 169.009 1190.42 190.083L1190.42 190.084C1189.79 195.635 1187.22 200.786 1183.18 204.636C1179.13 208.486 1173.85 210.79 1168.28 211.145L1168.27 211.146C1129.06 213.501 1071.84 213.5 1002 213.5C932.156 213.5 874.944 213.501 835.73 211.146L835.722 211.145C830.146 210.79 824.873 208.486 820.824 204.636C816.776 200.786 814.21 195.635 813.576 190.084V190.083C810.97 169.009 809.5 134.882 809.5 108.5C809.5 82.108 810.972 47.9647 813.579 26.8926C814.217 21.3508 816.782 16.209 820.824 12.3643C824.873 8.51402 830.146 6.21006 835.722 5.85547L835.73 5.85449L839.459 5.64062C878.532 3.49908 934.339 3.5 1002 3.5Z'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+}
+
+.ch-sel-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .ch-sel-video {
@@ -198,12 +217,23 @@ html, body, #root {
 
 /* Button bar */
 .ch-sel-buttons {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 3vw;
-  padding: 2vh 0;
-  background: linear-gradient(to bottom, #d8d8d8, #c0c0c0);
+  padding: 2vh 0 6vh;
+}
+
+.ch-sel-buttons > .wii-bg-pinstripe {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.ch-sel-buttons > .wii-btn-start {
+  position: relative;
+  z-index: 1;
 }
 
 /* ---- Bottom Banner ---- */
