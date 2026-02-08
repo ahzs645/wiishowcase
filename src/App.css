@@ -159,6 +159,10 @@ html, body, #root {
   overflow: visible;
 }
 
+.wii-menu-wrapper.is-mail-layer-visible .wii-menu-bottom-buttons .wii-track-btn-flip {
+  overflow: visible;
+}
+
 .wii-menu-wrapper.is-mail-animating .wii-menu-bottom-buttons .wii-track-btn-flip .wii-track-btn-track-pair {
   transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
@@ -177,6 +181,7 @@ html, body, #root {
 
 .wii-menu-wrapper.is-mail-layer-visible {
   pointer-events: none;
+  background-image: none !important;
 }
 
 /* ---- Menu Zoom Transitions (channel select) ---- */
@@ -337,13 +342,14 @@ html, body, #root {
 
 /* ---- Message Board ---- */
 .message-board-screen {
+  --message-board-page-slide-ms: 480ms;
   position: fixed;
   inset: 0;
   z-index: 15;
   opacity: 0;
   transition: opacity 220ms ease;
   pointer-events: none;
-  background: transparent;
+  background: #c8c8c8;
   overflow: hidden;
   font-family: 'FOT-Rodin Pro M', 'FOT-Rodin Pro DB', 'Segoe UI', sans-serif;
 }
@@ -408,12 +414,12 @@ html, body, #root {
 
 .message-board-pages-track.direction-next {
   transform: translateX(0);
-  animation: message-board-pages-next 260ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: message-board-pages-next var(--message-board-page-slide-ms, 480ms) cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .message-board-pages-track.direction-prev {
   transform: translateX(-50%);
-  animation: message-board-pages-prev 260ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: message-board-pages-prev var(--message-board-page-slide-ms, 480ms) cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .message-board-page-snapshot {
@@ -539,18 +545,21 @@ html, body, #root {
 }
 
 .message-board-opened {
-  position: absolute;
+  position: fixed;
   inset: 0;
   z-index: 90;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: clamp(24px, 4vh, 56px) clamp(20px, 4vw, 56px);
 }
 
 .message-board-opened-bg {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.55));
+  background-image: radial-gradient(circle at 50% 35%, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.72));
+  backdrop-filter: brightness(0.55);
+  -webkit-backdrop-filter: brightness(0.55);
 }
 
 .message-board-memo {
@@ -560,6 +569,8 @@ html, body, #root {
   z-index: 2;
   width: min(80vw, 720px);
   min-height: min(56vh, 510px);
+  max-height: calc(100vh - clamp(48px, 12vh, 120px));
+  overflow-y: auto;
   background-image:
     radial-gradient(circle at center 94%, rgba(0, 0, 0, 0.1) 0, rgba(0, 0, 0, 0.02) 14%, transparent 32%);
   background-color: #fff;

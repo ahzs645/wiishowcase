@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 const MESSAGES_PER_PAGE = 3;
-const MESSAGE_PAGE_SLIDE_MS = 260;
+const MESSAGE_PAGE_SLIDE_MS = 480;
 
 const MESSAGE_TYPES = {
   memo: {
@@ -152,12 +152,19 @@ function MessageCard({ message, onOpen }) {
 
 function MessageMemo({ message, onClose }) {
   const type = MESSAGE_TYPES[message.type] ?? MESSAGE_TYPES.memo;
+  const dialogTitleId = `message-board-memo-title-${message.id}`;
 
   return (
-    <div className="message-board-opened" onClick={onClose}>
-      <div className="message-board-opened-bg" />
-      <div className={`message-board-memo ${type.cardClassName}`} onClick={(event) => event.stopPropagation()}>
-        <span className="message-board-memo-title">{type.label}</span>
+    <div className="message-board-opened" onClick={onClose} role="presentation">
+      <div className="message-board-opened-bg" aria-hidden="true" />
+      <div
+        className={`message-board-memo ${type.cardClassName}`}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={dialogTitleId}
+        onClick={(event) => event.stopPropagation()}
+      >
+        <span className="message-board-memo-title" id={dialogTitleId}>{type.label}</span>
 
         <div className="message-board-memo-header">
           <div className="message-board-memo-avatar" title={message.avatarAlt || message.sender}>
@@ -221,6 +228,21 @@ export default function WiiMessageBoard({ visible }) {
     [selectedMessageId],
   );
 
+  useEffect(() => {
+    if (!selectedMessageId) return undefined;
+
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') {
+        setSelectedMessageId(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleEscape);
+    return () => {
+      window.removeEventListener('keydown', handleEscape);
+    };
+  }, [selectedMessageId]);
+
   const canGoPrev = !isPageTransitioning && currentPage > 0;
   const canGoNext = !isPageTransitioning && currentPage < MESSAGE_PAGES.length - 1;
 
@@ -269,7 +291,10 @@ export default function WiiMessageBoard({ visible }) {
   );
 
   return (
-    <div className={`message-board-screen${visible ? ' visible' : ''}${selectedMessage ? ' has-opened-message' : ''}`}>
+    <div
+      className={`message-board-screen${visible ? ' visible' : ''}${selectedMessage ? ' has-opened-message' : ''}`}
+      style={{ '--message-board-page-slide-ms': `${MESSAGE_PAGE_SLIDE_MS}ms` }}
+    >
       <div className="board-texture" />
       <div className="message-board-holder">
         <div className="board-title">Message Board</div>
@@ -334,11 +359,11 @@ export default function WiiMessageBoard({ visible }) {
             </span>
           </button>
         </div>
-
-        {selectedMessage && (
-          <MessageMemo message={selectedMessage} onClose={() => setSelectedMessageId(null)} />
-        )}
       </div>
+
+      {selectedMessage && (
+        <MessageMemo message={selectedMessage} onClose={() => setSelectedMessageId(null)} />
+      )}
     </div>
   );
 }
