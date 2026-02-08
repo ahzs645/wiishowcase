@@ -56,7 +56,7 @@ export default function WiiNewsChannel({ visible, onBack }) {
       <div className="news-channel-frame">
         <iframe
           ref={iframeRef}
-          src="/news-channel/index.html"
+          src={`${import.meta.env.BASE_URL}news-channel/index.html`}
           title="Wii News Channel"
           loading="eager"
           onLoad={attachMenuListener}

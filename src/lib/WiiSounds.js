@@ -1,6 +1,6 @@
 class WiiSounds {
   constructor(options = {}) {
-    this.basePath = options.basePath || '/assets/audio/';
+    this.basePath = options.basePath || `${import.meta.env.BASE_URL}assets/audio/`;
     this.volume = options.volume !== undefined ? options.volume : 0.5;
     this.enabled = options.enabled !== undefined ? options.enabled : true;
 

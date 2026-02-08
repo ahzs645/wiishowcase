@@ -7,28 +7,37 @@ const MESSAGE_TYPES = {
   memo: {
     label: 'Memo',
     cardClassName: 'is-type-memo',
+    fullAvatar: false,
   },
   invite: {
     label: 'Invitation',
     cardClassName: 'is-type-invite',
+    fullAvatar: false,
   },
   photo: {
     label: 'Photo',
     cardClassName: 'is-type-photo',
+    fullAvatar: false,
+  },
+  avatar: {
+    label: 'Avatar',
+    cardClassName: 'is-type-avatar',
+    fullAvatar: true,
   },
   system: {
     label: 'System',
     cardClassName: 'is-type-system',
+    fullAvatar: false,
   },
 };
 
 const BOARD_MESSAGES = [
   {
     id: 'sample-onliine-message',
-    type: 'memo',
+    type: 'avatar',
     sender: 'Peter Miiffin',
     preview: 'Hello Lois',
-    avatarSrc: '/assets/message-board/petermiiffin-head.png',
+    avatarSrc: `${import.meta.env.BASE_URL}assets/message-board/petermiiffin-head.png`,
     avatarAlt: 'Peter Miiffin lol',
     angle: -8,
     x: 14,
@@ -122,6 +131,7 @@ const MESSAGE_PAGES = chunkMessages(BOARD_MESSAGES, MESSAGES_PER_PAGE);
 
 function MessageCard({ message, onOpen }) {
   const type = MESSAGE_TYPES[message.type] ?? MESSAGE_TYPES.memo;
+  const avatarClassName = `message-board-card-avatar${type.fullAvatar ? ' is-full-avatar' : ''}`;
 
   return (
     <button
@@ -136,7 +146,7 @@ function MessageCard({ message, onOpen }) {
       aria-label={`Open ${type.label} from ${message.sender}`}
     >
       <div className="message-board-card-header">
-        <div className="message-board-card-avatar" title={message.avatarAlt || message.sender}>
+        <div className={avatarClassName} title={message.avatarAlt || message.sender}>
           {message.avatarSrc ? (
             <img src={message.avatarSrc} alt={message.avatarAlt || ''} />
           ) : (
@@ -153,6 +163,7 @@ function MessageCard({ message, onOpen }) {
 function MessageMemo({ message, onClose }) {
   const type = MESSAGE_TYPES[message.type] ?? MESSAGE_TYPES.memo;
   const dialogTitleId = `message-board-memo-title-${message.id}`;
+  const avatarClassName = `message-board-memo-avatar${type.fullAvatar ? ' is-full-avatar' : ''}`;
 
   return (
     <div className="message-board-opened" onClick={onClose} role="presentation">
@@ -167,7 +178,7 @@ function MessageMemo({ message, onClose }) {
         <span className="message-board-memo-title" id={dialogTitleId}>{type.label}</span>
 
         <div className="message-board-memo-header">
-          <div className="message-board-memo-avatar" title={message.avatarAlt || message.sender}>
+          <div className={avatarClassName} title={message.avatarAlt || message.sender}>
             {message.avatarSrc ? (
               <img src={message.avatarSrc} alt={message.avatarAlt || ''} />
             ) : (
