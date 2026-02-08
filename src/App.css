@@ -368,6 +368,10 @@ html, body, #root {
   z-index: 40;
 }
 
+.message-board-screen.has-opened-message .message-board-holder {
+  background: transparent;
+}
+
 .board-texture {
   position: absolute;
   inset: 0;
@@ -400,7 +404,7 @@ html, body, #root {
 .message-board-viewport {
   position: absolute;
   inset: clamp(56px, 8vh, 96px) clamp(76px, 10vw, 160px) clamp(40px, 6vh, 72px);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .message-board-canvas {
