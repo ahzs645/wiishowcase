@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { formatMenuDate } from './Clock';
 
-const MESSAGES_PER_PAGE = 3;
 const MESSAGE_PAGE_SLIDE_MS = 480;
 
 const MESSAGE_TYPES = {
@@ -31,9 +31,29 @@ const MESSAGE_TYPES = {
   },
 };
 
-const BOARD_MESSAGES = [
+function getStartOfDay(date = new Date()) {
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+}
+
+function addDays(date, days) {
+  const next = new Date(date);
+  next.setDate(next.getDate() + days);
+  return next;
+}
+
+function toDateKey(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+const BOARD_ANCHOR_DATE = getStartOfDay(new Date());
+
+const BOARD_MESSAGE_SEEDS = [
   {
     id: 'sample-onliine-message',
+    dayOffset: 0,
     type: 'avatar',
     sender: 'Peter Miiffin',
     preview: 'Hello Lois',
@@ -49,6 +69,7 @@ const BOARD_MESSAGES = [
   },
   {
     id: 'invite-mariokart',
+    dayOffset: -1,
     type: 'invite',
     sender: 'Loopy',
     preview: 'Mario Kart tonight?',
@@ -63,6 +84,7 @@ const BOARD_MESSAGES = [
   },
   {
     id: 'photo-sunset',
+    dayOffset: -2,
     type: 'photo',
     sender: 'Digital Camera',
     preview: 'New photo attached',
@@ -77,6 +99,7 @@ const BOARD_MESSAGES = [
   },
   {
     id: 'system-update',
+    dayOffset: 1,
     type: 'system',
     sender: 'Wii System',
     preview: 'System update info',
@@ -91,6 +114,7 @@ const BOARD_MESSAGES = [
   },
   {
     id: 'family-note',
+    dayOffset: 3,
     type: 'memo',
     sender: 'Mom',
     preview: 'Call grandma',
@@ -105,6 +129,7 @@ const BOARD_MESSAGES = [
   },
   {
     id: 'sports-result',
+    dayOffset: 0,
     type: 'invite',
     sender: 'Wii Sports Club',
     preview: 'High score challenge',
@@ -119,15 +144,24 @@ const BOARD_MESSAGES = [
   },
 ];
 
-function chunkMessages(items, pageSize) {
-  const pages = [];
-  for (let i = 0; i < items.length; i += pageSize) {
-    pages.push(items.slice(i, i + pageSize));
-  }
-  return pages;
-}
+const BOARD_MESSAGES = BOARD_MESSAGE_SEEDS.map((message) => ({
+  ...message,
+  dateKey: toDateKey(addDays(BOARD_ANCHOR_DATE, message.dayOffset ?? 0)),
+}));
 
-const MESSAGE_PAGES = chunkMessages(BOARD_MESSAGES, MESSAGES_PER_PAGE);
+const MESSAGES_BY_DATE = BOARD_MESSAGES.reduce((acc, message) => {
+  const { dateKey } = message;
+  if (!acc[dateKey]) {
+    acc[dateKey] = [];
+  }
+  acc[dateKey].push(message);
+  return acc;
+}, {});
+
+function getMessagesForDayOffset(dayOffset) {
+  const dateKey = toDateKey(addDays(BOARD_ANCHOR_DATE, dayOffset));
+  return MESSAGES_BY_DATE[dateKey] ?? [];
+}
 
 function MessageCard({ message, onOpen }) {
   const type = MESSAGE_TYPES[message.type] ?? MESSAGE_TYPES.memo;
@@ -164,6 +198,7 @@ function MessageMemo({ message, onClose }) {
   const type = MESSAGE_TYPES[message.type] ?? MESSAGE_TYPES.memo;
   const dialogTitleId = `message-board-memo-title-${message.id}`;
   const avatarClassName = `message-board-memo-avatar${type.fullAvatar ? ' is-full-avatar' : ''}`;
+  const memoTitle = 'Memo';
 
   return (
     <div className="message-board-opened" onClick={onClose} role="presentation">
@@ -175,7 +210,7 @@ function MessageMemo({ message, onClose }) {
         aria-labelledby={dialogTitleId}
         onClick={(event) => event.stopPropagation()}
       >
-        <span className="message-board-memo-title" id={dialogTitleId}>{type.label}</span>
+        <span className="message-board-memo-title" id={dialogTitleId}>{memoTitle}</span>
 
         <div className="message-board-memo-header">
           <div className={avatarClassName} title={message.avatarAlt || message.sender}>
@@ -199,15 +234,19 @@ function MessageMemo({ message, onClose }) {
             )
           ))}
         </div>
+
+        <div className="message-board-memo-footer" aria-hidden="true">
+          <span className="wii-icon wii-icon-wii message-board-memo-wii-logo"></span>
+        </div>
       </div>
     </div>
   );
 }
 
-export default function WiiMessageBoard({ visible }) {
-  const [currentPage, setCurrentPage] = useState(0);
+export default function WiiMessageBoard({ visible, onDisplayedDateChange }) {
+  const [currentDayOffset, setCurrentDayOffset] = useState(0);
   const [selectedMessageId, setSelectedMessageId] = useState(null);
-  const [pageTransition, setPageTransition] = useState(null);
+  const [dateTransition, setDateTransition] = useState(null);
   const transitionTimerRef = useRef(null);
 
   useEffect(() => {
@@ -222,7 +261,7 @@ export default function WiiMessageBoard({ visible }) {
   useEffect(() => {
     if (!visible) {
       setSelectedMessageId(null);
-      setPageTransition(null);
+      setDateTransition(null);
       if (transitionTimerRef.current) {
         clearTimeout(transitionTimerRef.current);
         transitionTimerRef.current = null;
@@ -230,10 +269,22 @@ export default function WiiMessageBoard({ visible }) {
     }
   }, [visible]);
 
-  const isPageTransitioning = Boolean(pageTransition);
-  const currentMessages = MESSAGE_PAGES[currentPage] ?? [];
-  const outgoingMessages = pageTransition ? (MESSAGE_PAGES[pageTransition.fromPage] ?? []) : [];
-  const incomingMessages = pageTransition ? (MESSAGE_PAGES[pageTransition.toPage] ?? []) : [];
+  const isDateTransitioning = Boolean(dateTransition);
+  const displayedDayOffset = dateTransition ? dateTransition.toOffset : currentDayOffset;
+  const displayedDate = useMemo(
+    () => addDays(BOARD_ANCHOR_DATE, displayedDayOffset),
+    [displayedDayOffset],
+  );
+  const displayedDateText = useMemo(
+    () => formatMenuDate(displayedDate),
+    [displayedDate],
+  );
+  const currentMessages = useMemo(
+    () => getMessagesForDayOffset(currentDayOffset),
+    [currentDayOffset],
+  );
+  const outgoingMessages = dateTransition ? getMessagesForDayOffset(dateTransition.fromOffset) : [];
+  const incomingMessages = dateTransition ? getMessagesForDayOffset(dateTransition.toOffset) : [];
   const selectedMessage = useMemo(
     () => BOARD_MESSAGES.find((message) => message.id === selectedMessageId) ?? null,
     [selectedMessageId],
@@ -254,20 +305,29 @@ export default function WiiMessageBoard({ visible }) {
     };
   }, [selectedMessageId]);
 
-  const canGoPrev = !isPageTransitioning && currentPage > 0;
-  const canGoNext = !isPageTransitioning && currentPage < MESSAGE_PAGES.length - 1;
+  useEffect(() => {
+    if (!onDisplayedDateChange) return;
+    if (!visible) {
+      onDisplayedDateChange(null);
+      return;
+    }
+    onDisplayedDateChange(displayedDateText);
+  }, [displayedDateText, onDisplayedDateChange, visible]);
+
+  const canGoPrev = !isDateTransitioning;
+  const canGoNext = !isDateTransitioning;
 
   const openMessage = (messageId) => {
-    if (isPageTransitioning) return;
+    if (isDateTransitioning) return;
     setSelectedMessageId(messageId);
   };
 
-  const setPage = (toPage, direction) => {
-    if (isPageTransitioning || toPage === currentPage) return;
+  const setDate = (toOffset, direction) => {
+    if (isDateTransitioning || toOffset === currentDayOffset) return;
     setSelectedMessageId(null);
-    setPageTransition({
-      fromPage: currentPage,
-      toPage,
+    setDateTransition({
+      fromOffset: currentDayOffset,
+      toOffset,
       direction,
     });
 
@@ -275,20 +335,20 @@ export default function WiiMessageBoard({ visible }) {
       clearTimeout(transitionTimerRef.current);
     }
     transitionTimerRef.current = setTimeout(() => {
-      setCurrentPage(toPage);
-      setPageTransition(null);
+      setCurrentDayOffset(toOffset);
+      setDateTransition(null);
       transitionTimerRef.current = null;
     }, MESSAGE_PAGE_SLIDE_MS);
   };
 
-  const goNextPage = () => {
+  const goNextDate = () => {
     if (!canGoNext) return;
-    setPage(currentPage + 1, 'next');
+    setDate(currentDayOffset + 1, 'next');
   };
 
-  const goPrevPage = () => {
+  const goPrevDate = () => {
     if (!canGoPrev) return;
-    setPage(currentPage - 1, 'prev');
+    setDate(currentDayOffset - 1, 'prev');
   };
 
   const renderCards = (messages, keyPrefix) => (
@@ -301,6 +361,18 @@ export default function WiiMessageBoard({ visible }) {
     ))
   );
 
+  const renderSnapshot = (messages, keyPrefix) => {
+    if (messages.length === 0) {
+      return (
+        <div className="message-board-empty" key={`${keyPrefix}-empty`}>
+          No messages for this day.
+        </div>
+      );
+    }
+
+    return renderCards(messages, keyPrefix);
+  };
+
   return (
     <div
       className={`message-board-screen${visible ? ' visible' : ''}${selectedMessage ? ' has-opened-message' : ''}`}
@@ -308,26 +380,24 @@ export default function WiiMessageBoard({ visible }) {
     >
       <div className="board-texture" />
       <div className="message-board-holder">
-        <div className="board-title">Message Board</div>
-
         <div className="message-board-viewport">
           <div className="message-board-canvas">
-            {pageTransition ? (
-              <div className={`message-board-pages-track direction-${pageTransition.direction}`}>
+            {dateTransition ? (
+              <div className={`message-board-pages-track direction-${dateTransition.direction}`}>
                 <div className="message-board-page-snapshot">
-                  {pageTransition.direction === 'next'
-                    ? renderCards(outgoingMessages, 'slide-out')
-                    : renderCards(incomingMessages, 'slide-in')}
+                  {dateTransition.direction === 'next'
+                    ? renderSnapshot(outgoingMessages, 'slide-out')
+                    : renderSnapshot(incomingMessages, 'slide-in')}
                 </div>
                 <div className="message-board-page-snapshot">
-                  {pageTransition.direction === 'next'
-                    ? renderCards(incomingMessages, 'slide-in')
-                    : renderCards(outgoingMessages, 'slide-out')}
+                  {dateTransition.direction === 'next'
+                    ? renderSnapshot(incomingMessages, 'slide-in')
+                    : renderSnapshot(outgoingMessages, 'slide-out')}
                 </div>
               </div>
             ) : (
               <div className="message-board-page-snapshot is-current">
-                {renderCards(currentMessages, `page-${currentPage}`)}
+                {renderSnapshot(currentMessages, `day-${currentDayOffset}`)}
               </div>
             )}
           </div>
@@ -335,15 +405,15 @@ export default function WiiMessageBoard({ visible }) {
 
         <div
           className={`channel-page-arrow channel-page-arrow-prev board-page-arrow${canGoPrev ? '' : ' is-disabled'}`}
-          onClick={goPrevPage}
+          onClick={goPrevDate}
           role="button"
-          aria-label="Previous message board page"
+          aria-label="Previous message board day"
           aria-disabled={!canGoPrev}
         >
           <button
             className="wii-arrow-btn wii-arrow-btn-right"
             type="button"
-            aria-label="Previous message board page"
+            aria-label="Previous message board day"
           />
           <button className="wii-track-btn-circle wii-track-btn-base wii-track-btn-no-shadow channel-page-circle" type="button" tabIndex={-1}>
             <span className="wii-track-btn-icon">
@@ -354,15 +424,15 @@ export default function WiiMessageBoard({ visible }) {
 
         <div
           className={`channel-page-arrow channel-page-arrow-next board-page-arrow${canGoNext ? '' : ' is-disabled'}`}
-          onClick={goNextPage}
+          onClick={goNextDate}
           role="button"
-          aria-label="Next message board page"
+          aria-label="Next message board day"
           aria-disabled={!canGoNext}
         >
           <button
             className="wii-arrow-btn"
             type="button"
-            aria-label="Next message board page"
+            aria-label="Next message board day"
           />
           <button className="wii-track-btn-circle wii-track-btn-base wii-track-btn-no-shadow channel-page-circle" type="button" tabIndex={-1}>
             <span className="wii-track-btn-icon">

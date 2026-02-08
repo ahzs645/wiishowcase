@@ -69,6 +69,7 @@ function HostApp() {
   const [selectedChannel, setSelectedChannel] = useState(null);
   const [menuZoomOut, setMenuZoomOut] = useState(false);
   const [zoomOrigin, setZoomOrigin] = useState(null);
+  const [messageBoardDateOverride, setMessageBoardDateOverride] = useState(null);
 
   // Remote pointer state — one per controller (up to 4)
   const [remotePointers, setRemotePointers] = useState({});
@@ -247,6 +248,12 @@ function HostApp() {
     setPhase('menu');
   }, [play]);
 
+  useEffect(() => {
+    if (phase !== 'messageboard') {
+      setMessageBoardDateOverride(null);
+    }
+  }, [phase]);
+
   // Open a channel selection screen
   const openChannel = useCallback((channel, origin) => {
     play('open');
@@ -393,6 +400,7 @@ function HostApp() {
         onChannelClick={openChannel}
         onPairClick={openPairing}
         peerConnected={connectedCount > 0}
+        dateOverride={phase === 'messageboard' ? messageBoardDateOverride : null}
       />
 
       {/* Channel Selection Screen */}
@@ -410,6 +418,7 @@ function HostApp() {
       {/* Phase 4: Message Board */}
       <WiiMessageBoard
         visible={phase === 'messageboard'}
+        onDisplayedDateChange={setMessageBoardDateOverride}
       />
 
       {/* News Channel */}

@@ -72,6 +72,7 @@ export default function WiiMenu({
   onPairClick,
   onChannelClick,
   peerConnected,
+  dateOverride,
 }) {
   const [currentPage, setCurrentPage] = useState(0);
   const [isMailFlipped, setIsMailFlipped] = useState(false);
@@ -147,6 +148,7 @@ export default function WiiMenu({
   const shouldMailLayerBeOpen = isMailOpening || (mailLayerVisible && !isMailReturning);
   const shouldTrackBeFlipped = isMailFlipped || (mailLayerVisible && !isMailReturning);
   const isMailAnimating = isMailOpening || isMailReturning;
+  const displayedDate = dateOverride ?? date;
 
   return (
     <div
@@ -208,7 +210,7 @@ export default function WiiMenu({
         )}
       </div>
 
-      <ClockDate date={date} />
+      <ClockDate date={displayedDate} />
 
       {/* Bottom buttons */}
       <div className="wii-menu-bottom-buttons">

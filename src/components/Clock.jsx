@@ -8,7 +8,7 @@ function formatTime(date) {
   return `${hour}:${min}`;
 }
 
-function formatDate(date) {
+export function formatMenuDate(date) {
   const dayName = DAYS[date.getDay()];
   const month = date.getMonth() + 1;
   return `${dayName} ${date.getDate()}/${month}`;
@@ -22,7 +22,7 @@ export function useDateTime() {
     return () => clearInterval(id);
   }, []);
 
-  return { time: formatTime(now), date: formatDate(now) };
+  return { time: formatTime(now), date: formatMenuDate(now) };
 }
 
 export function ClockTime({ time }) {
