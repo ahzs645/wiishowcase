@@ -198,7 +198,7 @@ function MessageMemo({ message, onClose }) {
   const type = MESSAGE_TYPES[message.type] ?? MESSAGE_TYPES.memo;
   const dialogTitleId = `message-board-memo-title-${message.id}`;
   const avatarClassName = `message-board-memo-avatar${type.fullAvatar ? ' is-full-avatar' : ''}`;
-  const memoTitle = 'Memo';
+  const memoTitle = message.sender || 'Memo';
 
   return (
     <div className="message-board-opened" onClick={onClose} role="presentation">
@@ -220,7 +220,6 @@ function MessageMemo({ message, onClose }) {
               <span>{message.avatarFallback || message.sender[0]}</span>
             )}
           </div>
-          <div className="message-board-memo-sender">{message.sender}</div>
         </div>
 
         <div className="message-board-memo-lines">

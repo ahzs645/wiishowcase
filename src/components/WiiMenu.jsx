@@ -214,17 +214,41 @@ export default function WiiMenu({
 
       {/* Bottom buttons */}
       <div className="wii-menu-bottom-buttons">
-        <div className="wii-track-btn wii-track-btn-left">
-          <div className="wii-track-btn-track"></div>
-          <button
-            className="wii-track-btn-circle wii-track-btn-base"
-            aria-label="Open Settings"
-            type="button"
-          >
-            <span className="wii-track-btn-icon">
-              <img src={settingsIcon} alt="" />
-            </span>
-          </button>
+        <div className={`wii-track-btn wii-track-btn-flip wii-track-btn-flip-expanded wii-track-btn-flip-left${shouldTrackBeFlipped ? ' is-flipped' : ''}${mailLayerVisible ? ' has-extra' : ''}`} data-track-flip="">
+          <div className="wii-track-btn-track-pair">
+            <div className="wii-track-btn-track"></div>
+            <div className="wii-track-btn-track is-mirrored"></div>
+            <button
+              className="wii-track-btn-circle wii-track-btn-base wii-track-btn-pair-btn is-left"
+              aria-label="Open Settings"
+              type="button"
+            >
+              <span className="wii-track-btn-icon">
+                <img src={settingsIcon} alt="" />
+              </span>
+            </button>
+            <button
+              className="wii-track-btn-circle wii-track-btn-base wii-track-btn-pair-btn is-right"
+              aria-label="Open Settings"
+              type="button"
+            >
+              <span className="wii-track-btn-icon">
+                <img src={settingsIcon} alt="" />
+              </span>
+            </button>
+          </div>
+          {mailLayerVisible && (
+            <button
+              className="wii-track-btn-circle wii-track-btn-base wii-track-btn-extra-left"
+              aria-label={peerConnected ? 'Pair another controller' : 'Pair controller'}
+              onClick={onPairClick}
+              type="button"
+            >
+              <span className="wii-track-btn-icon">
+                <span className="wii-icon wii-icon-plus" aria-hidden="true"></span>
+              </span>
+            </button>
+          )}
         </div>
 
         <div className={`wii-track-btn wii-track-btn-flip${shouldTrackBeFlipped ? ' is-flipped' : ''}`} data-track-flip="">

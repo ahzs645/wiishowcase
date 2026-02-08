@@ -600,7 +600,7 @@ html, body, #root {
   width: min(80vw, 720px);
   min-height: min(56vh, 510px);
   max-height: calc(100vh - clamp(48px, 12vh, 120px));
-  overflow-y: auto;
+  overflow: visible;
   background-image:
     radial-gradient(circle at center 94%, rgba(0, 0, 0, 0.1) 0, rgba(0, 0, 0, 0.02) 14%, transparent 32%);
   background-color: #fff;
@@ -650,12 +650,21 @@ html, body, #root {
 
 .message-board-memo-title {
   position: absolute;
-  top: clamp(-44px, -6.4vh, -28px);
-  left: 50%;
-  transform: translateX(-50%);
-  color: #fff;
+  top: calc(-1 * clamp(28px, 6vh, 56px) + clamp(4px, 0.7vh, 8px));
+  left: 0;
+  display: block;
+  width: 100%;
+  padding: 0 clamp(20px, 3vh, 34px);
+  box-sizing: border-box;
+  text-align: center;
+  color: #f6f6f6;
   font-size: clamp(18px, 3vh, 34px);
   font-weight: 700;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
 }
 
 .message-board-memo-header {
@@ -1381,7 +1390,7 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
   position: absolute;
   /* Partial compensation plus a small fixed gap keeps visible breathing room from the holder edge. */
   bottom: calc(6vh + (var(--wii-menu-track-btn-size-delta) * 0.72) - var(--wii-menu-track-btn-holder-gap));
-  left: clamp(20px, 3vw, 50px);
+  left: 0;
   right: 0;
   display: flex;
   justify-content: space-between;
@@ -1406,6 +1415,32 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
 
 .wii-menu-bottom-buttons .wii-track-btn-wii-logo {
   --wii-icon-size: calc(var(--wii-track-btn-size) * 0.26);
+}
+
+.wii-menu-bottom-buttons .wii-track-btn-flip-left {
+  transform: scaleX(-1);
+  transform-origin: center;
+}
+
+.wii-menu-bottom-buttons .wii-track-btn-flip-left .wii-track-btn-icon {
+  transform: scaleX(-1);
+}
+
+.wii-menu-bottom-buttons .wii-track-btn-flip-left.has-extra {
+  --wii-track-btn-flip-expand: calc(var(--wii-track-btn-size) * 1.05);
+}
+
+.wii-menu-bottom-buttons .wii-track-btn-flip-left.has-extra.is-flipped .wii-track-btn-pair-btn.is-left {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.wii-menu-bottom-buttons .wii-track-btn-extra-left {
+  position: absolute;
+  top: 50%;
+  left: calc(var(--wii-track-btn-size) * 0.62);
+  margin-top: calc(var(--wii-track-btn-size) / -2);
+  z-index: 3;
 }
 
 /* ---- Pair Remote Button ---- */
