@@ -11,7 +11,7 @@ import settingsIcon from '../../Wii.css/dist/assets/settings-icon.png';
 import mailIcon from '../../Wii.css/dist/assets/track-btn/icon-email.svg';
 
 const CHANNELS_PER_PAGE = 12;
-const MAIL_OPEN_DELAY_MS = 520;
+const MAIL_OPEN_ANIM_MS = 520;
 const MAIL_CLOSE_DELAY_MS = 520;
 
 const CHANNELS = [
@@ -103,11 +103,12 @@ export default function WiiMenu({
     setIsMailReturning(false);
     setIsMailFlipped(true);
     setIsMailOpening(true);
+    // Show messages immediately so they are visible while the holder flies up.
+    onMailClick?.();
     mailTimerRef.current = window.setTimeout(() => {
       mailTimerRef.current = null;
-      onMailClick?.();
       setIsMailOpening(false);
-    }, MAIL_OPEN_DELAY_MS);
+    }, MAIL_OPEN_ANIM_MS);
   }, [isMailOpening, mailLayerVisible, onMailClick]);
 
   const closeMailWithFlip = useCallback(() => {
@@ -145,10 +146,11 @@ export default function WiiMenu({
 
   const shouldMailLayerBeOpen = isMailOpening || (mailLayerVisible && !isMailReturning);
   const shouldTrackBeFlipped = isMailFlipped || (mailLayerVisible && !isMailReturning);
+  const isMailAnimating = isMailOpening || isMailReturning;
 
   return (
     <div
-      className={`wii-menu wii-menu-wrapper${visible ? ' visible' : ''}${fadeOut ? ' fade-out' : ''}${zoomIn ? ' ch-zoom-in' : ''}${zoomOut ? ' ch-zoom-out' : ''}${shouldMailLayerBeOpen ? ' is-mail-opening' : ''}${mailLayerVisible ? ' is-mail-layer-visible' : ''}`}
+      className={`wii-menu wii-menu-wrapper${visible ? ' visible' : ''}${fadeOut ? ' fade-out' : ''}${zoomIn ? ' ch-zoom-in' : ''}${zoomOut ? ' ch-zoom-out' : ''}${shouldMailLayerBeOpen ? ' is-mail-opening' : ''}${mailLayerVisible ? ' is-mail-layer-visible' : ''}${isMailAnimating ? ' is-mail-animating' : ''}`}
       style={{
         backgroundColor: mailLayerVisible ? 'transparent' : '#c8c8c8',
         transformOrigin: zoomOrigin ? `${zoomOrigin.x}px ${zoomOrigin.y}px` : undefined,
