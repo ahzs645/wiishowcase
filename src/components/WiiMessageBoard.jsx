@@ -1,8 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { useDateTime } from './Clock';
 
 const MESSAGES_PER_PAGE = 3;
-const MESSAGE_PAGE_TRANSITION_MS = 260;
+const MESSAGE_PAGE_SLIDE_MS = 260;
 
 const MESSAGE_TYPES = {
   memo: {
@@ -183,30 +182,24 @@ function MessageMemo({ message, onClose }) {
           ))}
         </div>
       </div>
-
-      <button type="button" className="alt-btn back message-board-memo-back" onClick={onClose}>
-        Back
-      </button>
     </div>
   );
 }
 
 export default function WiiMessageBoard({ visible }) {
-  const { date } = useDateTime();
   const [currentPage, setCurrentPage] = useState(0);
   const [selectedMessageId, setSelectedMessageId] = useState(null);
   const [pageTransition, setPageTransition] = useState(null);
   const transitionTimerRef = useRef(null);
 
-  useEffect(
-    () => () => {
+  useEffect(() => {
+    return () => {
       if (transitionTimerRef.current) {
         clearTimeout(transitionTimerRef.current);
         transitionTimerRef.current = null;
       }
-    },
-    [],
-  );
+    };
+  }, []);
 
   useEffect(() => {
     if (!visible) {
@@ -236,9 +229,8 @@ export default function WiiMessageBoard({ visible }) {
     setSelectedMessageId(messageId);
   };
 
-  const startPageTransition = (toPage, direction) => {
+  const setPage = (toPage, direction) => {
     if (isPageTransitioning || toPage === currentPage) return;
-
     setSelectedMessageId(null);
     setPageTransition({
       fromPage: currentPage,
@@ -253,97 +245,98 @@ export default function WiiMessageBoard({ visible }) {
       setCurrentPage(toPage);
       setPageTransition(null);
       transitionTimerRef.current = null;
-    }, MESSAGE_PAGE_TRANSITION_MS);
+    }, MESSAGE_PAGE_SLIDE_MS);
   };
 
   const goNextPage = () => {
     if (!canGoNext) return;
-    startPageTransition(currentPage + 1, 'next');
+    setPage(currentPage + 1, 'next');
   };
 
   const goPrevPage = () => {
     if (!canGoPrev) return;
-    startPageTransition(currentPage - 1, 'prev');
+    setPage(currentPage - 1, 'prev');
   };
 
-  const renderPage = (messages, keyPrefix, pageClassName) => (
-    <div key={keyPrefix} className={`message-board-page ${pageClassName}`}>
-      {messages.map((message) => (
-        <MessageCard
-          key={`${keyPrefix}-${message.id}`}
-          message={message}
-          onOpen={openMessage}
-        />
-      ))}
-    </div>
+  const renderCards = (messages, keyPrefix) => (
+    messages.map((message) => (
+      <MessageCard
+        key={`${keyPrefix}-${message.id}`}
+        message={message}
+        onOpen={openMessage}
+      />
+    ))
   );
 
   return (
-    <div className={`message-board-screen${visible ? ' visible' : ''}`}>
+    <div className={`message-board-screen${visible ? ' visible' : ''}${selectedMessage ? ' has-opened-message' : ''}`}>
       <div className="board-texture" />
-      <div className="board-title">Message Board</div>
-      <div className="message-board-date">{date}</div>
+      <div className="message-board-holder">
+        <div className="board-title">Message Board</div>
 
-      <div className="message-board-canvas">
-        {pageTransition ? (
-          <>
-            {renderPage(
-              outgoingMessages,
-              `page-exit-${pageTransition.fromPage}`,
-              `is-exit direction-${pageTransition.direction}`,
-            )}
-            {renderPage(
-              incomingMessages,
-              `page-enter-${pageTransition.toPage}`,
-              `is-enter direction-${pageTransition.direction}`,
-            )}
-          </>
-        ) : (
-          renderPage(currentMessages, `page-current-${currentPage}`, 'is-current')
+        <div className="message-board-canvas">
+          {pageTransition ? (
+            <div className={`message-board-pages-track direction-${pageTransition.direction}`}>
+              <div className="message-board-page-snapshot">
+                {pageTransition.direction === 'next'
+                  ? renderCards(outgoingMessages, 'slide-out')
+                  : renderCards(incomingMessages, 'slide-in')}
+              </div>
+              <div className="message-board-page-snapshot">
+                {pageTransition.direction === 'next'
+                  ? renderCards(incomingMessages, 'slide-in')
+                  : renderCards(outgoingMessages, 'slide-out')}
+              </div>
+            </div>
+          ) : (
+            <div className="message-board-page-snapshot is-current">
+              {renderCards(currentMessages, `page-${currentPage}`)}
+            </div>
+          )}
+        </div>
+
+        <div
+          className={`channel-page-arrow channel-page-arrow-prev board-page-arrow${canGoPrev ? '' : ' is-disabled'}`}
+          onClick={goPrevPage}
+          role="button"
+          aria-label="Previous message board page"
+          aria-disabled={!canGoPrev}
+        >
+          <button
+            className="wii-arrow-btn wii-arrow-btn-right"
+            type="button"
+            aria-label="Previous message board page"
+          />
+          <button className="wii-track-btn-circle wii-track-btn-base wii-track-btn-no-shadow channel-page-circle" type="button" tabIndex={-1}>
+            <span className="wii-track-btn-icon">
+              <span className="wii-icon wii-icon-minus" aria-hidden="true"></span>
+            </span>
+          </button>
+        </div>
+
+        <div
+          className={`channel-page-arrow channel-page-arrow-next board-page-arrow${canGoNext ? '' : ' is-disabled'}`}
+          onClick={goNextPage}
+          role="button"
+          aria-label="Next message board page"
+          aria-disabled={!canGoNext}
+        >
+          <button
+            className="wii-arrow-btn"
+            type="button"
+            aria-label="Next message board page"
+          />
+          <button className="wii-track-btn-circle wii-track-btn-base wii-track-btn-no-shadow channel-page-circle" type="button" tabIndex={-1}>
+            <span className="wii-track-btn-icon">
+              <span className="wii-icon wii-icon-plus" aria-hidden="true"></span>
+            </span>
+          </button>
+        </div>
+
+        {selectedMessage && (
+          <MessageMemo message={selectedMessage} onClose={() => setSelectedMessageId(null)} />
         )}
       </div>
-
-      <div
-        className={`channel-page-arrow channel-page-arrow-prev board-page-arrow${canGoPrev ? '' : ' is-disabled'}`}
-        onClick={goPrevPage}
-        role="button"
-        aria-label="Previous message board page"
-        aria-disabled={!canGoPrev}
-      >
-        <button
-          className="wii-arrow-btn wii-arrow-btn-right"
-          type="button"
-          aria-label="Previous message board page"
-        />
-        <button className="wii-track-btn-circle wii-track-btn-base wii-track-btn-no-shadow channel-page-circle" type="button" tabIndex={-1}>
-          <span className="wii-track-btn-icon">
-            <span className="wii-icon wii-icon-minus" aria-hidden="true"></span>
-          </span>
-        </button>
-      </div>
-
-      <div
-        className={`channel-page-arrow channel-page-arrow-next board-page-arrow${canGoNext ? '' : ' is-disabled'}`}
-        onClick={goNextPage}
-        role="button"
-        aria-label="Next message board page"
-        aria-disabled={!canGoNext}
-      >
-        <button
-          className="wii-arrow-btn"
-          type="button"
-          aria-label="Next message board page"
-        />
-        <button className="wii-track-btn-circle wii-track-btn-base wii-track-btn-no-shadow channel-page-circle" type="button" tabIndex={-1}>
-          <span className="wii-track-btn-icon">
-            <span className="wii-icon wii-icon-plus" aria-hidden="true"></span>
-          </span>
-        </button>
-      </div>
-
-      {selectedMessage && (
-        <MessageMemo message={selectedMessage} onClose={() => setSelectedMessageId(null)} />
-      )}
     </div>
   );
 }
