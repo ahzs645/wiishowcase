@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 import { useDateTime, ClockTime, ClockDate } from './Clock';
 import ChannelCard from './ChannelCard';
 import DiscChannelContent from './channels/DiscChannelContent';
@@ -11,6 +11,8 @@ import settingsIcon from '../../Wii.css/dist/assets/settings-icon.png';
 import mailIcon from '../../Wii.css/dist/assets/track-btn/icon-email.svg';
 
 const CHANNELS_PER_PAGE = 12;
+const MAIL_OPEN_DELAY_MS = 520;
+const MAIL_CLOSE_DELAY_MS = 520;
 
 const CHANNELS = [
   { id: 'disc', name: 'Disc Channel', content: <DiscChannelContent />, contentClassName: 'ch-disc', video: 'channelart/disc/video.gif', audio: 'channelart/disc/audio.mp3' },
@@ -61,6 +63,8 @@ export const SELECTABLE_CHANNELS = CHANNELS.filter((ch) => ch.id);
 export default function WiiMenu({
   visible,
   fadeOut,
+  mailLayerVisible,
+  onMailClose,
   zoomIn,
   zoomOut,
   zoomOrigin,
@@ -70,8 +74,12 @@ export default function WiiMenu({
   peerConnected,
 }) {
   const [currentPage, setCurrentPage] = useState(0);
+  const [isMailFlipped, setIsMailFlipped] = useState(false);
+  const [isMailOpening, setIsMailOpening] = useState(false);
+  const [isMailReturning, setIsMailReturning] = useState(false);
   const totalPages = PAGES.length;
   const viewportRef = useRef(null);
+  const mailTimerRef = useRef(null);
   const { time, date } = useDateTime();
 
   const goNext = useCallback(() => {
@@ -90,11 +98,59 @@ export default function WiiMenu({
     });
   }, []);
 
+  const openMailWithFlip = useCallback(() => {
+    if (mailTimerRef.current || isMailOpening || mailLayerVisible) return;
+    setIsMailReturning(false);
+    setIsMailFlipped(true);
+    setIsMailOpening(true);
+    mailTimerRef.current = window.setTimeout(() => {
+      mailTimerRef.current = null;
+      onMailClick?.();
+      setIsMailOpening(false);
+    }, MAIL_OPEN_DELAY_MS);
+  }, [isMailOpening, mailLayerVisible, onMailClick]);
+
+  const closeMailWithFlip = useCallback(() => {
+    if (mailTimerRef.current || !mailLayerVisible) return;
+    setIsMailFlipped(false);
+    setIsMailOpening(false);
+    setIsMailReturning(true);
+    mailTimerRef.current = window.setTimeout(() => {
+      mailTimerRef.current = null;
+      setIsMailReturning(false);
+      onMailClose?.();
+    }, MAIL_CLOSE_DELAY_MS);
+  }, [mailLayerVisible, onMailClose]);
+
+  useEffect(() => {
+    if (visible && !fadeOut && !mailLayerVisible) {
+      setIsMailFlipped(false);
+      setIsMailOpening(false);
+      setIsMailReturning(false);
+      if (mailTimerRef.current) {
+        window.clearTimeout(mailTimerRef.current);
+        mailTimerRef.current = null;
+      }
+    }
+  }, [visible, fadeOut, mailLayerVisible]);
+
+  useEffect(() => {
+    return () => {
+      if (mailTimerRef.current) {
+        window.clearTimeout(mailTimerRef.current);
+        mailTimerRef.current = null;
+      }
+    };
+  }, []);
+
+  const shouldMailLayerBeOpen = isMailOpening || (mailLayerVisible && !isMailReturning);
+  const shouldTrackBeFlipped = isMailFlipped || (mailLayerVisible && !isMailReturning);
+
   return (
     <div
-      className={`wii-menu wii-menu-wrapper${visible ? ' visible' : ''}${fadeOut ? ' fade-out' : ''}${zoomIn ? ' ch-zoom-in' : ''}${zoomOut ? ' ch-zoom-out' : ''}`}
+      className={`wii-menu wii-menu-wrapper${visible ? ' visible' : ''}${fadeOut ? ' fade-out' : ''}${zoomIn ? ' ch-zoom-in' : ''}${zoomOut ? ' ch-zoom-out' : ''}${shouldMailLayerBeOpen ? ' is-mail-opening' : ''}${mailLayerVisible ? ' is-mail-layer-visible' : ''}`}
       style={{
-        backgroundColor: '#c8c8c8',
+        backgroundColor: mailLayerVisible ? 'transparent' : '#c8c8c8',
         transformOrigin: zoomOrigin ? `${zoomOrigin.x}px ${zoomOrigin.y}px` : undefined,
       }}
     >
@@ -167,18 +223,31 @@ export default function WiiMenu({
           </button>
         </div>
 
-        <div className="wii-track-btn">
-          <div className="wii-track-btn-track"></div>
-          <button
-            className="wii-track-btn-circle wii-track-btn-base"
-            aria-label="Open Mail"
-            onClick={onMailClick}
-            type="button"
-          >
-            <span className="wii-track-btn-icon">
-              <img src={mailIcon} alt="" />
-            </span>
-          </button>
+        <div className={`wii-track-btn wii-track-btn-flip${shouldTrackBeFlipped ? ' is-flipped' : ''}`} data-track-flip="">
+          <div className="wii-track-btn-track-pair">
+            <div className="wii-track-btn-track"></div>
+            <div className="wii-track-btn-track is-mirrored"></div>
+            <button
+              className="wii-track-btn-circle wii-track-btn-base wii-track-btn-pair-btn is-left"
+              aria-label="Open Mail"
+              onClick={openMailWithFlip}
+              type="button"
+            >
+              <span className="wii-track-btn-icon">
+                <img src={mailIcon} alt="" />
+              </span>
+            </button>
+            <button
+              className="wii-track-btn-circle wii-track-btn-base wii-track-btn-pair-btn is-right"
+              aria-label="Close Mail"
+              onClick={closeMailWithFlip}
+              type="button"
+            >
+              <span className="wii-track-btn-icon">
+                <span className="wii-icon wii-icon-wii wii-track-btn-wii-logo" aria-hidden="true"></span>
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </div>

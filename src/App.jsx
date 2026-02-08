@@ -136,6 +136,8 @@ function HostApp() {
             setMenuZoomOut(true);
             setPhase('menu');
             setTimeout(() => setMenuZoomOut(false), 400);
+          } else if (phase === 'messageboard') {
+            setPhase('menu');
           } else if (phase === 'news') {
             setPhase('menu');
           }
@@ -240,6 +242,11 @@ function HostApp() {
     setPhase('messageboard');
   }, [play]);
 
+  const closeMessageBoard = useCallback(() => {
+    play('back');
+    setPhase('menu');
+  }, [play]);
+
   // Open a channel selection screen
   const openChannel = useCallback((channel, origin) => {
     play('open');
@@ -286,12 +293,6 @@ function HostApp() {
     }
   }, [selectedChannel, play]);
 
-  // Phase 3 → Phase 4: open message board
-  const closeMessageBoard = useCallback(() => {
-    play('select');
-    setPhase('menu');
-  }, [play]);
-
   const closeNewsChannel = useCallback(() => {
     play('close');
     setPhase('menu');
@@ -302,11 +303,16 @@ function HostApp() {
     function onKey(e) {
       if ((e.key === 'a' || e.key === 'A') && phase === 'safety') {
         dismissSafety();
+        return;
+      }
+      if (e.key === 'Escape' && phase === 'messageboard') {
+        play('back');
+        setPhase('menu');
       }
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [phase, dismissSafety]);
+  }, [phase, dismissSafety, play]);
 
   // Cursor tracking
   const handleMouseMove = useCallback((e) => {
@@ -376,8 +382,10 @@ function HostApp() {
 
       {/* Phase 3: Wii Menu */}
       <WiiMenu
-        visible={phase === 'menu' || phase === 'channel-select'}
-        fadeOut={phase === 'messageboard' || phase === 'news'}
+        visible={phase === 'menu' || phase === 'channel-select' || phase === 'messageboard'}
+        fadeOut={phase === 'news'}
+        mailLayerVisible={phase === 'messageboard'}
+        onMailClose={closeMessageBoard}
         zoomIn={phase === 'channel-select'}
         zoomOut={menuZoomOut}
         zoomOrigin={zoomOrigin}
@@ -402,7 +410,6 @@ function HostApp() {
       {/* Phase 4: Message Board */}
       <WiiMessageBoard
         visible={phase === 'messageboard'}
-        onBack={closeMessageBoard}
       />
 
       {/* News Channel */}

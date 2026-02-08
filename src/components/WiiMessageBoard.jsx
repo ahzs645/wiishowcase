@@ -9,6 +9,18 @@ const messages = [
   { id: 6, color: '#ffffff', pinColor: '#ffc107', from: 'Heutig_', angle: 4, x: 12, y: 55, message: "Meeting rescheduled to 3pm tomorrow. See you there!", special: false },
 ];
 
+const MESSAGES_PER_PAGE = 3;
+
+function chunkMessages(items, pageSize) {
+  const pages = [];
+  for (let i = 0; i < items.length; i += pageSize) {
+    pages.push(items.slice(i, i + pageSize));
+  }
+  return pages;
+}
+
+const MESSAGE_PAGES = chunkMessages(messages, MESSAGES_PER_PAGE);
+
 function Envelope({ message, onClick, isSelected }) {
   return (
     <div
@@ -272,9 +284,21 @@ function OpenedPostcard({ message, onClose }) {
   );
 }
 
-export default function WiiMessageBoard({ visible, onBack }) {
+export default function WiiMessageBoard({ visible }) {
+  const [currentPage, setCurrentPage] = useState(0);
   const [selectedMessage, setSelectedMessage] = useState(null);
   const [hoveredId, setHoveredId] = useState(null);
+  const currentMessages = MESSAGE_PAGES[currentPage] ?? [];
+
+  const goNextPage = () => {
+    setSelectedMessage(null);
+    setCurrentPage((prev) => prev + 1);
+  };
+
+  const goPrevPage = () => {
+    setSelectedMessage(null);
+    setCurrentPage((prev) => prev - 1);
+  };
 
   return (
     <div className={`message-board-screen${visible ? ' visible' : ''}`}>
@@ -303,7 +327,7 @@ export default function WiiMessageBoard({ visible, onBack }) {
       <div className="board-title">Message Board</div>
 
       {/* Envelopes */}
-      {messages.map((msg) => (
+      {currentMessages.map((msg) => (
         <Envelope
           key={msg.id}
           message={msg}
@@ -313,22 +337,35 @@ export default function WiiMessageBoard({ visible, onBack }) {
       ))}
 
       {/* Navigation Arrows */}
-      <button className="wii-arrow-btn board-arrow-left" />
-      <button className="wii-arrow-btn wii-arrow-btn-right board-arrow-right" />
-
-      {/* Bottom Banner */}
-      <div className="wii-bottom-banner">
-        <div className="wii-bottom-banner-scroll">
-          <wii-banner />
-        </div>
-        <div className="wii-left-btn-bg" />
-        <img
-          src="/assets/settings-icon.png"
-          className="wii-corner-btn left"
-          alt="Back"
-          onClick={onBack}
+      <div
+        className="channel-page-arrow channel-page-arrow-prev board-page-arrow"
+        onClick={goPrevPage}
+      >
+        <button
+          className="wii-arrow-btn wii-arrow-btn-right"
+          type="button"
+          aria-label="Previous message board page"
         />
-        <div className="wii-right-btn-bg" />
+        <button className="wii-track-btn-circle wii-track-btn-base wii-track-btn-no-shadow channel-page-circle" type="button" tabIndex={-1}>
+          <span className="wii-track-btn-icon">
+            <span className="wii-icon wii-icon-minus" aria-hidden="true"></span>
+          </span>
+        </button>
+      </div>
+      <div
+        className="channel-page-arrow channel-page-arrow-next board-page-arrow"
+        onClick={goNextPage}
+      >
+        <button
+          className="wii-arrow-btn"
+          type="button"
+          aria-label="Next message board page"
+        />
+        <button className="wii-track-btn-circle wii-track-btn-base wii-track-btn-no-shadow channel-page-circle" type="button" tabIndex={-1}>
+          <span className="wii-track-btn-icon">
+            <span className="wii-icon wii-icon-plus" aria-hidden="true"></span>
+          </span>
+        </button>
       </div>
 
       {/* Opened Postcard Modal */}
