@@ -274,25 +274,27 @@ export default function WiiMessageBoard({ visible }) {
       <div className="message-board-holder">
         <div className="board-title">Message Board</div>
 
-        <div className="message-board-canvas">
-          {pageTransition ? (
-            <div className={`message-board-pages-track direction-${pageTransition.direction}`}>
-              <div className="message-board-page-snapshot">
-                {pageTransition.direction === 'next'
-                  ? renderCards(outgoingMessages, 'slide-out')
-                  : renderCards(incomingMessages, 'slide-in')}
+        <div className="message-board-viewport">
+          <div className="message-board-canvas">
+            {pageTransition ? (
+              <div className={`message-board-pages-track direction-${pageTransition.direction}`}>
+                <div className="message-board-page-snapshot">
+                  {pageTransition.direction === 'next'
+                    ? renderCards(outgoingMessages, 'slide-out')
+                    : renderCards(incomingMessages, 'slide-in')}
+                </div>
+                <div className="message-board-page-snapshot">
+                  {pageTransition.direction === 'next'
+                    ? renderCards(incomingMessages, 'slide-in')
+                    : renderCards(outgoingMessages, 'slide-out')}
+                </div>
               </div>
-              <div className="message-board-page-snapshot">
-                {pageTransition.direction === 'next'
-                  ? renderCards(incomingMessages, 'slide-in')
-                  : renderCards(outgoingMessages, 'slide-out')}
+            ) : (
+              <div className="message-board-page-snapshot is-current">
+                {renderCards(currentMessages, `page-${currentPage}`)}
               </div>
-            </div>
-          ) : (
-            <div className="message-board-page-snapshot is-current">
-              {renderCards(currentMessages, `page-${currentPage}`)}
-            </div>
-          )}
+            )}
+          </div>
         </div>
 
         <div

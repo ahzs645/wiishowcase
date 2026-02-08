@@ -386,10 +386,16 @@ html, body, #root {
   text-shadow: 0 2px 4px rgba(255, 255, 255, 0.42);
 }
 
-.message-board-canvas {
+.message-board-viewport {
   position: absolute;
   inset: clamp(56px, 8vh, 96px) clamp(76px, 10vw, 160px) clamp(40px, 6vh, 72px);
   overflow: hidden;
+}
+
+.message-board-canvas {
+  --message-board-canvas-bleed: clamp(18px, 2.4vh, 30px);
+  position: absolute;
+  inset: calc(var(--message-board-canvas-bleed) * -1);
 }
 
 .message-board-pages-track {
