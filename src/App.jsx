@@ -348,7 +348,7 @@ function HostApp() {
 
   return (
     <div
-      className="wii wii-bg-authentic"
+      className={`wii wii-bg-authentic${phase === 'messageboard' ? ' is-message-board-active' : ''}`}
       style={{ height: '100vh', width: '100vw', overflow: 'hidden' }}
       onMouseMove={handleMouseMove}
     >

@@ -139,6 +139,11 @@ html, body, #root {
   pointer-events: none;
 }
 
+.wii.is-message-board-active {
+  background-image: none !important;
+  background-color: #c8c8c8;
+}
+
 .wii-menu-wrapper .channel-holder-wrapper {
   transform: translateY(0);
   transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1), opacity 260ms ease;
@@ -349,7 +354,7 @@ html, body, #root {
   opacity: 0;
   transition: opacity 220ms ease;
   pointer-events: none;
-  background: #c8c8c8;
+  background: transparent;
   overflow: hidden;
   font-family: 'FOT-Rodin Pro M', 'FOT-Rodin Pro DB', 'Segoe UI', sans-serif;
 }
@@ -557,9 +562,7 @@ html, body, #root {
 .message-board-opened-bg {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle at 50% 35%, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.72));
-  backdrop-filter: brightness(0.55);
-  -webkit-backdrop-filter: brightness(0.55);
+  background-image: radial-gradient(circle at 50% 35%, rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.62));
 }
 
 .message-board-memo {
