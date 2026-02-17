@@ -88,7 +88,9 @@ export function applyFrame(rawFrame) {
     const nextFrame = this.normalizeFrameInRange(rawFrame, this.loopPlaybackStartFrame, this.loopPlaybackEndFrame);
     const loopLength = this.getLoopPlaybackLength();
     this.frame = nextFrame;
-    this.renderFrame(this.frame);
+    if (!this._skipRender) {
+      this.renderFrame(this.frame);
+    }
     const globalFrame = this.startFrameCount + Math.max(0, this.frame - this.loopPlaybackStartFrame);
     this.onFrame(Math.max(0, this.frame - this.loopPlaybackStartFrame), loopLength, this.phase, globalFrame, this.audioFrame);
     return;
@@ -97,7 +99,9 @@ export function applyFrame(rawFrame) {
   const total = this.getTotalFrames();
   const nextFrame = this.normalizeFrameForPlayback(rawFrame);
   this.frame = nextFrame;
-  this.renderFrame(this.frame);
+  if (!this._skipRender) {
+    this.renderFrame(this.frame);
+  }
   this.onFrame(this.frame, total, this.phase, this.frame, this.audioFrame);
 }
 

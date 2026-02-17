@@ -33,9 +33,14 @@ export function play() {
       if (delta >= frameDuration) {
         const steps = Math.min(8, Math.floor(delta / frameDuration));
         this.lastTime += steps * frameDuration;
-        for (let i = 0; i < steps; i += 1) {
+        // Advance frame state for skipped frames without rendering
+        for (let i = 0; i < steps - 1; i += 1) {
+          this._skipRender = true;
           this.advanceFrame(frameDuration);
         }
+        // Render only the final (visible) frame
+        this._skipRender = false;
+        this.advanceFrame(frameDuration);
       }
     }
 
@@ -113,4 +118,6 @@ export function dispose() {
   this.tevResultContext = null;
   this.tevSampleSurface = null;
   this.tevSampleContext = null;
+  if (this._texSampleCache) this._texSampleCache.clear();
+  if (this._rasColorCache) this._rasColorCache.clear();
 }

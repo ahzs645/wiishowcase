@@ -119,7 +119,7 @@ export class BannerRenderer {
     this.tevResultCache = new Map();
     const tevQ = String(options.tevQuality ?? "fast").toLowerCase();
     this.tevQuality = tevQ === "accurate" ? "accurate" : "fast";
-    this.tevMaxResolution = this.tevQuality === "fast" ? 128 : Infinity;
+    this.tevMaxResolution = this.tevQuality === "fast" ? 64 : Infinity;
     this.parsedFonts = options.fonts ?? {};
     this.fontGlyphCanvases = {};
     this.textScratchSurface = null;
