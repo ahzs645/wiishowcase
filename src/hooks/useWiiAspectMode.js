@@ -10,6 +10,13 @@ const CHANNEL_PATH_43 =
 
 const MQ = '(max-aspect-ratio: 4/3)';
 
+function buildMaskDataUri(viewBox, path) {
+  return `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='${viewBox}' preserveAspectRatio='none'%3E%3Cpath fill='%23fff' d='${path}'/%3E%3C/svg%3E")`;
+}
+
+const MASK_169 = buildMaskDataUri('806 0 391 217', CHANNEL_PATH_169);
+const MASK_43 = buildMaskDataUri('857 0 289 217', CHANNEL_PATH_43);
+
 function getMode(matches) {
   return matches
     ? {
@@ -17,6 +24,7 @@ function getMode(matches) {
         channelPath: CHANNEL_PATH_43,
         viewBox: '857 0 289 217',
         maskUrl: channelMask43,
+        maskDataUri: MASK_43,
         aspectRatio: 4 / 3,
         className: 'wii-43',
       }
@@ -25,6 +33,7 @@ function getMode(matches) {
         channelPath: CHANNEL_PATH_169,
         viewBox: '806 0 391 217',
         maskUrl: channelMask169,
+        maskDataUri: MASK_169,
         aspectRatio: 16 / 9,
         className: 'wii-169',
       };

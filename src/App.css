@@ -248,15 +248,6 @@ html, body, #root {
   position: relative;
   width: 100%;
   overflow: hidden;
-  aspect-ratio: var(--ch-sel-aspect, 391 / 217);
-  -webkit-mask-image: var(--ch-sel-mask);
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  -webkit-mask-size: 100% 100%;
-  mask-image: var(--ch-sel-mask);
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: 100% 100%;
 }
 
 .ch-sel-svg {

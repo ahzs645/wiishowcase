@@ -29,7 +29,7 @@ function getBundleAudio(url) {
 
 export default function ChannelSelection({ visible, channel, onBack, onStart, hasPrev, hasNext, onPrev, onNext }) {
   const audioRef = useRef(null);
-  const { channelPath, viewBox, aspectRatio, maskUrl, is43 } = useWiiAspectMode();
+  const { channelPath, viewBox, aspectRatio, maskDataUri, is43 } = useWiiAspectMode();
 
   useEffect(() => {
     if (!audioRef.current) return;
@@ -85,8 +85,9 @@ export default function ChannelSelection({ visible, channel, onBack, onStart, ha
         <div
           className="ch-sel-frame"
           style={{
-            '--ch-sel-mask': `url(${maskUrl})`,
-            '--ch-sel-aspect': is43 ? '4 / 3' : '391 / 217',
+            aspectRatio: is43 ? '4 / 3' : '391 / 217',
+            WebkitMask: `${maskDataUri} no-repeat center / 100% 100%`,
+            mask: `${maskDataUri} no-repeat center / 100% 100%`,
           }}
         >
           {renderBanner()}
