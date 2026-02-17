@@ -29,7 +29,7 @@ function getBundleAudio(url) {
 
 export default function ChannelSelection({ visible, channel, onBack, onStart, hasPrev, hasNext, onPrev, onNext }) {
   const audioRef = useRef(null);
-  const { channelPath, viewBox, aspectRatio } = useWiiAspectMode();
+  const { channelPath, viewBox, aspectRatio, maskUrl, is43 } = useWiiAspectMode();
 
   useEffect(() => {
     if (!audioRef.current) return;
@@ -82,7 +82,13 @@ export default function ChannelSelection({ visible, channel, onBack, onStart, ha
     <div className={`ch-selection${visible ? ' visible' : ''}`}>
       <audio ref={audioRef} loop />
       <div className="ch-sel-wrapper">
-        <div className="ch-sel-frame">
+        <div
+          className="ch-sel-frame"
+          style={{
+            '--ch-sel-mask': `url(${maskUrl})`,
+            '--ch-sel-aspect': is43 ? '4 / 3' : '391 / 217',
+          }}
+        >
           {renderBanner()}
 
           <div className="ch-sel-buttons">
