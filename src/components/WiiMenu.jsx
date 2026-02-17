@@ -231,21 +231,20 @@ export default function WiiMenu({
             <div className="wii-track-btn-flip-side is-back">
               <button
                 className="wii-track-btn-circle wii-track-btn-base"
-                aria-label="Open Settings"
+                aria-label="Calendar"
                 type="button"
               >
                 <span className="wii-track-btn-icon">
-                  <img src={settingsIcon} alt="" />
+                  <span className="wii-icon wii-icon-calendar" aria-hidden="true"></span>
                 </span>
               </button>
               <button
                 className="wii-track-btn-circle wii-track-btn-base"
-                aria-label={peerConnected ? 'Pair another controller' : 'Pair controller'}
-                onClick={onPairClick}
+                aria-label="Notepad"
                 type="button"
               >
                 <span className="wii-track-btn-icon">
-                  <span className="wii-icon wii-icon-plus" aria-hidden="true"></span>
+                  <span className="wii-icon wii-icon-notepad" aria-hidden="true"></span>
                 </span>
               </button>
             </div>
