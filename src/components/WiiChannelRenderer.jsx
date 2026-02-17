@@ -53,14 +53,19 @@ export default function WiiChannelRenderer({
       if (cancelled) return;
 
       const data = bundle[target];
-      if (!data) return;
+      if (!data) {
+        console.warn(`[WiiChannelRenderer] No "${target}" data in bundle`, url);
+        return;
+      }
 
       const meta = bundle.manifest[target];
       const canvas = canvasRef.current;
-      canvas.width = meta.width;
-      canvas.height = meta.height;
-
       const { layout, startAnim, loopAnim, tplImages, fonts } = data;
+
+      // Use layout dimensions (actual rendering size) rather than manifest
+      // thumbnail dimensions, which may be smaller
+      canvas.width = layout.width ?? meta.width;
+      canvas.height = layout.height ?? meta.height;
 
       rendererRef.current = new BannerRenderer(
         canvas,
@@ -82,6 +87,8 @@ export default function WiiChannelRenderer({
         rendererRef.current.play();
       }
       setReady(true);
+    }).catch((err) => {
+      console.error(`[WiiChannelRenderer] Failed to load "${target}" from`, url, err);
     });
 
     return () => {
