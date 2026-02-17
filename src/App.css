@@ -241,7 +241,7 @@ html, body, #root {
 
 .ch-sel-wrapper {
   position: relative;
-  width: 65vw;
+  width: 85vw;
 }
 
 .ch-sel-frame {
@@ -286,11 +286,11 @@ html, body, #root {
   bottom: 0;
   left: 0;
   right: 0;
+  height: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3vw;
-  padding: 2vh 0 3vh;
+  gap: 3%;
   z-index: 3;
 }
 
@@ -303,6 +303,18 @@ html, body, #root {
 .ch-sel-buttons > .wii-btn-start {
   position: relative;
   z-index: 1;
+  width: 35%;
+  height: 65%;
+  border-radius: 999px;
+  font-size: clamp(14px, 2.5vw, 40px);
+  padding: 0;
+}
+
+.ch-sel-buttons > .wii-btn-start .wii-btn-start-highlight-sharp {
+  width: 90%;
+  height: 60%;
+  left: 2%;
+  top: 5%;
 }
 
 /* ---- Bottom Banner ---- */
