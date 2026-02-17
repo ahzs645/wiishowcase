@@ -1109,8 +1109,8 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
     transform-origin: center 50%;
   }
   .ch-shop > div {
-    transform: scale(0.7);
-    transform-origin: center center;
+    transform: scale(1);
+    transform-origin: center 15%;
   }
 }
 

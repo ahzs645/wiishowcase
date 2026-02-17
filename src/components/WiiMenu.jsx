@@ -148,28 +148,21 @@ export default function WiiMenu({
     };
   }, []);
 
-  // Initialize the Wii calendar after mount
-  useEffect(() => {
-    const el = calendarRef.current;
-    if (!el || el.__wiiCalendar) return;
-    if (window.WiiCalendar) {
-      window.WiiCalendar.init(el);
-    }
-  }, []);
-
   const toggleCalendar = useCallback(() => {
     const el = calendarRef.current;
-    if (!el?.__wiiCalendar) return;
+    if (!el) return;
+    // Lazy-init: first click initializes and shows calendar (starts dropped=true → visible)
+    if (!el.__wiiCalendar) {
+      if (window.WiiCalendar) window.WiiCalendar.init(el);
+      setCalendarOpen(true);
+      return;
+    }
+    // Subsequent clicks: toggle drop animation
+    el.__wiiCalendar.toggle();
     if (!calendarOpen) {
       setCalendarOpen(true);
-      // Container starts display:none via CSS — clear it so dropIn can animate
-      const container = el.querySelector('.wii-calendar-container');
-      if (container) container.style.display = '';
-      // Force reflow then dropIn (internal state starts dropped=true, first toggle will dropOut then we dropIn)
-      el.__wiiCalendar.toggle();
     } else {
-      el.__wiiCalendar.toggle();
-      // Wait for drop-out animation (350ms) then hide the wrapper
+      // Wait for drop-out animation (350ms) then hide wrapper
       setTimeout(() => setCalendarOpen(false), 400);
     }
   }, [calendarOpen]);
