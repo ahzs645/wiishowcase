@@ -151,13 +151,11 @@ export default function WiiMenu({
   const toggleCalendar = useCallback(() => {
     const el = calendarRef.current;
     if (!el) return;
-    // Lazy-init: first click initializes and shows calendar (starts dropped=true → visible)
+    // Lazy-init on first click (starts hidden via data-calendar-hidden)
     if (!el.__wiiCalendar) {
       if (window.WiiCalendar) window.WiiCalendar.init(el);
-      setCalendarOpen(true);
-      return;
     }
-    // Subsequent clicks: toggle drop animation
+    // Toggle the calendar drop animation
     el.__wiiCalendar.toggle();
     if (!calendarOpen) {
       setCalendarOpen(true);
@@ -240,7 +238,8 @@ export default function WiiMenu({
           ref={calendarRef}
           data-wii-calendar=""
           data-calendar-animation="drop"
-          className="wii-calendar wii-calendar-sm"
+          data-calendar-hidden=""
+          className="wii-calendar"
         >
           <button className="wii-arrow-btn wii-arrow-btn-right" data-calendar-prev="" aria-label="Previous month"></button>
           <div className="wii-calendar-container">

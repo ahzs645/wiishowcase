@@ -1317,10 +1317,12 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
 /* ---- Calendar Overlay ---- */
 .wii-menu-calendar-wrapper {
   position: absolute;
-  bottom: calc(6vh + clamp(136px, 9.74vw, 187px) * 0.6);
-  left: 50%;
-  transform: translateX(-50%);
+  inset: 0;
   z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #c8c8c8;
   pointer-events: none;
   visibility: hidden;
 }
@@ -1330,13 +1332,8 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
   visibility: visible;
 }
 
-.wii-menu-calendar-wrapper .wii-calendar {
-  --wii-calendar-width: min(440px, 36vw);
-}
-
-/* Hide calendar container until JS toggles it */
 .wii-menu-calendar-wrapper .wii-calendar-container {
-  display: none;
+  --wii-calendar-width: min(800px, 85vw);
 }
 
 /* ---- Bottom Buttons ---- */
