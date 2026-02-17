@@ -374,13 +374,49 @@ export function runTevPipeline(pane, paneState, width, height) {
   const evalH = Math.max(1, Math.round(h * scale));
 
   // Sample each texture into a buffer at evaluation resolution.
+  // Cache texture samples per pane to avoid redundant getImageData calls.
+  if (!this._texSampleCache) this._texSampleCache = new Map();
   const textureBuffers = [];
   for (let i = 0; i < bindings.length; i += 1) {
-    textureBuffers.push(sampleTextureToBuffer(this, bindings[i], pane, evalW, evalH));
+    const b = bindings[i];
+    if (!b) { textureBuffers.push(null); continue; }
+    const srt = b.textureSRT;
+    const sampleKey = `${pane.name}|${i}|${evalW}|${evalH}|${b.textureName}|${b.wrapS},${b.wrapT}|${srt ? `${srt.xTrans ?? 0},${srt.yTrans ?? 0},${srt.rotation ?? 0},${srt.xScale ?? 1},${srt.yScale ?? 1}` : ''}`;
+    const cachedSample = this._texSampleCache.get(sampleKey);
+    if (cachedSample) {
+      textureBuffers.push(cachedSample);
+    } else {
+      const sampled = sampleTextureToBuffer(this, b, pane, evalW, evalH);
+      textureBuffers.push(sampled);
+      if (sampled) this._texSampleCache.set(sampleKey, sampled);
+      // Evict old entries to bound memory
+      if (this._texSampleCache.size > 256) {
+        const first = this._texSampleCache.keys().next().value;
+        this._texSampleCache.delete(first);
+      }
+    }
   }
 
   // Build rasterized vertex color buffer at evaluation resolution.
-  const rasBuffer = buildRasterizedColorBuffer(pane, paneState, evalW, evalH);
+  // Cache by pane identity + dimensions + vertex colors.
+  if (!this._rasColorCache) this._rasColorCache = new Map();
+  const vc = paneState?.vertexColors ?? pane?.vertexColors;
+  let rasKey = `${pane.name}|${evalW}|${evalH}`;
+  if (vc) {
+    for (let i = 0; i < vc.length; i++) {
+      const c = vc[i];
+      rasKey += `|${c.r},${c.g},${c.b},${c.a}`;
+    }
+  }
+  let rasBuffer = this._rasColorCache.get(rasKey);
+  if (!rasBuffer) {
+    rasBuffer = buildRasterizedColorBuffer(pane, paneState, evalW, evalH);
+    this._rasColorCache.set(rasKey, rasBuffer);
+    if (this._rasColorCache.size > 128) {
+      const first = this._rasColorCache.keys().next().value;
+      this._rasColorCache.delete(first);
+    }
+  }
 
   // Run per-pixel TEV evaluation with effective stages (may be default if none defined).
   const result = evaluateTevPipeline(stages, material, textureBuffers, rasBuffer, evalW, evalH);

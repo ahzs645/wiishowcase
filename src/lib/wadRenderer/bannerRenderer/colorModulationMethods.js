@@ -99,9 +99,9 @@ export function getPaneVertexColorModulation(pane, paneState = null, frame = thi
 
   const sizeKey = `${Math.max(1, Math.round(Math.abs(widthHint)))}x${Math.max(1, Math.round(Math.abs(heightHint)))}`;
   const colorSignature = colors.map((color) => `${color.r},${color.g},${color.b},${color.a}`).join("|");
-  const cacheKey = `${frame.toFixed(4)}|${sizeKey}`;
+  const cacheKey = `${sizeKey}|${colorSignature}`;
   const cached = this.vertexColorModulationCache.get(pane);
-  if (cached && cached.cacheKey === cacheKey && cached.signature === colorSignature) {
+  if (cached && cached.cacheKey === cacheKey) {
     return cached.modulation;
   }
 
@@ -113,7 +113,6 @@ export function getPaneVertexColorModulation(pane, paneState = null, frame = thi
   };
   this.vertexColorModulationCache.set(pane, {
     cacheKey,
-    signature: colorSignature,
     modulation,
   });
   return modulation;
