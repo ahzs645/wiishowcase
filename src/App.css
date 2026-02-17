@@ -267,14 +267,18 @@ html, body, #root {
   pointer-events: none;
 }
 
-/* Button bar */
+/* Button bar — overlays the bottom of the banner */
 .ch-sel-buttons {
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 3vw;
-  padding: 2vh 0 6vh;
+  padding: 2vh 0 3vh;
+  z-index: 3;
 }
 
 .ch-sel-buttons > .wii-bg-pinstripe {

@@ -108,12 +108,8 @@ export default function WiiChannelRenderer({
       className={className}
       style={{
         width: '100%',
-        height: '100%',
         overflow: 'hidden',
         position: 'relative',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
         ...style,
       }}
     >
@@ -121,8 +117,7 @@ export default function WiiChannelRenderer({
         ref={canvasRef}
         style={{
           width: '100%',
-          height: '100%',
-          objectFit: 'contain',
+          height: 'auto',
           display: 'block',
         }}
       />
