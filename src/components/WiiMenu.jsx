@@ -7,6 +7,7 @@ import PhotoChannelContent from './channels/PhotoChannelContent';
 import ShopChannelContent from './channels/ShopChannelContent';
 import NewsChannelContent from './channels/NewsChannelContent';
 import OnliineChannelContent from './channels/OnliineChannelContent';
+import PokemonRanchChannelContent from './channels/PokemonRanchChannelContent';
 import settingsIcon from '../../Wii.css/dist/assets/settings-icon.png';
 import mailIcon from '../../Wii.css/dist/assets/track-btn/icon-email.svg';
 
@@ -18,10 +19,10 @@ const CHANNELS = [
   { id: 'disc', name: 'Disc Channel', content: <DiscChannelContent />, contentClassName: 'ch-disc', video: 'channelart/disc/video.gif', audio: 'channelart/disc/audio.mp3' },
   { id: 'mii', name: 'Mii Channel', content: <MiiChannelContent />, contentClassName: 'ch-mii', video: 'channelart/mii/video.gif', audio: 'channelart/mii/audio.mp3' },
   { id: 'photo', name: 'Photo Channel', content: <PhotoChannelContent />, contentClassName: 'ch-photo', video: 'channelart/photo/video.gif', audio: 'channelart/photo/audio.mp3' },
-  { id: 'shop', name: 'Wii Shop', content: <ShopChannelContent />, contentClassName: 'ch-shop', video: 'channelart/shop/video.gif', audio: 'channelart/shop/audio.mp3' },
+  { id: 'shop', name: 'Wii Shop', content: <ShopChannelContent />, contentClassName: 'ch-shop', bundle: 'channels/shop.zip' },
   { id: 'news', name: 'News Channel', action: 'news', content: <NewsChannelContent />, contentClassName: 'ch-news', video: 'channelart/news/video.gif', audio: 'channelart/news/audio.mp3' },
   { id: 'onliine', name: 'Onliine Channel', content: <OnliineChannelContent />, contentClassName: 'ch-onliine', video: 'channelart/onliine/video.gif', audio: 'channelart/onliine/audio.mp3' },
-  { blank: true },
+  { id: 'pokemon-ranch', name: 'My Pokémon Ranch', content: <PokemonRanchChannelContent />, contentClassName: 'ch-pokemon-ranch', video: 'channelart/pokemon-ranch/banner.png', audio: 'channelart/pokemon-ranch/audio.wav' },
   { blank: true },
   { blank: true },
   { blank: true },
