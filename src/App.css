@@ -1091,7 +1091,7 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
    it ~4.75× more before the zoom — use a smaller scale to compensate. */
 .ch-shop > div {
   transform: scale(0.75);
-  transform-origin: center 75%;
+  transform-origin: center 15%;
 }
 
 .ch-mii canvas,
