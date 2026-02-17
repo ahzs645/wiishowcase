@@ -79,9 +79,11 @@ export default function WiiMenu({
   const [isMailFlipped, setIsMailFlipped] = useState(false);
   const [isMailOpening, setIsMailOpening] = useState(false);
   const [isMailReturning, setIsMailReturning] = useState(false);
+  const [calendarOpen, setCalendarOpen] = useState(false);
   const totalPages = PAGES.length;
   const viewportRef = useRef(null);
   const mailTimerRef = useRef(null);
+  const calendarRef = useRef(null);
   const { time, date } = useDateTime();
 
   const goNext = useCallback(() => {
@@ -145,6 +147,32 @@ export default function WiiMenu({
       }
     };
   }, []);
+
+  // Initialize the Wii calendar after mount
+  useEffect(() => {
+    const el = calendarRef.current;
+    if (!el || el.__wiiCalendar) return;
+    if (window.WiiCalendar) {
+      window.WiiCalendar.init(el);
+    }
+  }, []);
+
+  const toggleCalendar = useCallback(() => {
+    const el = calendarRef.current;
+    if (!el?.__wiiCalendar) return;
+    if (!calendarOpen) {
+      setCalendarOpen(true);
+      // Container starts display:none via CSS — clear it so dropIn can animate
+      const container = el.querySelector('.wii-calendar-container');
+      if (container) container.style.display = '';
+      // Force reflow then dropIn (internal state starts dropped=true, first toggle will dropOut then we dropIn)
+      el.__wiiCalendar.toggle();
+    } else {
+      el.__wiiCalendar.toggle();
+      // Wait for drop-out animation (350ms) then hide the wrapper
+      setTimeout(() => setCalendarOpen(false), 400);
+    }
+  }, [calendarOpen]);
 
   const shouldMailLayerBeOpen = isMailOpening || (mailLayerVisible && !isMailReturning);
   const shouldTrackBeFlipped = isMailFlipped || (mailLayerVisible && !isMailReturning);
@@ -213,6 +241,31 @@ export default function WiiMenu({
 
       <ClockDate date={displayedDate} />
 
+      {/* Calendar (drop animation, hidden by default) */}
+      <div className={`wii-menu-calendar-wrapper${calendarOpen ? ' is-calendar-open' : ''}`}>
+        <div
+          ref={calendarRef}
+          data-wii-calendar=""
+          data-calendar-animation="drop"
+          className="wii-calendar wii-calendar-sm"
+        >
+          <button className="wii-arrow-btn wii-arrow-btn-right" data-calendar-prev="" aria-label="Previous month"></button>
+          <div className="wii-calendar-container">
+            <div className="wii-calendar-inner">
+              <div className="wii-calendar-body">
+                <div className="wii-calendar-grid">
+                  <table className="wii-calendar-table" data-calendar-table=""></table>
+                </div>
+                <div className="wii-calendar-footer">
+                  <div className="wii-calendar-month" data-calendar-month=""></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button className="wii-arrow-btn" data-calendar-next="" aria-label="Next month"></button>
+        </div>
+      </div>
+
       {/* Bottom buttons */}
       <div className="wii-menu-bottom-buttons">
         <div className={`wii-track-btn wii-track-btn-flip wii-track-btn-flip-multi wii-track-btn-left${shouldTrackBeFlipped ? ' is-flipped' : ''}`} data-track-flip="" style={{"--wii-track-btn-front-count": 1, "--wii-track-btn-back-count": 2}}>
@@ -232,6 +285,7 @@ export default function WiiMenu({
               <button
                 className="wii-track-btn-circle wii-track-btn-base"
                 aria-label="Calendar"
+                onClick={toggleCalendar}
                 type="button"
               >
                 <span className="wii-track-btn-icon">
