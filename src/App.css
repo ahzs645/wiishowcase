@@ -1087,13 +1087,6 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
   transform-origin: center 75%;
 }
 
-/* Shop icon canvas is 128x96 (vs 608x456 for others), so CSS stretches
-   it ~4.75× more before the zoom — use a smaller scale to compensate. */
-.ch-shop > div {
-  transform: scale(0.75);
-  transform-origin: center 15%;
-}
-
 .ch-mii canvas,
 .ch-photo canvas,
 .ch-shop canvas {
@@ -1104,12 +1097,9 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
 
 @media (max-aspect-ratio: 4/3) {
   .ch-mii > div,
-  .ch-photo > div {
-    transform: scale(4.5);
-    transform-origin: center 50%;
-  }
+  .ch-photo > div,
   .ch-shop > div {
-    transform: scale(0.95);
+    transform: scale(4.5);
     transform-origin: center 50%;
   }
 }
