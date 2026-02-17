@@ -77,11 +77,20 @@ export default function WiiChannelRenderer({
           loopAnim,
           fonts,
           displayAspect: aspectRatio,
+          useGsap: false,
           ...bundle.manifest.rendererOptions,
           renderState: meta.animSelection.renderState,
           playbackMode: meta.animSelection.playbackMode,
         },
       );
+
+      // Debug: draw a test frame to verify canvas works
+      try {
+        rendererRef.current.renderFrame(0);
+        console.log('[WiiChannelRenderer] renderFrame(0) ok for', target, 'canvas:', canvas.width, 'x', canvas.height);
+      } catch (e) {
+        console.error('[WiiChannelRenderer] renderFrame(0) failed:', e);
+      }
 
       if (playing) {
         rendererRef.current.play();

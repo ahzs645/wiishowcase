@@ -18,7 +18,7 @@ const MAIL_CLOSE_DELAY_MS = 520;
 const CHANNELS = [
   { id: 'disc', name: 'Disc Channel', content: <DiscChannelContent />, contentClassName: 'ch-disc', video: 'channelart/disc/video.gif', audio: 'channelart/disc/audio.mp3' },
   { id: 'mii', name: 'Mii Channel', content: <MiiChannelContent />, contentClassName: 'ch-mii', video: 'channelart/mii/video.gif', audio: 'channelart/mii/audio.mp3' },
-  { id: 'photo', name: 'Photo Channel', content: <PhotoChannelContent />, contentClassName: 'ch-photo', video: 'channelart/photo/video.gif', audio: 'channelart/photo/audio.mp3' },
+  { id: 'photo', name: 'Photo Channel', content: <PhotoChannelContent />, contentClassName: 'ch-photo', bundle: 'channels/photo.zip' },
   { id: 'shop', name: 'Wii Shop', content: <ShopChannelContent />, contentClassName: 'ch-shop', bundle: 'channels/shop.zip' },
   { id: 'news', name: 'News Channel', action: 'news', content: <NewsChannelContent />, contentClassName: 'ch-news', video: 'channelart/news/video.gif', audio: 'channelart/news/audio.mp3' },
   { id: 'onliine', name: 'Onliine Channel', content: <OnliineChannelContent />, contentClassName: 'ch-onliine', video: 'channelart/onliine/video.gif', audio: 'channelart/onliine/audio.mp3' },
