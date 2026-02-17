@@ -4,9 +4,6 @@ import { loadRendererBundle } from '../lib/bundleLoader';
 
 const BASE = import.meta.env.BASE_URL;
 
-// Standard layout size used by most channels (banner/icon at full resolution)
-const STANDARD_WIDTH = 608;
-
 // Cache loaded bundles by URL so we don't re-fetch/re-parse
 const bundleCache = new Map();
 
@@ -43,7 +40,6 @@ export default function WiiChannelRenderer({
   const canvasRef = useRef(null);
   const rendererRef = useRef(null);
   const wrapperRef = useRef(null);
-  const innerRef = useRef(null);
   const [ready, setReady] = useState(false);
 
   // Load bundle and create renderer
@@ -70,15 +66,6 @@ export default function WiiChannelRenderer({
       // thumbnail dimensions, which may be smaller
       canvas.width = layout.width ?? meta.width;
       canvas.height = layout.height ?? meta.height;
-
-      // If the layout is smaller than the standard size, CSS-scale the inner
-      // wrapper up so all channels occupy the same coordinate space. This
-      // lets the parent CSS use identical zoom/transform rules.
-      if (innerRef.current && layout.width < STANDARD_WIDTH) {
-        const upscale = STANDARD_WIDTH / layout.width;
-        innerRef.current.style.transform = `scale(${upscale})`;
-        innerRef.current.style.transformOrigin = 'top left';
-      }
 
       rendererRef.current = new BannerRenderer(
         canvas,
@@ -118,9 +105,6 @@ export default function WiiChannelRenderer({
       rendererRef.current?.dispose();
       rendererRef.current = null;
       setReady(false);
-      if (innerRef.current) {
-        innerRef.current.style.transform = '';
-      }
     };
   }, [bundlePath, target, aspectRatio]);
 
@@ -145,16 +129,14 @@ export default function WiiChannelRenderer({
         ...style,
       }}
     >
-      <div ref={innerRef}>
-        <canvas
-          ref={canvasRef}
-          style={{
-            width: '100%',
-            height: 'auto',
-            display: 'block',
-          }}
-        />
-      </div>
+      <canvas
+        ref={canvasRef}
+        style={{
+          width: '100%',
+          height: 'auto',
+          display: 'block',
+        }}
+      />
     </div>
   );
 }

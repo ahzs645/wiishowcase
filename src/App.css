@@ -1087,6 +1087,13 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
   transform-origin: center 75%;
 }
 
+/* Shop icon is 128x96 and already fills the frame (unlike Mii/Photo
+   whose 608x456 icons are a small part of a larger scene). */
+.ch-shop > div {
+  transform: scale(0.7);
+  transform-origin: center 15%;
+}
+
 .ch-mii canvas,
 .ch-photo canvas,
 .ch-shop canvas {
@@ -1097,10 +1104,13 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
 
 @media (max-aspect-ratio: 4/3) {
   .ch-mii > div,
-  .ch-photo > div,
-  .ch-shop > div {
+  .ch-photo > div {
     transform: scale(4.5);
     transform-origin: center 50%;
+  }
+  .ch-shop > div {
+    transform: scale(0.7);
+    transform-origin: center center;
   }
 }
 
