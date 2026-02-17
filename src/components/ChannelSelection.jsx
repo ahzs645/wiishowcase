@@ -1,26 +1,26 @@
 import { useEffect, useRef } from 'react';
 import WiiChannelRenderer from './WiiChannelRenderer';
-import { loadRendererBundle } from '../lib/bundleLoader';
+import { loadJSZip } from '../lib/loadJSZip';
 
 const BASE = import.meta.env.BASE_URL;
 
-// Cache loaded bundles so audio extraction doesn't re-fetch
+// Cache extracted audio blob URLs
 const bundleAudioCache = new Map();
 
 function getBundleAudio(url) {
   if (!bundleAudioCache.has(url)) {
     bundleAudioCache.set(
       url,
-      fetch(url)
-        .then((r) => r.arrayBuffer())
-        .then((buf) => loadRendererBundle(buf))
-        .then((bundle) => {
-          if (bundle.audioWav) {
-            const blob = new Blob([bundle.audioWav], { type: 'audio/wav' });
-            return URL.createObjectURL(blob);
-          }
-          return null;
-        }),
+      (async () => {
+        const JSZip = await loadJSZip();
+        const res = await fetch(url);
+        const zip = await JSZip.loadAsync(await res.arrayBuffer());
+        const audioFile = zip.file('audio.wav');
+        if (!audioFile) return null;
+        const buf = await audioFile.async('arraybuffer');
+        const blob = new Blob([buf], { type: 'audio/wav' });
+        return URL.createObjectURL(blob);
+      })(),
     );
   }
   return bundleAudioCache.get(url);
@@ -81,7 +81,7 @@ export default function ChannelSelection({ visible, channel, onBack, onStart, ha
 
   return (
     <div className={`ch-selection${visible ? ' visible' : ''}`}>
-      <audio ref={audioRef} />
+      <audio ref={audioRef} loop />
       <div className="ch-sel-wrapper">
         <div className="ch-sel-frame">
           {renderBanner()}
