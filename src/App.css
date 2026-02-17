@@ -1120,23 +1120,24 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
   100% { opacity: 0; }
 }
 
-/* ---- Photo Channel ---- */
-.ch-photo canvas {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain;
+/* ---- Photo / Shop Channel (canvas icon zoom) ---- */
+.ch-photo > div,
+.ch-shop > div {
+  position: absolute !important;
+  inset: 0 !important;
+  overflow: visible !important;
+  transform: scale(4.75);
 }
 
-/* ---- Wii Shop Channel ---- */
-.ch-shop {
-  background-color: white;
-}
-
+.ch-photo canvas,
 .ch-shop canvas {
   width: 100% !important;
-  height: 100% !important;
-  transform: scale(4);
-  transform-origin: center center;
+  height: auto !important;
+  display: block !important;
+}
+
+.ch-shop {
+  background-color: white;
 }
 
 .ch-shop-gradient {
