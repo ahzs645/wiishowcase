@@ -5,7 +5,7 @@ import useWiiAspectMode from '../hooks/useWiiAspectMode';
 
 const BASE = import.meta.env.BASE_URL;
 
-// Cache extracted audio blob URLs
+// Cache extracted audio blob URLs + manifest audio metadata
 const bundleAudioCache = new Map();
 
 function getBundleAudio(url) {
@@ -16,11 +16,15 @@ function getBundleAudio(url) {
         const JSZip = await loadJSZip();
         const res = await fetch(url);
         const zip = await JSZip.loadAsync(await res.arrayBuffer());
+        const manifest = JSON.parse(await zip.file('manifest.json').async('string'));
         const audioFile = zip.file('audio.wav');
         if (!audioFile) return null;
         const buf = await audioFile.async('arraybuffer');
         const blob = new Blob([buf], { type: 'audio/wav' });
-        return URL.createObjectURL(blob);
+        return {
+          url: URL.createObjectURL(blob),
+          meta: manifest.audio ?? null,
+        };
       })(),
     );
   }
@@ -29,7 +33,26 @@ function getBundleAudio(url) {
 
 export default function ChannelSelection({ visible, channel, onBack, onStart, hasPrev, hasNext, onPrev, onNext }) {
   const audioRef = useRef(null);
+  const audioMetaRef = useRef(null);
   const { channelPath, viewBox, aspectRatio, maskDataUri, is43 } = useWiiAspectMode();
+
+  // Handle loop-point seeking: when audio ends, seek to loopStart instead of 0
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const onEnded = () => {
+      const meta = audioMetaRef.current;
+      if (meta?.loopFlag) {
+        const loopTimeSec = meta.loopStart / meta.sampleRate;
+        audio.currentTime = loopTimeSec;
+        audio.play().catch(() => {});
+      }
+    };
+
+    audio.addEventListener('ended', onEnded);
+    return () => audio.removeEventListener('ended', onEnded);
+  }, []);
 
   useEffect(() => {
     if (!audioRef.current) return;
@@ -37,18 +60,24 @@ export default function ChannelSelection({ visible, channel, onBack, onStart, ha
     if (visible && channel) {
       if (channel.bundle) {
         // Load audio from bundle
-        getBundleAudio(BASE + channel.bundle).then((audioUrl) => {
-          if (!audioRef.current || !audioUrl) return;
-          audioRef.current.src = audioUrl;
+        getBundleAudio(BASE + channel.bundle).then((result) => {
+          if (!audioRef.current || !result) return;
+          audioMetaRef.current = result.meta;
+          // Use native loop only when there's no custom loop point
+          audioRef.current.loop = !!(result.meta?.loopFlag && result.meta.loopStart === 0);
+          audioRef.current.src = result.url;
           audioRef.current.currentTime = 0;
           audioRef.current.play().catch(() => {});
         });
       } else if (channel.audio) {
+        audioMetaRef.current = null;
+        audioRef.current.loop = true;
         audioRef.current.src = `${BASE}${channel.audio}`;
         audioRef.current.currentTime = 0;
         audioRef.current.play().catch(() => {});
       }
     } else {
+      audioMetaRef.current = null;
       audioRef.current.pause();
       audioRef.current.src = '';
     }
@@ -80,7 +109,7 @@ export default function ChannelSelection({ visible, channel, onBack, onStart, ha
 
   return (
     <div className={`ch-selection${visible ? ' visible' : ''}`}>
-      <audio ref={audioRef} loop />
+      <audio ref={audioRef} />
       <div className="ch-sel-wrapper">
         <div
           className="ch-sel-frame"

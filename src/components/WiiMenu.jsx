@@ -17,7 +17,7 @@ const MAIL_CLOSE_DELAY_MS = 520;
 
 const CHANNELS = [
   { id: 'disc', name: 'Disc Channel', content: <DiscChannelContent />, contentClassName: 'ch-disc', video: 'channelart/disc/video.gif', audio: 'channelart/disc/audio.mp3' },
-  { id: 'mii', name: 'Mii Channel', content: <MiiChannelContent />, contentClassName: 'ch-mii', video: 'channelart/mii/video.gif', audio: 'channelart/mii/audio.mp3' },
+  { id: 'mii', name: 'Mii Channel', content: <MiiChannelContent />, contentClassName: 'ch-mii', bundle: 'channels/mii.zip' },
   { id: 'photo', name: 'Photo Channel', content: <PhotoChannelContent />, contentClassName: 'ch-photo', bundle: 'channels/photo.zip' },
   { id: 'shop', name: 'Wii Shop', content: <ShopChannelContent />, contentClassName: 'ch-shop', bundle: 'channels/shop.zip' },
   { id: 'news', name: 'News Channel', action: 'news', content: <NewsChannelContent />, contentClassName: 'ch-news', video: 'channelart/news/video.gif', audio: 'channelart/news/audio.mp3' },
@@ -215,67 +215,69 @@ export default function WiiMenu({
 
       {/* Bottom buttons */}
       <div className="wii-menu-bottom-buttons">
-        <div className={`wii-track-btn wii-track-btn-flip wii-track-btn-flip-expanded wii-track-btn-flip-left${shouldTrackBeFlipped ? ' is-flipped' : ''}${mailLayerVisible ? ' has-extra' : ''}`} data-track-flip="">
+        <div className={`wii-track-btn wii-track-btn-flip wii-track-btn-flip-multi wii-track-btn-left${shouldTrackBeFlipped ? ' is-flipped' : ''}`} data-track-flip="" style={{"--wii-track-btn-front-count": 1, "--wii-track-btn-back-count": 2}}>
           <div className="wii-track-btn-track-pair">
-            <div className="wii-track-btn-track"></div>
-            <div className="wii-track-btn-track is-mirrored"></div>
-            <button
-              className="wii-track-btn-circle wii-track-btn-base wii-track-btn-pair-btn is-left"
-              aria-label="Open Settings"
-              type="button"
-            >
-              <span className="wii-track-btn-icon">
-                <img src={settingsIcon} alt="" />
-              </span>
-            </button>
-            <button
-              className="wii-track-btn-circle wii-track-btn-base wii-track-btn-pair-btn is-right"
-              aria-label="Open Settings"
-              type="button"
-            >
-              <span className="wii-track-btn-icon">
-                <img src={settingsIcon} alt="" />
-              </span>
-            </button>
+            <div className="wii-track-btn-flip-side is-front">
+              <button
+                className="wii-track-btn-circle wii-track-btn-base"
+                aria-label="Open Settings"
+                type="button"
+              >
+                <span className="wii-track-btn-icon">
+                  <img src={settingsIcon} alt="" />
+                </span>
+              </button>
+            </div>
+            <div className="wii-track-btn-flip-side is-back">
+              <button
+                className="wii-track-btn-circle wii-track-btn-base"
+                aria-label="Open Settings"
+                type="button"
+              >
+                <span className="wii-track-btn-icon">
+                  <img src={settingsIcon} alt="" />
+                </span>
+              </button>
+              <button
+                className="wii-track-btn-circle wii-track-btn-base"
+                aria-label={peerConnected ? 'Pair another controller' : 'Pair controller'}
+                onClick={onPairClick}
+                type="button"
+              >
+                <span className="wii-track-btn-icon">
+                  <span className="wii-icon wii-icon-plus" aria-hidden="true"></span>
+                </span>
+              </button>
+            </div>
           </div>
-          {mailLayerVisible && (
-            <button
-              className="wii-track-btn-circle wii-track-btn-base wii-track-btn-extra-left"
-              aria-label={peerConnected ? 'Pair another controller' : 'Pair controller'}
-              onClick={onPairClick}
-              type="button"
-            >
-              <span className="wii-track-btn-icon">
-                <span className="wii-icon wii-icon-plus" aria-hidden="true"></span>
-              </span>
-            </button>
-          )}
         </div>
 
-        <div className={`wii-track-btn wii-track-btn-flip${shouldTrackBeFlipped ? ' is-flipped' : ''}`} data-track-flip="">
+        <div className={`wii-track-btn wii-track-btn-flip wii-track-btn-flip-multi${shouldTrackBeFlipped ? ' is-flipped' : ''}`} data-track-flip="" style={{"--wii-track-btn-front-count": 1, "--wii-track-btn-back-count": 1}}>
           <div className="wii-track-btn-track-pair">
-            <div className="wii-track-btn-track"></div>
-            <div className="wii-track-btn-track is-mirrored"></div>
-            <button
-              className="wii-track-btn-circle wii-track-btn-base wii-track-btn-pair-btn is-left"
-              aria-label="Open Mail"
-              onClick={openMailWithFlip}
-              type="button"
-            >
-              <span className="wii-track-btn-icon">
-                <img src={mailIcon} alt="" />
-              </span>
-            </button>
-            <button
-              className="wii-track-btn-circle wii-track-btn-base wii-track-btn-pair-btn is-right"
-              aria-label="Close Mail"
-              onClick={closeMailWithFlip}
-              type="button"
-            >
-              <span className="wii-track-btn-icon">
-                <span className="wii-icon wii-icon-wii wii-track-btn-wii-logo" aria-hidden="true"></span>
-              </span>
-            </button>
+            <div className="wii-track-btn-flip-side is-front">
+              <button
+                className="wii-track-btn-circle wii-track-btn-base"
+                aria-label="Open Mail"
+                onClick={openMailWithFlip}
+                type="button"
+              >
+                <span className="wii-track-btn-icon">
+                  <img src={mailIcon} alt="" />
+                </span>
+              </button>
+            </div>
+            <div className="wii-track-btn-flip-side is-back">
+              <button
+                className="wii-track-btn-circle wii-track-btn-base"
+                aria-label="Close Mail"
+                onClick={closeMailWithFlip}
+                type="button"
+              >
+                <span className="wii-track-btn-icon">
+                  <span className="wii-icon wii-icon-wii wii-track-btn-wii-logo" aria-hidden="true"></span>
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
