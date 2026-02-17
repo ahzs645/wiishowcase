@@ -1,0 +1,47 @@
+<div class="wii-container">
+    <!-- Splash overlay -->
+    <div class="splash-overlay" *ngIf="!hasInteracted" (click)="startExperience()">
+        <div class="scanlines"></div>
+        <div class="splash-content">
+            <div class="news-channel-tv-icon">
+                <p>News Channel</p>
+                <img 
+                    src="assets/images/world-map.png" 
+                    alt="World Map Icon" 
+                    class="map-image-icon"
+                >
+                <img 
+                    src="assets/images/world-map.png" 
+                    alt="World Map Icon" 
+                    class="map-image-icon-overlay"
+                >
+            </div>
+            <p class="click-to-start">Click to start</p>
+        </div>
+    </div>
+
+    <!-- Main content (will be shown after interaction) -->
+    <div class="main-content" [class.visible]="hasInteracted">
+        <div class="scanlines"></div>
+        <header class="header">
+            <div class="title">
+                <h1>News Channel</h1>
+                <span class="subtitle">WiiConnect24</span>
+            </div>
+        </header>
+
+        <div class="world-map">
+            <img 
+                src="assets/images/world-map.png" 
+                alt="World Map" 
+                class="map-image"
+                [@mapState]="hasInteracted ? 'visible' : 'hidden'"
+            >
+        </div>
+
+        <footer class="footer">
+            <button class="wii-button" (click)="goHome()"><span>Wii Menu</span></button>
+            <button class="wii-button" (click)="goToCategories()"><span>Start</span></button>
+        </footer>
+    </div>
+</div>

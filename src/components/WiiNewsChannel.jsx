@@ -24,7 +24,7 @@ export default function WiiNewsChannel({ visible, onBack }) {
     const onClick = (event) => {
       let el = event.target;
       while (el && el !== doc.body) {
-        if (el.matches?.('button.wii-button')) {
+        if (el.matches?.('button')) {
           const label = (el.textContent || '').trim().toLowerCase();
           if (label === 'wii menu') {
             event.preventDefault();

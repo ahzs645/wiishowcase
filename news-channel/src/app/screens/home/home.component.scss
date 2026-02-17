@@ -1,0 +1,215 @@
+@import '../../../styles/variables';
+
+.wii-container {
+  background-color: $news-channel-background;
+  padding: $spacing-xs;
+  font-family: Arial, sans-serif;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    height: 100vh;
+    transition: opacity 0.5s ease-in-out;
+    
+    &.visible {
+      opacity: 1;
+    }
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  padding-top: $spacing-lg;
+  
+  .title {
+    width: 100%;
+    border-top: 3px solid $news-channel-green-dark;
+    h1 {
+      font-family: $wii-font-family;
+      font-weight: 900;
+      font-size: map-get($title-size, base);
+      @include responsive-font-sizes;
+      color: $news-channel-green;
+      background-color: $news-channel-banner;
+      margin: 0;
+      line-height: 1.1;
+      padding: 0 0.5em;
+    }
+    
+    .subtitle {
+      color: $news-channel-banner;
+      width: 100%;
+      display: block;
+      background-color: $news-channel-green-dark;
+      font-size: map-get($subtitle-size, base);
+      @include responsive-subtitle;
+      letter-spacing: clamp(0.5rem, 2vw, 1rem);
+      margin: 0;
+    }
+  }
+}
+
+.world-map {
+  margin: 20px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  
+  .map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transform-origin: center center;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: $spacing-lg;
+  padding-bottom: $spacing-xl;
+  border-top: 3px solid $news-channel-border;
+}
+
+.splash-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $news-channel-background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.splash-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 35rem;
+  
+  .news-channel-tv-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: clamp(1rem, 3vw, 2rem);
+    border: clamp(3px, 0.5vw, 5px) solid #c0c0c0;
+    background: linear-gradient(90deg, 
+      #30932f 0%,
+      #295d10 100%
+    );
+    position: relative;
+    box-shadow: 0 0 50px rgba(255,255,255,0.2);
+    overflow: hidden;
+
+    p {
+      color: #ffffff;
+      font-size: clamp(1.5rem, 5vw, 3rem);
+      font-weight: bold;
+      letter-spacing: 0.1rem;
+      margin-top: clamp(1rem, 3vw, 2rem);
+      text-shadow: 
+        2px 2px 0 rgba(0,0,0,0.2),
+        -2px -2px 0 rgba(255,255,255,0.1);
+      z-index: 1;
+    }
+
+    .map-image-icon {
+      width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+      scale: 1.08;
+      left: clamp(3px, 3vh, 5px);
+      opacity: 0.1;
+      mix-blend-mode: plus-lighter;
+      position: absolute;
+      filter: drop-shadow(0 0 20px rgb(0, 255, 60)), blur(10px);
+      top: clamp(20px, 8vh, 40px);
+    }
+
+    .map-image-icon-overlay {
+      width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+      opacity: 0.4;
+      mix-blend-mode: difference;
+      position: absolute;
+      top: clamp(20px, 8vh, 40px);
+      z-index: 1;
+    }
+  }
+
+  .click-to-start {
+    color: $news-channel-green;
+    font-size: clamp(1rem, 3vw, 2rem);
+    font-weight: bold;
+    margin-top: clamp(1rem, 3vw, 2rem);
+  }
+}
+
+.scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 15;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(255, 255, 255, 0.05) 0.5%,
+      transparent 1%
+    );
+    animation: scanlines 10s linear infinite;
+  }
+}
+
+@keyframes scanlines {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .splash-content .news-channel-tv-icon {
+    
+    p {
+      margin-top: 0.8rem;
+    }
+    
+    .map-image-icon {
+      top: 20px;
+    }
+    
+    .map-image-icon-overlay {
+      top: 20px;
+    }
+  }
+}

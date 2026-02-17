@@ -1,3 +1,5 @@
 node_modules
 dist
 .DS_Store
+news-channel/node_modules
+news-channel/.angular
