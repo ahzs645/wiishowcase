@@ -11,6 +11,7 @@ import CompanionController from './components/CompanionController';
 import DevModeSelector from './components/DevModeSelector';
 import useSounds from './hooks/useSounds';
 import useMultiWebRTC from './hooks/useMultiWebRTC';
+import useWiiAspectMode from './hooks/useWiiAspectMode';
 
 /**
  * Parse hash route to determine mode.
@@ -78,6 +79,7 @@ function HostApp() {
   const prevButtonsRefs = useRef({});
 
   const { play } = useSounds();
+  const { className: aspectClass } = useWiiAspectMode();
   const dismissSafetyRef = useRef(null);
 
   // Handle messages from any companion (controllerId identifies which one)
@@ -355,7 +357,7 @@ function HostApp() {
 
   return (
     <div
-      className={`wii wii-bg-authentic${phase === 'messageboard' ? ' is-message-board-active' : ''}`}
+      className={`wii wii-bg-authentic ${aspectClass}${phase === 'messageboard' ? ' is-message-board-active' : ''}`}
       style={{ height: '100vh', width: '100vw', overflow: 'hidden' }}
       onMouseMove={handleMouseMove}
     >
