@@ -1941,3 +1941,221 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
+
+/* ---- HOME Menu Overlay ---- */
+.home-menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9500;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.15s ease;
+}
+
+.home-menu-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Bar */
+.home-menu-top-bar {
+  background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
+  animation: homeMenuSlideDown 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  flex-shrink: 0;
+}
+
+@keyframes homeMenuSlideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+.home-menu-top-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7vh 4vw;
+  border-bottom: 1px solid #444;
+}
+
+.home-menu-title {
+  color: #fff;
+  font-size: clamp(18px, 3.5vh, 32px);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.home-menu-close-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(180deg, #e8e8e8 0%, #c0c0c0 100%);
+  border: 1px solid #999;
+  border-radius: 20px;
+  color: #333;
+  font-size: clamp(13px, 2.2vh, 20px);
+  font-weight: 500;
+  padding: 6px 16px 6px 10px;
+  cursor: pointer;
+  transition: background 150ms ease;
+}
+
+.home-menu-close-btn:hover {
+  background: linear-gradient(180deg, #f0f0f0 0%, #d0d0d0 100%);
+}
+
+.home-menu-close-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(18px, 2.5vh, 26px);
+  height: clamp(18px, 2.5vh, 26px);
+  background: #3b7dd8;
+  border-radius: 50%;
+  color: #fff;
+  padding: 3px;
+}
+
+/* Center Content */
+.home-menu-center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4vw;
+  padding: 2vh 4vw;
+  position: relative;
+}
+
+.home-menu-remote {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: absolute;
+  left: 3vw;
+  bottom: -58vh;
+  z-index: 2;
+}
+
+.home-menu-remote .wii-icon-remote {
+  --wii-icon-size: clamp(250px, 75vh, 620px);
+  width: clamp(120px, 19vw, 300px);
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.6));
+}
+
+.home-menu-buttons {
+  display: flex;
+  gap: 3vw;
+  align-items: center;
+}
+
+.home-menu-buttons .wii-btn-start {
+  min-width: 180px;
+}
+
+/* Bottom Bar */
+.home-menu-bottom-bar {
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+  animation: homeMenuSlideUp 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  flex-shrink: 0;
+  position: relative;
+}
+
+@keyframes homeMenuSlideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.home-menu-bottom-bar-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 7vh 4vw 6vh;
+  border-top: 1px solid #444;
+}
+
+/* Battery Indicators */
+.home-menu-battery-row {
+  display: flex;
+  gap: 1.5vw;
+  align-items: center;
+  background: rgba(30, 30, 30, 0.95);
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 8px 16px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.home-menu-battery {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.home-menu-battery-label {
+  color: #888;
+  font-size: clamp(11px, 1.8vh, 16px);
+  font-weight: 600;
+}
+
+.home-menu-battery.connected .home-menu-battery-label {
+  color: #ccc;
+}
+
+.home-menu-battery-indicator {
+  display: flex;
+  gap: 2px;
+}
+
+.home-menu-battery-seg {
+  width: clamp(6px, 1vw, 10px);
+  height: clamp(8px, 1.4vh, 14px);
+  background: #333;
+  border: 1px solid #555;
+  border-radius: 1px;
+}
+
+.home-menu-battery-seg.filled {
+  background: linear-gradient(180deg, #6fc, #3a8);
+  border-color: #2a7;
+}
+
+.home-menu-settings-text {
+  color: #aaa;
+  font-size: clamp(12px, 2vh, 18px);
+  letter-spacing: 0.3px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .home-menu-center {
+    flex-direction: column;
+    gap: 2vh;
+  }
+
+  .home-menu-remote {
+    position: static;
+  }
+
+  .home-menu-remote .wii-icon-remote {
+    --wii-icon-size: 16vh;
+  }
+
+  .home-menu-buttons {
+    flex-direction: column;
+    gap: 2vh;
+  }
+
+  .home-menu-battery-row {
+    gap: 8px;
+  }
+}

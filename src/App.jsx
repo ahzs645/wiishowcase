@@ -9,6 +9,7 @@ import WiiPointer from './components/WiiPointer';
 import PairingScreen from './components/PairingScreen';
 import CompanionController from './components/CompanionController';
 import DevModeSelector from './components/DevModeSelector';
+import HomeMenu from './components/HomeMenu';
 import useSounds from './hooks/useSounds';
 import useMultiWebRTC from './hooks/useMultiWebRTC';
 import useWiiAspectMode from './hooks/useWiiAspectMode';
@@ -67,6 +68,7 @@ function HostApp() {
   const [cursorActive, setCursorActive] = useState(startInDevMode || startScreen);
   const [devMode, setDevMode] = useState(startInDevMode);
   const [showPairing, setShowPairing] = useState(false);
+  const [showHomeMenu, setShowHomeMenu] = useState(false);
   const [selectedChannel, setSelectedChannel] = useState(null);
   const [menuZoomOut, setMenuZoomOut] = useState(false);
   const [zoomOrigin, setZoomOrigin] = useState(null);
@@ -217,6 +219,23 @@ function HostApp() {
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [devMode]);
 
+  // Ctrl+H to toggle HOME Menu
+  useEffect(() => {
+    function onKeyDown(e) {
+      if (e.key === 'h' && e.ctrlKey) {
+        e.preventDefault();
+        if (phase === 'black' || phase === 'safety') return;
+        setShowHomeMenu((prev) => {
+          if (!prev) play('open');
+          else play('close');
+          return !prev;
+        });
+      }
+    }
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [phase, play]);
+
   // Phase 1 → Phase 2: black fades after 1.2s (skip in dev mode)
   useEffect(() => {
     if (devMode || startScreen) return;
@@ -314,6 +333,11 @@ function HostApp() {
         dismissSafety();
         return;
       }
+      if (e.key === 'Escape' && showHomeMenu) {
+        play('close');
+        setShowHomeMenu(false);
+        return;
+      }
       if (e.key === 'Escape' && phase === 'messageboard') {
         play('back');
         setPhase('menu');
@@ -321,7 +345,7 @@ function HostApp() {
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [phase, dismissSafety, play]);
+  }, [phase, showHomeMenu, dismissSafety, play]);
 
   // Cursor tracking
   const handleMouseMove = useCallback((e) => {
@@ -348,6 +372,27 @@ function HostApp() {
       await acceptAnswer(pairingControllerId, answer);
     }
   }, [pairingControllerId, acceptAnswer]);
+
+  // HOME Menu callbacks
+  const closeHomeMenu = useCallback(() => {
+    play('close');
+    setShowHomeMenu(false);
+  }, [play]);
+
+  const handleHomeMenuWiiMenu = useCallback(() => {
+    play('select');
+    setShowHomeMenu(false);
+    setPhase('menu');
+    setSelectedChannel(null);
+    setMenuZoomOut(false);
+  }, [play]);
+
+  const handleHomeMenuReset = useCallback(() => {
+    play('select');
+    setShowHomeMenu(false);
+    setPhase('black');
+    setCursorActive(false);
+  }, [play]);
 
   // Dev mode: jump to specific screen
   const jumpToScreen = useCallback((screen) => {
@@ -439,6 +484,16 @@ function HostApp() {
         onAcceptAnswer={handleAcceptAnswer}
         onStartPairing={openPairing}
         onClose={closePairing}
+      />
+
+      {/* HOME Menu overlay */}
+      <HomeMenu
+        visible={showHomeMenu}
+        onClose={closeHomeMenu}
+        onWiiMenu={handleHomeMenuWiiMenu}
+        onReset={handleHomeMenuReset}
+        controllers={controllers}
+        connectedCount={connectedCount}
       />
 
       {/* Dev Mode Selector */}
