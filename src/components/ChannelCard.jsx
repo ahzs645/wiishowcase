@@ -15,6 +15,11 @@ export default function ChannelCard({
   if (blank) {
     return (
       <div className="wii-channel-ui wii-channel-ui-empty" style={maskStyle}>
+        {content && (
+          <div className={`wii-channel-ui-content ${contentClassName || 'channel-inner'}`}>
+            {content}
+          </div>
+        )}
         <svg
           className="wii-channel-ui-svg"
           viewBox={viewBox}

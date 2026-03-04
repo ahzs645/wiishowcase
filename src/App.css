@@ -1035,7 +1035,8 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
 .ch-shop,
 .ch-news,
 .ch-onliine,
-.ch-pokemon-ranch {
+.ch-pokemon-ranch,
+.ch-blank {
   position: relative;
   width: 100%;
   height: 100%;
