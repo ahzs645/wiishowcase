@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from 'react';
-import { BannerRenderer } from '@firstform/wii-channel-renderer';
 import { loadRendererBundle } from '@firstform/wii-channel-renderer/bundle-loader';
-import { resolveIconViewport } from '../../utils/layout';
+import { createRendererFromBundle } from '@firstform/wii-channel-renderer/bundle-renderer';
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -14,28 +13,9 @@ function getBlankImage() {
       .then((r) => r.arrayBuffer())
       .then((buf) => loadRendererBundle(buf))
       .then((bundle) => {
-        const data = bundle.icon;
-        if (!data) return null;
-
-        const meta = bundle.manifest.icon;
-        const { layout: rawLayout, startAnim, loopAnim, tplImages, fonts } = data;
-        const viewport = resolveIconViewport(rawLayout);
-        const layout = { ...rawLayout, width: viewport.width, height: viewport.height };
-        const refAspect = viewport.width / viewport.height;
-
         const canvas = document.createElement('canvas');
-        canvas.width = layout.width ?? meta.width;
-        canvas.height = layout.height ?? meta.height;
 
-        const renderer = new BannerRenderer(canvas, layout, startAnim ?? loopAnim, tplImages, {
-          startAnim,
-          loopAnim,
-          fonts,
-          displayAspect: 4 / 3,
-          referenceAspectRatio: refAspect,
-          useGsap: false,
-          ...bundle.manifest.rendererOptions,
-          renderState: meta.animSelection.renderState,
+        const { renderer } = createRendererFromBundle(canvas, bundle, 'icon', {
           playbackMode: 'hold',
         });
 

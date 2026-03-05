@@ -1,7 +1,6 @@
 import { useRef, useEffect, useState, memo } from 'react';
-import { BannerRenderer } from '@firstform/wii-channel-renderer';
 import { loadRendererBundle } from '@firstform/wii-channel-renderer/bundle-loader';
-import { resolveIconViewport } from '../utils/layout';
+import { createRendererFromBundle } from '@firstform/wii-channel-renderer/bundle-renderer';
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -29,6 +28,7 @@ export default memo(function WiiChannelRenderer({
   playing = true,
   aspectRatio = 4 / 3,
   fps = 30,
+  settings,
   className,
   style,
 }) {
@@ -71,45 +71,19 @@ export default memo(function WiiChannelRenderer({
     fetchBundle(url).then((bundle) => {
       if (cancelled) return;
 
-      const data = bundle[target];
-      if (!data) {
-        console.warn(`[WiiChannelRenderer] No "${target}" data in bundle`, url);
+      const canvas = canvasRef.current;
+
+      try {
+        const { renderer } = createRendererFromBundle(canvas, bundle, target, {
+          displayAspect: aspectRatio,
+          fps,
+          ...settings,
+        });
+        rendererRef.current = renderer;
+      } catch (e) {
+        console.error(`[WiiChannelRenderer] createRendererFromBundle failed:`, e);
         return;
       }
-
-      const meta = bundle.manifest[target];
-      const canvas = canvasRef.current;
-      const { layout: rawLayout, startAnim, loopAnim, tplImages, fonts } = data;
-
-      let layout = rawLayout;
-      let refAspect = undefined;
-      if (target === 'icon') {
-        const viewport = resolveIconViewport(rawLayout);
-        layout = { ...rawLayout, width: viewport.width, height: viewport.height };
-        refAspect = viewport.width / viewport.height;
-      }
-
-      canvas.width = layout.width ?? meta.width;
-      canvas.height = layout.height ?? meta.height;
-
-      rendererRef.current = new BannerRenderer(
-        canvas,
-        layout,
-        startAnim ?? loopAnim,
-        tplImages,
-        {
-          startAnim,
-          loopAnim,
-          fonts,
-          displayAspect: aspectRatio,
-          referenceAspectRatio: refAspect,
-          fps,
-          useGsap: false,
-          ...bundle.manifest.rendererOptions,
-          renderState: meta.animSelection.renderState,
-          playbackMode: meta.animSelection.playbackMode,
-        },
-      );
 
       try {
         rendererRef.current.renderFrame(0);
@@ -132,7 +106,7 @@ export default memo(function WiiChannelRenderer({
       rendererRef.current = null;
       setReady(false);
     };
-  }, [bundlePath, target, aspectRatio, fps]);
+  }, [bundlePath, target, aspectRatio, fps, settings]);
 
   // Handle play/pause toggling
   useEffect(() => {
