@@ -28,6 +28,7 @@ export default memo(function WiiChannelRenderer({
   target = 'icon',
   playing = true,
   aspectRatio = 4 / 3,
+  fps = 30,
   className,
   style,
 }) {
@@ -102,6 +103,7 @@ export default memo(function WiiChannelRenderer({
           fonts,
           displayAspect: aspectRatio,
           referenceAspectRatio: refAspect,
+          fps,
           useGsap: false,
           ...bundle.manifest.rendererOptions,
           renderState: meta.animSelection.renderState,
@@ -130,7 +132,7 @@ export default memo(function WiiChannelRenderer({
       rendererRef.current = null;
       setReady(false);
     };
-  }, [bundlePath, target, aspectRatio]);
+  }, [bundlePath, target, aspectRatio, fps]);
 
   // Handle play/pause toggling
   useEffect(() => {
