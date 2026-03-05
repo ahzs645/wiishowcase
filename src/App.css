@@ -1328,6 +1328,20 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
   --wii-calendar-width: min(800px, 85vw);
 }
 
+.wii-calendar > .channel-page-arrow {
+  top: 50%;
+  transform: translateY(-70%);
+  z-index: 2;
+}
+
+.wii-calendar > .channel-page-arrow-prev {
+  left: -62px;
+}
+
+.wii-calendar > .channel-page-arrow-next {
+  right: -62px;
+}
+
 /* ---- Bottom Buttons ---- */
 .wii-menu-bottom-buttons {
   --wii-menu-track-btn-size: clamp(136px, 9.74vw, 187px);

@@ -22,7 +22,7 @@ const TRACK_BTN_RIGHT_STYLE = { "--wii-track-btn-front-count": 1, "--wii-track-b
 const BLANK = { blank: true, content: <BlankChannelContent />, contentClassName: 'ch-blank' };
 
 const CHANNELS = [
-  { id: 'disc', name: 'Disc Channel', content: <DiscChannelContent />, contentClassName: 'ch-disc', video: 'channelart/disc/video.gif', audio: 'channelart/disc/audio.mp3' },
+  { id: 'disc', name: 'Disc Channel', content: <DiscChannelContent />, contentClassName: 'ch-disc', bundle: 'channels/disc.zip' },
   { id: 'mii', name: 'Mii Channel', content: <MiiChannelContent />, contentClassName: 'ch-mii', bundle: 'channels/mii.zip' },
   { id: 'photo', name: 'Photo Channel', content: <PhotoChannelContent />, contentClassName: 'ch-photo', bundle: 'channels/photo.zip' },
   { id: 'shop', name: 'Wii Shop', content: <ShopChannelContent />, contentClassName: 'ch-shop', bundle: 'channels/shop.zip' },
@@ -259,7 +259,14 @@ export default function WiiMenu({
           data-calendar-hidden=""
           className="wii-calendar"
         >
-          <button className="wii-arrow-btn wii-arrow-btn-right" data-calendar-prev="" aria-label="Previous month"></button>
+          <div className="channel-page-arrow channel-page-arrow-prev" data-calendar-prev="">
+            <button className="wii-arrow-btn wii-arrow-btn-right" type="button" aria-label="Previous month"></button>
+            <button className="wii-track-btn-circle wii-track-btn-base wii-track-btn-no-shadow channel-page-circle" type="button" tabIndex={-1}>
+              <span className="wii-track-btn-icon">
+                <span className="wii-icon wii-icon-minus" aria-hidden="true"></span>
+              </span>
+            </button>
+          </div>
           <div className="wii-calendar-container">
             <div className="wii-calendar-inner">
               <div className="wii-calendar-body">
@@ -272,7 +279,14 @@ export default function WiiMenu({
               </div>
             </div>
           </div>
-          <button className="wii-arrow-btn" data-calendar-next="" aria-label="Next month"></button>
+          <div className="channel-page-arrow channel-page-arrow-next" data-calendar-next="">
+            <button className="wii-arrow-btn" type="button" aria-label="Next month"></button>
+            <button className="wii-track-btn-circle wii-track-btn-base wii-track-btn-no-shadow channel-page-circle" type="button" tabIndex={-1}>
+              <span className="wii-track-btn-icon">
+                <span className="wii-icon wii-icon-plus" aria-hidden="true"></span>
+              </span>
+            </button>
+          </div>
         </div>
       </div>
 
