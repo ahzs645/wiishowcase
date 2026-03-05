@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState, memo } from 'react';
 import { loadRendererBundle } from '@firstform/wii-channel-renderer/bundle-loader';
 import { createRendererFromBundle } from '@firstform/wii-channel-renderer/bundle-renderer';
+import useWiiAspectMode from '../hooks/useWiiAspectMode';
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -25,12 +26,14 @@ export default memo(function WiiChannelRenderer({
   bundlePath,
   target = 'icon',
   playing = true,
-  aspectRatio = 4 / 3,
+  aspectRatio,
   fps = 30,
   settings,
   className,
   style,
 }) {
+  const { aspectRatio: wiiAspect } = useWiiAspectMode();
+  const resolvedAspect = aspectRatio ?? wiiAspect;
   const canvasRef = useRef(null);
   const rendererRef = useRef(null);
   const wrapperRef = useRef(null);
@@ -74,7 +77,7 @@ export default memo(function WiiChannelRenderer({
 
       try {
         const mergedSettings = {
-          displayAspect: aspectRatio,
+          displayAspect: resolvedAspect,
           fps,
           ...settings,
         };
@@ -106,7 +109,7 @@ export default memo(function WiiChannelRenderer({
       rendererRef.current = null;
       setReady(false);
     };
-  }, [bundlePath, target, aspectRatio, fps, settings]);
+  }, [bundlePath, target, resolvedAspect, fps, settings]);
 
   // Handle play/pause toggling
   useEffect(() => {

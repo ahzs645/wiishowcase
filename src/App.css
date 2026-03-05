@@ -1387,6 +1387,85 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
   transform: scaleX(-1);
 }
 
+/* ---- Calendar Mode: swap-style slide for bottom tracks ---- */
+
+/* Default return transition: tracks slide back in (slow ease-out, delayed) */
+.wii-menu-bottom-buttons > .wii-track-btn-flip-multi {
+  transition: transform 400ms ease-out 350ms;
+}
+
+/* Right track slides off to the right */
+.wii-menu-bottom-buttons.is-calendar-mode > .wii-track-btn-flip-multi:not(.wii-track-btn-left) {
+  transform: translateX(calc(100% + 60px));
+  transition: transform 300ms ease-in 0ms;
+  pointer-events: none;
+}
+
+/* Left track slides off to the left (scaleX(-1) reverses the direction) */
+.wii-menu-bottom-buttons.is-calendar-mode > .wii-track-btn-left {
+  transform: scaleX(-1) translateX(calc(100% + 60px));
+  transition: transform 300ms ease-in 0ms;
+  pointer-events: none;
+}
+
+/* Calendar back track — positioned at the left, same as left track */
+.wii-menu-bottom-buttons .calendar-back-track {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  pointer-events: none;
+  /* Mirrored so the capsule faces left-edge (flat left, rounded right) */
+  transform: scaleX(-1) translateX(calc(100% + 60px));
+  transform-origin: center;
+  transition: transform 300ms ease-in 0ms;
+}
+
+/* Back track capsule — reuses the swap-side visual */
+.calendar-back-track-capsule {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  width: calc(var(--wii-track-width) + 60px);
+  height: var(--wii-track-height);
+  background: linear-gradient(180deg, #e5e6e9 0%, #d9d9d9 42%, #d3d3d3 100%);
+  border: 8px solid #b3b5bb;
+  border-right: none;
+  box-sizing: border-box;
+  border-radius: calc(var(--wii-track-height) / 2) 0 0 calc(var(--wii-track-height) / 2);
+}
+
+/* Inner sheen (matches wii-track-swap-side::before) */
+.calendar-back-track-capsule::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 8px;
+  right: 0;
+  border-radius: calc((var(--wii-track-height) - 16px) / 2) 0 0 calc((var(--wii-track-height) - 16px) / 2);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0.08) 45%,
+    rgba(0, 0, 0, 0.04) 100%
+  );
+  pointer-events: none;
+}
+
+/* Counter-mirror the Back button text so it reads correctly */
+.calendar-back-track .wii-btn-start {
+  transform: scaleX(-1);
+  position: relative;
+  z-index: 1;
+}
+
+/* Calendar mode: back track slides in from the left */
+.wii-menu-bottom-buttons.is-calendar-mode .calendar-back-track {
+  transform: scaleX(-1) translateX(0);
+  transition: transform 400ms ease-out 350ms;
+  pointer-events: auto;
+}
 
 /* ---- Pair Remote Button ---- */
 .wii-pair-btn {

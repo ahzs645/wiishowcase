@@ -35,6 +35,10 @@ export default function ChannelSelection({ visible, channel, onBack, onStart, ha
   const audioRef = useRef(null);
   const audioMetaRef = useRef(null);
   const { channelPath, viewBox, aspectRatio, maskDataUri, is43 } = useWiiAspectMode();
+  const bundleSettings = channel?.rendererSettings;
+  const bundleBannerSettings = bundleSettings && ('banner' in bundleSettings || 'icon' in bundleSettings)
+    ? bundleSettings.banner
+    : bundleSettings;
 
   // Handle loop-point seeking: when audio ends, seek to loopStart instead of 0
   useEffect(() => {
@@ -92,6 +96,7 @@ export default function ChannelSelection({ visible, channel, onBack, onStart, ha
           target="banner"
           playing={visible}
           aspectRatio={aspectRatio}
+          settings={bundleBannerSettings}
           className="ch-sel-video"
         />
       );

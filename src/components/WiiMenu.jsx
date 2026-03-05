@@ -9,6 +9,7 @@ import NewsChannelContent from './channels/NewsChannelContent';
 import OnliineChannelContent from './channels/OnliineChannelContent';
 import PokemonRanchChannelContent from './channels/PokemonRanchChannelContent';
 import BlankChannelContent from './channels/BlankChannelContent';
+import { NEWS_RENDERER_SETTINGS } from './channels/newsChannelRendererSettings';
 import settingsIcon from '../../Wii.css/dist/assets/settings-icon.png';
 import mailIcon from '../../Wii.css/dist/assets/track-btn/icon-email.svg';
 
@@ -26,7 +27,7 @@ const CHANNELS = [
   { id: 'mii', name: 'Mii Channel', content: <MiiChannelContent />, contentClassName: 'ch-mii', bundle: 'channels/mii.zip' },
   { id: 'photo', name: 'Photo Channel', content: <PhotoChannelContent />, contentClassName: 'ch-photo', bundle: 'channels/photo.zip' },
   { id: 'shop', name: 'Wii Shop', content: <ShopChannelContent />, contentClassName: 'ch-shop', bundle: 'channels/shop.zip' },
-  { id: 'news', name: 'News Channel', action: 'news', content: <NewsChannelContent />, contentClassName: 'ch-news', video: 'channelart/news/video.gif', audio: 'channelart/news/audio.mp3' },
+  { id: 'news', name: 'News Channel', action: 'news', content: <NewsChannelContent />, contentClassName: 'ch-news', bundle: 'channels/news.zip', rendererSettings: NEWS_RENDERER_SETTINGS, video: 'channelart/news/video.gif', audio: 'channelart/news/audio.mp3' },
   { id: 'onliine', name: 'Onliine Channel', content: <OnliineChannelContent />, contentClassName: 'ch-onliine', video: 'channelart/onliine/video.gif', audio: 'channelart/onliine/audio.mp3' },
   { id: 'pokemon-ranch', name: 'My Pokémon Ranch', content: <PokemonRanchChannelContent />, contentClassName: 'ch-pokemon-ranch', video: 'channelart/pokemon-ranch/banner.png', audio: 'channelart/pokemon-ranch/audio.wav' },
   { ...BLANK },
@@ -86,6 +87,7 @@ export default function WiiMenu({
   const [isMailOpening, setIsMailOpening] = useState(false);
   const [isMailReturning, setIsMailReturning] = useState(false);
   const [calendarOpen, setCalendarOpen] = useState(false);
+  const [calendarSwapped, setCalendarSwapped] = useState(false);
   const totalPages = PAGES.length;
   const viewportRef = useRef(null);
   const mailTimerRef = useRef(null);
@@ -165,11 +167,21 @@ export default function WiiMenu({
     el.__wiiCalendar.toggle();
     if (!calendarOpen) {
       setCalendarOpen(true);
+      setCalendarSwapped(true);
     } else {
+      setCalendarSwapped(false);
       // Wait for drop-out animation (350ms) then hide wrapper
       setTimeout(() => setCalendarOpen(false), 400);
     }
   }, [calendarOpen]);
+
+  const closeCalendarMode = useCallback(() => {
+    const el = calendarRef.current;
+    if (!el?.__wiiCalendar) return;
+    el.__wiiCalendar.toggle();
+    setCalendarSwapped(false);
+    setTimeout(() => setCalendarOpen(false), 400);
+  }, []);
 
   // Stable click handler that reads channel from data attribute to avoid inline closures
   const handleChannelClick = useCallback((e) => {
@@ -291,7 +303,7 @@ export default function WiiMenu({
       </div>
 
       {/* Bottom buttons */}
-      <div className="wii-menu-bottom-buttons">
+      <div className={`wii-menu-bottom-buttons${calendarSwapped ? ' is-calendar-mode' : ''}`}>
         <div className={`wii-track-btn wii-track-btn-flip wii-track-btn-flip-multi wii-track-btn-left${shouldTrackBeFlipped ? ' is-flipped' : ''}`} data-track-flip="" style={TRACK_BTN_LEFT_STYLE}>
           <div className="wii-track-btn-track-pair">
             <div className="wii-track-btn-flip-side is-front">
@@ -355,6 +367,16 @@ export default function WiiMenu({
                 </span>
               </button>
             </div>
+          </div>
+        </div>
+
+        {/* Calendar back track — slides in from the left when calendar is open */}
+        <div className="wii-track-btn calendar-back-track">
+          <div className="calendar-back-track-capsule">
+            <button className="wii-btn-start wii-btn-start-md" onClick={closeCalendarMode} type="button">
+              <div className="wii-btn-start-highlight-sharp"></div>
+              <span>Back</span>
+            </button>
           </div>
         </div>
       </div>
