@@ -195,7 +195,7 @@ export default function WiiMenu({
     <div
       className={`wii-menu wii-menu-wrapper${visible ? ' visible' : ''}${fadeOut ? ' fade-out' : ''}${zoomIn ? ' ch-zoom-in' : ''}${zoomOut ? ' ch-zoom-out' : ''}${shouldMailLayerBeOpen ? ' is-mail-opening' : ''}${mailLayerVisible ? ' is-mail-layer-visible' : ''}${isMailAnimating ? ' is-mail-animating' : ''}`}
       style={{
-        backgroundColor: mailLayerVisible ? 'transparent' : '#c8c8c8',
+        background: 'transparent',
         transformOrigin: zoomOrigin ? `${zoomOrigin.x}px ${zoomOrigin.y}px` : undefined,
       }}
     >

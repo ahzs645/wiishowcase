@@ -78,7 +78,7 @@ export default memo(function WiiChannelRenderer({
           fps,
           ...settings,
         };
-        const { renderer } = createRendererFromBundle(canvas, bundle, target, mergedSettings);
+        const { renderer, layout: resolvedLayout } = createRendererFromBundle(canvas, bundle, target, mergedSettings);
         rendererRef.current = renderer;
       } catch (e) {
         console.error(`[WiiChannelRenderer] createRendererFromBundle failed:`, e);

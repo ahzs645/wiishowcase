@@ -139,9 +139,9 @@ html, body, #root {
   pointer-events: none;
 }
 
-.wii.is-message-board-active {
-  background-image: none !important;
-  background-color: #c8c8c8;
+.wii.wii-bg-authentic {
+  background-color: #cecfd7;
+  background-image: linear-gradient(to bottom, #cecfd7, #f0f0f0, #cecfd7);
 }
 
 .wii-menu-wrapper .channel-holder-wrapper {
@@ -412,7 +412,7 @@ html, body, #root {
   position: absolute;
   inset: 0;
   height: calc(100vh - 6vh - 230px + 6.5vw);
-  background: #c8c8c8;
+  background: transparent;
   overflow: hidden;
 }
 
