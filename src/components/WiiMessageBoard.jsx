@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { formatMenuDate } from './Clock';
+import useMiiHead from '../hooks/useMiiHead';
 
 const MESSAGE_PAGE_SLIDE_MS = 480;
 
@@ -57,7 +58,7 @@ const BOARD_MESSAGE_SEEDS = [
     type: 'avatar',
     sender: 'Peter Miiffin',
     preview: 'Hello Lois',
-    avatarSrc: `${import.meta.env.BASE_URL}assets/message-board/petermiiffin-head.png`,
+    miiDataUrl: `${import.meta.env.BASE_URL}assets/message-board/Peter.miic`,
     avatarAlt: 'Peter Miiffin lol',
     angle: -8,
     x: 14,
@@ -163,9 +164,42 @@ function getMessagesForDayOffset(dayOffset) {
   return MESSAGES_BY_DATE[dateKey] ?? [];
 }
 
+function MiiAvatar({ miiDataUrl, className, title, alt, fallback }) {
+  const miiSrc = useMiiHead(miiDataUrl);
+
+  return (
+    <div className={className} title={title}>
+      {miiSrc ? (
+        <img src={miiSrc} alt={alt || ''} />
+      ) : (
+        <span>{fallback}</span>
+      )}
+    </div>
+  );
+}
+
+function AvatarDisplay({ message, className }) {
+  const type = MESSAGE_TYPES[message.type] ?? MESSAGE_TYPES.memo;
+  const avatarClassName = `${className}${type.fullAvatar ? ' is-full-avatar' : ''}`;
+  const title = message.avatarAlt || message.sender;
+  const fallback = message.avatarFallback || message.sender[0];
+  if (message.miiDataUrl) {
+    return <MiiAvatar miiDataUrl={message.miiDataUrl} preset="head" className={avatarClassName} title={title} alt={message.avatarAlt} fallback={fallback} />;
+  }
+
+  return (
+    <div className={avatarClassName} title={title}>
+      {message.avatarSrc ? (
+        <img src={message.avatarSrc} alt={message.avatarAlt || ''} />
+      ) : (
+        <span>{fallback}</span>
+      )}
+    </div>
+  );
+}
+
 function MessageCard({ message, onOpen }) {
   const type = MESSAGE_TYPES[message.type] ?? MESSAGE_TYPES.memo;
-  const avatarClassName = `message-board-card-avatar${type.fullAvatar ? ' is-full-avatar' : ''}`;
 
   return (
     <button
@@ -180,13 +214,7 @@ function MessageCard({ message, onOpen }) {
       aria-label={`Open ${type.label} from ${message.sender}`}
     >
       <div className="message-board-card-header">
-        <div className={avatarClassName} title={message.avatarAlt || message.sender}>
-          {message.avatarSrc ? (
-            <img src={message.avatarSrc} alt={message.avatarAlt || ''} />
-          ) : (
-            <span>{message.avatarFallback || message.sender[0]}</span>
-          )}
-        </div>
+        <AvatarDisplay message={message} className="message-board-card-avatar" />
       </div>
       <div className="message-board-card-preview">{message.preview}</div>
       <div className="message-board-card-type-label">{type.label}</div>
@@ -197,7 +225,6 @@ function MessageCard({ message, onOpen }) {
 function MessageMemo({ message, onClose }) {
   const type = MESSAGE_TYPES[message.type] ?? MESSAGE_TYPES.memo;
   const dialogTitleId = `message-board-memo-title-${message.id}`;
-  const avatarClassName = `message-board-memo-avatar${type.fullAvatar ? ' is-full-avatar' : ''}`;
   const memoTitle = message.sender || 'Memo';
 
   return (
@@ -213,13 +240,7 @@ function MessageMemo({ message, onClose }) {
         <span className="message-board-memo-title" id={dialogTitleId}>{memoTitle}</span>
 
         <div className="message-board-memo-header">
-          <div className={avatarClassName} title={message.avatarAlt || message.sender}>
-            {message.avatarSrc ? (
-              <img src={message.avatarSrc} alt={message.avatarAlt || ''} />
-            ) : (
-              <span>{message.avatarFallback || message.sender[0]}</span>
-            )}
-          </div>
+          <AvatarDisplay message={message} className="message-board-memo-avatar" />
         </div>
 
         <div className="message-board-memo-lines">

@@ -573,6 +573,10 @@ html, body, #root {
   object-fit: contain;
 }
 
+.message-board-card-avatar.is-full-avatar img[src^="blob:"] {
+  transform: scale(1.9);
+}
+
 .message-board-card-preview {
   font-size: clamp(18px, 2.6vh, 30px);
   color: #777;
@@ -585,10 +589,11 @@ html, body, #root {
 .message-board-card-type-label {
   position: absolute;
   right: clamp(10px, 1.2vh, 14px);
-  top: clamp(-22px, -3.3vh, -14px);
+  top: calc(clamp(-14px, -2.8vh, -30px) / 2);
   font-size: clamp(12px, 1.6vh, 18px);
   font-weight: 700;
   color: #fff;
+  transform: translateY(-50%);
 }
 
 .message-board-empty {
@@ -740,6 +745,10 @@ html, body, #root {
   height: auto;
   display: block;
   object-fit: contain;
+}
+
+.message-board-memo-avatar.is-full-avatar img[src^="blob:"] {
+  transform: scale(1.9);
 }
 
 .message-board-memo-sender {
@@ -1077,45 +1086,31 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
   100% { transform: rotateY(360deg); }
 }
 
-/* ---- Mii / Photo / Shop Channel (canvas icon zoom) ---- */
+/* ---- Canvas channel icons (unified) ---- */
 .ch-mii > div,
 .ch-photo > div,
-.ch-shop > div {
+.ch-shop > div,
+.ch-blank > div {
   position: absolute !important;
   inset: 0 !important;
-  overflow: visible !important;
-  transform: scale(3.5);
-  transform-origin: center 75%;
-}
-
-/* Shop icon is 128x96 and already fills the frame (unlike Mii/Photo
-   whose 608x456 icons are a small part of a larger scene). */
-.ch-shop > div {
-  transform: scale(0.7);
-  transform-origin: center 15%;
+  overflow: hidden !important;
 }
 
 .ch-mii canvas,
 .ch-photo canvas,
-.ch-shop canvas {
+.ch-shop canvas,
+.ch-blank canvas {
+  position: absolute !important;
+  inset: 0 !important;
   width: 100% !important;
-  height: auto !important;
+  height: 100% !important;
   display: block !important;
 }
 
-@media (max-aspect-ratio: 4/3) {
-  .ch-mii > div,
-  .ch-photo > div {
-    transform: scale(4.5);
-    transform-origin: center 50%;
-  }
-  .ch-shop > div {
-    transform: scale(1);
-    transform-origin: center 15%;
-  }
-}
-
-.ch-shop {
+.ch-mii,
+.ch-photo,
+.ch-shop,
+.ch-blank {
   background-color: white;
 }
 

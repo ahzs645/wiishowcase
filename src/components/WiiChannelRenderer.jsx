@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import { BannerRenderer } from '../lib/wadRenderer/BannerRenderer';
 import { loadRendererBundle } from '../lib/bundleLoader';
+import { resolveIconViewport } from '../utils/layout';
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -60,10 +61,18 @@ export default function WiiChannelRenderer({
 
       const meta = bundle.manifest[target];
       const canvas = canvasRef.current;
-      const { layout, startAnim, loopAnim, tplImages, fonts } = data;
+      const { layout: rawLayout, startAnim, loopAnim, tplImages, fonts } = data;
 
-      // Use layout dimensions (actual rendering size) rather than manifest
-      // thumbnail dimensions, which may be smaller
+      // For icons, resolve the viewport from the layout pane hierarchy
+      // (matches wewad's approach) so dimensions and aspect are correct.
+      let layout = rawLayout;
+      let refAspect = undefined;
+      if (target === 'icon') {
+        const viewport = resolveIconViewport(rawLayout);
+        layout = { ...rawLayout, width: viewport.width, height: viewport.height };
+        refAspect = viewport.width / viewport.height;
+      }
+
       canvas.width = layout.width ?? meta.width;
       canvas.height = layout.height ?? meta.height;
 
@@ -77,6 +86,7 @@ export default function WiiChannelRenderer({
           loopAnim,
           fonts,
           displayAspect: aspectRatio,
+          referenceAspectRatio: refAspect,
           useGsap: false,
           ...bundle.manifest.rendererOptions,
           renderState: meta.animSelection.renderState,
