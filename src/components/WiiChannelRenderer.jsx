@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState, memo } from 'react';
-import { BannerRenderer } from '../lib/wadRenderer/BannerRenderer';
-import { loadRendererBundle } from '../lib/bundleLoader';
+import { BannerRenderer } from '@firstform/wii-channel-renderer';
+import { loadRendererBundle } from '@firstform/wii-channel-renderer/bundle-loader';
 import { resolveIconViewport } from '../utils/layout';
 
 const BASE = import.meta.env.BASE_URL;

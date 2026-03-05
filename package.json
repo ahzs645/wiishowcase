@@ -11,6 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@firstform/wii-channel-renderer": "^0.1.0",
     "gsap": "^3.14.2",
     "miicreator": "file:../miicreateor",
     "qrcode.react": "^4.2.0",
