@@ -32,13 +32,11 @@ class SharedBlankRenderer {
       this.masterCanvas,
       bundle,
       'icon',
-      {
-        fps: 30,
-        onFrame: () => this._copyToAll(),
-      },
+      { fps: 30 },
     );
 
     this.renderer = renderer;
+    renderer.onFrame = () => this._copyToAll();
     renderer.renderFrame(0);
     this.ready = true;
 
