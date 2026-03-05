@@ -20,7 +20,6 @@ function fetchBundle(url) {
 }
 
 const WRAPPER_STYLE = { width: '100%', overflow: 'hidden', position: 'relative' };
-const CANVAS_STYLE = { width: '100%', height: 'auto', display: 'block' };
 
 export default memo(function WiiChannelRenderer({
   bundlePath,
@@ -79,8 +78,6 @@ export default memo(function WiiChannelRenderer({
           fps,
           ...settings,
         };
-        console.log(`[WiiChannelRenderer] creating renderer for "${target}" from "${bundlePath}"`, mergedSettings);
-        console.log(`[WiiChannelRenderer] bundle animEntries:`, bundle[target]?.animEntries?.map(e => e.id));
         const { renderer } = createRendererFromBundle(canvas, bundle, target, mergedSettings);
         rendererRef.current = renderer;
       } catch (e) {
@@ -131,7 +128,8 @@ export default memo(function WiiChannelRenderer({
     >
       <canvas
         ref={canvasRef}
-        style={CANVAS_STYLE}
+        data-no-style-resize
+        style={{ width: '100%', height: 'auto', display: 'block' }}
       />
     </div>
   );
