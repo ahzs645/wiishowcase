@@ -74,11 +74,14 @@ export default memo(function WiiChannelRenderer({
       const canvas = canvasRef.current;
 
       try {
-        const { renderer } = createRendererFromBundle(canvas, bundle, target, {
+        const mergedSettings = {
           displayAspect: aspectRatio,
           fps,
           ...settings,
-        });
+        };
+        console.log(`[WiiChannelRenderer] creating renderer for "${target}" from "${bundlePath}"`, mergedSettings);
+        console.log(`[WiiChannelRenderer] bundle animEntries:`, bundle[target]?.animEntries?.map(e => e.id));
+        const { renderer } = createRendererFromBundle(canvas, bundle, target, mergedSettings);
         rendererRef.current = renderer;
       } catch (e) {
         console.error(`[WiiChannelRenderer] createRendererFromBundle failed:`, e);
