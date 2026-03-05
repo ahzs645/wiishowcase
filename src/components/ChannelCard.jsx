@@ -1,10 +1,12 @@
+import { memo } from 'react';
 import useWiiAspectMode from '../hooks/useWiiAspectMode';
 
-export default function ChannelCard({
+export default memo(function ChannelCard({
   name,
   gradient,
   blank,
   onClick,
+  channelIndex,
   content,
   contentClassName,
   contentStyle,
@@ -46,12 +48,13 @@ export default function ChannelCard({
         '--wii-channel-mask': `url(${maskUrl})`,
         ...(contentStyle || {}),
       }}
+      data-channel-index={channelIndex}
       onClick={onClick}
       onKeyDown={(e) => {
         if (!isClickable) return;
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          onClick();
+          e.currentTarget.click();
         }
       }}
       role={isClickable ? 'button' : undefined}
@@ -76,4 +79,4 @@ export default function ChannelCard({
       </svg>
     </div>
   );
-}
+});

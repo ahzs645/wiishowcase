@@ -536,6 +536,7 @@ export function renderFrame(frame) {
   );
   const orderedRenderablePanes = this.getCustomWeatherOrderedPanes?.(renderablePanes) ?? renderablePanes;
   const shouldUseWiiShopBackdropMask =
+    this.enableWiiShopBackdropMask === true &&
     this.panesByName?.has("backCLs") &&
     this.panesByName?.has("mask_01") &&
     this.panesByName?.has("logo_base") &&
@@ -621,7 +622,9 @@ export function renderFrame(frame) {
         continue;
       }
 
-      if (paneName === "effects" && hasBackdropContent) {
+      // Flush the backdrop layer before the first non-CL*, non-mask pane
+      // so that colored background lights appear behind logo/text content.
+      if (hasBackdropContent) {
         flushBackdropLayer();
       }
     }

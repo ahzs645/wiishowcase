@@ -47,12 +47,26 @@ class WiiSounds {
     const buttons = container.querySelectorAll(
       '.wii-btn, .wii-channel, .wii-tab, .wii-list-item'
     );
+    if (!this._attachedListeners) this._attachedListeners = [];
     buttons.forEach((btn) => {
       if (btn.dataset.wiiSoundAttached) return;
       btn.dataset.wiiSoundAttached = 'true';
-      btn.addEventListener('mouseenter', () => this.play('hover'));
-      btn.addEventListener('click', () => this.play('select'));
+      const onEnter = () => this.play('hover');
+      const onClick = () => this.play('select');
+      btn.addEventListener('mouseenter', onEnter);
+      btn.addEventListener('click', onClick);
+      this._attachedListeners.push({ btn, onEnter, onClick });
     });
+  }
+
+  detach() {
+    if (!this._attachedListeners) return;
+    for (const { btn, onEnter, onClick } of this._attachedListeners) {
+      btn.removeEventListener('mouseenter', onEnter);
+      btn.removeEventListener('click', onClick);
+      delete btn.dataset.wiiSoundAttached;
+    }
+    this._attachedListeners = [];
   }
 }
 

@@ -494,6 +494,7 @@ html, body, #root {
   box-shadow: 2vh 2vh rgba(0, 0, 0, 0.12);
   cursor: pointer;
   transition: transform 150ms ease, box-shadow 150ms ease;
+  will-change: transform;
   z-index: 8;
 }
 
@@ -915,6 +916,7 @@ html, body, #root {
 .channel-holder-wrapper {
   position: relative;
   filter: drop-shadow(0 3px 0 #31c1ed);
+  will-change: filter;
   z-index: 20;
 }
 
@@ -1105,12 +1107,6 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
   width: 100% !important;
   height: 100% !important;
   display: block !important;
-}
-
-.ch-mii,
-.ch-photo,
-.ch-shop,
-.ch-blank {
   background-color: white;
 }
 

@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import StartupBlack from './components/StartupBlack';
 import SafetyScreen from './components/SafetyScreen';
 import WiiMenu, { SELECTABLE_CHANNELS } from './components/WiiMenu';
@@ -53,6 +53,28 @@ export default function App() {
   return <HostApp />;
 }
 
+// Isolated component for remote pointers — re-renders independently from App at 60Hz
+function RemotePointers({ pointersRef, notifyRef }) {
+  const [, forceUpdate] = useState(0);
+  useEffect(() => {
+    notifyRef.current = () => forceUpdate((n) => n + 1);
+    return () => { notifyRef.current = null; };
+  }, [notifyRef]);
+
+  const pointers = pointersRef.current;
+  return Object.entries(pointers).map(([id, ptr]) => (
+    <WiiPointer
+      key={id}
+      x={ptr.x}
+      y={ptr.y}
+      player={`P${parseInt(id) + 2}`}
+      visible={ptr.visible}
+    />
+  ));
+}
+
+const HOST_APP_STYLE = { height: '100vh', width: '100vw', overflow: 'hidden' };
+
 // ---------- Host (Desktop) ----------
 
 function HostApp() {
@@ -75,9 +97,10 @@ function HostApp() {
   const [messageBoardDateOverride, setMessageBoardDateOverride] = useState(null);
 
   // Remote pointer state — one per controller (up to 4)
-  const [remotePointers, setRemotePointers] = useState({});
+  // Use refs + forceUpdate on a dedicated component to avoid re-rendering entire App at 60Hz
   const remotePointersRef = useRef({});
   const remotePointerTimeouts = useRef({});
+  const remotePointersNotify = useRef(null);
   const prevButtonsRefs = useRef({});
 
   const { play } = useSounds();
@@ -88,16 +111,13 @@ function HostApp() {
   const handleRemoteMessage = useCallback((controllerId, msg) => {
     const updatePointer = (x, y) => {
       remotePointersRef.current[controllerId] = { x, y, visible: true };
-      setRemotePointers((prev) => ({
-        ...prev,
-        [controllerId]: { x, y, visible: true },
-      }));
+      remotePointersNotify.current?.();
       clearTimeout(remotePointerTimeouts.current[controllerId]);
       remotePointerTimeouts.current[controllerId] = setTimeout(() => {
-        setRemotePointers((prev) => ({
-          ...prev,
-          [controllerId]: { ...prev[controllerId], visible: false },
-        }));
+        if (remotePointersRef.current[controllerId]) {
+          remotePointersRef.current[controllerId].visible = false;
+          remotePointersNotify.current?.();
+        }
       }, 500);
     };
 
@@ -157,10 +177,10 @@ function HostApp() {
       updatePointer(msg.x * window.innerWidth, msg.y * window.innerHeight);
     }
     if (msg.type === 'pointer-up') {
-      setRemotePointers((prev) => ({
-        ...prev,
-        [controllerId]: { ...prev[controllerId], visible: false },
-      }));
+      if (remotePointersRef.current[controllerId]) {
+        remotePointersRef.current[controllerId].visible = false;
+        remotePointersNotify.current?.();
+      }
     }
     if (msg.type === 'button' && msg.action === 'down') {
       if (msg.button === 'A') {
@@ -400,25 +420,27 @@ function HostApp() {
     setCursorActive(true);
   }, []);
 
+  const switchPrev = useCallback(() => switchChannel(-1), [switchChannel]);
+  const switchNext = useCallback(() => switchChannel(1), [switchChannel]);
+
+  // Memoize hasPrev/hasNext to avoid inline findIndex in JSX
+  const { hasPrev, hasNext } = useMemo(() => {
+    if (!selectedChannel) return { hasPrev: false, hasNext: false };
+    const idx = SELECTABLE_CHANNELS.findIndex((ch) => ch.id === selectedChannel.id);
+    return { hasPrev: idx > 0, hasNext: idx < SELECTABLE_CHANNELS.length - 1 };
+  }, [selectedChannel]);
+
   return (
     <div
       className={`wii wii-bg-authentic ${aspectClass}${phase === 'messageboard' ? ' is-message-board-active' : ''}`}
-      style={{ height: '100vh', width: '100vw', overflow: 'hidden' }}
+      style={HOST_APP_STYLE}
       onMouseMove={handleMouseMove}
     >
       {/* Local pointer (P1) */}
       <WiiPointer x={cursorPos.x} y={cursorPos.y} player="P1" visible={cursorActive} />
 
-      {/* Remote pointers (P2-P4) from companions */}
-      {Object.entries(remotePointers).map(([id, ptr]) => (
-        <WiiPointer
-          key={id}
-          x={ptr.x}
-          y={ptr.y}
-          player={`P${parseInt(id) + 2}`}
-          visible={ptr.visible}
-        />
-      ))}
+      {/* Remote pointers (P2-P4) from companions — isolated from App re-renders */}
+      <RemotePointers pointersRef={remotePointersRef} notifyRef={remotePointersNotify} />
 
       {/* Phase 1: Black screen */}
       {(phase === 'black' || phase === 'safety') && (
@@ -456,10 +478,10 @@ function HostApp() {
         channel={selectedChannel}
         onBack={closeChannel}
         onStart={startChannel}
-        hasPrev={selectedChannel ? SELECTABLE_CHANNELS.findIndex((ch) => ch.id === selectedChannel.id) > 0 : false}
-        hasNext={selectedChannel ? SELECTABLE_CHANNELS.findIndex((ch) => ch.id === selectedChannel.id) < SELECTABLE_CHANNELS.length - 1 : false}
-        onPrev={() => switchChannel(-1)}
-        onNext={() => switchChannel(1)}
+        hasPrev={hasPrev}
+        hasNext={hasNext}
+        onPrev={switchPrev}
+        onNext={switchNext}
       />
 
       {/* Phase 4: Message Board */}

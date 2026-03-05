@@ -1,3 +1,5 @@
+import { memo, useRef, useEffect } from 'react';
+
 const PLAYERS = {
   P1: { color: '#bfe2ff', accent: '#008cff' },
   P2: { color: '#ffcccc', accent: '#ff3838' },
@@ -5,14 +7,30 @@ const PLAYERS = {
   P4: { color: '#ffe6bf', accent: '#ff9c00' },
 };
 
-export default function WiiPointer({ x, y, player = 'P1', visible = true }) {
-  if (!visible) return null;
+export default memo(function WiiPointer({ x, y, player = 'P1', visible = true }) {
+  const svgRef = useRef(null);
+
+  useEffect(() => {
+    const el = svgRef.current;
+    if (!el) return;
+    el.style.left = `${x}px`;
+    el.style.top = `${y}px`;
+  }, [x, y]);
+
+  useEffect(() => {
+    const el = svgRef.current;
+    if (!el) return;
+    el.style.display = visible ? '' : 'none';
+  }, [visible]);
 
   const colors = PLAYERS[player] || PLAYERS.P1;
   const playerNumber = player.replace('P', '');
+  const gradId1 = `wiiPointerGrad1-${player}`;
+  const gradId2 = `wiiPointerGrad2-${player}`;
 
   return (
     <svg
+      ref={svgRef}
       style={{
         position: 'fixed',
         left: x,
@@ -22,6 +40,7 @@ export default function WiiPointer({ x, y, player = 'P1', visible = true }) {
         pointerEvents: 'none',
         zIndex: 10000,
         transform: 'translate(-8px, -4px)',
+        display: visible ? '' : 'none',
         '--player-color': colors.color,
         '--player-accent': colors.accent,
       }}
@@ -30,11 +49,11 @@ export default function WiiPointer({ x, y, player = 'P1', visible = true }) {
       xmlnsXlink="http://www.w3.org/1999/xlink"
     >
       <defs>
-        <linearGradient id="wiiPointerGrad1" gradientUnits="userSpaceOnUse" x1="100.22274" y1="155.46613" x2="100.22274" y2="148.26958">
+        <linearGradient id={gradId1} gradientUnits="userSpaceOnUse" x1="100.22274" y1="155.46613" x2="100.22274" y2="148.26958">
           <stop style={{ stopColor: 'var(--player-color)', stopOpacity: 1 }} offset="0.1" />
           <stop style={{ stopColor: '#ffffff', stopOpacity: 1 }} offset="0.8" />
         </linearGradient>
-        <linearGradient id="wiiPointerGrad2" gradientUnits="userSpaceOnUse" x1="100.22274" y1="155.46613" x2="100.22274" y2="148.26958">
+        <linearGradient id={gradId2} gradientUnits="userSpaceOnUse" x1="100.22274" y1="155.46613" x2="100.22274" y2="148.26958">
           <stop style={{ stopColor: 'var(--player-color)', stopOpacity: 1 }} offset="0.1" />
           <stop style={{ stopColor: '#ffffff', stopOpacity: 1 }} offset="0.8" />
         </linearGradient>
@@ -69,7 +88,7 @@ export default function WiiPointer({ x, y, player = 'P1', visible = true }) {
           {/* Gradient fill + white strokes */}
           <g transform="translate(-101.26042,-144.56232)">
             <path
-              style={{ fill: 'url(#wiiPointerGrad1)', stroke: 'url(#wiiPointerGrad2)', strokeWidth: 0.3, strokeLinecap: 'round', strokeLinejoin: 'miter', paintOrder: 'normal' }}
+              style={{ fill: `url(#${gradId1})`, stroke: `url(#${gradId2})`, strokeWidth: 0.3, strokeLinecap: 'round', strokeLinejoin: 'miter', paintOrder: 'normal' }}
               d="m 109.44141,149.35938 v 2.77083 c 0,0.34434 -0.10648,0.68025 -0.30485,0.9617 l -0.71374,1.01267 c -0.19837,0.28145 -0.30485,0.61736 -0.30485,0.9617 -0.0217,0.27053 -0.25864,0.47224 -0.52917,0.45052 h -4.40298 c -0.29225,0 -0.52917,-0.23692 -0.52917,-0.52917 v -0.18346 c 0,-0.336 -0.14624,-0.65537 -0.40063,-0.87488 l -1.48265,-1.27942 c -0.25439,-0.21951 -0.40063,-0.53888 -0.40063,-0.87488 v -2.09071 c 0,-0.48826 0.2174,-0.95116 0.59314,-1.26295 l 0.21723,-0.18026 v 1.23307 0.22971 a 0.31950433,0.31950433 45 0 0 0.3195,0.3195 h 0.12461 a 0.31950433,0.31950433 135 0 0 0.3195,-0.3195 v -0.22971 -1.28237 h 7.45568 z"
             />
             <path
@@ -123,4 +142,4 @@ export default function WiiPointer({ x, y, player = 'P1', visible = true }) {
       </g>
     </svg>
   );
-}
+});

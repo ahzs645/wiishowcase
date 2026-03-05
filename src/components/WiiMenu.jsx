@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, useEffect } from 'react';
+import { useState, useCallback, useRef, useEffect, useMemo } from 'react';
 import { useDateTime, ClockTime, ClockDate } from './Clock';
 import ChannelCard from './ChannelCard';
 import DiscChannelContent from './channels/DiscChannelContent';
@@ -15,6 +15,9 @@ import mailIcon from '../../Wii.css/dist/assets/track-btn/icon-email.svg';
 const CHANNELS_PER_PAGE = 12;
 const MAIL_OPEN_ANIM_MS = 520;
 const MAIL_CLOSE_DELAY_MS = 520;
+
+const TRACK_BTN_LEFT_STYLE = { "--wii-track-btn-front-count": 1, "--wii-track-btn-back-count": 2 };
+const TRACK_BTN_RIGHT_STYLE = { "--wii-track-btn-front-count": 1, "--wii-track-btn-back-count": 1 };
 
 const BLANK = { blank: true, content: <BlankChannelContent />, contentClassName: 'ch-blank' };
 
@@ -168,6 +171,21 @@ export default function WiiMenu({
     }
   }, [calendarOpen]);
 
+  // Stable click handler that reads channel from data attribute to avoid inline closures
+  const handleChannelClick = useCallback((e) => {
+    if (!onChannelClick) return;
+    const index = e.currentTarget.dataset.channelIndex;
+    if (index == null) return;
+    const ch = CHANNELS[parseInt(index, 10)];
+    if (!ch?.id) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const origin = {
+      x: rect.left + rect.width / 2,
+      y: rect.top + rect.height / 2,
+    };
+    onChannelClick(ch, origin);
+  }, [onChannelClick]);
+
   const shouldMailLayerBeOpen = isMailOpening || (mailLayerVisible && !isMailReturning);
   const shouldTrackBeFlipped = isMailFlipped || (mailLayerVisible && !isMailReturning);
   const isMailAnimating = isMailOpening || isMailReturning;
@@ -187,24 +205,21 @@ export default function WiiMenu({
           <div className="channel-pages-viewport" ref={viewportRef}>
             {PAGES.map((pageChannels, pageIdx) => (
               <div key={pageIdx} className="wii-channel-holder-grid">
-                {pageChannels.map((ch, i) => (
-                  <ChannelCard
-                    key={pageIdx * CHANNELS_PER_PAGE + i}
-                    name={ch.name}
-                    gradient={ch.gradient}
-                    blank={ch.blank}
-                    onClick={ch.id && onChannelClick ? (e) => {
-                      const rect = e.currentTarget.getBoundingClientRect();
-                      const origin = {
-                        x: rect.left + rect.width / 2,
-                        y: rect.top + rect.height / 2,
-                      };
-                      onChannelClick(ch, origin);
-                    } : undefined}
-                    content={ch.content}
-                    contentClassName={ch.contentClassName}
-                  />
-                ))}
+                {pageChannels.map((ch, i) => {
+                  const globalIndex = pageIdx * CHANNELS_PER_PAGE + i;
+                  return (
+                    <ChannelCard
+                      key={globalIndex}
+                      name={ch.name}
+                      gradient={ch.gradient}
+                      blank={ch.blank}
+                      onClick={ch.id ? handleChannelClick : undefined}
+                      channelIndex={ch.id ? CHANNELS.indexOf(ch) : undefined}
+                      content={ch.content}
+                      contentClassName={ch.contentClassName}
+                    />
+                  );
+                })}
               </div>
             ))}
           </div>
@@ -263,7 +278,7 @@ export default function WiiMenu({
 
       {/* Bottom buttons */}
       <div className="wii-menu-bottom-buttons">
-        <div className={`wii-track-btn wii-track-btn-flip wii-track-btn-flip-multi wii-track-btn-left${shouldTrackBeFlipped ? ' is-flipped' : ''}`} data-track-flip="" style={{"--wii-track-btn-front-count": 1, "--wii-track-btn-back-count": 2}}>
+        <div className={`wii-track-btn wii-track-btn-flip wii-track-btn-flip-multi wii-track-btn-left${shouldTrackBeFlipped ? ' is-flipped' : ''}`} data-track-flip="" style={TRACK_BTN_LEFT_STYLE}>
           <div className="wii-track-btn-track-pair">
             <div className="wii-track-btn-flip-side is-front">
               <button
@@ -300,7 +315,7 @@ export default function WiiMenu({
           </div>
         </div>
 
-        <div className={`wii-track-btn wii-track-btn-flip wii-track-btn-flip-multi${shouldTrackBeFlipped ? ' is-flipped' : ''}`} data-track-flip="" style={{"--wii-track-btn-front-count": 1, "--wii-track-btn-back-count": 1}}>
+        <div className={`wii-track-btn wii-track-btn-flip wii-track-btn-flip-multi${shouldTrackBeFlipped ? ' is-flipped' : ''}`} data-track-flip="" style={TRACK_BTN_RIGHT_STYLE}>
           <div className="wii-track-btn-track-pair">
             <div className="wii-track-btn-flip-side is-front">
               <button

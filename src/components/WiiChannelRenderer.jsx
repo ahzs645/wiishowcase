@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, memo } from 'react';
 import { BannerRenderer } from '../lib/wadRenderer/BannerRenderer';
 import { loadRendererBundle } from '../lib/bundleLoader';
 import { resolveIconViewport } from '../utils/layout';
@@ -20,17 +20,10 @@ function fetchBundle(url) {
   return bundleCache.get(url);
 }
 
-/**
- * Renders a Wii channel icon or banner animation on a <canvas>.
- *
- * @param {string} bundlePath - Path to the bundle zip (relative to BASE_URL)
- * @param {"icon"|"banner"} target - Which animation to render
- * @param {boolean} playing - Whether the animation should be playing
- * @param {number} [aspectRatio] - Display aspect ratio (default 4/3)
- * @param {string} [className] - CSS class for the canvas wrapper
- * @param {object} [style] - Inline styles for the canvas wrapper
- */
-export default function WiiChannelRenderer({
+const WRAPPER_STYLE = { width: '100%', overflow: 'hidden', position: 'relative' };
+const CANVAS_STYLE = { width: '100%', height: 'auto', display: 'block' };
+
+export default memo(function WiiChannelRenderer({
   bundlePath,
   target = 'icon',
   playing = true,
@@ -42,6 +35,30 @@ export default function WiiChannelRenderer({
   const rendererRef = useRef(null);
   const wrapperRef = useRef(null);
   const [ready, setReady] = useState(false);
+  const isVisibleRef = useRef(false);
+
+  // IntersectionObserver to pause renderer when off-screen
+  useEffect(() => {
+    const wrapper = wrapperRef.current;
+    if (!wrapper) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
+        const renderer = rendererRef.current;
+        if (!renderer) return;
+        if (entry.isIntersecting && playing) {
+          renderer.play();
+        } else {
+          renderer.stop();
+        }
+      },
+      { threshold: 0 },
+    );
+
+    observer.observe(wrapper);
+    return () => observer.disconnect();
+  }, [playing]);
 
   // Load bundle and create renderer
   useEffect(() => {
@@ -63,8 +80,6 @@ export default function WiiChannelRenderer({
       const canvas = canvasRef.current;
       const { layout: rawLayout, startAnim, loopAnim, tplImages, fonts } = data;
 
-      // For icons, resolve the viewport from the layout pane hierarchy
-      // (matches wewad's approach) so dimensions and aspect are correct.
       let layout = rawLayout;
       let refAspect = undefined;
       if (target === 'icon') {
@@ -94,15 +109,14 @@ export default function WiiChannelRenderer({
         },
       );
 
-      // Debug: draw a test frame to verify canvas works
       try {
         rendererRef.current.renderFrame(0);
-        console.log('[WiiChannelRenderer] renderFrame(0) ok for', target, 'canvas:', canvas.width, 'x', canvas.height);
       } catch (e) {
         console.error('[WiiChannelRenderer] renderFrame(0) failed:', e);
       }
 
-      if (playing) {
+      // Only auto-play if visible
+      if (playing && isVisibleRef.current) {
         rendererRef.current.play();
       }
       setReady(true);
@@ -121,32 +135,25 @@ export default function WiiChannelRenderer({
   // Handle play/pause toggling
   useEffect(() => {
     if (!rendererRef.current || !ready) return;
-    if (playing) {
+    if (playing && isVisibleRef.current) {
       rendererRef.current.play();
     } else {
-      rendererRef.current.pause?.();
+      rendererRef.current.stop();
     }
   }, [playing, ready]);
+
+  const wrapperStyle = style ? { ...WRAPPER_STYLE, ...style } : WRAPPER_STYLE;
 
   return (
     <div
       ref={wrapperRef}
       className={className}
-      style={{
-        width: '100%',
-        overflow: 'hidden',
-        position: 'relative',
-        ...style,
-      }}
+      style={wrapperStyle}
     >
       <canvas
         ref={canvasRef}
-        style={{
-          width: '100%',
-          height: 'auto',
-          display: 'block',
-        }}
+        style={CANVAS_STYLE}
       />
     </div>
   );
-}
+});

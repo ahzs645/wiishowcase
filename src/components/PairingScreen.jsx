@@ -1,6 +1,10 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, memo } from 'react';
 import { QRCodeSVG } from 'qrcode.react';
 import { generateSessionId, pollForAnswer } from '../lib/SignalingRelay';
+
+const HINT_STYLE = { marginTop: '10px', fontSize: '13px', opacity: 0.7 };
+const PAIR_ANOTHER_STYLE = { marginTop: '12px' };
+const CLOSE_HINT_STYLE = { marginTop: '8px' };
 
 /**
  * PairingScreen — shown on the host (desktop) to pair companions (phones).
@@ -125,7 +129,7 @@ export default function PairingScreen({
               </button>
             </div>
 
-            <p className="pairing-hint" style={{ marginTop: '10px', fontSize: '13px', opacity: 0.7 }}>
+            <p className="pairing-hint" style={HINT_STYLE}>
               Answer will be accepted automatically if on the same network.
             </p>
           </>
@@ -136,13 +140,13 @@ export default function PairingScreen({
             <div className="pairing-check">&#10003;</div>
             <p>Wii Remote connected!</p>
             {availableSlots > 0 ? (
-              <button className="pairing-submit" onClick={handlePairAnother} style={{ marginTop: '12px' }}>
+              <button className="pairing-submit" onClick={handlePairAnother} style={PAIR_ANOTHER_STYLE}>
                 Pair Another Remote
               </button>
             ) : (
               <p className="pairing-hint">All 4 slots connected.</p>
             )}
-            <p className="pairing-hint" style={{ marginTop: '8px' }}>
+            <p className="pairing-hint" style={CLOSE_HINT_STYLE}>
               You can close this dialog at any time.
             </p>
           </div>

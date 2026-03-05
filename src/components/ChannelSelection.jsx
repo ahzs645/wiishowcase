@@ -79,7 +79,8 @@ export default function ChannelSelection({ visible, channel, onBack, onStart, ha
     } else {
       audioMetaRef.current = null;
       audioRef.current.pause();
-      audioRef.current.src = '';
+      audioRef.current.removeAttribute('src');
+      audioRef.current.load();
     }
   }, [visible, channel]);
 
