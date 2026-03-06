@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- Envelope Body -->
+  <rect x="10" y="22" width="80" height="56" fill="#f6ecae" stroke="#55524b" stroke-width="3"/>
+  <!-- Envelope Flap -->
+  <path d="M 10 34 L 50 58 L 90 34" fill="none" stroke="#55524b" stroke-width="3"/>
+</svg>

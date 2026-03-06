@@ -9,6 +9,7 @@ import NewsChannelContent from './channels/NewsChannelContent';
 import OnliineChannelContent from './channels/OnliineChannelContent';
 import PokemonRanchChannelContent from './channels/PokemonRanchChannelContent';
 import BlankChannelContent from './channels/BlankChannelContent';
+import { MESSAGE_DATE_KEYS } from './WiiMessageBoard';
 import { NEWS_RENDERER_SETTINGS } from './channels/newsChannelRendererSettings';
 import settingsIcon from '../../Wii.css/dist/assets/settings-icon.png';
 import mailIcon from '../../Wii.css/dist/assets/track-btn/icon-email.svg';
@@ -23,7 +24,7 @@ const TRACK_BTN_RIGHT_STYLE = { "--wii-track-btn-front-count": 1, "--wii-track-b
 const BLANK = { blank: true, content: <BlankChannelContent />, contentClassName: 'ch-blank' };
 
 const CHANNELS = [
-  { id: 'disc', name: 'Disc Channel', content: <DiscChannelContent />, contentClassName: 'ch-disc', bundle: 'channels/disc.zip' },
+  { id: 'disc', name: 'Disc Channel', content: <DiscChannelContent />, contentClassName: 'ch-disc', bundle: 'channels/disc.zip', rendererSettings: { banner: { playbackMode: 'hold' } } },
   { id: 'mii', name: 'Mii Channel', content: <MiiChannelContent />, contentClassName: 'ch-mii', bundle: 'channels/mii.zip' },
   { id: 'photo', name: 'Photo Channel', content: <PhotoChannelContent />, contentClassName: 'ch-photo', bundle: 'channels/photo.zip' },
   { id: 'shop', name: 'Wii Shop', content: <ShopChannelContent />, contentClassName: 'ch-shop', bundle: 'channels/shop.zip' },
@@ -79,6 +80,7 @@ export default function WiiMenu({
   onMailClick,
   onPairClick,
   onChannelClick,
+  onCalendarDateSelect,
   peerConnected,
   dateOverride,
 }) {
@@ -183,6 +185,64 @@ export default function WiiMenu({
     setTimeout(() => setCalendarOpen(false), 400);
   }, []);
 
+  const handleCalendarDateClick = useCallback((e) => {
+    const td = e.target.closest('td.wii-calendar-td');
+    if (!td || td.classList.contains('wii-calendar-td-other')) return;
+
+    const day = parseInt(td.textContent, 10);
+    if (isNaN(day)) return;
+
+    const cal = calendarRef.current?.__wiiCalendar;
+    if (!cal) return;
+
+    const year = cal.getYear();
+    const month = cal.getMonth();
+    const selectedDate = new Date(year, month, day);
+
+    closeCalendarMode();
+    onCalendarDateSelect?.(selectedDate);
+  }, [closeCalendarMode, onCalendarDateSelect]);
+
+  const decorateCalendarDates = useCallback(() => {
+    const el = calendarRef.current;
+    const cal = el?.__wiiCalendar;
+    if (!cal) return;
+
+    const year = cal.getYear();
+    const month = cal.getMonth();
+    const mailIconUrl = `${import.meta.env.BASE_URL}assets/mail-icon-tinted.svg`;
+
+    el.querySelectorAll('td.wii-calendar-td').forEach((td) => {
+      const existing = td.querySelector('.calendar-mail-icon');
+      if (existing) existing.remove();
+
+      if (td.classList.contains('wii-calendar-td-other')) return;
+
+      const day = parseInt(td.textContent, 10);
+      if (isNaN(day)) return;
+
+      const dateKey = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+      if (!MESSAGE_DATE_KEYS.has(dateKey)) return;
+
+      const icon = document.createElement('img');
+      icon.src = mailIconUrl;
+      icon.className = 'calendar-mail-icon';
+      icon.setAttribute('aria-hidden', 'true');
+      td.appendChild(icon);
+    });
+  }, []);
+
+  useEffect(() => {
+    const el = calendarRef.current;
+    if (!calendarOpen || !el) return;
+
+    requestAnimationFrame(decorateCalendarDates);
+
+    const handleChange = () => requestAnimationFrame(decorateCalendarDates);
+    el.addEventListener('wii-calendar-change', handleChange);
+    return () => el.removeEventListener('wii-calendar-change', handleChange);
+  }, [calendarOpen, decorateCalendarDates]);
+
   // Stable click handler that reads channel from data attribute to avoid inline closures
   const handleChannelClick = useCallback((e) => {
     if (!onChannelClick) return;
@@ -263,7 +323,7 @@ export default function WiiMenu({
       <ClockDate date={displayedDate} />
 
       {/* Calendar (drop animation, hidden by default) */}
-      <div className={`wii-menu-calendar-wrapper${calendarOpen ? ' is-calendar-open' : ''}`}>
+      <div className={`wii-menu-calendar-wrapper${calendarOpen ? ' is-calendar-open' : ''}`} onClick={handleCalendarDateClick}>
         <div
           ref={calendarRef}
           data-wii-calendar=""

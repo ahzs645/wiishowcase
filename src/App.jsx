@@ -95,6 +95,7 @@ function HostApp() {
   const [menuZoomOut, setMenuZoomOut] = useState(false);
   const [zoomOrigin, setZoomOrigin] = useState(null);
   const [messageBoardDateOverride, setMessageBoardDateOverride] = useState(null);
+  const [calendarTargetDate, setCalendarTargetDate] = useState(null);
 
   // Remote pointer state — one per controller (up to 4)
   // Use refs + forceUpdate on a dedicated component to avoid re-rendering entire App at 60Hz
@@ -292,8 +293,13 @@ function HostApp() {
   useEffect(() => {
     if (phase !== 'messageboard') {
       setMessageBoardDateOverride(null);
+      setCalendarTargetDate(null);
     }
   }, [phase]);
+
+  const handleCalendarDateSelect = useCallback((date) => {
+    setCalendarTargetDate(date);
+  }, []);
 
   // Open a channel selection screen
   const openChannel = useCallback((channel, origin) => {
@@ -467,6 +473,7 @@ function HostApp() {
         zoomOrigin={zoomOrigin}
         onMailClick={openMessageBoard}
         onChannelClick={openChannel}
+        onCalendarDateSelect={handleCalendarDateSelect}
         onPairClick={openPairing}
         peerConnected={connectedCount > 0}
         dateOverride={phase === 'messageboard' ? messageBoardDateOverride : null}
@@ -488,6 +495,7 @@ function HostApp() {
       <WiiMessageBoard
         visible={phase === 'messageboard'}
         onDisplayedDateChange={setMessageBoardDateOverride}
+        targetDate={calendarTargetDate}
       />
 
       {/* News Channel */}

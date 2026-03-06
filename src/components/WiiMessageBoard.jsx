@@ -159,6 +159,8 @@ const MESSAGES_BY_DATE = BOARD_MESSAGES.reduce((acc, message) => {
   return acc;
 }, {});
 
+export const MESSAGE_DATE_KEYS = new Set(Object.keys(MESSAGES_BY_DATE));
+
 function getMessagesForDayOffset(dayOffset) {
   const dateKey = toDateKey(addDays(BOARD_ANCHOR_DATE, dayOffset));
   return MESSAGES_BY_DATE[dateKey] ?? [];
@@ -263,11 +265,12 @@ function MessageMemo({ message, onClose }) {
   );
 }
 
-export default function WiiMessageBoard({ visible, onDisplayedDateChange }) {
+export default function WiiMessageBoard({ visible, onDisplayedDateChange, targetDate }) {
   const [currentDayOffset, setCurrentDayOffset] = useState(0);
   const [selectedMessageId, setSelectedMessageId] = useState(null);
   const [dateTransition, setDateTransition] = useState(null);
   const transitionTimerRef = useRef(null);
+  const lastTargetDateRef = useRef(null);
 
   useEffect(() => {
     return () => {
@@ -282,12 +285,48 @@ export default function WiiMessageBoard({ visible, onDisplayedDateChange }) {
     if (!visible) {
       setSelectedMessageId(null);
       setDateTransition(null);
+      lastTargetDateRef.current = null;
       if (transitionTimerRef.current) {
         clearTimeout(transitionTimerRef.current);
         transitionTimerRef.current = null;
       }
     }
   }, [visible]);
+
+  // Navigate to a calendar-selected target date
+  useEffect(() => {
+    if (!targetDate || !visible) return;
+    const targetTime = targetDate.getTime();
+    if (lastTargetDateRef.current === targetTime) return;
+    lastTargetDateRef.current = targetTime;
+
+    const target = getStartOfDay(targetDate);
+    const diffMs = target.getTime() - BOARD_ANCHOR_DATE.getTime();
+    const targetOffset = Math.round(diffMs / (1000 * 60 * 60 * 24));
+
+    if (targetOffset === currentDayOffset) return;
+
+    // Cancel any in-progress transition
+    if (transitionTimerRef.current) {
+      clearTimeout(transitionTimerRef.current);
+      transitionTimerRef.current = null;
+    }
+
+    const direction = targetOffset > currentDayOffset ? 'next' : 'prev';
+    setSelectedMessageId(null);
+    setDateTransition({
+      fromOffset: currentDayOffset,
+      toOffset: targetOffset,
+      direction,
+    });
+
+    transitionTimerRef.current = setTimeout(() => {
+      setCurrentDayOffset(targetOffset);
+      setDateTransition(null);
+      transitionTimerRef.current = null;
+    }, MESSAGE_PAGE_SLIDE_MS);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [targetDate, visible]);
 
   const isDateTransitioning = Boolean(dateTransition);
   const displayedDayOffset = dateTransition ? dateTransition.toOffset : currentDayOffset;

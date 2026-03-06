@@ -1328,6 +1328,15 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
   --wii-calendar-width: min(800px, 85vw);
 }
 
+.calendar-mail-icon {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
 .wii-calendar > .channel-page-arrow {
   top: 50%;
   transform: translateY(-70%);
