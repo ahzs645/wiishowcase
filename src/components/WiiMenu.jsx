@@ -74,6 +74,7 @@ export default function WiiMenu({
   fadeOut,
   mailLayerVisible,
   onMailClose,
+  onSettingsClick,
   zoomIn,
   zoomOut,
   zoomOrigin,
@@ -370,6 +371,7 @@ export default function WiiMenu({
               <button
                 className="wii-track-btn-circle wii-track-btn-base"
                 aria-label="Open Settings"
+                onClick={onSettingsClick}
                 type="button"
               >
                 <span className="wii-track-btn-icon">

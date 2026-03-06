@@ -10,6 +10,7 @@ import PairingScreen from './components/PairingScreen';
 import CompanionController from './components/CompanionController';
 import DevModeSelector from './components/DevModeSelector';
 import HomeMenu from './components/HomeMenu';
+import WiiSettings from './components/WiiSettings';
 import useSounds from './hooks/useSounds';
 import useMultiWebRTC from './hooks/useMultiWebRTC';
 import useWiiAspectMode from './hooks/useWiiAspectMode';
@@ -35,7 +36,7 @@ function parseHash() {
   return { mode: 'host', offer: null, sessionId: null };
 }
 
-const SCREENS = ['black', 'safety', 'menu', 'channel-select', 'messageboard', 'news'];
+const SCREENS = ['black', 'safety', 'menu', 'settings', 'channel-select', 'messageboard', 'news'];
 
 export default function App() {
   const [route, setRoute] = useState(parseHash);
@@ -162,6 +163,8 @@ function HostApp() {
             setMenuZoomOut(true);
             setPhase('menu');
             setTimeout(() => setMenuZoomOut(false), 400);
+          } else if (phase === 'settings') {
+            setPhase('menu');
           } else if (phase === 'messageboard') {
             setPhase('menu');
           } else if (phase === 'news') {
@@ -195,6 +198,9 @@ function HostApp() {
       }
       if (msg.button === 'B') {
         play('back');
+        if (phase === 'settings') {
+          setPhase('menu');
+        }
       }
     }
     if (msg.type === 'orientation') {
@@ -227,8 +233,8 @@ function HostApp() {
         setDevMode((prev) => !prev);
         setCursorActive(true);
       }
-      // Number keys 1-4 to switch screens when in dev mode
-      if (devMode && e.key >= '1' && e.key <= '4') {
+      // Number keys switch screens when in dev mode
+      if (devMode && /^[1-9]$/.test(e.key)) {
         const index = parseInt(e.key, 10) - 1;
         if (SCREENS[index]) {
           setPhase(SCREENS[index]);
@@ -286,6 +292,16 @@ function HostApp() {
   }, [play]);
 
   const closeMessageBoard = useCallback(() => {
+    play('back');
+    setPhase('menu');
+  }, [play]);
+
+  const openSettings = useCallback(() => {
+    play('select');
+    setPhase('settings');
+  }, [play]);
+
+  const closeSettings = useCallback(() => {
     play('back');
     setPhase('menu');
   }, [play]);
@@ -367,11 +383,15 @@ function HostApp() {
       if (e.key === 'Escape' && phase === 'messageboard') {
         play('back');
         setPhase('menu');
+        return;
+      }
+      if (e.key === 'Escape' && phase === 'settings') {
+        closeSettings();
       }
     }
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [phase, showHomeMenu, dismissSafety, play]);
+  }, [phase, showHomeMenu, dismissSafety, closeSettings, play]);
 
   // Cursor tracking
   const handleMouseMove = useCallback((e) => {
@@ -468,6 +488,7 @@ function HostApp() {
         fadeOut={phase === 'news'}
         mailLayerVisible={phase === 'messageboard'}
         onMailClose={closeMessageBoard}
+        onSettingsClick={openSettings}
         zoomIn={phase === 'channel-select'}
         zoomOut={menuZoomOut}
         zoomOrigin={zoomOrigin}
@@ -477,6 +498,11 @@ function HostApp() {
         onPairClick={openPairing}
         peerConnected={connectedCount > 0}
         dateOverride={phase === 'messageboard' ? messageBoardDateOverride : null}
+      />
+
+      <WiiSettings
+        visible={phase === 'settings'}
+        onBack={closeSettings}
       />
 
       {/* Channel Selection Screen */}

@@ -4,7 +4,10 @@ const SCREEN_LABELS = {
   black: 'Startup Black',
   safety: 'Safety Screen',
   menu: 'Wii Menu',
+  settings: 'Settings',
   messageboard: 'Message Board',
+  'channel-select': 'Channel Select',
+  news: 'News Channel',
 };
 
 export default function DevModeSelector({ screens, currentScreen, onSelectScreen, onClose }) {
@@ -16,7 +19,7 @@ export default function DevModeSelector({ screens, currentScreen, onSelectScreen
           &times;
         </button>
       </div>
-      <div className="dev-mode-hint">Press ` to toggle | 1-4 to switch</div>
+      <div className="dev-mode-hint">Press ` to toggle | 1-{screens.length} to switch</div>
       <div className="dev-mode-screens">
         {screens.map((screen, index) => (
           <button
