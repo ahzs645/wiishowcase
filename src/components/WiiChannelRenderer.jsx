@@ -79,6 +79,8 @@ export default memo(function WiiChannelRenderer({
         const mergedSettings = {
           displayAspect: resolvedAspect,
           fps,
+          maxRenderFps: target === 'icon' ? 60 : undefined,
+          subframePlayback: target === 'icon' ? false : undefined,
           ...settings,
         };
         const { renderer, layout: resolvedLayout } = createRendererFromBundle(canvas, bundle, target, mergedSettings);

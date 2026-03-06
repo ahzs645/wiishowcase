@@ -7,19 +7,25 @@ export default memo(function ChannelCard({
   blank,
   onClick,
   channelIndex,
+  contentActive = true,
+  contentComponent: ContentComponent,
+  contentPlaying = true,
   content,
   contentClassName,
   contentStyle,
 }) {
   const { channelPath, viewBox, maskUrl } = useWiiAspectMode();
   const maskStyle = { '--wii-channel-mask': `url(${maskUrl})` };
+  const renderedContent = ContentComponent
+    ? (contentActive ? <ContentComponent playing={contentPlaying} /> : null)
+    : content;
 
   if (blank) {
     return (
       <div className="wii-channel-ui wii-channel-ui-empty" style={maskStyle}>
-        {content && (
+        {renderedContent && (
           <div className={`wii-channel-ui-content ${contentClassName || 'channel-inner'}`}>
-            {content}
+            {renderedContent}
           </div>
         )}
         <svg
@@ -63,7 +69,7 @@ export default memo(function ChannelCard({
       <div
         className={`wii-channel-ui-content ${contentClassName || 'channel-inner'}`}
       >
-        {content || <span className="wii-channel-title">{name}</span>}
+        {renderedContent || <span className="wii-channel-title">{name}</span>}
       </div>
       <svg
         className="wii-channel-ui-svg"

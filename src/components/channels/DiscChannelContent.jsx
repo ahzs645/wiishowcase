@@ -4,12 +4,12 @@ const DISC_ICON_SETTINGS = {
   animOverride: 'arc/anim/my_DiskCh_b.brlan',
 };
 
-export default function DiscChannelContent() {
+export default function DiscChannelContent({ playing = true }) {
   return (
     <WiiChannelRenderer
       bundlePath="channels/disc.zip"
       target="icon"
-      playing={true}
+      playing={playing}
       settings={DISC_ICON_SETTINGS}
     />
   );

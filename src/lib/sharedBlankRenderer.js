@@ -32,7 +32,7 @@ class SharedBlankRenderer {
       this.masterCanvas,
       bundle,
       'icon',
-      { fps: 30 },
+      { fps: 30, maxRenderFps: 60, subframePlayback: false },
     );
 
     this.renderer = renderer;

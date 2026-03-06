@@ -33,7 +33,9 @@ export function ClockTime({ time }) {
   );
 }
 
-export function ClockDate({ date }) {
+export function ClockDate({ date, hidden = false }) {
+  if (hidden) return null;
+
   return (
     <div className="menu-clock menu-clock-below">
       <div className="menu-clock-date">{date}</div>

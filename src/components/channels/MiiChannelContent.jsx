@@ -1,11 +1,11 @@
 import WiiChannelRenderer from '../WiiChannelRenderer';
 
-export default function MiiChannelContent() {
+export default function MiiChannelContent({ playing = true }) {
   return (
     <WiiChannelRenderer
       bundlePath="channels/mii.zip"
       target="icon"
-      playing={true}
+      playing={playing}
     />
   );
 }

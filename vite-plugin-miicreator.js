@@ -10,6 +10,23 @@ export default function miicreatorPlugin() {
   const __dirname = path.dirname(fileURLToPath(import.meta.url));
   const distDir = path.join(__dirname, 'node_modules', 'miicreator', 'public', 'dist');
 
+  function listDistFiles(dir) {
+    if (!fs.existsSync(dir)) return [];
+
+    const files = [];
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const entryPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) {
+        files.push(...listDistFiles(entryPath));
+        continue;
+      }
+      if (entry.isFile()) {
+        files.push(entryPath);
+      }
+    }
+    return files;
+  }
+
   return {
     name: 'miicreator-runtime-assets',
 
@@ -37,13 +54,11 @@ export default function miicreatorPlugin() {
     },
 
     generateBundle() {
-      const files = ['brotli-wasm.js', 'brotli_dec_wasm_bg.wasm', 'icons.json'];
-      for (const file of files) {
-        const filePath = path.join(distDir, file);
-        if (!fs.existsSync(filePath)) continue;
+      for (const filePath of listDistFiles(distDir)) {
+        const relativePath = path.relative(distDir, filePath);
         this.emitFile({
           type: 'asset',
-          fileName: `dist/${file}`,
+          fileName: `dist/${relativePath}`,
           source: fs.readFileSync(filePath),
         });
       }

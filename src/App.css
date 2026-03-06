@@ -1406,6 +1406,7 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 32px 104px 44px;
   background: #c8c8c8;
   pointer-events: none;
   visibility: hidden;
@@ -1417,15 +1418,42 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
 }
 
 .wii-menu-calendar-wrapper .wii-calendar-container {
-  --wii-calendar-width: min(800px, 85vw);
+  --wii-calendar-width: min(1020px, calc(100vw - 208px));
+}
+
+.wii-menu-calendar-wrapper .wii-calendar-inner {
+  padding: 10px;
+}
+
+.wii-menu-calendar-wrapper .wii-calendar-grid {
+  height: clamp(520px, 60vh, 610px);
+}
+
+.wii-menu-calendar-wrapper .wii-calendar-th {
+  height: clamp(44px, 5vh, 54px);
+  padding: 8px 4px;
+  font-size: clamp(26px, 2vw, 33px);
+}
+
+.wii-menu-calendar-wrapper .wii-calendar-td {
+  height: clamp(82px, 9vh, 104px);
+  font-size: clamp(42px, 3.2vw, 54px);
+}
+
+.wii-menu-calendar-wrapper .wii-calendar-footer {
+  padding: 6px 18px 8px;
+}
+
+.wii-menu-calendar-wrapper .wii-calendar-month {
+  font-size: clamp(58px, 4.7vw, 78px);
 }
 
 .calendar-mail-icon {
   position: absolute;
-  bottom: 2px;
-  right: 2px;
-  width: 20px;
-  height: 20px;
+  bottom: 4px;
+  right: 4px;
+  width: clamp(24px, 1.9vw, 30px);
+  height: clamp(24px, 1.9vw, 30px);
   pointer-events: none;
 }
 
@@ -1436,11 +1464,92 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
 }
 
 .wii-calendar > .channel-page-arrow-prev {
-  left: -62px;
+  left: clamp(-92px, -6.5vw, -62px);
 }
 
 .wii-calendar > .channel-page-arrow-next {
-  right: -62px;
+  right: clamp(-92px, -6.5vw, -62px);
+}
+
+@media (max-width: 900px) {
+  .wii-menu-calendar-wrapper {
+    padding: 24px 76px 32px;
+  }
+
+  .wii-menu-calendar-wrapper .wii-calendar-container {
+    --wii-calendar-width: calc(100vw - 152px);
+  }
+
+  .wii-menu-calendar-wrapper .wii-calendar-grid {
+    height: clamp(420px, 54vh, 520px);
+  }
+
+  .wii-menu-calendar-wrapper .wii-calendar-th {
+    font-size: clamp(18px, 2.8vw, 24px);
+  }
+
+  .wii-menu-calendar-wrapper .wii-calendar-td {
+    height: clamp(58px, 7.8vh, 84px);
+    font-size: clamp(28px, 4.4vw, 40px);
+  }
+
+  .wii-menu-calendar-wrapper .wii-calendar-month {
+    font-size: clamp(38px, 6vw, 58px);
+  }
+}
+
+@media (max-width: 640px) {
+  .wii-menu-calendar-wrapper {
+    padding: 16px 56px 24px;
+  }
+
+  .wii-menu-calendar-wrapper .wii-calendar-container {
+    --wii-calendar-width: calc(100vw - 112px);
+  }
+
+  .wii-menu-calendar-wrapper .wii-calendar-inner {
+    padding: 6px;
+  }
+
+  .wii-menu-calendar-wrapper .wii-calendar-grid {
+    height: clamp(300px, 46vh, 420px);
+  }
+
+  .wii-menu-calendar-wrapper .wii-calendar-th {
+    height: 30px;
+    padding: 4px 2px;
+    font-size: clamp(13px, 3.2vw, 18px);
+  }
+
+  .wii-menu-calendar-wrapper .wii-calendar-td {
+    height: clamp(42px, 7vh, 62px);
+    padding: 0 2px;
+    font-size: clamp(19px, 4.6vw, 29px);
+  }
+
+  .wii-menu-calendar-wrapper .wii-calendar-footer {
+    padding: 4px 12px 6px;
+  }
+
+  .wii-menu-calendar-wrapper .wii-calendar-month {
+    font-size: clamp(28px, 6.2vw, 42px);
+    letter-spacing: -0.8px;
+  }
+
+  .calendar-mail-icon {
+    bottom: 2px;
+    right: 2px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .wii-calendar > .channel-page-arrow-prev {
+    left: -48px;
+  }
+
+  .wii-calendar > .channel-page-arrow-next {
+    right: -48px;
+  }
 }
 
 /* ---- Bottom Buttons ---- */

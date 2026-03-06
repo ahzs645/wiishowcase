@@ -21,16 +21,16 @@ const MAIL_CLOSE_DELAY_MS = 520;
 const TRACK_BTN_LEFT_STYLE = { "--wii-track-btn-front-count": 1, "--wii-track-btn-back-count": 2 };
 const TRACK_BTN_RIGHT_STYLE = { "--wii-track-btn-front-count": 1, "--wii-track-btn-back-count": 1 };
 
-const BLANK = { blank: true, content: <BlankChannelContent />, contentClassName: 'ch-blank' };
+const BLANK = { blank: true, contentComponent: BlankChannelContent, contentClassName: 'ch-blank' };
 
 const CHANNELS = [
-  { id: 'disc', name: 'Disc Channel', content: <DiscChannelContent />, contentClassName: 'ch-disc', bundle: 'channels/disc.zip', rendererSettings: { banner: { playbackMode: 'hold' } } },
-  { id: 'mii', name: 'Mii Channel', content: <MiiChannelContent />, contentClassName: 'ch-mii', bundle: 'channels/mii.zip' },
-  { id: 'photo', name: 'Photo Channel', content: <PhotoChannelContent />, contentClassName: 'ch-photo', bundle: 'channels/photo.zip' },
-  { id: 'shop', name: 'Wii Shop', content: <ShopChannelContent />, contentClassName: 'ch-shop', bundle: 'channels/shop.zip' },
-  { id: 'news', name: 'News Channel', action: 'news', content: <NewsChannelContent />, contentClassName: 'ch-news', bundle: 'channels/news.zip', rendererSettings: NEWS_RENDERER_SETTINGS, video: 'channelart/news/video.gif', audio: 'channelart/news/audio.mp3' },
-  { id: 'onliine', name: 'Onliine Channel', content: <OnliineChannelContent />, contentClassName: 'ch-onliine', video: 'channelart/onliine/video.gif', audio: 'channelart/onliine/audio.mp3' },
-  { id: 'pokemon-ranch', name: 'My Pokémon Ranch', content: <PokemonRanchChannelContent />, contentClassName: 'ch-pokemon-ranch', video: 'channelart/pokemon-ranch/banner.png', audio: 'channelart/pokemon-ranch/audio.wav' },
+  { id: 'disc', name: 'Disc Channel', contentComponent: DiscChannelContent, contentClassName: 'ch-disc', bundle: 'channels/disc.zip', rendererSettings: { banner: { playbackMode: 'hold' } } },
+  { id: 'mii', name: 'Mii Channel', contentComponent: MiiChannelContent, contentClassName: 'ch-mii', bundle: 'channels/mii.zip' },
+  { id: 'photo', name: 'Photo Channel', contentComponent: PhotoChannelContent, contentClassName: 'ch-photo', bundle: 'channels/photo.zip' },
+  { id: 'shop', name: 'Wii Shop', contentComponent: ShopChannelContent, contentClassName: 'ch-shop', bundle: 'channels/shop.zip' },
+  { id: 'news', name: 'News Channel', action: 'news', contentComponent: NewsChannelContent, contentClassName: 'ch-news', bundle: 'channels/news.zip', rendererSettings: NEWS_RENDERER_SETTINGS, video: 'channelart/news/video.gif', audio: 'channelart/news/audio.mp3' },
+  { id: 'onliine', name: 'Onliine Channel', contentComponent: OnliineChannelContent, contentClassName: 'ch-onliine', video: 'channelart/onliine/video.gif', audio: 'channelart/onliine/audio.mp3' },
+  { id: 'pokemon-ranch', name: 'My Pokémon Ranch', contentComponent: PokemonRanchChannelContent, contentClassName: 'ch-pokemon-ranch', video: 'channelart/pokemon-ranch/banner.png', audio: 'channelart/pokemon-ranch/audio.wav' },
   { ...BLANK },
   { ...BLANK },
   { ...BLANK },
@@ -280,6 +280,8 @@ export default function WiiMenu({
               <div key={pageIdx} className="wii-channel-holder-grid">
                 {pageChannels.map((ch, i) => {
                   const globalIndex = pageIdx * CHANNELS_PER_PAGE + i;
+                  const isActivePage = pageIdx === currentPage;
+                  const shouldRenderContent = isActivePage || ch.blank;
                   return (
                     <ChannelCard
                       key={globalIndex}
@@ -287,8 +289,10 @@ export default function WiiMenu({
                       gradient={ch.gradient}
                       blank={ch.blank}
                       onClick={ch.id ? handleChannelClick : undefined}
-                      channelIndex={ch.id ? CHANNELS.indexOf(ch) : undefined}
-                      content={ch.content}
+                      channelIndex={ch.id ? globalIndex : undefined}
+                      contentActive={shouldRenderContent}
+                      contentPlaying={isActivePage}
+                      contentComponent={ch.contentComponent}
                       contentClassName={ch.contentClassName}
                     />
                   );
@@ -321,7 +325,7 @@ export default function WiiMenu({
         )}
       </div>
 
-      <ClockDate date={displayedDate} />
+      <ClockDate date={displayedDate} hidden={calendarOpen} />
 
       {/* Calendar (drop animation, hidden by default) */}
       <div className={`wii-menu-calendar-wrapper${calendarOpen ? ' is-calendar-open' : ''}`} onClick={handleCalendarDateClick}>
