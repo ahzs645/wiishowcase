@@ -281,7 +281,7 @@ export default function WiiMenu({
                 {pageChannels.map((ch, i) => {
                   const globalIndex = pageIdx * CHANNELS_PER_PAGE + i;
                   const isActivePage = pageIdx === currentPage;
-                  const shouldRenderContent = isActivePage || ch.blank;
+                  const shouldRenderContent = !shouldMailLayerBeOpen && (isActivePage || ch.blank);
                   return (
                     <ChannelCard
                       key={globalIndex}

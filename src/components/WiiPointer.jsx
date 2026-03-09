@@ -1,4 +1,4 @@
-import { memo, useRef, useEffect } from 'react';
+import { memo, forwardRef, useRef, useEffect, useImperativeHandle } from 'react';
 
 const PLAYERS = {
   P1: { color: '#bfe2ff', accent: '#008cff' },
@@ -7,8 +7,17 @@ const PLAYERS = {
   P4: { color: '#ffe6bf', accent: '#ff9c00' },
 };
 
-export default memo(function WiiPointer({ x, y, player = 'P1', visible = true }) {
+const WiiPointer = forwardRef(function WiiPointer({ x = 0, y = 0, player = 'P1', visible = true }, ref) {
   const svgRef = useRef(null);
+
+  useImperativeHandle(ref, () => ({
+    setPosition(nextX, nextY) {
+      const el = svgRef.current;
+      if (!el) return;
+      el.style.left = `${nextX}px`;
+      el.style.top = `${nextY}px`;
+    },
+  }), []);
 
   useEffect(() => {
     const el = svgRef.current;
@@ -143,3 +152,5 @@ export default memo(function WiiPointer({ x, y, player = 'P1', visible = true })
     </svg>
   );
 });
+
+export default memo(WiiPointer);

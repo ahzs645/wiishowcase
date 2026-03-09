@@ -6,6 +6,7 @@ import WiiMessageBoard from './components/WiiMessageBoard';
 import WiiNewsChannel from './components/WiiNewsChannel';
 import ChannelSelection from './components/ChannelSelection';
 import WiiPointer from './components/WiiPointer';
+import ChannelSvgDefs from './components/ChannelSvgDefs';
 import PairingScreen from './components/PairingScreen';
 import CompanionController from './components/CompanionController';
 import DevModeSelector from './components/DevModeSelector';
@@ -87,7 +88,6 @@ function HostApp() {
   const [phase, setPhase] = useState(
     startScreen && SCREENS.includes(startScreen) ? startScreen : 'black'
   );
-  const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
   const [cursorActive, setCursorActive] = useState(startInDevMode || startScreen);
   const [devMode, setDevMode] = useState(startInDevMode);
   const [showPairing, setShowPairing] = useState(false);
@@ -108,6 +108,7 @@ function HostApp() {
   const { play } = useSounds();
   const { className: aspectClass } = useWiiAspectMode();
   const dismissSafetyRef = useRef(null);
+  const localPointerRef = useRef(null);
 
   // Handle messages from any companion (controllerId identifies which one)
   const handleRemoteMessage = useCallback((controllerId, msg) => {
@@ -395,7 +396,7 @@ function HostApp() {
 
   // Cursor tracking
   const handleMouseMove = useCallback((e) => {
-    setCursorPos({ x: e.clientX, y: e.clientY });
+    localPointerRef.current?.setPosition(e.clientX, e.clientY);
   }, []);
 
   // Open pairing screen and start hosting a new controller slot
@@ -462,8 +463,10 @@ function HostApp() {
       style={HOST_APP_STYLE}
       onMouseMove={handleMouseMove}
     >
+      <ChannelSvgDefs />
+
       {/* Local pointer (P1) */}
-      <WiiPointer x={cursorPos.x} y={cursorPos.y} player="P1" visible={cursorActive} />
+      <WiiPointer ref={localPointerRef} player="P1" visible={cursorActive} />
 
       {/* Remote pointers (P2-P4) from companions — isolated from App re-renders */}
       <RemotePointers pointersRef={remotePointersRef} notifyRef={remotePointersNotify} />

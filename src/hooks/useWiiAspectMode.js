@@ -22,6 +22,7 @@ function getMode(matches) {
     ? {
         is43: true,
         channelPath: CHANNEL_PATH_43,
+        channelShapeId: 'wii-channel-shape-43',
         viewBox: '857 0 289 217',
         maskUrl: channelMask43,
         maskDataUri: MASK_43,
@@ -31,6 +32,7 @@ function getMode(matches) {
     : {
         is43: false,
         channelPath: CHANNEL_PATH_169,
+        channelShapeId: 'wii-channel-shape-169',
         viewBox: '806 0 391 217',
         maskUrl: channelMask169,
         maskDataUri: MASK_169,

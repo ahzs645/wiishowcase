@@ -34,7 +34,7 @@ function getBundleAudio(url) {
 export default function ChannelSelection({ visible, channel, onBack, onStart, hasPrev, hasNext, onPrev, onNext }) {
   const audioRef = useRef(null);
   const audioMetaRef = useRef(null);
-  const { channelPath, viewBox, aspectRatio, maskDataUri, is43 } = useWiiAspectMode();
+  const { channelShapeId, viewBox, aspectRatio, maskDataUri, is43 } = useWiiAspectMode();
   const bundleSettings = channel?.rendererSettings;
   const bundleBannerSettings = bundleSettings && ('banner' in bundleSettings || 'icon' in bundleSettings)
     ? bundleSettings.banner
@@ -167,10 +167,10 @@ export default function ChannelSelection({ visible, channel, onBack, onStart, ha
           viewBox={viewBox}
           preserveAspectRatio="none"
         >
-          <path className="wii-channel-ui-dimmer" d={channelPath} />
-          <path
+          <use className="wii-channel-ui-dimmer" href={`#${channelShapeId}`} />
+          <use
             className="wii-channel-ui-border"
-            d={channelPath}
+            href={`#${channelShapeId}`}
             fill="none"
           />
         </svg>

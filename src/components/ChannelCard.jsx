@@ -14,7 +14,7 @@ export default memo(function ChannelCard({
   contentClassName,
   contentStyle,
 }) {
-  const { channelPath, viewBox, maskUrl } = useWiiAspectMode();
+  const { channelShapeId, viewBox, maskUrl } = useWiiAspectMode();
   const maskStyle = { '--wii-channel-mask': `url(${maskUrl})` };
   const renderedContent = ContentComponent
     ? (contentActive ? <ContentComponent playing={contentPlaying} /> : null)
@@ -33,10 +33,10 @@ export default memo(function ChannelCard({
           viewBox={viewBox}
           preserveAspectRatio="none"
         >
-          <path className="wii-channel-ui-dimmer" d={channelPath} />
-          <path
+          <use className="wii-channel-ui-dimmer" href={`#${channelShapeId}`} />
+          <use
             className="wii-channel-ui-border"
-            d={channelPath}
+            href={`#${channelShapeId}`}
             fill="none"
           />
         </svg>
@@ -76,10 +76,10 @@ export default memo(function ChannelCard({
         viewBox={viewBox}
         preserveAspectRatio="none"
       >
-        <path className="wii-channel-ui-dimmer" d={channelPath} />
-        <path
+        <use className="wii-channel-ui-dimmer" href={`#${channelShapeId}`} />
+        <use
           className="wii-channel-ui-border"
-          d={channelPath}
+          href={`#${channelShapeId}`}
           fill="none"
         />
       </svg>
