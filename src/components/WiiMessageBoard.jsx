@@ -200,7 +200,10 @@ function AvatarDisplay({ message, className }) {
   );
 }
 
-function MessageCard({ message, onOpen }) {
+const PIN_UNREAD_SRC = `${import.meta.env.BASE_URL}Wii.css/assets/icons/letter-pin-unread.svg`;
+const PIN_READ_SRC = `${import.meta.env.BASE_URL}Wii.css/assets/icons/letter-pin.svg`;
+
+function MessageCard({ message, onOpen, isRead }) {
   const type = MESSAGE_TYPES[message.type] ?? MESSAGE_TYPES.memo;
 
   return (
@@ -210,11 +213,16 @@ function MessageCard({ message, onOpen }) {
       style={{
         left: `${message.x}%`,
         top: `${message.y}%`,
-        transform: `rotate(${message.angle}deg)`,
       }}
       onClick={() => onOpen(message.id)}
       aria-label={`Open ${type.label} from ${message.sender}`}
     >
+      <img
+        className="message-board-card-pin"
+        src={isRead ? PIN_READ_SRC : PIN_UNREAD_SRC}
+        alt={isRead ? 'Read' : 'Unread'}
+        aria-hidden="true"
+      />
       <div className="message-board-card-header">
         <AvatarDisplay message={message} className="message-board-card-avatar" />
       </div>
@@ -268,6 +276,7 @@ function MessageMemo({ message, onClose }) {
 export default function WiiMessageBoard({ visible, onDisplayedDateChange, targetDate }) {
   const [currentDayOffset, setCurrentDayOffset] = useState(0);
   const [selectedMessageId, setSelectedMessageId] = useState(null);
+  const [readMessageIds, setReadMessageIds] = useState(new Set());
   const [dateTransition, setDateTransition] = useState(null);
   const transitionTimerRef = useRef(null);
   const lastTargetDateRef = useRef(null);
@@ -379,6 +388,12 @@ export default function WiiMessageBoard({ visible, onDisplayedDateChange, target
   const openMessage = (messageId) => {
     if (isDateTransitioning) return;
     setSelectedMessageId(messageId);
+    setReadMessageIds((prev) => {
+      if (prev.has(messageId)) return prev;
+      const next = new Set(prev);
+      next.add(messageId);
+      return next;
+    });
   };
 
   const setDate = (toOffset, direction) => {
@@ -416,6 +431,7 @@ export default function WiiMessageBoard({ visible, onDisplayedDateChange, target
         key={`${keyPrefix}-${message.id}`}
         message={message}
         onOpen={openMessage}
+        isRead={readMessageIds.has(message.id)}
       />
     ))
   );

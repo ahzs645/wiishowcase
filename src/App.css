@@ -587,6 +587,7 @@ html, body, #root {
   cursor: pointer;
   transition: transform 150ms ease, box-shadow 150ms ease;
   will-change: transform;
+  overflow: visible;
   z-index: 8;
 }
 
@@ -618,6 +619,18 @@ html, body, #root {
 .message-board-card.is-type-system {
   --message-card-strip: #8d9aa5;
   --message-card-line: #6c7986;
+}
+
+.message-board-card-pin {
+  position: absolute;
+  top: calc(-1 * clamp(14px, 2.8vh, 30px) - clamp(12px, 1.8vh, 22px));
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(24px, 3.6vh, 44px);
+  height: clamp(24px, 3.6vh, 44px);
+  pointer-events: none;
+  z-index: 10;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.3));
 }
 
 .message-board-card-header {
