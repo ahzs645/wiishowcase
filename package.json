@@ -6,8 +6,10 @@
   "scripts": {
     "dev": "concurrently -n vite,sass -c blue,magenta \"vite\" \"sass --watch Wii.css/src/index.scss Wii.css/dist/wii.css\"",
     "dev:vite": "vite",
+    "build:css": "sass Wii.css/src/index.scss Wii.css/dist/wii.css",
     "build:news-channel": "cd news-channel && npx ng build",
-    "build": "npm run build:news-channel && vite build",
+    "build": "npm run build:css && vite build",
+    "build:all": "npm run build:news-channel && npm run build",
     "preview": "vite preview"
   },
   "dependencies": {
