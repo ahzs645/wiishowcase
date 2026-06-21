@@ -8,12 +8,16 @@ import signalingPlugin from './vite-plugin-signaling.js';
 import miicreatorPlugin from './vite-plugin-miicreator.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const localRendererRoot = path.resolve(__dirname, '../wewad/packages/wii-channel-renderer/src');
+// `wewad` is vendored as a git submodule (see .gitmodules), so the renderer
+// source lives in-repo and is checked out alongside this project (including in
+// CI via `submodules: true`).
+const localRendererRoot = path.resolve(__dirname, 'wewad/packages/wii-channel-renderer/src');
 
-// The aliases below redirect the published @firstform/wii-channel-renderer to a
-// local checkout for development. That sibling checkout doesn't exist in CI (or
-// on a fresh clone), so only apply the aliases when it's actually present —
-// otherwise fall back to the npm package, which exposes the same entry points.
+// The aliases below redirect the published @firstform/wii-channel-renderer to the
+// vendored submodule checkout, so we develop and build against local source
+// instead of a published npm release. If the submodule hasn't been initialized
+// (e.g. a clone done without `--recurse-submodules`), fall back to the npm
+// package, which exposes the same entry points.
 const hasLocalRenderer = fs.existsSync(localRendererRoot);
 
 // `miicreator` is wired up as a local file: dependency that isn't published to

@@ -1,3 +1,6 @@
 [submodule "Wii.css"]
 	path = Wii.css
 	url = https://github.com/ahzs645/Wii.css
+[submodule "wewad"]
+	path = wewad
+	url = https://github.com/ahzs645/wewad.git

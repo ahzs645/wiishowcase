@@ -1021,7 +1021,13 @@ html, body, #root {
 .channel-holder-wrapper {
   position: relative;
   filter: drop-shadow(0 3px 0 #31c1ed);
-  will-change: filter;
+  /* No will-change here: the drop-shadow is static, so hinting the compositor to
+     keep re-evaluating `filter` only pins an extra GPU layer for the whole
+     channel grid (which contains ~12 live-animating canvases) for no benefit.
+     NOTE/follow-up: the drop-shadow itself still forces the filtered subtree to
+     re-rasterize whenever a canvas inside repaints. Moving the shadow onto a
+     static decorative layer (not this animating container) would cut that cost,
+     but needs a visual check — left as a recommendation. */
   z-index: 20;
 }
 

@@ -105,6 +105,22 @@ function HostApp() {
   const remotePointersNotify = useRef(null);
   const prevButtonsRefs = useRef({});
 
+  // Companions stream state at ~60Hz, and each message updates remotePointersRef
+  // synchronously. Re-rendering RemotePointers on every message means up to 4x60
+  // React renders/sec. Coalesce them: the ref already holds the latest position,
+  // so we only need to flush one render per animation frame (right before paint).
+  const notifyRafRef = useRef(0);
+  const scheduleNotify = useCallback(() => {
+    if (notifyRafRef.current) return;
+    notifyRafRef.current = requestAnimationFrame(() => {
+      notifyRafRef.current = 0;
+      remotePointersNotify.current?.();
+    });
+  }, []);
+  useEffect(() => () => {
+    if (notifyRafRef.current) cancelAnimationFrame(notifyRafRef.current);
+  }, []);
+
   const { play } = useSounds();
   const { className: aspectClass } = useWiiAspectMode();
   const dismissSafetyRef = useRef(null);
@@ -114,12 +130,12 @@ function HostApp() {
   const handleRemoteMessage = useCallback((controllerId, msg) => {
     const updatePointer = (x, y) => {
       remotePointersRef.current[controllerId] = { x, y, visible: true };
-      remotePointersNotify.current?.();
+      scheduleNotify();
       clearTimeout(remotePointerTimeouts.current[controllerId]);
       remotePointerTimeouts.current[controllerId] = setTimeout(() => {
         if (remotePointersRef.current[controllerId]) {
           remotePointersRef.current[controllerId].visible = false;
-          remotePointersNotify.current?.();
+          scheduleNotify();
         }
       }, 500);
     };
@@ -184,7 +200,7 @@ function HostApp() {
     if (msg.type === 'pointer-up') {
       if (remotePointersRef.current[controllerId]) {
         remotePointersRef.current[controllerId].visible = false;
-        remotePointersNotify.current?.();
+        scheduleNotify();
       }
     }
     if (msg.type === 'button' && msg.action === 'down') {
@@ -212,7 +228,7 @@ function HostApp() {
         Math.max(0, Math.min(window.innerHeight, y)),
       );
     }
-  }, [phase, play]);
+  }, [phase, play, scheduleNotify]);
 
   const {
     controllers,

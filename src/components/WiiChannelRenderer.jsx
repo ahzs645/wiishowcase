@@ -79,7 +79,14 @@ export default memo(function WiiChannelRenderer({
         const mergedSettings = {
           displayAspect: resolvedAspect,
           fps,
-          maxRenderFps: target === 'icon' ? 60 : undefined,
+          // Menu thumbnails ('icon') are small and there are ~12 animating at
+          // once, so each one's full-canvas redraw + GPU upload is what dominates
+          // compositing. Cap the redraw rate and the backing-store resolution:
+          // at this size 24fps and <=1.5x DPR are visually indistinguishable from
+          // 60fps/native DPR but cost a fraction to paint. (These now actually
+          // take effect — bundleRenderer forwards them to the renderer.)
+          maxRenderFps: target === 'icon' ? 24 : undefined,
+          maxDevicePixelRatio: target === 'icon' ? 1.5 : undefined,
           subframePlayback: target === 'icon' ? false : undefined,
           ...settings,
         };
