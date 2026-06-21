@@ -36,39 +36,57 @@ function getLanHost() {
   return '';
 }
 
-export default defineConfig({
-  base: '/wiishowcase/',
-  plugins: [react(), signalingPlugin(), miicreatorPlugin()],
-  define: {
-    __LAN_HOST__: JSON.stringify(getLanHost()),
-  },
-  resolve: {
-    alias: hasLocalRenderer
+export default defineConfig(({ command }) => {
+  const rendererAliases = hasLocalRenderer
+    ? [
+        {
+          find: '@firstform/wii-channel-renderer/bundle-loader',
+          replacement: path.join(localRendererRoot, 'bundleLoader.js'),
+        },
+        {
+          find: '@firstform/wii-channel-renderer/bundle-renderer',
+          replacement: path.join(localRendererRoot, 'bundleRenderer.js'),
+        },
+        {
+          find: '@firstform/wii-channel-renderer',
+          replacement: path.join(localRendererRoot, 'index.js'),
+        },
+      ]
+    : [];
+
+  // Unlike the production build (which externalizes `miicreator` — see below),
+  // the dev server statically resolves the bare-specifier dynamic import of
+  // `miicreator/primitives` in src/hooks/useMiiHead.js and 500s when the local
+  // `miicreator` checkout is missing. Point it at a stub that resolves cleanly
+  // but throws when used, so the hook's existing try/catch degrades gracefully.
+  const miicreatorDevStub =
+    command === 'serve' && !hasMiicreator
       ? [
           {
-            find: '@firstform/wii-channel-renderer/bundle-loader',
-            replacement: path.join(localRendererRoot, 'bundleLoader.js'),
-          },
-          {
-            find: '@firstform/wii-channel-renderer/bundle-renderer',
-            replacement: path.join(localRendererRoot, 'bundleRenderer.js'),
-          },
-          {
-            find: '@firstform/wii-channel-renderer',
-            replacement: path.join(localRendererRoot, 'index.js'),
+            find: 'miicreator/primitives',
+            replacement: path.resolve(__dirname, 'dev-stubs/miicreator-primitives.js'),
           },
         ]
-      : [],
-    preserveSymlinks: false,
-  },
-  optimizeDeps: {
-    include: ['three'],
-  },
-  build: {
-    target: 'esnext',
-    rollupOptions: hasMiicreator ? {} : { external: [/^miicreator(\/|$)/] },
-  },
-  server: {
-    host: true,
-  },
+      : [];
+
+  return {
+    base: '/wiishowcase/',
+    plugins: [react(), signalingPlugin(), miicreatorPlugin()],
+    define: {
+      __LAN_HOST__: JSON.stringify(getLanHost()),
+    },
+    resolve: {
+      alias: [...rendererAliases, ...miicreatorDevStub],
+      preserveSymlinks: false,
+    },
+    build: {
+      target: 'esnext',
+      // Vite 8 renamed `rollupOptions` to `rolldownOptions` (Rolldown is now the
+      // bundler). The old name still works but emits a deprecation warning.
+      rolldownOptions: hasMiicreator ? {} : { external: [/^miicreator(\/|$)/] },
+    },
+    server: {
+      host: true,
+    },
+  };
 });
