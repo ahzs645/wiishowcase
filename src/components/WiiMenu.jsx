@@ -27,7 +27,16 @@ const CHANNELS = [
   { id: 'disc', name: 'Disc Channel', contentComponent: DiscChannelContent, contentClassName: 'ch-disc', bundle: 'channels/disc.zip', rendererSettings: { banner: { playbackMode: 'hold' } } },
   { id: 'mii', name: 'Mii Channel', contentComponent: MiiChannelContent, contentClassName: 'ch-mii', bundle: 'channels/mii.zip' },
   { id: 'photo', name: 'Photo Channel', contentComponent: PhotoChannelContent, contentClassName: 'ch-photo', bundle: 'channels/photo.zip' },
-  { id: 'shop', name: 'Wii Shop', contentComponent: ShopChannelContent, contentClassName: 'ch-shop', bundle: 'channels/shop.zip' },
+  {
+    id: 'shop',
+    name: 'Wii Shop',
+    contentComponent: ShopChannelContent,
+    contentClassName: 'ch-shop',
+    bundle: 'channels/shop.zip',
+    rendererSettings: {
+      banner: { rendererBackend: 'webgl', tevQuality: 'accurate' },
+    },
+  },
   { id: 'news', name: 'News Channel', action: 'news', contentComponent: NewsChannelContent, contentClassName: 'ch-news', bundle: 'channels/news.zip', rendererSettings: NEWS_RENDERER_SETTINGS, video: 'channelart/news/video.gif', audio: 'channelart/news/audio.mp3' },
   { id: 'onliine', name: 'Onliine Channel', contentComponent: OnliineChannelContent, contentClassName: 'ch-onliine', video: 'channelart/onliine/video.gif', audio: 'channelart/onliine/audio.mp3' },
   { id: 'pokemon-ranch', name: 'My Pokémon Ranch', contentComponent: PokemonRanchChannelContent, contentClassName: 'ch-pokemon-ranch', video: 'channelart/pokemon-ranch/banner.png', audio: 'channelart/pokemon-ranch/audio.wav' },

@@ -10,6 +10,7 @@
     "build:news-channel": "cd news-channel && npx ng build",
     "build": "npm run build:css && vite build",
     "build:all": "npm run build:news-channel && npm run build",
+    "export:channel-bundle": "node scripts/export-channel-bundle.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
