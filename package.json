@@ -11,6 +11,7 @@
     "build": "npm run build:css && vite build",
     "build:all": "npm run build:news-channel && npm run build",
     "export:channel-bundle": "node scripts/export-channel-bundle.mjs",
+    "fetch:wii-css": "node scripts/fetch-wii-css.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
