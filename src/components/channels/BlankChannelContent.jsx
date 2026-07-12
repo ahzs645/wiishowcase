@@ -4,13 +4,16 @@ import { getSharedBlankRenderer } from '../../lib/sharedBlankRenderer';
 const WRAPPER_STYLE = { width: '100%', overflow: 'hidden', position: 'relative' };
 const CANVAS_STYLE = { width: '100%', height: 'auto', display: 'block' };
 
-export default function BlankChannelContent() {
+export default function BlankChannelContent({ playing = true }) {
   const canvasRef = useRef(null);
   const wrapperRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    // While paused (menu zoomed away, fading, or behind the mail layer) drop
+    // the subscription entirely — the canvas keeps its last frame and the
+    // shared master stops when nobody is subscribed.
+    if (!canvas || !playing) return;
 
     const shared = getSharedBlankRenderer();
     let entry = null;
@@ -41,7 +44,7 @@ export default function BlankChannelContent() {
       visible = false;
       if (entry) shared.unsubscribe(entry);
     };
-  }, []);
+  }, [playing]);
 
   return (
     <div ref={wrapperRef} style={WRAPPER_STYLE}>

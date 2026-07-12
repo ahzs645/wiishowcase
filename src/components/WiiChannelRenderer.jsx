@@ -83,10 +83,12 @@ export default memo(function WiiChannelRenderer({
           // once, so each one's full-canvas redraw + GPU upload is what dominates
           // compositing. Cap the redraw rate and the backing-store resolution:
           // at this size 24fps and <=1.5x DPR are visually indistinguishable from
-          // 60fps/native DPR but cost a fraction to paint. (These now actually
-          // take effect — bundleRenderer forwards them to the renderer.)
-          maxRenderFps: target === 'icon' ? 24 : undefined,
-          maxDevicePixelRatio: target === 'icon' ? 1.5 : undefined,
+          // 60fps/native DPR but cost a fraction to paint.
+          // Banners animate at 30fps source data with subframe interpolation, so
+          // repaints beyond 60/sec (high-refresh displays redraw at rAF rate) and
+          // backing stores beyond 2x DPR are pure waste for a ~608px layout.
+          maxRenderFps: target === 'icon' ? 24 : 60,
+          maxDevicePixelRatio: target === 'icon' ? 1.5 : 2,
           subframePlayback: target === 'icon' ? false : undefined,
           ...settings,
         };
