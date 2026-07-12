@@ -272,6 +272,11 @@ export default function WiiMenu({
   const shouldTrackBeFlipped = isMailFlipped || (mailLayerVisible && !isMailReturning);
   const isMailAnimating = isMailOpening || isMailReturning;
   const displayedDate = dateOverride ?? date;
+  // The menu is hidden by opacity in these states, which IntersectionObserver
+  // can't see — pause channel playback explicitly so renderers don't keep
+  // painting invisible frames behind the channel-select banner or during
+  // fades. Content stays mounted so nothing is torn down and rebuilt.
+  const contentPlayable = visible && !zoomIn && !fadeOut && !shouldMailLayerBeOpen;
 
   return (
     <div
@@ -290,7 +295,7 @@ export default function WiiMenu({
                 {pageChannels.map((ch, i) => {
                   const globalIndex = pageIdx * CHANNELS_PER_PAGE + i;
                   const isActivePage = pageIdx === currentPage;
-                  const shouldRenderContent = !shouldMailLayerBeOpen && (isActivePage || ch.blank);
+                  const shouldRenderContent = isActivePage || ch.blank;
                   return (
                     <ChannelCard
                       key={globalIndex}
@@ -300,7 +305,7 @@ export default function WiiMenu({
                       onClick={ch.id ? handleChannelClick : undefined}
                       channelIndex={ch.id ? globalIndex : undefined}
                       contentActive={shouldRenderContent}
-                      contentPlaying={isActivePage}
+                      contentPlaying={isActivePage && contentPlayable}
                       contentComponent={ch.contentComponent}
                       contentClassName={ch.contentClassName}
                     />
