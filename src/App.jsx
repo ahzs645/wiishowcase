@@ -482,7 +482,7 @@ function HostApp() {
       <ChannelSvgDefs />
 
       {/* Local pointer (P1) */}
-      <WiiPointer ref={localPointerRef} player="P1" visible={cursorActive} />
+      <WiiPointer ref={localPointerRef} player="P1" visible={cursorActive} followMouse trail />
 
       {/* Remote pointers (P2-P4) from companions — isolated from App re-renders */}
       <RemotePointers pointersRef={remotePointersRef} notifyRef={remotePointersNotify} />

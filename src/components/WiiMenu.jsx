@@ -276,7 +276,10 @@ export default function WiiMenu({
   // can't see — pause channel playback explicitly so renderers don't keep
   // painting invisible frames behind the channel-select banner or during
   // fades. Content stays mounted so nothing is torn down and rebuilt.
-  const contentPlayable = visible && !zoomIn && !fadeOut && !shouldMailLayerBeOpen;
+  // zoomOut included so the 12 tile renderers don't all resume painting while
+  // the zoom-out animation is still running — they hold their last frame and
+  // resume when App clears the flag after the animation.
+  const contentPlayable = visible && !zoomIn && !zoomOut && !fadeOut && !shouldMailLayerBeOpen;
 
   return (
     <div

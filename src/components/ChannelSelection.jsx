@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import WiiChannelRenderer from './WiiChannelRenderer';
 import { loadJSZip } from '../lib/loadJSZip';
 import useWiiAspectMode from '../hooks/useWiiAspectMode';
@@ -34,6 +34,20 @@ function getBundleAudio(url) {
 export default function ChannelSelection({ visible, channel, onBack, onStart, hasPrev, hasNext, onPrev, onNext }) {
   const audioRef = useRef(null);
   const audioMetaRef = useRef(null);
+  // Creating the banner renderer (and unzipping its audio) blocks the main
+  // thread long enough to drop frames of the menu's 0.25s zoom-in, and the
+  // selection screen stays invisible until 0.3s in anyway (ch-sel-appear
+  // delay) — so hold the heavy work until the zoom has finished. Stays true
+  // across prev/next channel switches, which happen without a zoom.
+  const [bannerActive, setBannerActive] = useState(false);
+  useEffect(() => {
+    if (!visible) {
+      setBannerActive(false);
+      return;
+    }
+    const t = setTimeout(() => setBannerActive(true), 280);
+    return () => clearTimeout(t);
+  }, [visible]);
   const { channelShapeId, viewBox, aspectRatio, maskDataUri, is43 } = useWiiAspectMode();
   const bundleSettings = channel?.rendererSettings;
   const bundleBannerSettings = bundleSettings && ('banner' in bundleSettings || 'icon' in bundleSettings)
@@ -61,7 +75,7 @@ export default function ChannelSelection({ visible, channel, onBack, onStart, ha
   useEffect(() => {
     if (!audioRef.current) return;
 
-    if (visible && channel) {
+    if (bannerActive && visible && channel) {
       if (channel.bundle) {
         // Load audio from bundle
         getBundleAudio(BASE + channel.bundle).then((result) => {
@@ -86,9 +100,10 @@ export default function ChannelSelection({ visible, channel, onBack, onStart, ha
       audioRef.current.removeAttribute('src');
       audioRef.current.load();
     }
-  }, [visible, channel]);
+  }, [bannerActive, visible, channel]);
 
   const renderBanner = () => {
+    if (!bannerActive) return null;
     if (channel?.bundle) {
       return (
         <WiiChannelRenderer
