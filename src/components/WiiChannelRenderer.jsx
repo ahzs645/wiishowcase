@@ -5,10 +5,13 @@ import useWiiAspectMode from '../hooks/useWiiAspectMode';
 
 const BASE = import.meta.env.BASE_URL;
 
-// Cache loaded bundles by URL so we don't re-fetch/re-parse
+// Cache the raw zip download per URL and the decoded data per URL+target: the
+// menu decodes only its icons at startup, and the (much larger) banner decode
+// happens on first channel-select open, reusing the already-downloaded bytes.
+const zipCache = new Map();
 const bundleCache = new Map();
 
-// Decode one bundle at a time. Zip download runs in parallel, but
+// Decode one bundle at a time. Zip downloads run in parallel, but
 // loadRendererBundle does heavy main-thread work (PNG → ImageData for every
 // texture and font sheet). With ~5 channel bundles kicking off together at
 // startup, letting those decoders interleave keeps the main thread saturated
@@ -17,19 +20,33 @@ const bundleCache = new Map();
 // leaves frame-sized gaps for input/animation between textures.
 let decodeQueue = Promise.resolve();
 
-function fetchBundle(url) {
-  if (!bundleCache.has(url)) {
-    const buffered = fetch(url).then((r) => r.arrayBuffer());
+function fetchZip(url) {
+  if (!zipCache.has(url)) {
+    zipCache.set(url, fetch(url).then((r) => r.arrayBuffer()));
+  }
+  return zipCache.get(url);
+}
+
+// Exported for ChannelSelection, which pulls the channel's audio out of the
+// same decoded banner bundle instead of downloading/unzipping the zip again.
+// Audio is only extracted alongside the banner — the menu's icon decode
+// doesn't need it.
+export function fetchBundle(url, target) {
+  const key = `${url}#${target}`;
+  if (!bundleCache.has(key)) {
+    const buffered = fetchZip(url);
     bundleCache.set(
-      url,
+      key,
       new Promise((resolve, reject) => {
         decodeQueue = decodeQueue.then(
-          () => buffered.then((buf) => loadRendererBundle(buf)).then(resolve, reject),
+          () => buffered
+            .then((buf) => loadRendererBundle(buf, { targets: [target], audio: target === 'banner' }))
+            .then(resolve, reject),
         );
       }),
     );
   }
-  return bundleCache.get(url);
+  return bundleCache.get(key);
 }
 
 const WRAPPER_STYLE = { width: '100%', overflow: 'hidden', position: 'relative' };
@@ -82,7 +99,7 @@ export default memo(function WiiChannelRenderer({
 
     const url = BASE + bundlePath;
 
-    fetchBundle(url).then((bundle) => {
+    fetchBundle(url, target).then((bundle) => {
       if (cancelled) return;
 
       const canvas = canvasRef.current;
@@ -122,6 +139,16 @@ export default memo(function WiiChannelRenderer({
         rendererRef.current.play();
       }
       setReady(true);
+
+      // Warm the banner decode in the background once this icon is up, so the
+      // channel-select screen (and its audio, which comes from the same
+      // bundle) doesn't pay the full texture decode on first open. The shared
+      // decode queue keeps this behind every pending icon decode, and the
+      // cache makes it a no-op if channel select got there first.
+      if (target === 'icon') {
+        const idle = window.requestIdleCallback ?? ((fn) => setTimeout(fn, 2000));
+        idle(() => { fetchBundle(url, 'banner').catch(() => {}); });
+      }
     }).catch((err) => {
       console.error(`[WiiChannelRenderer] Failed to load "${target}" from`, url, err);
     });
