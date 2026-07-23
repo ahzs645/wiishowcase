@@ -1,23 +1,32 @@
 import { useRef, useEffect, useState, memo } from 'react';
-import { loadRendererBundle } from '@firstform/wii-channel-renderer/bundle-loader';
+import { loadRendererBundleInWorker } from '@firstform/wii-channel-renderer/bundle-loader';
 import { createRendererFromBundle } from '@firstform/wii-channel-renderer/bundle-renderer';
 import useWiiAspectMode from '../hooks/useWiiAspectMode';
 
 const BASE = import.meta.env.BASE_URL;
 
-// Cache loaded bundles by URL so we don't re-fetch/re-parse
+// Decoded bundle data cached per URL+target: the menu decodes only its icons
+// at startup, and the (much larger) banner decode happens on first
+// channel-select open. The heavy work — download, unzip, PNG → ImageData for
+// every texture and font sheet — runs inside the loader's dedicated worker,
+// which caches the zip bytes per URL and processes one decode at a time in
+// request order, so the main thread stays free for animation and input while
+// icons stream in.
 const bundleCache = new Map();
 
-function fetchBundle(url) {
-  if (!bundleCache.has(url)) {
+// Exported for ChannelSelection, which pulls the channel's audio out of the
+// same decoded banner bundle instead of downloading/unzipping the zip again.
+// Audio is only extracted alongside the banner — the menu's icon decode
+// doesn't need it.
+export function fetchBundle(url, target) {
+  const key = `${url}#${target}`;
+  if (!bundleCache.has(key)) {
     bundleCache.set(
-      url,
-      fetch(url)
-        .then((r) => r.arrayBuffer())
-        .then((buf) => loadRendererBundle(buf)),
+      key,
+      loadRendererBundleInWorker(url, { targets: [target], audio: target === 'banner' }),
     );
   }
-  return bundleCache.get(url);
+  return bundleCache.get(key);
 }
 
 const WRAPPER_STYLE = { width: '100%', overflow: 'hidden', position: 'relative' };
@@ -70,7 +79,7 @@ export default memo(function WiiChannelRenderer({
 
     const url = BASE + bundlePath;
 
-    fetchBundle(url).then((bundle) => {
+    fetchBundle(url, target).then((bundle) => {
       if (cancelled) return;
 
       const canvas = canvasRef.current;
@@ -110,6 +119,16 @@ export default memo(function WiiChannelRenderer({
         rendererRef.current.play();
       }
       setReady(true);
+
+      // Warm the banner decode in the background once this icon is up, so the
+      // channel-select screen (and its audio, which comes from the same
+      // bundle) doesn't pay the full texture decode on first open. The shared
+      // decode queue keeps this behind every pending icon decode, and the
+      // cache makes it a no-op if channel select got there first.
+      if (target === 'icon') {
+        const idle = window.requestIdleCallback ?? ((fn) => setTimeout(fn, 2000));
+        idle(() => { fetchBundle(url, 'banner').catch(() => {}); });
+      }
     }).catch((err) => {
       console.error(`[WiiChannelRenderer] Failed to load "${target}" from`, url, err);
     });

@@ -1,31 +1,27 @@
 import { useEffect, useRef, useState } from 'react';
-import WiiChannelRenderer from './WiiChannelRenderer';
-import { loadJSZip } from '../lib/loadJSZip';
+import WiiChannelRenderer, { fetchBundle } from './WiiChannelRenderer';
 import useWiiAspectMode from '../hooks/useWiiAspectMode';
 
 const BASE = import.meta.env.BASE_URL;
 
-// Cache extracted audio blob URLs + manifest audio metadata
+// Cache extracted audio blob URLs + manifest audio metadata. The audio comes
+// out of the same decoded banner bundle the WiiChannelRenderer below uses —
+// previously this re-downloaded and re-unzipped the whole multi-MB channel
+// zip just to pull out audio.wav.
 const bundleAudioCache = new Map();
 
 function getBundleAudio(url) {
   if (!bundleAudioCache.has(url)) {
     bundleAudioCache.set(
       url,
-      (async () => {
-        const JSZip = await loadJSZip();
-        const res = await fetch(url);
-        const zip = await JSZip.loadAsync(await res.arrayBuffer());
-        const manifest = JSON.parse(await zip.file('manifest.json').async('string'));
-        const audioFile = zip.file('audio.wav');
-        if (!audioFile) return null;
-        const buf = await audioFile.async('arraybuffer');
-        const blob = new Blob([buf], { type: 'audio/wav' });
+      fetchBundle(url, 'banner').then((bundle) => {
+        if (!bundle.audioWav) return null;
+        const blob = new Blob([bundle.audioWav], { type: 'audio/wav' });
         return {
           url: URL.createObjectURL(blob),
-          meta: manifest.audio ?? null,
+          meta: bundle.manifest?.audio ?? null,
         };
-      })(),
+      }),
     );
   }
   return bundleAudioCache.get(url);

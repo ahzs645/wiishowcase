@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches-ignore: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Wii.css is a private repo, so its submodule can't be cloned here.
+      # Only init the public wewad submodule (needed by npm ci's file:
+      # dependency); Wii.css is fetched as a prebuilt zip from its Pages site.
+      - name: Init public submodules
+        run: git submodule update --init wewad
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Fetch Wii.css package
+        run: npm run fetch:wii-css
+
+      - run: npm run build
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps chromium
+
+      # The build compiling is not enough — asset-resolution bugs have shipped
+      # that left the app blank while `vite build` stayed green. Render the
+      # built site in a real browser and assert the menu actually appears.
+      - name: Smoke test
+        run: npm run test:smoke

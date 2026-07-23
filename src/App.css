@@ -169,6 +169,16 @@ body.wii-cursor-animated *::after {
   transform: translateY(-120vh);
 }
 
+/* Once the mail layer is fully open (fly-up finished, not mid-animation), the
+   channel holder is parked at -120vh but its will-change layer — 24 masked
+   cards plus their canvases — stays rastered and composited for as long as the
+   board is on screen. Hide it so the whole subtree drops out of paint while
+   the user browses messages/the calendar; the flip back to visible happens
+   while it's still off-screen, so nothing pops. */
+.wii-menu-wrapper.is-mail-layer-visible:not(.is-mail-animating) .channel-holder-wrapper {
+  visibility: hidden;
+}
+
 .wii-menu-wrapper.is-mail-animating .wii-menu-bottom-buttons .wii-track-btn-flip {
   overflow: visible;
 }

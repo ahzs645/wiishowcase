@@ -4,15 +4,16 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently -n vite,sass -c blue,magenta \"vite\" \"sass --watch Wii.css/src/index.scss Wii.css/dist/wii.css\"",
+    "dev": "node scripts/sync-wii-css-assets.mjs && concurrently -n vite,sass -c blue,magenta \"vite\" \"sass --watch Wii.css/src/index.scss Wii.css/dist/wii.css\"",
     "dev:vite": "vite",
-    "build:css": "sass Wii.css/src/index.scss Wii.css/dist/wii.css",
+    "build:css": "node scripts/sync-wii-css-assets.mjs && sass Wii.css/src/index.scss Wii.css/dist/wii.css",
     "build:news-channel": "cd news-channel && npx ng build",
     "build": "npm run build:css && vite build",
     "build:all": "npm run build:news-channel && npm run build",
     "export:channel-bundle": "node scripts/export-channel-bundle.mjs",
     "fetch:wii-css": "node scripts/fetch-wii-css.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:smoke": "node scripts/smoke-test.mjs"
   },
   "dependencies": {
     "@firstform/wii-channel-renderer": "file:wewad/packages/wii-channel-renderer",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^6.0.2",
     "concurrently": "^9.2.1",
+    "playwright": "^1.57.0",
     "sass": "^1.97.3",
     "vite": "^8.0.16"
   },
