@@ -6,9 +6,15 @@ const SETTINGS_SECTIONS = [
     ringClass: 'wii-settings-navbtn--ring-blue',
   },
   { id: 'settings', label: 'Wii Settings', iconClass: 'wii-settings-navbtn-icon--settings' },
+  {
+    id: 'update',
+    label: 'Wii System Update',
+    iconClass: 'wii-settings-navbtn-icon--update',
+    ringClass: 'wii-settings-navbtn--ring-blue',
+  },
 ];
 
-export default function WiiSettings({ visible, onBack }) {
+export default function WiiSettings({ visible, onBack, onSystemUpdate }) {
   if (!visible) return null;
 
   return (
@@ -32,6 +38,7 @@ export default function WiiSettings({ visible, onBack }) {
                   className={`wii-settings-navbtn${section.ringClass ? ` ${section.ringClass}` : ''}`}
                   aria-label={section.label}
                   type="button"
+                  onClick={section.id === 'update' ? onSystemUpdate : undefined}
                 >
                   <span className={`wii-settings-navbtn-icon ${section.iconClass}`}></span>
                   <span className="wii-settings-navbtn-label">{section.label}</span>

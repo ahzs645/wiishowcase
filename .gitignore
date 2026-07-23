@@ -3,3 +3,4 @@ dist
 .DS_Store
 news-channel/node_modules
 news-channel/.angular
+public/version.json

@@ -8,6 +8,7 @@
     "dev:vite": "vite",
     "build:css": "node scripts/sync-wii-css-assets.mjs && sass Wii.css/src/index.scss Wii.css/dist/wii.css",
     "build:news-channel": "cd news-channel && npx ng build",
+    "prebuild": "node scripts/generate-build-version.mjs",
     "build": "npm run build:css && vite build",
     "build:all": "npm run build:news-channel && npm run build",
     "export:channel-bundle": "node scripts/export-channel-bundle.mjs",
