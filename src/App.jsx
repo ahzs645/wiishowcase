@@ -12,7 +12,9 @@ import CompanionController from './components/CompanionController';
 import DevModeSelector from './components/DevModeSelector';
 import HomeMenu from './components/HomeMenu';
 import WiiSettings from './components/WiiSettings';
+import WiiSystemUpdate from './components/WiiSystemUpdate';
 import useSounds from './hooks/useSounds';
+import { initUpdateChecker, checkForUpdates } from './lib/updateChecker';
 import useMultiWebRTC from './hooks/useMultiWebRTC';
 import useWiiAspectMode from './hooks/useWiiAspectMode';
 
@@ -97,6 +99,11 @@ function HostApp() {
   const [zoomOrigin, setZoomOrigin] = useState(null);
   const [messageBoardDateOverride, setMessageBoardDateOverride] = useState(null);
   const [calendarTargetDate, setCalendarTargetDate] = useState(null);
+
+  // Wii System Update: null | 'prompt' (new build detected) | 'checking' (manual)
+  const [systemUpdateMode, setSystemUpdateMode] = useState(null);
+  const [updateInfo, setUpdateInfo] = useState(null);
+  const [updatePromptSeen, setUpdatePromptSeen] = useState(false);
 
   // Remote pointer state — one per controller (up to 4)
   // Use refs + forceUpdate on a dedicated component to avoid re-rendering entire App at 60Hz
@@ -318,6 +325,36 @@ function HostApp() {
     setPhase('settings');
   }, [play]);
 
+  // Background update polling (no-op on local/dev servers)
+  useEffect(() => {
+    initUpdateChecker(setUpdateInfo);
+    // Dev/testing hook: simulate an available update from the console
+    window.triggerUpdate = () => setUpdateInfo({
+      hasUpdate: true,
+      buildNumber: 'test123',
+      onReload: () => window.location.reload(),
+    });
+    return () => { delete window.triggerUpdate; };
+  }, []);
+
+  // Surface the update prompt once the user is on the menu, like a real Wii
+  useEffect(() => {
+    if (updateInfo && !updatePromptSeen && phase === 'menu' && !systemUpdateMode) {
+      setUpdatePromptSeen(true);
+      play('open');
+      setSystemUpdateMode('prompt');
+    }
+  }, [updateInfo, updatePromptSeen, phase, systemUpdateMode, play]);
+
+  const openSystemUpdateCheck = useCallback(() => {
+    play('select');
+    setSystemUpdateMode('checking');
+  }, [play]);
+
+  const closeSystemUpdate = useCallback(() => {
+    setSystemUpdateMode(null);
+  }, []);
+
   const closeSettings = useCallback(() => {
     play('back');
     setPhase('menu');
@@ -522,6 +559,16 @@ function HostApp() {
       <WiiSettings
         visible={phase === 'settings'}
         onBack={closeSettings}
+        onSystemUpdate={openSystemUpdateCheck}
+      />
+
+      {/* Wii System Update dialog */}
+      <WiiSystemUpdate
+        mode={systemUpdateMode}
+        updateInfo={updateInfo}
+        onCheck={checkForUpdates}
+        onClose={closeSystemUpdate}
+        play={play}
       />
 
       {/* Channel Selection Screen */}
