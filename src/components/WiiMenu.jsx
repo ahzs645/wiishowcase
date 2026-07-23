@@ -11,8 +11,8 @@ import PokemonRanchChannelContent from './channels/PokemonRanchChannelContent';
 import BlankChannelContent from './channels/BlankChannelContent';
 import { MESSAGE_DATE_KEYS } from './WiiMessageBoard';
 import { NEWS_RENDERER_SETTINGS } from './channels/newsChannelRendererSettings';
-import settingsIcon from '../../Wii.css/dist/assets/settings-icon.png';
-import mailIcon from '../../Wii.css/dist/assets/track-btn/icon-email.svg';
+import settingsIcon from '../../Wii.css/assets/settings-icon.png';
+import mailIcon from '../../Wii.css/assets/track-btn/icon-email.svg';
 
 const CHANNELS_PER_PAGE = 12;
 const MAIL_OPEN_ANIM_MS = 520;

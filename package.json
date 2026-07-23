@@ -4,9 +4,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently -n vite,sass -c blue,magenta \"vite\" \"sass --watch Wii.css/src/index.scss Wii.css/dist/wii.css\"",
+    "dev": "node scripts/sync-wii-css-assets.mjs && concurrently -n vite,sass -c blue,magenta \"vite\" \"sass --watch Wii.css/src/index.scss Wii.css/dist/wii.css\"",
     "dev:vite": "vite",
-    "build:css": "sass Wii.css/src/index.scss Wii.css/dist/wii.css",
+    "build:css": "node scripts/sync-wii-css-assets.mjs && sass Wii.css/src/index.scss Wii.css/dist/wii.css",
     "build:news-channel": "cd news-channel && npx ng build",
     "build": "npm run build:css && vite build",
     "build:all": "npm run build:news-channel && npm run build",

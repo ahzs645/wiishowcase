@@ -1,6 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { formatMenuDate } from './Clock';
 import useMiiHead from '../hooks/useMiiHead';
+// Imported (not referenced by public URL) so Vite bundles them — the deployed
+// site only ships dist/, where a runtime Wii.css/assets/... path 404s.
+import pinUnreadIcon from '../../Wii.css/assets/icons/letter-pin-unread.svg';
+import pinReadIcon from '../../Wii.css/assets/icons/letter-pin.svg';
 
 const MESSAGE_PAGE_SLIDE_MS = 480;
 
@@ -200,8 +204,8 @@ function AvatarDisplay({ message, className }) {
   );
 }
 
-const PIN_UNREAD_SRC = `${import.meta.env.BASE_URL}Wii.css/assets/icons/letter-pin-unread.svg`;
-const PIN_READ_SRC = `${import.meta.env.BASE_URL}Wii.css/assets/icons/letter-pin.svg`;
+const PIN_UNREAD_SRC = pinUnreadIcon;
+const PIN_READ_SRC = pinReadIcon;
 
 function MessageCard({ message, onOpen, isRead }) {
   const type = MESSAGE_TYPES[message.type] ?? MESSAGE_TYPES.memo;

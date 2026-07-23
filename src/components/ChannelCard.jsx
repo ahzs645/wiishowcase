@@ -15,7 +15,10 @@ export default memo(function ChannelCard({
   contentStyle,
 }) {
   const { channelShapeId, viewBox, maskUrl } = useWiiAspectMode();
-  const maskStyle = { '--wii-channel-mask': `url(${maskUrl})` };
+  // maskUrl is usually a data: URI (Vite inlines small SVG imports), which
+  // contains commas — url() must be quoted or the declaration is invalid CSS
+  // and style.setProperty silently drops it.
+  const maskStyle = { '--wii-channel-mask': `url("${maskUrl}")` };
   const renderedContent = ContentComponent
     ? (contentActive ? <ContentComponent playing={contentPlaying} /> : null)
     : content;
@@ -51,7 +54,7 @@ export default memo(function ChannelCard({
       className={`wii-channel-ui${isClickable ? ' is-clickable' : ''}`}
       style={{
         '--wii-channel-bg': gradient || undefined,
-        '--wii-channel-mask': `url(${maskUrl})`,
+        '--wii-channel-mask': `url("${maskUrl}")`,
         ...(contentStyle || {}),
       }}
       data-channel-index={channelIndex}

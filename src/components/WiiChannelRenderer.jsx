@@ -8,13 +8,25 @@ const BASE = import.meta.env.BASE_URL;
 // Cache loaded bundles by URL so we don't re-fetch/re-parse
 const bundleCache = new Map();
 
+// Decode one bundle at a time. Zip download runs in parallel, but
+// loadRendererBundle does heavy main-thread work (PNG → ImageData for every
+// texture and font sheet). With ~5 channel bundles kicking off together at
+// startup, letting those decoders interleave keeps the main thread saturated
+// for the whole load window and janks any menu interaction that happens during
+// it. Serializing the decode step gets the first icons on screen sooner and
+// leaves frame-sized gaps for input/animation between textures.
+let decodeQueue = Promise.resolve();
+
 function fetchBundle(url) {
   if (!bundleCache.has(url)) {
+    const buffered = fetch(url).then((r) => r.arrayBuffer());
     bundleCache.set(
       url,
-      fetch(url)
-        .then((r) => r.arrayBuffer())
-        .then((buf) => loadRendererBundle(buf)),
+      new Promise((resolve, reject) => {
+        decodeQueue = decodeQueue.then(
+          () => buffered.then((buf) => loadRendererBundle(buf)).then(resolve, reject),
+        );
+      }),
     );
   }
   return bundleCache.get(url);
