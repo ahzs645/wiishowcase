@@ -5,7 +5,7 @@
  * Subscriber canvases receive a cheap drawImage() copy each frame
  * instead of running their own full render pipeline.
  */
-import { loadRendererBundle } from '@firstform/wii-channel-renderer/bundle-loader';
+import { loadRendererBundleInWorker } from '@firstform/wii-channel-renderer/bundle-loader';
 import { createRendererFromBundle } from '@firstform/wii-channel-renderer/bundle-renderer';
 
 const BASE = import.meta.env.BASE_URL;
@@ -22,9 +22,12 @@ class SharedBlankRenderer {
   }
 
   async _init() {
-    const res = await fetch(BASE + 'channels/blank.zip');
-    const buf = await res.arrayBuffer();
-    const bundle = await loadRendererBundle(buf);
+    // Fetched and decoded inside the loader's worker; only the icon target is
+    // needed for the blank tile.
+    const bundle = await loadRendererBundleInWorker(BASE + 'channels/blank.zip', {
+      targets: ['icon'],
+      audio: false,
+    });
 
     this.masterCanvas = document.createElement('canvas');
 

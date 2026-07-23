@@ -1,31 +1,18 @@
 import { useRef, useEffect, useState, memo } from 'react';
-import { loadRendererBundle } from '@firstform/wii-channel-renderer/bundle-loader';
+import { loadRendererBundleInWorker } from '@firstform/wii-channel-renderer/bundle-loader';
 import { createRendererFromBundle } from '@firstform/wii-channel-renderer/bundle-renderer';
 import useWiiAspectMode from '../hooks/useWiiAspectMode';
 
 const BASE = import.meta.env.BASE_URL;
 
-// Cache the raw zip download per URL and the decoded data per URL+target: the
-// menu decodes only its icons at startup, and the (much larger) banner decode
-// happens on first channel-select open, reusing the already-downloaded bytes.
-const zipCache = new Map();
+// Decoded bundle data cached per URL+target: the menu decodes only its icons
+// at startup, and the (much larger) banner decode happens on first
+// channel-select open. The heavy work — download, unzip, PNG → ImageData for
+// every texture and font sheet — runs inside the loader's dedicated worker,
+// which caches the zip bytes per URL and processes one decode at a time in
+// request order, so the main thread stays free for animation and input while
+// icons stream in.
 const bundleCache = new Map();
-
-// Decode one bundle at a time. Zip downloads run in parallel, but
-// loadRendererBundle does heavy main-thread work (PNG → ImageData for every
-// texture and font sheet). With ~5 channel bundles kicking off together at
-// startup, letting those decoders interleave keeps the main thread saturated
-// for the whole load window and janks any menu interaction that happens during
-// it. Serializing the decode step gets the first icons on screen sooner and
-// leaves frame-sized gaps for input/animation between textures.
-let decodeQueue = Promise.resolve();
-
-function fetchZip(url) {
-  if (!zipCache.has(url)) {
-    zipCache.set(url, fetch(url).then((r) => r.arrayBuffer()));
-  }
-  return zipCache.get(url);
-}
 
 // Exported for ChannelSelection, which pulls the channel's audio out of the
 // same decoded banner bundle instead of downloading/unzipping the zip again.
@@ -34,16 +21,9 @@ function fetchZip(url) {
 export function fetchBundle(url, target) {
   const key = `${url}#${target}`;
   if (!bundleCache.has(key)) {
-    const buffered = fetchZip(url);
     bundleCache.set(
       key,
-      new Promise((resolve, reject) => {
-        decodeQueue = decodeQueue.then(
-          () => buffered
-            .then((buf) => loadRendererBundle(buf, { targets: [target], audio: target === 'banner' }))
-            .then(resolve, reject),
-        );
-      }),
+      loadRendererBundleInWorker(url, { targets: [target], audio: target === 'banner' }),
     );
   }
   return bundleCache.get(key);
