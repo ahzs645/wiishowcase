@@ -51,7 +51,7 @@ export default function WiiSettings({ visible, onBack, onSystemUpdate }) {
         <div className="wii-settings-line"></div>
 
         <div className="wii-settings-footer wii-animate">
-          <button className="wii-settings-back wii-settings-screen-back" onClick={onBack} type="button">
+          <button className="wii-settings-back" onClick={onBack} type="button">
             <span className="wii-settings-back-arrow" aria-hidden="true"></span>
             <span className="wii-settings-back-label">Back</span>
           </button>
