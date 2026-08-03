@@ -1226,6 +1226,7 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
 .ch-mii > div,
 .ch-photo > div,
 .ch-shop > div,
+.ch-pokemon-ranch > div,
 .ch-blank > div {
   position: absolute !important;
   inset: 0 !important;
@@ -1235,6 +1236,7 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
 .ch-mii canvas,
 .ch-photo canvas,
 .ch-shop canvas,
+.ch-pokemon-ranch canvas,
 .ch-blank canvas {
   position: absolute !important;
   inset: 0 !important;

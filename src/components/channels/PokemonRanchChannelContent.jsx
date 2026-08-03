@@ -1,7 +1,11 @@
-const BASE = import.meta.env.BASE_URL;
+import WiiChannelRenderer from '../WiiChannelRenderer';
 
-export default function PokemonRanchChannelContent() {
+export default function PokemonRanchChannelContent({ playing = true }) {
   return (
-    <img src={`${BASE}channelart/pokemon-ranch/icon.png`} className="ch-pokemon-ranch-img" alt="" />
+    <WiiChannelRenderer
+      bundlePath="channels/pokemon-ranch.zip"
+      target="icon"
+      playing={playing}
+    />
   );
 }

@@ -39,7 +39,7 @@ const CHANNELS = [
   },
   { id: 'news', name: 'News Channel', action: 'news', contentComponent: NewsChannelContent, contentClassName: 'ch-news', bundle: 'channels/news.zip', rendererSettings: NEWS_RENDERER_SETTINGS, video: 'channelart/news/video.gif', audio: 'channelart/news/audio.mp3' },
   { id: 'onliine', name: 'Onliine Channel', contentComponent: OnliineChannelContent, contentClassName: 'ch-onliine', video: 'channelart/onliine/video.gif', audio: 'channelart/onliine/audio.mp3' },
-  { id: 'pokemon-ranch', name: 'My Pokémon Ranch', contentComponent: PokemonRanchChannelContent, contentClassName: 'ch-pokemon-ranch', video: 'channelart/pokemon-ranch/banner.png', audio: 'channelart/pokemon-ranch/audio.wav' },
+  { id: 'pokemon-ranch', name: 'My Pokémon Ranch', contentComponent: PokemonRanchChannelContent, contentClassName: 'ch-pokemon-ranch', bundle: 'channels/pokemon-ranch.zip' },
   { ...BLANK },
   { ...BLANK },
   { ...BLANK },
