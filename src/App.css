@@ -425,13 +425,6 @@ body.wii-cursor-animated *::after {
   padding: 0;
 }
 
-.ch-sel-buttons > .wii-btn-start .wii-btn-start-highlight-sharp {
-  width: 90%;
-  height: 60%;
-  left: 2%;
-  top: 5%;
-}
-
 /* ---- Bottom Banner ---- */
 .wii-bottom-banner {
   --wii-bottom-banner-height: clamp(140px, 20vh, 220px);
