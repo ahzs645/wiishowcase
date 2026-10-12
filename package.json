@@ -22,7 +22,10 @@
     "test:channel-presentation": "node scripts/test-channel-presentation.mjs",
     "audit:shop-keyboard": "node scripts/audit-shop-keyboard.mjs",
     "test:shop-keyboard": "node scripts/test-shop-keyboard.mjs",
-    "compare:keyboard-keys": "node scripts/compare-keyboard-keys.mjs"
+    "compare:keyboard-keys": "node scripts/compare-keyboard-keys.mjs",
+    "capture:interface-audit": "node scripts/capture-interface-audit.mjs",
+    "build:interface-audit": "node scripts/build-interface-audit.mjs",
+    "check:interface-native-sizes": "node scripts/check-interface-native-sizes.mjs"
   },
   "dependencies": {
     "@firstform/wii-channel-renderer": "file:wewad/packages/wii-channel-renderer",

@@ -1,0 +1,72 @@
+[
+  {
+    "mode": "4:3",
+    "width": 640,
+    "height": 480,
+    "image": "current/options-640x480.png",
+    "buttons": [
+      {
+        "label": "Data Management",
+        "x": 25.609375,
+        "y": 71.40625,
+        "width": 285.390625,
+        "height": 150,
+        "centerHit": true,
+        "insideFrame": true
+      },
+      {
+        "label": "Wii Settings",
+        "x": 329,
+        "y": 71.40625,
+        "width": 285.40625,
+        "height": 150,
+        "centerHit": true,
+        "insideFrame": true
+      },
+      {
+        "label": "Wii System Update",
+        "x": 25.609375,
+        "y": 239.40625,
+        "width": 285.390625,
+        "height": 150,
+        "centerHit": true,
+        "insideFrame": true
+      }
+    ]
+  },
+  {
+    "mode": "16:9",
+    "width": 854,
+    "height": 480,
+    "image": "current/options-854x480.png",
+    "buttons": [
+      {
+        "label": "Data Management",
+        "x": 107,
+        "y": 69,
+        "width": 311,
+        "height": 150,
+        "centerHit": true,
+        "insideFrame": true
+      },
+      {
+        "label": "Wii Settings",
+        "x": 436,
+        "y": 69,
+        "width": 311,
+        "height": 150,
+        "centerHit": true,
+        "insideFrame": true
+      },
+      {
+        "label": "Wii System Update",
+        "x": 107,
+        "y": 237,
+        "width": 311,
+        "height": 150,
+        "centerHit": true,
+        "insideFrame": true
+      }
+    ]
+  }
+]

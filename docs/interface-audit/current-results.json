@@ -1,0 +1,410 @@
+{
+  "revision": "7a92475c67e483e82dac214bf276af05f9cab950",
+  "captureDate": "Fixed test time: 2026-10-12 12:00 America/Vancouver",
+  "captures": [
+    {
+      "id": "safety",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "current/safety-960x720.png",
+      "note": ""
+    },
+    {
+      "id": "menu",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "current/menu-960x720.png",
+      "note": "Eight-channel presentation preview; Forecast is opt-in."
+    },
+    {
+      "id": "menu-settled",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "current/menu-settled-960x720.png",
+      "note": "Four seconds after all icon renderers reported ready; animation phases are not synchronized to references."
+    },
+    {
+      "id": "menu-shop-hover",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "current/menu-shop-hover-960x720.png"
+    },
+    {
+      "id": "menu-page-two",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "current/menu-page-two-960x720.png",
+      "note": ""
+    },
+    {
+      "id": "options",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "current/options-960x720.png",
+      "note": ""
+    },
+    {
+      "id": "update-checking",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "current/update-checking-960x720.png",
+      "note": ""
+    },
+    {
+      "id": "update-latest",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "current/update-latest-960x720.png",
+      "note": ""
+    },
+    {
+      "id": "home-menu",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "current/home-menu-960x720.png",
+      "note": ""
+    },
+    {
+      "id": "message-board",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "current/message-board-960x720.png",
+      "note": ""
+    },
+    {
+      "id": "message-open",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "current/message-open-960x720.png",
+      "note": ""
+    },
+    {
+      "id": "message-empty",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "current/message-empty-960x720.png",
+      "note": ""
+    },
+    {
+      "id": "message-open-memo",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "current/message-open-memo-960x720.png",
+      "note": "Memo variant, matching the memo reference category; sample text and avatar differ."
+    },
+    {
+      "id": "calendar",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "current/calendar-960x720.png",
+      "note": ""
+    },
+    {
+      "id": "banner-disc",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "current/banner-disc-960x720.png",
+      "note": "Animation phase and channel data may differ from the online reference."
+    },
+    {
+      "id": "banner-mii",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "current/banner-mii-960x720.png",
+      "note": "Animation phase and channel data may differ from the online reference."
+    },
+    {
+      "id": "banner-photo",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "current/banner-photo-960x720.png",
+      "note": "Animation phase and channel data may differ from the online reference."
+    },
+    {
+      "id": "banner-shop",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "current/banner-shop-960x720.png",
+      "note": "Animation phase and channel data may differ from the online reference."
+    },
+    {
+      "id": "banner-news",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "current/banner-news-960x720.png",
+      "note": "Animation phase and channel data may differ from the online reference."
+    },
+    {
+      "id": "banner-pokemon-ranch",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "current/banner-pokemon-ranch-960x720.png",
+      "note": "Animation phase and channel data may differ from the online reference."
+    },
+    {
+      "id": "banner-forecast",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "current/banner-forecast-960x720.png",
+      "note": "Animation phase and channel data may differ from the online reference."
+    },
+    {
+      "id": "keyboard",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "current/keyboard-960x720.png",
+      "note": "Standalone shared component; composer integration is missing.",
+      "networkFailures": []
+    },
+    {
+      "id": "safety",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "current/safety-1280x720.png",
+      "note": ""
+    },
+    {
+      "id": "menu",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "current/menu-1280x720.png",
+      "note": "Eight-channel presentation preview; Forecast is opt-in."
+    },
+    {
+      "id": "menu-settled",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "current/menu-settled-1280x720.png",
+      "note": "Four seconds after all icon renderers reported ready; animation phases are not synchronized to references."
+    },
+    {
+      "id": "menu-shop-hover",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "current/menu-shop-hover-1280x720.png"
+    },
+    {
+      "id": "menu-page-two",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "current/menu-page-two-1280x720.png",
+      "note": ""
+    },
+    {
+      "id": "options",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "current/options-1280x720.png",
+      "note": ""
+    },
+    {
+      "id": "update-checking",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "current/update-checking-1280x720.png",
+      "note": ""
+    },
+    {
+      "id": "update-latest",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "current/update-latest-1280x720.png",
+      "note": ""
+    },
+    {
+      "id": "home-menu",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "current/home-menu-1280x720.png",
+      "note": ""
+    },
+    {
+      "id": "message-board",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "current/message-board-1280x720.png",
+      "note": ""
+    },
+    {
+      "id": "message-open",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "current/message-open-1280x720.png",
+      "note": ""
+    },
+    {
+      "id": "message-empty",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "current/message-empty-1280x720.png",
+      "note": ""
+    },
+    {
+      "id": "message-open-memo",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "current/message-open-memo-1280x720.png",
+      "note": "Memo variant, matching the memo reference category; sample text and avatar differ."
+    },
+    {
+      "id": "calendar",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "current/calendar-1280x720.png",
+      "note": ""
+    },
+    {
+      "id": "banner-disc",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "current/banner-disc-1280x720.png",
+      "note": "Animation phase and channel data may differ from the online reference."
+    },
+    {
+      "id": "banner-mii",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "current/banner-mii-1280x720.png",
+      "note": "Animation phase and channel data may differ from the online reference."
+    },
+    {
+      "id": "banner-photo",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "current/banner-photo-1280x720.png",
+      "note": "Animation phase and channel data may differ from the online reference."
+    },
+    {
+      "id": "banner-shop",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "current/banner-shop-1280x720.png",
+      "note": "Animation phase and channel data may differ from the online reference."
+    },
+    {
+      "id": "banner-news",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "current/banner-news-1280x720.png",
+      "note": "Animation phase and channel data may differ from the online reference."
+    },
+    {
+      "id": "banner-pokemon-ranch",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "current/banner-pokemon-ranch-1280x720.png",
+      "note": "Animation phase and channel data may differ from the online reference."
+    },
+    {
+      "id": "banner-forecast",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "current/banner-forecast-1280x720.png",
+      "note": "Animation phase and channel data may differ from the online reference."
+    },
+    {
+      "id": "keyboard",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "current/keyboard-1280x720.png",
+      "note": "Standalone shared component; composer integration is missing.",
+      "networkFailures": []
+    }
+  ],
+  "behavior": [
+    {
+      "mode": "4:3",
+      "control": "Data Management",
+      "stayedOnOptions": true
+    },
+    {
+      "mode": "4:3",
+      "control": "Wii Settings",
+      "stayedOnOptions": true
+    },
+    {
+      "mode": "4:3",
+      "control": "Wii Remote Settings",
+      "opensRemoteControls": false
+    },
+    {
+      "mode": "4:3",
+      "control": "Notepad",
+      "createMessageAvailable": false
+    },
+    {
+      "mode": "4:3",
+      "control": "Shop Start",
+      "remainsInSelection": true
+    },
+    {
+      "mode": "16:9",
+      "control": "Data Management",
+      "stayedOnOptions": true
+    },
+    {
+      "mode": "16:9",
+      "control": "Wii Settings",
+      "stayedOnOptions": true
+    },
+    {
+      "mode": "16:9",
+      "control": "Wii Remote Settings",
+      "opensRemoteControls": false
+    },
+    {
+      "mode": "16:9",
+      "control": "Notepad",
+      "createMessageAvailable": false
+    },
+    {
+      "mode": "16:9",
+      "control": "Shop Start",
+      "remainsInSelection": true
+    }
+  ]
+}
