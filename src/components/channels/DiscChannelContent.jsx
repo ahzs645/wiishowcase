@@ -2,6 +2,8 @@ import WiiChannelRenderer from '../WiiChannelRenderer';
 
 const DISC_ICON_SETTINGS = {
   animOverride: 'arc/anim/my_DiskCh_b.brlan',
+  rendererBackend: 'auto',
+  tevQuality: 'accurate',
 };
 
 export default function DiscChannelContent({ playing = true }) {

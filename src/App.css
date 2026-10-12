@@ -2591,3 +2591,8 @@ wii-channel-holder .wii-channel-holder-grid > .wii-channel-ui {
   background-position: center;
   background-size: 60%;
 }
+.native-application-screen { position: fixed; inset: 0; z-index: 100; background: #eef7fb; color: #234454; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.native-application-screen canvas { max-width: min(100vw, 880px); max-height: calc(100vh - 110px); width: auto; height: auto; touch-action: none; }
+.native-application-toolbar { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; padding: 8px; }
+.native-application-toolbar button, .native-application-toolbar select { border: 1px solid #9ebecf; border-radius: 8px; background: #fff; color: #234454; padding: 8px 12px; font-family: inherit; }
+.native-application-note { font-size: 12px; margin: 8px; }

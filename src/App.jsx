@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
+import { useState, useEffect, useCallback, useRef, useMemo, lazy, Suspense } from 'react';
 import StartupBlack from './components/StartupBlack';
 import SafetyScreen from './components/SafetyScreen';
 import WiiMenu, { SELECTABLE_CHANNELS } from './components/WiiMenu';
@@ -39,7 +39,9 @@ function parseHash() {
   return { mode: 'host', offer: null, sessionId: null };
 }
 
-const SCREENS = ['black', 'safety', 'menu', 'settings', 'channel-select', 'messageboard', 'news'];
+const WiiNativeApplication = lazy(() => import('./components/WiiNativeApplication'));
+
+const SCREENS = ['black', 'safety', 'menu', 'settings', 'channel-select', 'messageboard', 'news', 'native-app'];
 
 export default function App() {
   const [route, setRoute] = useState(parseHash);
@@ -95,6 +97,7 @@ function HostApp() {
   const [showPairing, setShowPairing] = useState(false);
   const [showHomeMenu, setShowHomeMenu] = useState(false);
   const [selectedChannel, setSelectedChannel] = useState(null);
+  const [nativeApplicationChannel, setNativeApplicationChannel] = useState('news');
   const [menuZoomOut, setMenuZoomOut] = useState(false);
   const [zoomOrigin, setZoomOrigin] = useState(null);
   const [messageBoardDateOverride, setMessageBoardDateOverride] = useState(null);
@@ -177,7 +180,10 @@ function HostApp() {
           const ptr = remotePointersRef.current[controllerId];
           if (ptr) {
             const el = document.elementFromPoint(ptr.x, ptr.y);
-            if (el) el.click();
+            if (el?.applicationRenderer) {
+              const bounds = el.getBoundingClientRect();
+              el.applicationRenderer.handleInput({ controller: controllerId, trig: 0x0800, pointer: { valid: true, x: (ptr.x - bounds.left) * el.width / bounds.width, y: (ptr.y - bounds.top) * el.height / bounds.height } });
+            } else if (el) el.click();
           }
         }
         if (curr.B && !prev.B) {
@@ -191,6 +197,9 @@ function HostApp() {
             setPhase('menu');
           } else if (phase === 'messageboard') {
             setPhase('menu');
+          } else if (phase === 'native-app') {
+            const renderer = document.querySelector('[data-native-application] canvas')?.applicationRenderer;
+            if (renderer) renderer.handleInput({ controller: controllerId, trig: 0x0400 }); else setPhase('menu');
           } else if (phase === 'news') {
             setPhase('menu');
           }
@@ -217,7 +226,10 @@ function HostApp() {
         const ptr = remotePointersRef.current[controllerId];
         if (ptr) {
           const el = document.elementFromPoint(ptr.x, ptr.y);
-          if (el) el.click();
+          if (el?.applicationRenderer) {
+            const bounds = el.getBoundingClientRect();
+            el.applicationRenderer.handleInput({ controller: controllerId, trig: 0x0800, pointer: { valid: true, x: (ptr.x - bounds.left) * el.width / bounds.width, y: (ptr.y - bounds.top) * el.height / bounds.height } });
+          } else if (el) el.click();
         }
       }
       if (msg.button === 'B') {
@@ -403,6 +415,10 @@ function HostApp() {
   // Handle "Start" on channel selection
   const startChannel = useCallback(() => {
     if (!selectedChannel) return;
+    if (selectedChannel.action?.startsWith('native-')) {
+      setNativeApplicationChannel(selectedChannel.action.slice(7));
+      setSelectedChannel(null); play('select'); setPhase('native-app'); return;
+    }
     // If the channel has a special action (like 'news'), handle it
     if (selectedChannel.action === 'news') {
       setSelectedChannel(null);
@@ -541,7 +557,7 @@ function HostApp() {
       {/* Phase 3: Wii Menu */}
       <WiiMenu
         visible={phase === 'menu' || phase === 'channel-select' || phase === 'messageboard'}
-        fadeOut={phase === 'news'}
+        fadeOut={phase === 'news' || phase === 'native-app'}
         mailLayerVisible={phase === 'messageboard'}
         onMailClose={closeMessageBoard}
         onSettingsClick={openSettings}
@@ -595,6 +611,9 @@ function HostApp() {
         visible={phase === 'news'}
         onBack={closeNewsChannel}
       />
+      {phase === 'native-app' ? <Suspense fallback={<div className="native-application-screen">Loading channel application…</div>}>
+        <WiiNativeApplication channel={nativeApplicationChannel} onBack={closeNewsChannel}/>
+      </Suspense> : null}
 
       {/* Pairing overlay */}
       <PairingScreen

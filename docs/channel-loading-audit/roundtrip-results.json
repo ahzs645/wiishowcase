@@ -1,0 +1,163 @@
+[
+  {
+    "name": "Wii Shop Channel (World) (v20) (Channel).wad",
+    "checks": [
+      {
+        "target": "banner",
+        "panes": 185,
+        "originalPanes": 185,
+        "textures": 41,
+        "originalTextures": 41
+      },
+      {
+        "target": "icon",
+        "panes": 54,
+        "originalPanes": 54,
+        "textures": 12,
+        "originalTextures": 12
+      }
+    ],
+    "bytes": 2657853,
+    "audioBytes": 1024280,
+    "skippedBanner": true,
+    "skippedAudio": true
+  },
+  {
+    "name": "News Channel (USA) (v7) (Channel).wad",
+    "checks": [
+      {
+        "target": "banner",
+        "panes": 126,
+        "originalPanes": 126,
+        "textures": 22,
+        "originalTextures": 22
+      },
+      {
+        "target": "icon",
+        "panes": 52,
+        "originalPanes": 52,
+        "textures": 12,
+        "originalTextures": 12
+      }
+    ],
+    "bytes": 1336866,
+    "audioBytes": 526784,
+    "skippedBanner": true,
+    "skippedAudio": true
+  },
+  {
+    "name": "My Pokemon Ranch (USA) (v256) (WiiWare).wad",
+    "checks": [
+      {
+        "target": "banner",
+        "panes": 181,
+        "originalPanes": 181,
+        "textures": 25,
+        "originalTextures": 25
+      },
+      {
+        "target": "icon",
+        "panes": 55,
+        "originalPanes": 55,
+        "textures": 10,
+        "originalTextures": 10
+      }
+    ],
+    "bytes": 1753816,
+    "audioBytes": 699436,
+    "skippedBanner": true,
+    "skippedAudio": true
+  },
+  {
+    "name": "Dr. Mario Online Rx (USA) (v256) (WiiWare).wad",
+    "checks": [
+      {
+        "target": "banner",
+        "panes": 83,
+        "originalPanes": 83,
+        "textures": 13,
+        "originalTextures": 13
+      },
+      {
+        "target": "icon",
+        "panes": 8,
+        "originalPanes": 8,
+        "textures": 4,
+        "originalTextures": 4
+      }
+    ],
+    "bytes": 975801,
+    "audioBytes": 572626,
+    "skippedBanner": true,
+    "skippedAudio": true
+  },
+  {
+    "name": "Grill-Off with Ultra Hand! (USA) (Club Nintendo) (WiiWare).wad",
+    "checks": [
+      {
+        "target": "banner",
+        "panes": 91,
+        "originalPanes": 91,
+        "textures": 17,
+        "originalTextures": 17
+      },
+      {
+        "target": "icon",
+        "panes": 38,
+        "originalPanes": 38,
+        "textures": 5,
+        "originalTextures": 5
+      }
+    ],
+    "bytes": 2005781,
+    "audioBytes": 1411264,
+    "skippedBanner": true,
+    "skippedAudio": true
+  },
+  {
+    "name": "Forecast Channel (USA) (v7) (Channel).wad",
+    "checks": [
+      {
+        "target": "banner",
+        "panes": 116,
+        "originalPanes": 116,
+        "textures": 23,
+        "originalTextures": 23
+      },
+      {
+        "target": "icon",
+        "panes": 41,
+        "originalPanes": 41,
+        "textures": 14,
+        "originalTextures": 14
+      }
+    ],
+    "bytes": 1254583,
+    "audioBytes": 655444,
+    "skippedBanner": true,
+    "skippedAudio": true
+  },
+  {
+    "name": "goo.wad",
+    "checks": [
+      {
+        "target": "banner",
+        "panes": 14,
+        "originalPanes": 14,
+        "textures": 9,
+        "originalTextures": 9
+      },
+      {
+        "target": "icon",
+        "panes": 10,
+        "originalPanes": 10,
+        "textures": 9,
+        "originalTextures": 9
+      }
+    ],
+    "bytes": 1376906,
+    "audioBytes": 1107788,
+    "skippedBanner": true,
+    "skippedAudio": true
+  }
+]

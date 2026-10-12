@@ -1,4 +1,4 @@
-// Dev-only stand-in for the `miicreator/primitives` entry point.
+// Dev-only stand-in for the `miicreator/images` entry point.
 //
 // `miicreator` is a `file:../miicreateor` dependency that isn't present in CI or
 // on a fresh clone. Vite's dev server statically resolves the bare-specifier

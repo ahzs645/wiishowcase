@@ -1,0 +1,499 @@
+[
+  {
+    "bytes": 25944832,
+    "ms": 318.6,
+    "titleId": "HABA",
+    "targets": {
+      "banner": {
+        "width": 608,
+        "height": 456,
+        "panes": 185,
+        "textures": 41,
+        "pixelBytes": 2752512,
+        "fonts": 0,
+        "animations": [
+          {
+            "id": "arc/anim/banner_Start.brlan",
+            "frames": 790,
+            "role": "start",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          },
+          {
+            "id": "arc/anim/banner_Loop.brlan",
+            "frames": 2430,
+            "role": "loop",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          }
+        ]
+      },
+      "icon": {
+        "width": 608,
+        "height": 456,
+        "panes": 54,
+        "textures": 12,
+        "pixelBytes": 539504,
+        "fonts": 0,
+        "animations": [
+          {
+            "id": "arc/anim/icon_Rso0.brlan",
+            "frames": 5000,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          },
+          {
+            "id": "arc/anim/icon_Rso12.brlan",
+            "frames": 5000,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          },
+          {
+            "id": "arc/anim/icon_Rso4.brlan",
+            "frames": 5000,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          },
+          {
+            "id": "arc/anim/icon_Rso8.brlan",
+            "frames": 5000,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          },
+          {
+            "id": "arc/anim/icon_Rso1.brlan",
+            "frames": 12000,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          },
+          {
+            "id": "arc/anim/icon_Rso13.brlan",
+            "frames": 12000,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          },
+          {
+            "id": "arc/anim/icon_Rso5.brlan",
+            "frames": 12000,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          },
+          {
+            "id": "arc/anim/icon_Rso9.brlan",
+            "frames": 12000,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          },
+          {
+            "id": "arc/anim/icon_Rso10.brlan",
+            "frames": 1000,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          },
+          {
+            "id": "arc/anim/icon_Rso14.brlan",
+            "frames": 1000,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          },
+          {
+            "id": "arc/anim/icon_Rso2.brlan",
+            "frames": 1000,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          },
+          {
+            "id": "arc/anim/icon_Rso6.brlan",
+            "frames": 1000,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          },
+          {
+            "id": "arc/anim/icon_Rso11.brlan",
+            "frames": 2000,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          },
+          {
+            "id": "arc/anim/icon_Rso15.brlan",
+            "frames": 2000,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          },
+          {
+            "id": "arc/anim/icon_Rso3.brlan",
+            "frames": 2000,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          },
+          {
+            "id": "arc/anim/icon_Rso7.brlan",
+            "frames": 2000,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          }
+        ]
+      }
+    },
+    "audio": {
+      "duration": 8.00184375,
+      "sampleRate": 32000
+    },
+    "warnings": [],
+    "file": "Wii Shop Channel (World) (v20) (Channel).wad"
+  },
+  {
+    "bytes": 30515136,
+    "ms": 241.4,
+    "titleId": "HAGE",
+    "targets": {
+      "banner": {
+        "width": 608,
+        "height": 456,
+        "panes": 126,
+        "textures": 22,
+        "pixelBytes": 1313508,
+        "fonts": 0,
+        "animations": [
+          {
+            "id": "arc/anim/banner_Start.brlan",
+            "frames": 120,
+            "role": "start",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          },
+          {
+            "id": "arc/anim/banner_Rso1.brlan",
+            "frames": 36000,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          },
+          {
+            "id": "arc/anim/banner_Rso0.brlan",
+            "frames": 83,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          },
+          {
+            "id": "arc/anim/banner_Rso2.brlan",
+            "frames": 83,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          }
+        ]
+      },
+      "icon": {
+        "width": 608,
+        "height": 456,
+        "panes": 52,
+        "textures": 12,
+        "pixelBytes": 86612,
+        "fonts": 0,
+        "animations": [
+          {
+            "id": "arc/anim/icon_Rso1.brlan",
+            "frames": 36000,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          },
+          {
+            "id": "arc/anim/icon_Start.brlan",
+            "frames": 399,
+            "role": "start",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          },
+          {
+            "id": "arc/anim/icon_Rso2.brlan",
+            "frames": 53,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          }
+        ]
+      }
+    },
+    "audio": {
+      "duration": 4.11515625,
+      "sampleRate": 32000
+    },
+    "warnings": [],
+    "file": "News Channel (USA) (v7) (Channel).wad"
+  },
+  {
+    "bytes": 20588992,
+    "ms": 176.4,
+    "titleId": "WBME",
+    "targets": {
+      "banner": {
+        "width": 608,
+        "height": 456,
+        "panes": 181,
+        "textures": 25,
+        "pixelBytes": 1166560,
+        "fonts": 0,
+        "animations": [
+          {
+            "id": "arc/anim/banner_Start.brlan",
+            "frames": 481,
+            "role": "start",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          },
+          {
+            "id": "arc/anim/banner_Loop.brlan",
+            "frames": 299,
+            "role": "loop",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          }
+        ]
+      },
+      "icon": {
+        "width": 128,
+        "height": 96,
+        "panes": 55,
+        "textures": 10,
+        "pixelBytes": 70756,
+        "fonts": 0,
+        "animations": [
+          {
+            "id": "arc/anim/icon.brlan",
+            "frames": 300,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          }
+        ]
+      }
+    },
+    "audio": {
+      "duration": 7.929614512471655,
+      "sampleRate": 22050
+    },
+    "warnings": [],
+    "file": "My Pokemon Ranch (USA) (v256) (WiiWare).wad"
+  },
+  {
+    "bytes": 15677952,
+    "ms": 169.9,
+    "titleId": "WDME",
+    "targets": {
+      "banner": {
+        "width": 608,
+        "height": 456,
+        "panes": 83,
+        "textures": 13,
+        "pixelBytes": 754688,
+        "fonts": 0,
+        "animations": [
+          {
+            "id": "arc/anim/banner.brlan",
+            "frames": 280,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          }
+        ]
+      },
+      "icon": {
+        "width": 608,
+        "height": 456,
+        "panes": 8,
+        "textures": 4,
+        "pixelBytes": 76800,
+        "fonts": 0,
+        "animations": [
+          {
+            "id": "arc/anim/icon.brlan",
+            "frames": 120,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          }
+        ]
+      }
+    },
+    "audio": {
+      "duration": 8.94659375,
+      "sampleRate": 32000
+    },
+    "warnings": [],
+    "file": "Dr. Mario Online Rx (USA) (v256) (WiiWare).wad"
+  },
+  {
+    "bytes": 24434496,
+    "ms": 156.1,
+    "titleId": "WUHE",
+    "targets": {
+      "banner": {
+        "width": 832,
+        "height": 456,
+        "panes": 91,
+        "textures": 17,
+        "pixelBytes": 439136,
+        "fonts": 0,
+        "animations": [
+          {
+            "id": "arc/anim/banner_Start.brlan",
+            "frames": 490,
+            "role": "start",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          },
+          {
+            "id": "arc/anim/banner_Loop.brlan",
+            "frames": 120,
+            "role": "loop",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          }
+        ]
+      },
+      "icon": {
+        "width": 170,
+        "height": 96,
+        "panes": 38,
+        "textures": 5,
+        "pixelBytes": 44128,
+        "fonts": 0,
+        "animations": [
+          {
+            "id": "arc/anim/icon.brlan",
+            "frames": 120,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          }
+        ]
+      }
+    },
+    "audio": {
+      "duration": 8.000113378684807,
+      "sampleRate": 44100
+    },
+    "warnings": [],
+    "file": "Grill-Off with Ultra Hand! (USA) (Club Nintendo) (WiiWare).wad"
+  },
+  {
+    "bytes": 30385280,
+    "ms": 172.3,
+    "titleId": "HAFE",
+    "targets": {
+      "banner": {
+        "width": 608,
+        "height": 456,
+        "panes": 116,
+        "textures": 23,
+        "pixelBytes": 1083132,
+        "fonts": 0,
+        "animations": [
+          {
+            "id": "arc/anim/banner_Rso0.brlan",
+            "frames": 17,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          }
+        ]
+      },
+      "icon": {
+        "width": 608,
+        "height": 456,
+        "panes": 41,
+        "textures": 14,
+        "pixelBytes": 177280,
+        "fonts": 0,
+        "animations": [
+          {
+            "id": "arc/anim/icon_Rso0.brlan",
+            "frames": 499,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          },
+          {
+            "id": "arc/anim/icon_Rso1.brlan",
+            "frames": 9,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          }
+        ]
+      }
+    },
+    "audio": {
+      "duration": 5.1203125,
+      "sampleRate": 32000
+    },
+    "warnings": [],
+    "file": "Forecast Channel (USA) (v7) (Channel).wad"
+  },
+  {
+    "bytes": 45989504,
+    "ms": 277.6,
+    "titleId": "WGOE",
+    "targets": {
+      "banner": {
+        "width": 608,
+        "height": 456,
+        "panes": 14,
+        "textures": 9,
+        "pixelBytes": 941140,
+        "fonts": 0,
+        "animations": [
+          {
+            "id": "arc/anim/banner.brlan",
+            "frames": 800,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          }
+        ]
+      },
+      "icon": {
+        "width": 640,
+        "height": 480,
+        "panes": 10,
+        "textures": 9,
+        "pixelBytes": 153356,
+        "fonts": 0,
+        "animations": [
+          {
+            "id": "arc/anim/icon.brlan",
+            "frames": 500,
+            "role": "generic",
+            "hasLayout": false,
+            "hasRenderLayout": false
+          }
+        ]
+      }
+    },
+    "audio": {
+      "duration": 6.279727891156463,
+      "sampleRate": 44100
+    },
+    "warnings": [],
+    "file": "goo.wad"
+  }
+]

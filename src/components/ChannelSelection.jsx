@@ -21,6 +21,9 @@ function getBundleAudio(url) {
           url: URL.createObjectURL(blob),
           meta: bundle.manifest?.audio ?? null,
         };
+      }).catch((error) => {
+        bundleAudioCache.delete(url);
+        throw error;
       }),
     );
   }
@@ -69,33 +72,41 @@ export default function ChannelSelection({ visible, channel, onBack, onStart, ha
   }, []);
 
   useEffect(() => {
-    if (!audioRef.current) return;
+    const audio = audioRef.current;
+    if (!audio) return;
+    let cancelled = false;
+    const clearAudio = () => {
+      audioMetaRef.current = null;
+      audio.pause();
+      audio.removeAttribute('src');
+      audio.load();
+    };
+    // Stop the previous channel immediately while the next bundle loads.
+    clearAudio();
 
     if (bannerActive && visible && channel) {
       if (channel.bundle) {
         // Load audio from bundle
         getBundleAudio(BASE + channel.bundle).then((result) => {
-          if (!audioRef.current || !result) return;
+          if (cancelled || !result) return;
           audioMetaRef.current = result.meta;
           // Use native loop only when there's no custom loop point
-          audioRef.current.loop = !!(result.meta?.loopFlag && result.meta.loopStart === 0);
-          audioRef.current.src = result.url;
-          audioRef.current.currentTime = 0;
-          audioRef.current.play().catch(() => {});
+          audio.loop = !!(result.meta?.loopFlag && result.meta.loopStart === 0);
+          audio.src = result.url;
+          audio.currentTime = 0;
+          audio.play().catch(() => {});
+        }).catch((error) => {
+          if (!cancelled) console.error('[ChannelSelection] Failed to load audio:', error);
         });
       } else if (channel.audio) {
         audioMetaRef.current = null;
-        audioRef.current.loop = true;
-        audioRef.current.src = `${BASE}${channel.audio}`;
-        audioRef.current.currentTime = 0;
-        audioRef.current.play().catch(() => {});
+        audio.loop = true;
+        audio.src = `${BASE}${channel.audio}`;
+        audio.currentTime = 0;
+        audio.play().catch(() => {});
       }
-    } else {
-      audioMetaRef.current = null;
-      audioRef.current.pause();
-      audioRef.current.removeAttribute('src');
-      audioRef.current.load();
     }
+    return () => { cancelled = true; clearAudio(); };
   }, [bannerActive, visible, channel]);
 
   const renderBanner = () => {
@@ -144,7 +155,7 @@ export default function ChannelSelection({ visible, channel, onBack, onStart, ha
               <div className="wii-btn-start-highlight-sharp" />
               <span>Wii Menu</span>
             </button>
-            <button className="wii-btn-start wii-btn-start-md" type="button" onClick={onStart}>
+            <button className="wii-btn-start wii-btn-start-md" type="button" onClick={onStart} disabled={channel?.presentationOnly}>
               <div className="wii-btn-start-highlight-sharp" />
               <span>Start</span>
             </button>

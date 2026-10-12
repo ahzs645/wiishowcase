@@ -1,0 +1,32 @@
+[
+  {
+    "label": "before",
+    "cpuSlowdown": 4,
+    "rAFCount": 50,
+    "elapsedMs": 5075.199999999628,
+    "meanRafIntervalMs": 101.50399999999256,
+    "p95RafIntervalMs": 200,
+    "longTasks": 35,
+    "totalLongTaskMs": 4556,
+    "maxTaskMs": 200,
+    "shopUsesGL": false,
+    "errors": []
+  },
+  {
+    "label": "after",
+    "cpuSlowdown": 4,
+    "rAFCount": 56,
+    "elapsedMs": 5130.699999999628,
+    "meanRafIntervalMs": 91.61964285713621,
+    "p95RafIntervalMs": 149.89999999999964,
+    "longTasks": 52,
+    "totalLongTaskMs": 4847,
+    "maxTaskMs": 146,
+    "shopUsesGL": true,
+    "errors": []
+  },
+  {
+    "scenario": "webgl-unavailable",
+    "shopCanvasFallback": true
+  }
+]

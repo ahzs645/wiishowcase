@@ -3,6 +3,8 @@ import { useCallback, useEffect, useRef } from 'react';
 export default function WiiNewsChannel({ visible, onBack }) {
   const iframeRef = useRef(null);
   const detachRef = useRef(null);
+  const hasOpenedRef = useRef(false);
+  if (visible) hasOpenedRef.current = true;
 
   const attachMenuListener = useCallback(() => {
     const iframe = iframeRef.current;
@@ -54,13 +56,13 @@ export default function WiiNewsChannel({ visible, onBack }) {
   return (
     <div className={`news-channel-screen${visible ? ' visible' : ''}`}>
       <div className="news-channel-frame">
-        <iframe
+        {hasOpenedRef.current && <iframe
           ref={iframeRef}
           src={`${import.meta.env.BASE_URL}news-channel/index.html`}
           title="Wii News Channel"
           loading="eager"
           onLoad={attachMenuListener}
-        />
+        />}
       </div>
     </div>
   );

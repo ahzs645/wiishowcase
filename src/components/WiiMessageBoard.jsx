@@ -278,6 +278,15 @@ function MessageMemo({ message, onClose }) {
 }
 
 export default function WiiMessageBoard({ visible, onDisplayedDateChange, targetDate }) {
+  const hasOpenedRef = useRef(false);
+  if (visible) hasOpenedRef.current = true;
+  // Avatars initialize the Mii runtime and its FFL resource. Wait until the
+  // board is first opened, then keep its state and rendered heads on return.
+  if (!hasOpenedRef.current) return null;
+  return <MessageBoardContent visible={visible} onDisplayedDateChange={onDisplayedDateChange} targetDate={targetDate} />;
+}
+
+function MessageBoardContent({ visible, onDisplayedDateChange, targetDate }) {
   const [currentDayOffset, setCurrentDayOffset] = useState(0);
   const [selectedMessageId, setSelectedMessageId] = useState(null);
   const [readMessageIds, setReadMessageIds] = useState(new Set());

@@ -1,0 +1,280 @@
+{
+  "original": {
+    "missingRows": 138,
+    "missingPaths": 124,
+    "missingByRegion": {
+      "DE": 6,
+      "ES": 9,
+      "FR": 12,
+      "GB": 9,
+      "IT": 49,
+      "NL": 51,
+      "MX": 1,
+      "JP": 1
+    },
+    "examples": [
+      {
+        "id": "0001000048415A41",
+        "region": "DE",
+        "title": "Fotokanal 1.1",
+        "thumbnail": "FFFD0011"
+      },
+      {
+        "id": "0001000048415A41",
+        "region": "ES",
+        "title": "Canal Fotos 1.1",
+        "thumbnail": "FFFD0019"
+      },
+      {
+        "id": "0001000048415A41",
+        "region": "FR",
+        "title": "Cha\u00eene photos 1.1",
+        "thumbnail": "FFFD001D"
+      },
+      {
+        "id": "0001000048415A41",
+        "region": "GB",
+        "title": "Photo Channel 1.1",
+        "thumbnail": "FFFD0015"
+      },
+      {
+        "id": "0001000048415A41",
+        "region": "IT",
+        "title": "Canale Foto 1.1",
+        "thumbnail": "FFFD0021"
+      },
+      {
+        "id": "0001000048415A41",
+        "region": "NL",
+        "title": "Fotokanaal 1.1",
+        "thumbnail": "FFFD0025"
+      },
+      {
+        "id": "0001000048415A41",
+        "region": "NL",
+        "title": "Fotokanaal 1.1",
+        "thumbnail": "FFFD0025"
+      },
+      {
+        "id": "0001000048415A41",
+        "region": "NL",
+        "title": "Fotokanaal 1.1",
+        "thumbnail": "FFFD0025"
+      },
+      {
+        "id": "0001000048415A41",
+        "region": "NL",
+        "title": "Fotokanaal 1.1",
+        "thumbnail": "FFFD0025"
+      },
+      {
+        "id": "00010000534F5550",
+        "region": "ES",
+        "title": "The Legend of Zelda: Skyward Sword",
+        "thumbnail": "FFFD0010"
+      },
+      {
+        "id": "00010000534F5550",
+        "region": "NL",
+        "title": "The Legend of Zelda: Skyward Sword",
+        "thumbnail": "FFFD000D"
+      },
+      {
+        "id": "00010000534F5550",
+        "region": "NL",
+        "title": "The Legend of Zelda: Skyward Sword",
+        "thumbnail": "FFFD000D"
+      }
+    ]
+  },
+  "public/": {
+    "missingRows": 3279,
+    "missingPaths": 1258,
+    "missingByRegion": {
+      "DE": 311,
+      "ES": 333,
+      "FR": 333,
+      "GB": 329,
+      "IT": 333,
+      "NL": 336,
+      "JP": 229,
+      "CA": 355,
+      "MX": 359,
+      "US": 357,
+      "KR": 2,
+      "": 1,
+      "AU": 1
+    },
+    "examples": [
+      {
+        "id": "0001000048415A41",
+        "region": "DE",
+        "title": "Fotokanal 1.1",
+        "thumbnail": "FFFD0011"
+      },
+      {
+        "id": "0001000048415A41",
+        "region": "ES",
+        "title": "Canal Fotos 1.1",
+        "thumbnail": "FFFD0019"
+      },
+      {
+        "id": "0001000048415A41",
+        "region": "FR",
+        "title": "Cha\u00eene photos 1.1",
+        "thumbnail": "FFFD001D"
+      },
+      {
+        "id": "0001000048415A41",
+        "region": "GB",
+        "title": "Photo Channel 1.1",
+        "thumbnail": "FFFD0015"
+      },
+      {
+        "id": "0001000048415A41",
+        "region": "IT",
+        "title": "Canale Foto 1.1",
+        "thumbnail": "FFFD0021"
+      },
+      {
+        "id": "0001000048415A41",
+        "region": "NL",
+        "title": "Fotokanaal 1.1",
+        "thumbnail": "FFFD0025"
+      },
+      {
+        "id": "0001000048415A41",
+        "region": "NL",
+        "title": "Fotokanaal 1.1",
+        "thumbnail": "FFFD0025"
+      },
+      {
+        "id": "0001000048415A41",
+        "region": "NL",
+        "title": "Fotokanaal 1.1",
+        "thumbnail": "FFFD0025"
+      },
+      {
+        "id": "0001000048415A41",
+        "region": "NL",
+        "title": "Fotokanaal 1.1",
+        "thumbnail": "FFFD0025"
+      },
+      {
+        "id": "00010000534F5550",
+        "region": "ES",
+        "title": "The Legend of Zelda: Skyward Sword",
+        "thumbnail": "FFFD0010"
+      },
+      {
+        "id": "00010000534F5550",
+        "region": "NL",
+        "title": "The Legend of Zelda: Skyward Sword",
+        "thumbnail": "FFFD000D"
+      },
+      {
+        "id": "00010000534F5550",
+        "region": "NL",
+        "title": "The Legend of Zelda: Skyward Sword",
+        "thumbnail": "FFFD000D"
+      }
+    ]
+  },
+  "dist/": {
+    "missingRows": 3279,
+    "missingPaths": 1258,
+    "missingByRegion": {
+      "DE": 311,
+      "ES": 333,
+      "FR": 333,
+      "GB": 329,
+      "IT": 333,
+      "NL": 336,
+      "JP": 229,
+      "CA": 355,
+      "MX": 359,
+      "US": 357,
+      "KR": 2,
+      "": 1,
+      "AU": 1
+    },
+    "examples": [
+      {
+        "id": "0001000048415A41",
+        "region": "DE",
+        "title": "Fotokanal 1.1",
+        "thumbnail": "FFFD0011"
+      },
+      {
+        "id": "0001000048415A41",
+        "region": "ES",
+        "title": "Canal Fotos 1.1",
+        "thumbnail": "FFFD0019"
+      },
+      {
+        "id": "0001000048415A41",
+        "region": "FR",
+        "title": "Cha\u00eene photos 1.1",
+        "thumbnail": "FFFD001D"
+      },
+      {
+        "id": "0001000048415A41",
+        "region": "GB",
+        "title": "Photo Channel 1.1",
+        "thumbnail": "FFFD0015"
+      },
+      {
+        "id": "0001000048415A41",
+        "region": "IT",
+        "title": "Canale Foto 1.1",
+        "thumbnail": "FFFD0021"
+      },
+      {
+        "id": "0001000048415A41",
+        "region": "NL",
+        "title": "Fotokanaal 1.1",
+        "thumbnail": "FFFD0025"
+      },
+      {
+        "id": "0001000048415A41",
+        "region": "NL",
+        "title": "Fotokanaal 1.1",
+        "thumbnail": "FFFD0025"
+      },
+      {
+        "id": "0001000048415A41",
+        "region": "NL",
+        "title": "Fotokanaal 1.1",
+        "thumbnail": "FFFD0025"
+      },
+      {
+        "id": "0001000048415A41",
+        "region": "NL",
+        "title": "Fotokanaal 1.1",
+        "thumbnail": "FFFD0025"
+      },
+      {
+        "id": "00010000534F5550",
+        "region": "ES",
+        "title": "The Legend of Zelda: Skyward Sword",
+        "thumbnail": "FFFD0010"
+      },
+      {
+        "id": "00010000534F5550",
+        "region": "NL",
+        "title": "The Legend of Zelda: Skyward Sword",
+        "thumbnail": "FFFD000D"
+      },
+      {
+        "id": "00010000534F5550",
+        "region": "NL",
+        "title": "The Legend of Zelda: Skyward Sword",
+        "thumbnail": "FFFD000D"
+      }
+    ]
+  },
+  "zipEntries": 88106,
+  "catalogRows": 8080,
+  "uniqueTitleIds": 2580,
+  "rawRendererInputs": 0
+}

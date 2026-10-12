@@ -1,0 +1,492 @@
+[
+  {
+    "label": "before",
+    "cpuSlowdown": 1,
+    "readyMs": 1034,
+    "tasks": [
+      {
+        "start": 97.10000000149012,
+        "ms": 137
+      },
+      {
+        "start": 657.7000000011176,
+        "ms": 57
+      },
+      {
+        "start": 743.6000000014901,
+        "ms": 68
+      },
+      {
+        "start": 837.4000000003725,
+        "ms": 169
+      },
+      {
+        "start": 1377.5,
+        "ms": 156
+      },
+      {
+        "start": 1535.800000000745,
+        "ms": 348
+      },
+      {
+        "start": 1885,
+        "ms": 50
+      },
+      {
+        "start": 1982.800000000745,
+        "ms": 65
+      },
+      {
+        "start": 2106,
+        "ms": 82
+      },
+      {
+        "start": 2196.800000000745,
+        "ms": 54
+      },
+      {
+        "start": 2251.300000000745,
+        "ms": 62
+      },
+      {
+        "start": 2314.2000000011176,
+        "ms": 51
+      },
+      {
+        "start": 2421.7000000011176,
+        "ms": 59
+      },
+      {
+        "start": 2481.300000000745,
+        "ms": 53
+      },
+      {
+        "start": 2535.300000000745,
+        "ms": 59
+      },
+      {
+        "start": 2594.9000000003725,
+        "ms": 52
+      },
+      {
+        "start": 2647.4000000003725,
+        "ms": 64
+      },
+      {
+        "start": 2721.800000000745,
+        "ms": 50
+      },
+      {
+        "start": 2775.60000000149,
+        "ms": 65
+      },
+      {
+        "start": 2854.2000000011176,
+        "ms": 58
+      },
+      {
+        "start": 2918.5,
+        "ms": 77
+      },
+      {
+        "start": 3071.7000000011176,
+        "ms": 61
+      },
+      {
+        "start": 3187.800000000745,
+        "ms": 60
+      },
+      {
+        "start": 3322.7000000011176,
+        "ms": 62
+      },
+      {
+        "start": 3440.4000000003725,
+        "ms": 60
+      },
+      {
+        "start": 3607.4000000003725,
+        "ms": 61
+      },
+      {
+        "start": 3723.800000000745,
+        "ms": 62
+      },
+      {
+        "start": 3786.4000000003725,
+        "ms": 57
+      },
+      {
+        "start": 3855.300000000745,
+        "ms": 62
+      },
+      {
+        "start": 3967.300000000745,
+        "ms": 59
+      },
+      {
+        "start": 4026.9000000003725,
+        "ms": 76
+      },
+      {
+        "start": 4106.60000000149,
+        "ms": 61
+      },
+      {
+        "start": 4222.800000000745,
+        "ms": 50
+      },
+      {
+        "start": 4275.10000000149,
+        "ms": 60
+      },
+      {
+        "start": 4391.10000000149,
+        "ms": 59
+      },
+      {
+        "start": 4505.60000000149,
+        "ms": 62
+      },
+      {
+        "start": 4567.700000001118,
+        "ms": 54
+      },
+      {
+        "start": 4628,
+        "ms": 117
+      },
+      {
+        "start": 4758.200000001118,
+        "ms": 62
+      },
+      {
+        "start": 4836.200000001118,
+        "ms": 62
+      },
+      {
+        "start": 4955.5,
+        "ms": 59
+      },
+      {
+        "start": 5071,
+        "ms": 75
+      },
+      {
+        "start": 5147.200000001118,
+        "ms": 58
+      },
+      {
+        "start": 5205.800000000745,
+        "ms": 75
+      },
+      {
+        "start": 5281.4000000003725,
+        "ms": 58
+      },
+      {
+        "start": 5369.9000000003725,
+        "ms": 60
+      },
+      {
+        "start": 5475.200000001118,
+        "ms": 52
+      },
+      {
+        "start": 5573.5,
+        "ms": 51
+      },
+      {
+        "start": 5736.60000000149,
+        "ms": 52
+      },
+      {
+        "start": 5841.4000000003725,
+        "ms": 53
+      },
+      {
+        "start": 5987.800000000745,
+        "ms": 53
+      },
+      {
+        "start": 6246.60000000149,
+        "ms": 53
+      },
+      {
+        "start": 6505.700000001118,
+        "ms": 53
+      },
+      {
+        "start": 6709.5,
+        "ms": 89
+      },
+      {
+        "start": 8114.10000000149,
+        "ms": 69
+      },
+      {
+        "start": 8306.900000000373,
+        "ms": 69
+      },
+      {
+        "start": 8376.10000000149,
+        "ms": 59
+      },
+      {
+        "start": 8529.10000000149,
+        "ms": 60
+      },
+      {
+        "start": 13442,
+        "ms": 51
+      },
+      {
+        "start": 13860,
+        "ms": 97
+      },
+      {
+        "start": 14017.800000000745,
+        "ms": 55
+      },
+      {
+        "start": 14333.200000001118,
+        "ms": 97
+      },
+      {
+        "start": 14441.700000001118,
+        "ms": 59
+      },
+      {
+        "start": 14544,
+        "ms": 56
+      },
+      {
+        "start": 14655.900000000373,
+        "ms": 51
+      },
+      {
+        "start": 14941.900000000373,
+        "ms": 63
+      },
+      {
+        "start": 15189.5,
+        "ms": 100
+      },
+      {
+        "start": 15673.400000000373,
+        "ms": 73
+      },
+      {
+        "start": 15769.5,
+        "ms": 50
+      },
+      {
+        "start": 15888.900000000373,
+        "ms": 53
+      }
+    ],
+    "resources": [
+      {
+        "path": "/wiishowcase/news-channel/index.html",
+        "bytes": 850
+      },
+      {
+        "path": "/wiishowcase/FFLResHigh.dat",
+        "bytes": 3046654
+      }
+    ],
+    "frameResources": [
+      [
+        {
+          "path": "/wiishowcase/news-channel/index.html",
+          "bytes": 850
+        },
+        {
+          "path": "/wiishowcase/assets/images-BSvmzWja.js",
+          "bytes": 4190
+        },
+        {
+          "path": "/wiishowcase/assets/load-legacy-runtime-C-Xa1Ed3.js",
+          "bytes": 174000
+        },
+        {
+          "path": "/wiishowcase/assets/runtime-base-BvxnoCYA.js",
+          "bytes": 763969
+        },
+        {
+          "path": "/wiishowcase/dist/mii-runtime-npm.js",
+          "bytes": 1868
+        },
+        {
+          "path": "/wiishowcase/dist/mii-runtime-legacy-settings.js",
+          "bytes": 990
+        },
+        {
+          "path": "/wiishowcase/dist/mii-runtime-three.js",
+          "bytes": 3941
+        },
+        {
+          "path": "/wiishowcase/dist/mii-runtime-audio-i18n.js",
+          "bytes": 24495
+        },
+        {
+          "path": "/wiishowcase/dist/mii-runtime-config.js",
+          "bytes": 18107
+        },
+        {
+          "path": "/wiishowcase/dist/mii-runtime-utils-constants.js",
+          "bytes": 10066
+        },
+        {
+          "path": "/wiishowcase/dist/mii-runtime-ffl-shader.js",
+          "bytes": 52220
+        },
+        {
+          "path": "/wiishowcase/dist/mii-runtime-deflate-utils.js",
+          "bytes": 23033
+        },
+        {
+          "path": "/wiishowcase/dist/mii-runtime-image-codecs.js",
+          "bytes": 80465
+        },
+        {
+          "path": "/wiishowcase/dist/mii-runtime-color.js",
+          "bytes": 40431
+        },
+        {
+          "path": "/wiishowcase/dist/mii-runtime-mii-data.js",
+          "bytes": 184766
+        },
+        {
+          "path": "/wiishowcase/dist/mii-runtime-legacy-bridge.js",
+          "bytes": 8754
+        },
+        {
+          "path": "/wiishowcase/dist/mii-runtime-events.js",
+          "bytes": 19136
+        },
+        {
+          "path": "/wiishowcase/dist/mii-runtime-mii-shaders.js",
+          "bytes": 104502
+        },
+        {
+          "path": "/wiishowcase/dist/mii-runtime-scene-motion.js",
+          "bytes": 255849
+        },
+        {
+          "path": "/wiishowcase/dist/mii-runtime-animation.js",
+          "bytes": 69872
+        },
+        {
+          "path": "/wiishowcase/dist/mii-runtime-scene-formats-worker.js",
+          "bytes": 62377
+        },
+        {
+          "path": "/wiishowcase/assets/legacy-globals-DpXh053H.js",
+          "bytes": 2054
+        },
+        {
+          "path": "/wiishowcase/assets/compositor-BpoDX-7x.js",
+          "bytes": 529
+        },
+        {
+          "path": "/wiishowcase/assets/wiiu-material-C1-UO1Ti.js",
+          "bytes": 449383
+        },
+        {
+          "path": "/wiishowcase/assets/runtime-proxies-C1-EL80A.js",
+          "bytes": 563
+        },
+        {
+          "path": "/wiishowcase/FFLResHigh.dat",
+          "bytes": 3046654
+        },
+        {
+          "path": "/wiishowcase/dist/icons.json",
+          "bytes": 549703
+        },
+        {
+          "path": "/wiishowcase/dist/brotli-wasm.js",
+          "bytes": 18348
+        },
+        {
+          "path": "/wiishowcase/dist/brotli_dec_wasm_bg.wasm",
+          "bytes": 294905
+        }
+      ],
+      [
+        {
+          "path": "/wiishowcase/news-channel/chunk-UVYD2ZMW.js",
+          "bytes": 230736
+        },
+        {
+          "path": "/wiishowcase/news-channel/polyfills-FFHMD2TL.js",
+          "bytes": 34519
+        },
+        {
+          "path": "/wiishowcase/news-channel/main-7QOF6TJT.js",
+          "bytes": 64048
+        },
+        {
+          "path": "/wiishowcase/news-channel/styles-L5BT5KZ3.css",
+          "bytes": 2012
+        },
+        {
+          "path": "/wiishowcase/news-channel/chunk-QAO6SJNR.js",
+          "bytes": 17819
+        }
+      ]
+    ]
+  },
+  {
+    "label": "after",
+    "cpuSlowdown": 1,
+    "readyMs": 1024,
+    "tasks": [
+      {
+        "start": 166,
+        "ms": 136
+      },
+      {
+        "start": 593.4000000003725,
+        "ms": 61
+      },
+      {
+        "start": 705.5,
+        "ms": 65
+      },
+      {
+        "start": 797.6000000014901,
+        "ms": 197
+      },
+      {
+        "start": 1916.5,
+        "ms": 57
+      },
+      {
+        "start": 2934.10000000149,
+        "ms": 66
+      },
+      {
+        "start": 7897,
+        "ms": 69
+      },
+      {
+        "start": 8017.200000001118,
+        "ms": 71
+      },
+      {
+        "start": 14496.700000001118,
+        "ms": 61
+      },
+      {
+        "start": 15208.400000000373,
+        "ms": 73
+      }
+    ],
+    "resources": [],
+    "frameResources": [
+      []
+    ]
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "channels/disc.zip": {
+    "frames": 93,
+    "meanMs": 9.110752688180055,
+    "p95Ms": 12.699999999254942,
+    "maxMs": 75.09999999962747
+  },
+  "channels/mii.zip": {
+    "frames": 93,
+    "meanMs": 0.326881720333971,
+    "p95Ms": 0.6999999992549419,
+    "maxMs": 1.199999999254942
+  },
+  "channels/photo.zip": {
+    "frames": 93,
+    "meanMs": 0.45053763455280693,
+    "p95Ms": 1,
+    "maxMs": 3
+  },
+  "channels/shop.zip": {
+    "frames": 93,
+    "meanMs": 14.997849462353575,
+    "p95Ms": 25,
+    "maxMs": 96.40000000037253
+  },
+  "channels/news.zip": {
+    "frames": 93,
+    "meanMs": 1.8634408601629797,
+    "p95Ms": 3.100000001490116,
+    "maxMs": 4.099999999627471
+  },
+  "channels/pokemon-ranch.zip": {
+    "frames": 93,
+    "meanMs": 0.8838709676938672,
+    "p95Ms": 1.300000000745058,
+    "maxMs": 5
+  },
+  "shared-blank": {
+    "frames": 122,
+    "meanMs": 2.9180327869310485,
+    "p95Ms": 9.900000000372529,
+    "maxMs": 12.599999999627471
+  }
+}

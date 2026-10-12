@@ -5,9 +5,9 @@ let primitivesPromise = null;
 function loadPrimitives() {
   if (!primitivesPromise) {
     primitivesPromise = (async () => {
-      const { configurePrimitives, parseMii, renderMiiFlatImage, FFLResHighUrl } =
-        await import('miicreator/primitives');
-      configurePrimitives({ fflResourceUrl: FFLResHighUrl });
+      const { configurePrimitives, parseMii, renderMiiFlatImage } =
+        await import('miicreator/images');
+      configurePrimitives({ fflResourceUrl: `${import.meta.env.BASE_URL}FFLResHigh.dat` });
       return { parseMii, renderMiiFlatImage };
     })();
   }

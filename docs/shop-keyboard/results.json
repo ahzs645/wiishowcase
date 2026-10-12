@@ -1,0 +1,711 @@
+{
+  "reports": [
+    {
+      "implementation": "shop",
+      "initial": {
+        "keys": 53,
+        "aLabel": "a",
+        "semanticButtons": 0,
+        "role": null,
+        "clippedKeys": [
+          {
+            "label": "Quit",
+            "left": 380.21051025390625,
+            "right": 742.3156127929688,
+            "top": 744.631591796875,
+            "bottom": 829.894775390625
+          },
+          {
+            "label": "OK",
+            "left": 1215.9996337890625,
+            "right": 1578.104736328125,
+            "top": 744.631591796875,
+            "bottom": 829.894775390625
+          },
+          {
+            "label": "Backspace",
+            "left": 1402.3153076171875,
+            "right": 1553.894287109375,
+            "top": 384.631591796875,
+            "bottom": 437.5263366699219
+          },
+          {
+            "label": "0",
+            "left": 1214.947021484375,
+            "right": 1306.52587890625,
+            "top": 383.0526428222656,
+            "bottom": 439.10528564453125
+          },
+          {
+            "label": "-",
+            "left": 1306.52587890625,
+            "right": 1398.1048583984375,
+            "top": 383.0526428222656,
+            "bottom": 439.10528564453125
+          },
+          {
+            "label": "p",
+            "left": 1260.210205078125,
+            "right": 1351.7890625,
+            "top": 439.10528564453125,
+            "bottom": 495.15789794921875
+          },
+          {
+            "label": "k",
+            "left": 1217.05224609375,
+            "right": 1308.631103515625,
+            "top": 495.15789794921875,
+            "bottom": 551.2105712890625
+          },
+          {
+            "label": "l",
+            "left": 1308.631103515625,
+            "right": 1400.2100830078125,
+            "top": 495.15789794921875,
+            "bottom": 551.2105712890625
+          },
+          {
+            "label": ":",
+            "left": 1400.2100830078125,
+            "right": 1491.7889404296875,
+            "top": 495.15789794921875,
+            "bottom": 551.2105712890625
+          },
+          {
+            "label": ",",
+            "left": 1238.1048583984375,
+            "right": 1329.683837890625,
+            "top": 551.2105712890625,
+            "bottom": 607.26318359375
+          },
+          {
+            "label": ".",
+            "left": 1329.683837890625,
+            "right": 1421.2626953125,
+            "top": 551.2105712890625,
+            "bottom": 607.26318359375
+          },
+          {
+            "label": "=",
+            "left": 1421.2626953125,
+            "right": 1512.8416748046875,
+            "top": 551.2105712890625,
+            "bottom": 607.26318359375
+          },
+          {
+            "label": "'",
+            "left": 1191.7890625,
+            "right": 1283.3680419921875,
+            "top": 607.26318359375,
+            "bottom": 663.3157958984375
+          },
+          {
+            "label": "`",
+            "left": 1283.3680419921875,
+            "right": 1374.9468994140625,
+            "top": 607.26318359375,
+            "bottom": 663.3157958984375
+          },
+          {
+            "label": "/",
+            "left": 1374.9468994140625,
+            "right": 1466.52587890625,
+            "top": 607.26318359375,
+            "bottom": 663.3157958984375
+          },
+          {
+            "label": "@",
+            "left": 1466.52587890625,
+            "right": 1558.104736328125,
+            "top": 607.26318359375,
+            "bottom": 663.3157958984375
+          }
+        ]
+      },
+      "onScreenShift": "AA",
+      "shiftRight": "a",
+      "backquote": "",
+      "tab": {
+        "event": {
+          "code": "Tab",
+          "prevented": true
+        },
+        "focusTag": "INPUT"
+      },
+      "shortcut": {
+        "code": "KeyA",
+        "prevented": true
+      },
+      "confirmed": "aa",
+      "audio": [
+        {
+          "sound": "kbd_open.wav",
+          "volume": 0.125,
+          "instance": 1
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_caps.wav",
+          "volume": 0.125,
+          "instance": 3
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_key.wav",
+          "volume": 0.125,
+          "instance": 4
+        },
+        {
+          "sound": "kbd_key.wav",
+          "volume": 0.125,
+          "instance": 4
+        },
+        {
+          "sound": "kbd_ok.wav",
+          "volume": 0.125,
+          "instance": 5
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_open.wav",
+          "volume": 0.125,
+          "instance": 1
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_key.wav",
+          "volume": 0.125,
+          "instance": 4
+        },
+        {
+          "sound": "kbd_ok.wav",
+          "volume": 0.125,
+          "instance": 5
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_open.wav",
+          "volume": 0.125,
+          "instance": 1
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_ok.wav",
+          "volume": 0.125,
+          "instance": 5
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_open.wav",
+          "volume": 0.125,
+          "instance": 1
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_key.wav",
+          "volume": 0.125,
+          "instance": 4
+        },
+        {
+          "sound": "kbd_ok.wav",
+          "volume": 0.125,
+          "instance": 5
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_open.wav",
+          "volume": 0.125,
+          "instance": 1
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_nobackspace.wav",
+          "volume": 0.125,
+          "instance": 6
+        },
+        {
+          "sound": "kbd_key.wav",
+          "volume": 0.125,
+          "instance": 4
+        },
+        {
+          "sound": "kbd_key.wav",
+          "volume": 0.125,
+          "instance": 4
+        },
+        {
+          "sound": "kbd_space.wav",
+          "volume": 0.125,
+          "instance": 7
+        },
+        {
+          "sound": "kbd_backspace.wav",
+          "volume": 0.125,
+          "instance": 8
+        },
+        {
+          "sound": "kbd_ok.wav",
+          "volume": 0.125,
+          "instance": 5
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.125,
+          "instance": 2
+        }
+      ],
+      "errors": [],
+      "failures": [
+        {
+          "status": 404,
+          "path": "/oss/oss/common/images/banner/top_L.gif"
+        },
+        {
+          "status": 404,
+          "path": "/oss/oss/common/images/banner/help_L.gif"
+        },
+        {
+          "status": 404,
+          "path": "/oss/oss/common/images/banner/tophelpshadow.gif"
+        },
+        {
+          "status": 404,
+          "path": "/oss/oss/common/images/banner/underButton_Shadow.gif"
+        },
+        {
+          "status": 404,
+          "path": "/oss/oss/common/images/banner/underButton_Blue.gif"
+        },
+        {
+          "status": 404,
+          "path": "/oss/oss/common/images/banner/top_L.gif"
+        },
+        {
+          "status": 404,
+          "path": "/oss/oss/common/images/banner/help_L.gif"
+        },
+        {
+          "status": 404,
+          "path": "/oss/oss/common/images/banner/tophelpshadow.gif"
+        },
+        {
+          "status": 404,
+          "path": "/oss/oss/common/images/banner/underButton_Shadow.gif"
+        },
+        {
+          "status": 404,
+          "path": "/oss/oss/common/images/banner/underButton_Blue.gif"
+        }
+      ]
+    },
+    {
+      "implementation": "wii-css",
+      "initial": {
+        "keys": 53,
+        "aLabel": "A",
+        "semanticButtons": 53,
+        "role": null,
+        "clippedKeys": []
+      },
+      "onScreenShift": "Aa",
+      "shiftRight": "A",
+      "backquote": "`",
+      "tab": {
+        "event": {
+          "code": "Tab",
+          "prevented": true
+        },
+        "focusTag": "INPUT"
+      },
+      "shortcut": {
+        "code": "KeyA",
+        "prevented": true
+      },
+      "confirmed": "AA",
+      "audio": [
+        {
+          "sound": "kbd_open.wav",
+          "volume": 0.5,
+          "instance": 1
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.5,
+          "instance": 2
+        },
+        {
+          "sound": "kbd_caps.wav",
+          "volume": 0.5,
+          "instance": 3
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.5,
+          "instance": 4
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.5,
+          "instance": 5
+        },
+        {
+          "sound": "kbd_caps.wav",
+          "volume": 0.5,
+          "instance": 6
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.5,
+          "instance": 7
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.5,
+          "instance": 8
+        },
+        {
+          "sound": "kbd_key.wav",
+          "volume": 0.5,
+          "instance": 9
+        },
+        {
+          "sound": "kbd_key.wav",
+          "volume": 0.5,
+          "instance": 10
+        },
+        {
+          "sound": "kbd_ok.wav",
+          "volume": 0.5,
+          "instance": 11
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.5,
+          "instance": 12
+        },
+        {
+          "sound": "kbd_open.wav",
+          "volume": 0.5,
+          "instance": 13
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.5,
+          "instance": 14
+        },
+        {
+          "sound": "kbd_caps.wav",
+          "volume": 0.5,
+          "instance": 15
+        },
+        {
+          "sound": "kbd_caps.wav",
+          "volume": 0.5,
+          "instance": 16
+        },
+        {
+          "sound": "kbd_key.wav",
+          "volume": 0.5,
+          "instance": 17
+        },
+        {
+          "sound": "kbd_ok.wav",
+          "volume": 0.5,
+          "instance": 18
+        },
+        {
+          "sound": "kbd_hover.wav",
+          "volume": 0.5,
+          "instance": 19
+        },
+        {
+          "sound": "kbd_open.wav",
+          "volume": 0.5,
+          "instance": 20
+        },
+        {
+          "sound": "kbd_key.wav",
+          "volume": 0.5,
+          "instance": 21
+        },
+        {
+          "sound": "kbd_ok.wav",
+          "volume": 0.5,
+          "instance": 22
+        },
+        {
+          "sound": "kbd_open.wav",
+          "volume": 0.5,
+          "instance": 23
+        },
+        {
+          "sound": "kbd_key.wav",
+          "volume": 0.5,
+          "instance": 24
+        },
+        {
+          "sound": "kbd_ok.wav",
+          "volume": 0.5,
+          "instance": 25
+        },
+        {
+          "sound": "kbd_open.wav",
+          "volume": 0.5,
+          "instance": 26
+        },
+        {
+          "sound": "kbd_nobackspace.wav",
+          "volume": 0.5,
+          "instance": 27
+        },
+        {
+          "sound": "kbd_key.wav",
+          "volume": 0.5,
+          "instance": 28
+        },
+        {
+          "sound": "kbd_key.wav",
+          "volume": 0.5,
+          "instance": 29
+        },
+        {
+          "sound": "kbd_space.wav",
+          "volume": 0.5,
+          "instance": 30
+        },
+        {
+          "sound": "kbd_backspace.wav",
+          "volume": 0.5,
+          "instance": 31
+        },
+        {
+          "sound": "kbd_ok.wav",
+          "volume": 0.5,
+          "instance": 32
+        }
+      ],
+      "errors": [],
+      "failures": []
+    }
+  ],
+  "sounds": [
+    {
+      "name": "kbd_backspace.wav",
+      "identical": true,
+      "sha256": "75845bb4c13679fdfc753e442a9e931c7ba288749f987cc6989e6db9b282b08f"
+    },
+    {
+      "name": "kbd_caps.wav",
+      "identical": true,
+      "sha256": "1d359048cc9f3b21791767ac8a6248ed4d9aaebeabfa73bc49bf8f17f4fef20d"
+    },
+    {
+      "name": "kbd_denied.wav",
+      "identical": true,
+      "sha256": "f79171bb2df1fc0caa6d93aea8e34db38f470bb9261f02cf43eb42e6285c7348"
+    },
+    {
+      "name": "kbd_hover.wav",
+      "identical": true,
+      "sha256": "99f274a48edaf61452a1b36d73e14af468ff7e58e27a94cf092cde3d8d3ad7f7"
+    },
+    {
+      "name": "kbd_key.wav",
+      "identical": true,
+      "sha256": "3e57b4328ee5565804f628ca862e23760094f5e892a2aedbf53267aa8db032e4"
+    },
+    {
+      "name": "kbd_nobackspace.wav",
+      "identical": true,
+      "sha256": "d6b3b1dbbe81ac8791d3d41422c4b49b74c1f1e41124306ec3eedd4142a87c57"
+    },
+    {
+      "name": "kbd_ok.wav",
+      "identical": true,
+      "sha256": "ac137d29993522d7ab551836cd933f329e22ba60612b6a0f3891e9bcbeb84502"
+    },
+    {
+      "name": "kbd_okhover.wav",
+      "identical": true,
+      "sha256": "7f321721f2979ca045236177281796a3174017974bf39e553b4e4146c8dff5bd"
+    },
+    {
+      "name": "kbd_open.wav",
+      "identical": true,
+      "sha256": "c0f898f2786b17df63ea75e87b7f641e448c1cd79337adcf641bcc8aa2666ae7"
+    },
+    {
+      "name": "kbd_space.wav",
+      "identical": true,
+      "sha256": "90a145b771db07b3ae9c35ebea207c168c31e42712e7a8f76a770b2a08a59700"
+    }
+  ],
+  "shopSource": "Supplied shopping.zip project, unmodified",
+  "cssRoot": "/workspace/wiishowcase/Wii.css",
+  "cssRevision": "e90ea79aec32adca3da4fcd5ae903ad320fbfa5b"
+}

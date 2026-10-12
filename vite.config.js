@@ -60,14 +60,14 @@ export default defineConfig(({ command }) => {
 
   // Unlike the production build (which externalizes `miicreator` — see below),
   // the dev server statically resolves the bare-specifier dynamic import of
-  // `miicreator/primitives` in src/hooks/useMiiHead.js and 500s when the local
+  // `miicreator/images` in src/hooks/useMiiHead.js and 500s when the local
   // `miicreator` checkout is missing. Point it at a stub that resolves cleanly
   // but throws when used, so the hook's existing try/catch degrades gracefully.
   const miicreatorDevStub =
     command === 'serve' && !hasMiicreator
       ? [
           {
-            find: 'miicreator/primitives',
+            find: 'miicreator/images',
             replacement: path.resolve(__dirname, 'dev-stubs/miicreator-primitives.js'),
           },
         ]

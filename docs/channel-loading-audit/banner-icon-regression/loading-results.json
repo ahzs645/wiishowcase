@@ -1,0 +1,1238 @@
+[
+  {
+    "scenario": "cold-full",
+    "delayMs": 0,
+    "cpuSlowdown": 1,
+    "menu": {
+      "readyMs": 1381,
+      "icons": [
+        {
+          "index": "0",
+          "width": 171,
+          "height": 96,
+          "alphaPixels": 16416
+        },
+        {
+          "index": "1",
+          "width": 171,
+          "height": 96,
+          "alphaPixels": 16416
+        },
+        {
+          "index": "2",
+          "width": 171,
+          "height": 96,
+          "alphaPixels": 16416
+        },
+        {
+          "index": "3",
+          "width": 171,
+          "height": 96,
+          "alphaPixels": 16416
+        },
+        {
+          "index": "4",
+          "width": 171,
+          "height": 96,
+          "alphaPixels": 16416
+        },
+        {
+          "index": "5",
+          "alphaPixels": null
+        },
+        {
+          "index": "6",
+          "width": 171,
+          "height": 96,
+          "alphaPixels": 16416
+        }
+      ]
+    },
+    "selections": [
+      {
+        "channel": "disc",
+        "ms": 690
+      },
+      {
+        "channel": "mii",
+        "ms": 705
+      },
+      {
+        "channel": "photo",
+        "ms": 443
+      },
+      {
+        "channel": "shop",
+        "ms": 787
+      },
+      {
+        "channel": "news",
+        "ms": 481
+      },
+      {
+        "channel": "onliine",
+        "ms": 442
+      },
+      {
+        "channel": "pokemon-ranch",
+        "ms": 682
+      }
+    ],
+    "warmSelections": [
+      {
+        "channel": "disc",
+        "ms": 391
+      },
+      {
+        "channel": "mii",
+        "ms": 385
+      },
+      {
+        "channel": "photo",
+        "ms": 389
+      },
+      {
+        "channel": "shop",
+        "ms": 554
+      },
+      {
+        "channel": "news",
+        "ms": 421
+      },
+      {
+        "channel": "onliine",
+        "ms": 416
+      },
+      {
+        "channel": "pokemon-ranch",
+        "ms": 566
+      }
+    ],
+    "miiHeadWidth": 512,
+    "deferredAppsVerified": true,
+    "audit": {
+      "requests": [
+        {
+          "source": "/wiishowcase/channels/disc.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 487.19999999925494,
+          "end": 804.5,
+          "ms": 317.30000000074506,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/mii.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 487.29999999701977,
+          "end": 912.5999999977648,
+          "ms": 425.30000000074506,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/photo.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 487.3999999985099,
+          "end": 927.7999999970198,
+          "ms": 440.3999999985099,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/shop.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 487.3999999985099,
+          "end": 930.6999999992549,
+          "ms": 443.30000000074506,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/news.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 487.5,
+          "end": 974.8999999985099,
+          "ms": 487.3999999985099,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/pokemon-ranch.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 487.5,
+          "end": 1071.3999999985099,
+          "ms": 583.8999999985099,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/blank.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 487.5,
+          "end": 1282.5999999977648,
+          "ms": 795.0999999977648,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/disc.zip",
+          "targets": [
+            "banner"
+          ],
+          "audio": true,
+          "start": 2108.89999999851,
+          "end": 2181.7999999970198,
+          "ms": 72.89999999850988,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/mii.zip",
+          "targets": [
+            "banner"
+          ],
+          "audio": true,
+          "start": 4001.5,
+          "end": 4128.099999997765,
+          "ms": 126.59999999776483,
+          "error": null,
+          "audioHash": "aac210d924940be2a13e02f9b166a3a77d370c3bbea9e89fbb4f7e2e94a7a918"
+        },
+        {
+          "source": "/wiishowcase/channels/photo.zip",
+          "targets": [
+            "banner"
+          ],
+          "audio": true,
+          "start": 5867.199999999255,
+          "end": 5921.5,
+          "ms": 54.30000000074506,
+          "error": null,
+          "audioHash": "557eb3c66f38e7cc542a8f4eec2b0c0b756840a6829b967a4e37ef9ff128f5e8"
+        },
+        {
+          "source": "/wiishowcase/channels/shop.zip",
+          "targets": [
+            "banner"
+          ],
+          "audio": true,
+          "start": 7449.5,
+          "end": 7529.599999997765,
+          "ms": 80.09999999776483,
+          "error": null,
+          "audioHash": "0b36604464ac269e987c53aa36ff9c37fc47dd9e50a525315367f95b190c2ac7"
+        },
+        {
+          "source": "/wiishowcase/channels/news.zip",
+          "targets": [
+            "banner"
+          ],
+          "audio": true,
+          "start": 9349.29999999702,
+          "end": 9391.699999999255,
+          "ms": 42.400000002235174,
+          "error": null,
+          "audioHash": "331d46b147682e7f1b8a0512cfcb783f7d3ac09582585ce8ac5797bd8d74d702"
+        },
+        {
+          "source": "/wiishowcase/channels/pokemon-ranch.zip",
+          "targets": [
+            "banner"
+          ],
+          "audio": true,
+          "start": 12367.39999999851,
+          "end": 12408.699999999255,
+          "ms": 41.30000000074506,
+          "error": null,
+          "audioHash": "0363b70060b57e6191670a124f31273c14d217e064e46adf6cc488c58a46def7"
+        }
+      ],
+      "tasks": [
+        {
+          "start": 180,
+          "ms": 202
+        },
+        {
+          "start": 803.5999999977648,
+          "ms": 78
+        },
+        {
+          "start": 997.8999999985099,
+          "ms": 72
+        },
+        {
+          "start": 1070.5999999977648,
+          "ms": 179
+        },
+        {
+          "start": 1600.699999999255,
+          "ms": 53
+        },
+        {
+          "start": 1859.7999999970198,
+          "ms": 158
+        },
+        {
+          "start": 2179,
+          "ms": 63
+        },
+        {
+          "start": 2957,
+          "ms": 54
+        },
+        {
+          "start": 4187.599999997765,
+          "ms": 64
+        },
+        {
+          "start": 7524.099999997765,
+          "ms": 79
+        },
+        {
+          "start": 7603.89999999851,
+          "ms": 86
+        },
+        {
+          "start": 7694.39999999851,
+          "ms": 50
+        },
+        {
+          "start": 12405.39999999851,
+          "ms": 197
+        },
+        {
+          "start": 18591.099999997765,
+          "ms": 51
+        },
+        {
+          "start": 18643.199999999255,
+          "ms": 126
+        },
+        {
+          "start": 23167,
+          "ms": 181
+        },
+        {
+          "start": 24849.39999999851,
+          "ms": 116
+        },
+        {
+          "start": 24966.29999999702,
+          "ms": 235
+        },
+        {
+          "start": 28388,
+          "ms": 73
+        }
+      ],
+      "pending": 0
+    },
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "scenario": "slow-full",
+    "delayMs": 750,
+    "cpuSlowdown": 4,
+    "menu": {
+      "readyMs": 3363,
+      "icons": [
+        {
+          "index": "0",
+          "width": 171,
+          "height": 96,
+          "alphaPixels": 16416
+        },
+        {
+          "index": "1",
+          "width": 171,
+          "height": 96,
+          "alphaPixels": 16416
+        },
+        {
+          "index": "2",
+          "width": 171,
+          "height": 96,
+          "alphaPixels": 16416
+        },
+        {
+          "index": "3",
+          "width": 171,
+          "height": 96,
+          "alphaPixels": 16416
+        },
+        {
+          "index": "4",
+          "width": 171,
+          "height": 96,
+          "alphaPixels": 16416
+        },
+        {
+          "index": "5",
+          "alphaPixels": null
+        },
+        {
+          "index": "6",
+          "width": 171,
+          "height": 96,
+          "alphaPixels": 16416
+        }
+      ]
+    },
+    "selections": [
+      {
+        "channel": "mii",
+        "ms": 2519
+      },
+      {
+        "channel": "shop",
+        "ms": 1756
+      },
+      {
+        "channel": "pokemon-ranch",
+        "ms": 1906
+      }
+    ],
+    "audit": {
+      "requests": [
+        {
+          "source": "/wiishowcase/channels/disc.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 510.5999999977648,
+          "end": 1540.3999999985099,
+          "ms": 1029.800000000745,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/mii.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 511.19999999925494,
+          "end": 1810.3999999985099,
+          "ms": 1299.199999999255,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/photo.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 511.19999999925494,
+          "end": 1867.5999999977648,
+          "ms": 1356.3999999985099,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/shop.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 511.19999999925494,
+          "end": 1883.5999999977648,
+          "ms": 1372.3999999985099,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/news.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 511.5,
+          "end": 2116.5,
+          "ms": 1605,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/pokemon-ranch.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 511.5999999977648,
+          "end": 2213.300000000745,
+          "ms": 1701.7000000029802,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/blank.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 512.1999999992549,
+          "end": 3100.89999999851,
+          "ms": 2588.699999999255,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/mii.zip",
+          "targets": [
+            "banner"
+          ],
+          "audio": true,
+          "start": 6030.199999999255,
+          "end": 6148.199999999255,
+          "ms": 118,
+          "error": null,
+          "audioHash": "aac210d924940be2a13e02f9b166a3a77d370c3bbea9e89fbb4f7e2e94a7a918"
+        },
+        {
+          "source": "/wiishowcase/channels/shop.zip",
+          "targets": [
+            "banner"
+          ],
+          "audio": true,
+          "start": 11631.89999999851,
+          "end": 11742.599999997765,
+          "ms": 110.69999999925494,
+          "error": null,
+          "audioHash": "0b36604464ac269e987c53aa36ff9c37fc47dd9e50a525315367f95b190c2ac7"
+        },
+        {
+          "source": "/wiishowcase/channels/pokemon-ranch.zip",
+          "targets": [
+            "banner"
+          ],
+          "audio": true,
+          "start": 14345.89999999851,
+          "end": 14420.199999999255,
+          "ms": 74.30000000074506,
+          "error": null,
+          "audioHash": "0363b70060b57e6191670a124f31273c14d217e064e46adf6cc488c58a46def7"
+        }
+      ],
+      "tasks": [
+        {
+          "start": 133.30000000074506,
+          "ms": 259
+        },
+        {
+          "start": 1536.0999999977648,
+          "ms": 238
+        },
+        {
+          "start": 1807,
+          "ms": 55
+        },
+        {
+          "start": 1879.800000000745,
+          "ms": 97
+        },
+        {
+          "start": 1977.699999999255,
+          "ms": 137
+        },
+        {
+          "start": 2115.300000000745,
+          "ms": 91
+        },
+        {
+          "start": 2208.199999999255,
+          "ms": 774
+        },
+        {
+          "start": 2986.699999999255,
+          "ms": 111
+        },
+        {
+          "start": 3099,
+          "ms": 76
+        },
+        {
+          "start": 3180.699999999255,
+          "ms": 94
+        },
+        {
+          "start": 3276.699999999255,
+          "ms": 81
+        },
+        {
+          "start": 3360.099999997765,
+          "ms": 121
+        },
+        {
+          "start": 3522.39999999851,
+          "ms": 130
+        },
+        {
+          "start": 3656.800000000745,
+          "ms": 121
+        },
+        {
+          "start": 3795.599999997765,
+          "ms": 124
+        },
+        {
+          "start": 3923,
+          "ms": 120
+        },
+        {
+          "start": 4051.800000000745,
+          "ms": 123
+        },
+        {
+          "start": 4175.5,
+          "ms": 137
+        },
+        {
+          "start": 4315.599999997765,
+          "ms": 146
+        },
+        {
+          "start": 4504.39999999851,
+          "ms": 147
+        },
+        {
+          "start": 4663,
+          "ms": 144
+        },
+        {
+          "start": 4814,
+          "ms": 145
+        },
+        {
+          "start": 4976.300000000745,
+          "ms": 144
+        },
+        {
+          "start": 5122,
+          "ms": 146
+        },
+        {
+          "start": 5269.800000000745,
+          "ms": 136
+        },
+        {
+          "start": 5409.599999997765,
+          "ms": 140
+        },
+        {
+          "start": 5557.5,
+          "ms": 140
+        },
+        {
+          "start": 5698.800000000745,
+          "ms": 57
+        },
+        {
+          "start": 5809.099999997765,
+          "ms": 125
+        },
+        {
+          "start": 6135.699999999255,
+          "ms": 210
+        },
+        {
+          "start": 6410.699999999255,
+          "ms": 270
+        },
+        {
+          "start": 6689.89999999851,
+          "ms": 142
+        },
+        {
+          "start": 6835.099999997765,
+          "ms": 134
+        },
+        {
+          "start": 6975.699999999255,
+          "ms": 134
+        },
+        {
+          "start": 7114,
+          "ms": 201
+        },
+        {
+          "start": 7328,
+          "ms": 338
+        },
+        {
+          "start": 7674.5,
+          "ms": 169
+        },
+        {
+          "start": 7858.300000000745,
+          "ms": 159
+        },
+        {
+          "start": 8027.699999999255,
+          "ms": 162
+        },
+        {
+          "start": 8199.699999999255,
+          "ms": 154
+        },
+        {
+          "start": 8357.599999997765,
+          "ms": 170
+        },
+        {
+          "start": 8553.199999999255,
+          "ms": 164
+        },
+        {
+          "start": 8719.5,
+          "ms": 156
+        },
+        {
+          "start": 8880.5,
+          "ms": 147
+        },
+        {
+          "start": 9032.199999999255,
+          "ms": 166
+        },
+        {
+          "start": 9198.800000000745,
+          "ms": 209
+        },
+        {
+          "start": 9410,
+          "ms": 149
+        },
+        {
+          "start": 9568.300000000745,
+          "ms": 148
+        },
+        {
+          "start": 9722.800000000745,
+          "ms": 156
+        },
+        {
+          "start": 10385.39999999851,
+          "ms": 169
+        },
+        {
+          "start": 10574.300000000745,
+          "ms": 229
+        },
+        {
+          "start": 10819.099999997765,
+          "ms": 135
+        },
+        {
+          "start": 10955.800000000745,
+          "ms": 132
+        },
+        {
+          "start": 11091.89999999851,
+          "ms": 125
+        },
+        {
+          "start": 11222.300000000745,
+          "ms": 100
+        },
+        {
+          "start": 11406.800000000745,
+          "ms": 68
+        },
+        {
+          "start": 11713.5,
+          "ms": 197
+        },
+        {
+          "start": 11911.199999999255,
+          "ms": 139
+        },
+        {
+          "start": 12067.300000000745,
+          "ms": 58
+        },
+        {
+          "start": 12137.300000000745,
+          "ms": 63
+        },
+        {
+          "start": 12677.099999997765,
+          "ms": 63
+        },
+        {
+          "start": 13733.800000000745,
+          "ms": 50
+        },
+        {
+          "start": 13802.599999997765,
+          "ms": 115
+        },
+        {
+          "start": 13922.599999997765,
+          "ms": 107
+        },
+        {
+          "start": 14129.5,
+          "ms": 69
+        },
+        {
+          "start": 14410.800000000745,
+          "ms": 1013
+        },
+        {
+          "start": 15499.599999997765,
+          "ms": 60
+        },
+        {
+          "start": 15581.800000000745,
+          "ms": 51
+        },
+        {
+          "start": 15794.39999999851,
+          "ms": 50
+        }
+      ],
+      "pending": 0
+    },
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "scenario": "rapid-cold",
+    "delayMs": 1000,
+    "cpuSlowdown": 1,
+    "finalChannel": "pokemon-ranch",
+    "audioCorrect": true,
+    "audit": {
+      "requests": [
+        {
+          "source": "/wiishowcase/channels/disc.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 272.19999999925494,
+          "end": 1490.699999999255,
+          "ms": 1218.5,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/mii.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 272.30000000074506,
+          "end": 2150.800000000745,
+          "ms": 1878.5,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/photo.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 272.30000000074506,
+          "end": 2168,
+          "ms": 1895.699999999255,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/shop.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 272.3999999985099,
+          "end": 2173.099999997765,
+          "ms": 1900.699999999255,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/news.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 272.5,
+          "end": 2201.199999999255,
+          "ms": 1928.699999999255,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/pokemon-ranch.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 272.5,
+          "end": 2224.699999999255,
+          "ms": 1952.199999999255,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/blank.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 272.69999999925494,
+          "end": 2424.599999997765,
+          "ms": 2151.89999999851,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/disc.zip",
+          "targets": [
+            "banner"
+          ],
+          "audio": true,
+          "start": 695.6999999992549,
+          "end": 1590.8999999985099,
+          "ms": 895.1999999992549,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/mii.zip",
+          "targets": [
+            "banner"
+          ],
+          "audio": true,
+          "start": 882.1999999992549,
+          "end": 1703.8999999985099,
+          "ms": 821.6999999992549,
+          "error": null,
+          "audioHash": "aac210d924940be2a13e02f9b166a3a77d370c3bbea9e89fbb4f7e2e94a7a918"
+        },
+        {
+          "source": "/wiishowcase/channels/photo.zip",
+          "targets": [
+            "banner"
+          ],
+          "audio": true,
+          "start": 1314.300000000745,
+          "end": 1751.8999999985099,
+          "ms": 437.5999999977648,
+          "error": null,
+          "audioHash": "557eb3c66f38e7cc542a8f4eec2b0c0b756840a6829b967a4e37ef9ff128f5e8"
+        },
+        {
+          "source": "/wiishowcase/channels/shop.zip",
+          "targets": [
+            "banner"
+          ],
+          "audio": true,
+          "start": 1416.3999999985099,
+          "end": 1822.300000000745,
+          "ms": 405.9000000022352,
+          "error": null,
+          "audioHash": "0b36604464ac269e987c53aa36ff9c37fc47dd9e50a525315367f95b190c2ac7"
+        },
+        {
+          "source": "/wiishowcase/channels/news.zip",
+          "targets": [
+            "banner"
+          ],
+          "audio": true,
+          "start": 1597.300000000745,
+          "end": 1854.0999999977648,
+          "ms": 256.79999999701977,
+          "error": null,
+          "audioHash": "331d46b147682e7f1b8a0512cfcb783f7d3ac09582585ce8ac5797bd8d74d702"
+        },
+        {
+          "source": "/wiishowcase/channels/pokemon-ranch.zip",
+          "targets": [
+            "banner"
+          ],
+          "audio": true,
+          "start": 1765.8999999985099,
+          "end": 1886.699999999255,
+          "ms": 120.80000000074506,
+          "error": null,
+          "audioHash": "0363b70060b57e6191670a124f31273c14d217e064e46adf6cc488c58a46def7"
+        }
+      ],
+      "tasks": [
+        {
+          "start": 91,
+          "ms": 139
+        },
+        {
+          "start": 440.5,
+          "ms": 76
+        },
+        {
+          "start": 1489.5,
+          "ms": 94
+        },
+        {
+          "start": 1884.199999999255,
+          "ms": 254
+        },
+        {
+          "start": 2223.89999999851,
+          "ms": 187
+        }
+      ],
+      "pending": 0
+    },
+    "errors": [],
+    "failedRequests": []
+  },
+  {
+    "scenario": "canvas-fallback",
+    "delayMs": 0,
+    "cpuSlowdown": 1,
+    "menu": {
+      "readyMs": 1060,
+      "icons": [
+        {
+          "index": "0",
+          "width": 171,
+          "height": 96,
+          "alphaPixels": 16416
+        },
+        {
+          "index": "1",
+          "width": 171,
+          "height": 96,
+          "alphaPixels": 16416
+        },
+        {
+          "index": "2",
+          "width": 171,
+          "height": 96,
+          "alphaPixels": 16416
+        },
+        {
+          "index": "3",
+          "width": 171,
+          "height": 96,
+          "alphaPixels": 16416
+        },
+        {
+          "index": "4",
+          "width": 171,
+          "height": 96,
+          "alphaPixels": 16416
+        },
+        {
+          "index": "5",
+          "alphaPixels": null
+        },
+        {
+          "index": "6",
+          "width": 171,
+          "height": 96,
+          "alphaPixels": 16416
+        }
+      ]
+    },
+    "canvasFallback": true,
+    "audit": {
+      "requests": [
+        {
+          "source": "/wiishowcase/channels/disc.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 218.5,
+          "end": 458.69999999925494,
+          "ms": 240.19999999925494,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/mii.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 218.69999999925494,
+          "end": 530.3000000007451,
+          "ms": 311.6000000014901,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/photo.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 218.80000000074506,
+          "end": 560.3000000007451,
+          "ms": 341.5,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/shop.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 218.80000000074506,
+          "end": 568.1000000014901,
+          "ms": 349.3999999985099,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/news.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 219,
+          "end": 641.4000000022352,
+          "ms": 422.4000000022352,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/pokemon-ranch.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 219.19999999925494,
+          "end": 664.6000000014901,
+          "ms": 445.4000000022352,
+          "error": null
+        },
+        {
+          "source": "/wiishowcase/channels/blank.zip",
+          "targets": [
+            "icon"
+          ],
+          "audio": false,
+          "start": 219.40000000223517,
+          "end": 874.1000000014901,
+          "ms": 654.6999999992549,
+          "error": null
+        }
+      ],
+      "tasks": [
+        {
+          "start": 78.80000000074506,
+          "ms": 108
+        },
+        {
+          "start": 457.30000000074506,
+          "ms": 66
+        },
+        {
+          "start": 566.4000000022352,
+          "ms": 69
+        },
+        {
+          "start": 663.6000000014901,
+          "ms": 191
+        },
+        {
+          "start": 894.9000000022352,
+          "ms": 92
+        },
+        {
+          "start": 988.5,
+          "ms": 67
+        },
+        {
+          "start": 1056.199999999255,
+          "ms": 68
+        },
+        {
+          "start": 1134.699999999255,
+          "ms": 57
+        },
+        {
+          "start": 1193.1000000014901,
+          "ms": 66
+        },
+        {
+          "start": 1260.4000000022352,
+          "ms": 59
+        },
+        {
+          "start": 1328.800000000745,
+          "ms": 71
+        },
+        {
+          "start": 1411,
+          "ms": 61
+        },
+        {
+          "start": 1473.6000000014901,
+          "ms": 73
+        },
+        {
+          "start": 1547.300000000745,
+          "ms": 65
+        },
+        {
+          "start": 1621.4000000022352,
+          "ms": 72
+        },
+        {
+          "start": 1698.4000000022352,
+          "ms": 60
+        },
+        {
+          "start": 1759.6000000014901,
+          "ms": 72
+        },
+        {
+          "start": 1832.199999999255,
+          "ms": 73
+        },
+        {
+          "start": 1906.6000000014901,
+          "ms": 63
+        },
+        {
+          "start": 1970.5,
+          "ms": 71
+        },
+        {
+          "start": 2042.9000000022352,
+          "ms": 59
+        },
+        {
+          "start": 2104.400000002235,
+          "ms": 78
+        },
+        {
+          "start": 2183,
+          "ms": 61
+        },
+        {
+          "start": 2244.800000000745,
+          "ms": 72
+        },
+        {
+          "start": 2317.699999999255,
+          "ms": 63
+        },
+        {
+          "start": 2382.60000000149,
+          "ms": 70
+        },
+        {
+          "start": 2453.5,
+          "ms": 63
+        }
+      ],
+      "pending": 0
+    },
+    "errors": [],
+    "failedRequests": []
+  }
+]

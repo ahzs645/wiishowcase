@@ -1,0 +1,55 @@
+{
+  "results": [
+    {
+      "channel": "forecast",
+      "cache": 5,
+      "applicationFetches": 1,
+      "preservedState": true,
+      "liveMenuInputs": true
+    },
+    {
+      "channel": "news",
+      "cache": 2,
+      "applicationFetches": 1,
+      "preservedState": true,
+      "liveMenuInputs": true
+    }
+  ],
+  "errors": [],
+  "failed": [],
+  "requests": [
+    "http://localhost:4937/wiishowcase/?screen=menu&nativeApps=1",
+    "http://localhost:4937/wiishowcase/assets/index-DcnJmY0C.js",
+    "http://localhost:4937/wiishowcase/assets/index-CxYSN8CD.css",
+    "http://localhost:4937/wiishowcase/fonts/digital-7-mono.ttf",
+    "http://localhost:4937/wiishowcase/channelart/onliine/logotype.png",
+    "http://localhost:4937/wiishowcase/assets/settings-icon-BpZ6IKYT.png",
+    "http://localhost:4937/wiishowcase/assets/bundleLoaderWorker-YKaw4Wg0.js",
+    "http://localhost:4937/wiishowcase/assets/pointers/templates/Pointer.svg",
+    "http://localhost:4937/wiishowcase/assets/pointers/templates/HandOpen.svg",
+    "http://localhost:4937/wiishowcase/assets/pointers/templates/HandClosed.svg",
+    "http://localhost:4937/wiishowcase/channels/disc.zip",
+    "http://localhost:4937/wiishowcase/channels/mii.zip",
+    "http://localhost:4937/wiishowcase/channels/photo.zip",
+    "http://localhost:4937/wiishowcase/channels/shop.zip",
+    "http://localhost:4937/wiishowcase/channels/news.zip",
+    "http://localhost:4937/wiishowcase/channels/pokemon-ranch.zip",
+    "http://localhost:4937/wiishowcase/channels/forecast.zip",
+    "http://localhost:4937/wiishowcase/channels/blank.zip",
+    "http://localhost:4937/wiishowcase/assets/pointers/templates/B.svg",
+    "http://localhost:4937/wiishowcase/assets/audio/channel-open.mp3",
+    "http://localhost:4937/wiishowcase/assets/audio/channel-open.mp3",
+    "blob:http://localhost:4937/cdbfb772-1f03-424e-89f1-a198f411d80f",
+    "http://localhost:4937/wiishowcase/assets/WiiNativeApplication-b5EPN2NJ.js",
+    "http://localhost:4937/wiishowcase/assets/audio/button-select.mp3",
+    "http://localhost:4937/wiishowcase/assets/audio/button-select.mp3",
+    "http://localhost:4937/wiishowcase/channel-applications/forecast.zip",
+    "http://localhost:4937/wiishowcase/assets/jszip.min-BRPHqZn9.js",
+    "http://localhost:4937/wiishowcase/assets/audio/channel-back.mp3",
+    "http://localhost:4937/wiishowcase/assets/audio/channel-back.mp3",
+    "blob:http://localhost:4937/cdbfb772-1f03-424e-89f1-a198f411d80f",
+    "blob:http://localhost:4937/aca309c5-34c1-4e33-b7f3-b2a5bd35e77b",
+    "http://localhost:4937/wiishowcase/channel-applications/news.zip",
+    "blob:http://localhost:4937/aca309c5-34c1-4e33-b7f3-b2a5bd35e77b"
+  ]
+}

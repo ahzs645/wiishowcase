@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState, memo } from 'react';
+import { attachChannelPresentation, getChannelPresentation } from '../lib/channelPresentation';
 import { loadRendererBundleInWorker } from '@firstform/wii-channel-renderer/bundle-loader';
 import { createRendererFromBundle } from '@firstform/wii-channel-renderer/bundle-renderer';
 import useWiiAspectMode from '../hooks/useWiiAspectMode';
@@ -9,9 +10,8 @@ const BASE = import.meta.env.BASE_URL;
 // at startup, and the (much larger) banner decode happens on first
 // channel-select open. The heavy work — download, unzip, PNG → ImageData for
 // every texture and font sheet — runs inside the loader's dedicated worker,
-// which caches the zip bytes per URL and processes one decode at a time in
-// request order, so the main thread stays free for animation and input while
-// icons stream in.
+// which caches the zip bytes per URL, overlaps downloads, and processes one
+// decode at a time. Requested banners take priority over queued icons.
 const bundleCache = new Map();
 
 // Exported for ChannelSelection, which pulls the channel's audio out of the
@@ -23,7 +23,12 @@ export function fetchBundle(url, target) {
   if (!bundleCache.has(key)) {
     bundleCache.set(
       key,
-      loadRendererBundleInWorker(url, { targets: [target], audio: target === 'banner' }),
+      loadRendererBundleInWorker(url, {
+        targets: [target], audio: target === 'banner', priority: target === 'banner' ? 1 : 0,
+      }).catch((error) => {
+        bundleCache.delete(key);
+        throw error;
+      }),
     );
   }
   return bundleCache.get(key);
@@ -41,6 +46,7 @@ export default memo(function WiiChannelRenderer({
   className,
   style,
 }) {
+  const presentationChannel = bundlePath?.split('/').pop()?.replace(/\.zip$/, '');
   const { aspectRatio: wiiAspect } = useWiiAspectMode();
   const resolvedAspect = aspectRatio ?? wiiAspect;
   const canvasRef = useRef(null);
@@ -76,6 +82,7 @@ export default memo(function WiiChannelRenderer({
   useEffect(() => {
     if (!canvasRef.current || !bundlePath) return;
     let cancelled = false;
+    let detachPresentation;
 
     const url = BASE + bundlePath;
 
@@ -100,10 +107,14 @@ export default memo(function WiiChannelRenderer({
           maxDevicePixelRatio: target === 'icon' ? 1.5 : 2,
           subframePlayback: target === 'icon' ? false : undefined,
           ...settings,
+          ...(getChannelPresentation(presentationChannel, target)?.inputs ?? {}),
         };
         const { renderer, layout: resolvedLayout } = createRendererFromBundle(canvas, bundle, target, mergedSettings);
         rendererRef.current = renderer;
+        canvas.channelRenderer = renderer;
+        detachPresentation = attachChannelPresentation(presentationChannel, target, renderer);
       } catch (e) {
+        rendererRef.current?.dispose(); rendererRef.current = null; canvas.channelRenderer = null;
         console.error(`[WiiChannelRenderer] createRendererFromBundle failed:`, e);
         return;
       }
@@ -120,22 +131,15 @@ export default memo(function WiiChannelRenderer({
       }
       setReady(true);
 
-      // Warm the banner decode in the background once this icon is up, so the
-      // channel-select screen (and its audio, which comes from the same
-      // bundle) doesn't pay the full texture decode on first open. The shared
-      // decode queue keeps this behind every pending icon decode, and the
-      // cache makes it a no-op if channel select got there first.
-      if (target === 'icon') {
-        const idle = window.requestIdleCallback ?? ((fn) => setTimeout(fn, 2000));
-        idle(() => { fetchBundle(url, 'banner').catch(() => {}); });
-      }
     }).catch((err) => {
       console.error(`[WiiChannelRenderer] Failed to load "${target}" from`, url, err);
     });
 
     return () => {
       cancelled = true;
+      detachPresentation?.();
       rendererRef.current?.dispose();
+      if (canvasRef.current) canvasRef.current.channelRenderer = null;
       rendererRef.current = null;
       setReady(false);
     };
@@ -157,6 +161,9 @@ export default memo(function WiiChannelRenderer({
     <div
       ref={wrapperRef}
       className={className}
+      data-channel-bundle={bundlePath}
+      data-channel-target={target}
+      data-channel-ready={ready ? 'true' : 'false'}
       style={wrapperStyle}
     >
       <canvas

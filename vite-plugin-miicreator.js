@@ -9,6 +9,7 @@ import { fileURLToPath } from 'url';
 export default function miicreatorPlugin() {
   const __dirname = path.dirname(fileURLToPath(import.meta.url));
   const distDir = path.join(__dirname, 'node_modules', 'miicreator', 'public', 'dist');
+  const fflResource = path.join(distDir, '..', 'FFLResHigh.dat');
 
   function listDistFiles(dir) {
     if (!fs.existsSync(dir)) return [];
@@ -34,6 +35,11 @@ export default function miicreatorPlugin() {
       server.middlewares.use((req, res, next) => {
         const base = server.config.base || '/';
         const prefix = `${base}dist/`;
+        if (req.url?.split('?')[0] === `${base}FFLResHigh.dat` && fs.existsSync(fflResource)) {
+          res.setHeader('Content-Type', 'application/octet-stream');
+          fs.createReadStream(fflResource).pipe(res);
+          return;
+        }
         if (!req.url?.startsWith(prefix)) return next();
 
         const fileName = req.url.slice(prefix.length).split('?')[0];
@@ -54,6 +60,9 @@ export default function miicreatorPlugin() {
     },
 
     generateBundle() {
+      if (fs.existsSync(fflResource)) {
+        this.emitFile({ type: 'asset', fileName: 'FFLResHigh.dat', source: fs.readFileSync(fflResource) });
+      }
       for (const filePath of listDistFiles(distDir)) {
         const relativePath = path.relative(distDir, filePath);
         this.emitFile({

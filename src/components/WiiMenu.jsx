@@ -11,6 +11,9 @@ import PokemonRanchChannelContent from './channels/PokemonRanchChannelContent';
 import BlankChannelContent from './channels/BlankChannelContent';
 import { MESSAGE_DATE_KEYS } from './WiiMessageBoard';
 import { NEWS_RENDERER_SETTINGS } from './channels/newsChannelRendererSettings';
+import ForecastChannelContent from './channels/ForecastChannelContent';
+import { NATIVE_APPLICATION_PREVIEW } from '../lib/nativeChannelApplications';
+import { CHANNEL_PRESENTATION_PREVIEW } from '../lib/channelPresentation';
 import settingsIcon from '../../Wii.css/assets/settings-icon.png';
 import mailIcon from '../../Wii.css/assets/track-btn/icon-email.svg';
 
@@ -34,13 +37,13 @@ const CHANNELS = [
     contentClassName: 'ch-shop',
     bundle: 'channels/shop.zip',
     rendererSettings: {
-      banner: { rendererBackend: 'webgl', tevQuality: 'accurate' },
+      banner: { rendererBackend: 'auto', tevQuality: 'accurate' },
     },
   },
-  { id: 'news', name: 'News Channel', action: 'news', contentComponent: NewsChannelContent, contentClassName: 'ch-news', bundle: 'channels/news.zip', rendererSettings: NEWS_RENDERER_SETTINGS, video: 'channelart/news/video.gif', audio: 'channelart/news/audio.mp3' },
+  { id: 'news', name: 'News Channel', action: NATIVE_APPLICATION_PREVIEW ? 'native-news' : 'news', contentComponent: NewsChannelContent, contentClassName: 'ch-news', bundle: 'channels/news.zip', rendererSettings: NEWS_RENDERER_SETTINGS, video: 'channelart/news/video.gif', audio: 'channelart/news/audio.mp3' },
   { id: 'onliine', name: 'Onliine Channel', contentComponent: OnliineChannelContent, contentClassName: 'ch-onliine', video: 'channelart/onliine/video.gif', audio: 'channelart/onliine/audio.mp3' },
   { id: 'pokemon-ranch', name: 'My Pokémon Ranch', contentComponent: PokemonRanchChannelContent, contentClassName: 'ch-pokemon-ranch', bundle: 'channels/pokemon-ranch.zip' },
-  { ...BLANK },
+  NATIVE_APPLICATION_PREVIEW || CHANNEL_PRESENTATION_PREVIEW ? { id: 'forecast', name: 'Forecast Channel', action: NATIVE_APPLICATION_PREVIEW ? 'native-forecast' : null, presentationOnly: CHANNEL_PRESENTATION_PREVIEW && !NATIVE_APPLICATION_PREVIEW, contentComponent: ForecastChannelContent, contentClassName: 'ch-forecast', bundle: 'channels/forecast.zip', rendererSettings: { banner: { customWeather: { enabled: false, state: 'needs_access' } } } } : { ...BLANK },
   { ...BLANK },
   { ...BLANK },
   { ...BLANK },

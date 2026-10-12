@@ -1,0 +1,76 @@
+[
+  {
+    "version": "original",
+    "simulatedResponseDelayMs": 500,
+    "totalMs": 3781.0999999999767,
+    "arrivals": [
+      {
+        "name": "disc",
+        "ms": 998.7000000000698,
+        "textures": 47
+      },
+      {
+        "name": "mii",
+        "ms": 1566.5,
+        "textures": 20
+      },
+      {
+        "name": "photo",
+        "ms": 2106.5999999999767,
+        "textures": 12
+      },
+      {
+        "name": "shop",
+        "ms": 2684.20000000007,
+        "textures": 12
+      },
+      {
+        "name": "news",
+        "ms": 3226.5,
+        "textures": 12
+      },
+      {
+        "name": "pokemon-ranch",
+        "ms": 3781.0999999999767,
+        "textures": 10
+      }
+    ]
+  },
+  {
+    "version": "improved",
+    "simulatedResponseDelayMs": 500,
+    "totalMs": 1063.8999999999069,
+    "arrivals": [
+      {
+        "name": "disc",
+        "ms": 663.8999999999069,
+        "textures": 47
+      },
+      {
+        "name": "mii",
+        "ms": 988,
+        "textures": 20
+      },
+      {
+        "name": "photo",
+        "ms": 1013.5999999999767,
+        "textures": 12
+      },
+      {
+        "name": "shop",
+        "ms": 1035.7999999999302,
+        "textures": 12
+      },
+      {
+        "name": "news",
+        "ms": 1048.5999999999767,
+        "textures": 12
+      },
+      {
+        "name": "pokemon-ranch",
+        "ms": 1063.8999999999069,
+        "textures": 10
+      }
+    ]
+  }
+]

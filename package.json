@@ -14,7 +14,13 @@
     "export:channel-bundle": "node scripts/export-channel-bundle.mjs",
     "fetch:wii-css": "node scripts/fetch-wii-css.mjs",
     "preview": "vite preview",
-    "test:smoke": "node scripts/smoke-test.mjs"
+    "test:smoke": "node scripts/smoke-test.mjs",
+    "test:channel-audio": "node scripts/test-channel-audio.mjs",
+    "test:channel-loading": "node scripts/test-channel-loading.mjs",
+    "profile:thumbnails": "node scripts/profile-thumbnail-backends.mjs",
+    "test:native-apps": "node scripts/test-native-applications.mjs",
+    "test:channel-presentation": "node scripts/test-channel-presentation.mjs",
+    "audit:shop-keyboard": "node scripts/audit-shop-keyboard.mjs"
   },
   "dependencies": {
     "@firstform/wii-channel-renderer": "file:wewad/packages/wii-channel-renderer",
