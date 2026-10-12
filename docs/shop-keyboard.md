@@ -1,5 +1,36 @@
 # Shop keyboard compared with Wii.css
 
+## Adopted shared keyboard
+
+Wii.css now uses all eight original Shop keyboard PNGs, including the normal,
+long and Space key textures, Backspace arrow, Quit/OK artwork and three background
+layers. The ten existing WAVs already match Shop exactly. Playback now defaults
+to volume `0.125` and restarts the same sample instead of cloning it; `volume`,
+`muted` and `overlap` attributes provide explicit sound options.
+
+The shared keyboard starts lowercase and follows Shop's persistent on-screen
+Shift/Caps behavior (`AA` after Shift and two A keys). Both physical Shift keys,
+backtick, Shift+2, browser shortcuts, caret editing and focus navigation remain
+usable. The centered layout keeps all 53 keys visible, including Quit and OK.
+The clipping shown in the original Shop screenshot below is a genuine defect
+in that website's scaling formula. The shared keyboard keeps uniform scaling.
+
+[Adopted-keyboard results](shop-keyboard/adopted/results.json) cover five viewport
+sizes (608×456, 1280×720, 1000×900, 390×844 and 844×390), all 47 character keys,
+touch activation, real physical input,
+selection/Delete/Unicode backspace, focus restoration, default sound reuse and
+optional overlap/volume/mute. They record zero clipped keys, uncaught errors or
+missing resources. Run after building Wii.css:
+
+```sh
+SMOKE_CHROMIUM=/usr/bin/chromium npm run test:shop-keyboard
+```
+
+![Shared keyboard with Shop artwork at 1280×720](shop-keyboard/adopted/keyboard-1280x720.png)
+
+The comparison below records the behavior **before these changes**. Its pinned
+and current-main column names refer to the revisions stated in that audit.
+
 The Shop entry in WiiShowcase currently provides a menu icon and selection banner.
 Its Start button has no Shop destination. The on-screen keyboard inspected here
 belongs to the separate React website supplied in `shopping.zip`.
@@ -17,7 +48,7 @@ physical Right Shift, backtick, Tab, Ctrl+A, empty/nonempty backspace, Space,
 Escape and Enter confirmation. It recorded media play calls and inspected
 screenshots. Shift comparisons start with Caps off on both implementations.
 
-WiiShowcase currently pins Wii.css commit `e90ea79`. Wii.css's current `main`
+At the time of the comparison, WiiShowcase pinned Wii.css commit `e90ea79`. Wii.css's then-current `main`
 (`64bbb99`) has additional keyboard accessibility and asset-loading improvements.
 The audit checked both revisions without changing the pin.
 

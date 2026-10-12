@@ -1,0 +1,92 @@
+{
+  "cssRevision": "3fb3397edd1427fc2833893022932bf839f6f026",
+  "viewports": [
+    {
+      "width": 608,
+      "height": 456,
+      "keys": 53,
+      "clipped": []
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "keys": 53,
+      "clipped": []
+    },
+    {
+      "width": 1000,
+      "height": 900,
+      "keys": 53,
+      "clipped": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "keys": 53,
+      "clipped": []
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "keys": 53,
+      "clipped": []
+    }
+  ],
+  "physical": {
+    "ShiftLeft": "AAa",
+    "ShiftRight": "AAa",
+    "backtickAndAt": "`@",
+    "caretSelectionDeleteUnicode": "passed",
+    "focusAndKeyboardActivation": "passed"
+  },
+  "audio": {
+    "samplesLoaded": 10,
+    "defaultVolume": 0.125,
+    "repeatedSampleInstances": 1,
+    "optionalVolume": 0.3,
+    "optionalOverlap": "passed",
+    "mute": "passed"
+  },
+  "images": [
+    {
+      "file": "keyboard-back.png",
+      "sha256": "e915d99b2343ad88485eca22e9cf22f5d367335c028cb60fa4e0fa85d9fc16c3"
+    },
+    {
+      "file": "keyboard-background.png",
+      "sha256": "326df4a633da557d2623f0c63d2dc1938a9ebcf7cbe112d5a5d78259107d1f67"
+    },
+    {
+      "file": "keyboard-button.png",
+      "sha256": "ece657b38092a33115090fd3fc79769778d9cb61df786b331bc6c283c15abece"
+    },
+    {
+      "file": "keyboard-confirm.png",
+      "sha256": "366d96c393ac09bef4886ecce9cfbc9cf09336da9654010364bfb7f2a30e7d44"
+    },
+    {
+      "file": "keyboard-gradient-1.png",
+      "sha256": "74e42f3c3ee4ab3ed4fbab26cee990a97fc4aeb932d4994d73d2f9cc92bb6385"
+    },
+    {
+      "file": "keyboard-gradient-2.png",
+      "sha256": "f3004bd56ad7baedb27a8ecf4581820c0191628fe5692341432de2ca3640d769"
+    },
+    {
+      "file": "keyboard-long-button.png",
+      "sha256": "017f7000c225e757f7396b87eb1722c5af4a58ecbeeafeaed9cf6bd921817bcb"
+    },
+    {
+      "file": "keyboard-longer-button.png",
+      "sha256": "5ad109f099ad6779ace68d79b2274a9aef54f015a0a4427e58aaf9f678dddcb5"
+    }
+  ],
+  "allCharacterKeys": {
+    "tested": 47,
+    "value": "1234567890-qwertyuiopasdfghjkl:zxcvbnm,.=[]'`/@"
+  },
+  "touch": "passed",
+  "onScreenShift": "AA",
+  "errors": [],
+  "missing": []
+}
