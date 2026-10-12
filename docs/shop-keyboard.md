@@ -1,5 +1,49 @@
 # Shop keyboard compared with Wii.css
 
+## Individual key overlays and click states
+
+[Interactive key overlays](shop-keyboard/key-overlays/index.html) compare all
+53 keys in idle, hover and pressed states. The viewer shows the real Shop key,
+the previous vector key, an adjustable Shop/vector overlay, the updated shared
+key and a Shop/shared overlay. Keys are captured at the native 608×456 layout
+with 2× pixel density, on a neutral background, and aligned by their centers.
+Their actual fonts are preserved. An opacity slider and recorded-state replay
+make edge, text and press differences visible.
+
+[Capture results](shop-keyboard/key-overlays/results.json) record each key's
+dimensions, transform, background color, input values, sound calls and activation
+timing. Shop and the updated shared keyboard agree on dimensions (within 0.12
+CSS pixels) and the key-color layer across the available states. This does not
+claim identical text pixels: Shop uses its PGothic font and the framework uses
+the configured system-font stack. The old vectors also have different borders,
+gloss and Quit/OK shapes.
+
+The comparison exposed a CSS specificity bug: special-key hover color took
+precedence over pressed color. Caps, Shift, Space and Backspace now show Shop's
+yellow-green pressed color. A regression check holds each key down while hovered
+and verifies both its color and its effect after release.
+
+| Interaction | Shop | Updated shared keyboard |
+| --- | --- | --- |
+| Normal key scale, hover / pressed | 1.5× / 1.4× | 1.5× / 1.4× |
+| Special key scale, hover / pressed | 1.275× / 1.1× | 1.275× / 1.1× |
+| Character and sound activation | Mouse-down | Release/click |
+| Quit/OK | Close on mouse-down; no held-open pressed frame | Stay visible while held; close on release/click |
+
+The shared component keeps semantic-button activation for mouse, touch and
+keyboard users. The viewer explicitly marks Shop's unavailable Quit/OK pressed
+frames instead of fabricating one.
+
+To reproduce, extract the pre-artwork Wii.css revision `64bbb99` to a separate
+directory, compile its `src/index.scss` to `dist/wii.css`, and copy its `assets`
+to `dist/assets`. Build the current framework assets, then run:
+
+```sh
+SMOKE_CHROMIUM=/usr/bin/chromium npm run compare:keyboard-keys -- /path/to/extracted/wiishopchannel.net /path/to/vector-framework
+```
+
+![Representative key overlays](shop-keyboard/key-overlays/overview.png)
+
 ## Adopted shared keyboard
 
 Wii.css now uses all eight original Shop keyboard PNGs, including the normal,

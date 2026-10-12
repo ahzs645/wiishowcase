@@ -21,7 +21,8 @@
     "test:native-apps": "node scripts/test-native-applications.mjs",
     "test:channel-presentation": "node scripts/test-channel-presentation.mjs",
     "audit:shop-keyboard": "node scripts/audit-shop-keyboard.mjs",
-    "test:shop-keyboard": "node scripts/test-shop-keyboard.mjs"
+    "test:shop-keyboard": "node scripts/test-shop-keyboard.mjs",
+    "compare:keyboard-keys": "node scripts/compare-keyboard-keys.mjs"
   },
   "dependencies": {
     "@firstform/wii-channel-renderer": "file:wewad/packages/wii-channel-renderer",

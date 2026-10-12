@@ -69,6 +69,16 @@ try {
   }
   await page.setViewportSize({ width: 1280, height: 720 }); await open();
   assert.equal(await key('caps').evaluate(el => getComputedStyle(el).backgroundColor), 'rgb(184, 236, 255)');
+  for (const action of ['caps', 'shift', 'space', 'backspace']) {
+    await open('ab'); await key(action).hover(); await page.mouse.down();
+    await page.waitForTimeout(100);
+    assert.equal(await key(action).evaluate(el => getComputedStyle(el).backgroundColor), 'rgb(205, 210, 100)', `${action} must show Shop's pressed color while hovered`);
+    assert.equal(await input.inputValue(), 'ab', `${action} should activate on release`);
+    await page.mouse.up();
+    assert.equal(await input.inputValue(), action === 'space' ? 'ab ' : action === 'backspace' ? 'a' : 'ab');
+  }
+  results.specialKeyPressedColorAndRelease = 'passed';
+  await open();
   const chars = await page.locator('[data-char]').evaluateAll(elements => elements.map(el => el.dataset.char));
   for (let i = 0; i < chars.length; i++) await page.locator('[data-char]').nth(i).click();
   assert.equal(await input.inputValue(), chars.join(''));

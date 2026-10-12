@@ -1,5 +1,5 @@
 {
-  "cssRevision": "3fb3397edd1427fc2833893022932bf839f6f026",
+  "cssRevision": "992c7172c2b3547747c2fb01bc5f9a1d3a8751ac",
   "viewports": [
     {
       "width": 608,
@@ -81,6 +81,7 @@
       "sha256": "5ad109f099ad6779ace68d79b2274a9aef54f015a0a4427e58aaf9f678dddcb5"
     }
   ],
+  "specialKeyPressedColorAndRelease": "passed",
   "allCharacterKeys": {
     "tested": 47,
     "value": "1234567890-qwertyuiopasdfghjkl:zxcvbnm,.=[]'`/@"
