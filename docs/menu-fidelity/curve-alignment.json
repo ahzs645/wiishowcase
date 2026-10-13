@@ -1,0 +1,16 @@
+[
+  {
+    "size": "640\u00d7480",
+    "columnsCompared": 620,
+    "beforeMeanVerticalErrorNativePixels": 8.623,
+    "afterMeanVerticalErrorNativePixels": 0.4,
+    "scope": "Cyan curve trace only, with aspect-preserving centred reference. Not overall image fidelity."
+  },
+  {
+    "size": "960\u00d7720",
+    "columnsCompared": 930,
+    "beforeMeanVerticalErrorNativePixels": 9.162,
+    "afterMeanVerticalErrorNativePixels": 0.605,
+    "scope": "Cyan curve trace only, with aspect-preserving centred reference. Not overall image fidelity."
+  }
+]

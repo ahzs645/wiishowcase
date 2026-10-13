@@ -5,18 +5,22 @@
 .wii-43 {
   --system-scale: calc(min(100vh, 75vw) / 480);
   --menu-card-width: calc(122 * var(--system-scale));
+  --menu-column-gap: calc(6 * var(--system-scale));
+  --menu-row-gap: calc(6 * var(--system-scale));
 }
 .wii-169 {
   --system-scale: calc(min(100vh, 56.25vw) / 480);
   --menu-card-width: calc(165 * var(--system-scale));
+  --menu-column-gap: calc(10 * var(--system-scale));
+  --menu-row-gap: calc(4 * var(--system-scale));
 }
 wii-channel-holder.wii-channel-holder {
-  height: calc(402 * var(--system-scale));
+  height: calc(398 * var(--system-scale));
   min-height: 0;
 }
 wii-channel-holder .wii-channel-holder-content {
   height: 100%;
-  padding: calc(42 * var(--system-scale)) 0 0;
+  padding: calc(37 * var(--system-scale)) 0 0;
   box-sizing: border-box;
 }
 .channel-holder-wrapper {
@@ -25,7 +29,7 @@ wii-channel-holder .wii-channel-holder-content {
 .channel-holder-wrapper::after {
   content: "";
   position: absolute;
-  top: calc(402 * var(--system-scale));
+  top: calc(398 * var(--system-scale));
   left: 0;
   width: 100%;
   height: calc(2 * var(--system-scale));
@@ -33,19 +37,26 @@ wii-channel-holder .wii-channel-holder-content {
   z-index: -1;
 }
 .channel-pages-viewport {
-  padding: 0;
+  --menu-grid-width: calc(
+    4 * var(--menu-card-width) + 3 * var(--menu-column-gap)
+  );
+  --menu-grid-inset: calc(
+    (100% - var(--menu-grid-width)) / 2 - 2 * var(--system-scale)
+  );
+  padding: 0 var(--menu-grid-inset);
+  scroll-padding-inline: var(--menu-grid-inset);
   gap: 0;
   width: 100%;
   scroll-snap-type: x mandatory;
 }
 .channel-pages-viewport > .wii-channel-holder-grid {
-  flex: 0 0 100%;
-  width: 100%;
+  flex: 0 0 calc(4 * (var(--menu-card-width) + var(--menu-column-gap)));
+  width: calc(4 * (var(--menu-card-width) + var(--menu-column-gap)));
   box-sizing: border-box;
-  justify-content: center;
+  justify-content: start;
   scroll-snap-align: start;
   grid-template-columns: repeat(4, var(--menu-card-width));
-  gap: calc(10 * var(--system-scale)) calc(12 * var(--system-scale));
+  gap: var(--menu-row-gap) var(--menu-column-gap);
   transform: translateX(var(--screen-offset, 0px));
 }
 .menu-slot {
@@ -70,7 +81,8 @@ wii-channel-holder .wii-channel-holder-content {
   border-radius: 12%;
 }
 .menu-clock-above {
-  bottom: calc(10 * var(--system-scale));
+  top: calc(350 * var(--system-scale));
+  bottom: auto;
 }
 .menu-clock-time {
   font-size: calc(54 * var(--system-scale));
@@ -85,8 +97,8 @@ wii-channel-holder .wii-channel-holder-content {
   text-shadow: none;
 }
 .wii-menu-bottom-buttons {
-  --wii-menu-track-btn-size: calc(78 * var(--system-scale));
-  bottom: calc(21 * var(--system-scale));
+  --wii-menu-track-btn-size: calc(86 * var(--system-scale));
+  bottom: calc(29 * var(--system-scale));
 }
 .wii-menu-bottom-buttons .wii-track-btn .wii-track-btn-circle {
   filter: drop-shadow(
@@ -748,7 +760,7 @@ wii-keyboard .wii-keyboard {
   position: absolute;
   inset: 0;
   width: 100%;
-  height: calc(402 * var(--system-scale));
+  height: calc(398 * var(--system-scale));
   pointer-events: none;
   z-index: 1;
   overflow: visible;
@@ -1250,4 +1262,103 @@ wii-keyboard .wii-keyboard--system .wii-keyboard-input {
 .calendar-back-track .wii-btn-start {
   width: calc(190 * var(--system-scale));
   min-width: calc(190 * var(--system-scale));
+}
+
+/* Menu shell alignment: measured visible card bounds, not unmasked boxes. */
+wii-channel-holder.wii-channel-holder {
+  background-color: #ededed;
+  background-image: repeating-linear-gradient(
+    #f2f2f2 0 calc(1 * var(--system-scale)),
+    #e7e7e7 calc(1 * var(--system-scale)) calc(2 * var(--system-scale))
+  );
+  background-size: auto;
+}
+.channel-pages-viewport .wii-channel-ui-border {
+  stroke-width: 8;
+}
+.menu-clock-digits {
+  display: block;
+  width: calc(var(--clock-width) * var(--system-scale));
+  height: calc(36 * var(--system-scale));
+  fill: #9b9d9e;
+}
+.menu-clock-date {
+  font-weight: 600;
+  color: #85878a;
+}
+.menu-sd-button {
+  bottom: calc(37 * var(--system-scale));
+}
+.sd-card-symbol {
+  display: block;
+  padding: 0;
+  border: none;
+  background: none;
+  border-radius: 0;
+  clip-path: none;
+}
+.menu-reorder-button {
+  opacity: 0;
+  transition: opacity 0.12s;
+}
+.menu-reorder-button:hover,
+.menu-reorder-button:focus-visible,
+.menu-reorder-button.is-active {
+  opacity: 1;
+}
+
+.wii-43 .wii-menu {
+  --menu-card-width: calc(128 * var(--system-scale));
+}
+.wii-169 .wii-menu {
+  --menu-card-width: calc(176 * var(--system-scale));
+}
+.channel-holder-wrapper > .channel-page-arrow {
+  top: calc(182 * var(--system-scale));
+}
+.channel-holder-wrapper > .channel-page-arrow-next {
+  right: calc(29 * var(--system-scale));
+}
+.channel-holder-wrapper > .channel-page-arrow-prev {
+  left: calc(29 * var(--system-scale));
+}
+.menu-clock-date {
+  font-size: calc(35 * var(--system-scale));
+  letter-spacing: calc(0.5 * var(--system-scale));
+}
+.menu-clock-below {
+  bottom: calc(38 * var(--system-scale));
+}
+wii-channel-holder.wii-channel-holder {
+  background-image: repeating-linear-gradient(
+    #ededed 0 calc(1 * var(--system-scale)),
+    #e3e3e3 calc(1 * var(--system-scale)) calc(2 * var(--system-scale))
+  );
+}
+.wii-menu-bottom-buttons .wii-track-btn-left {
+  transform: translateX(calc(-3 * var(--system-scale))) scaleX(-1);
+}
+.menu-unread-count {
+  position: absolute;
+  left: 45.5%;
+  top: 65%;
+  transform: translateX(-50%);
+  font-size: calc(16 * var(--system-scale));
+  line-height: 1;
+  color: #85878a;
+  pointer-events: none;
+}
+.wii-track-btn-icon.has-unread-messages img {
+  transform: translateY(calc(-5 * var(--system-scale)));
+}
+.wii-menu-bottom-buttons .wii-track-btn-wii-logo {
+  --wii-icon-size: calc(20 * var(--system-scale));
+}
+/* Forced display modes must use the Wii frame, including its letterboxing. */
+.wii.wii-bg-authentic {
+  min-height: 0;
+}
+.wii-menu.wii-menu-wrapper {
+  width: 100%;
+  height: 100%;
 }

@@ -1,8 +1,13 @@
 import { chromium } from "playwright";
 import fs from "node:fs/promises";
 import assert from "node:assert/strict";
-const sizing = process.argv.includes("--sizing");
-const directory = sizing ? "interface-sizing" : "interface-improvements";
+const menu = process.argv.includes("--menu");
+const sizing = menu || process.argv.includes("--sizing");
+const directory = menu
+  ? "menu-fidelity"
+  : sizing
+    ? "interface-sizing"
+    : "interface-improvements";
 const browser = await chromium.launch({
   executablePath: process.env.SMOKE_CHROMIUM || "/usr/bin/chromium",
   args: ["--no-sandbox"],
@@ -63,7 +68,10 @@ try {
     await page.selectOption("#layer", "after");
     await page.selectOption("#size", "720");
   }
-  await page.selectOption("#interface", sizing ? "save-grid" : "menu-settled");
+  await page.selectOption(
+    "#interface",
+    menu ? "menu-settled" : sizing ? "save-grid" : "menu-settled",
+  );
   await page.selectOption("#mode", "4:3");
   await page.locator("#difference").uncheck();
   await page.locator("#alpha").fill("50");

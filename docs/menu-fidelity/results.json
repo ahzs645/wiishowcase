@@ -1,0 +1,327 @@
+{
+  "beforeRevision": "3e96806fce2cf11cfb7073c7c08bd4a72bf6d677",
+  "date": "2024-03-01 17:06 America/Vancouver",
+  "iconFrames": {
+    "disc": 0,
+    "mii": 430,
+    "photo": 180,
+    "shop": 180,
+    "news": 0,
+    "forecast": 0,
+    "pokemon-ranch": 0
+  },
+  "captures": [
+    {
+      "mode": "4:3",
+      "width": 640,
+      "height": 480,
+      "image": "after/menu-640x480.png",
+      "before": "before/menu-640x480.png",
+      "metrics": {
+        "first": {
+          "x": 53,
+          "y": 37,
+          "width": 128,
+          "height": 96,
+          "top": 37,
+          "right": 181,
+          "bottom": 133,
+          "left": 53
+        },
+        "next": {
+          "x": 589,
+          "y": 37,
+          "width": 128,
+          "height": 96,
+          "top": 37,
+          "right": 717,
+          "bottom": 133,
+          "left": 589
+        },
+        "stride": 536,
+        "clip": "path(\"M 0 0 H 640 V 347 H 539.52 C 491.904 347 468.096 398 420.48 398 H 219.52 C 171.904 398 148.096 347 100.48 347 H 0 Z\")",
+        "clock": {
+          "x": 258,
+          "y": 350,
+          "width": 124,
+          "height": 36,
+          "top": 350,
+          "right": 382,
+          "bottom": 386,
+          "left": 258
+        },
+        "date": {
+          "x": 246.7265625,
+          "y": 403.5,
+          "width": 146.546875,
+          "height": 38.5,
+          "top": 403.5,
+          "right": 393.2734375,
+          "bottom": 442,
+          "left": 246.7265625
+        }
+      },
+      "reference": "copetti-home"
+    },
+    {
+      "mode": "16:9",
+      "width": 854,
+      "height": 480,
+      "image": "after/menu-854x480.png",
+      "before": "before/menu-854x480.png",
+      "metrics": {
+        "first": {
+          "x": 58,
+          "y": 37,
+          "width": 176,
+          "height": 97.671875,
+          "top": 37,
+          "right": 234,
+          "bottom": 134.671875,
+          "left": 58
+        },
+        "next": {
+          "x": 802,
+          "y": 37,
+          "width": 176,
+          "height": 97.671875,
+          "top": 37,
+          "right": 978,
+          "bottom": 134.671875,
+          "left": 802
+        },
+        "stride": 744,
+        "clip": "path(\"M 0 0 H 854 V 347 H 719.922 C 656.384 347 624.616 398 561.078 398 H 292.922 C 229.384 398 197.616 347 134.078 347 H 0 Z\")",
+        "clock": {
+          "x": 365,
+          "y": 350,
+          "width": 124,
+          "height": 36,
+          "top": 350,
+          "right": 489,
+          "bottom": 386,
+          "left": 365
+        },
+        "date": {
+          "x": 353.7265625,
+          "y": 403.5,
+          "width": 146.546875,
+          "height": 38.5,
+          "top": 403.5,
+          "right": 500.2734375,
+          "bottom": 442,
+          "left": 353.7265625
+        }
+      },
+      "reference": "nintendo-menu-2"
+    },
+    {
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "after/menu-960x720.png",
+      "before": "before/menu-960x720.png",
+      "metrics": {
+        "first": {
+          "x": 79.484375,
+          "y": 55.5,
+          "width": 192,
+          "height": 144,
+          "top": 55.5,
+          "right": 271.484375,
+          "bottom": 199.5,
+          "left": 79.484375
+        },
+        "next": {
+          "x": 883.484375,
+          "y": 55.5,
+          "width": 192,
+          "height": 144,
+          "top": 55.5,
+          "right": 1075.484375,
+          "bottom": 199.5,
+          "left": 883.484375
+        },
+        "stride": 804,
+        "clip": "path(\"M 0 0 H 960 V 520.5 H 809.28 C 737.856 520.5 702.144 597 630.72 597 H 329.28 C 257.856 597 222.144 520.5 150.72 520.5 H 0 Z\")",
+        "clock": {
+          "x": 387,
+          "y": 525,
+          "width": 186,
+          "height": 54,
+          "top": 525,
+          "right": 573,
+          "bottom": 579,
+          "left": 387
+        },
+        "date": {
+          "x": 370.09375,
+          "y": 605.25,
+          "width": 219.8125,
+          "height": 57.75,
+          "top": 605.25,
+          "right": 589.90625,
+          "bottom": 663,
+          "left": 370.09375
+        }
+      },
+      "reference": "copetti-home"
+    },
+    {
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "after/menu-1280x720.png",
+      "before": "before/menu-1280x720.png",
+      "metrics": {
+        "first": {
+          "x": 86.5,
+          "y": 55.5,
+          "width": 264,
+          "height": 146.515625,
+          "top": 55.5,
+          "right": 350.5,
+          "bottom": 202.015625,
+          "left": 86.5
+        },
+        "next": {
+          "x": 1202.5,
+          "y": 55.5,
+          "width": 264,
+          "height": 146.515625,
+          "top": 55.5,
+          "right": 1466.5,
+          "bottom": 202.015625,
+          "left": 1202.5
+        },
+        "stride": 1116,
+        "clip": "path(\"M 0 0 H 1280 V 520.5 H 1079.04 C 983.808 520.5 936.192 597 840.96 597 H 439.04 C 343.808 597 296.192 520.5 200.96 520.5 H 0 Z\")",
+        "clock": {
+          "x": 547,
+          "y": 525,
+          "width": 186,
+          "height": 54,
+          "top": 525,
+          "right": 733,
+          "bottom": 579,
+          "left": 547
+        },
+        "date": {
+          "x": 530.09375,
+          "y": 605.25,
+          "width": 219.8125,
+          "height": 57.75,
+          "top": 605.25,
+          "right": 749.90625,
+          "bottom": 663,
+          "left": 530.09375
+        }
+      },
+      "reference": "nintendo-menu-2"
+    }
+  ],
+  "checks": [
+    "640×480: idle controls and labels fit",
+    "640×480: adjacent page column is visible",
+    "640×480: mail badge reflects one unread record",
+    "640×480: page 2 retains grid alignment",
+    "640×480: page 3 retains grid alignment",
+    "640×480: page 4 retains grid alignment",
+    "640×480: last page hides next arrow",
+    "640×480: reorder reaches another page",
+    "640×480: resize preserves page and scroll stride",
+    "640×480: channel remains clickable after resize",
+    "640×480: reordered slots survive reload",
+    "640×480: opening the record clears the unread badge",
+    "854×480: idle controls and labels fit",
+    "854×480: adjacent page column is visible",
+    "854×480: mail badge reflects one unread record",
+    "854×480: page 2 retains grid alignment",
+    "854×480: page 3 retains grid alignment",
+    "854×480: page 4 retains grid alignment",
+    "854×480: last page hides next arrow",
+    "854×480: reorder reaches another page",
+    "854×480: resize preserves page and scroll stride",
+    "854×480: channel remains clickable after resize",
+    "854×480: reordered slots survive reload",
+    "854×480: opening the record clears the unread badge",
+    "960×720: idle controls and labels fit",
+    "960×720: adjacent page column is visible",
+    "960×720: mail badge reflects one unread record",
+    "960×720: page 2 retains grid alignment",
+    "960×720: page 3 retains grid alignment",
+    "960×720: page 4 retains grid alignment",
+    "960×720: last page hides next arrow",
+    "960×720: reorder reaches another page",
+    "960×720: resize preserves page and scroll stride",
+    "960×720: channel remains clickable after resize",
+    "960×720: reordered slots survive reload",
+    "960×720: opening the record clears the unread badge",
+    "1280×720: idle controls and labels fit",
+    "1280×720: adjacent page column is visible",
+    "1280×720: mail badge reflects one unread record",
+    "1280×720: page 2 retains grid alignment",
+    "1280×720: page 3 retains grid alignment",
+    "1280×720: page 4 retains grid alignment",
+    "1280×720: last page hides next arrow",
+    "1280×720: reorder reaches another page",
+    "1280×720: resize preserves page and scroll stride",
+    "1280×720: channel remains clickable after resize",
+    "1280×720: reordered slots survive reload",
+    "1280×720: opening the record clears the unread badge",
+    "Forced 4:3: actual frame has requested ratio",
+    "Forced 4:3: menu fits the letterboxed frame",
+    "Forced 16:9: actual frame has requested ratio",
+    "Forced 16:9: menu fits the letterboxed frame",
+    "No browser page errors"
+  ],
+  "errors": [],
+  "forcedFrames": [
+    {
+      "aspect": "4:3",
+      "root": {
+        "x": 160.0078125,
+        "y": 0,
+        "width": 959.984375,
+        "height": 720,
+        "top": 0,
+        "right": 1119.9921875,
+        "bottom": 720,
+        "left": 160.0078125
+      },
+      "menu": {
+        "x": 160.0078125,
+        "y": 0,
+        "width": 959.984375,
+        "height": 720,
+        "top": 0,
+        "right": 1119.9921875,
+        "bottom": 720,
+        "left": 160.0078125
+      }
+    },
+    {
+      "aspect": "16:9",
+      "root": {
+        "x": 0,
+        "y": 90,
+        "width": 960,
+        "height": 540,
+        "top": 90,
+        "right": 960,
+        "bottom": 630,
+        "left": 0
+      },
+      "menu": {
+        "x": 0,
+        "y": 90,
+        "width": 960,
+        "height": 540,
+        "top": 90,
+        "right": 960,
+        "bottom": 630,
+        "left": 0
+      }
+    }
+  ]
+}

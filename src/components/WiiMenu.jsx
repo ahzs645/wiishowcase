@@ -177,6 +177,9 @@ export default function WiiMenu({
   }, [calendarOpen, onCalendarOpenChange]);
   const [calendarSwapped, setCalendarSwapped] = useState(false);
   const system = useSystemState();
+  const unreadMessages = (system.messages || []).filter(
+    (message) => !system.read.includes(message.id),
+  ).length;
   const channels = useMemo(
     () =>
       system.slots.map(
@@ -194,30 +197,64 @@ export default function WiiMenu({
     [system.messages],
   );
   const viewportRef = useRef(null);
+  const scrollTargetRef = useRef(null);
+  const activePageRef = useRef(currentPage);
+  activePageRef.current = currentPage;
+  const pageStride = (viewport) =>
+    viewport?.firstElementChild?.getBoundingClientRect().width ||
+    viewport?.clientWidth ||
+    1;
   useEffect(() => {
     const viewport = viewportRef.current;
     if (!viewport) return;
     let timer;
-    const settle = () => {
-      clearTimeout(timer);
-      timer = setTimeout(
-        () =>
-          setCurrentPage(
-            Math.max(
-              0,
-              Math.min(
-                3,
-                Math.round(viewport.scrollLeft / viewport.clientWidth),
-              ),
-            ),
-          ),
-        160,
+    const commitPosition = () => {
+      const target = scrollTargetRef.current;
+      if (
+        target !== null &&
+        Math.abs(viewport.scrollLeft - target * pageStride(viewport)) > 2
+      )
+        return;
+      scrollTargetRef.current = null;
+      setCurrentPage(
+        Math.max(
+          0,
+          Math.min(3, Math.round(viewport.scrollLeft / pageStride(viewport))),
+        ),
       );
     };
+    const settle = () => {
+      clearTimeout(timer);
+      timer = setTimeout(commitPosition, 160);
+    };
+    const manualScroll = () => {
+      scrollTargetRef.current = null;
+    };
     viewport.addEventListener("scroll", settle);
+    viewport.addEventListener("scrollend", commitPosition);
+    viewport.addEventListener("pointerdown", manualScroll);
+    viewport.addEventListener("wheel", manualScroll, { passive: true });
+    let previousStride = pageStride(viewport);
+    const resize = new ResizeObserver(() => {
+      const stride = pageStride(viewport);
+      if (Math.abs(stride - previousStride) < 0.5) return;
+      previousStride = stride;
+      scrollTargetRef.current = null;
+      clearTimeout(timer);
+      viewport.scrollTo({
+        left: activePageRef.current * stride,
+        behavior: "instant",
+      });
+    });
+    resize.observe(viewport);
+    if (viewport.firstElementChild) resize.observe(viewport.firstElementChild);
     return () => {
+      resize.disconnect();
       clearTimeout(timer);
       viewport.removeEventListener("scroll", settle);
+      viewport.removeEventListener("scrollend", commitPosition);
+      viewport.removeEventListener("pointerdown", manualScroll);
+      viewport.removeEventListener("wheel", manualScroll);
     };
   }, []);
   const mailTimerRef = useRef(null);
@@ -227,8 +264,9 @@ export default function WiiMenu({
   const goNext = useCallback(() => {
     setCurrentPage((p) => {
       const next = Math.min(p + 1, totalPages - 1);
+      scrollTargetRef.current = next;
       viewportRef.current?.scrollTo({
-        left: next * viewportRef.current.clientWidth,
+        left: next * pageStride(viewportRef.current),
         behavior: "smooth",
       });
       return next;
@@ -238,8 +276,9 @@ export default function WiiMenu({
   const goPrev = useCallback(() => {
     setCurrentPage((p) => {
       const prev = Math.max(p - 1, 0);
+      scrollTargetRef.current = prev;
       viewportRef.current?.scrollTo({
-        left: prev * viewportRef.current.clientWidth,
+        left: prev * pageStride(viewportRef.current),
         behavior: "smooth",
       });
       return prev;
@@ -478,7 +517,11 @@ export default function WiiMenu({
                 {pageChannels.map((ch, i) => {
                   const globalIndex = pageIdx * CHANNELS_PER_PAGE + i;
                   const isActivePage = pageIdx === currentPage;
-                  const shouldRenderContent = isActivePage || ch.blank;
+                  const isEdgePreview =
+                    (pageIdx === currentPage + 1 && i % 4 === 0) ||
+                    (pageIdx === currentPage - 1 && i % 4 === 3);
+                  const shouldRenderContent =
+                    isActivePage || isEdgePreview || ch.blank;
                   return (
                     <div
                       key={globalIndex}
@@ -607,10 +650,42 @@ export default function WiiMenu({
             aria-label="SD Card Menu"
             onClick={onSDClick}
           >
-            <span className="sd-card-symbol">SD</span>
+            <svg
+              className="sd-card-symbol"
+              viewBox="0 0 34 45"
+              aria-hidden="true"
+            >
+              <rect
+                x="1"
+                y="1"
+                width="32"
+                height="43"
+                rx="3"
+                fill="#e3eff4"
+                stroke="#8acbe2"
+                strokeWidth="1.5"
+              />
+              <path d="M6 9h23v28H6z" fill="#6ac4de" />
+              <path d="M8 10h19v12H8z" fill="#f9fcfd" />
+              <path
+                d="M12 12h10v7H12zM10 14h2v3h-2M22 14h2v3h-2"
+                fill="#a9dbe8"
+              />
+              <text
+                x="17"
+                y="33"
+                textAnchor="middle"
+                fontSize="9"
+                fontFamily="Arial,sans-serif"
+                fontWeight="700"
+                fill="white"
+              >
+                SD
+              </text>
+            </svg>
           </button>
           <button
-            className="menu-reorder-button"
+            className={`menu-reorder-button${moving ? " is-active" : ""}`}
             onClick={() => {
               setMoving(!moving);
               setPickedSlot(null);
@@ -619,7 +694,10 @@ export default function WiiMenu({
           >
             {moving ? "Done" : "Move channels"}
           </button>
-          <span className="menu-page-count">
+          <span
+            className="menu-page-count system-visually-hidden"
+            aria-live="polite"
+          >
             {currentPage + 1} / {totalPages}
           </span>
         </>
@@ -794,9 +872,19 @@ export default function WiiMenu({
                 onClick={openMailWithFlip}
                 type="button"
               >
-                <span className="wii-track-btn-icon">
+                <span
+                  className={`wii-track-btn-icon${unreadMessages ? " has-unread-messages" : ""}`}
+                >
                   <img src={mailIcon} alt="" />
                 </span>
+                {unreadMessages > 0 && (
+                  <span
+                    className="menu-unread-count"
+                    aria-label={`${unreadMessages} unread messages`}
+                  >
+                    {unreadMessages}
+                  </span>
+                )}
               </button>
             </div>
             <div
