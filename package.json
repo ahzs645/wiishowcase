@@ -25,7 +25,11 @@
     "compare:keyboard-keys": "node scripts/compare-keyboard-keys.mjs",
     "capture:interface-audit": "node scripts/capture-interface-audit.mjs",
     "build:interface-audit": "node scripts/build-interface-audit.mjs",
-    "check:interface-native-sizes": "node scripts/check-interface-native-sizes.mjs"
+    "check:interface-native-sizes": "node scripts/check-interface-native-sizes.mjs",
+    "test:system-interface": "node scripts/test-system-interface.mjs",
+    "build:interface-improvements": "node scripts/build-interface-improvements.mjs",
+    "postbuild": "node scripts/package-interface-comparisons.mjs",
+    "test:system-controllers": "node scripts/test-system-controllers.mjs"
   },
   "dependencies": {
     "@firstform/wii-channel-renderer": "file:wewad/packages/wii-channel-renderer",

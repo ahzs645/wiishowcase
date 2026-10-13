@@ -1,37 +1,45 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { formatMenuDate } from './Clock';
-import useMiiHead from '../hooks/useMiiHead';
+import { useEffect, useMemo, useRef, useState } from "react";
+import { formatMenuDate } from "./Clock";
+import {
+  useSystemState,
+  seedMessages,
+  markRead,
+  deleteMessage,
+} from "../lib/systemState";
+import MessageTools from "./system/MessageTools";
+import { WiiButton, SystemDialog } from "./system/SystemUI";
+import useMiiHead from "../hooks/useMiiHead";
 // Imported (not referenced by public URL) so Vite bundles them — the deployed
 // site only ships dist/, where a runtime Wii.css/assets/... path 404s.
-import pinUnreadIcon from '../../Wii.css/assets/icons/letter-pin-unread.svg';
-import pinReadIcon from '../../Wii.css/assets/icons/letter-pin.svg';
+import pinUnreadIcon from "../../Wii.css/assets/icons/letter-pin-unread.svg";
+import pinReadIcon from "../../Wii.css/assets/icons/letter-pin.svg";
 
 const MESSAGE_PAGE_SLIDE_MS = 480;
 
 const MESSAGE_TYPES = {
   memo: {
-    label: 'Memo',
-    cardClassName: 'is-type-memo',
+    label: "Memo",
+    cardClassName: "is-type-memo",
     fullAvatar: false,
   },
   invite: {
-    label: 'Invitation',
-    cardClassName: 'is-type-invite',
+    label: "Invitation",
+    cardClassName: "is-type-invite",
     fullAvatar: false,
   },
   photo: {
-    label: 'Photo',
-    cardClassName: 'is-type-photo',
+    label: "Photo",
+    cardClassName: "is-type-photo",
     fullAvatar: false,
   },
   avatar: {
-    label: 'Avatar',
-    cardClassName: 'is-type-avatar',
+    label: "Avatar",
+    cardClassName: "is-type-avatar",
     fullAvatar: true,
   },
   system: {
-    label: 'System',
-    cardClassName: 'is-type-system',
+    label: "System",
+    cardClassName: "is-type-system",
     fullAvatar: false,
   },
 };
@@ -48,8 +56,8 @@ function addDays(date, days) {
 
 function toDateKey(date) {
   const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
   return `${year}-${month}-${day}`;
 }
 
@@ -57,94 +65,98 @@ const BOARD_ANCHOR_DATE = getStartOfDay(new Date());
 
 const BOARD_MESSAGE_SEEDS = [
   {
-    id: 'sample-onliine-message',
+    id: "sample-onliine-message",
     dayOffset: 0,
-    type: 'avatar',
-    sender: 'Peter Miiffin',
-    preview: 'Hello Lois',
+    type: "avatar",
+    sender: "Peter Miiffin",
+    preview: "Hello Lois",
     miiDataUrl: `${import.meta.env.BASE_URL}assets/message-board/Peter.miic`,
-    avatarAlt: 'Peter Miiffin lol',
+    avatarAlt: "Peter Miiffin lol",
     angle: -8,
     x: 14,
     y: 22,
     lines: [
-      { kind: 'text', text: 'This is a nice sample letter,' },
-      { kind: 'text', text: 'with multiple lines.' },
+      { kind: "text", text: "This is a nice sample letter," },
+      { kind: "text", text: "with multiple lines." },
     ],
   },
   {
-    id: 'invite-mariokart',
+    id: "invite-mariokart",
     dayOffset: -1,
-    type: 'invite',
-    sender: 'Loopy',
-    preview: 'Mario Kart tonight?',
-    avatarFallback: 'L',
+    type: "invite",
+    sender: "Loopy",
+    preview: "Mario Kart tonight?",
+    avatarFallback: "L",
     angle: 7,
     x: 54,
     y: 14,
     lines: [
-      { kind: 'text', text: 'Want to play Mario Kart later?' },
-      { kind: 'text', text: 'I finally unlocked Rainbow Road!' },
+      { kind: "text", text: "Want to play Mario Kart later?" },
+      { kind: "text", text: "I finally unlocked Rainbow Road!" },
     ],
   },
   {
-    id: 'photo-sunset',
+    id: "photo-sunset",
     dayOffset: -2,
-    type: 'photo',
-    sender: 'Digital Camera',
-    preview: 'New photo attached',
-    avatarFallback: '\ud83d\udcf7',
+    type: "photo",
+    sender: "Digital Camera",
+    preview: "New photo attached",
+    avatarFallback: "\ud83d\udcf7",
     angle: -2,
     x: 33,
     y: 43,
     lines: [
-      { kind: 'text', text: 'Check out this sunset from our trip.' },
-      { kind: 'text', text: 'It came out better than expected.' },
+      { kind: "text", text: "Check out this sunset from our trip." },
+      { kind: "text", text: "It came out better than expected." },
     ],
   },
   {
-    id: 'system-update',
+    id: "system-update",
     dayOffset: 1,
-    type: 'system',
-    sender: 'Wii System',
-    preview: 'System update info',
-    avatarFallback: 'W',
+    type: "system",
+    sender: "Wii System",
+    preview: "System update info",
+    avatarFallback: "W",
     angle: 6,
     x: 70,
     y: 39,
     lines: [
-      { kind: 'text', text: 'A new Onliine update is available.' },
-      { kind: 'link', text: 'View release notes', href: 'https://github.com/ktg5/onliine-electron/releases/latest' },
+      { kind: "text", text: "A new Onliine update is available." },
+      {
+        kind: "link",
+        text: "View release notes",
+        href: "https://github.com/ktg5/onliine-electron/releases/latest",
+      },
     ],
   },
   {
-    id: 'family-note',
+    id: "family-note",
     dayOffset: 3,
-    type: 'memo',
-    sender: 'Mom',
-    preview: 'Call grandma',
-    avatarFallback: 'M',
+    type: "memo",
+    sender: "Mom",
+    preview: "Call grandma",
+    avatarFallback: "M",
     angle: -5,
     x: 10,
     y: 63,
     lines: [
-      { kind: 'text', text: "Don't forget to call grandma this weekend." },
-      { kind: 'text', text: 'She misses you.' },
+      { kind: "text", text: "Don't forget to call grandma this weekend." },
+      { kind: "text", text: "She misses you." },
     ],
   },
   {
-    id: 'sports-result',
+    id: "sports-result",
     dayOffset: 0,
-    type: 'invite',
-    sender: 'Wii Sports Club',
-    preview: 'High score challenge',
-    avatarFallback: 'S',
+    type: "invite",
+    sender: "Wii Sports Club",
+    preview: "High score challenge",
+    avatarFallback: "S",
     angle: 5,
     x: 58,
     y: 63,
     lines: [
-      { kind: 'text', text: 'Your friend beat your tennis score.' },
-      { kind: 'text', text: 'Play now and take the lead back!' },
+      { kind: "text", text: "Your friend beat your tennis score." },
+      { kind: "text", text: "Play now and take the lead back!" },
     ],
   },
 ];
@@ -154,29 +166,19 @@ const BOARD_MESSAGES = BOARD_MESSAGE_SEEDS.map((message) => ({
   dateKey: toDateKey(addDays(BOARD_ANCHOR_DATE, message.dayOffset ?? 0)),
 }));
 
-const MESSAGES_BY_DATE = BOARD_MESSAGES.reduce((acc, message) => {
-  const { dateKey } = message;
-  if (!acc[dateKey]) {
-    acc[dateKey] = [];
-  }
-  acc[dateKey].push(message);
-  return acc;
-}, {});
-
-export const MESSAGE_DATE_KEYS = new Set(Object.keys(MESSAGES_BY_DATE));
-
-function getMessagesForDayOffset(dayOffset) {
-  const dateKey = toDateKey(addDays(BOARD_ANCHOR_DATE, dayOffset));
-  return MESSAGES_BY_DATE[dateKey] ?? [];
-}
-
 function MiiAvatar({ miiDataUrl, className, title, alt, fallback }) {
   const miiSrc = useMiiHead(miiDataUrl);
+  // The existing fixture remains visible on builds without the optional Mii runtime.
+  const headSrc =
+    miiSrc ||
+    (miiDataUrl?.endsWith("/Peter.miic")
+      ? `${import.meta.env.BASE_URL}assets/message-board/Peter-head.png`
+      : null);
 
   return (
     <div className={className} title={title}>
-      {miiSrc ? (
-        <img src={miiSrc} alt={alt || ''} />
+      {headSrc ? (
+        <img className="is-mii-head" src={headSrc} alt={alt || ""} />
       ) : (
         <span>{fallback}</span>
       )}
@@ -186,17 +188,26 @@ function MiiAvatar({ miiDataUrl, className, title, alt, fallback }) {
 
 function AvatarDisplay({ message, className }) {
   const type = MESSAGE_TYPES[message.type] ?? MESSAGE_TYPES.memo;
-  const avatarClassName = `${className}${type.fullAvatar ? ' is-full-avatar' : ''}`;
+  const avatarClassName = `${className}${type.fullAvatar ? " is-full-avatar" : ""}`;
   const title = message.avatarAlt || message.sender;
   const fallback = message.avatarFallback || message.sender[0];
   if (message.miiDataUrl) {
-    return <MiiAvatar miiDataUrl={message.miiDataUrl} preset="head" className={avatarClassName} title={title} alt={message.avatarAlt} fallback={fallback} />;
+    return (
+      <MiiAvatar
+        miiDataUrl={message.miiDataUrl}
+        preset="head"
+        className={avatarClassName}
+        title={title}
+        alt={message.avatarAlt}
+        fallback={fallback}
+      />
+    );
   }
 
   return (
     <div className={avatarClassName} title={title}>
       {message.avatarSrc ? (
-        <img src={message.avatarSrc} alt={message.avatarAlt || ''} />
+        <img src={message.avatarSrc} alt={message.avatarAlt || ""} />
       ) : (
         <span>{fallback}</span>
       )}
@@ -224,11 +235,14 @@ function MessageCard({ message, onOpen, isRead }) {
       <img
         className="message-board-card-pin"
         src={isRead ? PIN_READ_SRC : PIN_UNREAD_SRC}
-        alt={isRead ? 'Read' : 'Unread'}
+        alt={isRead ? "Read" : "Unread"}
         aria-hidden="true"
       />
       <div className="message-board-card-header">
-        <AvatarDisplay message={message} className="message-board-card-avatar" />
+        <AvatarDisplay
+          message={message}
+          className="message-board-card-avatar"
+        />
       </div>
       <div className="message-board-card-preview">{message.preview}</div>
       <div className="message-board-card-type-label">{type.label}</div>
@@ -236,39 +250,76 @@ function MessageCard({ message, onOpen, isRead }) {
   );
 }
 
-function MessageMemo({ message, onClose }) {
+function MessageMemo({ message, onClose, onReply, onDelete }) {
   const type = MESSAGE_TYPES[message.type] ?? MESSAGE_TYPES.memo;
   const dialogTitleId = `message-board-memo-title-${message.id}`;
-  const memoTitle = message.sender || 'Memo';
+  const ref = useRef(null);
+  useEffect(() => {
+    const previous = document.activeElement;
+    ref.current?.querySelector("button")?.focus();
+    return () => previous?.isConnected && previous.focus();
+  }, [message.id]);
+  const memoTitle =
+    message.type === "memo" ? "Memo" : message.sender || "Letter";
 
   return (
     <div className="message-board-opened" onClick={onClose} role="presentation">
       <div className="message-board-opened-bg" aria-hidden="true" />
       <div
+        ref={ref}
         className={`message-board-memo ${type.cardClassName}`}
         role="dialog"
         aria-modal="true"
         aria-labelledby={dialogTitleId}
         onClick={(event) => event.stopPropagation()}
       >
-        <span className="message-board-memo-title" id={dialogTitleId}>{memoTitle}</span>
+        <span className="message-board-memo-title" id={dialogTitleId}>
+          {memoTitle}
+        </span>
 
         <div className="message-board-memo-header">
-          <AvatarDisplay message={message} className="message-board-memo-avatar" />
+          <AvatarDisplay
+            message={message}
+            className="message-board-memo-avatar"
+          />
         </div>
 
         <div className="message-board-memo-lines">
-          {message.lines.map((line, index) => (
-            line.kind === 'link' ? (
-              <a key={`${message.id}-line-${index}`} href={line.href} target="_blank" rel="noreferrer">
+          {message.lines.map((line, index) =>
+            line.kind === "link" ? (
+              <a
+                key={`${message.id}-line-${index}`}
+                href={line.href}
+                target="_blank"
+                rel="noreferrer"
+              >
                 {line.text}
               </a>
             ) : (
               <span key={`${message.id}-line-${index}`}>{line.text}</span>
-            )
-          ))}
+            ),
+          )}
         </div>
 
+        {message.photo && (
+          <img
+            className="message-attachment-preview"
+            src={message.photo}
+            alt="Attached photo"
+          />
+        )}
+        {message.delivery === "local" && (
+          <p className="message-local-status">
+            Saved locally{message.recipient ? ` · To ${message.recipient}` : ""}
+          </p>
+        )}
+        <div className="message-letter-actions">
+          <WiiButton onClick={onClose}>Back</WiiButton>
+          {message.type !== "memo" && (
+            <WiiButton onClick={onReply}>Reply</WiiButton>
+          )}
+          <WiiButton onClick={onDelete}>Erase letter</WiiButton>
+        </div>
         <div className="message-board-memo-footer" aria-hidden="true">
           <span className="wii-icon wii-icon-wii message-board-memo-wii-logo"></span>
         </div>
@@ -277,19 +328,57 @@ function MessageMemo({ message, onClose }) {
   );
 }
 
-export default function WiiMessageBoard({ visible, onDisplayedDateChange, targetDate }) {
+export default function WiiMessageBoard({
+  visible,
+  onDisplayedDateChange,
+  targetDate,
+  composeRequest,
+}) {
   const hasOpenedRef = useRef(false);
   if (visible) hasOpenedRef.current = true;
   // Avatars initialize the Mii runtime and its FFL resource. Wait until the
   // board is first opened, then keep its state and rendered heads on return.
   if (!hasOpenedRef.current) return null;
-  return <MessageBoardContent visible={visible} onDisplayedDateChange={onDisplayedDateChange} targetDate={targetDate} />;
+  return (
+    <MessageBoardContent
+      visible={visible}
+      onDisplayedDateChange={onDisplayedDateChange}
+      targetDate={targetDate}
+      composeRequest={composeRequest}
+    />
+  );
 }
 
-function MessageBoardContent({ visible, onDisplayedDateChange, targetDate }) {
+function MessageBoardContent({
+  visible,
+  onDisplayedDateChange,
+  targetDate,
+  composeRequest,
+}) {
+  const system = useSystemState();
+  const anchorDate = useMemo(
+    () => getStartOfDay(new Date(Date.now() + system.settings.timeOffset)),
+    [system.settings.timeOffset],
+  );
+  useEffect(() => {
+    seedMessages(BOARD_MESSAGES);
+  }, []);
+  const messages = system.messages || BOARD_MESSAGES;
+  const getMessagesForDayOffset = (offset) =>
+    messages.filter(
+      (message) => message.dateKey === toDateKey(addDays(anchorDate, offset)),
+    );
+  const [tool, setTool] = useState(null);
+  const [eraseConfirm, setEraseConfirm] = useState(false);
+  useEffect(() => {
+    if (composeRequest) {
+      setTool({});
+      setSelectedMessageId(null);
+    }
+  }, [composeRequest]);
   const [currentDayOffset, setCurrentDayOffset] = useState(0);
   const [selectedMessageId, setSelectedMessageId] = useState(null);
-  const [readMessageIds, setReadMessageIds] = useState(new Set());
+  const readMessageIds = useMemo(() => new Set(system.read), [system.read]);
   const [dateTransition, setDateTransition] = useState(null);
   const transitionTimerRef = useRef(null);
   const lastTargetDateRef = useRef(null);
@@ -305,6 +394,8 @@ function MessageBoardContent({ visible, onDisplayedDateChange, targetDate }) {
 
   useEffect(() => {
     if (!visible) {
+      setTool(null);
+      setEraseConfirm(false);
       setSelectedMessageId(null);
       setDateTransition(null);
       lastTargetDateRef.current = null;
@@ -323,7 +414,7 @@ function MessageBoardContent({ visible, onDisplayedDateChange, targetDate }) {
     lastTargetDateRef.current = targetTime;
 
     const target = getStartOfDay(targetDate);
-    const diffMs = target.getTime() - BOARD_ANCHOR_DATE.getTime();
+    const diffMs = target.getTime() - anchorDate.getTime();
     const targetOffset = Math.round(diffMs / (1000 * 60 * 60 * 24));
 
     if (targetOffset === currentDayOffset) return;
@@ -334,7 +425,7 @@ function MessageBoardContent({ visible, onDisplayedDateChange, targetDate }) {
       transitionTimerRef.current = null;
     }
 
-    const direction = targetOffset > currentDayOffset ? 'next' : 'prev';
+    const direction = targetOffset > currentDayOffset ? "next" : "prev";
     setSelectedMessageId(null);
     setDateTransition({
       fromOffset: currentDayOffset,
@@ -348,41 +439,49 @@ function MessageBoardContent({ visible, onDisplayedDateChange, targetDate }) {
       transitionTimerRef.current = null;
     }, MESSAGE_PAGE_SLIDE_MS);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [targetDate, visible]);
+  }, [targetDate, visible, anchorDate]);
 
   const isDateTransitioning = Boolean(dateTransition);
-  const displayedDayOffset = dateTransition ? dateTransition.toOffset : currentDayOffset;
+  const displayedDayOffset = dateTransition
+    ? dateTransition.toOffset
+    : currentDayOffset;
   const displayedDate = useMemo(
-    () => addDays(BOARD_ANCHOR_DATE, displayedDayOffset),
-    [displayedDayOffset],
+    () => addDays(anchorDate, displayedDayOffset),
+    [displayedDayOffset, anchorDate],
   );
   const displayedDateText = useMemo(
-    () => formatMenuDate(displayedDate),
-    [displayedDate],
+    () => formatMenuDate(displayedDate, system.settings.country),
+    [displayedDate, system.settings.country],
   );
   const currentMessages = useMemo(
     () => getMessagesForDayOffset(currentDayOffset),
-    [currentDayOffset],
+    [currentDayOffset, messages, anchorDate],
   );
-  const outgoingMessages = dateTransition ? getMessagesForDayOffset(dateTransition.fromOffset) : [];
-  const incomingMessages = dateTransition ? getMessagesForDayOffset(dateTransition.toOffset) : [];
+  const outgoingMessages = dateTransition
+    ? getMessagesForDayOffset(dateTransition.fromOffset)
+    : [];
+  const incomingMessages = dateTransition
+    ? getMessagesForDayOffset(dateTransition.toOffset)
+    : [];
   const selectedMessage = useMemo(
-    () => BOARD_MESSAGES.find((message) => message.id === selectedMessageId) ?? null,
-    [selectedMessageId],
+    () => messages.find((message) => message.id === selectedMessageId) ?? null,
+    [selectedMessageId, messages],
   );
 
   useEffect(() => {
-    if (!selectedMessageId) return undefined;
+    if (!selectedMessageId || !visible) return undefined;
 
     const handleEscape = (event) => {
-      if (event.key === 'Escape') {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        event.stopPropagation();
         setSelectedMessageId(null);
       }
     };
 
-    window.addEventListener('keydown', handleEscape);
+    window.addEventListener("keydown", handleEscape);
     return () => {
-      window.removeEventListener('keydown', handleEscape);
+      window.removeEventListener("keydown", handleEscape);
     };
   }, [selectedMessageId]);
 
@@ -401,12 +500,7 @@ function MessageBoardContent({ visible, onDisplayedDateChange, targetDate }) {
   const openMessage = (messageId) => {
     if (isDateTransitioning) return;
     setSelectedMessageId(messageId);
-    setReadMessageIds((prev) => {
-      if (prev.has(messageId)) return prev;
-      const next = new Set(prev);
-      next.add(messageId);
-      return next;
-    });
+    markRead(messageId);
   };
 
   const setDate = (toOffset, direction) => {
@@ -430,15 +524,15 @@ function MessageBoardContent({ visible, onDisplayedDateChange, targetDate }) {
 
   const goNextDate = () => {
     if (!canGoNext) return;
-    setDate(currentDayOffset + 1, 'next');
+    setDate(currentDayOffset + 1, "next");
   };
 
   const goPrevDate = () => {
     if (!canGoPrev) return;
-    setDate(currentDayOffset - 1, 'prev');
+    setDate(currentDayOffset - 1, "prev");
   };
 
-  const renderCards = (messages, keyPrefix) => (
+  const renderCards = (messages, keyPrefix) =>
     messages.map((message) => (
       <MessageCard
         key={`${keyPrefix}-${message.id}`}
@@ -446,8 +540,7 @@ function MessageBoardContent({ visible, onDisplayedDateChange, targetDate }) {
         onOpen={openMessage}
         isRead={readMessageIds.has(message.id)}
       />
-    ))
-  );
+    ));
 
   const renderSnapshot = (messages, keyPrefix) => {
     if (messages.length === 0) {
@@ -463,24 +556,35 @@ function MessageBoardContent({ visible, onDisplayedDateChange, targetDate }) {
 
   return (
     <div
-      className={`message-board-screen${visible ? ' visible' : ''}${selectedMessage ? ' has-opened-message' : ''}`}
-      style={{ '--message-board-page-slide-ms': `${MESSAGE_PAGE_SLIDE_MS}ms` }}
+      className={`message-board-screen${visible ? " visible" : ""}${selectedMessage ? " has-opened-message" : ""}`}
+      style={{ "--message-board-page-slide-ms": `${MESSAGE_PAGE_SLIDE_MS}ms` }}
+      onKeyDown={(e) => {
+        if (e.key === "Escape" && (selectedMessage || tool || eraseConfirm)) {
+          e.preventDefault();
+          e.stopPropagation();
+          if (eraseConfirm) setEraseConfirm(false);
+          else if (tool) setTool(null);
+          else setSelectedMessageId(null);
+        }
+      }}
     >
       <div className="board-texture" />
       <div className="message-board-holder">
         <div className="message-board-viewport">
           <div className="message-board-canvas">
             {dateTransition ? (
-              <div className={`message-board-pages-track direction-${dateTransition.direction}`}>
+              <div
+                className={`message-board-pages-track direction-${dateTransition.direction}`}
+              >
                 <div className="message-board-page-snapshot">
-                  {dateTransition.direction === 'next'
-                    ? renderSnapshot(outgoingMessages, 'slide-out')
-                    : renderSnapshot(incomingMessages, 'slide-in')}
+                  {dateTransition.direction === "next"
+                    ? renderSnapshot(outgoingMessages, "slide-out")
+                    : renderSnapshot(incomingMessages, "slide-in")}
                 </div>
                 <div className="message-board-page-snapshot">
-                  {dateTransition.direction === 'next'
-                    ? renderSnapshot(incomingMessages, 'slide-in')
-                    : renderSnapshot(outgoingMessages, 'slide-out')}
+                  {dateTransition.direction === "next"
+                    ? renderSnapshot(incomingMessages, "slide-in")
+                    : renderSnapshot(outgoingMessages, "slide-out")}
                 </div>
               </div>
             ) : (
@@ -492,7 +596,7 @@ function MessageBoardContent({ visible, onDisplayedDateChange, targetDate }) {
         </div>
 
         <div
-          className={`channel-page-arrow channel-page-arrow-prev board-page-arrow${canGoPrev ? '' : ' is-disabled'}`}
+          className={`channel-page-arrow channel-page-arrow-prev board-page-arrow${canGoPrev ? "" : " is-disabled"}`}
           onClick={goPrevDate}
           role="button"
           aria-label="Previous message board day"
@@ -503,15 +607,22 @@ function MessageBoardContent({ visible, onDisplayedDateChange, targetDate }) {
             type="button"
             aria-label="Previous message board day"
           />
-          <button className="wii-track-btn-circle wii-track-btn-base wii-track-btn-no-shadow channel-page-circle" type="button" tabIndex={-1}>
+          <button
+            className="wii-track-btn-circle wii-track-btn-base wii-track-btn-no-shadow channel-page-circle"
+            type="button"
+            tabIndex={-1}
+          >
             <span className="wii-track-btn-icon">
-              <span className="wii-icon wii-icon-minus" aria-hidden="true"></span>
+              <span
+                className="wii-icon wii-icon-minus"
+                aria-hidden="true"
+              ></span>
             </span>
           </button>
         </div>
 
         <div
-          className={`channel-page-arrow channel-page-arrow-next board-page-arrow${canGoNext ? '' : ' is-disabled'}`}
+          className={`channel-page-arrow channel-page-arrow-next board-page-arrow${canGoNext ? "" : " is-disabled"}`}
           onClick={goNextDate}
           role="button"
           aria-label="Next message board day"
@@ -522,16 +633,57 @@ function MessageBoardContent({ visible, onDisplayedDateChange, targetDate }) {
             type="button"
             aria-label="Next message board day"
           />
-          <button className="wii-track-btn-circle wii-track-btn-base wii-track-btn-no-shadow channel-page-circle" type="button" tabIndex={-1}>
+          <button
+            className="wii-track-btn-circle wii-track-btn-base wii-track-btn-no-shadow channel-page-circle"
+            type="button"
+            tabIndex={-1}
+          >
             <span className="wii-track-btn-icon">
-              <span className="wii-icon wii-icon-plus" aria-hidden="true"></span>
+              <span
+                className="wii-icon wii-icon-plus"
+                aria-hidden="true"
+              ></span>
             </span>
           </button>
         </div>
       </div>
 
       {selectedMessage && (
-        <MessageMemo message={selectedMessage} onClose={() => setSelectedMessageId(null)} />
+        <MessageMemo
+          message={selectedMessage}
+          onClose={() => setSelectedMessageId(null)}
+          onReply={() => setTool({ reply: selectedMessage })}
+          onDelete={() => setEraseConfirm(true)}
+        />
+      )}
+      {tool && visible && (
+        <MessageTools
+          dateKey={toDateKey(displayedDate)}
+          reply={tool.reply}
+          onClose={() => setTool(null)}
+        />
+      )}
+      {eraseConfirm && selectedMessage && (
+        <SystemDialog
+          title="Erase letter"
+          onBack={() => setEraseConfirm(false)}
+          actions={
+            <>
+              <WiiButton
+                onClick={() => {
+                  deleteMessage(selectedMessage.id);
+                  setSelectedMessageId(null);
+                  setEraseConfirm(false);
+                }}
+              >
+                Yes
+              </WiiButton>
+              <WiiButton onClick={() => setEraseConfirm(false)}>No</WiiButton>
+            </>
+          }
+        >
+          <p>Erase this letter from the Message Board?</p>
+        </SystemDialog>
       )}
     </div>
   );

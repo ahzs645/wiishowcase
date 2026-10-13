@@ -1,18 +1,18 @@
-import { useState, useRef, useCallback, useEffect } from 'react';
-import { createConnection } from '../lib/WebRTCConnection';
+import { useState, useRef, useCallback, useEffect } from "react";
+import { createConnection } from "../lib/WebRTCConnection";
 
-const MAX_CONTROLLERS = 4;
+const MAX_CONTROLLERS = 3; // Local host is P1; companions are P2–P4.
 
 /**
  * React hook for managing multiple WebRTC P2P connections (host side).
- * Supports up to 4 simultaneous companions with pool-based ID assignment.
+ * Supports up to 3 simultaneous companions with pool-based ID assignment.
  *
  * @param {function} onMessage - called with (controllerId, msg) for each incoming message
  */
 export default function useMultiWebRTC(onMessage) {
   const [controllers, setControllers] = useState({});
   const connectionsRef = useRef({});
-  const availableIdsRef = useRef([0, 1, 2, 3]);
+  const availableIdsRef = useRef([0, 1, 2]);
   const onMessageRef = useRef(onMessage);
   onMessageRef.current = onMessage;
 
@@ -24,7 +24,7 @@ export default function useMultiWebRTC(onMessage) {
   }, []);
 
   const releaseId = useCallback((id) => {
-    availableIdsRef.current.push(id);
+    if (!availableIdsRef.current.includes(id)) availableIdsRef.current.push(id);
     availableIdsRef.current.sort();
     delete connectionsRef.current[id];
     setControllers((prev) => {
@@ -43,29 +43,32 @@ export default function useMultiWebRTC(onMessage) {
     const id = availableIdsRef.current.shift();
 
     const conn = createConnection({
-      role: 'host',
+      role: "host",
       onStateChange: (s) => {
-        if (s === 'connected') {
+        if (s === "connected" && connectionsRef.current[id] === conn) {
           setControllers((prev) => ({
             ...prev,
-            [id]: { ...prev[id], state: 'connected' },
+            [id]: { ...prev[id], state: "connected" },
           }));
         }
-        if (s === 'failed' || s === 'disconnected') {
-          releaseId(id);
+        if (s === "failed" || s === "disconnected") {
+          if (connectionsRef.current[id] === conn) releaseId(id);
         }
       },
-      onMessage: (msg) => onMessageRef.current(id, msg),
+      onMessage: (msg) => {
+        if (connectionsRef.current[id] === conn) onMessageRef.current(id, msg);
+      },
       onChannelOpen: () => {
+        if (connectionsRef.current[id] !== conn) return;
         // Send controller assignment to companion
-        conn.send({ type: 'welcome', controllerId: id });
+        conn.send({ type: "welcome", controllerId: id });
         setControllers((prev) => ({
           ...prev,
-          [id]: { ...prev[id], state: 'connected' },
+          [id]: { ...prev[id], state: "connected" },
         }));
       },
       onChannelClose: () => {
-        releaseId(id);
+        if (connectionsRef.current[id] === conn) releaseId(id);
       },
     });
 
@@ -74,7 +77,7 @@ export default function useMultiWebRTC(onMessage) {
     const offer = await conn.createOffer();
     setControllers((prev) => ({
       ...prev,
-      [id]: { state: 'waiting', offer },
+      [id]: { state: "waiting", offer },
     }));
 
     return { offer, controllerId: id };
@@ -92,10 +95,13 @@ export default function useMultiWebRTC(onMessage) {
   /**
    * Disconnect a single controller.
    */
-  const disconnectOne = useCallback((controllerId) => {
-    connectionsRef.current[controllerId]?.close();
-    releaseId(controllerId);
-  }, [releaseId]);
+  const disconnectOne = useCallback(
+    (controllerId) => {
+      connectionsRef.current[controllerId]?.close();
+      releaseId(controllerId);
+    },
+    [releaseId],
+  );
 
   /**
    * Disconnect all controllers.
@@ -105,12 +111,16 @@ export default function useMultiWebRTC(onMessage) {
       connectionsRef.current[id]?.close();
     });
     connectionsRef.current = {};
-    availableIdsRef.current = [0, 1, 2, 3];
+    availableIdsRef.current = [0, 1, 2];
     setControllers({});
   }, []);
 
+  const sendToControllers = useCallback((message) => {
+    Object.values(connectionsRef.current).forEach((conn) => conn.send(message));
+  }, []);
+
   const connectedCount = Object.values(controllers).filter(
-    (c) => c.state === 'connected'
+    (c) => c.state === "connected",
   ).length;
 
   return {
@@ -120,6 +130,7 @@ export default function useMultiWebRTC(onMessage) {
     disconnectOne,
     disconnectAll,
     connectedCount,
+    sendToControllers,
     availableSlots: MAX_CONTROLLERS - Object.keys(controllers).length,
   };
 }

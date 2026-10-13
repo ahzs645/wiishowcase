@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import WiiChannelRenderer, { fetchBundle } from './WiiChannelRenderer';
 import useWiiAspectMode from '../hooks/useWiiAspectMode';
+import useChannelSoundMode from '../hooks/useChannelSoundMode';
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -32,6 +33,7 @@ function getBundleAudio(url) {
 
 export default function ChannelSelection({ visible, channel, onBack, onStart, hasPrev, hasNext, onPrev, onNext }) {
   const audioRef = useRef(null);
+  useChannelSoundMode(audioRef);
   const audioMetaRef = useRef(null);
   // Creating the banner renderer (and unzipping its audio) blocks the main
   // thread long enough to drop frames of the menu's 0.25s zoom-in, and the

@@ -8,7 +8,7 @@ const CLOSE_HINT_STYLE = { marginTop: '8px' };
 
 /**
  * PairingScreen — shown on the host (desktop) to pair companions (phones).
- * Supports sequential pairing of up to 4 controllers.
+ * Supports sequential pairing of up to 3 remote controllers.
  */
 export default function PairingScreen({
   visible,
@@ -82,7 +82,7 @@ export default function PairingScreen({
 
         {connectedCount > 0 && (
           <p className="pairing-count">
-            {connectedCount}/4 remote{connectedCount !== 1 ? 's' : ''} connected
+            {connectedCount}/3 remote{connectedCount !== 1 ? 's' : ''} connected
           </p>
         )}
 
@@ -144,7 +144,7 @@ export default function PairingScreen({
                 Pair Another Remote
               </button>
             ) : (
-              <p className="pairing-hint">All 4 slots connected.</p>
+              <p className="pairing-hint">All 3 remote slots connected.</p>
             )}
             <p className="pairing-hint" style={CLOSE_HINT_STYLE}>
               You can close this dialog at any time.

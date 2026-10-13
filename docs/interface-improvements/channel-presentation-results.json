@@ -1,0 +1,98 @@
+[
+  {
+    "scenario": "normal",
+    "readyMs": 2034,
+    "selections": [
+      {
+        "channel": "forecast",
+        "canvasWidth": 811,
+        "dataUpdated": true
+      },
+      {
+        "channel": "news",
+        "canvasWidth": 811,
+        "dataUpdated": true
+      },
+      {
+        "channel": "shop",
+        "canvasWidth": 811,
+        "dataUpdated": true
+      }
+    ],
+    "applicationFetches": 0,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "scenario": "four-three",
+    "readyMs": 1614,
+    "selections": [
+      {
+        "channel": "forecast",
+        "canvasWidth": 608,
+        "dataUpdated": true
+      },
+      {
+        "channel": "news",
+        "canvasWidth": 608,
+        "dataUpdated": true
+      },
+      {
+        "channel": "shop",
+        "canvasWidth": 608,
+        "dataUpdated": true
+      }
+    ],
+    "applicationFetches": 0,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "scenario": "canvas-fallback",
+    "readyMs": 1426,
+    "selections": [
+      {
+        "channel": "forecast",
+        "canvasWidth": 811,
+        "dataUpdated": true
+      },
+      {
+        "channel": "news",
+        "canvasWidth": 811,
+        "dataUpdated": true
+      },
+      {
+        "channel": "shop",
+        "canvasWidth": 811,
+        "dataUpdated": true
+      }
+    ],
+    "applicationFetches": 0,
+    "errors": [],
+    "failed": []
+  },
+  {
+    "scenario": "slow",
+    "readyMs": 5054,
+    "selections": [
+      {
+        "channel": "forecast",
+        "canvasWidth": 811,
+        "dataUpdated": true
+      },
+      {
+        "channel": "news",
+        "canvasWidth": 811,
+        "dataUpdated": true
+      },
+      {
+        "channel": "shop",
+        "canvasWidth": 811,
+        "dataUpdated": true
+      }
+    ],
+    "applicationFetches": 0,
+    "errors": [],
+    "failed": []
+  }
+]
