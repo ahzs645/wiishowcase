@@ -19,7 +19,7 @@ const entries = results.captures.map((c) => ({
   baseline: { width: c.width, height: c.height, image: c.before },
   note:
     c.mode === "4:3"
-      ? "Matched 17:06 / Fri 03/01 and fixed native icon frames. Compare the visible card bounds, continuous page edge, finer background, curve, clock and footer. The reference has additional installed channels; their contents differ."
+      ? "Same date (Fri 03/01) and fixed native icon frames. The preserved version/reference show 17:06; the current US profile shows 5:06 PM. Compare card bounds, continuous page edge, curve, clock strokes, date font and footer. Installed channel contents differ."
       : "The widescreen source is an exact 16:9, 2560×1440 archived menu screenshot with a clock, date, SD button and message count. Time/date, channel inventory and animation phases differ. Capture settings and filtering are undocumented, so this supports layout and typography comparison without an exact pixel-fidelity claim.",
 }));
 await fs.writeFile(
@@ -48,6 +48,10 @@ html = html
   )
   .replaceAll("Wii sizing and typography", "Wii menu — corrected geometry")
   .replace(
+    "<h1>Wii menu — corrected geometry</h1>",
+    '<h1>Wii menu — corrected geometry</h1><p><a href="../menu-typography/typography-comparison.png">Enlarged clock/date comparisons · both aspect ratios</a> · <a href="../menu-typography.md">Typography details</a></p>',
+  )
+  .replace(
     "Online reference, previous implementation and refined sizing.",
     "Wii reference, preserved 3e96806 menu and corrected implementation.",
   )
@@ -63,7 +67,7 @@ html = html
   .replace("+(e.height===480?' · scaled from 720 lines':'')", "")
   .replace(
     "Its 720-line screenshots are scaled proportionally when comparing native sizes. Refined 480-line images are separate browser captures, with text bounds and pointer targets checked in each state.",
-    "Before and corrected images are separate captures at the same size. The 4:3 clock/date and native icon animation phases are aligned for comparison; this does not change live playback.",
+    "Before and corrected images are separate captures at the same size. Date and native icon animation phases are aligned for 4:3 comparison. The current US profile formats 17:06 as 5:06 PM; digits differ from the preserved version and reference.",
   )
   .replace(
     "Manual illustrations are small and sometimes cropped. Font metrics and some artwork still differ; these comparisons do not establish an exact pixel accuracy score.",

@@ -9,10 +9,12 @@ for (const name of [
   "interface-improvements",
   "interface-sizing",
   "menu-fidelity",
+  "menu-typography",
   "interface-audit.md",
   "interface-improvements.md",
   "interface-sizing.md",
   "menu-fidelity.md",
+  "menu-typography.md",
 ]) {
   const source = path.join(root, "docs", name);
   try {

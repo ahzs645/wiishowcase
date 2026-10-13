@@ -141,6 +141,7 @@ try {
         { timeout: 90000 },
       );
       await page.waitForTimeout(800);
+      await page.evaluate(() => document.fonts.ready);
       await page.mouse.move(width - 2, 2);
       await page.addStyleTag({
         content:
@@ -151,6 +152,15 @@ try {
         path: path.join(output, baseline ? before : image),
       });
       if (!baseline) {
+        check(
+          `${width}×${height}: bundled date font is loaded`,
+          await page.evaluate(() =>
+            [...document.fonts].some(
+              (face) =>
+                face.family === "Wii Menu Date" && face.status === "loaded",
+            ),
+          ),
+        );
         const geometry = await page.evaluate(interfaceGeometry);
         check(
           `${width}×${height}: idle controls and labels fit`,

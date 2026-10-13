@@ -954,12 +954,6 @@ body.wii-cursor-animated *::after {
 .message-board-screen .channel-page-circle.wii-track-btn-no-shadow {
   filter: drop-shadow(12px 12px 4px rgba(150, 150, 150, 0.72)) !important;
 }
-/* ---- Display Font (digital clock) ---- */
-@font-face {
-  font-family: 'Display';
-  src: url('/fonts/digital-7-mono.ttf');
-}
-
 /* ---- Menu Clock ---- */
 .menu-clock {
   left: 50%;
@@ -982,7 +976,6 @@ body.wii-cursor-animated *::after {
 }
 
 .menu-clock-time {
-  font-family: 'Display';
   font-size: clamp(80px, 16vh, 140px);
   color: #84868a;
 }

@@ -89,7 +89,7 @@ wii-channel-holder .wii-channel-holder-content {
   line-height: 1;
 }
 .menu-clock-below {
-  bottom: calc(40 * var(--system-scale));
+  bottom: calc(38 * var(--system-scale));
 }
 .menu-clock-date {
   font-size: calc(32 * var(--system-scale));
@@ -1279,11 +1279,11 @@ wii-channel-holder.wii-channel-holder {
 .menu-clock-digits {
   display: block;
   width: calc(var(--clock-width) * var(--system-scale));
-  height: calc(36 * var(--system-scale));
+  height: calc(35 * var(--system-scale));
   fill: #9b9d9e;
 }
 .menu-clock-date {
-  font-weight: 600;
+  font-weight: 700;
   color: #85878a;
 }
 .menu-sd-button {
@@ -1323,11 +1323,38 @@ wii-channel-holder.wii-channel-holder {
   left: calc(29 * var(--system-scale));
 }
 .menu-clock-date {
-  font-size: calc(35 * var(--system-scale));
-  letter-spacing: calc(0.5 * var(--system-scale));
+  font-size: calc(32 * var(--system-scale));
+  letter-spacing: 0;
 }
 .menu-clock-below {
   bottom: calc(38 * var(--system-scale));
+}
+
+/* A small OFL font subset gives the menu consistent Latin shapes on every OS.
+   This is an approximation of Rodin; it is scoped to the date and AM/PM label. */
+@font-face {
+  font-family: "Wii Menu Date";
+  src: url("/fonts/menu/mplus-1p-bold-latin.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+.menu-clock-date,
+.menu-clock-period {
+  font-family: "Wii Menu Date", sans-serif;
+  font-weight: 700;
+  font-synthesis: none;
+}
+.menu-clock-time {
+  position: relative;
+}
+.menu-clock-period {
+  position: absolute;
+  left: calc(100% + 16 * var(--system-scale));
+  bottom: calc(-5 * var(--system-scale));
+  font-size: calc(18 * var(--system-scale));
+  line-height: 1;
+  color: #9b9d9e;
 }
 wii-channel-holder.wii-channel-holder {
   background-image: repeating-linear-gradient(

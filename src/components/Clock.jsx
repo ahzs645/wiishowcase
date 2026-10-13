@@ -1,21 +1,17 @@
 import { useState, useEffect } from "react";
 import { useSystemSetting } from "../lib/systemState";
+import { formatMenuTime } from "../lib/menuClock";
 
 const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
-function formatTime(date) {
-  const hour = date.getHours();
-  const min = String(date.getMinutes()).padStart(2, "0");
-  return `${hour}:${min}`;
-}
 const SEGMENTS = {
-  a: "M4 0h15l3 2.5-3 2.5H4L1 2.5Z",
-  b: "M20.5 4 23 7v7l-2.5 3-2.5-3V7Z",
-  c: "M20.5 20 23 23v7l-2.5 3-2.5-3v-7Z",
-  d: "M4 31h15l3 2.5-3 2.5H4l-3-2.5Z",
-  e: "M2.5 20 5 23v7l-2.5 3L0 30v-7Z",
-  f: "M2.5 4 5 7v7l-2.5 3L0 14V7Z",
-  g: "M4 15.5h15l3 2.5-3 2.5H4L1 18Z",
+  a: "M4 0h14l3 2.5-3 2.5H4L1 2.5Z",
+  b: "M20 4 22 7v7l-2 3-2-3V7Z",
+  c: "M20 20 22 23v7l-2 3-2-3v-7Z",
+  d: "M4 31h14l3 2.5-3 2.5H4l-3-2.5Z",
+  e: "M2 20 4 23v7l-2 3L0 30v-7Z",
+  f: "M2 4 4 7v7l-2 3L0 14V7Z",
+  g: "M4 15.5h14l3 2.5-3 2.5H4L1 18Z",
 };
 const DIGITS = [
   "abcdef",
@@ -53,7 +49,7 @@ function ClockDigits({ time }) {
                 <circle cx="6.5" cy="26" r="2.5" />
               </>
             ) : character === "1" ? (
-              <path d="M11.5 0 14 3v11l-2.5 3L9 14V3ZM11.5 19 14 22v11l-2.5 3L9 33V22Z" />
+              <path d="M11 0 13 3v11l-2 3-2-3V3ZM11 19 13 22v11l-2 3-2-3V22Z" />
             ) : (
               [...DIGITS[Number(character)]].map((segment) => (
                 <path key={segment} d={SEGMENTS[segment]} />
@@ -87,17 +83,23 @@ export function useDateTime() {
 
   const adjusted = new Date(now.getTime() + offset);
   return {
-    time: formatTime(adjusted),
+    ...formatMenuTime(adjusted, country),
     date: formatMenuDate(adjusted, country),
   };
 }
 
-export function ClockTime({ time }) {
+export function ClockTime({ time, period = "" }) {
+  const label = period ? `${time} ${period}` : time;
   return (
     <div className="menu-clock menu-clock-above">
-      <div className="menu-clock-time" role="timer" aria-label={time}>
-        <span className="system-visually-hidden">{time}</span>
+      <div className="menu-clock-time" role="timer" aria-label={label}>
+        <span className="system-visually-hidden">{label}</span>
         <ClockDigits time={time} />
+        {period && (
+          <span className="menu-clock-period" aria-hidden="true">
+            {period}
+          </span>
+        )}
       </div>
     </div>
   );

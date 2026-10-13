@@ -31,24 +31,24 @@
         "stride": 536,
         "clip": "path(\"M 0 0 H 640 V 347 H 539.52 C 491.904 347 468.096 398 420.48 398 H 219.52 C 171.904 398 148.096 347 100.48 347 H 0 Z\")",
         "clock": {
-          "x": 258,
+          "x": 272,
           "y": 350,
-          "width": 124,
-          "height": 36,
+          "width": 96,
+          "height": 35,
           "top": 350,
-          "right": 382,
-          "bottom": 386,
-          "left": 258
+          "right": 368,
+          "bottom": 385,
+          "left": 272
         },
         "date": {
-          "x": 246.7265625,
-          "y": 403.5,
-          "width": 146.546875,
-          "height": 38.5,
-          "top": 403.5,
-          "right": 393.2734375,
+          "x": 243.2578125,
+          "y": 406.8125,
+          "width": 153.484375,
+          "height": 35.1875,
+          "top": 406.8125,
+          "right": 396.7421875,
           "bottom": 442,
-          "left": 246.7265625
+          "left": 243.2578125
         }
       },
       "reference": {
@@ -73,7 +73,7 @@
         "height": 480,
         "image": "before/menu-640x480.png"
       },
-      "note": "Matched 17:06 / Fri 03/01 and fixed native icon frames. Compare the visible card bounds, continuous page edge, finer background, curve, clock and footer. The reference has additional installed channels; their contents differ."
+      "note": "Same date (Fri 03/01) and fixed native icon frames. The preserved version/reference show 17:06; the current US profile shows 5:06 PM. Compare card bounds, continuous page edge, curve, clock strokes, date font and footer. Installed channel contents differ."
     },
     {
       "mode": "16:9",
@@ -105,24 +105,24 @@
         "stride": 744,
         "clip": "path(\"M 0 0 H 854 V 347 H 719.922 C 656.384 347 624.616 398 561.078 398 H 292.922 C 229.384 398 197.616 347 134.078 347 H 0 Z\")",
         "clock": {
-          "x": 365,
+          "x": 379,
           "y": 350,
-          "width": 124,
-          "height": 36,
+          "width": 96,
+          "height": 35,
           "top": 350,
-          "right": 489,
-          "bottom": 386,
-          "left": 365
+          "right": 475,
+          "bottom": 385,
+          "left": 379
         },
         "date": {
-          "x": 353.7265625,
-          "y": 403.5,
-          "width": 146.546875,
-          "height": 38.5,
-          "top": 403.5,
-          "right": 500.2734375,
+          "x": 350.2578125,
+          "y": 406.8125,
+          "width": 153.484375,
+          "height": 35.1875,
+          "top": 406.8125,
+          "right": 503.7421875,
           "bottom": 442,
-          "left": 353.7265625
+          "left": 350.2578125
         }
       },
       "reference": {
@@ -179,24 +179,24 @@
         "stride": 804,
         "clip": "path(\"M 0 0 H 960 V 520.5 H 809.28 C 737.856 520.5 702.144 597 630.72 597 H 329.28 C 257.856 597 222.144 520.5 150.72 520.5 H 0 Z\")",
         "clock": {
-          "x": 387,
+          "x": 408,
           "y": 525,
-          "width": 186,
-          "height": 54,
+          "width": 144,
+          "height": 52.5,
           "top": 525,
-          "right": 573,
-          "bottom": 579,
-          "left": 387
+          "right": 552,
+          "bottom": 577.5,
+          "left": 408
         },
         "date": {
-          "x": 370.09375,
-          "y": 605.25,
-          "width": 219.8125,
-          "height": 57.75,
-          "top": 605.25,
-          "right": 589.90625,
+          "x": 364.890625,
+          "y": 610.203125,
+          "width": 230.21875,
+          "height": 52.796875,
+          "top": 610.203125,
+          "right": 595.109375,
           "bottom": 663,
-          "left": 370.09375
+          "left": 364.890625
         }
       },
       "reference": {
@@ -221,7 +221,7 @@
         "height": 720,
         "image": "before/menu-960x720.png"
       },
-      "note": "Matched 17:06 / Fri 03/01 and fixed native icon frames. Compare the visible card bounds, continuous page edge, finer background, curve, clock and footer. The reference has additional installed channels; their contents differ."
+      "note": "Same date (Fri 03/01) and fixed native icon frames. The preserved version/reference show 17:06; the current US profile shows 5:06 PM. Compare card bounds, continuous page edge, curve, clock strokes, date font and footer. Installed channel contents differ."
     },
     {
       "mode": "16:9",
@@ -253,24 +253,24 @@
         "stride": 1116,
         "clip": "path(\"M 0 0 H 1280 V 520.5 H 1079.04 C 983.808 520.5 936.192 597 840.96 597 H 439.04 C 343.808 597 296.192 520.5 200.96 520.5 H 0 Z\")",
         "clock": {
-          "x": 547,
+          "x": 568,
           "y": 525,
-          "width": 186,
-          "height": 54,
+          "width": 144,
+          "height": 52.5,
           "top": 525,
-          "right": 733,
-          "bottom": 579,
-          "left": 547
+          "right": 712,
+          "bottom": 577.5,
+          "left": 568
         },
         "date": {
-          "x": 530.09375,
-          "y": 605.25,
-          "width": 219.8125,
-          "height": 57.75,
-          "top": 605.25,
-          "right": 749.90625,
+          "x": 524.890625,
+          "y": 610.203125,
+          "width": 230.21875,
+          "height": 52.796875,
+          "top": 610.203125,
+          "right": 755.109375,
           "bottom": 663,
-          "left": 530.09375
+          "left": 524.890625
         }
       },
       "reference": {

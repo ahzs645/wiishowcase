@@ -10,8 +10,9 @@ a shallow 4:3 curve, undersized footer circles and a different LCD digit style.
 [wide comparison](menu-fidelity/menu-wide-comparison.png).
 
 The previous implementation is preserved at **3e96806**. Before and corrected
-captures use the same viewport, **17:06 / Friday 1 March**, channel inventory and
-native icon frames. The date now pads month/day as the Wii does. The Mii logo
+captures use the same viewport, instant (**17:06 / Friday 1 March**), channel
+inventory and native icon frames. The current US profile renders that instant as
+**5:06 PM**. The date pads month/day as in the 4:3 reference. The Mii logo
 appears late in its animation: its alpha keys fade it in at frames 380–410.
 Comparison captures use frame 430, while Photo/Shop use frame 180 and Disc uses
 frame 0. Live playback remains animated. One local unread memo supplies the
@@ -29,8 +30,10 @@ reference-style unread badge; reading it clears the badge.
   path and static border share one geometry; animated icon canvases use no filter.
 - Background lines follow the 480-line scale, replacing the coarse fixed-size
   bands. The footer circles are larger and positioned higher.
-- The clock uses recreated upright seven-segment shapes with round colon dots.
-  The date is padded, wider and heavier. Proprietary date-font metrics still differ.
+- The clock uses recreated upright seven-segment shapes with round colon dots
+  and finer vertical strokes. The US profile has a separate AM/PM label. The date
+  uses a small bundled M PLUS 1p Bold subset at 32 logical units; original Rodin
+  shapes still differ. [Typography evidence](menu-typography.md).
 - The SD shortcut has card artwork instead of a large text label. Mail shows a
   real local unread count. Idle move/page helpers no longer occupy the normal
   footer; Move channels appears on hover/focus and while moving, and the page
@@ -100,7 +103,7 @@ two archived PNGs decode to identical pixels.
 
 This source includes the clock, date, SD shortcut, message count and adjacent
 channel column. Its clock reads **12:59 AM / Tue 1/29**, whereas the preserved
-browser fixture reads **17:06 / Fri 03/01**. Channel inventory and icon animation
+browser fixture reads **5:06 PM / Fri 03/01**. Channel inventory and icon animation
 phases also differ. Hardware/emulator, internal rendering resolution and filtering
 are undocumented; a larger file does not establish more native texture detail.
 Use the overlay to inspect proportions and font shapes, accounting for these state

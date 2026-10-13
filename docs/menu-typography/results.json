@@ -1,0 +1,261 @@
+{
+  "checks": [
+    "United States: 0:0 formats as 12:00 AM",
+    "United States: 12:0 formats as 12:00 PM",
+    "United States: 23:59 formats as 11:59 PM",
+    "United Kingdom: 0:0 formats as 0:00",
+    "United Kingdom: 17:6 formats as 17:06",
+    "640×480: real bundled font loaded",
+    "640×480: US midnight label rendered",
+    "640×480: proportional date and clock sizing",
+    "640×480: AM label fits and stays beside centered digits",
+    "640×480: date uses the bundled bold face without synthetic weight",
+    "640×480: noon transition updates the visible period",
+    "640×480: UK profile retains 24-hour clock without period",
+    "854×480: real bundled font loaded",
+    "854×480: US midnight label rendered",
+    "854×480: proportional date and clock sizing",
+    "854×480: AM label fits and stays beside centered digits",
+    "854×480: date uses the bundled bold face without synthetic weight",
+    "854×480: noon transition updates the visible period",
+    "854×480: UK profile retains 24-hour clock without period",
+    "960×720: real bundled font loaded",
+    "960×720: US midnight label rendered",
+    "960×720: proportional date and clock sizing",
+    "960×720: AM label fits and stays beside centered digits",
+    "960×720: date uses the bundled bold face without synthetic weight",
+    "960×720: noon transition updates the visible period",
+    "960×720: UK profile retains 24-hour clock without period",
+    "1280×720: real bundled font loaded",
+    "1280×720: US midnight label rendered",
+    "1280×720: proportional date and clock sizing",
+    "1280×720: AM label fits and stays beside centered digits",
+    "1280×720: date uses the bundled bold face without synthetic weight",
+    "1280×720: noon transition updates the visible period",
+    "1280×720: UK profile retains 24-hour clock without period",
+    "No browser errors or missing assets",
+    "Font served successfully under the deployed base path"
+  ],
+  "specimens": [
+    {
+      "width": 640,
+      "height": 480,
+      "mode": "4:3",
+      "image": "specimen-640x480.png",
+      "time": "17:06",
+      "period": "",
+      "date": "Fri 03/01",
+      "geometry": {
+        "date": {
+          "x": 236.984375,
+          "y": 406.8125,
+          "width": 166.03125,
+          "height": 35.1875,
+          "top": 406.8125,
+          "right": 403.015625,
+          "bottom": 442,
+          "left": 236.984375
+        },
+        "digits": {
+          "x": 258,
+          "y": 350,
+          "width": 124,
+          "height": 35,
+          "top": 350,
+          "right": 382,
+          "bottom": 385,
+          "left": 258
+        },
+        "period": {
+          "x": 398,
+          "y": 372,
+          "width": 28.6875,
+          "height": 18,
+          "top": 372,
+          "right": 426.6875,
+          "bottom": 390,
+          "left": 398
+        },
+        "size": 32,
+        "family": "\"Wii Menu Date\", sans-serif",
+        "weight": "700",
+        "synthesis": "none"
+      },
+      "scope": "Controlled ClockTime/ClockDate components with source-matched text; not a production menu state."
+    },
+    {
+      "width": 854,
+      "height": 480,
+      "mode": "16:9",
+      "image": "specimen-854x480.png",
+      "time": "12:59",
+      "period": "AM",
+      "date": "Tue 1/29",
+      "geometry": {
+        "date": {
+          "x": 343.984375,
+          "y": 406.8125,
+          "width": 166.03125,
+          "height": 35.1875,
+          "top": 406.8125,
+          "right": 510.015625,
+          "bottom": 442,
+          "left": 343.984375
+        },
+        "digits": {
+          "x": 365,
+          "y": 350,
+          "width": 124,
+          "height": 35,
+          "top": 350,
+          "right": 489,
+          "bottom": 385,
+          "left": 365
+        },
+        "period": {
+          "x": 505,
+          "y": 372,
+          "width": 28.6875,
+          "height": 18,
+          "top": 372,
+          "right": 533.6875,
+          "bottom": 390,
+          "left": 505
+        },
+        "size": 32,
+        "family": "\"Wii Menu Date\", sans-serif",
+        "weight": "700",
+        "synthesis": "none"
+      },
+      "scope": "Controlled ClockTime/ClockDate components with source-matched text; not a production menu state."
+    },
+    {
+      "width": 960,
+      "height": 720,
+      "mode": "4:3",
+      "image": "specimen-960x720.png",
+      "time": "17:06",
+      "period": "",
+      "date": "Fri 03/01",
+      "geometry": {
+        "date": {
+          "x": 355.484375,
+          "y": 610.203125,
+          "width": 249.03125,
+          "height": 52.796875,
+          "top": 610.203125,
+          "right": 604.515625,
+          "bottom": 663,
+          "left": 355.484375
+        },
+        "digits": {
+          "x": 387,
+          "y": 525,
+          "width": 186,
+          "height": 52.5,
+          "top": 525,
+          "right": 573,
+          "bottom": 577.5,
+          "left": 387
+        },
+        "period": {
+          "x": 597,
+          "y": 558,
+          "width": 43.015625,
+          "height": 27,
+          "top": 558,
+          "right": 640.015625,
+          "bottom": 585,
+          "left": 597
+        },
+        "size": 48,
+        "family": "\"Wii Menu Date\", sans-serif",
+        "weight": "700",
+        "synthesis": "none"
+      },
+      "scope": "Controlled ClockTime/ClockDate components with source-matched text; not a production menu state."
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "mode": "16:9",
+      "image": "specimen-1280x720.png",
+      "time": "12:59",
+      "period": "AM",
+      "date": "Tue 1/29",
+      "geometry": {
+        "date": {
+          "x": 515.484375,
+          "y": 610.203125,
+          "width": 249.03125,
+          "height": 52.796875,
+          "top": 610.203125,
+          "right": 764.515625,
+          "bottom": 663,
+          "left": 515.484375
+        },
+        "digits": {
+          "x": 547,
+          "y": 525,
+          "width": 186,
+          "height": 52.5,
+          "top": 525,
+          "right": 733,
+          "bottom": 577.5,
+          "left": 547
+        },
+        "period": {
+          "x": 757,
+          "y": 558,
+          "width": 43.015625,
+          "height": 27,
+          "top": 558,
+          "right": 800.015625,
+          "bottom": 585,
+          "left": 757
+        },
+        "size": 48,
+        "family": "\"Wii Menu Date\", sans-serif",
+        "weight": "700",
+        "synthesis": "none"
+      },
+      "scope": "Controlled ClockTime/ClockDate components with source-matched text; not a production menu state."
+    }
+  ],
+  "errors": [],
+  "missing": [],
+  "fontRequests": [
+    {
+      "url": "http://localhost:4955/wiishowcase/fonts/menu/mplus-1p-bold-latin.woff",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:4955/wiishowcase/fonts/menu/mplus-1p-bold-latin.woff",
+      "status": 304
+    },
+    {
+      "url": "http://localhost:4955/wiishowcase/fonts/menu/mplus-1p-bold-latin.woff",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:4955/wiishowcase/fonts/menu/mplus-1p-bold-latin.woff",
+      "status": 304
+    },
+    {
+      "url": "http://localhost:4955/wiishowcase/fonts/menu/mplus-1p-bold-latin.woff",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:4955/wiishowcase/fonts/menu/mplus-1p-bold-latin.woff",
+      "status": 304
+    },
+    {
+      "url": "http://localhost:4955/wiishowcase/fonts/menu/mplus-1p-bold-latin.woff",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:4955/wiishowcase/fonts/menu/mplus-1p-bold-latin.woff",
+      "status": 304
+    }
+  ]
+}
