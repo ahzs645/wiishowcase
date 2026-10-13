@@ -20,7 +20,7 @@ const entries = results.captures.map((c) => ({
   note:
     c.mode === "4:3"
       ? "Matched 17:06 / Fri 03/01 and fixed native icon frames. Compare the visible card bounds, continuous page edge, finer background, curve, clock and footer. The reference has additional installed channels; their contents differ."
-      : "The widescreen source is a small, cropped promotional image with another channel lineup and footer label. This establishes grid coverage and proportions; precise wide pixel fidelity remains unverified.",
+      : "The widescreen source is an exact 16:9, 2560×1440 archived menu screenshot with a clock, date, SD button and message count. Time/date, channel inventory and animation phases differ. Capture settings and filtering are undocumented, so this supports layout and typography comparison without an exact pixel-fidelity claim.",
 }));
 await fs.writeFile(
   path.join(output, "comparison.json"),
@@ -67,7 +67,7 @@ html = html
   )
   .replace(
     "Manual illustrations are small and sometimes cropped. Font metrics and some artwork still differ; these comparisons do not establish an exact pixel accuracy score.",
-    "The 4:3 reference is a 640×476 capture with a small crop. The widescreen source is a low-resolution promotional image. Channel lineups and date-font metrics differ; this is not an overall pixel accuracy score.",
+    "The 4:3 reference is a 640×476 capture with a small crop. The widescreen reference is a 2560×1440 archived screenshot with undocumented capture settings. Time/date, channel lineups and font metrics differ; this is not an overall pixel accuracy score.",
   )
   .replace(
     'href="../interface-sizing.md">Sizing and validation report',

@@ -113,7 +113,7 @@
           "left": 353.7265625
         }
       },
-      "reference": "nintendo-menu-2"
+      "reference": "mariowiki-menu-wide"
     },
     {
       "mode": "4:3",
@@ -217,7 +217,7 @@
           "left": 530.09375
         }
       },
-      "reference": "nintendo-menu-2"
+      "reference": "mariowiki-menu-wide"
     }
   ],
   "checks": [

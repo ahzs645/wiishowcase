@@ -90,8 +90,21 @@ not counted as shell geometry failures. Source capture filtering and date-font
 shapes still differ. Empty-slot texture and some icon details need a separate
 asset/renderer comparison.
 
-The widescreen source is a small, cropped promotional screenshot with a different
-footer label. It supports grid coverage and proportions, not strict pixel scoring.
-Precise widescreen pixel fidelity remains unverified. Full applications and
+The widescreen comparison now uses a **2560×1440, exact 16:9 screenshot** from
+[Super Mario Wiki's file history](https://www.mariowiki.com/File:Wii_Systemmenu.png#filehistory),
+replacing the 256×150 promotional reference in this viewer. The original image is
+retained without cropping or stretching, and its URL, dimensions and SHA-256 are
+recorded in the [source manifest](interface-audit/references.json). SWFlash uploaded
+it on 28 January 2013; DogsRNice losslessly optimized it on 18 November 2017. The
+two archived PNGs decode to identical pixels.
+
+This source includes the clock, date, SD shortcut, message count and adjacent
+channel column. Its clock reads **12:59 AM / Tue 1/29**, whereas the preserved
+browser fixture reads **17:06 / Fri 03/01**. Channel inventory and icon animation
+phases also differ. Hardware/emulator, internal rendering resolution and filtering
+are undocumented; a larger file does not establish more native texture detail.
+Use the overlay to inspect proportions and font shapes, accounting for these state
+differences. Precise widescreen pixel fidelity remains unverified. The earlier
+Nintendo source remains in the audit catalog. Full applications and
 hardware/service behavior retain the existing boundaries in the
 [implementation report](interface-improvements.md).

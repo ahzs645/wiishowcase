@@ -126,19 +126,19 @@
         }
       },
       "reference": {
-        "id": "nintendo-menu-2",
-        "title": "Wii Menu, cropped widescreen",
+        "id": "mariowiki-menu-wide",
+        "title": "Wii Menu, archived 16:9 screenshot",
         "mode": "16:9",
-        "kind": "Nintendo screenshot",
-        "image": "references/nintendo-menu-2.png",
-        "sourceURL": "https://www.nintendo.com/en-gb/Wii/Wii-Channels/Wii-Menu/Wii-Menu-749371.html",
-        "imageURL": "https://www.nintendo.com/eu/media/images/06_screenshots/systems_4/wii_10/wii_channels/wii_menu/CI_Wii_Wii_Menu_02_UK_CMM_small.jpg",
+        "kind": "Community screenshot (capture settings undocumented)",
+        "image": "references/mariowiki-menu-wide.png",
+        "sourceURL": "https://www.mariowiki.com/File:Wii_Systemmenu.png#filehistory",
+        "imageURL": "https://www.mariowiki.com/images/archive/c/ca/20251207024246%21Wii_Systemmenu.png?0fd5d",
         "originalSize": [
-          256,
-          150
+          2560,
+          1440
         ],
-        "originalSHA256": "2b07ad23081b3389e03f677cd78bc3f947f2f8a4e389b7be4d635f0991d464c2",
-        "notes": "Official low-resolution, slightly cropped widescreen screenshot (256×150). Preserve its supplied aspect. Use it for layout/coverage; avoid fine texture or strict pixel scoring."
+        "originalSHA256": "321a12e738195ac812a1d0b3a55ec3d83735fe0e91349c64cbeeace3084bf965",
+        "notes": "Exact 16:9 image from Super Mario Wiki file history: uploaded by SWFlash on 28 January 2013 and losslessly optimized by DogsRNice on 18 November 2017. Both archived versions decode to identical pixels. Full menu includes clock, date, SD shortcut, message count and adjacent channel column. Capture hardware/emulator, internal render resolution and filtering are undocumented; file dimensions do not establish native detail. Time (12:59 AM), date (Tue 1/29), channel inventory and animation phases differ from the browser fixture. Preserve supplied aspect without cropping or stretching."
       },
       "id": "menu-settled",
       "title": "Wii Menu",
@@ -147,7 +147,7 @@
         "height": 480,
         "image": "before/menu-854x480.png"
       },
-      "note": "The widescreen source is a small, cropped promotional image with another channel lineup and footer label. This establishes grid coverage and proportions; precise wide pixel fidelity remains unverified."
+      "note": "The widescreen source is an exact 16:9, 2560×1440 archived menu screenshot with a clock, date, SD button and message count. Time/date, channel inventory and animation phases differ. Capture settings and filtering are undocumented, so this supports layout and typography comparison without an exact pixel-fidelity claim."
     },
     {
       "mode": "4:3",
@@ -274,19 +274,19 @@
         }
       },
       "reference": {
-        "id": "nintendo-menu-2",
-        "title": "Wii Menu, cropped widescreen",
+        "id": "mariowiki-menu-wide",
+        "title": "Wii Menu, archived 16:9 screenshot",
         "mode": "16:9",
-        "kind": "Nintendo screenshot",
-        "image": "references/nintendo-menu-2.png",
-        "sourceURL": "https://www.nintendo.com/en-gb/Wii/Wii-Channels/Wii-Menu/Wii-Menu-749371.html",
-        "imageURL": "https://www.nintendo.com/eu/media/images/06_screenshots/systems_4/wii_10/wii_channels/wii_menu/CI_Wii_Wii_Menu_02_UK_CMM_small.jpg",
+        "kind": "Community screenshot (capture settings undocumented)",
+        "image": "references/mariowiki-menu-wide.png",
+        "sourceURL": "https://www.mariowiki.com/File:Wii_Systemmenu.png#filehistory",
+        "imageURL": "https://www.mariowiki.com/images/archive/c/ca/20251207024246%21Wii_Systemmenu.png?0fd5d",
         "originalSize": [
-          256,
-          150
+          2560,
+          1440
         ],
-        "originalSHA256": "2b07ad23081b3389e03f677cd78bc3f947f2f8a4e389b7be4d635f0991d464c2",
-        "notes": "Official low-resolution, slightly cropped widescreen screenshot (256×150). Preserve its supplied aspect. Use it for layout/coverage; avoid fine texture or strict pixel scoring."
+        "originalSHA256": "321a12e738195ac812a1d0b3a55ec3d83735fe0e91349c64cbeeace3084bf965",
+        "notes": "Exact 16:9 image from Super Mario Wiki file history: uploaded by SWFlash on 28 January 2013 and losslessly optimized by DogsRNice on 18 November 2017. Both archived versions decode to identical pixels. Full menu includes clock, date, SD shortcut, message count and adjacent channel column. Capture hardware/emulator, internal render resolution and filtering are undocumented; file dimensions do not establish native detail. Time (12:59 AM), date (Tue 1/29), channel inventory and animation phases differ from the browser fixture. Preserve supplied aspect without cropping or stretching."
       },
       "id": "menu-settled",
       "title": "Wii Menu",
@@ -295,7 +295,7 @@
         "height": 720,
         "image": "before/menu-1280x720.png"
       },
-      "note": "The widescreen source is a small, cropped promotional image with another channel lineup and footer label. This establishes grid coverage and proportions; precise wide pixel fidelity remains unverified."
+      "note": "The widescreen source is an exact 16:9, 2560×1440 archived menu screenshot with a clock, date, SD button and message count. Time/date, channel inventory and animation phases differ. Capture settings and filtering are undocumented, so this supports layout and typography comparison without an exact pixel-fidelity claim."
     }
   ]
 }

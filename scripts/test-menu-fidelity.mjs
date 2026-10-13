@@ -287,7 +287,7 @@ try {
           image,
           before,
           metrics,
-          reference: mode === "4:3" ? "copetti-home" : "nintendo-menu-2",
+          reference: mode === "4:3" ? "copetti-home" : "mariowiki-menu-wide",
         });
       }
       await context.close();
