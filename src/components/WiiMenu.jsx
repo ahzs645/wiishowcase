@@ -16,8 +16,9 @@ import ForecastChannelContent from "./channels/ForecastChannelContent";
 import { NATIVE_APPLICATION_PREVIEW } from "../lib/nativeChannelApplications";
 import { CHANNEL_PRESENTATION_PREVIEW } from "../lib/channelPresentation";
 import mailIcon from "../../Wii.css/assets/track-btn/icon-email.svg";
+import { MENU_SLOTS_PER_PAGE } from "../layout/menu";
 
-const CHANNELS_PER_PAGE = 12;
+const CHANNELS_PER_PAGE = MENU_SLOTS_PER_PAGE;
 const MAIL_OPEN_ANIM_MS = 520;
 const MAIL_CLOSE_DELAY_MS = 520;
 

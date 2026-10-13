@@ -1,0 +1,15 @@
+{
+  "screens": 30,
+  "filter": true,
+  "localLinksChecked": 42,
+  "broken": [],
+  "errors": [],
+  "mobilePageFits": true,
+  "menuChecks": 57,
+  "typographyChecks": 60,
+  "systemChecks": 82,
+  "systemSizingCases": 120,
+  "systemErrors": [],
+  "systemMissingAssets": [],
+  "systemSizingFailures": 0
+}

@@ -33,6 +33,9 @@ jobs:
 
       - run: npm ci
 
+      - name: Check maintained layout reference
+        run: npm run check:layout
+
       - name: Fetch Wii.css package
         run: npm run fetch:wii-css
 

@@ -1,0 +1,267 @@
+{
+  "id": "retail-wii-4x",
+  "revision": 1,
+  "target": "Retail Wii 4.x shell; 4.3 U/E behavior baseline",
+  "coordinates": {
+    "height": 480,
+    "origin": "Top left of the fitted Wii frame, not the browser viewport",
+    "scaling": "One unit = fitted frame height / 480 CSS pixels",
+    "modes": {
+      "4:3": {
+        "width": 640
+      },
+      "16:9": {
+        "width": 853.3333333333334
+      }
+    },
+    "captureSizes": [
+      [
+        640,
+        480
+      ],
+      [
+        854,
+        480
+      ],
+      [
+        960,
+        720
+      ],
+      [
+        1280,
+        720
+      ]
+    ],
+    "note": "854 is a rounded capture width. Native 608/832 × 456 projection and VI output are separate coordinate spaces; see research.json."
+  },
+  "grid": {
+    "columns": 4,
+    "rows": 3,
+    "pages": 4
+  },
+  "tokens": {
+    "common": {
+      "cardWidth": 128,
+      "columnGap": 6,
+      "rowGap": 6,
+      "gridInsetCorrection": -2,
+      "gridTop": 37,
+      "holderHeight": 398,
+      "arrowTop": 182,
+      "arrowSide": 29,
+      "arrowSize": 25,
+      "clockTop": 350,
+      "clockDigitHeight": 35,
+      "dateBottom": 38,
+      "dateFontSize": 32,
+      "dateFontWeight": 700,
+      "periodFontSize": 18,
+      "periodGap": 16,
+      "periodBottom": -5,
+      "footerBottom": 29,
+      "footerButtonSize": 86,
+      "footerLeftShift": -3,
+      "sdLeft": 142,
+      "sdBottom": 37,
+      "sdWidth": 33,
+      "sdHeight": 44,
+      "unreadLeftPercent": 45.5,
+      "unreadTopPercent": 65,
+      "unreadFontSize": 16,
+      "unreadIconShift": -5,
+      "wiiLogoSize": 20
+    },
+    "modes": {
+      "4:3": {},
+      "16:9": {
+        "cardWidth": 176,
+        "columnGap": 4,
+        "rowGap": 4,
+        "gridInsetCorrection": 0,
+        "gridTop": 39,
+        "holderHeight": 399,
+        "arrowTop": 184,
+        "arrowSide": 30,
+        "footerBottom": 23,
+        "footerLeftShift": 1,
+        "sdCenterPercent": 20.5529
+      }
+    }
+  },
+  "curve": {
+    "scaleHeight": 398,
+    "depth": 51,
+    "flatWidthFraction": 0.157,
+    "bendWidthFraction": 0.186,
+    "controlNear": 0.4,
+    "controlFar": 0.6,
+    "strokeWidth": 1.5,
+    "strokeColor": "#42bfe7",
+    "note": "Scale stays holder height / 398 in both modes, including the 399-unit wide holder. Clip and stroke share one path."
+  },
+  "clock": {
+    "cells": 5,
+    "digitAdvance": 28,
+    "colonAdvance": 16,
+    "trailingTrim": 4,
+    "viewBoxHeight": 36,
+    "colonX": 6.5,
+    "colonY": [
+      10,
+      26
+    ],
+    "colonRadius": 2.5,
+    "fontFamily": "Wii Menu Date",
+    "fontAsset": "public/fonts/menu/mplus-1p-bold-latin.woff",
+    "fontStatus": "OFL M PLUS subset approximates Rodin; segmented time glyphs are recreated SVG artwork.",
+    "fallbackRegion": "E",
+    "countryRegions": {
+      "United States": "U",
+      "Canada": "U",
+      "Japan": "J"
+    },
+    "regions": {
+      "U": {
+        "hourCycle": 12,
+        "zeroHour": 12,
+        "periodSide": "after",
+        "dateOrder": "month/day",
+        "datePadding": false
+      },
+      "E": {
+        "hourCycle": 24,
+        "zeroHour": 0,
+        "periodSide": null,
+        "dateOrder": "day/month",
+        "datePadding": true
+      },
+      "J": {
+        "hourCycle": 12,
+        "zeroHour": 0,
+        "periodSide": "before",
+        "dateOrder": "day/month",
+        "datePadding": true
+      },
+      "K": {
+        "hourCycle": 12,
+        "zeroHour": 12,
+        "periodSide": "before",
+        "dateOrder": "day/month",
+        "datePadding": true
+      }
+    },
+    "localizationNote": "J/K hour/period positions follow native policy; date and AM/PM words still use the existing English fallback, not native localized labels."
+  },
+  "anchors": [
+    {
+      "id": "grid",
+      "rule": "width = columns × cardWidth + (columns − 1) × columnGap; left = (frameWidth − width) / 2 + gridInsetCorrection; page stride = columns × (cardWidth + columnGap)",
+      "evidence": [
+        "menu-versions/measurements.json",
+        "menu-fidelity/results.json"
+      ],
+      "note": "Logical slot rectangles differ from masked visible borders. A slot begins at x=69 at 854×480; its visible border begins near x=71."
+    },
+    {
+      "id": "curve",
+      "rule": "edge = holderHeight − depth × holderHeight / scaleHeight; horizontal fractions use measured holder width",
+      "evidence": [
+        "menu-versions/curve-traces.json"
+      ],
+      "note": "Fitted reconstruction, not original BRLYT pane data."
+    },
+    {
+      "id": "clock-date",
+      "rule": "Clock top and date bottom are frame anchors. A blank leading hour cell preserves subsequent pane positions.",
+      "evidence": [
+        "menu-versions/research.json",
+        "menu-typography/"
+      ],
+      "note": "Approximate glyph artwork; firmware of bare reference menu images remains unknown."
+    },
+    {
+      "id": "footer",
+      "rule": "Footer is bottom-anchored; calendar transition transforms retain their own rules.",
+      "evidence": [
+        "menu-versions/measurements.json",
+        "menu-versions/state-capture-results.json"
+      ],
+      "note": "Mail-pulse and SD-insertion appearance still differ from some native states."
+    },
+    {
+      "id": "sd-wide",
+      "rule": "center fraction = (416 − 245) / 832; left = sdCenterPercent% − sdWidth / 2 × scale",
+      "evidence": [
+        "menu-versions/research.json"
+      ],
+      "note": "CSS percentage is rounded to 20.5529 to preserve the tested implementation."
+    }
+  ],
+  "evidence": {
+    "references": "interface-audit/references.json",
+    "research": "menu-versions/research.json",
+    "measurements": "menu-versions/measurements.json",
+    "comparisons": "menu-versions/",
+    "referenceIds": [
+      "copetti-home",
+      "mariowiki-menu-wide",
+      "wikipedia-menu-wide",
+      "settings-wii-guide",
+      "nwr-menu40-context",
+      "retrotink-menu-context"
+    ],
+    "confidence": "Implementation values are fitted approximations. Bare menu captures do not identify exact firmware; the Settings reference alone prints 4.3U."
+  },
+  "profiles": [
+    {
+      "id": "retail-wii-4x",
+      "status": "Implemented baseline",
+      "note": "4.3 U/E behavior evidence and 4.0+ style captures; partial J/K behavior with English labels."
+    },
+    {
+      "id": "retail-wii-1x-2x",
+      "status": "History only",
+      "note": "Pre-clock menu; no geometry adapter."
+    },
+    {
+      "id": "retail-wii-3x",
+      "status": "History only",
+      "note": "Clock introduced in 3.0; no SD Menu shortcut until 4.0; no geometry adapter."
+    },
+    {
+      "id": "vwii",
+      "status": "Separate family; unimplemented",
+      "note": "Do not fit retail Wii geometry from Wii U captures."
+    },
+    {
+      "id": "wii-mini",
+      "status": "Separate family; unimplemented",
+      "note": "Modified SD/network features; no geometry adapter."
+    }
+  ],
+  "captureStateFields": [
+    "platform",
+    "firmware and confidence",
+    "channel revisions",
+    "region",
+    "language",
+    "display mode",
+    "capture pipeline and crop",
+    "clock/date",
+    "intro or settled",
+    "colon phase",
+    "SD insertion",
+    "unread count and pulse",
+    "page and selected/hovered slot",
+    "icon animation frames"
+  ],
+  "gaps": [
+    "Original pane/font metrics are not recovered",
+    "Three-second Wii Menu intro",
+    "Colon blink and mail-pulse phases",
+    "SD insertion appearance",
+    "Full J/K localization",
+    "Older firmware and vWii/Wii mini adapters",
+    "Other system screens still have local layout rules"
+  ]
+}

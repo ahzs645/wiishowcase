@@ -1,5 +1,10 @@
 # Wii Menu versions, region and widescreen alignment
 
+The [maintained layout reference](layout-reference/) records the current
+coordinates, typography, region policies and source confidence. Its
+[maintenance guide](layout-reference.md) explains where to add evidence and how
+to update the shared registry without losing independent measurement checks.
+
 The previous overlays did not establish the firmware of their menu screenshots.
 The larger image improved detail, but its upload date and 16:9 dimensions did not
 identify its software version or capture pipeline. The current implementation

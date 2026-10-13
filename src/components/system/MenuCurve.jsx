@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { MENU_LAYOUT } from "../../layout/menu";
 // The native menu curve is about 51 lines deep in both display modes. The
 // framework's width-scaled curve made it too shallow at 4:3. Draw this measured
 // menu shape on a static sibling; animated icon canvases need no filter.
@@ -12,11 +13,12 @@ export default function MenuCurve() {
     const update = () => {
       const width = holder.offsetWidth,
         height = holder.offsetHeight;
-      const scale = height / 398;
-      const edge = height - 51 * scale;
-      const flat = width * 0.157,
-        curve = width * 0.186;
-      const path = `M ${width},${edge} H ${width - flat} C ${width - flat - curve * 0.4},${edge} ${width - flat - curve * 0.6},${height} ${width - flat - curve},${height} H ${flat + curve} C ${flat + curve * 0.6},${height} ${flat + curve * 0.4},${edge} ${flat},${edge} H 0`;
+      const config = MENU_LAYOUT.curve;
+      const scale = height / config.scaleHeight;
+      const edge = height - config.depth * scale;
+      const flat = width * config.flatWidthFraction,
+        curve = width * config.bendWidthFraction;
+      const path = `M ${width},${edge} H ${width - flat} C ${width - flat - curve * config.controlNear},${edge} ${width - flat - curve * config.controlFar},${height} ${width - flat - curve},${height} H ${flat + curve} C ${flat + curve * config.controlFar},${height} ${flat + curve * config.controlNear},${edge} ${flat},${edge} H 0`;
       holder.style.clipPath = `path('M 0,0 H ${width} V ${edge} ${path.replace(/^M [^ ]+ /, "")} Z')`;
       setShape({ width, height, path, scale });
     };
@@ -36,8 +38,8 @@ export default function MenuCurve() {
       {shape && (
         <path
           d={shape.path}
-          stroke="#42bfe7"
-          strokeWidth={1.5 * shape.scale}
+          stroke={MENU_LAYOUT.curve.strokeColor}
+          strokeWidth={MENU_LAYOUT.curve.strokeWidth * shape.scale}
           vectorEffect="non-scaling-stroke"
           fill="none"
         />

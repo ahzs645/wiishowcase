@@ -1,0 +1,966 @@
+{
+  "screens": [
+    {
+      "id": "menu-settled",
+      "title": "Wii Menu",
+      "layoutStatus": "Shared menu registry",
+      "implementation": "src/layout/menu.js",
+      "references": [
+        "copetti-home",
+        "nintendo-menu-2"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=menu-settled"
+    },
+    {
+      "id": "menu-page-three",
+      "title": "Channel moved to page three",
+      "layoutStatus": "Shared menu registry",
+      "implementation": "src/layout/menu.js",
+      "references": [
+        "nintendo-menu-1"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=menu-page-three"
+    },
+    {
+      "id": "options",
+      "title": "Wii Options",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-316"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=options"
+    },
+    {
+      "id": "data-root",
+      "title": "Data Management",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-315"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=data-root"
+    },
+    {
+      "id": "save-chooser",
+      "title": "Save Data platforms",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-312"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=save-chooser"
+    },
+    {
+      "id": "save-grid",
+      "title": "Wii Save Data",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-314"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=save-grid"
+    },
+    {
+      "id": "channels-data",
+      "title": "Channel Data Management",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-314"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=channels-data"
+    },
+    {
+      "id": "sd-menu",
+      "title": "SD Card Menu",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-472"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=sd-menu"
+    },
+    {
+      "id": "sd-start",
+      "title": "SD Channel controls",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-474"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=sd-start"
+    },
+    {
+      "id": "settings-one",
+      "title": "Wii System Settings 1",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "copetti-settings",
+        "settings-wii-guide"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=settings-one"
+    },
+    {
+      "id": "nickname",
+      "title": "Console Nickname",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-338"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=nickname"
+    },
+    {
+      "id": "date",
+      "title": "Console Date",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-339"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=date"
+    },
+    {
+      "id": "time",
+      "title": "Console Time",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-340"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=time"
+    },
+    {
+      "id": "widescreen",
+      "title": "Widescreen Settings",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-342"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=widescreen"
+    },
+    {
+      "id": "sound",
+      "title": "Sound",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-354"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=sound"
+    },
+    {
+      "id": "settings-two",
+      "title": "Wii System Settings 2",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-327"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=settings-two"
+    },
+    {
+      "id": "settings-three",
+      "title": "Wii System Settings 3",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-328"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=settings-three"
+    },
+    {
+      "id": "home-menu",
+      "title": "HOME Menu",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-461"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=home-menu"
+    },
+    {
+      "id": "remote-settings",
+      "title": "Wii Remote Settings",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-462"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=remote-settings"
+    },
+    {
+      "id": "message-board",
+      "title": "Message Board",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "copetti-mail"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=message-board"
+    },
+    {
+      "id": "create-message",
+      "title": "Create Message",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-268"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=create-message"
+    },
+    {
+      "id": "memo-composer",
+      "title": "Memo composer",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-265"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=memo-composer"
+    },
+    {
+      "id": "system-keyboard",
+      "title": "System QWERTY keyboard",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-497"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=system-keyboard"
+    },
+    {
+      "id": "system-symbols",
+      "title": "System accent palette",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-497"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=system-symbols"
+    },
+    {
+      "id": "system-phone",
+      "title": "System phone keyboard",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-496"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=system-phone"
+    },
+    {
+      "id": "message-open-memo",
+      "title": "Opened Memo",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "nwr-43"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=message-open-memo"
+    },
+    {
+      "id": "calendar",
+      "title": "Message Board Calendar",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-257"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=calendar"
+    },
+    {
+      "id": "address-book",
+      "title": "Address Book",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-278"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=address-book"
+    },
+    {
+      "id": "letter-composer",
+      "title": "Letter composer",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-265"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=letter-composer"
+    },
+    {
+      "id": "letter-open",
+      "title": "Opened letter actions",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-254"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        }
+      ],
+      "viewer": "../interface-sizing/?interface=letter-open"
+    }
+  ]
+}

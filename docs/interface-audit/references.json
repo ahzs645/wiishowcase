@@ -537,7 +537,7 @@
         1080
       ],
       "originalSHA256": "1f3ad63c68c42ba5150677bf265216a7f261bdcbb1c2da77b31aa26a4644c90c",
-      "notes": "Version number is annotated. The screen shown is the actual settings submenu, which our root button does not open.",
+      "notes": "Ver. 4.3U is printed in Settings page 1. This identifies the firmware of this capture only; it cannot establish the firmware of another menu image.",
       "systemMenu": {
         "exactVersion": "4.3U",
         "confidence": "Ver. 4.3U is visible in the image",

@@ -1,0 +1,42 @@
+{
+  "method": "Matched app states captured before and after the registry refactor at 480/720 lines. The central clock/date rectangle and entire strip below logical y=343 have zero differing pixels in all six captures. Grid texture animation can differ between captures. This verifies static menu preservation, not native fidelity.",
+  "captures": [
+    {
+      "image": "copetti-home-640x480.png",
+      "clockDateChangedPixels": 0,
+      "totalChangedPixels": 39476,
+      "belowGridChangedPixels": 0
+    },
+    {
+      "image": "copetti-home-960x720.png",
+      "clockDateChangedPixels": 0,
+      "totalChangedPixels": 81107,
+      "belowGridChangedPixels": 0
+    },
+    {
+      "image": "mariowiki-menu-wide-1280x720.png",
+      "clockDateChangedPixels": 0,
+      "totalChangedPixels": 113484,
+      "belowGridChangedPixels": 0
+    },
+    {
+      "image": "mariowiki-menu-wide-854x480.png",
+      "clockDateChangedPixels": 0,
+      "totalChangedPixels": 52250,
+      "belowGridChangedPixels": 0
+    },
+    {
+      "image": "wikipedia-menu-wide-1280x720.png",
+      "clockDateChangedPixels": 0,
+      "totalChangedPixels": 113507,
+      "belowGridChangedPixels": 0
+    },
+    {
+      "image": "wikipedia-menu-wide-854x480.png",
+      "clockDateChangedPixels": 0,
+      "totalChangedPixels": 51965,
+      "belowGridChangedPixels": 0
+    }
+  ],
+  "baselineRevision": "13de78f76b4ee21e529fa56e361a7d367dbd5e52"
+}

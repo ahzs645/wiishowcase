@@ -1,4 +1,5 @@
 import { useSyncExternalStore } from "react";
+import { MENU_SLOT_COUNT } from "../layout/menu.js";
 
 export const SYSTEM_STORAGE_KEY = "wiishowcase.system.v1";
 const initialOrder = [
@@ -37,7 +38,10 @@ export function defaults() {
   return {
     version: 1,
     settings: { ...settingsDefaults },
-    slots: Array.from({ length: 48 }, (_, i) => initialOrder[i] || null),
+    slots: Array.from(
+      { length: MENU_SLOT_COUNT },
+      (_, i) => initialOrder[i] || null,
+    ),
     sd: [],
     saves: [
       {
@@ -65,7 +69,7 @@ function read() {
     };
     // Corrupt/stale channel lists must never move the fixed Disc slot or grow beyond 48.
     const seen = new Set(["disc"]);
-    state.slots = Array.from({ length: 48 }, (_, i) => {
+    state.slots = Array.from({ length: MENU_SLOT_COUNT }, (_, i) => {
       if (i === 0) return "disc";
       const id = saved.slots?.[i];
       if (!initialOrder.includes(id) || seen.has(id)) return null;
@@ -142,8 +146,8 @@ export function swapSlots(from, to) {
     !Number.isInteger(to) ||
     from < 1 ||
     to < 1 ||
-    from >= 48 ||
-    to >= 48 ||
+    from >= MENU_SLOT_COUNT ||
+    to >= MENU_SLOT_COUNT ||
     !snapshot.slots[from]
   )
     return false;

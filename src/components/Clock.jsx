@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSystemSetting } from "../lib/systemState";
 import { formatMenuTime, formatMenuDate } from "../lib/menuClock";
+import { MENU_LAYOUT } from "../layout/menu";
 export { formatMenuDate } from "../lib/menuClock";
 
 const SEGMENTS = {
@@ -27,28 +28,37 @@ const DIGITS = [
 function ClockDigits({ time }) {
   // Native 4.3 hides the leading hour pane without reflowing the other panes.
   // Reserve that cell so minutes and the AM/PM label do not move at 9 -> 10.
-  const characters = [...time.padStart(5, " ")];
+  const config = MENU_LAYOUT.clock;
+  const advance = (character) =>
+    character === ":" ? config.colonAdvance : config.digitAdvance;
+  const characters = [...time.padStart(config.cells, " ")];
   let x = 0;
   const width = characters.reduce(
-    (sum, character) => sum + (character === ":" ? 16 : 28),
-    -4,
+    (sum, character) => sum + advance(character),
+    -config.trailingTrim,
   );
   return (
     <svg
       className="menu-clock-digits"
-      viewBox={`0 0 ${width} 36`}
+      viewBox={`0 0 ${width} ${config.viewBoxHeight}`}
       style={{ "--clock-width": width }}
       aria-hidden="true"
     >
       {characters.map((character, index) => {
         const left = x;
-        x += character === ":" ? 16 : 28;
+        x += advance(character);
         return (
           <g key={index} transform={`translate(${left},0)`}>
             {character === " " ? null : character === ":" ? (
               <>
-                <circle cx="6.5" cy="10" r="2.5" />
-                <circle cx="6.5" cy="26" r="2.5" />
+                {config.colonY.map((y) => (
+                  <circle
+                    key={y}
+                    cx={config.colonX}
+                    cy={y}
+                    r={config.colonRadius}
+                  />
+                ))}
               </>
             ) : character === "1" ? (
               <path d="M11 0 13 3v11l-2 3-2-3V3ZM11 19 13 22v11l-2 3-2-3V22Z" />
