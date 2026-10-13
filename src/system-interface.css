@@ -1,0 +1,1253 @@
+/* System UI uses a common 480-line coordinate scale for both Wii display modes. */
+.wii {
+  --system-scale: calc(100vh / 480);
+}
+.wii-43 {
+  --system-scale: calc(min(100vh, 75vw) / 480);
+  --menu-card-width: calc(122 * var(--system-scale));
+}
+.wii-169 {
+  --system-scale: calc(min(100vh, 56.25vw) / 480);
+  --menu-card-width: calc(165 * var(--system-scale));
+}
+wii-channel-holder.wii-channel-holder {
+  height: calc(402 * var(--system-scale));
+  min-height: 0;
+}
+wii-channel-holder .wii-channel-holder-content {
+  height: 100%;
+  padding: calc(42 * var(--system-scale)) 0 0;
+  box-sizing: border-box;
+}
+.channel-holder-wrapper {
+  filter: none;
+}
+.channel-holder-wrapper::after {
+  content: "";
+  position: absolute;
+  top: calc(402 * var(--system-scale));
+  left: 0;
+  width: 100%;
+  height: calc(2 * var(--system-scale));
+  background: #28bfeb;
+  z-index: -1;
+}
+.channel-pages-viewport {
+  padding: 0;
+  gap: 0;
+  width: 100%;
+  scroll-snap-type: x mandatory;
+}
+.channel-pages-viewport > .wii-channel-holder-grid {
+  flex: 0 0 100%;
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  scroll-snap-align: start;
+  grid-template-columns: repeat(4, var(--menu-card-width));
+  gap: calc(10 * var(--system-scale)) calc(12 * var(--system-scale));
+  transform: translateX(var(--screen-offset, 0px));
+}
+.menu-slot {
+  width: var(--menu-card-width);
+  min-width: 0;
+  position: relative;
+}
+.menu-slot .wii-channel-ui {
+  width: 100%;
+}
+.menu-slot.is-picked {
+  opacity: 0.5;
+  outline: calc(3 * var(--system-scale)) dashed #09adea;
+  border-radius: 12%;
+}
+.menu-slot.is-moving {
+  cursor: grab;
+}
+.menu-slot.is-moving:hover,
+.menu-slot:focus-visible {
+  outline: calc(2 * var(--system-scale)) solid #1abced;
+  border-radius: 12%;
+}
+.menu-clock-above {
+  bottom: calc(10 * var(--system-scale));
+}
+.menu-clock-time {
+  font-size: calc(54 * var(--system-scale));
+  line-height: 1;
+}
+.menu-clock-below {
+  bottom: calc(40 * var(--system-scale));
+}
+.menu-clock-date {
+  font-size: calc(32 * var(--system-scale));
+  line-height: 1.1;
+  text-shadow: none;
+}
+.wii-menu-bottom-buttons {
+  --wii-menu-track-btn-size: calc(78 * var(--system-scale));
+  bottom: calc(21 * var(--system-scale));
+}
+.wii-menu-bottom-buttons .wii-track-btn .wii-track-btn-circle {
+  filter: drop-shadow(
+    calc(8 * var(--system-scale)) calc(9 * var(--system-scale)) 1px #bcbfc5
+  );
+}
+.channel-page-arrow {
+  top: calc(185 * var(--system-scale));
+}
+.channel-page-arrow-next {
+  right: calc(10 * var(--system-scale));
+}
+.channel-page-arrow-prev {
+  left: calc(10 * var(--system-scale));
+}
+.channel-page-arrow .wii-arrow-btn {
+  --wii-arrow-size: calc(25 * var(--system-scale));
+}
+.menu-sd-button {
+  position: absolute;
+  bottom: calc(26 * var(--system-scale));
+  left: calc(142 * var(--system-scale));
+  padding: 0;
+  border: 0;
+  background: transparent;
+  z-index: 35;
+}
+.sd-card-symbol {
+  display: grid;
+  place-content: center;
+  width: calc(27 * var(--system-scale));
+  height: calc(36 * var(--system-scale));
+  font-size: calc(12 * var(--system-scale));
+  font-weight: 700;
+  border: calc(2 * var(--system-scale)) solid #70c9e9;
+  border-radius: 3px;
+  color: #63bfdc;
+  background: linear-gradient(#fff, #c7e9f7);
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%, 0 20%);
+}
+.menu-reorder-button {
+  position: absolute;
+  bottom: calc(3 * var(--system-scale));
+  left: 50%;
+  transform: translateX(-50%);
+  border: 0;
+  background: transparent;
+  color: #687c84;
+  font-size: calc(10 * var(--system-scale));
+  z-index: 35;
+}
+.menu-page-count {
+  position: absolute;
+  bottom: calc(4 * var(--system-scale));
+  right: calc(160 * var(--system-scale));
+  color: #7b8388;
+  font-size: calc(10 * var(--system-scale));
+}
+.menu-move-notice {
+  position: absolute;
+  top: calc(5 * var(--system-scale));
+  left: 15%;
+  width: 70%;
+  text-align: center;
+  font-size: calc(15 * var(--system-scale));
+  color: #3f7c97;
+}
+.system-idle-dimmer {
+  position: fixed;
+  inset: 0;
+  background: #0009;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.system-button {
+  border: calc(2 * var(--system-scale)) solid #7dc1d9;
+  box-shadow:
+    inset 0 1px 0 white,
+    0 calc(2 * var(--system-scale)) calc(3 * var(--system-scale)) #0003;
+  border-radius: calc(22 * var(--system-scale));
+  color: #42474d;
+  background: linear-gradient(#fff 45%, #e1e8ed 55%, #f8fcff);
+  padding: calc(5 * var(--system-scale)) calc(22 * var(--system-scale));
+  min-height: calc(30 * var(--system-scale));
+  font: inherit;
+  font-size: calc(22 * var(--system-scale));
+  line-height: 1.2;
+  cursor: pointer;
+}
+.system-button:hover:not(:disabled),
+.system-button[aria-pressed="true"] {
+  border-color: #22b9ee;
+  background: linear-gradient(#c1f3ff, #82c8e2);
+}
+.system-button:active:not(:disabled) {
+  background: #cbdc88;
+  transform: scale(0.98);
+}
+.system-button:focus-visible {
+  outline: calc(2 * var(--system-scale)) solid #00b6ff;
+  outline-offset: 3px;
+}
+.system-button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.system-settings {
+  z-index: 80;
+}
+.system-settings-shell {
+  height: 100%;
+  background: #080909;
+  color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(17 * var(--system-scale));
+}
+.system-settings-shell header {
+  height: calc(64 * var(--system-scale));
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  border-bottom: calc(2 * var(--system-scale)) solid #7c929b;
+  background: linear-gradient(#222, black);
+}
+.system-settings-shell h1 {
+  font-size: calc(27 * var(--system-scale));
+  line-height: 1.2;
+  font-weight: 400;
+  color: #444;
+  background: #fff;
+  border-radius: calc(18 * var(--system-scale)) calc(18 * var(--system-scale)) 0
+    0;
+  padding: calc(2 * var(--system-scale)) calc(9 * var(--system-scale));
+  margin: 0;
+}
+.system-wii-logo {
+  font-size: calc(28 * var(--system-scale));
+  font-weight: 600;
+}
+.system-settings-shell main {
+  flex: 1;
+  position: relative;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: calc(6 * var(--system-scale)) 8%;
+  overflow: auto;
+}
+.system-settings-shell footer {
+  height: calc(90 * var(--system-scale));
+  flex: none;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+  border-top: calc(2 * var(--system-scale)) solid #aaa;
+  background: linear-gradient(#151515, #080808);
+}
+.system-settings-shell .wii-settings-back {
+  width: calc(220 * var(--system-scale));
+}
+.system-tile-grid {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: calc(40 * var(--system-scale));
+}
+.system-tile {
+  width: calc(260 * var(--system-scale));
+  height: calc(218 * var(--system-scale));
+  border: calc(3 * var(--system-scale)) solid #85d0ec;
+  padding: calc(6 * var(--system-scale));
+  color: #666;
+  background: repeating-linear-gradient(#eff2f3 0 2px, #e0e4e6 2px 4px);
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 calc(3 * var(--system-scale)) white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-size: calc(19 * var(--system-scale));
+}
+.system-tile:hover {
+  border-color: #1abbf9;
+}
+.system-tile img {
+  width: 48%;
+  height: 65%;
+  object-fit: contain;
+  filter: grayscale(1);
+}
+.system-tile-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  font-size: calc(45 * var(--system-scale));
+  text-shadow: 0 2px white;
+}
+.system-tile > span:last-child {
+  background: white;
+  width: 100%;
+  min-height: calc(30 * var(--system-scale));
+}
+.system-settings-list {
+  width: min(100%, calc(420 * var(--system-scale)));
+  display: flex;
+  flex-direction: column;
+  gap: calc(14 * var(--system-scale));
+}
+.system-settings-list .system-button {
+  min-height: calc(61 * var(--system-scale));
+  font-size: calc(26 * var(--system-scale));
+  border-radius: calc(16 * var(--system-scale));
+}
+.system-settings-pages {
+  position: absolute;
+  right: 5%;
+  bottom: calc(-38 * var(--system-scale));
+  display: flex;
+  gap: calc(5 * var(--system-scale));
+}
+.system-settings-pages .system-button {
+  border-radius: 6px;
+  padding: 0;
+  width: calc(42 * var(--system-scale));
+  min-height: calc(34 * var(--system-scale));
+  font-size: calc(25 * var(--system-scale));
+}
+.system-detail {
+  width: 100%;
+  max-width: calc(590 * var(--system-scale));
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(15 * var(--system-scale));
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.system-detail p {
+  width: 100%;
+  margin: calc(5 * var(--system-scale)) 0;
+}
+.system-detail label {
+  display: flex;
+  align-items: center;
+  gap: calc(10 * var(--system-scale));
+}
+.system-detail input {
+  color: #444;
+  padding: calc(8 * var(--system-scale));
+  font-size: calc(18 * var(--system-scale));
+  max-width: 100%;
+}
+.system-status {
+  font-size: calc(13 * var(--system-scale));
+  text-align: center;
+  min-height: 1em;
+  margin: calc(4 * var(--system-scale));
+}
+.system-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: calc(10 * var(--system-scale));
+}
+.system-tabs {
+  display: flex;
+  gap: calc(10 * var(--system-scale));
+  margin-bottom: calc(8 * var(--system-scale));
+}
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: calc(8 * var(--system-scale));
+  width: min(100%, calc(465 * var(--system-scale)));
+}
+.data-slot {
+  width: 100%;
+  height: calc(85 * var(--system-scale));
+  background: linear-gradient(#eee, #d5dce0);
+  border: calc(2 * var(--system-scale)) solid white;
+  border-radius: 6px;
+  color: #444;
+  font-size: calc(13 * var(--system-scale));
+}
+.data-slot small {
+  display: block;
+  font-size: calc(10 * var(--system-scale));
+}
+.data-slot:disabled {
+  background: linear-gradient(135deg, #e8e8e8 5%, #999 95%);
+  border-color: #cdd0d1;
+}
+.system-pagination {
+  display: flex;
+  gap: calc(10 * var(--system-scale));
+  align-items: center;
+  justify-content: center;
+  margin-top: calc(6 * var(--system-scale));
+}
+.system-pagination .system-button {
+  padding: 0 calc(12 * var(--system-scale));
+}
+.screen-position-preview {
+  width: 100%;
+  border: 2px solid #59c2ee;
+  height: calc(130 * var(--system-scale));
+  display: grid;
+  place-items: center;
+}
+.sensor-preview {
+  width: 100%;
+  background: #222;
+  color: white;
+  font-size: calc(40 * var(--system-scale));
+}
+
+.system-dialog-shade {
+  position: fixed;
+  inset: 0;
+  background: #52606b55;
+  z-index: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(18 * var(--system-scale));
+  color: #555;
+}
+.system-dialog {
+  width: min(82vw, calc(610 * var(--system-scale)));
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background: #f5faf8;
+  border: calc(3 * var(--system-scale)) solid #fff;
+  outline: 1px solid #899499;
+  border-radius: calc(16 * var(--system-scale));
+  box-shadow: calc(5 * var(--system-scale)) calc(7 * var(--system-scale)) #0004;
+  overflow: hidden;
+}
+.system-dialog h2 {
+  margin: 0;
+  padding: calc(8 * var(--system-scale));
+  font-size: calc(24 * var(--system-scale));
+  font-weight: normal;
+  text-align: center;
+  background: #9aa1a2;
+  color: #fff;
+}
+.system-dialog-body {
+  padding: calc(18 * var(--system-scale));
+  overflow: auto;
+  text-align: center;
+}
+.system-dialog > .system-actions {
+  padding: calc(12 * var(--system-scale));
+  border-top: 1px solid #ccd8d7;
+}
+.system-dialog .system-actions .system-button {
+  min-width: calc(100 * var(--system-scale));
+}
+wii-keyboard .wii-keyboard {
+  z-index: 500;
+}
+.system-sd-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 90;
+  background: repeating-linear-gradient(#535960 0 2px, #4b5158 2px 4px);
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.system-sd-screen header {
+  height: calc(55 * var(--system-scale));
+  display: grid;
+  place-items: center;
+  font-size: calc(24 * var(--system-scale));
+  width: 100%;
+  background: #242c32;
+  border-bottom: 2px solid #a5e5ff;
+}
+.sd-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, var(--menu-card-width));
+  gap: calc(10 * var(--system-scale)) calc(12 * var(--system-scale));
+  margin-top: calc(15 * var(--system-scale));
+}
+.system-sd-screen footer {
+  display: flex;
+  gap: calc(24 * var(--system-scale));
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: calc(23 * var(--system-scale));
+  font-size: calc(18 * var(--system-scale));
+}
+
+.home-menu-top-bar {
+  padding: calc(18 * var(--system-scale)) 5%;
+}
+.home-menu-title {
+  font-size: calc(26 * var(--system-scale));
+}
+.home-menu-close-btn {
+  font-size: calc(19 * var(--system-scale));
+  padding: calc(6 * var(--system-scale)) calc(25 * var(--system-scale));
+}
+.home-menu-bottom-bar {
+  padding: calc(14 * var(--system-scale)) 5% calc(18 * var(--system-scale));
+}
+.home-menu-bottom-bar-inner {
+  align-items: center;
+}
+.home-menu-remote {
+  bottom: calc(-135 * var(--system-scale));
+  left: 5%;
+  width: calc(54 * var(--system-scale));
+  height: calc(285 * var(--system-scale));
+}
+.home-menu-remote .wii-icon {
+  --wii-icon-size: calc(285 * var(--system-scale));
+}
+.home-menu-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: calc(18 * var(--system-scale));
+  max-width: 75%;
+}
+.home-menu-buttons .system-button {
+  min-width: calc(205 * var(--system-scale));
+  height: calc(65 * var(--system-scale));
+  font-size: calc(26 * var(--system-scale));
+  border-radius: calc(45 * var(--system-scale));
+}
+.home-menu-buttons .system-button:last-child {
+  flex-basis: 60%;
+  height: calc(40 * var(--system-scale));
+  font-size: calc(17 * var(--system-scale));
+}
+.home-menu-battery-label {
+  font-size: calc(14 * var(--system-scale));
+}
+.home-menu-battery-indicator {
+  width: calc(43 * var(--system-scale));
+  height: calc(17 * var(--system-scale));
+}
+.home-menu-battery-row {
+  gap: calc(16 * var(--system-scale));
+}
+.home-menu-settings-text {
+  font-size: calc(17 * var(--system-scale));
+  background: none;
+  border: 0;
+  color: #eee;
+  cursor: pointer;
+}
+.remote-settings-panel {
+  width: calc(480 * var(--system-scale));
+  color: white;
+  background: #020707eb;
+  border: 1px solid #78878c;
+  border-radius: calc(12 * var(--system-scale));
+  padding: calc(16 * var(--system-scale));
+  margin-left: 10%;
+}
+.remote-setting-row {
+  display: flex;
+  align-items: center;
+  gap: calc(10 * var(--system-scale));
+  padding: calc(10 * var(--system-scale)) 0;
+  border-bottom: 1px solid #68848d;
+  font-size: calc(20 * var(--system-scale));
+}
+.remote-setting-row > span {
+  width: calc(115 * var(--system-scale));
+}
+.remote-volume-bars {
+  display: flex;
+  gap: calc(2 * var(--system-scale));
+  align-items: flex-end;
+  height: calc(27 * var(--system-scale));
+}
+.remote-volume-bars i {
+  width: calc(7 * var(--system-scale));
+  height: calc((6 + var(--bar-index) * 2) * var(--system-scale));
+  background: #555;
+}
+.remote-volume-bars i.active {
+  background: #20ccf2;
+}
+.remote-settings-panel small {
+  display: block;
+  margin-top: calc(8 * var(--system-scale));
+  font-size: calc(12 * var(--system-scale));
+}
+.home-operations-guide {
+  max-width: 70%;
+  padding: calc(20 * var(--system-scale));
+  border-radius: 10px;
+  background: #f3faf9;
+  font-size: calc(15 * var(--system-scale));
+}
+
+.message-create-choices {
+  display: flex;
+  gap: calc(14 * var(--system-scale));
+  justify-content: center;
+}
+.message-create-choices button {
+  width: 30%;
+  background: none;
+  border: 0;
+  font-size: calc(17 * var(--system-scale));
+  color: #626e78;
+}
+.message-create-choices span {
+  display: block;
+  font-size: calc(65 * var(--system-scale));
+  color: #8b9f9f;
+}
+.message-composer {
+  display: flex;
+  flex-direction: column;
+  gap: calc(10 * var(--system-scale));
+}
+.message-composer > .system-button {
+  align-self: flex-start;
+  font-size: calc(15 * var(--system-scale));
+}
+.message-write-body {
+  min-height: calc(190 * var(--system-scale));
+  border: none;
+  color: #616c76;
+  background: repeating-linear-gradient(
+    transparent 0 calc(30 * var(--system-scale)),
+    #c7d2d2 calc(30 * var(--system-scale)) calc(31 * var(--system-scale))
+  );
+  font-size: calc(19 * var(--system-scale));
+  line-height: calc(31 * var(--system-scale));
+  text-align: left;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.message-composer select {
+  margin-left: calc(12 * var(--system-scale));
+  font-size: calc(16 * var(--system-scale));
+}
+.address-book-list {
+  background: #fff;
+  border-radius: 8px;
+  padding: calc(7 * var(--system-scale));
+  width: 85%;
+  margin: auto;
+}
+.address-book-list button {
+  display: flex;
+  align-items: center;
+  gap: calc(15 * var(--system-scale));
+  width: 100%;
+  height: calc(45 * var(--system-scale));
+  border: 0;
+  border-bottom: 1px solid #d8e0dc;
+  background: none;
+  color: #55616a;
+  font-size: calc(24 * var(--system-scale));
+}
+.address-avatar {
+  border: 1px solid #bdc8c5;
+  padding: calc(4 * var(--system-scale));
+  width: calc(27 * var(--system-scale));
+}
+.address-register label {
+  display: flex;
+  flex-direction: column;
+  gap: calc(8 * var(--system-scale));
+  margin: calc(14 * var(--system-scale));
+}
+.message-photo-attach {
+  font-size: calc(13 * var(--system-scale));
+}
+.message-attachment-preview {
+  display: block;
+  max-width: 80%;
+  max-height: calc(110 * var(--system-scale));
+  object-fit: contain;
+  margin: calc(8 * var(--system-scale)) auto;
+}
+.message-local-status {
+  text-align: center;
+  font-size: calc(12 * var(--system-scale));
+}
+.message-board-memo {
+  width: calc(430 * var(--system-scale));
+  min-height: calc(330 * var(--system-scale));
+  max-height: calc(430 * var(--system-scale));
+  overflow: visible;
+}
+.message-board-memo-lines {
+  overflow: auto;
+  overflow-wrap: anywhere;
+  flex: 1;
+  padding: calc(12 * var(--system-scale)) calc(32 * var(--system-scale));
+  font-size: calc(18 * var(--system-scale));
+}
+.message-board-memo-lines span,
+.message-board-memo-lines a {
+  font-size: calc(18 * var(--system-scale));
+  line-height: calc(31 * var(--system-scale));
+}
+.message-board-memo-header {
+  padding: calc(8 * var(--system-scale)) calc(25 * var(--system-scale));
+}
+.message-board-memo-avatar {
+  width: calc(52 * var(--system-scale));
+  height: calc(55 * var(--system-scale));
+}
+.message-letter-actions {
+  display: flex;
+  justify-content: space-around;
+  gap: calc(8 * var(--system-scale));
+  padding: calc(8 * var(--system-scale));
+}
+.message-letter-actions .system-button {
+  padding: calc(3 * var(--system-scale)) calc(12 * var(--system-scale));
+  font-size: calc(14 * var(--system-scale));
+}
+.message-board-memo-footer {
+  padding: calc(5 * var(--system-scale));
+}
+.system-settings-shell .wii-settings-back {
+  position: static;
+  height: calc(54 * var(--system-scale));
+  min-width: 0;
+  padding: 0 calc(25 * var(--system-scale));
+  font-size: calc(24 * var(--system-scale));
+}
+.home-menu-top-bar-inner,
+.home-menu-bottom-bar-inner {
+  padding: 0;
+}
+.home-menu-remote .wii-icon-remote {
+  width: calc(64 * var(--system-scale));
+  --wii-icon-size: calc(285 * var(--system-scale));
+}
+.channel-holder-wrapper::after {
+  display: none;
+}
+.menu-holder-curve {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: calc(402 * var(--system-scale));
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+.system-tile-art-svg {
+  width: 85%;
+  flex: 1;
+  min-height: 0;
+}
+.system-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0 !important;
+}
+.system-wii-logo {
+  margin-left: auto;
+}
+.system-dialog-shade {
+  z-index: 10020;
+}
+wii-keyboard .wii-keyboard {
+  z-index: 10040;
+}
+.channel-page-arrow .wii-arrow-btn {
+  width: calc(25 * var(--system-scale));
+  height: calc(45 * var(--system-scale));
+}
+.channel-page-circle {
+  --wii-track-btn-size: calc(48 * var(--system-scale));
+  margin-top: calc(-24 * var(--system-scale));
+}
+.channel-page-circle.wii-track-btn-base {
+  background-position: calc(50% + 2 * var(--system-scale)) center;
+}
+.wii-169 .message-board-memo {
+  width: calc(530 * var(--system-scale));
+  min-height: calc(390 * var(--system-scale));
+}
+
+/* Measured against 640×476 Settings and the 480-line manual illustrations.
+   Keep font and control sizes in the same coordinate system at both ratios. */
+.system-settings-shell {
+  font-family: var(--wii-font-system);
+  background: repeating-linear-gradient(
+    #080b0b 0 calc(1 * var(--system-scale)),
+    #151919 calc(1 * var(--system-scale)) calc(2 * var(--system-scale))
+  );
+  font-size: calc(20 * var(--system-scale));
+}
+.system-settings-shell header {
+  align-items: flex-end;
+  padding-bottom: 0;
+  border-bottom-color: #ddd;
+}
+.system-wii-logo {
+  align-self: center;
+}
+.system-settings-shell h1 {
+  min-width: 52%;
+}
+.system-settings-shell main {
+  overflow: visible;
+}
+.system-settings-index .system-settings-list {
+  transform: translateY(calc(-3 * var(--system-scale)));
+}
+.system-settings-index .system-settings-shell .wii-settings-back {
+  width: calc(280 * var(--system-scale));
+  height: calc(62 * var(--system-scale));
+  font-size: calc(27 * var(--system-scale));
+}
+.system-settings-list .system-button {
+  box-shadow:
+    inset 0 0 0 calc(3 * var(--system-scale)) white,
+    0 calc(2 * var(--system-scale)) calc(3 * var(--system-scale)) #0003;
+}
+.system-settings-pages .system-button {
+  background: #777;
+  border-color: #777;
+  color: #222;
+  box-shadow: none;
+}
+.system-settings-pages .system-button[aria-pressed="true"] {
+  background: #fff;
+  border-color: #fff;
+}
+.system-status:empty {
+  display: none;
+}
+.system-detail {
+  font-size: calc(22 * var(--system-scale));
+}
+.system-detail input {
+  font: inherit;
+}
+.system-tile > span:last-child {
+  display: grid;
+  place-items: center;
+  min-height: calc(36 * var(--system-scale));
+}
+
+/* Storage uses square previews, not rows of title/block text. Detailed names
+   and block counts remain available in the selection dialog and accessible labels. */
+.system-data-screen .system-settings-shell header {
+  height: calc(99 * var(--system-scale));
+  padding-right: 66%;
+}
+.system-data-screen .system-settings-shell h1 {
+  font-size: calc(21 * var(--system-scale));
+  white-space: nowrap;
+}
+.system-data-screen .system-wii-logo {
+  display: none;
+}
+.system-data-screen .system-settings-shell main {
+  background: repeating-linear-gradient(
+    #c4c8c9 0 calc(1 * var(--system-scale)),
+    #b9bebf calc(1 * var(--system-scale)) calc(2 * var(--system-scale))
+  );
+  padding: calc(8 * var(--system-scale)) 8%;
+}
+.system-data-screen .system-tabs {
+  position: absolute;
+  bottom: 100%;
+  left: 38%;
+  margin: 0;
+  gap: calc(8 * var(--system-scale));
+}
+.system-data-screen .system-tabs .system-button {
+  width: calc(175 * var(--system-scale));
+  height: calc(54 * var(--system-scale));
+  border-radius: calc(12 * var(--system-scale)) calc(12 * var(--system-scale)) 0
+    0;
+  background: #080909;
+  color: #bbb;
+  box-shadow: none;
+  border-color: #626769;
+}
+.system-data-screen .system-tabs .system-button[aria-pressed="true"] {
+  background: linear-gradient(#d3d6d7, #adb2b5);
+  color: white;
+  border-color: #e8eff0;
+}
+.data-slot {
+  border-radius: calc(6 * var(--system-scale));
+  padding: calc(4 * var(--system-scale));
+  box-shadow: inset 0 0 calc(4 * var(--system-scale)) #fff7;
+  overflow: hidden;
+}
+.data-slot:not(:disabled):hover,
+.data-slot:focus-visible {
+  outline: calc(3 * var(--system-scale)) solid #20bbee;
+  outline-offset: 0;
+}
+.data-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.data-preview-label {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  color: #737c80;
+  font-size: calc(18 * var(--system-scale));
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+.data-status {
+  position: absolute;
+  right: 6%;
+  bottom: calc(-59 * var(--system-scale));
+  color: #ddd;
+  font-size: calc(16 * var(--system-scale));
+  margin: 0;
+  max-width: 48%;
+}
+.data-pagination {
+  position: absolute;
+  top: 45%;
+  width: 96%;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.data-pagination .system-button {
+  pointer-events: auto;
+}
+.data-pagination > span {
+  position: absolute;
+  top: calc(138 * var(--system-scale));
+  left: 50%;
+  transform: translateX(-50%);
+  color: #555;
+  font-size: calc(13 * var(--system-scale));
+}
+
+/* Remote Settings: full controller alongside a larger panel and stepped meter. */
+.home-menu-overlay {
+  font-family: var(--wii-font-system);
+}
+.home-menu-top-bar {
+  min-height: calc(76 * var(--system-scale));
+}
+.home-menu-bottom-bar {
+  min-height: calc(67 * var(--system-scale));
+}
+.home-menu-battery-seg {
+  width: 20%;
+  height: 100%;
+}
+.home-menu-battery-row {
+  padding: calc(4 * var(--system-scale)) calc(12 * var(--system-scale));
+  border-radius: calc(10 * var(--system-scale));
+}
+.home-menu-settings-text {
+  font-size: calc(21 * var(--system-scale));
+}
+.home-menu-overlay.is-remote-settings {
+  background: #020606;
+}
+.is-remote-settings .home-menu-center {
+  padding: calc(16 * var(--system-scale)) 4%;
+}
+.is-remote-settings .home-menu-remote {
+  left: 6%;
+  top: 5%;
+  bottom: auto;
+  height: calc(285 * var(--system-scale));
+}
+.remote-settings-panel {
+  width: min(78%, calc(485 * var(--system-scale)));
+  margin-left: 10%;
+  padding: calc(12 * var(--system-scale));
+}
+.remote-setting-row {
+  font-size: calc(22 * var(--system-scale));
+  min-height: calc(73 * var(--system-scale));
+  padding: calc(9 * var(--system-scale)) 0;
+  gap: calc(9 * var(--system-scale));
+}
+.remote-setting-row > span {
+  flex: 0 0 calc(115 * var(--system-scale));
+}
+.remote-setting-row .system-button {
+  border-radius: calc(3 * var(--system-scale));
+  min-width: calc(60 * var(--system-scale));
+  height: calc(45 * var(--system-scale));
+  padding: calc(3 * var(--system-scale)) calc(12 * var(--system-scale));
+}
+.remote-setting-row:nth-child(2) .system-button {
+  flex: 1;
+}
+.remote-setting-row:nth-child(3) .system-button {
+  flex: 1;
+}
+.remote-volume-bars {
+  flex: 1;
+  justify-content: center;
+}
+
+/* Message Board screens have their own paper/book proportions. Actions sit
+   below the surface, at opposite sides, rather than inside a generic dialog. */
+.system-dialog-shade {
+  font-family: var(--wii-font-system);
+}
+.system-surface-message-chooser,
+.system-surface-composer,
+.system-surface-address-book {
+  background: repeating-linear-gradient(
+    #d4d9db 0 calc(1 * var(--system-scale)),
+    #ced3d6 calc(1 * var(--system-scale)) calc(2 * var(--system-scale))
+  );
+}
+.system-surface-message-chooser .system-dialog,
+.system-surface-composer .system-dialog,
+.system-surface-address-book .system-dialog {
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: 0;
+  overflow: visible;
+  width: min(
+    calc(var(--system-frame-width) * 0.87),
+    calc(540 * var(--system-scale))
+  );
+  max-height: calc(455 * var(--system-scale));
+}
+.system-surface-message-chooser .system-actions,
+.system-surface-composer .system-actions,
+.system-surface-address-book .system-actions {
+  justify-content: space-between;
+  border: none;
+  padding: calc(14 * var(--system-scale)) 0 0;
+}
+.system-surface-message-chooser .system-actions .system-button,
+.system-surface-composer .system-actions .system-button,
+.system-surface-address-book .system-actions .system-button {
+  min-width: calc(175 * var(--system-scale));
+  min-height: calc(47 * var(--system-scale));
+  font-size: calc(24 * var(--system-scale));
+}
+.system-surface-message-chooser h2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.system-surface-message-chooser .system-dialog-body {
+  padding: calc(45 * var(--system-scale)) 0;
+}
+.message-create-choices {
+  gap: calc(26 * var(--system-scale));
+}
+.message-create-choices button {
+  width: calc(145 * var(--system-scale));
+  padding: 0;
+}
+.message-choice-art {
+  width: 100%;
+  height: calc(165 * var(--system-scale));
+  filter: drop-shadow(
+    0 calc(3 * var(--system-scale)) calc(3 * var(--system-scale)) #82939455
+  );
+}
+.message-create-choices .message-choice-label {
+  font-size: calc(20 * var(--system-scale));
+  color: #636e73;
+  margin-top: calc(8 * var(--system-scale));
+}
+.system-surface-composer h2 {
+  border: calc(3 * var(--system-scale)) solid #f9ffff;
+  border-bottom: none;
+  border-radius: calc(14 * var(--system-scale)) calc(14 * var(--system-scale)) 0
+    0;
+  font-size: calc(24 * var(--system-scale));
+}
+.system-surface-composer .system-dialog-body {
+  border: calc(3 * var(--system-scale)) solid #f9ffff;
+  border-top: none;
+  border-radius: 0 0 calc(12 * var(--system-scale))
+    calc(12 * var(--system-scale));
+  background: #f6fbf8;
+  padding: calc(17 * var(--system-scale)) calc(25 * var(--system-scale));
+}
+.message-composer {
+  gap: calc(12 * var(--system-scale));
+}
+.message-composer > .system-button {
+  background: none;
+  box-shadow: none;
+  border: none;
+  border-radius: 0;
+  color: #67777c;
+  font-size: calc(22 * var(--system-scale));
+  padding: calc(7 * var(--system-scale)) 0;
+}
+.message-write-body {
+  min-height: calc(220 * var(--system-scale));
+  font-family: inherit;
+  font-size: calc(22 * var(--system-scale));
+  line-height: calc(31 * var(--system-scale));
+  padding: 0 calc(7 * var(--system-scale));
+}
+.message-write-body[data-empty="true"] {
+  text-align: center;
+  color: #97a3a5;
+}
+.system-surface-composer .message-photo-attach {
+  text-align: left;
+}
+.system-surface-composer:has(.message-photo-attach) .message-write-body {
+  min-height: calc(148 * var(--system-scale));
+}
+.system-surface-address-book .system-dialog {
+  width: min(
+    calc(var(--system-frame-width) * 0.8),
+    calc(460 * var(--system-scale))
+  );
+}
+.system-surface-address-book h2 {
+  font-size: calc(21 * var(--system-scale));
+  background: none;
+  color: #6c7c7e;
+}
+.system-surface-address-book .system-dialog-body {
+  background: #fafffc;
+  border-left: calc(12 * var(--system-scale)) solid #85aaaa;
+  border-radius: calc(12 * var(--system-scale));
+  padding: calc(14 * var(--system-scale)) calc(20 * var(--system-scale));
+  box-shadow: calc(4 * var(--system-scale)) calc(5 * var(--system-scale))
+    #a8b5b777;
+}
+.address-book-list {
+  width: 100%;
+  padding: 0;
+}
+.address-book-list button {
+  height: calc(48 * var(--system-scale));
+  font-family: inherit;
+}
+.address-avatar {
+  width: calc(32 * var(--system-scale));
+  border-radius: calc(6 * var(--system-scale));
+  color: #9eb2ad;
+}
+.system-surface-address-book .system-dialog-body > p {
+  font-size: calc(14 * var(--system-scale));
+  margin: calc(9 * var(--system-scale)) 0 0;
+}
+.system-surface-address-book .system-pagination {
+  font-size: calc(17 * var(--system-scale));
+}
+
+.system-settings-index .system-settings-shell h1 {
+  min-width: 75%;
+}
+.system-settings-index .system-wii-logo {
+  font-size: calc(20 * var(--system-scale));
+}
+.system-settings-index .system-settings-shell footer {
+  padding-bottom: calc(16 * var(--system-scale));
+}
+.system-settings-list .system-button,
+.system-settings-shell .wii-settings-back {
+  background: linear-gradient(#fff 28%, #d4d4d9 48%, #fafafa 90%);
+}
+.system-settings-shell .wii-settings-back {
+  border-color: #aebbc3;
+  border-radius: calc(40 * var(--system-scale));
+}
+wii-keyboard .wii-keyboard--system .wii-keyboard-panel {
+  font-size: min(3.4vw, 4.5vh);
+}
+wii-keyboard .wii-keyboard--system .wii-keyboard-input {
+  font-size: min(5.3vw, 6.5vh);
+}
+
+/* Reading surfaces use the same line scale as composition. */
+.message-board-memo {
+  border-top-width: calc(36 * var(--system-scale));
+  border-radius: calc(14 * var(--system-scale));
+  outline-width: calc(4 * var(--system-scale));
+}
+.message-board-memo-title {
+  top: calc(-28 * var(--system-scale));
+  font-size: calc(24 * var(--system-scale));
+  font-weight: 500;
+  line-height: 1.1;
+  padding: 0 calc(20 * var(--system-scale));
+}
+.message-board-memo-lines span,
+.message-board-memo-lines a {
+  font-size: calc(22 * var(--system-scale));
+  line-height: calc(44 * var(--system-scale));
+  padding: 0 0 0 calc(10 * var(--system-scale));
+  border-bottom-width: calc(1 * var(--system-scale));
+}
+.message-board-memo-wii-logo {
+  --wii-icon-size: calc(27 * var(--system-scale));
+}
+.menu-sd-button {
+  bottom: calc(35 * var(--system-scale));
+}
+.sd-card-symbol {
+  width: calc(33 * var(--system-scale));
+  height: calc(44 * var(--system-scale));
+}
+.system-dialog-shade {
+  inset: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--system-frame-width, 100vw);
+  height: var(--system-frame-height, 100vh);
+}
+.calendar-back-track .wii-btn-start {
+  --wii-start-font-size: calc(24 * var(--system-scale));
+  font-size: calc(24 * var(--system-scale));
+  min-width: calc(160 * var(--system-scale));
+  height: calc(44 * var(--system-scale));
+  padding: 0 calc(20 * var(--system-scale));
+}
+.calendar-back-track-capsule {
+  width: calc(230 * var(--system-scale));
+  height: calc(74 * var(--system-scale));
+  padding-left: calc(24 * var(--system-scale));
+  border-width: calc(4 * var(--system-scale));
+}
+.calendar-back-track .wii-btn-start {
+  width: calc(190 * var(--system-scale));
+  min-width: calc(190 * var(--system-scale));
+}

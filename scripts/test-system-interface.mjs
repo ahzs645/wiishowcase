@@ -3,10 +3,15 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { spawn } from "node:child_process";
 import { chromium } from "playwright";
+import { interfaceGeometry } from "./lib/interface-geometry.mjs";
 const root = path.resolve(import.meta.dirname, "..");
+const isSizing = process.env.SYSTEM_SIZING || process.argv.includes("--sizing");
 const output =
   process.env.SYSTEM_ARTIFACTS ||
-  path.join(root, "docs/interface-improvements");
+  path.join(
+    root,
+    isSizing ? "docs/interface-sizing" : "docs/interface-improvements",
+  );
 await fs.mkdir(path.join(output, "after"), { recursive: true });
 const port = 4956,
   base = `http://localhost:${port}/wiishowcase/`;
@@ -32,6 +37,8 @@ const results = {
   errors: [],
   missing: [],
 };
+const sizing = [];
+if (isSizing) await fs.mkdir(path.join(output, "native"), { recursive: true });
 const check = (label, value) => {
   assert.ok(value, label);
   results.checks.push(label);
@@ -86,6 +93,28 @@ try {
       await page.evaluate(() => document.fonts.ready);
       const image = `after/${id}-${width}x${height}.png`;
       await page.screenshot({ path: path.join(output, image) });
+      if (isSizing) {
+        const inspect = async (scale) => {
+          const geometry = await page.evaluate(interfaceGeometry);
+          sizing.push({ id, mode, scale, ...geometry });
+          assert.deepEqual(
+            geometry.failures,
+            [],
+            `${id} ${mode} ${scale}: visible text and controls fit and receive pointer hits`,
+          );
+        };
+        await inspect("720-line");
+        const nativeWidth = width === 960 ? 640 : 854;
+        await page.setViewportSize({ width: nativeWidth, height: 480 });
+        await page.mouse.move(nativeWidth - 3, 477);
+        await page.waitForTimeout(350);
+        await inspect("480-line");
+        await page.screenshot({
+          path: path.join(output, `native/${id}-${nativeWidth}x480.png`),
+        });
+        await page.setViewportSize({ width, height });
+        await page.waitForTimeout(350);
+      }
       results.captures.push({
         id,
         title,
@@ -555,6 +584,25 @@ try {
       `${mode}: calendar highlights the configured console day`,
       (await page.locator(".wii-calendar-td-today").innerText()) === "13",
     );
+    const calendarFocus = [];
+    for (let tab = 0; tab < 6; tab++) {
+      await page.keyboard.press("Tab");
+      calendarFocus.push(
+        await page.evaluate(() => {
+          const el = document.activeElement;
+          return (
+            el === document.body ||
+            Boolean(
+              el.closest(".wii-menu-calendar-wrapper,.calendar-back-track"),
+            )
+          );
+        }),
+      );
+    }
+    check(
+      `${mode}: Tab skips covered board and off-screen footer controls`,
+      calendarFocus.every(Boolean),
+    );
     await page
       .locator(".wii-menu-calendar-wrapper .wii-calendar-td-today")
       .click();
@@ -754,6 +802,11 @@ try {
   check("No browser page errors", results.errors.length === 0);
   check("No missing production assets", results.missing.length === 0);
 } finally {
+  if (isSizing)
+    await fs.writeFile(
+      path.join(output, "sizing-checks.json"),
+      JSON.stringify(sizing, null, 2) + "\n",
+    );
   await fs.writeFile(
     path.join(output, "results.json"),
     JSON.stringify(results, null, 2) + "\n",

@@ -333,6 +333,7 @@ export default function WiiMessageBoard({
   onDisplayedDateChange,
   targetDate,
   composeRequest,
+  obscured = false,
 }) {
   const hasOpenedRef = useRef(false);
   if (visible) hasOpenedRef.current = true;
@@ -345,11 +346,13 @@ export default function WiiMessageBoard({
       onDisplayedDateChange={onDisplayedDateChange}
       targetDate={targetDate}
       composeRequest={composeRequest}
+      obscured={obscured}
     />
   );
 }
 
 function MessageBoardContent({
+  obscured,
   visible,
   onDisplayedDateChange,
   targetDate,
@@ -569,7 +572,11 @@ function MessageBoardContent({
       }}
     >
       <div className="board-texture" />
-      <div className="message-board-holder">
+      <div
+        className="message-board-holder"
+        inert={obscured ? "" : undefined}
+        aria-hidden={obscured || undefined}
+      >
         <div className="message-board-viewport">
           <div className="message-board-canvas">
             {dateTransition ? (

@@ -7,8 +7,10 @@ await fs.mkdir(target, { recursive: true });
 for (const name of [
   "interface-audit",
   "interface-improvements",
+  "interface-sizing",
   "interface-audit.md",
   "interface-improvements.md",
+  "interface-sizing.md",
 ]) {
   const source = path.join(root, "docs", name);
   try {

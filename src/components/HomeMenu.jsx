@@ -54,7 +54,7 @@ export default function HomeMenu({
   return (
     <div
       ref={ref}
-      className="home-menu-overlay"
+      className={`home-menu-overlay${remoteOpen ? " is-remote-settings" : ""}`}
       role="dialog"
       aria-modal="true"
       aria-label={remoteOpen ? "Wii Remote Settings" : "HOME Menu"}
@@ -114,6 +114,7 @@ export default function HomeMenu({
                   {Array.from({ length: 10 }, (_, i) => (
                     <i
                       key={i}
+                      style={{ "--bar-index": i }}
                       className={
                         i < Math.round(system.settings.remoteVolume * 10)
                           ? "active"

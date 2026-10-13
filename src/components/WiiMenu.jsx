@@ -160,6 +160,7 @@ export default function WiiMenu({
   onPairClick,
   onChannelClick,
   onCalendarDateSelect,
+  onCalendarOpenChange,
   peerConnected,
   dateOverride,
   onCompose,
@@ -171,6 +172,9 @@ export default function WiiMenu({
   const [isMailOpening, setIsMailOpening] = useState(false);
   const [isMailReturning, setIsMailReturning] = useState(false);
   const [calendarOpen, setCalendarOpen] = useState(false);
+  useEffect(() => {
+    onCalendarOpenChange?.(calendarOpen);
+  }, [calendarOpen, onCalendarOpenChange]);
   const [calendarSwapped, setCalendarSwapped] = useState(false);
   const system = useSystemState();
   const channels = useMemo(
@@ -711,6 +715,8 @@ export default function WiiMenu({
       >
         <div
           className={`wii-track-btn wii-track-btn-flip wii-track-btn-flip-multi wii-track-btn-left${shouldTrackBeFlipped ? " is-flipped" : ""}`}
+          inert={calendarOpen ? "" : undefined}
+          aria-hidden={calendarOpen || undefined}
           data-track-flip=""
           style={TRACK_BTN_LEFT_STYLE}
         >
@@ -771,6 +777,8 @@ export default function WiiMenu({
 
         <div
           className={`wii-track-btn wii-track-btn-flip wii-track-btn-flip-multi${shouldTrackBeFlipped ? " is-flipped" : ""}`}
+          inert={calendarOpen ? "" : undefined}
+          aria-hidden={calendarOpen || undefined}
           data-track-flip=""
           style={TRACK_BTN_RIGHT_STYLE}
         >

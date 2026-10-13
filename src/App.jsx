@@ -146,6 +146,7 @@ function HostApp() {
   const [messageBoardDateOverride, setMessageBoardDateOverride] =
     useState(null);
   const [calendarTargetDate, setCalendarTargetDate] = useState(null);
+  const [calendarOpen, setCalendarOpen] = useState(false);
 
   // Wii System Update: null | 'prompt' (new build detected) | 'checking' (manual)
   const [systemUpdateMode, setSystemUpdateMode] = useState(null);
@@ -790,6 +791,7 @@ function HostApp() {
         onMailClick={openMessageBoard}
         onChannelClick={openChannel}
         onCalendarDateSelect={handleCalendarDateSelect}
+        onCalendarOpenChange={setCalendarOpen}
         onPairClick={openPairing}
         peerConnected={connectedCount > 0}
         sdVisible={showSD || phase === "settings" || showHomeMenu}
@@ -833,6 +835,7 @@ function HostApp() {
         visible={phase === "messageboard"}
         onDisplayedDateChange={setMessageBoardDateOverride}
         targetDate={calendarTargetDate}
+        obscured={calendarOpen}
         composeRequest={composeRequest}
       />
 

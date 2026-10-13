@@ -31,6 +31,25 @@ const CHOICES = {
     "Australia",
   ],
 };
+const DATA_ART = {
+  disc: "disc/disc.png",
+  mii: "mii/miis.png",
+  photo: "photo/fore.png",
+  shop: "shop/logo.png",
+  news: "news/map.png",
+  "pokemon-ranch": "pokemon-ranch/icon.png",
+  onliine: "onliine/logotype.png",
+};
+function DataPreview({ item }) {
+  const art = DATA_ART[item.id];
+  return art ? (
+    <img src={`${import.meta.env.BASE_URL}channelart/${art}`} alt="" />
+  ) : (
+    <span className="data-preview-label" aria-hidden="true">
+      {item.name}
+    </span>
+  );
+}
 function DataManagement({ path, setPath, system }) {
   const [storage, setStorage] = useState("Wii");
   const [page, setPage] = useState(0);
@@ -103,7 +122,7 @@ function DataManagement({ path, setPath, system }) {
     );
   return (
     <>
-      <div className="system-tabs">
+      <div className="system-tabs" aria-label="Data storage">
         {(kind === "Nintendo GameCube"
           ? ["Slot A", "Slot B"]
           : ["Wii", "SD"]
@@ -135,17 +154,14 @@ function DataManagement({ path, setPath, system }) {
               className="data-slot"
               onClick={() => setSelected(item)}
             >
-              {item ? (
-                <>
-                  <span>{item.name}</span>
-                  <small>{item.blocks || 1} blocks</small>
-                </>
-              ) : null}
+              {item ? <DataPreview item={item} /> : null}
             </button>
           );
         })}
       </div>
-      <div className="system-pagination">
+      <div
+        className={`system-pagination data-pagination${items.length <= 15 ? " system-visually-hidden" : ""}`}
+      >
         <WiiButton disabled={page === 0} onClick={() => setPage(page - 1)}>
           ‹
         </WiiButton>
@@ -160,11 +176,11 @@ function DataManagement({ path, setPath, system }) {
           ›
         </WiiButton>
       </div>
-      <p role="status" className="system-status">
+      <p role="status" className="system-status data-status">
         {notice ||
           (kind === "Nintendo GameCube"
             ? "No memory card is inserted."
-            : "Choose data to copy, move or erase.")}
+            : `${items.length} ${items.length === 1 ? "item" : "items"} · Local data`)}
       </p>
       {selected && (
         <SystemDialog
@@ -245,6 +261,7 @@ export default function WiiSettings({
     }
   }, [visible]);
   const screen = path.at(-1);
+  const dataGrid = ["Wii", "Nintendo GameCube", "Channels"].includes(screen);
   const back = () => {
     if (path.length) setPath(path.slice(0, -1));
     else onBack();
@@ -712,7 +729,7 @@ export default function WiiSettings({
   return (
     <div
       ref={shellRef}
-      className="wii-settings-screen system-settings"
+      className={`wii-settings-screen system-settings${dataGrid ? " system-data-screen" : ""}${screen === "Wii Settings" ? " system-settings-index" : ""}`}
       data-settings-path={screen || "Options"}
       onKeyDown={(e) => {
         if (e.key === "Escape") {
@@ -729,7 +746,9 @@ export default function WiiSettings({
               ? "Wii Options"
               : screen === "Wii Settings"
                 ? `Wii System Settings ${page + 1}`
-                : screen}
+                : dataGrid && screen !== "Channels"
+                  ? "Save Data"
+                  : screen}
           </h1>
           <span className="system-wii-logo">Wii</span>
         </header>
@@ -741,7 +760,7 @@ export default function WiiSettings({
         </main>
         <footer>
           <button className="wii-settings-back system-button" onClick={back}>
-            ‹ Back
+            Back
           </button>
         </footer>
       </section>

@@ -7,6 +7,7 @@ import {
 } from "../../lib/systemState";
 import { WiiButton, SystemDialog } from "./SystemUI";
 import SystemKeyboard from "./SystemKeyboard";
+import MessageArt from "./MessageArt";
 const PETER = `${import.meta.env.BASE_URL}assets/message-board/Peter.miic`;
 export default function MessageTools({ onClose, dateKey, reply }) {
   const system = useSystemState();
@@ -148,14 +149,10 @@ export default function MessageTools({ onClose, dateKey, reply }) {
   } else if (screen === "Create Message")
     content = (
       <div className="message-create-choices">
-        {[
-          ["Memo", "▤"],
-          ["Letter", "✉"],
-          ["Address Book", "▣"],
-        ].map(([label, icon]) => (
+        {["Memo", "Letter", "Address Book"].map((label) => (
           <button key={label} onClick={() => setScreen(label)}>
-            <span aria-hidden="true">{icon}</span>
-            {label}
+            <MessageArt kind={label} />
+            <span className="message-choice-label">{label}</span>
           </button>
         ))}
       </div>
@@ -301,6 +298,7 @@ export default function MessageTools({ onClose, dateKey, reply }) {
         </WiiButton>
         <button
           className="message-write-body"
+          data-empty={!body}
           aria-label={screen === "Memo" ? "Write a memo" : "Write a letter"}
           onClick={() =>
             edit(`Write a ${screen.toLowerCase()}`, body, setBody, true)
@@ -339,7 +337,22 @@ export default function MessageTools({ onClose, dateKey, reply }) {
   }
   return (
     <>
-      <SystemDialog title={screen} onBack={back} actions={actions}>
+      <SystemDialog
+        title={screen}
+        onBack={back}
+        actions={actions}
+        variant={
+          posted || selectedFriend
+            ? "dialog"
+            : screen === "Create Message"
+              ? "message-chooser"
+              : screen === "Address Book"
+                ? "address-book"
+                : ["Memo", "Letter"].includes(screen)
+                  ? "composer"
+                  : "dialog"
+        }
+      >
         {content}
         {!posted && notice && <p role="alert">{notice}</p>}
       </SystemDialog>

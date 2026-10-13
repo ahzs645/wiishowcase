@@ -138,7 +138,7 @@ export default function ChannelSelection({ visible, channel, onBack, onStart, ha
   };
 
   return (
-    <div className={`ch-selection${visible ? ' visible' : ''}`}>
+    <div className={`ch-selection${visible ? ' visible' : ''}`} inert={!visible ? '' : undefined} aria-hidden={!visible || undefined}>
       <audio ref={audioRef} />
       <div className="ch-sel-wrapper">
         <div

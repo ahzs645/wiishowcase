@@ -1,6 +1,8 @@
 import { chromium } from "playwright";
 import fs from "node:fs/promises";
 import assert from "node:assert/strict";
+const sizing = process.argv.includes("--sizing");
+const directory = sizing ? "interface-sizing" : "interface-improvements";
 const browser = await chromium.launch({
   executablePath: process.env.SMOKE_CHROMIUM || "/usr/bin/chromium",
   args: ["--no-sandbox"],
@@ -16,29 +18,31 @@ const report = {
   difference: false,
 };
 try {
-  await page.goto("http://localhost:4957/interface-improvements/");
+  await page.goto(`http://localhost:4957/${directory}/`);
   const options = await page
     .locator("#interface option")
     .evaluateAll((els) => els.map((el) => el.value));
   for (const id of options)
-    for (const mode of ["4:3", "16:9"]) {
-      await page.selectOption("#interface", id);
-      await page.selectOption("#mode", mode);
-      await page.waitForFunction(() =>
-        [...document.querySelectorAll(".frame img")].every(
-          (im) => im.complete && im.naturalWidth > 0,
-        ),
-      );
-      const broken = await page
-        .locator(".frame img")
-        .evaluateAll((els) =>
-          els
-            .filter((im) => !im.complete || !im.naturalWidth)
-            .map((im) => im.src),
+    for (const mode of ["4:3", "16:9"])
+      for (const size of sizing ? ["720", "480"] : ["720"]) {
+        if (sizing) await page.selectOption("#size", size);
+        await page.selectOption("#interface", id);
+        await page.selectOption("#mode", mode);
+        await page.waitForFunction(() =>
+          [...document.querySelectorAll(".frame img")].every(
+            (im) => im.complete && im.naturalWidth > 0,
+          ),
         );
-      report.brokenImages.push(...broken);
-      report.combinations++;
-    }
+        const broken = await page
+          .locator(".frame img")
+          .evaluateAll((els) =>
+            els
+              .filter((im) => !im.complete || !im.naturalWidth)
+              .map((im) => im.src),
+          );
+        report.brokenImages.push(...broken);
+        report.combinations++;
+      }
   await page.locator("#alpha").fill("75");
   report.overlay = await page
     .locator("#overlay-image")
@@ -50,15 +54,24 @@ try {
   assert.equal(errors.length, 0);
   assert.equal(report.brokenImages.length, 0);
   assert.ok(report.overlay && report.difference);
-  await page.selectOption("#interface", "menu-settled");
+  if (sizing) {
+    await page.selectOption("#layer", "progress");
+    assert.equal(
+      await page.locator("#overlay-source").getAttribute("src"),
+      await page.locator("#before").getAttribute("src"),
+    );
+    await page.selectOption("#layer", "after");
+    await page.selectOption("#size", "720");
+  }
+  await page.selectOption("#interface", sizing ? "save-grid" : "menu-settled");
   await page.selectOption("#mode", "4:3");
   await page.locator("#difference").uncheck();
   await page.locator("#alpha").fill("50");
-  await page.screenshot({ path: "docs/interface-improvements/viewer.png" });
+  await page.screenshot({ path: `docs/${directory}/viewer.png` });
   console.log("PASS", JSON.stringify(report));
 } finally {
   await fs.writeFile(
-    "docs/interface-improvements/viewer-validation.json",
+    `docs/${directory}/viewer-validation.json`,
     JSON.stringify(report, null, 2) + "\n",
   );
   await browser.close();

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { playSystemFeedback } from "../../lib/systemFeedback";
 import { acquireModalLayer, modalScale } from "../../lib/modalLayer";
@@ -27,8 +27,27 @@ export function WiiButton({ children, onClick, onMouseEnter, ...props }) {
     </button>
   );
 }
-export function SystemDialog({ title, children, onBack, actions }) {
+export function SystemDialog({
+  title,
+  children,
+  onBack,
+  actions,
+  variant = "dialog",
+}) {
   const ref = useRef(null);
+  const [frame, setFrame] = useState(null);
+  useEffect(() => {
+    const root = document.querySelector(".wii");
+    if (!root) return;
+    const resize = () => {
+      const { width, height } = root.getBoundingClientRect();
+      setFrame({ width, height });
+    };
+    const observer = new ResizeObserver(resize);
+    resize();
+    observer.observe(root);
+    return () => observer.disconnect();
+  }, []);
   useEffect(acquireModalLayer, []);
   useEffect(() => {
     const old = document.activeElement;
@@ -46,8 +65,12 @@ export function SystemDialog({ title, children, onBack, actions }) {
   });
   return createPortal(
     <div
-      style={{ "--system-scale": modalScale() }}
-      className="system-dialog-shade"
+      style={{
+        "--system-scale": modalScale(),
+        "--system-frame-width": `${frame?.width || window.innerWidth}px`,
+        "--system-frame-height": `${frame?.height || window.innerHeight}px`,
+      }}
+      className={`system-dialog-shade system-surface-${variant}`}
       onClick={onBack}
     >
       <section
@@ -84,8 +107,8 @@ export function SystemDialog({ title, children, onBack, actions }) {
         <h2>{title}</h2>
         <div className="system-dialog-body">{children}</div>
         <div className="system-actions">
-          {actions}
           <WiiButton onClick={onBack}>Back</WiiButton>
+          {actions}
         </div>
       </section>
     </div>,

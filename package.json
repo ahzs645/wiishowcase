@@ -29,7 +29,9 @@
     "test:system-interface": "node scripts/test-system-interface.mjs",
     "build:interface-improvements": "node scripts/build-interface-improvements.mjs",
     "postbuild": "node scripts/package-interface-comparisons.mjs",
-    "test:system-controllers": "node scripts/test-system-controllers.mjs"
+    "test:system-controllers": "node scripts/test-system-controllers.mjs",
+    "test:interface-sizing": "node scripts/test-system-interface.mjs --sizing",
+    "build:interface-sizing": "node scripts/build-interface-sizing.mjs && python scripts/render-interface-sizing-overviews.py"
   },
   "dependencies": {
     "@firstform/wii-channel-renderer": "file:wewad/packages/wii-channel-renderer",
