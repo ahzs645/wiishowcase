@@ -1,0 +1,93 @@
+{
+  "captures": [
+    {
+      "id": "mariowiki-menu-wide",
+      "mode": "16:9",
+      "country": "United States",
+      "region": "U",
+      "instant": "2013-01-29T08:59:00Z",
+      "time": "12:59 AM",
+      "date": "Tue 1/29",
+      "unread": true,
+      "width": 854,
+      "height": 480,
+      "image": "after/mariowiki-menu-wide-854x480.png"
+    },
+    {
+      "id": "mariowiki-menu-wide",
+      "mode": "16:9",
+      "country": "United States",
+      "region": "U",
+      "instant": "2013-01-29T08:59:00Z",
+      "time": "12:59 AM",
+      "date": "Tue 1/29",
+      "unread": true,
+      "width": 1280,
+      "height": 720,
+      "image": "after/mariowiki-menu-wide-1280x720.png"
+    },
+    {
+      "id": "wikipedia-menu-wide",
+      "mode": "16:9",
+      "country": "United States",
+      "region": "U",
+      "instant": "2010-01-01T08:00:00Z",
+      "time": "12:00 AM",
+      "date": "Fri 1/1",
+      "unread": false,
+      "width": 854,
+      "height": 480,
+      "image": "after/wikipedia-menu-wide-854x480.png"
+    },
+    {
+      "id": "wikipedia-menu-wide",
+      "mode": "16:9",
+      "country": "United States",
+      "region": "U",
+      "instant": "2010-01-01T08:00:00Z",
+      "time": "12:00 AM",
+      "date": "Fri 1/1",
+      "unread": false,
+      "width": 1280,
+      "height": 720,
+      "image": "after/wikipedia-menu-wide-1280x720.png"
+    },
+    {
+      "id": "copetti-home",
+      "mode": "4:3",
+      "country": "United Kingdom",
+      "region": "E",
+      "instant": "2020-01-04T01:06:00Z",
+      "time": "17:06",
+      "date": "Fri 03/01",
+      "unread": true,
+      "width": 640,
+      "height": 480,
+      "image": "after/copetti-home-640x480.png"
+    },
+    {
+      "id": "copetti-home",
+      "mode": "4:3",
+      "country": "United Kingdom",
+      "region": "E",
+      "instant": "2020-01-04T01:06:00Z",
+      "time": "17:06",
+      "date": "Fri 03/01",
+      "unread": true,
+      "width": 960,
+      "height": 720,
+      "image": "after/copetti-home-960x720.png"
+    }
+  ],
+  "checks": [
+    "mariowiki-menu-wide 854×480: exact written time/date, unread count, all channel icons ready and controls/text fit",
+    "mariowiki-menu-wide 1280×720: exact written time/date, unread count, all channel icons ready and controls/text fit",
+    "wikipedia-menu-wide 854×480: exact written time/date, unread count, all channel icons ready and controls/text fit",
+    "wikipedia-menu-wide 1280×720: exact written time/date, unread count, all channel icons ready and controls/text fit",
+    "copetti-home 640×480: exact written time/date, unread count, all channel icons ready and controls/text fit",
+    "copetti-home 960×720: exact written time/date, unread count, all channel icons ready and controls/text fit"
+  ],
+  "errors": [],
+  "missing": [],
+  "scope": "Actual app captures matching written reference time/date and unread count. Fixture years are chosen for weekday agreement, not identified from the source. Channel inventory/animation and SD insertion appearance may differ. Exact reference firmware unverified."
+}

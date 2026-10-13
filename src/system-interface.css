@@ -1312,6 +1312,36 @@ wii-channel-holder.wii-channel-holder {
 }
 .wii-169 .wii-menu {
   --menu-card-width: calc(176 * var(--system-scale));
+  --menu-column-gap: calc(4 * var(--system-scale));
+}
+.wii-169 .channel-pages-viewport {
+  --menu-grid-inset: calc((100% - var(--menu-grid-width)) / 2);
+}
+.wii-169 wii-channel-holder .wii-channel-holder-content {
+  padding-top: calc(39 * var(--system-scale));
+}
+.wii-169 wii-channel-holder.wii-channel-holder,
+.wii-169 .menu-holder-curve {
+  height: calc(399 * var(--system-scale));
+}
+.wii-169 .wii-menu-bottom-buttons {
+  bottom: calc(23 * var(--system-scale));
+}
+.wii-169 .wii-menu-bottom-buttons:not(.is-calendar-mode) .wii-track-btn-left {
+  transform: translateX(var(--system-scale)) scaleX(-1);
+}
+.wii-169 .menu-sd-button {
+  /* 4.3 SD pane: x=-245 in the -416..416 widescreen projection. */
+  left: calc(20.5529% - 16.5 * var(--system-scale));
+}
+.wii-169 .channel-holder-wrapper > .channel-page-arrow {
+  top: calc(184 * var(--system-scale));
+}
+.wii-169 .channel-holder-wrapper > .channel-page-arrow-next {
+  right: calc(30 * var(--system-scale));
+}
+.wii-169 .channel-holder-wrapper > .channel-page-arrow-prev {
+  left: calc(30 * var(--system-scale));
 }
 .channel-holder-wrapper > .channel-page-arrow {
   top: calc(182 * var(--system-scale));
@@ -1355,6 +1385,10 @@ wii-channel-holder.wii-channel-holder {
   font-size: calc(18 * var(--system-scale));
   line-height: 1;
   color: #9b9d9e;
+}
+.menu-clock-period.is-before {
+  left: auto;
+  right: calc(100% + 16 * var(--system-scale));
 }
 wii-channel-holder.wii-channel-holder {
   background-image: repeating-linear-gradient(

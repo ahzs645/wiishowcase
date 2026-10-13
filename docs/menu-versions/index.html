@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wii Menu versions and widescreen comparison</title>
+<style>
+body{margin:0;padding:24px;background:#eaf1f6;color:#263e4c;font:16px system-ui,sans-serif}main{max-width:1600px;margin:auto}h1{font-size:28px}h2{font-size:20px}p{line-height:1.5}a{color:#056492}label{display:inline-flex;align-items:center;gap:8px;margin-right:18px}select,input,button{font:inherit}select,button{padding:8px}.controls{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin:18px 0}.columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}figure{margin:0}figcaption{margin:8px 0}.frame{position:relative;background:#d9e2e7;overflow:hidden}.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}.overlay{max-width:1100px;margin:26px auto}.frame svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.confidence{padding:12px 16px;background:#fff;border-left:4px solid #229ec4}.facts{padding:12px 18px;background:#dfe9ef}table{border-collapse:collapse;width:100%;background:#fff}td,th{text-align:left;padding:10px;border:1px solid #c9d8e1}small{display:block;margin-top:8px;line-height:1.5}@media(max-width:850px){.columns{grid-template-columns:1fr}body{padding:14px}}
+</style>
+<main>
+<h1>Wii Menu versions and widescreen alignment</h1>
+<p>Implementation target: retail Wii 4.x, using 4.3 U/E behavior as the baseline. These menu references are not identified as exact 4.3 captures.</p>
+<div class="facts">3.0 added the clock; 4.0 added the SD Menu. In 4.3, “Wii Menu” briefly appears before the clock. Clock format, SD insertion, unread animation and capture cropping must be distinguished from firmware.</div>
+<p><a href="../menu-versions.md">Source-linked version and region report</a> · <a href="wide-reference-comparison.png">Both independent wide overlays</a> · <a href="../menu-fidelity/">Earlier full-menu comparisons</a></p>
+<div class="controls"><label>Reference <select id="reference"></select></label><label>Capture <select id="size"><option value="480">480 lines</option><option value="720">720 lines</option></select></label></div>
+<p id="confidence" class="confidence"></p><p id="note"></p>
+<div class="columns"><figure><figcaption>Wii reference · original aspect preserved</figcaption><div class="frame"><img id="source" alt="Wii reference"></div></figure><figure><figcaption>Before · e12cb5f · different time/date</figcaption><div class="frame"><img id="before" alt="Actual menu before widescreen correction"></div></figure><figure><figcaption>Current app · matching time/date and unread count</figcaption><div class="frame"><img id="after" alt="Actual corrected menu capture"></div></figure></div>
+<p><a id="source-link" target="_blank" rel="noreferrer">Reference provenance</a></p>
+<section class="overlay"><h2>Whole-frame overlay</h2><div class="controls"><label>Opacity <input id="alpha" type="range" min="0" max="100" value="50"><output id="percent">50%</output></label><label><input id="difference" type="checkbox">Difference</label><label><input id="anchors" type="checkbox" checked>Measured Disc outline</label></div><div class="frame"><img id="overlay-source" alt="Reference base"><img id="overlay-after" alt="Current overlay"><svg id="outlines" aria-hidden="true"></svg></div><small>Red: outline measured from the reference pixels. Blue: outline measured from the current capture. They are border centers, not DOM boxes. Measurements are unavailable for the 4:3 entry here.</small></section>
+<h2>Measured shell placement</h2><div id="measurements"></div>
+<p>Current app captures match the written time/date and unread count. Their chosen fixture years do not identify the year of the original screenshots. Channel inventory, icon phases, font shapes, SD insertion appearance and mail-pulse state still differ. The independent low-resolution reference corroborates geometry but cannot verify fine texture detail. These overlays do not certify overall pixel fidelity or an exact firmware match.</p>
+</main>
+<script type="module">
+const data=await fetch('comparison.json').then(r=>r.json()), entries=data.entries;
+const byId=id=>document.getElementById(id), parameters=new URLSearchParams(location.search);
+const references=[...new Map(entries.map(e=>[e.reference.id,e.reference])).values()];
+for(const r of references){const option=new Option(r.title,r.id);byId('reference').add(option)}
+byId('reference').value=references.some(r=>r.id===parameters.get('reference'))?parameters.get('reference'):'mariowiki-menu-wide';
+byId('size').value=parameters.get('height')==='720'?'720':'480';
+function updateOverlay(){byId('overlay-after').style.opacity=byId('alpha').value/100;byId('overlay-after').style.mixBlendMode=byId('difference').checked?'difference':'normal';byId('percent').textContent=byId('alpha').value+'%';byId('outlines').style.display=byId('anchors').checked?'block':'none'}
+function render(){
+ const e=entries.find(e=>e.reference.id===byId('reference').value&&e.height===Number(byId('size').value)),r=e.reference;
+ document.querySelectorAll('.frame').forEach(el=>el.style.aspectRatio=`${e.width}/${e.height}`);
+ byId('source').src=byId('overlay-source').src='../interface-audit/'+r.image;byId('before').src=e.before;byId('after').src=byId('overlay-after').src=e.after;
+ byId('confidence').textContent=`Exact firmware: ${r.systemMenu?.exactVersion||'not established'}. Visible feature range: ${r.systemMenu?.visibleFeatureRange||'unknown'}. ${r.systemMenu?.confidence||''}.`;
+ byId('note').textContent=`${e.mode} · ${e.width}×${e.height}. Source ${r.originalSize.join('×')}. ${r.notes}`;byId('source-link').href=r.sourceURL;
+ const svg=byId('outlines');svg.replaceChildren();svg.setAttribute('viewBox',`0 0 ${e.width} ${e.height}`);
+ const area=byId('measurements');area.replaceChildren();
+ if(e.measurements){
+  const table=document.createElement('table');for(const row of [['Landmark','Reference','Before','Current'],['Disc left edge',...['reference','before','after'].map(k=>e.measurements[k].discBorder[0])],['Four visible column edges',...['reference','before','after'].map(k=>e.measurements[k].columnLeftEdges.join(', '))]]){const tr=document.createElement('tr');row.forEach(value=>{const td=document.createElement('td');td.textContent=value;tr.append(td)});table.append(tr)}area.append(table);
+  for(const [key,color] of [['reference','#dc3545'],['after','#087cf0']]){const [x,y,right,bottom]=e.measurements[key].discBorder,rect=document.createElementNS('http://www.w3.org/2000/svg','rect');Object.entries({x,y,width:right-x,height:bottom-y,fill:'none',stroke:color,'stroke-width':e.height/480}).forEach(([k,v])=>rect.setAttribute(k,v));svg.append(rect)}
+ }else{area.textContent='4:3 control: no widescreen correction is applied to this layout.'}
+ updateOverlay();history.replaceState(null,'',`?reference=${encodeURIComponent(r.id)}&height=${e.height}`);
+}
+for(const id of ['reference','size'])byId(id).addEventListener('change',render);
+for(const id of ['alpha','difference','anchors'])byId(id).addEventListener('input',updateOverlay);
+render();
+</script>
+</html>

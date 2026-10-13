@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import { chromium } from "playwright";
-import { formatMenuTime } from "../src/lib/menuClock.js";
+import { formatMenuTime, formatMenuDate } from "../src/lib/menuClock.js";
 
 const output = "docs/menu-typography";
 await fs.mkdir(output, { recursive: true });
@@ -22,6 +22,7 @@ for (const [hours, minutes, country, expected] of [
   [23, 59, "United States", { time: "11:59", period: "PM" }],
   [0, 0, "United Kingdom", { time: "0:00", period: "" }],
   [17, 6, "United Kingdom", { time: "17:06", period: "" }],
+  [0, 0, "Canada", { time: "12:00", period: "AM" }],
 ]) {
   assert.deepEqual(
     formatMenuTime(new Date(2024, 2, 1, hours, minutes), country),
@@ -31,10 +32,33 @@ for (const [hours, minutes, country, expected] of [
     `${country}: ${hours}:${minutes} formats as ${expected.time} ${expected.period}`.trim(),
   );
 }
+for (const [country, region, expected] of [
+  ["United States", "E", { time: "0:00", period: "" }],
+  ["United Kingdom", "U", { time: "12:00", period: "AM" }],
+  ["Japan", "J", { time: "0:00", period: "AM", periodSide: "before" }],
+  ["United States", "K", { time: "12:00", period: "AM", periodSide: "before" }],
+]) {
+  assert.deepEqual(
+    formatMenuTime(new Date(2024, 2, 1, 0, 0), country, region),
+    expected,
+  );
+  report.checks.push(
+    `${region} product region overrides ${country} clock profile`,
+  );
+}
 const browser = await chromium.launch({
   executablePath: "/usr/bin/chromium",
   args: ["--no-sandbox"],
 });
+for (const [country, region, expected] of [
+  ["United States", "auto", "Fri 3/1"],
+  ["Canada", "auto", "Fri 3/1"],
+  ["United Kingdom", "auto", "Fri 01/03"],
+  ["United States", "E", "Fri 01/03"],
+]) {
+  assert.equal(formatMenuDate(new Date(2024, 2, 1), country, region), expected);
+  report.checks.push(`${country}/${region}: regional date is ${expected}`);
+}
 try {
   for (const [width, height] of [
     [640, 480],
@@ -93,6 +117,10 @@ try {
       `${width}×${height}: US midnight label rendered`,
       (await page.getByRole("timer").getAttribute("aria-label")) === "12:59 AM",
     );
+    check(
+      `${width}×${height}: U-profile date is unpadded month/day`,
+      (await page.locator(".menu-clock-date").innerText()) === "Tue 1/29",
+    );
     const geometry = await page.evaluate(() => {
       const date = document.querySelector(".menu-clock-date"),
         digits = document.querySelector(".menu-clock-digits"),
@@ -150,6 +178,38 @@ try {
       (await page.getByRole("timer").getAttribute("aria-label")) === "0:59" &&
         (await page.locator(".menu-clock-period").count()) === 0,
     );
+    check(
+      `${width}×${height}: single-digit hour keeps fixed digit cell width`,
+      Math.abs(
+        (await page.locator(".menu-clock-digits").boundingBox()).width -
+          geometry.digits.width,
+      ) < 1,
+    );
+    await page.evaluate(() => {
+      const state = JSON.parse(localStorage.getItem("wiishowcase.system.v1"));
+      state.settings.country = "Canada";
+      localStorage.setItem("wiishowcase.system.v1", JSON.stringify(state));
+    });
+    await page.reload();
+    await page.locator(".menu-clock-digits").waitFor();
+    check(
+      `${width}×${height}: Canada uses U-region AM/PM`,
+      (await page.getByRole("timer").getAttribute("aria-label")) === "12:59 AM",
+    );
+    await page.evaluate(() => {
+      const state = JSON.parse(localStorage.getItem("wiishowcase.system.v1"));
+      state.settings.menuRegion = "J";
+      localStorage.setItem("wiishowcase.system.v1", JSON.stringify(state));
+    });
+    await page.reload();
+    await page.locator(".menu-clock-digits").waitFor();
+    const before = await page.locator(".menu-clock-period").boundingBox();
+    const digits = await page.locator(".menu-clock-digits").boundingBox();
+    check(
+      `${width}×${height}: explicit J-region puts period before 0:59`,
+      (await page.getByRole("timer").getAttribute("aria-label")) ===
+        "AM 0:59" && before.x + before.width < digits.x,
+    );
     const mode = width / height < 1.5 ? "4:3" : "16:9";
     const text =
       mode === "4:3"
@@ -184,7 +244,9 @@ try {
     "Font served successfully under the deployed base path",
     report.fontRequests.length >= 4 &&
       report.fontRequests.every(
-      (r) => [200, 304].includes(r.status) && r.url.includes("/wiishowcase/fonts/menu/"),
+        (r) =>
+          [200, 304].includes(r.status) &&
+          r.url.includes("/wiishowcase/fonts/menu/"),
       ),
   );
   console.log(

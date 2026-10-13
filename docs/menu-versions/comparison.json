@@ -1,0 +1,573 @@
+{
+  "beforeRevision": "e12cb5f0e9280702972a7b2cb2f1dd8556949e8c",
+  "entries": [
+    {
+      "reference": {
+        "id": "copetti-home",
+        "title": "Wii Menu, 4:3 capture",
+        "mode": "4:3",
+        "kind": "Researcher screenshot",
+        "image": "references/copetti-home.png",
+        "sourceURL": "https://www.copetti.org/writings/consoles/wii/",
+        "imageURL": "https://www.copetti.org/images/consoles/wii/system/home.137e6e3b1d5f7a8bd2e4bb2c7a32235f6bf267c4ec126f9c5dd1a14cac482ba2.png",
+        "originalSize": [
+          640,
+          476
+        ],
+        "originalSHA256": "137e6e3b1d5f7a8bd2e4bb2c7a32235f6bf267c4ec126f9c5dd1a14cac482ba2",
+        "notes": "640×476 screenshot, close to 4:3 with a small capture crop. Channel selection, date and region differ from our fixture.",
+        "systemMenu": {
+          "exactVersion": null,
+          "visibleFeatureRange": "4.0+ style",
+          "confidence": "inferred from visible clock and SD shortcut; not an exact version identification",
+          "platform": "Wii/vWii/emulator not established",
+          "clockPhase": "settled",
+          "regionStyle": "24-hour English; exact region unknown"
+        }
+      },
+      "width": 640,
+      "height": 480,
+      "mode": "4:3",
+      "before": "before/menu-640x480.png",
+      "after": "after/copetti-home-640x480.png",
+      "matchedState": {
+        "id": "copetti-home",
+        "mode": "4:3",
+        "country": "United Kingdom",
+        "region": "E",
+        "instant": "2020-01-04T01:06:00Z",
+        "time": "17:06",
+        "date": "Fri 03/01",
+        "unread": true,
+        "width": 640,
+        "height": 480,
+        "image": "after/copetti-home-640x480.png"
+      }
+    },
+    {
+      "reference": {
+        "id": "mariowiki-menu-wide",
+        "title": "Wii Menu, archived 16:9 screenshot",
+        "mode": "16:9",
+        "kind": "Community screenshot (capture settings undocumented)",
+        "image": "references/mariowiki-menu-wide.png",
+        "sourceURL": "https://www.mariowiki.com/File:Wii_Systemmenu.png#filehistory",
+        "imageURL": "https://www.mariowiki.com/images/archive/c/ca/20251207024246%21Wii_Systemmenu.png?0fd5d",
+        "originalSize": [
+          2560,
+          1440
+        ],
+        "originalSHA256": "321a12e738195ac812a1d0b3a55ec3d83735fe0e91349c64cbeeace3084bf965",
+        "notes": "Exact 16:9 image from Super Mario Wiki file history: uploaded by SWFlash on 28 January 2013 and losslessly optimized by DogsRNice on 18 November 2017. Both archived versions decode to identical pixels. Full menu includes clock, date, SD shortcut, message count and adjacent channel column. Capture hardware/emulator, internal render resolution and filtering are undocumented; file dimensions do not establish native detail. Time (12:59 AM), date (Tue 1/29), channel inventory and animation phases differ from the browser fixture. Preserve supplied aspect without cropping or stretching.",
+        "systemMenu": {
+          "exactVersion": null,
+          "visibleFeatureRange": "4.0+ style",
+          "confidence": "inferred from visible clock and SD shortcut; not an exact version identification",
+          "platform": "Wii/vWii/emulator not established",
+          "clockPhase": "settled",
+          "regionStyle": "USA-style English with right-hand AM/PM"
+        }
+      },
+      "width": 854,
+      "height": 480,
+      "mode": "16:9",
+      "before": "before/menu-854x480.png",
+      "after": "after/mariowiki-menu-wide-854x480.png",
+      "matchedState": {
+        "id": "mariowiki-menu-wide",
+        "mode": "16:9",
+        "country": "United States",
+        "region": "U",
+        "instant": "2013-01-29T08:59:00Z",
+        "time": "12:59 AM",
+        "date": "Tue 1/29",
+        "unread": true,
+        "width": 854,
+        "height": 480,
+        "image": "after/mariowiki-menu-wide-854x480.png"
+      },
+      "measurements": {
+        "reference": {
+          "discBorder": [
+            71,
+            41,
+            242,
+            133
+          ],
+          "columnLeftEdges": [
+            71,
+            251,
+            430,
+            610
+          ],
+          "wiiRing": [
+            39,
+            364,
+            117,
+            444
+          ],
+          "sdCyan": [
+            158,
+            399,
+            192,
+            443
+          ]
+        },
+        "before": {
+          "discBorder": [
+            60,
+            39,
+            231,
+            132
+          ],
+          "columnLeftEdges": [
+            60,
+            246,
+            432,
+            618
+          ],
+          "wiiRing": [
+            35,
+            358,
+            114,
+            436
+          ],
+          "sdCyan": [
+            142,
+            399,
+            175,
+            443
+          ]
+        },
+        "after": {
+          "discBorder": [
+            71,
+            41,
+            242,
+            134
+          ],
+          "columnLeftEdges": [
+            71,
+            251,
+            431,
+            611
+          ],
+          "wiiRing": [
+            39,
+            364,
+            118,
+            442
+          ],
+          "sdCyan": [
+            159,
+            399,
+            192,
+            443
+          ]
+        }
+      }
+    },
+    {
+      "reference": {
+        "id": "wikipedia-menu-wide",
+        "title": "Wii Menu, independent 16:9 wiki screenshot",
+        "mode": "16:9",
+        "kind": "Community screenshot, original hosted on Wikipedia; retrieved from HandWiki mirror",
+        "image": "references/wikipedia-menu-wide.png",
+        "sourceURL": "https://en.wikipedia.org/wiki/File:Wiimen.png",
+        "imageURL": "https://handwiki.org/wiki/images/d/da/Wiimen.png",
+        "originalSize": [
+          420,
+          236
+        ],
+        "originalSHA256": "e985bbcdffdfad75084b723596af4ac30a436390db5bcb8087d7d111344c3c39",
+        "notes": "420×236, close to 16:9 (0.11% aspect difference). Current Wikipedia upload dated 24 June 2022 credits RoanDM. Original image obtained from the HandWiki mirror. Settled clock and SD shortcut are visible; firmware and capture settings are undocumented. Independently corroborates grid placement and paging arrow. Do not infer a firmware number from the upload date. Preserve original aspect.",
+        "systemMenu": {
+          "exactVersion": null,
+          "visibleFeatureRange": "4.0+ style",
+          "confidence": "visible clock and SD shortcut only",
+          "platform": "capture pipeline unknown",
+          "clockPhase": "settled",
+          "regionStyle": "USA-style English, right-hand AM/PM"
+        }
+      },
+      "width": 854,
+      "height": 480,
+      "mode": "16:9",
+      "before": "before/menu-854x480.png",
+      "after": "after/wikipedia-menu-wide-854x480.png",
+      "matchedState": {
+        "id": "wikipedia-menu-wide",
+        "mode": "16:9",
+        "country": "United States",
+        "region": "U",
+        "instant": "2010-01-01T08:00:00Z",
+        "time": "12:00 AM",
+        "date": "Fri 1/1",
+        "unread": false,
+        "width": 854,
+        "height": 480,
+        "image": "after/wikipedia-menu-wide-854x480.png"
+      },
+      "measurements": {
+        "reference": {
+          "discBorder": [
+            71,
+            41,
+            243,
+            133
+          ],
+          "columnLeftEdges": [
+            71,
+            250,
+            430,
+            610
+          ],
+          "wiiRing": [
+            38,
+            364,
+            117,
+            445
+          ],
+          "sdCyan": null
+        },
+        "before": {
+          "discBorder": [
+            60,
+            39,
+            231,
+            132
+          ],
+          "columnLeftEdges": [
+            60,
+            246,
+            432,
+            618
+          ],
+          "wiiRing": [
+            35,
+            358,
+            114,
+            436
+          ],
+          "sdCyan": [
+            142,
+            399,
+            175,
+            443
+          ]
+        },
+        "after": {
+          "discBorder": [
+            71,
+            41,
+            242,
+            134
+          ],
+          "columnLeftEdges": [
+            71,
+            251,
+            431,
+            611
+          ],
+          "wiiRing": [
+            39,
+            364,
+            118,
+            442
+          ],
+          "sdCyan": [
+            159,
+            399,
+            192,
+            443
+          ]
+        }
+      }
+    },
+    {
+      "reference": {
+        "id": "copetti-home",
+        "title": "Wii Menu, 4:3 capture",
+        "mode": "4:3",
+        "kind": "Researcher screenshot",
+        "image": "references/copetti-home.png",
+        "sourceURL": "https://www.copetti.org/writings/consoles/wii/",
+        "imageURL": "https://www.copetti.org/images/consoles/wii/system/home.137e6e3b1d5f7a8bd2e4bb2c7a32235f6bf267c4ec126f9c5dd1a14cac482ba2.png",
+        "originalSize": [
+          640,
+          476
+        ],
+        "originalSHA256": "137e6e3b1d5f7a8bd2e4bb2c7a32235f6bf267c4ec126f9c5dd1a14cac482ba2",
+        "notes": "640×476 screenshot, close to 4:3 with a small capture crop. Channel selection, date and region differ from our fixture.",
+        "systemMenu": {
+          "exactVersion": null,
+          "visibleFeatureRange": "4.0+ style",
+          "confidence": "inferred from visible clock and SD shortcut; not an exact version identification",
+          "platform": "Wii/vWii/emulator not established",
+          "clockPhase": "settled",
+          "regionStyle": "24-hour English; exact region unknown"
+        }
+      },
+      "width": 960,
+      "height": 720,
+      "mode": "4:3",
+      "before": "before/menu-960x720.png",
+      "after": "after/copetti-home-960x720.png",
+      "matchedState": {
+        "id": "copetti-home",
+        "mode": "4:3",
+        "country": "United Kingdom",
+        "region": "E",
+        "instant": "2020-01-04T01:06:00Z",
+        "time": "17:06",
+        "date": "Fri 03/01",
+        "unread": true,
+        "width": 960,
+        "height": 720,
+        "image": "after/copetti-home-960x720.png"
+      }
+    },
+    {
+      "reference": {
+        "id": "mariowiki-menu-wide",
+        "title": "Wii Menu, archived 16:9 screenshot",
+        "mode": "16:9",
+        "kind": "Community screenshot (capture settings undocumented)",
+        "image": "references/mariowiki-menu-wide.png",
+        "sourceURL": "https://www.mariowiki.com/File:Wii_Systemmenu.png#filehistory",
+        "imageURL": "https://www.mariowiki.com/images/archive/c/ca/20251207024246%21Wii_Systemmenu.png?0fd5d",
+        "originalSize": [
+          2560,
+          1440
+        ],
+        "originalSHA256": "321a12e738195ac812a1d0b3a55ec3d83735fe0e91349c64cbeeace3084bf965",
+        "notes": "Exact 16:9 image from Super Mario Wiki file history: uploaded by SWFlash on 28 January 2013 and losslessly optimized by DogsRNice on 18 November 2017. Both archived versions decode to identical pixels. Full menu includes clock, date, SD shortcut, message count and adjacent channel column. Capture hardware/emulator, internal render resolution and filtering are undocumented; file dimensions do not establish native detail. Time (12:59 AM), date (Tue 1/29), channel inventory and animation phases differ from the browser fixture. Preserve supplied aspect without cropping or stretching.",
+        "systemMenu": {
+          "exactVersion": null,
+          "visibleFeatureRange": "4.0+ style",
+          "confidence": "inferred from visible clock and SD shortcut; not an exact version identification",
+          "platform": "Wii/vWii/emulator not established",
+          "clockPhase": "settled",
+          "regionStyle": "USA-style English with right-hand AM/PM"
+        }
+      },
+      "width": 1280,
+      "height": 720,
+      "mode": "16:9",
+      "before": "before/menu-1280x720.png",
+      "after": "after/mariowiki-menu-wide-1280x720.png",
+      "matchedState": {
+        "id": "mariowiki-menu-wide",
+        "mode": "16:9",
+        "country": "United States",
+        "region": "U",
+        "instant": "2013-01-29T08:59:00Z",
+        "time": "12:59 AM",
+        "date": "Tue 1/29",
+        "unread": true,
+        "width": 1280,
+        "height": 720,
+        "image": "after/mariowiki-menu-wide-1280x720.png"
+      },
+      "measurements": {
+        "reference": {
+          "discBorder": [
+            107,
+            61,
+            364,
+            200
+          ],
+          "columnLeftEdges": [
+            107,
+            376,
+            646,
+            915
+          ],
+          "wiiRing": [
+            59,
+            547,
+            175,
+            666
+          ],
+          "sdCyan": [
+            238,
+            598,
+            288,
+            665
+          ]
+        },
+        "before": {
+          "discBorder": [
+            91,
+            59,
+            347,
+            198
+          ],
+          "columnLeftEdges": [
+            91,
+            370,
+            649,
+            928
+          ],
+          "wiiRing": [
+            56,
+            537,
+            175,
+            655
+          ],
+          "sdCyan": [
+            213,
+            599,
+            262,
+            665
+          ]
+        },
+        "after": {
+          "discBorder": [
+            107,
+            62,
+            363,
+            201
+          ],
+          "columnLeftEdges": [
+            107,
+            377,
+            647,
+            917
+          ],
+          "wiiRing": [
+            62,
+            546,
+            181,
+            664
+          ],
+          "sdCyan": [
+            238,
+            599,
+            287,
+            665
+          ]
+        }
+      }
+    },
+    {
+      "reference": {
+        "id": "wikipedia-menu-wide",
+        "title": "Wii Menu, independent 16:9 wiki screenshot",
+        "mode": "16:9",
+        "kind": "Community screenshot, original hosted on Wikipedia; retrieved from HandWiki mirror",
+        "image": "references/wikipedia-menu-wide.png",
+        "sourceURL": "https://en.wikipedia.org/wiki/File:Wiimen.png",
+        "imageURL": "https://handwiki.org/wiki/images/d/da/Wiimen.png",
+        "originalSize": [
+          420,
+          236
+        ],
+        "originalSHA256": "e985bbcdffdfad75084b723596af4ac30a436390db5bcb8087d7d111344c3c39",
+        "notes": "420×236, close to 16:9 (0.11% aspect difference). Current Wikipedia upload dated 24 June 2022 credits RoanDM. Original image obtained from the HandWiki mirror. Settled clock and SD shortcut are visible; firmware and capture settings are undocumented. Independently corroborates grid placement and paging arrow. Do not infer a firmware number from the upload date. Preserve original aspect.",
+        "systemMenu": {
+          "exactVersion": null,
+          "visibleFeatureRange": "4.0+ style",
+          "confidence": "visible clock and SD shortcut only",
+          "platform": "capture pipeline unknown",
+          "clockPhase": "settled",
+          "regionStyle": "USA-style English, right-hand AM/PM"
+        }
+      },
+      "width": 1280,
+      "height": 720,
+      "mode": "16:9",
+      "before": "before/menu-1280x720.png",
+      "after": "after/wikipedia-menu-wide-1280x720.png",
+      "matchedState": {
+        "id": "wikipedia-menu-wide",
+        "mode": "16:9",
+        "country": "United States",
+        "region": "U",
+        "instant": "2010-01-01T08:00:00Z",
+        "time": "12:00 AM",
+        "date": "Fri 1/1",
+        "unread": false,
+        "width": 1280,
+        "height": 720,
+        "image": "after/wikipedia-menu-wide-1280x720.png"
+      },
+      "measurements": {
+        "reference": {
+          "discBorder": [
+            107,
+            61,
+            364,
+            199
+          ],
+          "columnLeftEdges": [
+            107,
+            376,
+            645,
+            915
+          ],
+          "wiiRing": [
+            57,
+            545,
+            176,
+            666
+          ],
+          "sdCyan": null
+        },
+        "before": {
+          "discBorder": [
+            91,
+            59,
+            347,
+            198
+          ],
+          "columnLeftEdges": [
+            91,
+            370,
+            649,
+            928
+          ],
+          "wiiRing": [
+            56,
+            537,
+            175,
+            655
+          ],
+          "sdCyan": [
+            213,
+            599,
+            262,
+            665
+          ]
+        },
+        "after": {
+          "discBorder": [
+            107,
+            62,
+            363,
+            201
+          ],
+          "columnLeftEdges": [
+            107,
+            377,
+            647,
+            917
+          ],
+          "wiiRing": [
+            62,
+            546,
+            181,
+            664
+          ],
+          "sdCyan": [
+            238,
+            599,
+            287,
+            665
+          ]
+        }
+      }
+    }
+  ]
+}

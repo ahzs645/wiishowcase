@@ -453,8 +453,13 @@ function MessageBoardContent({
     [displayedDayOffset, anchorDate],
   );
   const displayedDateText = useMemo(
-    () => formatMenuDate(displayedDate, system.settings.country),
-    [displayedDate, system.settings.country],
+    () =>
+      formatMenuDate(
+        displayedDate,
+        system.settings.country,
+        system.settings.menuRegion,
+      ),
+    [displayedDate, system.settings.country, system.settings.menuRegion],
   );
   const currentMessages = useMemo(
     () => getMessagesForDayOffset(currentDayOffset),

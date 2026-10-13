@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSystemSetting } from "../lib/systemState";
-import { formatMenuTime } from "../lib/menuClock";
-
-const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+import { formatMenuTime, formatMenuDate } from "../lib/menuClock";
+export { formatMenuDate } from "../lib/menuClock";
 
 const SEGMENTS = {
   a: "M4 0h14l3 2.5-3 2.5H4L1 2.5Z",
@@ -26,8 +25,11 @@ const DIGITS = [
   "abfgcd",
 ];
 function ClockDigits({ time }) {
+  // Native 4.3 hides the leading hour pane without reflowing the other panes.
+  // Reserve that cell so minutes and the AM/PM label do not move at 9 -> 10.
+  const characters = [...time.padStart(5, " ")];
   let x = 0;
-  const width = [...time].reduce(
+  const width = characters.reduce(
     (sum, character) => sum + (character === ":" ? 16 : 28),
     -4,
   );
@@ -38,12 +40,12 @@ function ClockDigits({ time }) {
       style={{ "--clock-width": width }}
       aria-hidden="true"
     >
-      {[...time].map((character, index) => {
+      {characters.map((character, index) => {
         const left = x;
         x += character === ":" ? 16 : 28;
         return (
           <g key={index} transform={`translate(${left},0)`}>
-            {character === ":" ? (
+            {character === " " ? null : character === ":" ? (
               <>
                 <circle cx="6.5" cy="10" r="2.5" />
                 <circle cx="6.5" cy="26" r="2.5" />
@@ -62,18 +64,10 @@ function ClockDigits({ time }) {
   );
 }
 
-export function formatMenuDate(date, country = "United States") {
-  const dayName = DAYS[date.getDay()];
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-  return country === "United States"
-    ? `${dayName} ${month}/${day}`
-    : `${dayName} ${day}/${month}`;
-}
-
 export function useDateTime() {
   const offset = useSystemSetting("timeOffset");
   const country = useSystemSetting("country");
+  const region = useSystemSetting("menuRegion");
   const [now, setNow] = useState(new Date());
 
   useEffect(() => {
@@ -83,20 +77,27 @@ export function useDateTime() {
 
   const adjusted = new Date(now.getTime() + offset);
   return {
-    ...formatMenuTime(adjusted, country),
-    date: formatMenuDate(adjusted, country),
+    ...formatMenuTime(adjusted, country, region),
+    date: formatMenuDate(adjusted, country, region),
   };
 }
 
-export function ClockTime({ time, period = "" }) {
-  const label = period ? `${time} ${period}` : time;
+export function ClockTime({ time, period = "", periodSide = "after" }) {
+  const label = period
+    ? periodSide === "before"
+      ? `${period} ${time}`
+      : `${time} ${period}`
+    : time;
   return (
     <div className="menu-clock menu-clock-above">
       <div className="menu-clock-time" role="timer" aria-label={label}>
         <span className="system-visually-hidden">{label}</span>
         <ClockDigits time={time} />
         {period && (
-          <span className="menu-clock-period" aria-hidden="true">
+          <span
+            className={`menu-clock-period${periodSide === "before" ? " is-before" : ""}`}
+            aria-hidden="true"
+          >
             {period}
           </span>
         )}

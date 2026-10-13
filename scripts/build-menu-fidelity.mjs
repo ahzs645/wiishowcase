@@ -19,8 +19,8 @@ const entries = results.captures.map((c) => ({
   baseline: { width: c.width, height: c.height, image: c.before },
   note:
     c.mode === "4:3"
-      ? "Same date (Fri 03/01) and fixed native icon frames. The preserved version/reference show 17:06; the current US profile shows 5:06 PM. Compare card bounds, continuous page edge, curve, clock strokes, date font and footer. Installed channel contents differ."
-      : "The widescreen source is an exact 16:9, 2560×1440 archived menu screenshot with a clock, date, SD button and message count. Time/date, channel inventory and animation phases differ. Capture settings and filtering are undocumented, so this supports layout and typography comparison without an exact pixel-fidelity claim.",
+      ? "Preserved capture: 17:06 / Fri 03/01. Current U profile: 5:06 PM / Fri 3/1. The 24-hour reference uses another regional format. Icon frames are fixed; installed channels differ. Bare menu firmware is unverified (visible 4.0+ style features)."
+      : "Exact 16:9, 2560×1440 archived screenshot; exact firmware and capture settings are unverified. Visible clock and SD shortcut are consistent with 4.0+ style. Grid placement is now corroborated by a second independent image. Time/date, channel inventory, artwork and animation phases differ; this is not exact pixel fidelity.",
 }));
 await fs.writeFile(
   path.join(output, "comparison.json"),
@@ -49,7 +49,7 @@ html = html
   .replaceAll("Wii sizing and typography", "Wii menu — corrected geometry")
   .replace(
     "<h1>Wii menu — corrected geometry</h1>",
-    '<h1>Wii menu — corrected geometry</h1><p><a href="../menu-typography/typography-comparison.png">Enlarged clock/date comparisons · both aspect ratios</a> · <a href="../menu-typography.md">Typography details</a></p>',
+    '<h1>Wii menu — corrected geometry</h1><p><a href="../menu-versions/">Version-aware wide comparison · independent references</a> · <a href="../menu-typography/typography-comparison.png">Clock/date closeups</a> · <a href="../menu-typography.md">Typography details</a></p>',
   )
   .replace(
     "Online reference, previous implementation and refined sizing.",
@@ -67,7 +67,7 @@ html = html
   .replace("+(e.height===480?' · scaled from 720 lines':'')", "")
   .replace(
     "Its 720-line screenshots are scaled proportionally when comparing native sizes. Refined 480-line images are separate browser captures, with text bounds and pointer targets checked in each state.",
-    "Before and corrected images are separate captures at the same size. Date and native icon animation phases are aligned for 4:3 comparison. The current US profile formats 17:06 as 5:06 PM; digits differ from the preserved version and reference.",
+    "Before and corrected images are separate captures at the same size and instant, with fixed icon frames. The current U profile uses 5:06 PM / Fri 3/1; the preserved capture shows 17:06 / Fri 03/01. Regional formats and channel inventory differ from the sources.",
   )
   .replace(
     "Manual illustrations are small and sometimes cropped. Font metrics and some artwork still differ; these comparisons do not establish an exact pixel accuracy score.",

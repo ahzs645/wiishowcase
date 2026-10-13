@@ -20,6 +20,7 @@ const settingsDefaults = {
   burnIn: true,
   language: "English",
   country: "United States",
+  menuRegion: "auto",
   sensorPosition: "Above TV",
   sensorSensitivity: 3,
   parentalEnabled: false,

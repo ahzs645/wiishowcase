@@ -1,0 +1,376 @@
+[
+  {
+    "source": "mariowiki-menu-wide",
+    "width": 854,
+    "height": 480,
+    "reference": {
+      "discBorder": [
+        71,
+        41,
+        242,
+        133
+      ],
+      "columnLeftEdges": [
+        71,
+        251,
+        430,
+        610
+      ],
+      "wiiRing": [
+        39,
+        364,
+        117,
+        444
+      ],
+      "sdCyan": [
+        158,
+        399,
+        192,
+        443
+      ]
+    },
+    "before": {
+      "discBorder": [
+        60,
+        39,
+        231,
+        132
+      ],
+      "columnLeftEdges": [
+        60,
+        246,
+        432,
+        618
+      ],
+      "wiiRing": [
+        35,
+        358,
+        114,
+        436
+      ],
+      "sdCyan": [
+        142,
+        399,
+        175,
+        443
+      ]
+    },
+    "after": {
+      "discBorder": [
+        71,
+        41,
+        242,
+        134
+      ],
+      "columnLeftEdges": [
+        71,
+        251,
+        431,
+        611
+      ],
+      "wiiRing": [
+        39,
+        364,
+        118,
+        442
+      ],
+      "sdCyan": [
+        159,
+        399,
+        192,
+        443
+      ]
+    },
+    "beforeDeviation": {
+      "discBorderMeanErrorNativePixels": 6.25,
+      "columnEdgeMeanErrorNativePixels": 6.5,
+      "curveMeanVerticalErrorNativePixels": 0.921,
+      "curveColumnsCompared": 834
+    },
+    "afterDeviation": {
+      "discBorderMeanErrorNativePixels": 0.25,
+      "columnEdgeMeanErrorNativePixels": 0.5,
+      "curveMeanVerticalErrorNativePixels": 0.375,
+      "curveColumnsCompared": 834
+    },
+    "scope": "Neutral Disc-outline centers, neutral side borders and cyan landmarks/curve, sampled independently from image pixels. Not overall fidelity; firmware/capture settings unverified."
+  },
+  {
+    "source": "wikipedia-menu-wide",
+    "width": 854,
+    "height": 480,
+    "reference": {
+      "discBorder": [
+        71,
+        41,
+        243,
+        133
+      ],
+      "columnLeftEdges": [
+        71,
+        250,
+        430,
+        610
+      ],
+      "wiiRing": [
+        38,
+        364,
+        117,
+        445
+      ],
+      "sdCyan": null
+    },
+    "before": {
+      "discBorder": [
+        60,
+        39,
+        231,
+        132
+      ],
+      "columnLeftEdges": [
+        60,
+        246,
+        432,
+        618
+      ],
+      "wiiRing": [
+        35,
+        358,
+        114,
+        436
+      ],
+      "sdCyan": [
+        142,
+        399,
+        175,
+        443
+      ]
+    },
+    "after": {
+      "discBorder": [
+        71,
+        41,
+        242,
+        134
+      ],
+      "columnLeftEdges": [
+        71,
+        251,
+        431,
+        611
+      ],
+      "wiiRing": [
+        39,
+        364,
+        118,
+        442
+      ],
+      "sdCyan": [
+        159,
+        399,
+        192,
+        443
+      ]
+    },
+    "beforeDeviation": {
+      "discBorderMeanErrorNativePixels": 6.5,
+      "columnEdgeMeanErrorNativePixels": 6.25,
+      "curveMeanVerticalErrorNativePixels": 0.92,
+      "curveColumnsCompared": 834
+    },
+    "afterDeviation": {
+      "discBorderMeanErrorNativePixels": 0.5,
+      "columnEdgeMeanErrorNativePixels": 0.75,
+      "curveMeanVerticalErrorNativePixels": 0.424,
+      "curveColumnsCompared": 834
+    },
+    "scope": "Neutral Disc-outline centers, neutral side borders and cyan landmarks/curve, sampled independently from image pixels. Not overall fidelity; firmware/capture settings unverified."
+  },
+  {
+    "source": "mariowiki-menu-wide",
+    "width": 1280,
+    "height": 720,
+    "reference": {
+      "discBorder": [
+        107,
+        61,
+        364,
+        200
+      ],
+      "columnLeftEdges": [
+        107,
+        376,
+        646,
+        915
+      ],
+      "wiiRing": [
+        59,
+        547,
+        175,
+        666
+      ],
+      "sdCyan": [
+        238,
+        598,
+        288,
+        665
+      ]
+    },
+    "before": {
+      "discBorder": [
+        91,
+        59,
+        347,
+        198
+      ],
+      "columnLeftEdges": [
+        91,
+        370,
+        649,
+        928
+      ],
+      "wiiRing": [
+        56,
+        537,
+        175,
+        655
+      ],
+      "sdCyan": [
+        213,
+        599,
+        262,
+        665
+      ]
+    },
+    "after": {
+      "discBorder": [
+        107,
+        62,
+        363,
+        201
+      ],
+      "columnLeftEdges": [
+        107,
+        377,
+        647,
+        917
+      ],
+      "wiiRing": [
+        62,
+        546,
+        181,
+        664
+      ],
+      "sdCyan": [
+        238,
+        599,
+        287,
+        665
+      ]
+    },
+    "beforeDeviation": {
+      "discBorderMeanErrorNativePixels": 6.167,
+      "columnEdgeMeanErrorNativePixels": 6.333,
+      "curveMeanVerticalErrorNativePixels": 0.859,
+      "curveColumnsCompared": 1250
+    },
+    "afterDeviation": {
+      "discBorderMeanErrorNativePixels": 0.5,
+      "columnEdgeMeanErrorNativePixels": 0.667,
+      "curveMeanVerticalErrorNativePixels": 0.38,
+      "curveColumnsCompared": 1250
+    },
+    "scope": "Neutral Disc-outline centers, neutral side borders and cyan landmarks/curve, sampled independently from image pixels. Not overall fidelity; firmware/capture settings unverified."
+  },
+  {
+    "source": "wikipedia-menu-wide",
+    "width": 1280,
+    "height": 720,
+    "reference": {
+      "discBorder": [
+        107,
+        61,
+        364,
+        199
+      ],
+      "columnLeftEdges": [
+        107,
+        376,
+        645,
+        915
+      ],
+      "wiiRing": [
+        57,
+        545,
+        176,
+        666
+      ],
+      "sdCyan": null
+    },
+    "before": {
+      "discBorder": [
+        91,
+        59,
+        347,
+        198
+      ],
+      "columnLeftEdges": [
+        91,
+        370,
+        649,
+        928
+      ],
+      "wiiRing": [
+        56,
+        537,
+        175,
+        655
+      ],
+      "sdCyan": [
+        213,
+        599,
+        262,
+        665
+      ]
+    },
+    "after": {
+      "discBorder": [
+        107,
+        62,
+        363,
+        201
+      ],
+      "columnLeftEdges": [
+        107,
+        377,
+        647,
+        917
+      ],
+      "wiiRing": [
+        62,
+        546,
+        181,
+        664
+      ],
+      "sdCyan": [
+        238,
+        599,
+        287,
+        665
+      ]
+    },
+    "beforeDeviation": {
+      "discBorderMeanErrorNativePixels": 6.0,
+      "columnEdgeMeanErrorNativePixels": 6.5,
+      "curveMeanVerticalErrorNativePixels": 0.541,
+      "curveColumnsCompared": 1250
+    },
+    "afterDeviation": {
+      "discBorderMeanErrorNativePixels": 0.667,
+      "columnEdgeMeanErrorNativePixels": 0.833,
+      "curveMeanVerticalErrorNativePixels": 1.031,
+      "curveColumnsCompared": 1250
+    },
+    "scope": "Neutral Disc-outline centers, neutral side borders and cyan landmarks/curve, sampled independently from image pixels. Not overall fidelity; firmware/capture settings unverified."
+  }
+]

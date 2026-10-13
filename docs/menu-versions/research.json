@@ -1,0 +1,72 @@
+{
+  "implementationTarget": "Retail Wii 4.x shell; 4.3 U/E behavior baseline",
+  "decompilationCommit": "6ba4232f10331df88e6ee562cb9589b62108db86",
+  "method": "Read source code only; no Nintendo executable was built or run. Repository marks Clock/Layout/Framework/SDMenuButton objects Matching and System/ChannelSelect Equivalent. Bare menu reference firmware remains unverified.",
+  "sourceCodeEvidence": [
+    {
+      "fact": "clock region/period rules",
+      "path": "src/scene/channelSelect/iplClock.cpp",
+      "line": 239,
+      "url": "https://github.com/koopthekoopa/wii-ipl/blob/6ba4232f10331df88e6ee562cb9589b62108db86/src/scene/channelSelect/iplClock.cpp#L239",
+      "quote": "if ((u32)System::getRegion() != SC_PRODUCT_AREA_EUR && (u32)System::getRegion() != SC_PRODUCT_AREA_CHN) {"
+    },
+    {
+      "fact": "leading hour pane is hidden, not reflowed",
+      "path": "src/scene/channelSelect/iplClock.cpp",
+      "line": 211,
+      "url": "https://github.com/koopthekoopa/wii-ipl/blob/6ba4232f10331df88e6ee562cb9589b62108db86/src/scene/channelSelect/iplClock.cpp#L211",
+      "quote": "mpLayout->FindPaneByName(\"Clock3\")->SetVisible(mCurrentTex.hourDigit2 != 0);"
+    },
+    {
+      "fact": "three-second intro label",
+      "path": "include/scene/channelSelect/iplClock.h",
+      "line": 84,
+      "url": "https://github.com/koopthekoopa/wii-ipl/blob/6ba4232f10331df88e6ee562cb9589b62108db86/include/scene/channelSelect/iplClock.h#L84",
+      "quote": "static const int WII_MENU_APPEAR_FOR = 3000; /* in ms (3 seconds) */"
+    },
+    {
+      "fact": "widescreen root/pane correction",
+      "path": "src/layout/iplLayout.cpp",
+      "line": 361,
+      "url": "https://github.com/koopthekoopa/wii-ipl/blob/6ba4232f10331df88e6ee562cb9589b62108db86/src/layout/iplLayout.cpp#L361",
+      "quote": "void Object::initLocationAdjust() {"
+    },
+    {
+      "fact": "widescreen SD placement",
+      "path": "src/scene/sdButton/iplSDMenuButton.cpp",
+      "line": 52,
+      "url": "https://github.com/koopthekoopa/wii-ipl/blob/6ba4232f10331df88e6ee562cb9589b62108db86/src/scene/sdButton/iplSDMenuButton.cpp#L52",
+      "quote": "posX = -245.0f;"
+    },
+    {
+      "fact": "projection widths",
+      "path": "src/system/iplSystem.cpp",
+      "line": 1194,
+      "url": "https://github.com/koopthekoopa/wii-ipl/blob/6ba4232f10331df88e6ee562cb9589b62108db86/src/system/iplSystem.cpp#L1194",
+      "quote": "void System::getProjectionRect16x9(nw4r::ut::Rect* rect) {"
+    },
+    {
+      "fact": "framebuffer and VI output differ by display mode",
+      "path": "src/system/iplFramework.cpp",
+      "line": 36,
+      "url": "https://github.com/koopthekoopa/wii-ipl/blob/6ba4232f10331df88e6ee562cb9589b62108db86/src/system/iplFramework.cpp#L36",
+      "quote": "static GXRenderModeObj sRenderMode_NTSC_PROG = {"
+    }
+  ],
+  "historicalSources": [
+    "https://en-americas-support.nintendo.com/app/answers/detail/a_id/2522/~/wii-system-menu-update-history",
+    "https://wiibrew.org/wiki/3.0",
+    "https://wiibrew.org/wiki/4.0",
+    "https://wiibrew.org/wiki/System_Menu",
+    "https://www.nintendoworldreport.com/news/18036/the-wii-sd-card-menu-a-walkthrough",
+    "https://hackmii.com/2010/06/system-menu-4-3-update/"
+  ],
+  "excludedFromGeometry": [
+    "Retail-vs-vWii/Wii-mini comparisons are separate profiles",
+    "Nintendo promotional label image: unknown firmware/intro phase, too small/cropped",
+    "NWR 4.0 launch photo: release-linked but cropped, perspective and hover state",
+    "RetroTINK image: documented 1080p Over crop/position, exact firmware unverified",
+    "Guide factory-reset sysmenu.png: PC NAND tool screenshot, not Wii menu",
+    "HD texture packs, browser recreations and USBLoaderGX Wii themes are not native shell references"
+  ]
+}

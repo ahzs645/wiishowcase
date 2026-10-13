@@ -1,0 +1,9 @@
+{
+  "combinations": 6,
+  "errors": [],
+  "missingImages": [],
+  "confidenceLabels": true,
+  "opacity": true,
+  "difference": true,
+  "outlines": true
+}

@@ -50,7 +50,7 @@ for filename,mode in [('menu-43-comparison','4:3'),('menu-wide-comparison','16:9
     frames.append(Image.blend(frames[0],frames[2],.5))
     for i,(title,im) in enumerate(zip(['Wii reference','Before · 3e96806','Corrected geometry','Reference overlay'],frames)):
         x=15+i*355;draw.text((x,46),title,font=small,fill='#385466');canvas.paste(im,(x,72))
-    note='4:3: same date and icon phases; US clock now uses 5:06 PM. Installed channels differ.' if mode=='4:3' else 'Wide: 2560×1440 archived capture. Time/date and channels differ; capture settings undocumented.'
+    note='4:3: U profile now uses 5:06 PM / Fri 3/1. Reference region and channel inventory differ.' if mode=='4:3' else 'Wide: version unverified (4.0+ style). Geometry corroborated independently; dates/channels differ.'
     draw.text((15,346),note,font=small,fill='#385466')
     canvas.save(out/(filename+'.png'),optimize=True)
 print(json.dumps(measures))

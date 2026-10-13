@@ -7,12 +7,14 @@ a shallow 4:3 curve, undersized footer circles and a different LCD digit style.
 
 [Matched-state overlay viewer](menu-fidelity/?mode=4%3A3&height=480) ·
 [4:3 comparison](menu-fidelity/menu-43-comparison.png) ·
-[wide comparison](menu-fidelity/menu-wide-comparison.png).
+[wide comparison](menu-fidelity/menu-wide-comparison.png) ·
+[version-aware independent sources](menu-versions/).
 
 The previous implementation is preserved at **3e96806**. Before and corrected
 captures use the same viewport, instant (**17:06 / Friday 1 March**), channel
 inventory and native icon frames. The current US profile renders that instant as
-**5:06 PM**. The date pads month/day as in the 4:3 reference. The Mii logo
+**5:06 PM**. The U profile uses unpadded month/day; the 24-hour reference has a
+different regional format. The Mii logo
 appears late in its animation: its alpha keys fade it in at frames 380–410.
 Comparison captures use frame 430, while Photo/Shop use frame 180 and Disc uses
 frame 0. Live playback remains animated. One local unread memo supplies the
@@ -22,14 +24,17 @@ reference-style unread badge; reading it clears the badge.
 
 - 4:3 card boxes are 128×96 logical units, with 6-unit gaps and a 37-unit top
   inset. The mask's margins are accounted for when aligning the visible border.
-  Wide boxes are 176 units across, with their own gaps. Borders are thinner.
+  Wide boxes are 176 units across. An independent source comparison reduced the
+  wide gap to 4 units and removed the inherited 4:3 inset correction. Borders
+  are thinner.
 - Pages form a continuous grid. Their stride follows four column pitches,
   rather than a whole viewport, exposing the adjacent column at the screen edge.
   Paging, manual scrolling, resizing and reordering use that measured stride.
 - A menu-specific 51-line curve keeps the same depth in both modes. Its clipping
   path and static border share one geometry; animated icon canvases use no filter.
 - Background lines follow the 480-line scale, replacing the coarse fixed-size
-  bands. The footer circles are larger and positioned higher.
+  bands. Footer circles use measured positions; the later wide correction
+  lowers the wide footer six units to align it with the independent references.
 - The clock uses recreated upright seven-segment shapes with round colon dots
   and finer vertical strokes. The US profile has a separate AM/PM label. The date
   uses a small bundled M PLUS 1p Bold subset at 32 logical units; original Rodin
@@ -103,7 +108,7 @@ two archived PNGs decode to identical pixels.
 
 This source includes the clock, date, SD shortcut, message count and adjacent
 channel column. Its clock reads **12:59 AM / Tue 1/29**, whereas the preserved
-browser fixture reads **5:06 PM / Fri 03/01**. Channel inventory and icon animation
+browser fixture reads **5:06 PM / Fri 3/1**. Channel inventory and icon animation
 phases also differ. Hardware/emulator, internal rendering resolution and filtering
 are undocumented; a larger file does not establish more native texture detail.
 Use the overlay to inspect proportions and font shapes, accounting for these state

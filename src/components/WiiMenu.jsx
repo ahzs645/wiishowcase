@@ -259,7 +259,7 @@ export default function WiiMenu({
   }, []);
   const mailTimerRef = useRef(null);
   const calendarRef = useRef(null);
-  const { time, period, date } = useDateTime();
+  const { time, period, periodSide, date } = useDateTime();
 
   const goNext = useCallback(() => {
     setCurrentPage((p) => {
@@ -505,7 +505,7 @@ export default function WiiMenu({
         aria-hidden={mailLayerVisible || undefined}
       >
         <wii-channel-holder>
-          <ClockTime time={time} period={period} />
+          <ClockTime time={time} period={period} periodSide={periodSide} />
           <div className="channel-pages-viewport" ref={viewportRef}>
             {pages.map((pageChannels, pageIdx) => (
               <div

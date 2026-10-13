@@ -35,7 +35,10 @@
     "test:menu-fidelity": "node scripts/test-menu-fidelity.mjs",
     "build:menu-fidelity": "node scripts/build-menu-fidelity.mjs && python scripts/render-menu-fidelity.py",
     "test:menu-typography": "node scripts/test-menu-typography.mjs",
-    "build:menu-typography": "python scripts/render-menu-typography.py"
+    "build:menu-typography": "python scripts/render-menu-typography.py",
+    "build:menu-versions": "python scripts/render-menu-version-comparisons.py",
+    "test:menu-version-viewer": "node scripts/check-menu-version-viewer.mjs",
+    "capture:menu-version-states": "node scripts/capture-menu-version-states.mjs"
   },
   "dependencies": {
     "@firstform/wii-channel-renderer": "file:wewad/packages/wii-channel-renderer",

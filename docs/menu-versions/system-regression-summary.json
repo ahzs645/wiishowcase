@@ -1,0 +1,8 @@
+{
+  "checks": 82,
+  "geometryStates": 120,
+  "errors": [],
+  "missing": [],
+  "geometryFailures": 0,
+  "scope": "System regression at both aspect ratios and native/720-line states, including Settings/Data Management, SD, HOME, message composition and keyboards."
+}

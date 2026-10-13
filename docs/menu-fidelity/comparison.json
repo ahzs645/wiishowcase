@@ -31,24 +31,24 @@
         "stride": 536,
         "clip": "path(\"M 0 0 H 640 V 347 H 539.52 C 491.904 347 468.096 398 420.48 398 H 219.52 C 171.904 398 148.096 347 100.48 347 H 0 Z\")",
         "clock": {
-          "x": 272,
+          "x": 258,
           "y": 350,
-          "width": 96,
+          "width": 124,
           "height": 35,
           "top": 350,
-          "right": 368,
+          "right": 382,
           "bottom": 385,
-          "left": 272
+          "left": 258
         },
         "date": {
-          "x": 243.2578125,
+          "x": 263.7421875,
           "y": 406.8125,
-          "width": 153.484375,
+          "width": 112.515625,
           "height": 35.1875,
           "top": 406.8125,
-          "right": 396.7421875,
+          "right": 376.2578125,
           "bottom": 442,
-          "left": 243.2578125
+          "left": 263.7421875
         }
       },
       "reference": {
@@ -64,7 +64,15 @@
           476
         ],
         "originalSHA256": "137e6e3b1d5f7a8bd2e4bb2c7a32235f6bf267c4ec126f9c5dd1a14cac482ba2",
-        "notes": "640×476 screenshot, close to 4:3 with a small capture crop. Channel selection, date and region differ from our fixture."
+        "notes": "640×476 screenshot, close to 4:3 with a small capture crop. Channel selection, date and region differ from our fixture.",
+        "systemMenu": {
+          "exactVersion": null,
+          "visibleFeatureRange": "4.0+ style",
+          "confidence": "inferred from visible clock and SD shortcut; not an exact version identification",
+          "platform": "Wii/vWii/emulator not established",
+          "clockPhase": "settled",
+          "regionStyle": "24-hour English; exact region unknown"
+        }
       },
       "id": "menu-settled",
       "title": "Wii Menu",
@@ -73,7 +81,7 @@
         "height": 480,
         "image": "before/menu-640x480.png"
       },
-      "note": "Same date (Fri 03/01) and fixed native icon frames. The preserved version/reference show 17:06; the current US profile shows 5:06 PM. Compare card bounds, continuous page edge, curve, clock strokes, date font and footer. Installed channel contents differ."
+      "note": "Preserved capture: 17:06 / Fri 03/01. Current U profile: 5:06 PM / Fri 3/1. The 24-hour reference uses another regional format. Icon frames are fixed; installed channels differ. Bare menu firmware is unverified (visible 4.0+ style features)."
     },
     {
       "mode": "16:9",
@@ -83,46 +91,46 @@
       "before": "before/menu-854x480.png",
       "metrics": {
         "first": {
-          "x": 58,
-          "y": 37,
+          "x": 69,
+          "y": 39,
           "width": 176,
           "height": 97.671875,
-          "top": 37,
-          "right": 234,
-          "bottom": 134.671875,
-          "left": 58
+          "top": 39,
+          "right": 245,
+          "bottom": 136.671875,
+          "left": 69
         },
         "next": {
-          "x": 802,
-          "y": 37,
+          "x": 789,
+          "y": 39,
           "width": 176,
           "height": 97.671875,
-          "top": 37,
-          "right": 978,
-          "bottom": 134.671875,
-          "left": 802
+          "top": 39,
+          "right": 965,
+          "bottom": 136.671875,
+          "left": 789
         },
-        "stride": 744,
-        "clip": "path(\"M 0 0 H 854 V 347 H 719.922 C 656.384 347 624.616 398 561.078 398 H 292.922 C 229.384 398 197.616 347 134.078 347 H 0 Z\")",
+        "stride": 720,
+        "clip": "path(\"M 0 0 H 854 V 347.872 H 719.922 C 656.384 347.872 624.616 399 561.078 399 H 292.922 C 229.384 399 197.616 347.872 134.078 347.872 H 0 Z\")",
         "clock": {
-          "x": 379,
+          "x": 365,
           "y": 350,
-          "width": 96,
+          "width": 124,
           "height": 35,
           "top": 350,
-          "right": 475,
+          "right": 489,
           "bottom": 385,
-          "left": 379
+          "left": 365
         },
         "date": {
-          "x": 350.2578125,
+          "x": 370.7421875,
           "y": 406.8125,
-          "width": 153.484375,
+          "width": 112.515625,
           "height": 35.1875,
           "top": 406.8125,
-          "right": 503.7421875,
+          "right": 483.2578125,
           "bottom": 442,
-          "left": 350.2578125
+          "left": 370.7421875
         }
       },
       "reference": {
@@ -138,7 +146,15 @@
           1440
         ],
         "originalSHA256": "321a12e738195ac812a1d0b3a55ec3d83735fe0e91349c64cbeeace3084bf965",
-        "notes": "Exact 16:9 image from Super Mario Wiki file history: uploaded by SWFlash on 28 January 2013 and losslessly optimized by DogsRNice on 18 November 2017. Both archived versions decode to identical pixels. Full menu includes clock, date, SD shortcut, message count and adjacent channel column. Capture hardware/emulator, internal render resolution and filtering are undocumented; file dimensions do not establish native detail. Time (12:59 AM), date (Tue 1/29), channel inventory and animation phases differ from the browser fixture. Preserve supplied aspect without cropping or stretching."
+        "notes": "Exact 16:9 image from Super Mario Wiki file history: uploaded by SWFlash on 28 January 2013 and losslessly optimized by DogsRNice on 18 November 2017. Both archived versions decode to identical pixels. Full menu includes clock, date, SD shortcut, message count and adjacent channel column. Capture hardware/emulator, internal render resolution and filtering are undocumented; file dimensions do not establish native detail. Time (12:59 AM), date (Tue 1/29), channel inventory and animation phases differ from the browser fixture. Preserve supplied aspect without cropping or stretching.",
+        "systemMenu": {
+          "exactVersion": null,
+          "visibleFeatureRange": "4.0+ style",
+          "confidence": "inferred from visible clock and SD shortcut; not an exact version identification",
+          "platform": "Wii/vWii/emulator not established",
+          "clockPhase": "settled",
+          "regionStyle": "USA-style English with right-hand AM/PM"
+        }
       },
       "id": "menu-settled",
       "title": "Wii Menu",
@@ -147,7 +163,7 @@
         "height": 480,
         "image": "before/menu-854x480.png"
       },
-      "note": "The widescreen source is an exact 16:9, 2560×1440 archived menu screenshot with a clock, date, SD button and message count. Time/date, channel inventory and animation phases differ. Capture settings and filtering are undocumented, so this supports layout and typography comparison without an exact pixel-fidelity claim."
+      "note": "Exact 16:9, 2560×1440 archived screenshot; exact firmware and capture settings are unverified. Visible clock and SD shortcut are consistent with 4.0+ style. Grid placement is now corroborated by a second independent image. Time/date, channel inventory, artwork and animation phases differ; this is not exact pixel fidelity."
     },
     {
       "mode": "4:3",
@@ -179,24 +195,24 @@
         "stride": 804,
         "clip": "path(\"M 0 0 H 960 V 520.5 H 809.28 C 737.856 520.5 702.144 597 630.72 597 H 329.28 C 257.856 597 222.144 520.5 150.72 520.5 H 0 Z\")",
         "clock": {
-          "x": 408,
+          "x": 387,
           "y": 525,
-          "width": 144,
+          "width": 186,
           "height": 52.5,
           "top": 525,
-          "right": 552,
+          "right": 573,
           "bottom": 577.5,
-          "left": 408
+          "left": 387
         },
         "date": {
-          "x": 364.890625,
+          "x": 395.609375,
           "y": 610.203125,
-          "width": 230.21875,
+          "width": 168.78125,
           "height": 52.796875,
           "top": 610.203125,
-          "right": 595.109375,
+          "right": 564.390625,
           "bottom": 663,
-          "left": 364.890625
+          "left": 395.609375
         }
       },
       "reference": {
@@ -212,7 +228,15 @@
           476
         ],
         "originalSHA256": "137e6e3b1d5f7a8bd2e4bb2c7a32235f6bf267c4ec126f9c5dd1a14cac482ba2",
-        "notes": "640×476 screenshot, close to 4:3 with a small capture crop. Channel selection, date and region differ from our fixture."
+        "notes": "640×476 screenshot, close to 4:3 with a small capture crop. Channel selection, date and region differ from our fixture.",
+        "systemMenu": {
+          "exactVersion": null,
+          "visibleFeatureRange": "4.0+ style",
+          "confidence": "inferred from visible clock and SD shortcut; not an exact version identification",
+          "platform": "Wii/vWii/emulator not established",
+          "clockPhase": "settled",
+          "regionStyle": "24-hour English; exact region unknown"
+        }
       },
       "id": "menu-settled",
       "title": "Wii Menu",
@@ -221,7 +245,7 @@
         "height": 720,
         "image": "before/menu-960x720.png"
       },
-      "note": "Same date (Fri 03/01) and fixed native icon frames. The preserved version/reference show 17:06; the current US profile shows 5:06 PM. Compare card bounds, continuous page edge, curve, clock strokes, date font and footer. Installed channel contents differ."
+      "note": "Preserved capture: 17:06 / Fri 03/01. Current U profile: 5:06 PM / Fri 3/1. The 24-hour reference uses another regional format. Icon frames are fixed; installed channels differ. Bare menu firmware is unverified (visible 4.0+ style features)."
     },
     {
       "mode": "16:9",
@@ -231,46 +255,46 @@
       "before": "before/menu-1280x720.png",
       "metrics": {
         "first": {
-          "x": 86.5,
-          "y": 55.5,
+          "x": 103,
+          "y": 58.5,
           "width": 264,
           "height": 146.515625,
-          "top": 55.5,
-          "right": 350.5,
-          "bottom": 202.015625,
-          "left": 86.5
+          "top": 58.5,
+          "right": 367,
+          "bottom": 205.015625,
+          "left": 103
         },
         "next": {
-          "x": 1202.5,
-          "y": 55.5,
+          "x": 1183,
+          "y": 58.5,
           "width": 264,
           "height": 146.515625,
-          "top": 55.5,
-          "right": 1466.5,
-          "bottom": 202.015625,
-          "left": 1202.5
+          "top": 58.5,
+          "right": 1447,
+          "bottom": 205.015625,
+          "left": 1183
         },
-        "stride": 1116,
-        "clip": "path(\"M 0 0 H 1280 V 520.5 H 1079.04 C 983.808 520.5 936.192 597 840.96 597 H 439.04 C 343.808 597 296.192 520.5 200.96 520.5 H 0 Z\")",
+        "stride": 1080,
+        "clip": "path(\"M 0 0 H 1280 V 522.244 H 1079.04 C 983.808 522.244 936.192 599 840.96 599 H 439.04 C 343.808 599 296.192 522.244 200.96 522.244 H 0 Z\")",
         "clock": {
-          "x": 568,
+          "x": 547,
           "y": 525,
-          "width": 144,
+          "width": 186,
           "height": 52.5,
           "top": 525,
-          "right": 712,
+          "right": 733,
           "bottom": 577.5,
-          "left": 568
+          "left": 547
         },
         "date": {
-          "x": 524.890625,
+          "x": 555.609375,
           "y": 610.203125,
-          "width": 230.21875,
+          "width": 168.78125,
           "height": 52.796875,
           "top": 610.203125,
-          "right": 755.109375,
+          "right": 724.390625,
           "bottom": 663,
-          "left": 524.890625
+          "left": 555.609375
         }
       },
       "reference": {
@@ -286,7 +310,15 @@
           1440
         ],
         "originalSHA256": "321a12e738195ac812a1d0b3a55ec3d83735fe0e91349c64cbeeace3084bf965",
-        "notes": "Exact 16:9 image from Super Mario Wiki file history: uploaded by SWFlash on 28 January 2013 and losslessly optimized by DogsRNice on 18 November 2017. Both archived versions decode to identical pixels. Full menu includes clock, date, SD shortcut, message count and adjacent channel column. Capture hardware/emulator, internal render resolution and filtering are undocumented; file dimensions do not establish native detail. Time (12:59 AM), date (Tue 1/29), channel inventory and animation phases differ from the browser fixture. Preserve supplied aspect without cropping or stretching."
+        "notes": "Exact 16:9 image from Super Mario Wiki file history: uploaded by SWFlash on 28 January 2013 and losslessly optimized by DogsRNice on 18 November 2017. Both archived versions decode to identical pixels. Full menu includes clock, date, SD shortcut, message count and adjacent channel column. Capture hardware/emulator, internal render resolution and filtering are undocumented; file dimensions do not establish native detail. Time (12:59 AM), date (Tue 1/29), channel inventory and animation phases differ from the browser fixture. Preserve supplied aspect without cropping or stretching.",
+        "systemMenu": {
+          "exactVersion": null,
+          "visibleFeatureRange": "4.0+ style",
+          "confidence": "inferred from visible clock and SD shortcut; not an exact version identification",
+          "platform": "Wii/vWii/emulator not established",
+          "clockPhase": "settled",
+          "regionStyle": "USA-style English with right-hand AM/PM"
+        }
       },
       "id": "menu-settled",
       "title": "Wii Menu",
@@ -295,7 +327,7 @@
         "height": 720,
         "image": "before/menu-1280x720.png"
       },
-      "note": "The widescreen source is an exact 16:9, 2560×1440 archived menu screenshot with a clock, date, SD button and message count. Time/date, channel inventory and animation phases differ. Capture settings and filtering are undocumented, so this supports layout and typography comparison without an exact pixel-fidelity claim."
+      "note": "Exact 16:9, 2560×1440 archived screenshot; exact firmware and capture settings are unverified. Visible clock and SD shortcut are consistent with 4.0+ style. Grid placement is now corroborated by a second independent image. Time/date, channel inventory, artwork and animation phases differ; this is not exact pixel fidelity."
     }
   ]
 }

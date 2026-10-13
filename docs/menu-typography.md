@@ -13,12 +13,14 @@ not match their visible height. Clock height is 35 units. Vertical digit strokes
 including the narrow `1`, are finer. Digits retain their own SVG shapes, stable
 centering and round colon dots. The obsolete digital-7 font declaration is removed.
 
-The US profile now displays a twelve-hour time and a separate AM/PM label beside
-the centered digits. Midnight is `12:00 AM`; noon is `12:00 PM`. Other currently
-supported country profiles retain the existing 24-hour time. The period updates
-with the time and is included in the timer's accessible label. Date order,
-zero-padding, settings time offset and message-board date behavior are unchanged.
-This is not an exhaustive regional-format implementation.
+The U profile displays twelve-hour time and a right-hand AM/PM label. Midnight
+is `12:00 AM`; noon is `12:00 PM`. Canada now uses U too; E uses 24-hour time.
+`settings.menuRegion` can override the automatic country-based profile choice,
+following native 4.3's product-region clock policy. Leading hour space is now
+reserved rather than reflowing the clock. The U date uses unpadded month/day;
+E retains padded day/month. Settings time offset and message-board date tracking
+remain active. J/K clock placement is implemented with English AM/PM labels;
+full localization is incomplete. See the [version/region report](menu-versions.md).
 
 ## Comparison evidence
 
@@ -27,12 +29,12 @@ source, the actual menu before this change (6552e57), current components rendere
 with identical source text, and a 50% overlay. Reference and screenshot aspect
 ratios are preserved. These controlled specimens use `17:06 / Fri 03/01` for 4:3
 and `12:59 AM / Tue 1/29` for 16:9. They isolate glyph appearance; the live US
-profile uses twelve-hour time and the existing zero-padded date. The old wide
+profile uses twelve-hour time and unpadded month/day. The old wide
 capture has another time/date. It is labeled separately to avoid treating those
 characters as a font error.
 
 The [whole-menu comparison](menu-fidelity/?mode=16%3A9&height=480) uses actual
-application captures. Its US fixture now reads `5:06 PM / Fri 03/01`, so clock
+application captures. Its US fixture now reads `5:06 PM / Fri 3/1`, so clock
 characters differ from the preserved 17:06 image. The 2560×1440 wide reference's
 capture settings are undocumented; these comparisons do not establish exact
 pixel fidelity. Font shapes still differ from Rodin.
