@@ -1,0 +1,386 @@
+[
+  {
+    "width": 640,
+    "height": 480,
+    "buttons": [
+      {
+        "text": "Console Nickname",
+        "rect": {
+          "x": 110,
+          "y": 81,
+          "width": 420,
+          "height": 61,
+          "top": 81,
+          "right": 530,
+          "bottom": 142,
+          "left": 110
+        },
+        "font": "\"FOT-Rodin Pro\", \"FOT-NewRodin Pro\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+        "fontSize": "26px"
+      },
+      {
+        "text": "Calendar",
+        "rect": {
+          "x": 110,
+          "y": 156,
+          "width": 420,
+          "height": 61,
+          "top": 156,
+          "right": 530,
+          "bottom": 217,
+          "left": 110
+        },
+        "font": "\"FOT-Rodin Pro\", \"FOT-NewRodin Pro\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+        "fontSize": "26px"
+      },
+      {
+        "text": "Screen",
+        "rect": {
+          "x": 110,
+          "y": 231,
+          "width": 420,
+          "height": 61,
+          "top": 231,
+          "right": 530,
+          "bottom": 292,
+          "left": 110
+        },
+        "font": "\"FOT-Rodin Pro\", \"FOT-NewRodin Pro\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+        "fontSize": "26px"
+      },
+      {
+        "text": "Sound",
+        "rect": {
+          "x": 110,
+          "y": 306,
+          "width": 420,
+          "height": 61,
+          "top": 306,
+          "right": 530,
+          "bottom": 367,
+          "left": 110
+        },
+        "font": "\"FOT-Rodin Pro\", \"FOT-NewRodin Pro\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+        "fontSize": "26px"
+      }
+    ],
+    "title": {
+      "x": 32,
+      "y": 25.609375,
+      "width": 432,
+      "height": 36.390625,
+      "top": 25.609375,
+      "right": 464,
+      "bottom": 62,
+      "left": 32
+    },
+    "faces": [
+      {
+        "family": "Wii Menu Date",
+        "status": "loaded"
+      },
+      {
+        "family": "FOT-NewRodin Pro EB",
+        "status": "unloaded"
+      }
+    ],
+    "actualFonts": {
+      "fonts": [
+        {
+          "familyName": "Liberation Sans",
+          "postScriptName": "LiberationSans",
+          "isCustomFont": false,
+          "glyphCount": 16
+        }
+      ]
+    }
+  },
+  {
+    "width": 854,
+    "height": 480,
+    "buttons": [
+      {
+        "text": "Console Nickname",
+        "rect": {
+          "x": 217,
+          "y": 81,
+          "width": 420,
+          "height": 61,
+          "top": 81,
+          "right": 637,
+          "bottom": 142,
+          "left": 217
+        },
+        "font": "\"FOT-Rodin Pro\", \"FOT-NewRodin Pro\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+        "fontSize": "26px"
+      },
+      {
+        "text": "Calendar",
+        "rect": {
+          "x": 217,
+          "y": 156,
+          "width": 420,
+          "height": 61,
+          "top": 156,
+          "right": 637,
+          "bottom": 217,
+          "left": 217
+        },
+        "font": "\"FOT-Rodin Pro\", \"FOT-NewRodin Pro\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+        "fontSize": "26px"
+      },
+      {
+        "text": "Screen",
+        "rect": {
+          "x": 217,
+          "y": 231,
+          "width": 420,
+          "height": 61,
+          "top": 231,
+          "right": 637,
+          "bottom": 292,
+          "left": 217
+        },
+        "font": "\"FOT-Rodin Pro\", \"FOT-NewRodin Pro\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+        "fontSize": "26px"
+      },
+      {
+        "text": "Sound",
+        "rect": {
+          "x": 217,
+          "y": 306,
+          "width": 420,
+          "height": 61,
+          "top": 306,
+          "right": 637,
+          "bottom": 367,
+          "left": 217
+        },
+        "font": "\"FOT-Rodin Pro\", \"FOT-NewRodin Pro\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+        "fontSize": "26px"
+      }
+    ],
+    "title": {
+      "x": 42.6875,
+      "y": 25.609375,
+      "width": 576.46875,
+      "height": 36.390625,
+      "top": 25.609375,
+      "right": 619.15625,
+      "bottom": 62,
+      "left": 42.6875
+    },
+    "faces": [
+      {
+        "family": "Wii Menu Date",
+        "status": "loaded"
+      },
+      {
+        "family": "FOT-NewRodin Pro EB",
+        "status": "unloaded"
+      }
+    ],
+    "actualFonts": {
+      "fonts": [
+        {
+          "familyName": "Liberation Sans",
+          "postScriptName": "LiberationSans",
+          "isCustomFont": false,
+          "glyphCount": 16
+        }
+      ]
+    }
+  },
+  {
+    "width": 960,
+    "height": 720,
+    "buttons": [
+      {
+        "text": "Console Nickname",
+        "rect": {
+          "x": 165,
+          "y": 121.5,
+          "width": 630,
+          "height": 91.5,
+          "top": 121.5,
+          "right": 795,
+          "bottom": 213,
+          "left": 165
+        },
+        "font": "\"FOT-Rodin Pro\", \"FOT-NewRodin Pro\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+        "fontSize": "39px"
+      },
+      {
+        "text": "Calendar",
+        "rect": {
+          "x": 165,
+          "y": 234,
+          "width": 630,
+          "height": 91.5,
+          "top": 234,
+          "right": 795,
+          "bottom": 325.5,
+          "left": 165
+        },
+        "font": "\"FOT-Rodin Pro\", \"FOT-NewRodin Pro\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+        "fontSize": "39px"
+      },
+      {
+        "text": "Screen",
+        "rect": {
+          "x": 165,
+          "y": 346.5,
+          "width": 630,
+          "height": 91.5,
+          "top": 346.5,
+          "right": 795,
+          "bottom": 438,
+          "left": 165
+        },
+        "font": "\"FOT-Rodin Pro\", \"FOT-NewRodin Pro\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+        "fontSize": "39px"
+      },
+      {
+        "text": "Sound",
+        "rect": {
+          "x": 165,
+          "y": 459,
+          "width": 630,
+          "height": 91.5,
+          "top": 459,
+          "right": 795,
+          "bottom": 550.5,
+          "left": 165
+        },
+        "font": "\"FOT-Rodin Pro\", \"FOT-NewRodin Pro\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+        "fontSize": "39px"
+      }
+    ],
+    "title": {
+      "x": 48,
+      "y": 38.40625,
+      "width": 648,
+      "height": 54.59375,
+      "top": 38.40625,
+      "right": 696,
+      "bottom": 93,
+      "left": 48
+    },
+    "faces": [
+      {
+        "family": "Wii Menu Date",
+        "status": "loaded"
+      },
+      {
+        "family": "FOT-NewRodin Pro EB",
+        "status": "unloaded"
+      }
+    ],
+    "actualFonts": {
+      "fonts": [
+        {
+          "familyName": "Liberation Sans",
+          "postScriptName": "LiberationSans",
+          "isCustomFont": false,
+          "glyphCount": 16
+        }
+      ]
+    }
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "buttons": [
+      {
+        "text": "Console Nickname",
+        "rect": {
+          "x": 325,
+          "y": 121.5,
+          "width": 630,
+          "height": 91.5,
+          "top": 121.5,
+          "right": 955,
+          "bottom": 213,
+          "left": 325
+        },
+        "font": "\"FOT-Rodin Pro\", \"FOT-NewRodin Pro\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+        "fontSize": "39px"
+      },
+      {
+        "text": "Calendar",
+        "rect": {
+          "x": 325,
+          "y": 234,
+          "width": 630,
+          "height": 91.5,
+          "top": 234,
+          "right": 955,
+          "bottom": 325.5,
+          "left": 325
+        },
+        "font": "\"FOT-Rodin Pro\", \"FOT-NewRodin Pro\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+        "fontSize": "39px"
+      },
+      {
+        "text": "Screen",
+        "rect": {
+          "x": 325,
+          "y": 346.5,
+          "width": 630,
+          "height": 91.5,
+          "top": 346.5,
+          "right": 955,
+          "bottom": 438,
+          "left": 325
+        },
+        "font": "\"FOT-Rodin Pro\", \"FOT-NewRodin Pro\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+        "fontSize": "39px"
+      },
+      {
+        "text": "Sound",
+        "rect": {
+          "x": 325,
+          "y": 459,
+          "width": 630,
+          "height": 91.5,
+          "top": 459,
+          "right": 955,
+          "bottom": 550.5,
+          "left": 325
+        },
+        "font": "\"FOT-Rodin Pro\", \"FOT-NewRodin Pro\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+        "fontSize": "39px"
+      }
+    ],
+    "title": {
+      "x": 64,
+      "y": 38.40625,
+      "width": 864,
+      "height": 54.59375,
+      "top": 38.40625,
+      "right": 928,
+      "bottom": 93,
+      "left": 64
+    },
+    "faces": [
+      {
+        "family": "Wii Menu Date",
+        "status": "error"
+      },
+      {
+        "family": "FOT-NewRodin Pro EB",
+        "status": "unloaded"
+      }
+    ],
+    "actualFonts": {
+      "fonts": [
+        {
+          "familyName": "Liberation Sans",
+          "postScriptName": "LiberationSans",
+          "isCustomFont": false,
+          "glyphCount": 16
+        }
+      ]
+    }
+  }
+]

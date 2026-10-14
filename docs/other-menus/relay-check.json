@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-14",
+  "method": "Read-only GET for an unused audit session; no answer was posted and no other device was contacted.",
+  "productionURL": "https://projects.ahmadjalil.com/api/signal/wiishowcase-audit-empty-20261014",
+  "productionStatus": 404,
+  "productionContentType": "text/html; charset=utf-8",
+  "localPreview": "All four reconnect captures received 404 for their own unused polling session.",
+  "limitation": "This confirms the tested origin endpoint is unavailable. Actual two-device pairing, manual answer-code and BroadcastChannel alternatives were not tested."
+}

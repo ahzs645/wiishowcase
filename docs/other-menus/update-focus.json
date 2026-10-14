@@ -1,0 +1,84 @@
+{
+  "before": {
+    "active": "Wii System Update",
+    "inOverlay": false,
+    "rootInert": false,
+    "role": null,
+    "settingsPath": "Wii Settings",
+    "overlayVisible": true
+  },
+  "tabs": [
+    {
+      "active": "Format Wii System Memory",
+      "inOverlay": false,
+      "rootInert": false,
+      "role": null,
+      "settingsPath": "Wii Settings",
+      "overlayVisible": true
+    },
+    {
+      "active": "1",
+      "inOverlay": false,
+      "rootInert": false,
+      "role": null,
+      "settingsPath": "Wii Settings",
+      "overlayVisible": true
+    },
+    {
+      "active": "2",
+      "inOverlay": false,
+      "rootInert": false,
+      "role": null,
+      "settingsPath": "Wii Settings",
+      "overlayVisible": true
+    },
+    {
+      "active": "3",
+      "inOverlay": false,
+      "rootInert": false,
+      "role": null,
+      "settingsPath": "Wii Settings",
+      "overlayVisible": true
+    },
+    {
+      "active": "Back",
+      "inOverlay": false,
+      "rootInert": false,
+      "role": null,
+      "settingsPath": "Wii Settings",
+      "overlayVisible": true
+    },
+    {
+      "active": "OK",
+      "inOverlay": true,
+      "rootInert": false,
+      "role": null,
+      "settingsPath": "Wii Settings",
+      "overlayVisible": true
+    },
+    {
+      "active": "11:25 PMPMWed 10/14BackWii System Settings 3WiiLanguageCountryWii System UpdateFormat Wii System Mem",
+      "inOverlay": false,
+      "rootInert": false,
+      "role": null,
+      "settingsPath": "Wii Settings",
+      "overlayVisible": true
+    },
+    {
+      "active": "Language",
+      "inOverlay": false,
+      "rootInert": false,
+      "role": null,
+      "settingsPath": "Wii Settings",
+      "overlayVisible": true
+    }
+  ],
+  "afterEscape": {
+    "active": "Data Management",
+    "inOverlay": false,
+    "rootInert": false,
+    "role": null,
+    "settingsPath": "Options",
+    "overlayVisible": true
+  }
+}

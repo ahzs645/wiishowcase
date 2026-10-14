@@ -40,7 +40,11 @@
     "test:menu-version-viewer": "node scripts/check-menu-version-viewer.mjs",
     "capture:menu-version-states": "node scripts/capture-menu-version-states.mjs",
     "build:layout": "node scripts/generate-layout-reference.mjs",
-    "check:layout": "node scripts/generate-layout-reference.mjs --check"
+    "check:layout": "node scripts/generate-layout-reference.mjs --check",
+    "capture:other-menus": "npm run capture:other-menus:core && node scripts/capture-other-menus.mjs",
+    "build:other-menus": "node scripts/build-other-menus.mjs && python scripts/render-other-menus.py",
+    "test:other-menu-viewer": "node scripts/check-other-menu-viewer.mjs",
+    "capture:other-menus:core": "node scripts/capture-other-menu-core.mjs"
   },
   "dependencies": {
     "@firstform/wii-channel-renderer": "file:wewad/packages/wii-channel-renderer",

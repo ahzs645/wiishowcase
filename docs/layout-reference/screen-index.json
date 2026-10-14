@@ -95,7 +95,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=options"
+      "viewer": "../other-menus/?interface=options",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Tile width/spacing, small corner Wii label, frame rules and recreated device/wrench art differ; the two destinations now work."
+      }
     },
     {
       "id": "data-root",
@@ -127,7 +132,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=data-root"
+      "viewer": "../other-menus/?interface=data-root",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Generic folder/grid illustrations replace the original device/channel artwork. Heading tab lacks the breadcrumb icon; footer and tile margins differ."
+      }
     },
     {
       "id": "save-chooser",
@@ -159,7 +169,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=save-chooser"
+      "viewer": "../other-menus/?interface=save-chooser",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Wii and GameCube use the same generic save graphic. Native platform/device silhouettes, text wrapping and title breadcrumb are missing."
+      }
     },
     {
       "id": "save-grid",
@@ -191,7 +206,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=save-grid"
+      "viewer": "../other-menus/?interface=save-grid",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "The 5×3 structure exists, but grid/tab/title geometry, cell bevels, placeholder save art and bottom status differ. Native Blocks Open is replaced with a local item count."
+      }
     },
     {
       "id": "channels-data",
@@ -223,7 +243,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=channels-data"
+      "viewer": "../other-menus/?interface=channels-data",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Uses the Save Data illustration as a structural reference, not a matched Channels capture. Menu-only Disc is included as a disabled data item; Forecast falls back to text and other previews use rough static crops."
+      }
     },
     {
       "id": "sd-menu",
@@ -231,7 +256,8 @@
       "layoutStatus": "Local rules; registry adapter pending",
       "implementation": "src/system-interface.css and screen component",
       "references": [
-        "manual-472"
+        "manual-472",
+        "nintendo-menu-3"
       ],
       "captures": [
         {
@@ -255,7 +281,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=sd-menu"
+      "viewer": "../other-menus/?interface=sd-menu",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Working 240-slot paging sits in a different shell: top heading, striped blanks and a plain footer replace the native recessed page count, sculpted light footer, side arrows and help control. The small wide Nintendo source is independent but not suitable for fine font measurement."
+      }
     },
     {
       "id": "sd-start",
@@ -287,7 +318,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=sd-start"
+      "viewer": "../other-menus/?interface=sd-start",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "A generic centered dialog over the grid replaces the large native title-selection panel, channel icon, side arrows and bottom To SD Card Menu/Start actions. Current Start opens the existing banner preview, rather than establishing a full native SD launch path."
+      }
     },
     {
       "id": "settings-one",
@@ -320,7 +356,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=settings-one"
+      "viewer": "../other-menus/?interface=settings-one",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Missing next-page arrow and printed version area; header/logo/footer treatment differs. In wide mode the first button is about 16 logical units wider than the high-resolution reference outline. Font is platform fallback."
+      }
     },
     {
       "id": "nickname",
@@ -352,7 +393,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=nickname"
+      "viewer": "../other-menus/?interface=nickname",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Small rounded nickname button and explanatory paragraphs replace the long rectangular field. There is no footer Confirm; keyboard OK saves immediately."
+      }
     },
     {
       "id": "date",
@@ -384,7 +430,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=date"
+      "viewer": "../other-menus/?interface=date",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "A browser date input replaces the three large digit columns and up/down controls. Confirm is inline, not in the footer."
+      }
     },
     {
       "id": "time",
@@ -416,7 +467,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=time"
+      "viewer": "../other-menus/?interface=time",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "A browser time input replaces the large digit selector. Browser-local formatting and picker icon differ, and Confirm is inline."
+      }
     },
     {
       "id": "widescreen",
@@ -448,7 +504,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=widescreen"
+      "viewer": "../other-menus/?interface=widescreen",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Three small wrapping pills include a browser-specific Automatic option. Native reference has two large side-by-side preview choices, selection brackets and Confirm."
+      }
     },
     {
       "id": "sound",
@@ -480,7 +541,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=sound"
+      "viewer": "../other-menus/?interface=sound",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Three small horizontal pills replace a vertical stack of full-size choices. Selection uses cyan fill instead of corner brackets; no footer Confirm."
+      }
     },
     {
       "id": "settings-two",
@@ -512,7 +578,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=settings-two"
+      "viewer": "../other-menus/?interface=settings-two",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Both side page arrows are absent, while clickable page numbers serve as navigation. The shared header/footer, glow/selection and font still differ."
+      }
     },
     {
       "id": "settings-three",
@@ -544,7 +615,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=settings-three"
+      "viewer": "../other-menus/?interface=settings-three",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Previous-page arrow is absent; shared header/footer/font issues persist. Long Format text currently fits but uses different type metrics."
+      }
     },
     {
       "id": "home-menu",
@@ -576,7 +652,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=home-menu"
+      "viewer": "../other-menus/?interface=home-menu",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Top/bottom bars, buttons and remote position differ from the cropped guide illustration. Close uses a house character rather than the HOME glyph. Green battery bars indicate connection, not measured charge."
+      }
     },
     {
       "id": "remote-settings",
@@ -608,7 +689,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=remote-settings"
+      "viewer": "../other-menus/?interface=remote-settings",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Remote graphic scale, panel margins, meter spacing, row geometry and bottom battery/close rail differ. Controls work; physical speaker/battery behavior is adapted to browser controllers."
+      }
     },
     {
       "id": "message-board",
@@ -640,7 +726,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=message-board"
+      "viewer": "../other-menus/?interface=message-board",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Footer/date typography and system-card/art treatment differ. The current inventory/date/message type differs from the original envelope capture, so card position differences are not treated as a measured defect."
+      }
     },
     {
       "id": "create-message",
@@ -672,7 +763,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=create-message"
+      "viewer": "../other-menus/?interface=create-message",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Recreated icons have different silhouettes, relative sizes and placement. Added text labels, background tone and Back rail differ from the cropped manual illustration."
+      }
     },
     {
       "id": "memo-composer",
@@ -704,7 +800,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=memo-composer"
+      "viewer": "../other-menus/?interface=memo-composer",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Sheet/title/ruled-line proportions and avatar affordance differ. Back/Post are detached buttons rather than the native edge rails; font is not native."
+      }
     },
     {
       "id": "system-keyboard",
@@ -736,7 +837,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=system-keyboard"
+      "viewer": "../other-menus/?interface=system-keyboard",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Shop-derived keys fit, but input scroll arrows, native utility icons and layout-switch rail differ. A blank input does not show suggestions, which is expected; a separate typed-state capture proves they work."
+      }
     },
     {
       "id": "system-symbols",
@@ -768,7 +874,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=system-symbols"
+      "viewer": "../other-menus/?interface=system-symbols",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Accent groups work, but only the normal QWERTY source is available. No native accent-page overlay or key-by-key match is claimed."
+      }
     },
     {
       "id": "system-phone",
@@ -800,7 +911,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=system-phone"
+      "viewer": "../other-menus/?interface=system-phone",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Small central numeric/T9 grid and Caps/Shift pills differ substantially from the official wide key matrix and left case/number rail."
+      }
     },
     {
       "id": "message-open-memo",
@@ -832,7 +948,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=message-open-memo"
+      "viewer": "../other-menus/?interface=message-open-memo",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "The native wide memo source has an external trash control and edge Back rail. Current Back/Erase buttons sit inside the sheet; backdrop, text and Mii treatment differ. 4:3 is not an independent reference match."
+      }
     },
     {
       "id": "calendar",
@@ -864,7 +985,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=calendar"
+      "viewer": "../other-menus/?interface=calendar",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Calendar panel is smaller and inset differently, with different arrow and Back placement, type weight and row/header proportions. Source month/day pattern differs and is cropped."
+      }
     },
     {
       "id": "address-book",
@@ -896,7 +1022,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=address-book"
+      "viewer": "../other-menus/?interface=address-book",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Five-row structure exists, but avatars are glyph placeholders, side page arrows are inside the book, the Wii number is always printed below, and action rails differ."
+      }
     },
     {
       "id": "letter-composer",
@@ -928,7 +1059,12 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=letter-composer"
+      "viewer": "../other-menus/?interface=letter-composer",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Memo art is only a related structural source for this letter view. Browser recipient select and file upload are exposed in the sheet; paper, avatar and bottom actions differ."
+      }
     },
     {
       "id": "letter-open",
@@ -960,7 +1096,1032 @@
           "height": 480
         }
       ],
-      "viewer": "../interface-sizing/?interface=letter-open"
+      "viewer": "../other-menus/?interface=letter-open",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "The blue title, Mii/photo placement, ruled text and action rails differ. Back/Reply/Erase are small internal buttons, while the native source places delete outside and Back/Reply at the lower edges. Letter content differs."
+      }
+    },
+    {
+      "id": "gamecube-data",
+      "title": "GameCube Save Data",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-314"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=gamecube-data",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Slot A/Slot B exist, but the initial storage state is Wii, so neither slot is selected. The empty-card message and generic Wii storage shell are browser substitutes; the source is a related Wii save grid."
+      }
+    },
+    {
+      "id": "save-selected",
+      "title": "Save Data item actions",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-314"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=save-selected",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Item actions use a generic titled dialog with block text and Copy/Move/Erase buttons. The current source is only the parent grid, so no exact action-panel comparison is claimed."
+      }
+    },
+    {
+      "id": "save-copy-confirm",
+      "title": "Save Data Copy confirmation",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-314"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=save-copy-confirm",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "The confirmation has generic Back/Yes/No placement. Only a parent grid source is available; Copy and cancellation work in the regression."
+      }
+    },
+    {
+      "id": "channel-selected",
+      "title": "Channel Data item actions",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-314"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=channel-selected",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Channel actions reuse the generic save dialog; selected-channel icon/banner and native action-panel geometry are not reproduced. The reference is a related save grid."
+      }
+    },
+    {
+      "id": "calendar-settings",
+      "title": "Calendar settings",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=calendar-settings",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Two generic Date/Time buttons are implemented. No exact reference for this intermediate menu was collected; do not infer its detailed layout from the date leaf screen."
+      }
+    },
+    {
+      "id": "screen-settings",
+      "title": "Screen settings",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=screen-settings",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Four destinations are wired through the generic settings list. No same-view original Screen submenu is in the source set."
+      }
+    },
+    {
+      "id": "sensor-bar",
+      "title": "Sensor Bar settings",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=sensor-bar",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Position and Sensitivity destinations work, but this intermediate page has no same-view screenshot reference."
+      }
+    },
+    {
+      "id": "screen-position",
+      "title": "Screen Position",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-341"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=screen-position",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "A small cross preview and text buttons replace the framed screen-boundary preview, numeric displacement and native arrows. The offset persists immediately."
+      }
+    },
+    {
+      "id": "tv-resolution",
+      "title": "TV Resolution",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-352"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=tv-resolution",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Only explanatory browser text is shown. Native 480i/480p choice and Confirm are not represented; browser output cannot change a physical Wii video mode."
+      }
+    },
+    {
+      "id": "burn-in",
+      "title": "Screen Burn-in Reduction",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-353"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=burn-in",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Horizontal On/Off pills and an explanation replace stacked native choices and Confirm. The dimming preference itself is implemented."
+      }
+    },
+    {
+      "id": "sensor-position",
+      "title": "Sensor Bar Position",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-382"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=sensor-position",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Horizontal Above/Below pills replace the vertical selection panel and Confirm; text adds the phone-controller adaptation."
+      }
+    },
+    {
+      "id": "sensitivity",
+      "title": "Sensor sensitivity",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-383"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=sensitivity",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "The sensor preview is static dots; adjustment is a browser range input. Native source has a large preview, stepped meter, minus/plus and A-to-finish instruction."
+      }
+    },
+    {
+      "id": "parental-controls",
+      "title": "Parental Controls setup",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-364"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=parental-controls",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Only a PIN gate for Internet/WiiConnect24 is implemented. Native rating, secret-question and broader restriction flows are absent. The manual source shows a completed summary, not this initial setup."
+      }
+    },
+    {
+      "id": "internet",
+      "title": "Internet settings",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-407"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=internet",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "A browser online-data toggle/status replaces the native Connection Settings/Console Information/User Agreements menu. Three connection slots and wireless/wired setup are absent."
+      }
+    },
+    {
+      "id": "wiiconnect24",
+      "title": "WiiConnect24",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-451"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=wiiconnect24",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "A horizontal toggle and delivery explanation replace the native selector. Standby Downloads/Connection and Slot Illumination destinations are absent; no native delivery is claimed."
+      }
+    },
+    {
+      "id": "language",
+      "title": "Language",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-448"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=language",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Small horizontal English/French/Spanish pills replace stacked localized labels and Confirm. The regression verifies persistence, not full interface translation."
+      }
+    },
+    {
+      "id": "country",
+      "title": "Country",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-450"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=country",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Only seven countries appear as wrapping pills, without a native scroll list or Confirm. Country is also used as a compatibility inference for menu region."
+      }
+    },
+    {
+      "id": "format-memory",
+      "title": "Format Wii System Memory",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-447"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=format-memory",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Generic detail paragraphs and a small Format button replace the centered warning with bottom Cancel/Format. Behavior intentionally resets local browser data only."
+      }
+    },
+    {
+      "id": "format-confirm",
+      "title": "Format confirmation",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-447"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=format-confirm",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "An additional generic modal asks for Erase saved data. The manual source is the initial format prompt, so its second-stage geometry is unverified."
+      }
+    },
+    {
+      "id": "update-current",
+      "title": "System update result",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-449"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=update-current",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P1",
+        "finding": "The white update-result modal has tiny viewport-scaled text and an oversized OK button. It lacks modal focus isolation and Escape navigates underlying Settings. Native reference is the update prompt, not this result state."
+      }
+    },
+    {
+      "id": "operations-guide",
+      "title": "Operations Guide",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=operations-guide",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P1",
+        "finding": "The custom help text makes the HOME footer overflow in both 4:3 resolutions. No original game-specific guide reference is available; content is an intentional browser guide."
+      }
+    },
+    {
+      "id": "reconnect",
+      "title": "Reconnect / browser pairing",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-464"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=reconnect",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P1",
+        "finding": "The QR pairing card cuts off the close button/title in both 480-line frames. Its focus/modality also differs from native reconnect. Local and production-origin relay checks returned 404; manual pairing remains a separate untested path."
+      }
+    },
+    {
+      "id": "address-register",
+      "title": "Register a friend",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-291"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=address-register",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "A generic form combines Wii Number/email and nickname entry. The manual Wii-number/register source is a different step; native multi-step routing and art are incomplete."
+      }
+    },
+    {
+      "id": "friend-details",
+      "title": "Address Book friend actions",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-278"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=friend-details",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "A generic text detail page replaces a native contact card; only the list illustration is available. Create Letter/Erase work locally but geometry is unverified."
+      }
+    },
+    {
+      "id": "friend-erase",
+      "title": "Erase friend confirmation",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-278"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=friend-erase",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Erase confirmation reuses the generic book dialog. Only a related list source is available, so exact prompt shape/placement is not claimed."
+      }
+    },
+    {
+      "id": "keyboard-predictions",
+      "title": "System keyboard with suggestions",
+      "layoutStatus": "Local rules; registry adapter pending",
+      "implementation": "src/system-interface.css and screen component",
+      "references": [
+        "manual-497"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../other-menus/?interface=keyboard-predictions",
+      "audit": {
+        "date": "2026-10-14",
+        "priority": "P2",
+        "finding": "Typing hel exposes working predictions. Input/scroll controls, suggestion navigation, language/More and layout-switch artwork still differ from the original typed-state source."
+      }
+    },
+    {
+      "id": "standby-downloads",
+      "title": "Standby Downloads / Connection",
+      "layoutStatus": "No adapter; native reference only",
+      "implementation": null,
+      "references": [
+        "manual-452"
+      ],
+      "captures": [],
+      "viewer": "../other-menus/#gaps"
+    },
+    {
+      "id": "slot-illumination",
+      "title": "Slot Illumination",
+      "layoutStatus": "No adapter; native reference only",
+      "implementation": null,
+      "references": [
+        "manual-453"
+      ],
+      "captures": [],
+      "viewer": "../other-menus/#gaps"
+    },
+    {
+      "id": "parental-rating",
+      "title": "Parental rating restrictions",
+      "layoutStatus": "No adapter; native reference only",
+      "implementation": null,
+      "references": [
+        "manual-365"
+      ],
+      "captures": [],
+      "viewer": "../other-menus/#gaps"
+    },
+    {
+      "id": "connection-profiles",
+      "title": "Connection 1/2/3 and wired/wireless setup",
+      "layoutStatus": "No adapter; native reference only",
+      "implementation": null,
+      "references": [
+        "manual-407"
+      ],
+      "captures": [],
+      "viewer": "../other-menus/#gaps"
+    },
+    {
+      "id": "user-agreements",
+      "title": "Internet User Agreements",
+      "layoutStatus": "No adapter; native reference only",
+      "implementation": null,
+      "references": [
+        "manual-407"
+      ],
+      "captures": [],
+      "viewer": "../other-menus/#gaps"
+    },
+    {
+      "id": "sd-memory-error",
+      "title": "SD insufficient-memory flow",
+      "layoutStatus": "No adapter; native reference only",
+      "implementation": null,
+      "references": [
+        "manual-484"
+      ],
+      "captures": [],
+      "viewer": "../other-menus/#gaps"
     }
   ]
 }

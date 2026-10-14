@@ -82,6 +82,51 @@ const screens = [...new Set(sizing.entries.map((entry) => entry.id))].map(
     };
   },
 );
+// Keep newly audited destinations and native views without adapters visible in
+// the same maintenance index, without inventing layout values for them.
+let otherMenus;
+try {
+  otherMenus = await read("other-menus/audit.json");
+} catch (error) {
+  if (error.code !== "ENOENT") throw error;
+}
+if (otherMenus) {
+  for (const state of otherMenus.states) {
+    const existing = screens.find((screen) => screen.id === state.id);
+    const updated = {
+      id: state.id,
+      title: state.title,
+      layoutStatus: "Local rules; registry adapter pending",
+      implementation: "src/system-interface.css and screen component",
+      references: [
+        ...new Set(state.captures.map((c) => c.reference?.id).filter(Boolean)),
+      ],
+      captures: state.captures.map(({ mode, width, height }) => ({
+        mode,
+        width,
+        height,
+      })),
+      viewer: `../other-menus/?interface=${encodeURIComponent(state.id)}`,
+      audit: {
+        date: otherMenus.date,
+        priority: state.priority,
+        finding: state.detail,
+      },
+    };
+    if (existing) Object.assign(existing, updated);
+    else screens.push(updated);
+  }
+  for (const state of otherMenus.unimplementedNativeViews)
+    screens.push({
+      id: state.id,
+      title: state.title,
+      layoutStatus: "No adapter; native reference only",
+      implementation: null,
+      references: [state.reference],
+      captures: [],
+      viewer: "../other-menus/#gaps",
+    });
+}
 const link = (url, label) => `<a href="${escape(url)}">${escape(label)}</a>`;
 const table = (headers, rows) =>
   `<div class="table-scroll"><table><thead><tr>${headers.map((h) => `<th>${escape(h)}</th>`).join("")}</tr></thead><tbody>${rows.map((row) => `<tr>${row.map((cell) => `<td>${cell}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
@@ -165,7 +210,7 @@ ${table(
 <p>${link("../menu-versions/", "Open independent overlays and measurements")} · ${link("../menu-versions.md", "Version/region research")} · ${link("../interface-audit/references.json", "Complete source manifest")}</p>
 <h2>Capture state to record</h2><p>${layout.captureStateFields.map(escape).join("; ")}.</p>
 <h2 id="screens">All recorded interface screens</h2>
-<p>This index is generated from the system-sizing comparison manifest. It records available captures, references and layout ownership, not an overall fidelity rating. Full channel application layouts remain separate from the menu shell.</p>
+<p>This index joins the system-sizing manifest and the latest <a href="../other-menus/">other-menu audit</a>. It records captures, sources and layout ownership, including native views without adapters. Full channel application layouts remain separate from the menu shell.</p>
 <label>Find a screen <input id="filter" type="search" placeholder="Settings, keyboard, message…"></label>
 <div id="screen-table">${table(
   ["Screen", "Layout ownership", "References", "Recorded captures"],

@@ -471,7 +471,12 @@
         476
       ],
       "originalSHA256": "49076e2f71f815a60903794bf339200f669ae26386120a4ebb57ac236f384a89",
-      "notes": "640×476 screenshot, close to 4:3 with a small capture crop. Channel selection, date and region differ from our fixture."
+      "notes": "640×476 Settings page 1 capture, close to 4:3 with a four-line crop. Ver. 4.3E is visible. Preserve aspect; the firmware label identifies this capture only.",
+      "systemMenu": {
+        "exactVersion": "4.3E",
+        "confidence": "Ver. 4.3E is printed in this Settings image only; it does not identify other captures.",
+        "platform": "Capture pipeline not established"
+      }
     },
     {
       "id": "nintendo-menu-1",
@@ -737,6 +742,261 @@
         "confidence": "exact firmware unknown; visible 4.0+ style features",
         "use": "context only; excluded from pixel alignment"
       }
+    },
+    {
+      "id": "manual-341",
+      "title": "Screen Position",
+      "mode": "illustration",
+      "kind": "Nintendo manual",
+      "image": "references/manual-341.png",
+      "sourceURL": "https://csassets.nintendo.com/noaext/image/private/t_KA_PDF/WiiChEng#page=24",
+      "imageURL": null,
+      "originalSize": [
+        163,
+        123
+      ],
+      "originalSHA256": "519c9a93feb166141d14bf513085bb872fd21de75d9af56d0029c20e720f47ee",
+      "notes": "Official US manual illustration, PDF page 24. Extracted original embedded image; low resolution and possible crop/annotation. Structural reference, not a pixel/font metric target. Exact firmware is not established. Published PNG is a lossless decoded copy of the embedded JPEG; originalSHA256 identifies the embedded bytes, imageSHA256 identifies this PNG.",
+      "embeddedFormat": "jpeg",
+      "imageSHA256": "aa56858f4c89d6dec3b794b51ca271535faebab0cfd1d8d6e811f2239a4b219c"
+    },
+    {
+      "id": "manual-352",
+      "title": "TV Resolution",
+      "mode": "illustration",
+      "kind": "Nintendo manual",
+      "image": "references/manual-352.png",
+      "sourceURL": "https://csassets.nintendo.com/noaext/image/private/t_KA_PDF/WiiChEng#page=25",
+      "imageURL": null,
+      "originalSize": [
+        163,
+        122
+      ],
+      "originalSHA256": "28b02c01ff35e0c2a371338912311483d0eee2b62ca3f3b686ec783845fe96c7",
+      "notes": "Official US manual illustration, PDF page 25. Extracted original embedded image; low resolution and possible crop/annotation. Structural reference, not a pixel/font metric target. Exact firmware is not established. Published PNG is a lossless decoded copy of the embedded JPEG; originalSHA256 identifies the embedded bytes, imageSHA256 identifies this PNG.",
+      "embeddedFormat": "jpeg",
+      "imageSHA256": "29edf9141bbb2dc40656e4914332d8965d7845dda7ed2459b8599af524d611b3"
+    },
+    {
+      "id": "manual-353",
+      "title": "Screen Burn-in Reduction",
+      "mode": "illustration",
+      "kind": "Nintendo manual",
+      "image": "references/manual-353.png",
+      "sourceURL": "https://csassets.nintendo.com/noaext/image/private/t_KA_PDF/WiiChEng#page=25",
+      "imageURL": null,
+      "originalSize": [
+        163,
+        123
+      ],
+      "originalSHA256": "0d1202a84d3f85a65ac54659a8b206f9281f2b79d9c84f7f379eda73c10e9a53",
+      "notes": "Official US manual illustration, PDF page 25. Extracted original embedded image; low resolution and possible crop/annotation. Structural reference, not a pixel/font metric target. Exact firmware is not established. Published PNG is a lossless decoded copy of the embedded JPEG; originalSHA256 identifies the embedded bytes, imageSHA256 identifies this PNG.",
+      "embeddedFormat": "jpeg",
+      "imageSHA256": "011369a6f5aac44455f4dc74e57d5115f67b38a1ae9791877135d413206c3464"
+    },
+    {
+      "id": "manual-364",
+      "title": "Parental Controls summary",
+      "mode": "illustration",
+      "kind": "Nintendo manual",
+      "image": "references/manual-364.png",
+      "sourceURL": "https://csassets.nintendo.com/noaext/image/private/t_KA_PDF/WiiChEng#page=26",
+      "imageURL": null,
+      "originalSize": [
+        212,
+        120
+      ],
+      "originalSHA256": "9e057b8f2ec870f510171d631d9d6b134e2c7a1163168f0627eca315104b13a5",
+      "notes": "Official US manual illustration, PDF page 26. Extracted original embedded image; low resolution and possible crop/annotation. Structural reference, not a pixel/font metric target. Exact firmware is not established. Published PNG is a lossless decoded copy of the embedded JPEG; originalSHA256 identifies the embedded bytes, imageSHA256 identifies this PNG.",
+      "embeddedFormat": "jpeg",
+      "imageSHA256": "76534fc73072483c7d9890e9e1298ec6e2e672c86b212961745f1da7a6b674ae"
+    },
+    {
+      "id": "manual-365",
+      "title": "Parental rating selection",
+      "mode": "illustration",
+      "kind": "Nintendo manual",
+      "image": "references/manual-365.png",
+      "sourceURL": "https://csassets.nintendo.com/noaext/image/private/t_KA_PDF/WiiChEng#page=26",
+      "imageURL": null,
+      "originalSize": [
+        211,
+        119
+      ],
+      "originalSHA256": "32104d032e193df3c587cf384beef6f6e30462ae7e4f6a46e44190396710ae9b",
+      "notes": "Official US manual illustration, PDF page 26. Extracted original embedded image; low resolution and possible crop/annotation. Structural reference, not a pixel/font metric target. Exact firmware is not established. Published PNG is a lossless decoded copy of the embedded JPEG; originalSHA256 identifies the embedded bytes, imageSHA256 identifies this PNG.",
+      "embeddedFormat": "jpeg",
+      "imageSHA256": "c1af943e74b08677d267c6854357af06be3af8dea85c04b62b462d3ee03e812f"
+    },
+    {
+      "id": "manual-382",
+      "title": "Sensor Bar Position",
+      "mode": "illustration",
+      "kind": "Nintendo manual",
+      "image": "references/manual-382.png",
+      "sourceURL": "https://csassets.nintendo.com/noaext/image/private/t_KA_PDF/WiiChEng#page=28",
+      "imageURL": null,
+      "originalSize": [
+        163,
+        123
+      ],
+      "originalSHA256": "bace038bfa6a9d38251a71a71c765acc9465595517f38b0f18f51f0b9f27e26c",
+      "notes": "Official US manual illustration, PDF page 28. Extracted original embedded image; low resolution and possible crop/annotation. Structural reference, not a pixel/font metric target. Exact firmware is not established. Published PNG is a lossless decoded copy of the embedded JPEG; originalSHA256 identifies the embedded bytes, imageSHA256 identifies this PNG.",
+      "embeddedFormat": "jpeg",
+      "imageSHA256": "4b95356800707d4c8c56fbc2774fd7901ec37ec36d5a9ab426c994545e5ac965"
+    },
+    {
+      "id": "manual-383",
+      "title": "Sensor sensitivity",
+      "mode": "illustration",
+      "kind": "Nintendo manual",
+      "image": "references/manual-383.png",
+      "sourceURL": "https://csassets.nintendo.com/noaext/image/private/t_KA_PDF/WiiChEng#page=28",
+      "imageURL": null,
+      "originalSize": [
+        163,
+        123
+      ],
+      "originalSHA256": "5e6e4b9b5d603bba68497f847ccf23b9bb21ee7157ffae11975a5bc1d2f6ea84",
+      "notes": "Official US manual illustration, PDF page 28. Extracted original embedded image; low resolution and possible crop/annotation. Structural reference, not a pixel/font metric target. Exact firmware is not established. Published PNG is a lossless decoded copy of the embedded JPEG; originalSHA256 identifies the embedded bytes, imageSHA256 identifies this PNG.",
+      "embeddedFormat": "jpeg",
+      "imageSHA256": "5df3c08a65a74c8b08a61ed9c196430520a07773299f7c973ace794571817344"
+    },
+    {
+      "id": "manual-407",
+      "title": "Internet menu",
+      "mode": "illustration",
+      "kind": "Nintendo manual",
+      "image": "references/manual-407.png",
+      "sourceURL": "https://csassets.nintendo.com/noaext/image/private/t_KA_PDF/WiiChEng#page=30",
+      "imageURL": null,
+      "originalSize": [
+        148,
+        111
+      ],
+      "originalSHA256": "8621d3cb012c8e5c631387b56865fab5cd573a4d395561c8a55b17486de33f08",
+      "notes": "Official US manual illustration, PDF page 30. Extracted original embedded image; low resolution and possible crop/annotation. Structural reference, not a pixel/font metric target. Exact firmware is not established. Published PNG is a lossless decoded copy of the embedded JPEG; originalSHA256 identifies the embedded bytes, imageSHA256 identifies this PNG.",
+      "embeddedFormat": "jpeg",
+      "imageSHA256": "f1d27e78e41e30f376e88a9db512586bf73b4178616a88287997d6006d28b271"
+    },
+    {
+      "id": "manual-447",
+      "title": "Format Wii System Memory prompt",
+      "mode": "illustration",
+      "kind": "Nintendo manual",
+      "image": "references/manual-447.png",
+      "sourceURL": "https://csassets.nintendo.com/noaext/image/private/t_KA_PDF/WiiChEng#page=33",
+      "imageURL": null,
+      "originalSize": [
+        138,
+        103
+      ],
+      "originalSHA256": "24f00da67f786870e8106b109962b02829cb87859b36aa3fdde205ae343c7213",
+      "notes": "Official US manual illustration, PDF page 33. Extracted original embedded image; low resolution and possible crop/annotation. Structural reference, not a pixel/font metric target. Exact firmware is not established. Published PNG is a lossless decoded copy of the embedded JPEG; originalSHA256 identifies the embedded bytes, imageSHA256 identifies this PNG.",
+      "embeddedFormat": "jpeg",
+      "imageSHA256": "66842506f5a2e475ac79730393e233f578ff3c0ccb6cb0547add4475c522379c"
+    },
+    {
+      "id": "manual-448",
+      "title": "Language selection",
+      "mode": "illustration",
+      "kind": "Nintendo manual",
+      "image": "references/manual-448.png",
+      "sourceURL": "https://csassets.nintendo.com/noaext/image/private/t_KA_PDF/WiiChEng#page=33",
+      "imageURL": null,
+      "originalSize": [
+        139,
+        104
+      ],
+      "originalSHA256": "47c8a68738dfe0370c0506541c1a5afcce17f27be4f5f0f0a8aaacdb3a1829b9",
+      "notes": "Official US manual illustration, PDF page 33. Extracted original embedded image; low resolution and possible crop/annotation. Structural reference, not a pixel/font metric target. Exact firmware is not established. Published PNG is a lossless decoded copy of the embedded JPEG; originalSHA256 identifies the embedded bytes, imageSHA256 identifies this PNG.",
+      "embeddedFormat": "jpeg",
+      "imageSHA256": "620491b561d45000b941bbc97b15d91c4626b03ae2c865281badada0f47194f8"
+    },
+    {
+      "id": "manual-449",
+      "title": "System Update prompt",
+      "mode": "illustration",
+      "kind": "Nintendo manual",
+      "image": "references/manual-449.png",
+      "sourceURL": "https://csassets.nintendo.com/noaext/image/private/t_KA_PDF/WiiChEng#page=33",
+      "imageURL": null,
+      "originalSize": [
+        139,
+        104
+      ],
+      "originalSHA256": "ed555a9792933dce73ef0e468f474e6045597fcb7edae249d547306f14ea8b8c",
+      "notes": "Official US manual illustration, PDF page 33. Extracted original embedded image; low resolution and possible crop/annotation. Structural reference, not a pixel/font metric target. Exact firmware is not established. Published PNG is a lossless decoded copy of the embedded JPEG; originalSHA256 identifies the embedded bytes, imageSHA256 identifies this PNG.",
+      "embeddedFormat": "jpeg",
+      "imageSHA256": "1d9ed680999357b6cff1d5dc0bf77b4af5cb3c0ae411b2a8b7ea70150e026677"
+    },
+    {
+      "id": "manual-450",
+      "title": "Country selection",
+      "mode": "illustration",
+      "kind": "Nintendo manual",
+      "image": "references/manual-450.png",
+      "sourceURL": "https://csassets.nintendo.com/noaext/image/private/t_KA_PDF/WiiChEng#page=33",
+      "imageURL": null,
+      "originalSize": [
+        139,
+        104
+      ],
+      "originalSHA256": "f42c566cd20cc856422bbc53d62d589a25df2bb744535e8d9df6ea911d38ebb1",
+      "notes": "Official US manual illustration, PDF page 33. Extracted original embedded image; low resolution and possible crop/annotation. Structural reference, not a pixel/font metric target. Exact firmware is not established. Published PNG is a lossless decoded copy of the embedded JPEG; originalSHA256 identifies the embedded bytes, imageSHA256 identifies this PNG.",
+      "embeddedFormat": "jpeg",
+      "imageSHA256": "ed92b3ce395147eed52de170c735a0278291b72c419884d996b3a48c6153965c"
+    },
+    {
+      "id": "manual-451",
+      "title": "WiiConnect24 On/Off",
+      "mode": "illustration",
+      "kind": "Nintendo manual",
+      "image": "references/manual-451.png",
+      "sourceURL": "https://csassets.nintendo.com/noaext/image/private/t_KA_PDF/WiiChEng#page=33",
+      "imageURL": null,
+      "originalSize": [
+        163,
+        123
+      ],
+      "originalSHA256": "f667005ec94d565713a97f1a45efd1e4c9ada9ef6117d43315c46503260a3a1e",
+      "notes": "Official US manual illustration, PDF page 33. Extracted original embedded image; low resolution and possible crop/annotation. Structural reference, not a pixel/font metric target. Exact firmware is not established. Published PNG is a lossless decoded copy of the embedded JPEG; originalSHA256 identifies the embedded bytes, imageSHA256 identifies this PNG.",
+      "embeddedFormat": "jpeg",
+      "imageSHA256": "09098330ef5a6522208c608cfa5f5362a98b05a7437f101955e2b9535bf477d1"
+    },
+    {
+      "id": "manual-452",
+      "title": "Standby Downloads",
+      "mode": "illustration",
+      "kind": "Nintendo manual",
+      "image": "references/manual-452.png",
+      "sourceURL": "https://csassets.nintendo.com/noaext/image/private/t_KA_PDF/WiiChEng#page=33",
+      "imageURL": null,
+      "originalSize": [
+        163,
+        123
+      ],
+      "originalSHA256": "64cb70efcbd86788e96b5d45f4d89cabd0d4a0c694702659a9418a893d50f292",
+      "notes": "Official US manual illustration, PDF page 33. Extracted original embedded image; low resolution and possible crop/annotation. Structural reference, not a pixel/font metric target. Exact firmware is not established. Published PNG is a lossless decoded copy of the embedded JPEG; originalSHA256 identifies the embedded bytes, imageSHA256 identifies this PNG.",
+      "embeddedFormat": "jpeg",
+      "imageSHA256": "62e49d04e44c7ec957cd5c03aa712f9e5e1646394105293b0afaaee1b3d4d843"
+    },
+    {
+      "id": "manual-453",
+      "title": "Slot Illumination",
+      "mode": "illustration",
+      "kind": "Nintendo manual",
+      "image": "references/manual-453.png",
+      "sourceURL": "https://csassets.nintendo.com/noaext/image/private/t_KA_PDF/WiiChEng#page=33",
+      "imageURL": null,
+      "originalSize": [
+        163,
+        123
+      ],
+      "originalSHA256": "a7e645254e53701389bdb25d7fb061573fc8e66da769fd33f625937522a29f68",
+      "notes": "Official US manual illustration, PDF page 33. Extracted original embedded image; low resolution and possible crop/annotation. Structural reference, not a pixel/font metric target. Exact firmware is not established. Published PNG is a lossless decoded copy of the embedded JPEG; originalSHA256 identifies the embedded bytes, imageSHA256 identifies this PNG.",
+      "embeddedFormat": "jpeg",
+      "imageSHA256": "81047c1625832129b85fd8b1c28f72d6ab583552fedf1707d3dda8996cf05eaf"
     }
   ],
   "rejectedOrUnavailable": [

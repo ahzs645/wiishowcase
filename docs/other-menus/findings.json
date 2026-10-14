@@ -1,0 +1,509 @@
+{
+  "globalFindings": [
+    {
+      "id": "reconnect-clipping",
+      "priority": "P1",
+      "kind": "Broken control",
+      "title": "Reconnect close control is outside 480-line frames",
+      "detail": "At both 640×480 and 854×480 the close button starts around y=-79. The pairing card has no fitted-height/scroll layout; its title is cut off too. 720-line captures fit the card.",
+      "screens": ["reconnect"],
+      "evidence": "additional-captures.json",
+      "next": "Fit the pairing card to the Wii frame and keep its close and Connect controls reachable."
+    },
+    {
+      "id": "guide-footer",
+      "priority": "P1",
+      "kind": "Broken control",
+      "title": "Operations Guide pushes the Remote Settings control below 4:3 frames",
+      "detail": "Its button starts at y≈476 in a 480-line frame and y≈714 in a 720-line frame. Both 4:3 sizes fail bounds and center-hit checks. The wide captures fit.",
+      "screens": ["operations-guide"],
+      "evidence": "additional-captures.json",
+      "next": "Constrain/scroll guide content while reserving space for the HOME footer."
+    },
+    {
+      "id": "update-focus",
+      "priority": "P1",
+      "kind": "Interaction bug",
+      "title": "System Update does not isolate keyboard focus",
+      "detail": "At 640×480, opening Update leaves focus on the background Wii System Update button. Tab reaches Format, page buttons and Back. Escape navigates the background Settings path to Options while the Update overlay remains. The dialog has no dialog role and the root is not inert.",
+      "screens": ["update-current"],
+      "evidence": "update-focus.json",
+      "next": "Use the shared modal layer, focus entry/trapping/return and a local Escape handler."
+    },
+    {
+      "id": "update-proportions",
+      "priority": "P1",
+      "kind": "Sizing gap",
+      "title": "Update mixes tiny vw text with an oversized shared OK button",
+      "detail": "The current 640×480 capture has an OK button wider than the white Update panel. Update uses viewport-based dimensions rather than the maintained system scale; body and title are much smaller than the button label.",
+      "screens": ["update-current"],
+      "evidence": "current/update-current-640x480.png",
+      "next": "Give Update a frame-scaled layout and scope its button dimensions."
+    },
+    {
+      "id": "pairing-relay",
+      "priority": "P1",
+      "kind": "Browser integration gap",
+      "title": "Automatic pairing relay is unavailable on the tested hosts",
+      "detail": "The four reconnect captures each received a 404 from /api/signal/<session> on local preview. A read-only empty-session GET on the production origin also returned HTTP 404 (HTML). The code expects JSON from that origin-root endpoint. Manual answer-code and same-browser BroadcastChannel paths exist; actual two-device pairing was not tested.",
+      "screens": ["reconnect"],
+      "evidence": "relay-check.json",
+      "next": "Configure a working signaling endpoint or make the manual pairing fallback explicit."
+    },
+    {
+      "id": "system-font",
+      "priority": "P2",
+      "kind": "Typography gap",
+      "title": "Other system menus still use platform fallback fonts",
+      "detail": "Chromium reports Liberation Sans, with isCustomFont=false, for the Settings list at all four sizes. Requested Rodin/NewRodin families are not bundled. The existing M PLUS approximation is scoped to the menu date and AM/PM, so it does not fix Settings, HOME, message or dialog text.",
+      "screens": [
+        "settings-one",
+        "settings-two",
+        "settings-three",
+        "home-menu",
+        "memo-composer"
+      ],
+      "evidence": "settings-metrics.json",
+      "next": "Choose and bundle a permitted system-font approximation, then measure weight, advance, line height and glyph ink per screen."
+    },
+    {
+      "id": "settings-shared-shell",
+      "priority": "P2",
+      "kind": "Layout gap",
+      "title": "Settings needs distinct native screen layouts",
+      "detail": "The settings list omits side page arrows and replaces the printed firmware area with a generic Wii label. Several leaf settings use the same small wrapping button row. Native references show stacked selectors or large digit/picture controls, selection brackets and separate Back/Confirm actions. Current choices generally save immediately.",
+      "screens": [
+        "settings-one",
+        "settings-two",
+        "settings-three",
+        "nickname",
+        "date",
+        "time",
+        "widescreen",
+        "sound",
+        "language",
+        "country",
+        "burn-in",
+        "sensor-position"
+      ],
+      "evidence": "audit.json",
+      "next": "Add screen-specific layout adapters and a deliberate draft/Confirm/Back policy instead of adjusting one generic form."
+    },
+    {
+      "id": "sd-shell",
+      "priority": "P2",
+      "kind": "Layout gap",
+      "title": "SD Menu and title selection have different compositions",
+      "detail": "The current SD Menu uses a top heading, striped empty slots and a plain bottom toolbar. Native references show the sculpted light footer, recessed page count, side page navigation and help control. Title selection is currently a centered generic modal rather than a large title panel with icon, arrows and bottom Start controls.",
+      "screens": ["sd-menu", "sd-start"],
+      "evidence": "audit.json",
+      "next": "Create a separate SD shell/title-selection adapter while preserving the working 240-slot paging."
+    },
+    {
+      "id": "messages-shell",
+      "priority": "P2",
+      "kind": "Layout gap",
+      "title": "Message and Address Book controls use generic dialog placement",
+      "detail": "Memo and letter actions, page arrows, avatar treatment and sheet proportions differ. Address Book paging is inside the book rather than at its outer sides. Letter composition exposes browser select/file controls. Different message inventories, dates and avatars are not counted as geometry defects.",
+      "screens": [
+        "memo-composer",
+        "message-open-memo",
+        "letter-composer",
+        "letter-open",
+        "address-book",
+        "address-register"
+      ],
+      "evidence": "audit.json",
+      "next": "Separate paper/book/action-rail layouts and replace browser controls with styled Wii input surfaces."
+    },
+    {
+      "id": "keyboard-shell",
+      "priority": "P2",
+      "kind": "Layout gap",
+      "title": "System keyboard remains a Shop-derived layout",
+      "detail": "QWERTY has different utility/scroll/layout-switch controls. The phone profile is a small central keypad, while the official reference has a much wider matrix and a case/number rail. Predictions do work in the captured hel state; their absence in a blank keyboard screenshot is not a missing feature. The accent capture has only a related QWERTY reference.",
+      "screens": [
+        "system-keyboard",
+        "system-phone",
+        "system-symbols",
+        "keyboard-predictions"
+      ],
+      "evidence": "audit.json",
+      "next": "Add a dedicated system-keyboard layout; retain the user's chosen Shop Shift/sound behavior."
+    }
+  ],
+  "screens": {
+    "sd-menu": {
+      "group": "SD Menu",
+      "priority": "P2",
+      "detail": "Working 240-slot paging sits in a different shell: top heading, striped blanks and a plain footer replace the native recessed page count, sculpted light footer, side arrows and help control. The small wide Nintendo source is independent but not suitable for fine font measurement.",
+      "next": "Build a separate SD shell and fit icon, navigation and footer anchors in both modes."
+    },
+    "sd-start": {
+      "group": "SD Menu",
+      "priority": "P2",
+      "detail": "A generic centered dialog over the grid replaces the large native title-selection panel, channel icon, side arrows and bottom To SD Card Menu/Start actions. Current Start opens the existing banner preview, rather than establishing a full native SD launch path.",
+      "next": "Create the title-selection adapter separately from SD paging and launching behavior."
+    },
+    "options": {
+      "group": "Options and storage",
+      "priority": "P2",
+      "detail": "Tile width/spacing, small corner Wii label, frame rules and recreated device/wrench art differ; the two destinations now work.",
+      "next": "Measure the two-tile shell and separate icon artwork bounds from the hit rectangles."
+    },
+    "data-root": {
+      "group": "Options and storage",
+      "priority": "P2",
+      "detail": "Generic folder/grid illustrations replace the original device/channel artwork. Heading tab lacks the breadcrumb icon; footer and tile margins differ.",
+      "next": "Share an Options/Data shell with per-screen title and artwork adapters."
+    },
+    "save-chooser": {
+      "group": "Options and storage",
+      "priority": "P2",
+      "detail": "Wii and GameCube use the same generic save graphic. Native platform/device silhouettes, text wrapping and title breadcrumb are missing.",
+      "next": "Use distinct platform illustrations and native label placement."
+    },
+    "save-grid": {
+      "group": "Options and storage",
+      "priority": "P2",
+      "detail": "The 5×3 structure exists, but grid/tab/title geometry, cell bevels, placeholder save art and bottom status differ. Native Blocks Open is replaced with a local item count.",
+      "next": "Measure the storage shell, add save-icon handling and keep browser storage limits clearly distinct from console blocks."
+    },
+    "channels-data": {
+      "group": "Options and storage",
+      "priority": "P2",
+      "referenceRole": "related-view",
+      "detail": "Uses the Save Data illustration as a structural reference, not a matched Channels capture. Menu-only Disc is included as a disabled data item; Forecast falls back to text and other previews use rough static crops.",
+      "next": "Find a matching Channels reference; add a data-management inventory/art adapter."
+    },
+    "gamecube-data": {
+      "group": "Options and storage",
+      "priority": "P2",
+      "detail": "Slot A/Slot B exist, but the initial storage state is Wii, so neither slot is selected. The empty-card message and generic Wii storage shell are browser substitutes; the source is a related Wii save grid.",
+      "next": "Initialize a visible GameCube slot and implement its own empty-card/shell state."
+    },
+    "save-selected": {
+      "group": "Options and storage",
+      "priority": "P2",
+      "detail": "Item actions use a generic titled dialog with block text and Copy/Move/Erase buttons. The current source is only the parent grid, so no exact action-panel comparison is claimed.",
+      "next": "Collect a selected-save reference before fitting this panel."
+    },
+    "save-copy-confirm": {
+      "group": "Options and storage",
+      "priority": "P2",
+      "detail": "The confirmation has generic Back/Yes/No placement. Only a parent grid source is available; Copy and cancellation work in the regression.",
+      "next": "Collect a state-matched confirmation source and preserve cancellation semantics."
+    },
+    "channel-selected": {
+      "group": "Options and storage",
+      "priority": "P2",
+      "detail": "Channel actions reuse the generic save dialog; selected-channel icon/banner and native action-panel geometry are not reproduced. The reference is a related save grid.",
+      "next": "Collect the selected-channel panel and implement a channel-specific adapter."
+    },
+    "settings-one": {
+      "group": "Settings pages",
+      "priority": "P2",
+      "detail": "Missing next-page arrow and printed version area; header/logo/footer treatment differs. In wide mode the first button is about 16 logical units wider than the high-resolution reference outline. Font is platform fallback.",
+      "next": "Use the matched 4.3U wide and 4.3E cropped 4:3 sources to fit the shell and font independently."
+    },
+    "settings-two": {
+      "group": "Settings pages",
+      "priority": "P2",
+      "detail": "Both side page arrows are absent, while clickable page numbers serve as navigation. The shared header/footer, glow/selection and font still differ.",
+      "next": "Add side navigation and keep page numbers as accessible indicators."
+    },
+    "settings-three": {
+      "group": "Settings pages",
+      "priority": "P2",
+      "detail": "Previous-page arrow is absent; shared header/footer/font issues persist. Long Format text currently fits but uses different type metrics.",
+      "next": "Fit the shell without shrinking the longest label to hide a font mismatch."
+    },
+    "calendar-settings": {
+      "group": "Settings pages",
+      "priority": "P2",
+      "detail": "Two generic Date/Time buttons are implemented. No exact reference for this intermediate menu was collected; do not infer its detailed layout from the date leaf screen.",
+      "next": "Collect a same-view Calendar settings source."
+    },
+    "screen-settings": {
+      "group": "Settings pages",
+      "priority": "P2",
+      "detail": "Four destinations are wired through the generic settings list. No same-view original Screen submenu is in the source set.",
+      "next": "Collect the intermediate Screen submenu before assigning measured anchors."
+    },
+    "sensor-bar": {
+      "group": "Settings pages",
+      "priority": "P2",
+      "detail": "Position and Sensitivity destinations work, but this intermediate page has no same-view screenshot reference.",
+      "next": "Collect a Sensor Bar menu reference and keep its child screens separate."
+    },
+    "nickname": {
+      "group": "Settings selectors",
+      "priority": "P2",
+      "detail": "Small rounded nickname button and explanatory paragraphs replace the long rectangular field. There is no footer Confirm; keyboard OK saves immediately.",
+      "next": "Restore the field proportions and define draft/cancel/Confirm behavior."
+    },
+    "date": {
+      "group": "Settings selectors",
+      "priority": "P2",
+      "detail": "A browser date input replaces the three large digit columns and up/down controls. Confirm is inline, not in the footer.",
+      "next": "Build the Wii date selector with explicit per-field bounds and a bottom action rail."
+    },
+    "time": {
+      "group": "Settings selectors",
+      "priority": "P2",
+      "detail": "A browser time input replaces the large digit selector. Browser-local formatting and picker icon differ, and Confirm is inline.",
+      "next": "Reuse a digit-selector adapter with product-region time policy."
+    },
+    "widescreen": {
+      "group": "Settings selectors",
+      "priority": "P2",
+      "detail": "Three small wrapping pills include a browser-specific Automatic option. Native reference has two large side-by-side preview choices, selection brackets and Confirm.",
+      "next": "Separate the browser auto-fit preference from the native two-choice layout."
+    },
+    "sound": {
+      "group": "Settings selectors",
+      "priority": "P2",
+      "detail": "Three small horizontal pills replace a vertical stack of full-size choices. Selection uses cyan fill instead of corner brackets; no footer Confirm.",
+      "next": "Add the shared stacked-choice adapter and draft/Confirm semantics."
+    },
+    "screen-position": {
+      "group": "Settings selectors",
+      "priority": "P2",
+      "detail": "A small cross preview and text buttons replace the framed screen-boundary preview, numeric displacement and native arrows. The offset persists immediately.",
+      "next": "Fit the boundary preview and arrow/value controls in the common frame."
+    },
+    "tv-resolution": {
+      "group": "Settings selectors",
+      "priority": "P2",
+      "detail": "Only explanatory browser text is shown. Native 480i/480p choice and Confirm are not represented; browser output cannot change a physical Wii video mode.",
+      "next": "Provide a faithful visible selector with clearly scoped browser behavior."
+    },
+    "burn-in": {
+      "group": "Settings selectors",
+      "priority": "P2",
+      "detail": "Horizontal On/Off pills and an explanation replace stacked native choices and Confirm. The dimming preference itself is implemented.",
+      "next": "Use the native stacked-choice layout with explicit confirmation."
+    },
+    "sensor-position": {
+      "group": "Settings selectors",
+      "priority": "P2",
+      "detail": "Horizontal Above/Below pills replace the vertical selection panel and Confirm; text adds the phone-controller adaptation.",
+      "next": "Separate native layout from a concise controller capability explanation."
+    },
+    "sensitivity": {
+      "group": "Settings selectors",
+      "priority": "P2",
+      "detail": "The sensor preview is static dots; adjustment is a browser range input. Native source has a large preview, stepped meter, minus/plus and A-to-finish instruction.",
+      "next": "Use a large preview/meter layout while retaining the browser pointing adapter."
+    },
+    "parental-controls": {
+      "group": "Settings selectors",
+      "priority": "P2",
+      "referenceRole": "related-state",
+      "detail": "Only a PIN gate for Internet/WiiConnect24 is implemented. Native rating, secret-question and broader restriction flows are absent. The manual source shows a completed summary, not this initial setup.",
+      "next": "Document limited behavior and collect the initial PIN flow before fitting it."
+    },
+    "internet": {
+      "group": "Settings selectors",
+      "priority": "P2",
+      "detail": "A browser online-data toggle/status replaces the native Connection Settings/Console Information/User Agreements menu. Three connection slots and wireless/wired setup are absent.",
+      "next": "Build the menu hierarchy separately from browser network capability."
+    },
+    "wiiconnect24": {
+      "group": "Settings selectors",
+      "priority": "P2",
+      "detail": "A horizontal toggle and delivery explanation replace the native selector. Standby Downloads/Connection and Slot Illumination destinations are absent; no native delivery is claimed.",
+      "next": "Represent the native hierarchy while labeling unavailable delivery behavior."
+    },
+    "language": {
+      "group": "Settings selectors",
+      "priority": "P2",
+      "detail": "Small horizontal English/French/Spanish pills replace stacked localized labels and Confirm. The regression verifies persistence, not full interface translation.",
+      "next": "Add the selector layout and a real localization adapter before claiming language fidelity."
+    },
+    "country": {
+      "group": "Settings selectors",
+      "priority": "P2",
+      "detail": "Only seven countries appear as wrapping pills, without a native scroll list or Confirm. Country is also used as a compatibility inference for menu region.",
+      "next": "Build a scrollable country list and keep region/language/country axes distinct."
+    },
+    "format-memory": {
+      "group": "Settings selectors",
+      "priority": "P2",
+      "detail": "Generic detail paragraphs and a small Format button replace the centered warning with bottom Cancel/Format. Behavior intentionally resets local browser data only.",
+      "next": "Fit a dedicated destructive-action layout while preserving the clear local-data scope."
+    },
+    "format-confirm": {
+      "group": "Settings selectors",
+      "priority": "P2",
+      "referenceRole": "related-state",
+      "detail": "An additional generic modal asks for Erase saved data. The manual source is the initial format prompt, so its second-stage geometry is unverified.",
+      "next": "Collect a matching final confirmation before reproducing its layout."
+    },
+    "update-current": {
+      "group": "HOME and dialogs",
+      "priority": "P1",
+      "referenceRole": "related-state",
+      "detail": "The white update-result modal has tiny viewport-scaled text and an oversized OK button. It lacks modal focus isolation and Escape navigates underlying Settings. Native reference is the update prompt, not this result state.",
+      "next": "Fix modal isolation and control sizing first; then collect an exact result reference."
+    },
+    "home-menu": {
+      "group": "HOME and dialogs",
+      "priority": "P2",
+      "detail": "Top/bottom bars, buttons and remote position differ from the cropped guide illustration. Close uses a house character rather than the HOME glyph. Green battery bars indicate connection, not measured charge.",
+      "next": "Fit the HOME shell and represent unknown charge without implying a full battery."
+    },
+    "remote-settings": {
+      "group": "HOME and dialogs",
+      "priority": "P2",
+      "detail": "Remote graphic scale, panel margins, meter spacing, row geometry and bottom battery/close rail differ. Controls work; physical speaker/battery behavior is adapted to browser controllers.",
+      "next": "Measure this panel separately from the HOME main screen."
+    },
+    "operations-guide": {
+      "group": "HOME and dialogs",
+      "priority": "P1",
+      "detail": "The custom help text makes the HOME footer overflow in both 4:3 resolutions. No original game-specific guide reference is available; content is an intentional browser guide.",
+      "next": "Make the guide scroll within a fixed content area and keep footer controls on screen."
+    },
+    "reconnect": {
+      "group": "HOME and dialogs",
+      "priority": "P1",
+      "referenceRole": "browser-adaptation",
+      "detail": "The QR pairing card cuts off the close button/title in both 480-line frames. Its focus/modality also differs from native reconnect. Local and production-origin relay checks returned 404; manual pairing remains a separate untested path.",
+      "next": "Fix viewport fit and keyboard dismissal; verify a working cross-device signaling service."
+    },
+    "message-board": {
+      "group": "Messages and calendar",
+      "priority": "P2",
+      "detail": "Footer/date typography and system-card/art treatment differ. The current inventory/date/message type differs from the original envelope capture, so card position differences are not treated as a measured defect.",
+      "next": "Capture matching message types and dates before fitting card anchors."
+    },
+    "create-message": {
+      "group": "Messages and calendar",
+      "priority": "P2",
+      "detail": "Recreated icons have different silhouettes, relative sizes and placement. Added text labels, background tone and Back rail differ from the cropped manual illustration.",
+      "next": "Fit the chooser composition and replace approximate art with measured reconstructions."
+    },
+    "memo-composer": {
+      "group": "Messages and calendar",
+      "priority": "P2",
+      "detail": "Sheet/title/ruled-line proportions and avatar affordance differ. Back/Post are detached buttons rather than the native edge rails; font is not native.",
+      "next": "Create a paper-surface adapter with separate artwork, text and action anchors."
+    },
+    "message-open-memo": {
+      "group": "Messages and calendar",
+      "priority": "P2",
+      "detail": "The native wide memo source has an external trash control and edge Back rail. Current Back/Erase buttons sit inside the sheet; backdrop, text and Mii treatment differ. 4:3 is not an independent reference match.",
+      "next": "Split memo and letter action rails from the paper body."
+    },
+    "calendar": {
+      "group": "Messages and calendar",
+      "priority": "P2",
+      "detail": "Calendar panel is smaller and inset differently, with different arrow and Back placement, type weight and row/header proportions. Source month/day pattern differs and is cropped.",
+      "next": "Match a month with the same row count before measuring table cells and footer."
+    },
+    "address-book": {
+      "group": "Address Book",
+      "priority": "P2",
+      "detail": "Five-row structure exists, but avatars are glyph placeholders, side page arrows are inside the book, the Wii number is always printed below, and action rails differ.",
+      "next": "Separate book, avatar cells, outer paging and bottom controls."
+    },
+    "address-register": {
+      "group": "Address Book",
+      "priority": "P2",
+      "referenceRole": "related-state",
+      "detail": "A generic form combines Wii Number/email and nickname entry. The manual Wii-number/register source is a different step; native multi-step routing and art are incomplete.",
+      "next": "Collect each registration step and implement its distinct input surface."
+    },
+    "friend-details": {
+      "group": "Address Book",
+      "priority": "P2",
+      "referenceRole": "related-state",
+      "detail": "A generic text detail page replaces a native contact card; only the list illustration is available. Create Letter/Erase work locally but geometry is unverified.",
+      "next": "Collect a contact-detail reference before fitting the card."
+    },
+    "friend-erase": {
+      "group": "Address Book",
+      "priority": "P2",
+      "referenceRole": "related-state",
+      "detail": "Erase confirmation reuses the generic book dialog. Only a related list source is available, so exact prompt shape/placement is not claimed.",
+      "next": "Capture the native confirmation and preserve cancellation checks."
+    },
+    "letter-composer": {
+      "group": "Letters",
+      "priority": "P2",
+      "referenceRole": "related-view",
+      "detail": "Memo art is only a related structural source for this letter view. Browser recipient select and file upload are exposed in the sheet; paper, avatar and bottom actions differ.",
+      "next": "Collect a true letter-composer reference and replace browser controls with Wii-styled affordances."
+    },
+    "letter-open": {
+      "group": "Letters",
+      "priority": "P2",
+      "detail": "The blue title, Mii/photo placement, ruled text and action rails differ. Back/Reply/Erase are small internal buttons, while the native source places delete outside and Back/Reply at the lower edges. Letter content differs.",
+      "next": "Fit native letter chrome separately from variable content and attachments."
+    },
+    "system-keyboard": {
+      "group": "System keyboard",
+      "priority": "P2",
+      "detail": "Shop-derived keys fit, but input scroll arrows, native utility icons and layout-switch rail differ. A blank input does not show suggestions, which is expected; a separate typed-state capture proves they work.",
+      "next": "Use a dedicated system-keyboard layout without altering the chosen Shop behavior."
+    },
+    "system-phone": {
+      "group": "System keyboard",
+      "priority": "P2",
+      "detail": "Small central numeric/T9 grid and Caps/Shift pills differ substantially from the official wide key matrix and left case/number rail.",
+      "next": "Rebuild the phone profile geometry from its own reference."
+    },
+    "system-symbols": {
+      "group": "System keyboard",
+      "priority": "P2",
+      "referenceRole": "related-state",
+      "detail": "Accent groups work, but only the normal QWERTY source is available. No native accent-page overlay or key-by-key match is claimed.",
+      "next": "Collect an original accent/symbol state before fitting its layout."
+    },
+    "keyboard-predictions": {
+      "group": "System keyboard",
+      "priority": "P2",
+      "detail": "Typing hel exposes working predictions. Input/scroll controls, suggestion navigation, language/More and layout-switch artwork still differ from the original typed-state source.",
+      "next": "Measure the suggestion rail and input scroll affordances with the same text state."
+    }
+  },
+  "unimplementedNativeViews": [
+    {
+      "id": "standby-downloads",
+      "title": "Standby Downloads / Connection",
+      "reference": "manual-452",
+      "detail": "No destination in the current WiiConnect24 screen. Browser background delivery is not implemented."
+    },
+    {
+      "id": "slot-illumination",
+      "title": "Slot Illumination",
+      "reference": "manual-453",
+      "detail": "Bright/Dim/Off page is not implemented; physical disc-slot output has no browser equivalent."
+    },
+    {
+      "id": "parental-rating",
+      "title": "Parental rating restrictions",
+      "reference": "manual-365",
+      "detail": "Current PIN gate does not implement the native age/rating selector."
+    },
+    {
+      "id": "connection-profiles",
+      "title": "Connection 1/2/3 and wired/wireless setup",
+      "reference": "manual-407",
+      "detail": "The current Internet page is a browser online-data toggle, not the native connection setup hierarchy."
+    },
+    {
+      "id": "user-agreements",
+      "title": "Internet User Agreements",
+      "reference": "manual-407",
+      "detail": "The native Internet menu lists this destination; the current screen does not."
+    },
+    {
+      "id": "sd-memory-error",
+      "title": "SD insufficient-memory flow",
+      "reference": "manual-484",
+      "detail": "No native insufficient-memory management flow is wired; browser channels use local arrangements."
+    }
+  ]
+}

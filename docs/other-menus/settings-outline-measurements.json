@@ -1,0 +1,121 @@
+{
+  "method": "First button's cyan/glow outline from original source pixels, contain-fitted without changing aspect, compared to current DOM border box. These edge definitions differ; allow approximately 2 native pixels for edge/filter uncertainty. 4:3 capture crop adds framing uncertainty. No overall accuracy score.",
+  "measurements": [
+    {
+      "source": "copetti-settings",
+      "width": 640,
+      "height": 480,
+      "originalOutlineXYWH": [
+        112,
+        84,
+        416,
+        57
+      ],
+      "containFitOutlineXYWH": [
+        112.0,
+        86.0,
+        416.0,
+        57.0
+      ],
+      "currentDOMXYWH": [
+        110,
+        81,
+        420,
+        61
+      ],
+      "approximateDeltaXYWH": [
+        -2.0,
+        -5.0,
+        4.0,
+        4.0
+      ]
+    },
+    {
+      "source": "settings-wii-guide",
+      "width": 854,
+      "height": 480,
+      "originalOutlineXYWH": [
+        505,
+        191,
+        910,
+        130
+      ],
+      "containFitOutlineXYWH": [
+        224.7777777777778,
+        84.88888888888889,
+        404.4444444444444,
+        57.77777777777777
+      ],
+      "currentDOMXYWH": [
+        217,
+        81,
+        420,
+        61
+      ],
+      "approximateDeltaXYWH": [
+        -7.7777777777778,
+        -3.8888888888888857,
+        15.5555555555556,
+        3.2222222222222285
+      ]
+    },
+    {
+      "source": "copetti-settings",
+      "width": 960,
+      "height": 720,
+      "originalOutlineXYWH": [
+        112,
+        84,
+        416,
+        57
+      ],
+      "containFitOutlineXYWH": [
+        168.0,
+        129.0,
+        624.0,
+        85.5
+      ],
+      "currentDOMXYWH": [
+        165,
+        121.5,
+        630,
+        91.5
+      ],
+      "approximateDeltaXYWH": [
+        -3.0,
+        -7.5,
+        6.0,
+        6.0
+      ]
+    },
+    {
+      "source": "settings-wii-guide",
+      "width": 1280,
+      "height": 720,
+      "originalOutlineXYWH": [
+        505,
+        191,
+        910,
+        130
+      ],
+      "containFitOutlineXYWH": [
+        336.66666666666663,
+        127.33333333333333,
+        606.6666666666666,
+        86.66666666666666
+      ],
+      "currentDOMXYWH": [
+        325,
+        121.5,
+        630,
+        91.5
+      ],
+      "approximateDeltaXYWH": [
+        -11.666666666666629,
+        -5.833333333333329,
+        23.33333333333337,
+        4.833333333333343
+      ]
+    }
+  ]
+}
