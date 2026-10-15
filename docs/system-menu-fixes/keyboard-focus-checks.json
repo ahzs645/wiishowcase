@@ -1,0 +1,13 @@
+{
+  "checks": [
+    "640x480: QWERTY Tab / Shift+Tab wrap only through visible controls",
+    "640x480: Phone Tab / Shift+Tab wrap only through visible controls",
+    "854x480: QWERTY Tab / Shift+Tab wrap only through visible controls",
+    "854x480: Phone Tab / Shift+Tab wrap only through visible controls",
+    "960x720: QWERTY Tab / Shift+Tab wrap only through visible controls",
+    "960x720: Phone Tab / Shift+Tab wrap only through visible controls",
+    "1280x720: QWERTY Tab / Shift+Tab wrap only through visible controls",
+    "1280x720: Phone Tab / Shift+Tab wrap only through visible controls"
+  ],
+  "errors": []
+}

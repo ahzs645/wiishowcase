@@ -68,8 +68,8 @@
     {
       "id": "options",
       "title": "Wii Options",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-316"
       ],
@@ -95,18 +95,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=options",
+      "viewer": "../system-menu-fixes/?interface=options",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Tile width/spacing, small corner Wii label, frame rules and recreated device/wrench art differ; the two destinations now work."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Storage/card silhouettes, selected GameCube Slot A, native channel thumbnails, Disc excluded, unknown console capacity labeled.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "data-root",
       "title": "Data Management",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-315"
       ],
@@ -132,18 +137,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=data-root",
+      "viewer": "../system-menu-fixes/?interface=data-root",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Generic folder/grid illustrations replace the original device/channel artwork. Heading tab lacks the breadcrumb icon; footer and tile margins differ."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Storage/card silhouettes, selected GameCube Slot A, native channel thumbnails, Disc excluded, unknown console capacity labeled.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "save-chooser",
       "title": "Save Data platforms",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-312"
       ],
@@ -169,18 +179,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=save-chooser",
+      "viewer": "../system-menu-fixes/?interface=save-chooser",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Wii and GameCube use the same generic save graphic. Native platform/device silhouettes, text wrapping and title breadcrumb are missing."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Storage/card silhouettes, selected GameCube Slot A, native channel thumbnails, Disc excluded, unknown console capacity labeled.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "save-grid",
       "title": "Wii Save Data",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-314"
       ],
@@ -206,18 +221,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=save-grid",
+      "viewer": "../system-menu-fixes/?interface=save-grid",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "The 5×3 structure exists, but grid/tab/title geometry, cell bevels, placeholder save art and bottom status differ. Native Blocks Open is replaced with a local item count."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Storage/card silhouettes, selected GameCube Slot A, native channel thumbnails, Disc excluded, unknown console capacity labeled.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "channels-data",
       "title": "Channel Data Management",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-314"
       ],
@@ -243,18 +263,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=channels-data",
+      "viewer": "../system-menu-fixes/?interface=channels-data",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Uses the Save Data illustration as a structural reference, not a matched Channels capture. Menu-only Disc is included as a disabled data item; Forecast falls back to text and other previews use rough static crops."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Storage/card silhouettes, selected GameCube Slot A, native channel thumbnails, Disc excluded, unknown console capacity labeled.",
+        "remaining": "Only a related native view/state is available; detailed native geometry remains unverified."
       }
     },
     {
       "id": "sd-menu",
       "title": "SD Card Menu",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-472",
         "nintendo-menu-3"
@@ -281,18 +306,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=sd-menu",
+      "viewer": "../system-menu-fixes/?interface=sd-menu",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Working 240-slot paging sits in a different shell: top heading, striped blanks and a plain footer replace the native recessed page count, sculpted light footer, side arrows and help control. The small wide Nintendo source is independent but not suitable for fine font measurement."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Curved footer, page count/navigation, selected-title panel and full-menu management flow.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "sd-start",
       "title": "SD Channel controls",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-474"
       ],
@@ -318,18 +348,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=sd-start",
+      "viewer": "../system-menu-fixes/?interface=sd-start",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "A generic centered dialog over the grid replaces the large native title-selection panel, channel icon, side arrows and bottom To SD Card Menu/Start actions. Current Start opens the existing banner preview, rather than establishing a full native SD launch path."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Curved footer, page count/navigation, selected-title panel and full-menu management flow.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "settings-one",
       "title": "Wii System Settings 1",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "copetti-settings",
         "settings-wii-guide"
@@ -356,18 +391,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=settings-one",
+      "viewer": "../system-menu-fixes/?interface=settings-one",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Missing next-page arrow and printed version area; header/logo/footer treatment differs. In wide mode the first button is about 16 logical units wider than the high-resolution reference outline. Font is platform fallback."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Frame-scaled font, fitted list widths, firmware profile label, side arrows and footer actions.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "nickname",
       "title": "Console Nickname",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-338"
       ],
@@ -393,18 +433,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=nickname",
+      "viewer": "../system-menu-fixes/?interface=nickname",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Small rounded nickname button and explanatory paragraphs replace the long rectangular field. There is no footer Confirm; keyboard OK saves immediately."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "date",
       "title": "Console Date",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-339"
       ],
@@ -430,18 +475,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=date",
+      "viewer": "../system-menu-fixes/?interface=date",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "A browser date input replaces the three large digit columns and up/down controls. Confirm is inline, not in the footer."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "time",
       "title": "Console Time",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-340"
       ],
@@ -467,18 +517,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=time",
+      "viewer": "../system-menu-fixes/?interface=time",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "A browser time input replaces the large digit selector. Browser-local formatting and picker icon differ, and Confirm is inline."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "widescreen",
       "title": "Widescreen Settings",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-342"
       ],
@@ -504,18 +559,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=widescreen",
+      "viewer": "../system-menu-fixes/?interface=widescreen",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Three small wrapping pills include a browser-specific Automatic option. Native reference has two large side-by-side preview choices, selection brackets and Confirm."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "sound",
       "title": "Sound",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-354"
       ],
@@ -541,18 +601,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=sound",
+      "viewer": "../system-menu-fixes/?interface=sound",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Three small horizontal pills replace a vertical stack of full-size choices. Selection uses cyan fill instead of corner brackets; no footer Confirm."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "settings-two",
       "title": "Wii System Settings 2",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-327"
       ],
@@ -578,18 +643,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=settings-two",
+      "viewer": "../system-menu-fixes/?interface=settings-two",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Both side page arrows are absent, while clickable page numbers serve as navigation. The shared header/footer, glow/selection and font still differ."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Frame-scaled font, fitted list widths, firmware profile label, side arrows and footer actions.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "settings-three",
       "title": "Wii System Settings 3",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-328"
       ],
@@ -615,18 +685,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=settings-three",
+      "viewer": "../system-menu-fixes/?interface=settings-three",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Previous-page arrow is absent; shared header/footer/font issues persist. Long Format text currently fits but uses different type metrics."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Frame-scaled font, fitted list widths, firmware profile label, side arrows and footer actions.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "home-menu",
       "title": "HOME Menu",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-461"
       ],
@@ -652,18 +727,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=home-menu",
+      "viewer": "../system-menu-fixes/?interface=home-menu",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Top/bottom bars, buttons and remote position differ from the cropped guide illustration. Close uses a house character rather than the HOME glyph. Green battery bars indicate connection, not measured charge."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Fitted guide/footer, shared modal focus, native 2+1 action placement and charge-unavailable indicators.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "remote-settings",
       "title": "Wii Remote Settings",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-462"
       ],
@@ -689,18 +769,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=remote-settings",
+      "viewer": "../system-menu-fixes/?interface=remote-settings",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Remote graphic scale, panel margins, meter spacing, row geometry and bottom battery/close rail differ. Controls work; physical speaker/battery behavior is adapted to browser controllers."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Fitted guide/footer, shared modal focus, native 2+1 action placement and charge-unavailable indicators.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "message-board",
       "title": "Message Board",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "copetti-mail"
       ],
@@ -726,18 +811,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=message-board",
+      "viewer": "../system-menu-fixes/?interface=message-board",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Footer/date typography and system-card/art treatment differ. The current inventory/date/message type differs from the original envelope capture, so card position differences are not treated as a measured defect."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "create-message",
       "title": "Create Message",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-268"
       ],
@@ -763,18 +853,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=create-message",
+      "viewer": "../system-menu-fixes/?interface=create-message",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Recreated icons have different silhouettes, relative sizes and placement. Added text labels, background tone and Back rail differ from the cropped manual illustration."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "memo-composer",
       "title": "Memo composer",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-265"
       ],
@@ -800,18 +895,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=memo-composer",
+      "viewer": "../system-menu-fixes/?interface=memo-composer",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Sheet/title/ruled-line proportions and avatar affordance differ. Back/Post are detached buttons rather than the native edge rails; font is not native."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "system-keyboard",
       "title": "System QWERTY keyboard",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-497"
       ],
@@ -837,18 +937,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=system-keyboard",
+      "viewer": "../system-menu-fixes/?interface=system-keyboard",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Shop-derived keys fit, but input scroll arrows, native utility icons and layout-switch rail differ. A blank input does not show suggestions, which is expected; a separate typed-state capture proves they work."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Bundled system font, larger phone matrix, case/number rail, scroll/suggestion controls. Shop profile retained.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "system-symbols",
       "title": "System accent palette",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-497"
       ],
@@ -874,18 +979,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=system-symbols",
+      "viewer": "../system-menu-fixes/?interface=system-symbols",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Accent groups work, but only the normal QWERTY source is available. No native accent-page overlay or key-by-key match is claimed."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Bundled system font, larger phone matrix, case/number rail, scroll/suggestion controls. Shop profile retained.",
+        "remaining": "Only a related native view/state is available; detailed native geometry remains unverified."
       }
     },
     {
       "id": "system-phone",
       "title": "System phone keyboard",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-496"
       ],
@@ -911,18 +1021,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=system-phone",
+      "viewer": "../system-menu-fixes/?interface=system-phone",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Small central numeric/T9 grid and Caps/Shift pills differ substantially from the official wide key matrix and left case/number rail."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Bundled system font, larger phone matrix, case/number rail, scroll/suggestion controls. Shop profile retained.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "message-open-memo",
       "title": "Opened Memo",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "nwr-43"
       ],
@@ -948,18 +1063,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=message-open-memo",
+      "viewer": "../system-menu-fixes/?interface=message-open-memo",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "The native wide memo source has an external trash control and edge Back rail. Current Back/Erase buttons sit inside the sheet; backdrop, text and Mii treatment differ. 4:3 is not an independent reference match."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "calendar",
       "title": "Message Board Calendar",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-257"
       ],
@@ -985,18 +1105,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=calendar",
+      "viewer": "../system-menu-fixes/?interface=calendar",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Calendar panel is smaller and inset differently, with different arrow and Back placement, type weight and row/header proportions. Source month/day pattern differs and is cropped."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "address-book",
       "title": "Address Book",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-278"
       ],
@@ -1022,18 +1147,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=address-book",
+      "viewer": "../system-menu-fixes/?interface=address-book",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Five-row structure exists, but avatars are glyph placeholders, side page arrows are inside the book, the Wii number is always printed below, and action rails differ."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "letter-composer",
       "title": "Letter composer",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-265"
       ],
@@ -1059,18 +1189,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=letter-composer",
+      "viewer": "../system-menu-fixes/?interface=letter-composer",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Memo art is only a related structural source for this letter view. Browser recipient select and file upload are exposed in the sheet; paper, avatar and bottom actions differ."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
+        "remaining": "Only a related native view/state is available; detailed native geometry remains unverified."
       }
     },
     {
       "id": "letter-open",
       "title": "Opened letter actions",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-254"
       ],
@@ -1096,18 +1231,23 @@
           "height": 480
         }
       ],
-      "viewer": "../other-menus/?interface=letter-open",
+      "viewer": "../system-menu-fixes/?interface=letter-open",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "The blue title, Mii/photo placement, ruled text and action rails differ. Back/Reply/Erase are small internal buttons, while the native source places delete outside and Back/Reply at the lower edges. Letter content differs."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "gamecube-data",
       "title": "GameCube Save Data",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-314"
       ],
@@ -1133,18 +1273,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=gamecube-data",
+      "viewer": "../system-menu-fixes/?interface=gamecube-data",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Slot A/Slot B exist, but the initial storage state is Wii, so neither slot is selected. The empty-card message and generic Wii storage shell are browser substitutes; the source is a related Wii save grid."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Storage/card silhouettes, selected GameCube Slot A, native channel thumbnails, Disc excluded, unknown console capacity labeled.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "save-selected",
       "title": "Save Data item actions",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-314"
       ],
@@ -1170,18 +1315,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=save-selected",
+      "viewer": "../system-menu-fixes/?interface=save-selected",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Item actions use a generic titled dialog with block text and Copy/Move/Erase buttons. The current source is only the parent grid, so no exact action-panel comparison is claimed."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Storage/card silhouettes, selected GameCube Slot A, native channel thumbnails, Disc excluded, unknown console capacity labeled.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "save-copy-confirm",
       "title": "Save Data Copy confirmation",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-314"
       ],
@@ -1207,18 +1357,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=save-copy-confirm",
+      "viewer": "../system-menu-fixes/?interface=save-copy-confirm",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "The confirmation has generic Back/Yes/No placement. Only a parent grid source is available; Copy and cancellation work in the regression."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Storage/card silhouettes, selected GameCube Slot A, native channel thumbnails, Disc excluded, unknown console capacity labeled.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "channel-selected",
       "title": "Channel Data item actions",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-314"
       ],
@@ -1244,18 +1399,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=channel-selected",
+      "viewer": "../system-menu-fixes/?interface=channel-selected",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Channel actions reuse the generic save dialog; selected-channel icon/banner and native action-panel geometry are not reproduced. The reference is a related save grid."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "calendar-settings",
       "title": "Calendar settings",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [],
       "captures": [
         {
@@ -1279,18 +1439,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=calendar-settings",
+      "viewer": "../system-menu-fixes/?interface=calendar-settings",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Two generic Date/Time buttons are implemented. No exact reference for this intermediate menu was collected; do not infer its detailed layout from the date leaf screen."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Shared Settings font/shell and navigation to the new Date and Time selectors.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "screen-settings",
       "title": "Screen settings",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [],
       "captures": [
         {
@@ -1314,18 +1479,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=screen-settings",
+      "viewer": "../system-menu-fixes/?interface=screen-settings",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Four destinations are wired through the generic settings list. No same-view original Screen submenu is in the source set."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Shared Settings font/shell and navigation to screen-specific controls.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "sensor-bar",
       "title": "Sensor Bar settings",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [],
       "captures": [
         {
@@ -1349,18 +1519,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=sensor-bar",
+      "viewer": "../system-menu-fixes/?interface=sensor-bar",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Position and Sensitivity destinations work, but this intermediate page has no same-view screenshot reference."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Shared Settings font/shell with separate position and sensitivity destinations.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "screen-position",
       "title": "Screen Position",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-341"
       ],
@@ -1386,18 +1561,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=screen-position",
+      "viewer": "../system-menu-fixes/?interface=screen-position",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "A small cross preview and text buttons replace the framed screen-boundary preview, numeric displacement and native arrows. The offset persists immediately."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "tv-resolution",
       "title": "TV Resolution",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-352"
       ],
@@ -1423,18 +1603,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=tv-resolution",
+      "viewer": "../system-menu-fixes/?interface=tv-resolution",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Only explanatory browser text is shown. Native 480i/480p choice and Confirm are not represented; browser output cannot change a physical Wii video mode."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "burn-in",
       "title": "Screen Burn-in Reduction",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-353"
       ],
@@ -1460,18 +1645,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=burn-in",
+      "viewer": "../system-menu-fixes/?interface=burn-in",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Horizontal On/Off pills and an explanation replace stacked native choices and Confirm. The dimming preference itself is implemented."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "sensor-position",
       "title": "Sensor Bar Position",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-382"
       ],
@@ -1497,18 +1687,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=sensor-position",
+      "viewer": "../system-menu-fixes/?interface=sensor-position",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Horizontal Above/Below pills replace the vertical selection panel and Confirm; text adds the phone-controller adaptation."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "sensitivity",
       "title": "Sensor sensitivity",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-383"
       ],
@@ -1534,18 +1729,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=sensitivity",
+      "viewer": "../system-menu-fixes/?interface=sensitivity",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "The sensor preview is static dots; adjustment is a browser range input. Native source has a large preview, stepped meter, minus/plus and A-to-finish instruction."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "parental-controls",
       "title": "Parental Controls setup",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-364"
       ],
@@ -1571,18 +1771,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=parental-controls",
+      "viewer": "../system-menu-fixes/?interface=parental-controls",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Only a PIN gate for Internet/WiiConnect24 is implemented. Native rating, secret-question and broader restriction flows are absent. The manual source shows a completed summary, not this initial setup."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "PIN setup/gate with Secret Question and Game Rating destinations; online preferences remain protected.",
+        "remaining": "Only a related native view/state is available; detailed native geometry remains unverified."
       }
     },
     {
       "id": "internet",
       "title": "Internet settings",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-407"
       ],
@@ -1608,18 +1813,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=internet",
+      "viewer": "../system-menu-fixes/?interface=internet",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "A browser online-data toggle/status replaces the native Connection Settings/Console Information/User Agreements menu. Three connection slots and wireless/wired setup are absent."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Connection Settings, Console Information and User Agreements hierarchy behind the existing PIN gate.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "wiiconnect24",
       "title": "WiiConnect24",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-451"
       ],
@@ -1645,18 +1855,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=wiiconnect24",
+      "viewer": "../system-menu-fixes/?interface=wiiconnect24",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "A horizontal toggle and delivery explanation replace the native selector. Standby Downloads/Connection and Slot Illumination destinations are absent; no native delivery is claimed."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "language",
       "title": "Language",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-448"
       ],
@@ -1682,18 +1897,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=language",
+      "viewer": "../system-menu-fixes/?interface=language",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Small horizontal English/French/Spanish pills replace stacked localized labels and Confirm. The regression verifies persistence, not full interface translation."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "country",
       "title": "Country",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-450"
       ],
@@ -1719,18 +1939,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=country",
+      "viewer": "../system-menu-fixes/?interface=country",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Only seven countries appear as wrapping pills, without a native scroll list or Confirm. Country is also used as a compatibility inference for menu region."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "format-memory",
       "title": "Format Wii System Memory",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-447"
       ],
@@ -1756,18 +1981,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=format-memory",
+      "viewer": "../system-menu-fixes/?interface=format-memory",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Generic detail paragraphs and a small Format button replace the centered warning with bottom Cancel/Format. Behavior intentionally resets local browser data only."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Larger warning text and separate footer Format action for local browser data.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "format-confirm",
       "title": "Format confirmation",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-447"
       ],
@@ -1793,18 +2023,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=format-confirm",
+      "viewer": "../system-menu-fixes/?interface=format-confirm",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "An additional generic modal asks for Erase saved data. The manual source is the initial format prompt, so its second-stage geometry is unverified."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Shared isolated confirmation dialog; cancellation preserves records and confirmation resets local browser state.",
+        "remaining": "Only a related native view/state is available; detailed native geometry remains unverified."
       }
     },
     {
       "id": "update-current",
       "title": "System update result",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-449"
       ],
@@ -1830,18 +2065,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=update-current",
+      "viewer": "../system-menu-fixes/?interface=update-current",
       "audit": {
         "date": "2026-10-14",
         "priority": "P1",
         "finding": "The white update-result modal has tiny viewport-scaled text and an oversized OK button. It lacks modal focus isolation and Escape navigates underlying Settings. Native reference is the update prompt, not this result state."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Fitted type/button sizes, dialog focus entry/trap/return, background isolation and local Escape.",
+        "remaining": "Only a related native view/state is available; detailed native geometry remains unverified."
       }
     },
     {
       "id": "operations-guide",
       "title": "Operations Guide",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [],
       "captures": [
         {
@@ -1865,18 +2105,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=operations-guide",
+      "viewer": "../system-menu-fixes/?interface=operations-guide",
       "audit": {
         "date": "2026-10-14",
         "priority": "P1",
         "finding": "The custom help text makes the HOME footer overflow in both 4:3 resolutions. No original game-specific guide reference is available; content is an intentional browser guide."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Fitted guide/footer, shared modal focus, native 2+1 action placement and charge-unavailable indicators.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "reconnect",
       "title": "Reconnect / browser pairing",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-464"
       ],
@@ -1902,18 +2147,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=reconnect",
+      "viewer": "../system-menu-fixes/?interface=reconnect",
       "audit": {
         "date": "2026-10-14",
         "priority": "P1",
         "finding": "The QR pairing card cuts off the close button/title in both 480-line frames. Its focus/modality also differs from native reconnect. Local and production-origin relay checks returned 404; manual pairing remains a separate untested path."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Fitted, decodable QR/manual exchange layout and explicit relay fallback. Manual SDP exchange tested in isolated browser contexts; data channel unverified.",
+        "remaining": "Only a related native view/state is available; detailed native geometry remains unverified."
       }
     },
     {
       "id": "address-register",
       "title": "Register a friend",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-291"
       ],
@@ -1939,18 +2189,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=address-register",
+      "viewer": "../system-menu-fixes/?interface=address-register",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "A generic form combines Wii Number/email and nickname entry. The manual Wii-number/register source is a different step; native multi-step routing and art are incomplete."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
+        "remaining": "Only a related native view/state is available; detailed native geometry remains unverified."
       }
     },
     {
       "id": "friend-details",
       "title": "Address Book friend actions",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-278"
       ],
@@ -1976,18 +2231,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=friend-details",
+      "viewer": "../system-menu-fixes/?interface=friend-details",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "A generic text detail page replaces a native contact card; only the list illustration is available. Create Letter/Erase work locally but geometry is unverified."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
+        "remaining": "Only a related native view/state is available; detailed native geometry remains unverified."
       }
     },
     {
       "id": "friend-erase",
       "title": "Erase friend confirmation",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-278"
       ],
@@ -2013,18 +2273,23 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=friend-erase",
+      "viewer": "../system-menu-fixes/?interface=friend-erase",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Erase confirmation reuses the generic book dialog. Only a related list source is available, so exact prompt shape/placement is not claimed."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
+        "remaining": "Only a related native view/state is available; detailed native geometry remains unverified."
       }
     },
     {
       "id": "keyboard-predictions",
       "title": "System keyboard with suggestions",
-      "layoutStatus": "Local rules; registry adapter pending",
-      "implementation": "src/system-interface.css and screen component",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-497"
       ],
@@ -2050,78 +2315,379 @@
           "height": 720
         }
       ],
-      "viewer": "../other-menus/?interface=keyboard-predictions",
+      "viewer": "../system-menu-fixes/?interface=keyboard-predictions",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Typing hel exposes working predictions. Input/scroll controls, suggestion navigation, language/More and layout-switch artwork still differ from the original typed-state source."
+      },
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Bundled system font, larger phone matrix, case/number rail, scroll/suggestion controls. Shop profile retained.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
       "id": "standby-downloads",
-      "title": "Standby Downloads / Connection",
-      "layoutStatus": "No adapter; native reference only",
-      "implementation": null,
+      "title": "Standby Connection",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-452"
       ],
-      "captures": [],
-      "viewer": "../other-menus/#gaps"
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../system-menu-fixes/?interface=standby-downloads",
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+      }
     },
     {
       "id": "slot-illumination",
       "title": "Slot Illumination",
-      "layoutStatus": "No adapter; native reference only",
-      "implementation": null,
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-453"
       ],
-      "captures": [],
-      "viewer": "../other-menus/#gaps"
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../system-menu-fixes/?interface=slot-illumination",
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+      }
     },
     {
       "id": "parental-rating",
-      "title": "Parental rating restrictions",
-      "layoutStatus": "No adapter; native reference only",
-      "implementation": null,
+      "title": "Game Rating",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-365"
       ],
-      "captures": [],
-      "viewer": "../other-menus/#gaps"
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../system-menu-fixes/?interface=parental-rating",
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Rating preference selector with Back/Confirm. Age-based channel enforcement awaits rating metadata.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+      }
     },
     {
       "id": "connection-profiles",
-      "title": "Connection 1/2/3 and wired/wireless setup",
-      "layoutStatus": "No adapter; native reference only",
-      "implementation": null,
+      "title": "Connection Settings",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
-        "manual-407"
+        "manual-661"
       ],
-      "captures": [],
-      "viewer": "../other-menus/#gaps"
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../system-menu-fixes/?interface=connection-profiles",
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Three saved connection preferences plus browser online-data/test controls.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+      }
     },
     {
       "id": "user-agreements",
-      "title": "Internet User Agreements",
-      "layoutStatus": "No adapter; native reference only",
-      "implementation": null,
-      "references": [
-        "manual-407"
+      "title": "User Agreements",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
+      "references": [],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
       ],
-      "captures": [],
-      "viewer": "../other-menus/#gaps"
+      "viewer": "../system-menu-fixes/?interface=user-agreements",
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Reachable browser storage/network explanation. Retired Nintendo service enrollment is unavailable.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+      }
     },
     {
       "id": "sd-memory-error",
-      "title": "SD insufficient-memory flow",
-      "layoutStatus": "No adapter; native reference only",
-      "implementation": null,
+      "title": "SD full Wii Menu slot flow (simulated inventory)",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-484"
       ],
-      "captures": [],
-      "viewer": "../other-menus/#gaps"
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../system-menu-fixes/?interface=sd-memory-error",
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Curved footer, page count/navigation, selected-title panel and full-menu management flow.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+      }
+    },
+    {
+      "id": "connect24-menu",
+      "title": "WiiConnect24 settings",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
+      "references": [],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../system-menu-fixes/?interface=connect24-menu",
+      "validation": {
+        "date": "2026-10-14",
+        "change": "WiiConnect24, Standby Connection and Slot Illumination destinations.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+      }
+    },
+    {
+      "id": "secret-question",
+      "title": "Secret Question",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
+      "references": [],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../system-menu-fixes/?interface=secret-question",
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+      }
+    },
+    {
+      "id": "connection-type",
+      "title": "Connection Type",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
+      "references": [
+        "manual-660"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../system-menu-fixes/?interface=connection-type",
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Wired/wireless preference selection; the browser continues to use its existing network.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+      }
+    },
+    {
+      "id": "console-information",
+      "title": "Console Information",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
+      "references": [],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../system-menu-fixes/?interface=console-information",
+      "validation": {
+        "date": "2026-10-14",
+        "change": "Grouped local Wii Number and browser connection status.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+      }
     }
   ]
 }

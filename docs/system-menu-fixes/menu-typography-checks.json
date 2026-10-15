@@ -1,0 +1,132 @@
+{
+  "checks": [
+    "United States: 0:0 formats as 12:00 AM",
+    "United States: 12:0 formats as 12:00 PM",
+    "United States: 23:59 formats as 11:59 PM",
+    "United Kingdom: 0:0 formats as 0:00",
+    "United Kingdom: 17:6 formats as 17:06",
+    "Canada: 0:0 formats as 12:00 AM",
+    "E product region overrides United States clock profile",
+    "U product region overrides United Kingdom clock profile",
+    "J product region overrides Japan clock profile",
+    "K product region overrides United States clock profile",
+    "United States/auto: regional date is Fri 3/1",
+    "Canada/auto: regional date is Fri 3/1",
+    "United Kingdom/auto: regional date is Fri 01/03",
+    "United States/E: regional date is Fri 01/03",
+    "640\u00d7480: real bundled font loaded",
+    "640\u00d7480: US midnight label rendered",
+    "640\u00d7480: U-profile date is unpadded month/day",
+    "640\u00d7480: proportional date and clock sizing",
+    "640\u00d7480: AM label fits and stays beside centered digits",
+    "640\u00d7480: date uses the bundled bold face without synthetic weight",
+    "640\u00d7480: noon transition updates the visible period",
+    "640\u00d7480: UK profile retains 24-hour clock without period",
+    "640\u00d7480: single-digit hour keeps fixed digit cell width",
+    "640\u00d7480: Canada uses U-region AM/PM",
+    "640\u00d7480: explicit J-region puts period before 0:59",
+    "854\u00d7480: real bundled font loaded",
+    "854\u00d7480: US midnight label rendered",
+    "854\u00d7480: U-profile date is unpadded month/day",
+    "854\u00d7480: proportional date and clock sizing",
+    "854\u00d7480: AM label fits and stays beside centered digits",
+    "854\u00d7480: date uses the bundled bold face without synthetic weight",
+    "854\u00d7480: noon transition updates the visible period",
+    "854\u00d7480: UK profile retains 24-hour clock without period",
+    "854\u00d7480: single-digit hour keeps fixed digit cell width",
+    "854\u00d7480: Canada uses U-region AM/PM",
+    "854\u00d7480: explicit J-region puts period before 0:59",
+    "960\u00d7720: real bundled font loaded",
+    "960\u00d7720: US midnight label rendered",
+    "960\u00d7720: U-profile date is unpadded month/day",
+    "960\u00d7720: proportional date and clock sizing",
+    "960\u00d7720: AM label fits and stays beside centered digits",
+    "960\u00d7720: date uses the bundled bold face without synthetic weight",
+    "960\u00d7720: noon transition updates the visible period",
+    "960\u00d7720: UK profile retains 24-hour clock without period",
+    "960\u00d7720: single-digit hour keeps fixed digit cell width",
+    "960\u00d7720: Canada uses U-region AM/PM",
+    "960\u00d7720: explicit J-region puts period before 0:59",
+    "1280\u00d7720: real bundled font loaded",
+    "1280\u00d7720: US midnight label rendered",
+    "1280\u00d7720: U-profile date is unpadded month/day",
+    "1280\u00d7720: proportional date and clock sizing",
+    "1280\u00d7720: AM label fits and stays beside centered digits",
+    "1280\u00d7720: date uses the bundled bold face without synthetic weight",
+    "1280\u00d7720: noon transition updates the visible period",
+    "1280\u00d7720: UK profile retains 24-hour clock without period",
+    "1280\u00d7720: single-digit hour keeps fixed digit cell width",
+    "1280\u00d7720: Canada uses U-region AM/PM",
+    "1280\u00d7720: explicit J-region puts period before 0:59",
+    "No browser errors or missing assets",
+    "Font served successfully under the deployed base path"
+  ],
+  "errors": [],
+  "missing": [],
+  "fontRequests": [
+    {
+      "url": "http://localhost:4955/wiishowcase/fonts/menu/mplus-1p-bold-latin.woff",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:4955/wiishowcase/fonts/menu/mplus-1p-bold-latin.woff",
+      "status": 304
+    },
+    {
+      "url": "http://localhost:4955/wiishowcase/fonts/menu/mplus-1p-bold-latin.woff",
+      "status": 304
+    },
+    {
+      "url": "http://localhost:4955/wiishowcase/fonts/menu/mplus-1p-bold-latin.woff",
+      "status": 304
+    },
+    {
+      "url": "http://localhost:4955/wiishowcase/fonts/menu/mplus-1p-bold-latin.woff",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:4955/wiishowcase/fonts/menu/mplus-1p-bold-latin.woff",
+      "status": 304
+    },
+    {
+      "url": "http://localhost:4955/wiishowcase/fonts/menu/mplus-1p-bold-latin.woff",
+      "status": 304
+    },
+    {
+      "url": "http://localhost:4955/wiishowcase/fonts/menu/mplus-1p-bold-latin.woff",
+      "status": 304
+    },
+    {
+      "url": "http://localhost:4955/wiishowcase/fonts/menu/mplus-1p-bold-latin.woff",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:4955/wiishowcase/fonts/menu/mplus-1p-bold-latin.woff",
+      "status": 304
+    },
+    {
+      "url": "http://localhost:4955/wiishowcase/fonts/menu/mplus-1p-bold-latin.woff",
+      "status": 304
+    },
+    {
+      "url": "http://localhost:4955/wiishowcase/fonts/menu/mplus-1p-bold-latin.woff",
+      "status": 304
+    },
+    {
+      "url": "http://localhost:4955/wiishowcase/fonts/menu/mplus-1p-bold-latin.woff",
+      "status": 200
+    },
+    {
+      "url": "http://localhost:4955/wiishowcase/fonts/menu/mplus-1p-bold-latin.woff",
+      "status": 304
+    },
+    {
+      "url": "http://localhost:4955/wiishowcase/fonts/menu/mplus-1p-bold-latin.woff",
+      "status": 304
+    },
+    {
+      "url": "http://localhost:4955/wiishowcase/fonts/menu/mplus-1p-bold-latin.woff",
+      "status": 304
+    }
+  ]
+}

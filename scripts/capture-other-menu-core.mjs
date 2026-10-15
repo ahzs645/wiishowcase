@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import os from "node:os";
 import { spawn, execFileSync } from "node:child_process";
-const output = "docs/other-menus";
+const output = process.env.OTHER_MENU_ARTIFACTS || "docs/other-menus";
 const temporary = !process.env.OTHER_MENU_CORE_SOURCE;
 const source =
   process.env.OTHER_MENU_CORE_SOURCE ||

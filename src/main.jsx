@@ -7,7 +7,9 @@ import '../Wii.css/js/wii-channel-holder.js';
 import '../Wii.css/js/wii-calendar.js';
 import './App.css';
 import './layout/menu.generated.css';
+import './layout/system.generated.css';
 import './system-interface.css';
+import './system-adapters.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

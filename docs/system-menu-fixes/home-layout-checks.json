@@ -1,0 +1,270 @@
+{
+  "checks": [
+    "640x480: HOME 2+1 placement, text bounds and pointer hits",
+    "854x480: HOME 2+1 placement, text bounds and pointer hits",
+    "960x720: HOME 2+1 placement, text bounds and pointer hits",
+    "1280x720: HOME 2+1 placement, text bounds and pointer hits"
+  ],
+  "captures": [
+    {
+      "id": "home-menu",
+      "width": 640,
+      "height": 480,
+      "image": "current/home-menu-640x480.png",
+      "geometry": {
+        "width": 640,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Close HOME Menu",
+            "width": 135.46875,
+            "height": 41,
+            "fontSize": "19px"
+          },
+          {
+            "name": "Wii Menu",
+            "width": 261.84375,
+            "height": 96,
+            "fontSize": "27px"
+          },
+          {
+            "name": "Reset",
+            "width": 261.859375,
+            "height": 96,
+            "fontSize": "27px"
+          },
+          {
+            "name": "Operations Guide",
+            "width": 265,
+            "height": 96,
+            "fontSize": "25px"
+          },
+          {
+            "name": "Wii Remote Settings",
+            "width": 210.703125,
+            "height": 29,
+            "fontSize": "21px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Close",
+            "fontSize": "19px"
+          },
+          {
+            "name": "Wii Menu",
+            "fontSize": "27px"
+          },
+          {
+            "name": "Reset",
+            "fontSize": "27px"
+          },
+          {
+            "name": "Operations Guide",
+            "fontSize": "25px"
+          },
+          {
+            "name": "Wii Remote Settings",
+            "fontSize": "21px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "home-menu",
+      "width": 854,
+      "height": 480,
+      "image": "current/home-menu-854x480.png",
+      "geometry": {
+        "width": 854,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Close HOME Menu",
+            "width": 135.46875,
+            "height": 41,
+            "fontSize": "19px"
+          },
+          {
+            "name": "Wii Menu",
+            "width": 265,
+            "height": 96,
+            "fontSize": "27px"
+          },
+          {
+            "name": "Reset",
+            "width": 265,
+            "height": 96,
+            "fontSize": "27px"
+          },
+          {
+            "name": "Operations Guide",
+            "width": 265,
+            "height": 96,
+            "fontSize": "25px"
+          },
+          {
+            "name": "Wii Remote Settings",
+            "width": 210.703125,
+            "height": 29,
+            "fontSize": "21px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Close",
+            "fontSize": "19px"
+          },
+          {
+            "name": "Wii Menu",
+            "fontSize": "27px"
+          },
+          {
+            "name": "Reset",
+            "fontSize": "27px"
+          },
+          {
+            "name": "Operations Guide",
+            "fontSize": "25px"
+          },
+          {
+            "name": "Wii Remote Settings",
+            "fontSize": "21px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "home-menu",
+      "width": 960,
+      "height": 720,
+      "image": "current/home-menu-960x720.png",
+      "geometry": {
+        "width": 960,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Close HOME Menu",
+            "width": 202.203125,
+            "height": 60,
+            "fontSize": "28.5px"
+          },
+          {
+            "name": "Wii Menu",
+            "width": 392.765625,
+            "height": 144,
+            "fontSize": "40.5px"
+          },
+          {
+            "name": "Reset",
+            "width": 392.78125,
+            "height": 144,
+            "fontSize": "40.5px"
+          },
+          {
+            "name": "Operations Guide",
+            "width": 397.5,
+            "height": 144,
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "Wii Remote Settings",
+            "width": 313.21875,
+            "height": 43,
+            "fontSize": "31.5px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Close",
+            "fontSize": "28.5px"
+          },
+          {
+            "name": "Wii Menu",
+            "fontSize": "40.5px"
+          },
+          {
+            "name": "Reset",
+            "fontSize": "40.5px"
+          },
+          {
+            "name": "Operations Guide",
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "Wii Remote Settings",
+            "fontSize": "31.5px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "home-menu",
+      "width": 1280,
+      "height": 720,
+      "image": "current/home-menu-1280x720.png",
+      "geometry": {
+        "width": 1280,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Close HOME Menu",
+            "width": 202.203125,
+            "height": 60,
+            "fontSize": "28.5px"
+          },
+          {
+            "name": "Wii Menu",
+            "width": 397.5,
+            "height": 144,
+            "fontSize": "40.5px"
+          },
+          {
+            "name": "Reset",
+            "width": 397.5,
+            "height": 144,
+            "fontSize": "40.5px"
+          },
+          {
+            "name": "Operations Guide",
+            "width": 397.5,
+            "height": 144,
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "Wii Remote Settings",
+            "width": 313.21875,
+            "height": 43,
+            "fontSize": "31.5px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Close",
+            "fontSize": "28.5px"
+          },
+          {
+            "name": "Wii Menu",
+            "fontSize": "40.5px"
+          },
+          {
+            "name": "Reset",
+            "fontSize": "40.5px"
+          },
+          {
+            "name": "Operations Guide",
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "Wii Remote Settings",
+            "fontSize": "31.5px"
+          }
+        ],
+        "failures": []
+      }
+    }
+  ]
+}

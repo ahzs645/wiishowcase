@@ -1,6 +1,8 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { useSystemState, setSetting } from "../lib/systemState";
 import { WiiButton } from "./system/SystemUI";
+import { createPortal } from "react-dom";
+import useSystemModal from "../lib/useSystemModal";
 export default function HomeMenu({
   visible,
   onClose,
@@ -13,13 +15,11 @@ export default function HomeMenu({
   const system = useSystemState();
   const [remoteOpen, setRemoteOpen] = useState(false);
   const [guide, setGuide] = useState(false);
-  const ref = useRef(null);
-  useEffect(() => {
-    if (!visible) return;
-    const previous = document.activeElement;
-    ref.current?.querySelector("button")?.focus();
-    return () => previous?.isConnected && previous.focus();
-  }, [visible, remoteOpen, guide]);
+  const modal = useSystemModal(visible, () => {
+    if (remoteOpen) setRemoteOpen(false);
+    else if (guide) setGuide(false);
+    else onClose();
+  });
   if (!visible) return null;
   const close = () => {
     if (remoteOpen) setRemoteOpen(false);
@@ -51,40 +51,31 @@ export default function HomeMenu({
       })}
     </div>
   );
-  return (
+  return createPortal(
     <div
-      ref={ref}
+      ref={modal.ref}
+      style={modal.style}
+      tabIndex={-1}
       className={`home-menu-overlay${remoteOpen ? " is-remote-settings" : ""}`}
       role="dialog"
       aria-modal="true"
       aria-label={remoteOpen ? "Wii Remote Settings" : "HOME Menu"}
-      onKeyDown={(e) => {
-        if (e.key === "Tab") {
-          const buttons = [
-            ...ref.current.querySelectorAll("button:not(:disabled)"),
-          ];
-          const first = buttons[0],
-            last = buttons.at(-1);
-          if (e.shiftKey && document.activeElement === first) {
-            e.preventDefault();
-            last.focus();
-          } else if (!e.shiftKey && document.activeElement === last) {
-            e.preventDefault();
-            first.focus();
-          }
-        }
-        if (e.key === "Escape") {
-          e.stopPropagation();
-          close();
-        }
-      }}
+      onKeyDown={modal.onKeyDown}
     >
       <div className="home-menu-container">
         <div className="home-menu-top-bar">
           <div className="home-menu-top-bar-inner">
             <span className="home-menu-title">HOME Menu</span>
-            <button className="home-menu-close-btn" onClick={close}>
-              ⌂ Close
+            <button
+              className="home-menu-close-btn"
+              onClick={close}
+              aria-label="Close HOME Menu"
+            >
+              <svg viewBox="0 0 30 30" aria-hidden="true">
+                <circle cx="15" cy="15" r="14" fill="#2d8ac5" />
+                <path d="m7 15 8-7 8 7h-3v8H10v-8z" fill="white" />
+              </svg>
+              Close
             </button>
           </div>
         </div>
@@ -212,6 +203,7 @@ export default function HomeMenu({
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }

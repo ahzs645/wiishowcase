@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {
   useSystemState,
   updateSystem,
@@ -9,6 +9,20 @@ import { WiiButton, SystemDialog } from "./SystemUI";
 import SystemKeyboard from "./SystemKeyboard";
 import MessageArt from "./MessageArt";
 const PETER = `${import.meta.env.BASE_URL}assets/message-board/Peter.miic`;
+function ContactAvatar({ mii }) {
+  return mii ? (
+    <img
+      className="contact-mii"
+      src={`${import.meta.env.BASE_URL}assets/message-board/Peter-head.png`}
+      alt=""
+    />
+  ) : (
+    <svg viewBox="0 0 40 46" aria-hidden="true">
+      <circle cx="20" cy="15" r="9" />
+      <path d="M5 42v-7c0-13 30-13 30 0v7z" />
+    </svg>
+  );
+}
 export default function MessageTools({ onClose, dateKey, reply }) {
   const system = useSystemState();
   const [screen, setScreen] = useState(reply ? "Letter" : "Create Message");
@@ -24,6 +38,8 @@ export default function MessageTools({ onClose, dateKey, reply }) {
   const [selectedFriend, setSelectedFriend] = useState(null);
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [posted, setPosted] = useState(false);
+  const [friendMii, setFriendMii] = useState(false);
+  const fileRef = useRef(null);
   const edit = (label, value, onConfirm, multiline = false, maxLength = 1000) =>
     setKeyboard({
       message: label,
@@ -39,6 +55,7 @@ export default function MessageTools({ onClose, dateKey, reply }) {
     if (["Create Message", "Letter"].includes(screen) && reply) onClose();
     else if (screen === "Create Message") onClose();
     else if (screen === "Register") setScreen("Address Book");
+    else if (screen === "Recipient") setScreen("Letter");
     else if (selectedFriend) {
       setSelectedFriend(null);
       setConfirmDelete(false);
@@ -134,7 +151,12 @@ export default function MessageTools({ onClose, dateKey, reply }) {
       ...s,
       friends: [
         ...s.friends,
-        { id: crypto.randomUUID(), name: name.trim(), address: normalized },
+        {
+          id: crypto.randomUUID(),
+          name: name.trim(),
+          address: normalized,
+          avatar: friendMii ? "peter" : null,
+        },
       ],
     }));
     setName("");
@@ -170,7 +192,7 @@ export default function MessageTools({ onClose, dateKey, reply }) {
                 onClick={() => setSelectedFriend(friend)}
               >
                 <span className="address-avatar" aria-hidden="true">
-                  {friend?.name[0] || "♙"}
+                  <ContactAvatar mii={friend?.avatar === "peter"} />
                 </span>
                 {friend?.name || ""}
               </button>
@@ -194,7 +216,9 @@ export default function MessageTools({ onClose, dateKey, reply }) {
             ›
           </WiiButton>
         </div>
-        <p>Wii Number: {system.wiiNumber.match(/.{1,4}/g).join(" ")}</p>
+        <p className="address-book-number">
+          Wii Number: {system.wiiNumber.match(/.{1,4}/g).join(" ")}
+        </p>
       </>
     );
     actions = (
@@ -255,6 +279,12 @@ export default function MessageTools({ onClose, dateKey, reply }) {
             {name || "Enter nickname"}
           </WiiButton>
         </label>
+        <WiiButton
+          aria-pressed={friendMii}
+          onClick={() => setFriendMii(!friendMii)}
+        >
+          {friendMii ? "Remove Mii" : "Add a Mii"}
+        </WiiButton>
         <label>
           Wii Number or email
           <WiiButton
@@ -269,6 +299,25 @@ export default function MessageTools({ onClose, dateKey, reply }) {
       </div>
     );
     actions = <WiiButton onClick={register}>Register friend</WiiButton>;
+  } else if (screen === "Recipient") {
+    content = (
+      <div className="address-book-list">
+        {system.friends.map((friend) => (
+          <button
+            key={friend.id}
+            onClick={() => {
+              setRecipient(friend.name);
+              setScreen("Letter");
+            }}
+          >
+            <span className="address-avatar">
+              <ContactAvatar mii={friend.avatar === "peter"} />
+            </span>
+            {friend.name}
+          </button>
+        ))}
+      </div>
+    );
   } else {
     content = (
       <div className="message-composer">
@@ -278,23 +327,23 @@ export default function MessageTools({ onClose, dateKey, reply }) {
             {reply ? (
               <span>{recipient}</span>
             ) : (
-              <select
+              <WiiButton
                 aria-label="Letter recipient"
-                value={recipient}
-                onChange={(e) => setRecipient(e.target.value)}
+                onClick={() => setScreen("Recipient")}
               >
-                <option value="">Choose a friend</option>
-                {system.friends.map((friend) => (
-                  <option key={friend.id} value={friend.name}>
-                    {friend.name}
-                  </option>
-                ))}
-              </select>
+                {recipient || "Choose a friend"}
+              </WiiButton>
             )}
           </label>
         )}
-        <WiiButton onClick={() => setMii(!mii)}>
-          {mii ? "✓ Peter Mii — Remove" : "＋ Add a Mii"}
+        <WiiButton
+          className="system-button message-add-mii"
+          onClick={() => setMii(!mii)}
+        >
+          <span className="message-mii-frame">
+            <ContactAvatar mii={mii} />
+          </span>
+          <span>{mii ? "Peter Mii — Remove" : "Add a Mii"}</span>
         </WiiButton>
         <button
           className="message-write-body"
@@ -307,15 +356,20 @@ export default function MessageTools({ onClose, dateKey, reply }) {
           {body || `Write a ${screen.toLowerCase()}`}
         </button>
         {screen === "Letter" && (
-          <label className="message-photo-attach">
-            Attach photo
+          <div className="message-photo-attach">
+            <WiiButton onClick={() => fileRef.current?.click()}>
+              Attach photo
+            </WiiButton>
             <input
-              aria-label="Attach photo"
+              ref={fileRef}
+              className="system-visually-hidden"
+              tabIndex={-1}
+              aria-label="Photo attachment file"
               type="file"
               accept="image/png,image/jpeg,image/webp"
               onChange={(e) => upload(e.target.files?.[0])}
             />
-          </label>
+          </div>
         )}
         {photo && (
           <>
@@ -346,7 +400,7 @@ export default function MessageTools({ onClose, dateKey, reply }) {
             ? "dialog"
             : screen === "Create Message"
               ? "message-chooser"
-              : screen === "Address Book"
+              : ["Address Book", "Recipient"].includes(screen)
                 ? "address-book"
                 : ["Memo", "Letter"].includes(screen)
                   ? "composer"

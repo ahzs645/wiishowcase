@@ -1,4 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
+import useSystemModal from "../lib/useSystemModal";
 import { formatMenuDate } from "./Clock";
 import {
   useSystemState,
@@ -253,20 +255,22 @@ function MessageCard({ message, onOpen, isRead }) {
 function MessageMemo({ message, onClose, onReply, onDelete }) {
   const type = MESSAGE_TYPES[message.type] ?? MESSAGE_TYPES.memo;
   const dialogTitleId = `message-board-memo-title-${message.id}`;
-  const ref = useRef(null);
-  useEffect(() => {
-    const previous = document.activeElement;
-    ref.current?.querySelector("button")?.focus();
-    return () => previous?.isConnected && previous.focus();
-  }, [message.id]);
+  const modal = useSystemModal(true, onClose);
   const memoTitle =
     message.type === "memo" ? "Memo" : message.sender || "Letter";
 
-  return (
-    <div className="message-board-opened" onClick={onClose} role="presentation">
+  return createPortal(
+    <div
+      className="message-board-opened"
+      style={modal.style}
+      onClick={onClose}
+      role="presentation"
+    >
       <div className="message-board-opened-bg" aria-hidden="true" />
       <div
-        ref={ref}
+        ref={modal.ref}
+        tabIndex={-1}
+        onKeyDown={modal.onKeyDown}
         className={`message-board-memo ${type.cardClassName}`}
         role="dialog"
         aria-modal="true"
@@ -318,13 +322,23 @@ function MessageMemo({ message, onClose, onReply, onDelete }) {
           {message.type !== "memo" && (
             <WiiButton onClick={onReply}>Reply</WiiButton>
           )}
-          <WiiButton onClick={onDelete}>Erase letter</WiiButton>
+          <WiiButton
+            className="system-button message-trash-action"
+            onClick={onDelete}
+            aria-label="Erase letter"
+            title="Erase letter"
+          >
+            <svg viewBox="0 0 40 48" aria-hidden="true">
+              <path d="M8 13h24l-2 30H10zM5 8h30M15 3h10v5M15 18v19m10-19v19" />
+            </svg>
+          </WiiButton>
         </div>
         <div className="message-board-memo-footer" aria-hidden="true">
           <span className="wii-icon wii-icon-wii message-board-memo-wii-logo"></span>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
 

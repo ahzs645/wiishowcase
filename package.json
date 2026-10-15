@@ -44,7 +44,10 @@
     "capture:other-menus": "npm run capture:other-menus:core && node scripts/capture-other-menus.mjs",
     "build:other-menus": "node scripts/build-other-menus.mjs && python scripts/render-other-menus.py",
     "test:other-menu-viewer": "node scripts/check-other-menu-viewer.mjs",
-    "capture:other-menus:core": "node scripts/capture-other-menu-core.mjs"
+    "capture:other-menus:core": "node scripts/capture-other-menu-core.mjs",
+    "test:system-menu-fixes": "node scripts/test-system-menu-fixes.mjs && node scripts/test-system-pairing.mjs && node scripts/test-system-keyboard-focus.mjs",
+    "build:system-menu-fixes": "node scripts/build-system-menu-fixes.mjs && python scripts/render-system-menu-fixes.py",
+    "test:system-menu-fixes-viewer": "node scripts/check-system-menu-fixes-viewer.mjs"
   },
   "dependencies": {
     "@firstform/wii-channel-renderer": "file:wewad/packages/wii-channel-renderer",

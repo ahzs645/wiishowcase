@@ -1,0 +1,85 @@
+// 480-line implementation anchors. Original manual/source measurements stay in
+// docs/other-menus; these are fitted adapters, not recovered BRLYT values.
+export const SYSTEM_LAYOUT = {
+  profile: "retail-wii-4x-system",
+  font: {
+    family: "Wii System",
+    source: "M PLUS 1p (SIL OFL)",
+    approximation: true,
+  },
+  tokens: {
+    header: 64,
+    footer: 86,
+    titleSize: 25,
+    bodySize: 22,
+    listWidth: 414,
+    wideListWidth: 404,
+    choiceHeight: 70,
+    choiceGap: 18,
+    actionWidth: 278,
+    actionHeight: 62,
+    actionSize: 26,
+    fieldWidth: 450,
+    digitSize: 58,
+    digitGap: 12,
+    paperWidth: 526,
+    paperHeight: 384,
+    bookWidth: 474,
+    bookHeight: 368,
+  },
+  screens: {
+    settings: {
+      component: "WiiSettings",
+      sources: [
+        "copetti-settings",
+        "settings-wii-guide",
+        "manual-326",
+        "manual-327",
+        "manual-328",
+      ],
+    },
+    selectors: {
+      component: "SettingsControls",
+      sources: [
+        "manual-338",
+        "manual-339",
+        "manual-340",
+        "manual-342",
+        "manual-354",
+        "manual-382",
+        "manual-383",
+        "manual-448",
+        "manual-450",
+        "manual-452",
+        "manual-453",
+        "manual-365",
+        "manual-660",
+        "manual-661",
+      ],
+    },
+    sd: {
+      component: "SDMenu",
+      sources: ["manual-472", "manual-474", "nintendo-menu-3"],
+    },
+    messages: {
+      component: "MessageTools/WiiMessageBoard",
+      sources: [
+        "manual-265",
+        "manual-268",
+        "manual-278",
+        "manual-254",
+        "nwr-43",
+      ],
+    },
+    home: { component: "HomeMenu", sources: ["manual-461", "manual-462"] },
+    keyboard: {
+      component: "SystemKeyboard",
+      sources: ["manual-496", "manual-497"],
+    },
+  },
+  limits: [
+    "Fonts/artwork are approximations",
+    "Some references are cropped or related states",
+    "Physical Wii hardware and retired online services use browser adapters",
+  ],
+};

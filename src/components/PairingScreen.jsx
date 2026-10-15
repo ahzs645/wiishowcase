@@ -1,10 +1,12 @@
-import { useState, useEffect, useRef, memo } from 'react';
-import { QRCodeSVG } from 'qrcode.react';
-import { generateSessionId, pollForAnswer } from '../lib/SignalingRelay';
+import { useState, useEffect, useRef } from "react";
+import { QRCodeSVG } from "qrcode.react";
+import { generateSessionId, pollForAnswer } from "../lib/SignalingRelay";
+import { createPortal } from "react-dom";
+import useSystemModal from "../lib/useSystemModal";
 
-const HINT_STYLE = { marginTop: '10px', fontSize: '13px', opacity: 0.7 };
-const PAIR_ANOTHER_STYLE = { marginTop: '12px' };
-const CLOSE_HINT_STYLE = { marginTop: '8px' };
+const HINT_STYLE = { marginTop: "10px", fontSize: "13px", opacity: 0.7 };
+const PAIR_ANOTHER_STYLE = { marginTop: "12px" };
+const CLOSE_HINT_STYLE = { marginTop: "8px" };
 
 /**
  * PairingScreen — shown on the host (desktop) to pair companions (phones).
@@ -20,19 +22,22 @@ export default function PairingScreen({
   onStartPairing,
   onClose,
 }) {
-  const [answerInput, setAnswerInput] = useState('');
-  const [companionUrl, setCompanionUrl] = useState('');
+  const [answerInput, setAnswerInput] = useState("");
+  const [companionUrl, setCompanionUrl] = useState("");
+  const [relayAvailable, setRelayAvailable] = useState(null);
+  const modal = useSystemModal(visible, onClose);
   const sessionIdRef = useRef(null);
 
   // Generate a new session ID each time a new offer arrives
   useEffect(() => {
     if (offer) {
+      setRelayAvailable(null);
       sessionIdRef.current = generateSessionId();
       const sid = sessionIdRef.current;
 
       let origin = window.location.origin;
       const hostname = window.location.hostname;
-      if (hostname === 'localhost' || hostname === '127.0.0.1') {
+      if (hostname === "localhost" || hostname === "127.0.0.1") {
         const lanHost = __LAN_HOST__;
         if (lanHost) {
           origin = `${window.location.protocol}//${lanHost}:${window.location.port}`;
@@ -40,17 +45,21 @@ export default function PairingScreen({
       }
       const base = origin + window.location.pathname;
       setCompanionUrl(`${base}#/companion/${sid}/${offer}`);
-      setAnswerInput('');
+      setAnswerInput("");
     }
   }, [offer]);
 
   // Poll for auto-relayed answer
   useEffect(() => {
-    if (state !== 'waiting' || !sessionIdRef.current) return;
+    if (state !== "waiting" || !sessionIdRef.current) return;
 
-    const stopPolling = pollForAnswer(sessionIdRef.current, (answer) => {
-      onAcceptAnswer(answer);
-    });
+    const stopPolling = pollForAnswer(
+      sessionIdRef.current,
+      (answer) => {
+        onAcceptAnswer(answer);
+      },
+      setRelayAvailable,
+    );
 
     return () => stopPolling();
   }, [state, onAcceptAnswer]);
@@ -64,17 +73,30 @@ export default function PairingScreen({
 
   const handlePairAnother = () => {
     sessionIdRef.current = null;
-    setCompanionUrl('');
-    setAnswerInput('');
+    setCompanionUrl("");
+    setAnswerInput("");
     onStartPairing();
   };
 
   if (!visible) return null;
 
-  return (
-    <div className="pairing-overlay">
-      <div className="pairing-card">
-        <button className="pairing-close" onClick={onClose} title="Close">
+  return createPortal(
+    <div className="pairing-overlay" style={modal.style}>
+      <div
+        className="pairing-card"
+        ref={modal.ref}
+        tabIndex={-1}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Pair Wii Remote"
+        onKeyDown={modal.onKeyDown}
+      >
+        <button
+          className="pairing-close"
+          onClick={onClose}
+          title="Close"
+          aria-label="Close pairing"
+        >
           &times;
         </button>
 
@@ -82,19 +104,19 @@ export default function PairingScreen({
 
         {connectedCount > 0 && (
           <p className="pairing-count">
-            {connectedCount}/3 remote{connectedCount !== 1 ? 's' : ''} connected
+            {connectedCount}/3 remote{connectedCount !== 1 ? "s" : ""} connected
           </p>
         )}
 
-        {state === 'creating' && (
+        {state === "creating" && (
           <div className="pairing-status">
             <div className="pairing-spinner" />
             <p>Generating connection code...</p>
           </div>
         )}
 
-        {state === 'waiting' && companionUrl && (
-          <>
+        {state === "waiting" && companionUrl && (
+          <div className="pairing-exchange">
             <p className="pairing-instructions">
               Scan this QR code with your phone to connect as a Wii Remote
             </p>
@@ -115,6 +137,7 @@ export default function PairingScreen({
 
             <div className="pairing-answer-input">
               <textarea
+                aria-label="Remote answer code"
                 value={answerInput}
                 onChange={(e) => setAnswerInput(e.target.value)}
                 placeholder="Paste the answer code from your phone here..."
@@ -130,17 +153,23 @@ export default function PairingScreen({
             </div>
 
             <p className="pairing-hint" style={HINT_STYLE}>
-              Answer will be accepted automatically if on the same network.
+              {relayAvailable === false
+                ? "Automatic exchange is unavailable here. Copy the answer code shown on your phone and paste it above to connect."
+                : "Your phone can exchange the answer automatically when a relay is available, or show a code to paste here."}
             </p>
-          </>
+          </div>
         )}
 
-        {state === 'connected' && (
+        {state === "connected" && (
           <div className="pairing-status pairing-connected">
             <div className="pairing-check">&#10003;</div>
             <p>Wii Remote connected!</p>
             {availableSlots > 0 ? (
-              <button className="pairing-submit" onClick={handlePairAnother} style={PAIR_ANOTHER_STYLE}>
+              <button
+                className="pairing-submit"
+                onClick={handlePairAnother}
+                style={PAIR_ANOTHER_STYLE}
+              >
                 Pair Another Remote
               </button>
             ) : (
@@ -152,7 +181,7 @@ export default function PairingScreen({
           </div>
         )}
 
-        {state === 'failed' && (
+        {state === "failed" && (
           <div className="pairing-status pairing-failed">
             <p>Connection failed. Please try again.</p>
             <button className="pairing-submit" onClick={handlePairAnother}>
@@ -161,6 +190,7 @@ export default function PairingScreen({
           </div>
         )}
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }

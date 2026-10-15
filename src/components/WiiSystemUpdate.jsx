@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
+import useSystemModal from "../lib/useSystemModal";
 
 /**
  * WiiSystemUpdate — Wii-style system update dialog.
@@ -13,10 +15,17 @@ import { useState, useEffect } from 'react';
  */
 const UPDATE_FILL_MS = 3600;
 
-export default function WiiSystemUpdate({ mode, updateInfo, onCheck, onClose, play }) {
+export default function WiiSystemUpdate({
+  mode,
+  updateInfo,
+  onCheck,
+  onClose,
+  play,
+}) {
   const [stage, setStage] = useState(null);
   const [progress, setProgress] = useState(0);
   const [info, setInfo] = useState(null);
+  const modal = useSystemModal(Boolean(mode && stage), onClose);
 
   // Reset the flow each time the dialog opens
   useEffect(() => {
@@ -25,11 +34,11 @@ export default function WiiSystemUpdate({ mode, updateInfo, onCheck, onClose, pl
       return;
     }
     setProgress(0);
-    if (mode === 'prompt') {
+    if (mode === "prompt") {
       setInfo(updateInfo);
-      setStage('prompt');
+      setStage("prompt");
     } else {
-      setStage('checking');
+      setStage("checking");
     }
     // updateInfo is only read at open time on purpose
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -37,7 +46,7 @@ export default function WiiSystemUpdate({ mode, updateInfo, onCheck, onClose, pl
 
   // Manual check (from Wii Settings)
   useEffect(() => {
-    if (stage !== 'checking') return;
+    if (stage !== "checking") return;
     let cancelled = false;
     (async () => {
       const [result] = await Promise.all([
@@ -48,23 +57,25 @@ export default function WiiSystemUpdate({ mode, updateInfo, onCheck, onClose, pl
       if (cancelled) return;
       if (result?.hasUpdate) {
         setInfo(result);
-        setStage('prompt');
+        setStage("prompt");
       } else {
-        setStage('latest');
+        setStage("latest");
       }
     })();
-    return () => { cancelled = true; };
+    return () => {
+      cancelled = true;
+    };
   }, [stage, onCheck]);
 
   // Fake download progress, then completion
   useEffect(() => {
-    if (stage !== 'updating') return;
+    if (stage !== "updating") return;
     const start = performance.now();
     let raf = requestAnimationFrame(function tick(now) {
       const pct = Math.min(100, ((now - start) / UPDATE_FILL_MS) * 100);
       setProgress(pct);
       if (pct < 100) raf = requestAnimationFrame(tick);
-      else setStage('complete');
+      else setStage("complete");
     });
     return () => cancelAnimationFrame(raf);
   }, [stage]);
@@ -72,39 +83,53 @@ export default function WiiSystemUpdate({ mode, updateInfo, onCheck, onClose, pl
   if (!mode || !stage) return null;
 
   const startUpdate = () => {
-    play('select');
-    setStage('updating');
+    play("select");
+    setStage("updating");
   };
 
   const finishUpdate = () => {
-    play('select');
+    play("select");
     info?.onReload();
   };
 
   const dismiss = () => {
-    play('back');
+    play("back");
     onClose();
   };
 
-  return (
-    <div className="system-update-overlay">
-      <div className="system-update-dialog">
+  return createPortal(
+    <div className="system-update-overlay" style={modal.style}>
+      <div
+        className="system-update-dialog"
+        ref={modal.ref}
+        tabIndex={-1}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Wii System Update"
+        onKeyDown={modal.onKeyDown}
+      >
         <div className="system-update-title">Wii System Update</div>
 
-        {stage === 'checking' && (
+        {stage === "checking" && (
           <div className="system-update-body">
-            <p className="system-update-text">Connecting. Please wait a moment...</p>
+            <p className="system-update-text">
+              Connecting. Please wait a moment...
+            </p>
             <div className="system-update-spinner" aria-hidden="true" />
           </div>
         )}
 
-        {stage === 'latest' && (
+        {stage === "latest" && (
           <div className="system-update-body">
             <p className="system-update-text">
               There is no need to update. Your Wii is already up to date.
             </p>
             <div className="system-update-buttons">
-              <button className="wii-btn-start wii-btn-start-md" type="button" onClick={dismiss}>
+              <button
+                className="wii-btn-start wii-btn-start-md"
+                type="button"
+                onClick={dismiss}
+              >
                 <div className="wii-btn-start-highlight-sharp" />
                 <span>OK</span>
               </button>
@@ -112,7 +137,7 @@ export default function WiiSystemUpdate({ mode, updateInfo, onCheck, onClose, pl
           </div>
         )}
 
-        {stage === 'prompt' && (
+        {stage === "prompt" && (
           <div className="system-update-body">
             <p className="system-update-text">
               A Wii system update is available.
@@ -123,11 +148,19 @@ export default function WiiSystemUpdate({ mode, updateInfo, onCheck, onClose, pl
               <p className="system-update-version">Ver. {info.buildNumber}</p>
             )}
             <div className="system-update-buttons">
-              <button className="wii-btn-start wii-btn-start-md" type="button" onClick={dismiss}>
+              <button
+                className="wii-btn-start wii-btn-start-md"
+                type="button"
+                onClick={dismiss}
+              >
                 <div className="wii-btn-start-highlight-sharp" />
                 <span>Later</span>
               </button>
-              <button className="wii-btn-start wii-btn-start-md" type="button" onClick={startUpdate}>
+              <button
+                className="wii-btn-start wii-btn-start-md"
+                type="button"
+                onClick={startUpdate}
+              >
                 <div className="wii-btn-start-highlight-sharp" />
                 <span>Yes</span>
               </button>
@@ -135,18 +168,21 @@ export default function WiiSystemUpdate({ mode, updateInfo, onCheck, onClose, pl
           </div>
         )}
 
-        {stage === 'updating' && (
+        {stage === "updating" && (
           <div className="system-update-body">
             <p className="system-update-text">
               Updating. Do not turn the power off while updating.
             </p>
             <div className="system-update-progress">
-              <div className="system-update-progress-fill" style={{ width: `${progress}%` }} />
+              <div
+                className="system-update-progress-fill"
+                style={{ width: `${progress}%` }}
+              />
             </div>
           </div>
         )}
 
-        {stage === 'complete' && (
+        {stage === "complete" && (
           <div className="system-update-body">
             <p className="system-update-text">
               The Wii system update is complete.
@@ -154,7 +190,11 @@ export default function WiiSystemUpdate({ mode, updateInfo, onCheck, onClose, pl
               The Wii console will now restart.
             </p>
             <div className="system-update-buttons">
-              <button className="wii-btn-start wii-btn-start-md" type="button" onClick={finishUpdate}>
+              <button
+                className="wii-btn-start wii-btn-start-md"
+                type="button"
+                onClick={finishUpdate}
+              >
                 <div className="wii-btn-start-highlight-sharp" />
                 <span>OK</span>
               </button>
@@ -162,6 +202,7 @@ export default function WiiSystemUpdate({ mode, updateInfo, onCheck, onClose, pl
           </div>
         )}
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }

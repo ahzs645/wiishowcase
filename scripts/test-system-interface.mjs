@@ -134,7 +134,10 @@ try {
         JSON.parse(localStorage.getItem("wiishowcase.system.v1")),
       );
     const backSettings = () =>
-      page.locator(".system-settings-shell footer button").click();
+      page
+        .locator(".system-settings-shell footer")
+        .getByRole("button", { name: "Back", exact: true })
+        .click();
     const keyboard = page.locator("wii-keyboard .is-open");
     const typeKeyboard = async (value, multiline = false) => {
       await keyboard.waitFor();
@@ -322,8 +325,9 @@ try {
       "Before Settings was an unwired Options tile.",
     );
     await button("Console Nickname").click();
-    await button("Wii", page.locator(".system-detail")).click();
+    await button("Wii", page.locator(".system-settings")).click();
     await typeKeyboard("Test Wii");
+    await button("Confirm").click();
     check(
       `${mode}: nickname saved by real keyboard flow`,
       (await state()).settings.nickname === "Test Wii",
@@ -332,7 +336,9 @@ try {
     await backSettings();
     await button("Calendar", page.locator(".system-settings")).click();
     await button("Date", page.locator(".system-settings")).click();
-    await page.getByLabel("Console date").fill("2026-10-13");
+    await page.getByLabel("Month", { exact: true }).fill("10");
+    await page.getByLabel("Day", { exact: true }).fill("13");
+    await page.getByLabel("Year", { exact: true }).fill("2026");
     await button("Confirm").click();
     check(
       `${mode}: date setting updates offset`,
@@ -341,7 +347,8 @@ try {
     await snap("date", "Console Date", "manual-339", "options");
     await backSettings();
     await button("Time", page.locator(".system-settings")).click();
-    await page.getByLabel("Console time").fill("14:30");
+    await page.getByLabel("Hour", { exact: true }).fill("14");
+    await page.getByLabel("Minute", { exact: true }).fill("30");
     await button("Confirm").click();
     await snap("time", "Console Time", "manual-340", "options");
     await backSettings();
@@ -349,33 +356,39 @@ try {
     await button("Screen").click();
     await button("Screen Position").click();
     await button("Right").click();
+    await button("Confirm").click();
     check(
       `${mode}: screen position saved`,
       (await state()).settings.screenX === 1,
     );
     await button("Reset position").click();
+    await button("Confirm").click();
     await backSettings();
     await button("Widescreen Settings").click();
     await snap("widescreen", "Widescreen Settings", "manual-342", "options");
     await button(
       mode === "4:3" ? "Widescreen (16:9)" : "Standard (4:3)",
     ).click();
+    await button("Confirm").click();
     check(
       `${mode}: aspect preference changes channel mask class`,
       (await page.locator(mode === "4:3" ? ".wii-169" : ".wii-43").count()) ===
         1,
     );
     await button("Automatic").click();
+    await button("Confirm").click();
     await backSettings();
     await backSettings();
     await button("Sound").click();
     await button("Mono").click();
+    await button("Confirm").click();
     check(
       `${mode}: mono preference saved`,
       (await state()).settings.sound === "Mono",
     );
     await snap("sound", "Sound", "manual-354", "options");
     await button("Stereo").click();
+    await button("Confirm").click();
     await backSettings();
     await button("Settings page 2").click();
     await snap(
@@ -387,6 +400,7 @@ try {
     await button("Sensor Bar").click();
     await button("Sensitivity").click();
     await page.getByLabel("Sensor sensitivity").fill("4");
+    await button("Confirm").click();
     check(
       `${mode}: sensitivity saved`,
       (await state()).settings.sensorSensitivity === 4,
@@ -406,11 +420,13 @@ try {
     );
     await page.getByLabel("Internet parental PIN").fill("1234");
     await button("Unlock").click();
+    await button("Connection Settings").click();
     await button("Online channel data is off").click();
     check(
       `${mode}: correct PIN permits Internet preference`,
       (await state()).settings.internet === true,
     );
+    await backSettings();
     await backSettings();
     await button("Settings page 3").click();
     await snap(
@@ -420,21 +436,24 @@ try {
       "options",
     );
     await button("Language").click();
-    await button("French").click();
+    await button("Français").click();
+    await button("Confirm").click();
     check(
       `${mode}: language is persisted`,
       (await state()).settings.language === "French",
     );
     await button("English").click();
+    await button("Confirm").click();
     await backSettings();
     await button("Wii System Update").click();
     await page.waitForTimeout(600);
     await page.keyboard.press("Escape"); // update panel has own close handler
-    const updateClose = page
-      .locator(".wii-system-update-screen button")
-      .filter({ hasText: /Back|Cancel|OK/ })
-      .first();
-    if (await updateClose.count()) await updateClose.click();
+    check(
+      `${mode}: Escape closes only the Update modal`,
+      (await page.locator(".system-update-dialog").count()) === 0 &&
+        (await page.locator('[data-settings-path="Wii Settings"]').count()) ===
+          1,
+    );
     // Navigate directly to Menu; all saved data survives reload and modal state resets.
     await page.goto(`${base}?screen=menu&channelPreview=1`);
     await page.waitForTimeout(700);
@@ -468,7 +487,7 @@ try {
       await page.locator(".home-operations-guide").isVisible(),
     );
     await page.keyboard.press("Escape");
-    await button("⌂ Close").click();
+    await button("Close HOME Menu").click();
     await button("Open Mail").click();
     await page.waitForTimeout(700);
     await snap(
@@ -534,13 +553,13 @@ try {
     const phoneBase = await keyboard
       .locator(".wii-keyboard-key--2")
       .innerText();
-    await keyboard.locator(".wii-keyboard-key--shift").click();
+    await button("Phone ABC mode", keyboard).click();
     check(
-      `${mode}: phone Shift switches groups`,
+      `${mode}: phone case rail switches groups`,
       (await keyboard.locator(".wii-keyboard-key--2").innerText()) !==
         phoneBase,
     );
-    await keyboard.locator(".wii-keyboard-key--shift").click();
+    await button("Phone abc mode", keyboard).click();
     await button("More", keyboard).click();
     check(
       `${mode}: phone More exposes accents`,
@@ -549,7 +568,7 @@ try {
     await button("More", keyboard).click();
     await button("QWERTY", keyboard).click();
     await typeKeyboard("Hello Wii\nSecond line", true);
-    await button("＋ Add a Mii").click();
+    await button("Add a Mii").click();
     await button("Post", page.getByRole("dialog")).click();
     check(
       `${mode}: memo creation persists multiline and Mii`,

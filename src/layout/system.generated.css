@@ -1,0 +1,25 @@
+/* Generated from src/layout/system.js. */
+:root {
+  --system-font-family: "Wii System", sans-serif;
+  --system-header: 64;
+  --system-footer: 86;
+  --system-title-size: 25;
+  --system-body-size: 22;
+  --system-list-width: 414;
+  --system-wide-list-width: 404;
+  --system-choice-height: 70;
+  --system-choice-gap: 18;
+  --system-action-width: 278;
+  --system-action-height: 62;
+  --system-action-size: 26;
+  --system-field-width: 450;
+  --system-digit-size: 58;
+  --system-digit-gap: 12;
+  --system-paper-width: 526;
+  --system-paper-height: 384;
+  --system-book-width: 474;
+  --system-book-height: 368;
+}
+@font-face { font-family: "Wii System"; src: url("/fonts/system/mplus-1p-400-latin.woff") format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Wii System"; src: url("/fonts/system/mplus-1p-500-latin.woff") format("woff"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Wii System"; src: url("/fonts/system/mplus-1p-700-latin.woff") format("woff"); font-weight: 700; font-style: normal; font-display: swap; }

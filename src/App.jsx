@@ -127,6 +127,7 @@ function HostApp() {
   const [showPairing, setShowPairing] = useState(false);
   const [showHomeMenu, setShowHomeMenu] = useState(false);
   const [showSD, setShowSD] = useState(false);
+  const [settingsDestination, setSettingsDestination] = useState(null);
   const [composeRequest, setComposeRequest] = useState(0);
   const resetTimer = useRef(null);
   useEffect(() => () => clearTimeout(resetTimer.current), []);
@@ -491,6 +492,7 @@ function HostApp() {
 
   const openSettings = useCallback(() => {
     play("select");
+    setSettingsDestination(null);
     setPhase("settings");
   }, [play]);
 
@@ -804,6 +806,7 @@ function HostApp() {
 
       <WiiSettings
         visible={phase === "settings"}
+        initialPath={settingsDestination}
         onBack={closeSettings}
         onSystemUpdate={openSystemUpdateCheck}
         onFormat={() => setPhase("menu")}
@@ -858,6 +861,11 @@ function HostApp() {
 
       <SDMenu
         visible={showSD}
+        onManage={() => {
+          setShowSD(false);
+          setSettingsDestination("Data Management");
+          setPhase("settings");
+        }}
         onBack={() => setShowSD(false)}
         onChannel={(channel) => {
           setShowSD(false);

@@ -1,5 +1,5 @@
-import { useState, useRef, useCallback, useEffect } from 'react';
-import { createConnection } from '../lib/WebRTCConnection';
+import { useState, useRef, useCallback, useEffect } from "react";
+import { createConnection } from "../lib/WebRTCConnection";
 
 /**
  * React hook for managing a WebRTC P2P connection.
@@ -8,27 +8,32 @@ import { createConnection } from '../lib/WebRTCConnection';
  * @param {function} onMessage - called with each incoming data channel message
  */
 export default function useWebRTC(role, onMessage) {
-  const [state, setState] = useState('idle'); // idle | creating | waiting | connected | failed
+  const [state, setState] = useState("idle"); // idle | creating | waiting | connected | failed
   const [offer, setOffer] = useState(null); // encoded offer string (host)
   const [answer, setAnswer] = useState(null); // encoded answer string (companion)
   const connRef = useRef(null);
 
   // Tear down on unmount
   useEffect(() => {
-    return () => connRef.current?.close();
+    return () => {
+      const connection = connRef.current;
+      connRef.current = null;
+      connection?.close();
+    };
   }, []);
 
   const handleStateChange = useCallback((connState) => {
-    if (connState === 'connected') setState('connected');
-    if (connState === 'failed' || connState === 'disconnected') setState('failed');
+    if (connState === "connected") setState("connected");
+    if (connState === "failed" || connState === "disconnected")
+      setState("failed");
   }, []);
 
   const handleChannelOpen = useCallback(() => {
-    setState('connected');
+    setState("connected");
   }, []);
 
   const handleChannelClose = useCallback(() => {
-    setState('idle');
+    setState("idle");
   }, []);
 
   /**
@@ -36,20 +41,27 @@ export default function useWebRTC(role, onMessage) {
    */
   const startHosting = useCallback(async () => {
     connRef.current?.close();
-    setState('creating');
+    setState("creating");
 
     const conn = createConnection({
-      role: 'host',
-      onStateChange: handleStateChange,
+      role: "host",
+      onStateChange: (value) => {
+        if (connRef.current === conn) handleStateChange(value);
+      },
       onMessage,
-      onChannelOpen: handleChannelOpen,
-      onChannelClose: handleChannelClose,
+      onChannelOpen: () => {
+        if (connRef.current === conn) handleChannelOpen();
+      },
+      onChannelClose: () => {
+        if (connRef.current === conn) handleChannelClose();
+      },
     });
     connRef.current = conn;
 
     const encodedOffer = await conn.createOffer();
+    if (connRef.current !== conn) throw new Error("Connection was replaced.");
     setOffer(encodedOffer);
-    setState('waiting'); // waiting for companion's answer
+    setState("waiting"); // waiting for companion's answer
     return encodedOffer;
   }, [onMessage, handleStateChange, handleChannelOpen, handleChannelClose]);
 
@@ -64,24 +76,34 @@ export default function useWebRTC(role, onMessage) {
   /**
    * COMPANION: Accept the host's offer and produce an answer.
    */
-  const acceptOffer = useCallback(async (encodedOffer) => {
-    connRef.current?.close();
-    setState('creating');
+  const acceptOffer = useCallback(
+    async (encodedOffer) => {
+      connRef.current?.close();
+      setState("creating");
 
-    const conn = createConnection({
-      role: 'companion',
-      onStateChange: handleStateChange,
-      onMessage,
-      onChannelOpen: handleChannelOpen,
-      onChannelClose: handleChannelClose,
-    });
-    connRef.current = conn;
+      const conn = createConnection({
+        role: "companion",
+        onStateChange: (value) => {
+          if (connRef.current === conn) handleStateChange(value);
+        },
+        onMessage,
+        onChannelOpen: () => {
+          if (connRef.current === conn) handleChannelOpen();
+        },
+        onChannelClose: () => {
+          if (connRef.current === conn) handleChannelClose();
+        },
+      });
+      connRef.current = conn;
 
-    const encodedAnswer = await conn.acceptOffer(encodedOffer);
-    setAnswer(encodedAnswer);
-    setState('waiting'); // waiting for host to accept our answer
-    return encodedAnswer;
-  }, [onMessage, handleStateChange, handleChannelOpen, handleChannelClose]);
+      const encodedAnswer = await conn.acceptOffer(encodedOffer);
+      if (connRef.current !== conn) throw new Error("Connection was replaced.");
+      setAnswer(encodedAnswer);
+      setState("waiting"); // waiting for host to accept our answer
+      return encodedAnswer;
+    },
+    [onMessage, handleStateChange, handleChannelOpen, handleChannelClose],
+  );
 
   /**
    * Send data over the data channel.
@@ -94,9 +116,10 @@ export default function useWebRTC(role, onMessage) {
    * Disconnect and reset.
    */
   const disconnect = useCallback(() => {
-    connRef.current?.close();
+    const connection = connRef.current;
     connRef.current = null;
-    setState('idle');
+    connection?.close();
+    setState("idle");
     setOffer(null);
     setAnswer(null);
   }, []);

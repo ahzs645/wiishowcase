@@ -997,6 +997,38 @@
       "notes": "Official US manual illustration, PDF page 33. Extracted original embedded image; low resolution and possible crop/annotation. Structural reference, not a pixel/font metric target. Exact firmware is not established. Published PNG is a lossless decoded copy of the embedded JPEG; originalSHA256 identifies the embedded bytes, imageSHA256 identifies this PNG.",
       "embeddedFormat": "jpeg",
       "imageSHA256": "81047c1625832129b85fd8b1c28f72d6ab583552fedf1707d3dda8996cf05eaf"
+    },
+    {
+      "id": "manual-661",
+      "title": "Internet Connection 1/2/3 profiles",
+      "mode": "illustration",
+      "kind": "Nintendo manual",
+      "image": "references/manual-661.png",
+      "sourceURL": "https://csassets.nintendo.com/noaext/image/private/t_KA_PDF/WiiChEng#page=30",
+      "imageURL": null,
+      "originalSize": [
+        149,
+        112
+      ],
+      "originalSHA256": "89fd0f943cd348a741b4c1918278b8e167d161c487dbe3d90e5dc52e045c102a",
+      "imageSHA256": "db15fa741dfefc77aadcce51175e30b3a6812861b06b0e1bcd2200be7db5a1d3",
+      "notes": "Official US manual, PDF page 30; embedded JPEG decoded to PNG. Low-resolution illustration; preserve its crop/aspect and use as structural evidence."
+    },
+    {
+      "id": "manual-660",
+      "title": "Wired or wireless connection selection",
+      "mode": "illustration",
+      "kind": "Nintendo manual",
+      "image": "references/manual-660.png",
+      "sourceURL": "https://csassets.nintendo.com/noaext/image/private/t_KA_PDF/WiiChEng#page=30",
+      "imageURL": null,
+      "originalSize": [
+        149,
+        112
+      ],
+      "originalSHA256": "4593e7837a0a6fdaf45714ecfb07a2e4b3cb560a9ea58f4a6ed114862e06bc2e",
+      "imageSHA256": "3c18712b0a4e508d524c226a47260f939a5dabd4cc5184a8eb9f84f9a93b63f8",
+      "notes": "Official US manual, PDF page 30; embedded JPEG decoded to PNG. Low-resolution illustration; preserve its crop/aspect and use as structural evidence."
     }
   ],
   "rejectedOrUnavailable": [

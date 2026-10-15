@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { MENU_LAYOUT as layout } from "../src/layout/menu.js";
+import { SYSTEM_LAYOUT } from "../src/layout/system.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 await fs.access(path.join(root, layout.clock.fontAsset));
@@ -43,6 +44,15 @@ ${declarations(layout.tokens.modes["16:9"])}
   font-display: swap;
 }
 `;
+const systemCSS = `/* Generated from src/layout/system.js. */
+:root {
+  --system-font-family: "${SYSTEM_LAYOUT.font.family}", sans-serif;
+${Object.entries(SYSTEM_LAYOUT.tokens)
+  .map(([key, value]) => `  --system-${kebab(key)}: ${value};`)
+  .join("\n")}
+}
+${[400, 500, 700].map((weight) => `@font-face { font-family: "Wii System"; src: url("/fonts/system/mplus-1p-${weight}-latin.woff") format("woff"); font-weight: ${weight}; font-style: normal; font-display: swap; }`).join("\n")}
+`;
 
 // Validate evidence joins rather than copying independent measurement values
 // into the runtime registry. A stale/misspelled source ID must fail the build.
@@ -51,6 +61,16 @@ const references = layout.evidence.referenceIds.map((id) => {
   if (!ref) throw new Error(`Unknown layout reference: ${id}`);
   return ref;
 });
+for (const screen of Object.values(SYSTEM_LAYOUT.screens)) {
+  for (const id of screen.sources) {
+    if (!manifest.references.some((reference) => reference.id === id))
+      throw new Error(`Unknown system layout reference: ${id}`);
+  }
+}
+for (const weight of [400, 500, 700])
+  await fs.access(
+    path.join(root, `public/fonts/system/mplus-1p-${weight}-latin.woff`),
+  );
 for (const evidence of [
   layout.evidence.research,
   layout.evidence.measurements,
@@ -127,6 +147,44 @@ if (otherMenus) {
       viewer: "../other-menus/#gaps",
     });
 }
+let systemFixes;
+try {
+  systemFixes = await read("system-menu-fixes/comparison.json");
+} catch (error) {
+  if (error.code !== "ENOENT") throw error;
+}
+if (systemFixes)
+  for (const state of systemFixes.states) {
+    const existing = screens.find((screen) => screen.id === state.id);
+    const updated = {
+      id: state.id,
+      title: state.title,
+      layoutStatus:
+        "System registry and screen adapter; native fidelity approximate",
+      implementation:
+        "src/layout/system.js; src/system-adapters.css; owning screen component",
+      references: [
+        ...new Set(
+          state.captures
+            .map((capture) => capture.reference?.id)
+            .filter(Boolean),
+        ),
+      ],
+      captures: state.captures.map(({ mode, width, height }) => ({
+        mode,
+        width,
+        height,
+      })),
+      viewer: `../system-menu-fixes/?interface=${encodeURIComponent(state.id)}`,
+      validation: {
+        date: systemFixes.date,
+        change: state.change,
+        remaining: state.remaining,
+      },
+    };
+    if (existing) Object.assign(existing, updated);
+    else screens.push(updated);
+  }
 const link = (url, label) => `<a href="${escape(url)}">${escape(label)}</a>`;
 const table = (headers, rows) =>
   `<div class="table-scroll"><table><thead><tr>${headers.map((h) => `<th>${escape(h)}</th>`).join("")}</tr></thead><tbody>${rows.map((row) => `<tr>${row.map((cell) => `<td>${cell}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
@@ -156,7 +214,7 @@ body{margin:0;background:#f7f9fc;color:#203040;font:16px/1.5 system-ui,sans-seri
 <h1>Wii interface layout reference</h1>
 <p>One maintained implementation registry for menu positions, sizing and regional behavior, with links to independent evidence and other interface screens.</p>
 <nav>${link("#positions", "Positions and sizes")}${link("#sources", "Source confidence")}${link("#screens", "Screen index")}${link("../layout-reference.md", "Maintenance guide")}${link("menu-registry.json", "Machine-readable registry")}</nav>
-<p class="note">${escape(layout.target)}. ${escape(layout.evidence.confidence)} Other screens are indexed below; their layout adapters are still pending.</p>
+<p class="note">${escape(layout.target)}. ${escape(layout.evidence.confidence)} System menus use <a href="system-registry.json">their own registry</a> and source-linked adapters. <a href="../system-menu-fixes/">Current comparisons and remaining limits</a>.</p>
 <h2>Coordinate contract</h2>
 <p>${escape(layout.coordinates.origin)}. ${escape(layout.coordinates.scaling)}. Base frames: 640×480 (4:3) and 853⅓×480 (16:9). Capture/test sizes: ${layout.coordinates.captureSizes.map((s) => s.join("×")).join(", ")}. ${escape(layout.coordinates.note)}</p>
 <p>A logical slot rectangle, masked border, SVG glyph and button hit area are different bounds. Compare like bounds. Preserve source aspect/crop and record capture state before fitting geometry.</p>
@@ -226,6 +284,9 @@ ${table(
 </main><script>document.querySelector('#filter').addEventListener('input',e=>{const q=e.target.value.toLowerCase();for(const row of document.querySelectorAll('#screen-table tbody tr'))row.hidden=!row.textContent.toLowerCase().includes(q)});</script></html>
 `;
 const outputs = {
+  "src/layout/system.generated.css": systemCSS,
+  "docs/layout-reference/system-registry.json":
+    JSON.stringify(SYSTEM_LAYOUT, null, 2) + "\n",
   "src/layout/menu.generated.css": css,
   "docs/layout-reference/menu-registry.json":
     JSON.stringify(layout, null, 2) + "\n",

@@ -1,4 +1,28 @@
+// Measured silhouettes for Settings tiles; original pane textures are unavailable.
 export default function SystemArt({ kind }) {
+  const console = (x = 14) => (
+    <g>
+      <path d={`M${x} 26l44-11v83l-44 9z`} fill="#d5d9da" />
+      <path d={`M${x + 44} 15l10 5v79l-10-1z`} fill="#a9afb1" />
+      <path d={`M${x + 8} 36l28-6v3l-28 6z`} fill="#8e999f" />
+      <path d={`M${x + 9} 94l18-4`} stroke="#8e999f" strokeWidth="2" />
+      <circle cx={x + 34} cy="91" r="2" fill="#98aab3" />
+    </g>
+  );
+  const sd = (x = 84) => (
+    <g>
+      <path d={`M${x} 53l8-8h22v46h-30z`} />
+      <rect x={x + 5} y="61" width="20" height="18" fill="#e9eaea" />
+      <path d={`M${x + 5} 49v7m6-7v7m6-7v7`} strokeWidth="2" />
+    </g>
+  );
+  const card = (x = 125) => (
+    <g>
+      <rect x={x} y="42" width="32" height="48" rx="2" />
+      <rect x={x + 4} y="47" width="24" height="14" fill="#e4e6e6" />
+      <path d={`M${x + 5} 68h22m-22 7h22m-22 7h22`} strokeWidth="2" />
+    </g>
+  );
   return (
     <svg
       className="system-tile-art-svg"
@@ -7,40 +31,45 @@ export default function SystemArt({ kind }) {
     >
       <defs>
         <linearGradient id={`system-art-${kind}`} x2="0" y2="1">
-          <stop stopColor="#fafafa" />
-          <stop offset="1" stopColor="#aab1b5" />
+          <stop stopColor="#f4f5f5" />
+          <stop offset="1" stopColor="#b8bfc1" />
         </linearGradient>
       </defs>
-      <g fill={`url(#system-art-${kind})`} stroke="#939b9e" strokeWidth="3">
-        {kind === "data" ? (
+      <g
+        fill={`url(#system-art-${kind})`}
+        stroke="#939b9e"
+        strokeWidth="2.5"
+        strokeLinejoin="round"
+      >
+        {kind === "channels" ? (
           <>
-            <path d="M15 35h34l12 12h24v52H15z" />
-            <path d="M18 52h67l-9 45H10z" />
-            <rect x="99" y="48" width="25" height="45" rx="2" />
-            <path d="M105 53h13v8h-13zM104 75h15v10h-15z" />
-            <rect x="136" y="48" width="29" height="45" rx="2" />
-            <path d="M142 61h18M142 69h18M142 77h18" />
+            <rect x="49" y="22" width="75" height="75" rx="5" />
+            <rect x="58" y="30" width="75" height="75" rx="5" />
+            <rect x="68" y="40" width="76" height="69" rx="5" />
+            <text
+              x="105"
+              y="83"
+              fontFamily="var(--system-font-family)"
+              fontSize="29"
+              textAnchor="middle"
+              fill="#9da7ab"
+              stroke="none"
+            >
+              Wii
+            </text>
           </>
-        ) : kind === "channels" ? (
+        ) : kind === "gamecube" ? (
+          <g transform="translate(-34,-8) scale(1.35)">{card(86)}</g>
+        ) : kind === "wii" ? (
           <>
-            <rect x="47" y="24" width="82" height="76" rx="5" />
-            {Array.from({ length: 9 }, (_, i) => (
-              <rect
-                key={i}
-                x={56 + (i % 3) * 22}
-                y={35 + Math.floor(i / 3) * 20}
-                width="17"
-                height="14"
-                rx="2"
-              />
-            ))}
+            {console(44)}
+            {sd(113)}
           </>
         ) : (
           <>
-            <path d="M20 35h43l12 13h27v52H20z" />
-            <path d="M23 56h80l-14 41H12z" />
-            <rect x="116" y="49" width="42" height="50" rx="4" />
-            <path d="M124 61h26M124 69h26M124 77h26" />
+            {console()}
+            {sd()}
+            {card()}
           </>
         )}
       </g>

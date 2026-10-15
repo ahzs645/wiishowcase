@@ -5,7 +5,7 @@ import { spawn } from "node:child_process";
 import { chromium } from "playwright";
 import { interfaceGeometry } from "./lib/interface-geometry.mjs";
 
-const output = "docs/other-menus";
+const output = process.env.OTHER_MENU_ARTIFACTS || "docs/other-menus";
 await fs.mkdir(`${output}/current`, { recursive: true });
 const server = spawn(
   process.execPath,
@@ -79,7 +79,70 @@ const routes = [
     "manual-364",
   ],
   ["internet", "Internet settings", 2, ["Internet"], "manual-407"],
-  ["wiiconnect24", "WiiConnect24", 2, ["WiiConnect24"], "manual-451"],
+  [
+    "wiiconnect24",
+    "WiiConnect24",
+    2,
+    ["WiiConnect24", "WiiConnect24 On/Off"],
+    "manual-451",
+  ],
+  ["connect24-menu", "WiiConnect24 settings", 2, ["WiiConnect24"], null],
+  [
+    "standby-downloads",
+    "Standby Connection",
+    2,
+    ["WiiConnect24", "Standby Connection"],
+    "manual-452",
+  ],
+  [
+    "slot-illumination",
+    "Slot Illumination",
+    2,
+    ["WiiConnect24", "Slot Illumination"],
+    "manual-453",
+  ],
+  [
+    "parental-rating",
+    "Game Rating",
+    2,
+    ["Parental Controls", "Highest Game Rating Allowed: All ages"],
+    "manual-365",
+  ],
+  [
+    "secret-question",
+    "Secret Question",
+    2,
+    ["Parental Controls", "Secret Question"],
+    null,
+  ],
+  [
+    "connection-profiles",
+    "Connection Settings",
+    2,
+    ["Internet", "Connection Settings"],
+    "manual-661",
+  ],
+  [
+    "connection-type",
+    "Connection Type",
+    2,
+    ["Internet", "Connection Settings", "Connection 1 None"],
+    "manual-660",
+  ],
+  [
+    "console-information",
+    "Console Information",
+    2,
+    ["Internet", "Console Information"],
+    null,
+  ],
+  [
+    "user-agreements",
+    "User Agreements",
+    2,
+    ["Internet", "User Agreements"],
+    null,
+  ],
   ["language", "Language", 3, ["Language"], "manual-448"],
   ["country", "Country", 3, ["Country"], "manual-450"],
   [

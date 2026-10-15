@@ -30,6 +30,13 @@ const settingsDefaults = {
   connect24: false,
   remoteVolume: 0.5,
   rumble: true,
+  tvResolution: "480p",
+  standby: false,
+  slotIllumination: "Bright",
+  parentalRating: "All ages",
+  secretQuestion: "",
+  secretAnswer: "",
+  connections: ["None", "None", "None"],
 };
 export function dateKey(date = new Date()) {
   return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
