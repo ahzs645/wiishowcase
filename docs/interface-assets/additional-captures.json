@@ -1,6 +1,8 @@
 {
   "baselineRevision": "f198c02fd8c787a5581c0957486f8b164aca6732",
-  "captureDate": "2026-10-15",
+  "captureSourceBase": "4a5fa10d7450b89cae7a35f2557c461b314e4922",
+  "captureIncludesWorkingTree": true,
+  "captureDate": "2026-10-14",
   "fixtureTime": "2026-10-12 12:00 America/Vancouver",
   "captures": [
     {
@@ -20,13 +22,13 @@
             "name": "Date",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Time",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Back",
@@ -42,11 +44,11 @@
           },
           {
             "name": "Date",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Time",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Back",
@@ -95,7 +97,7 @@
           "text": "Date",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 110,
             "y": 158.5,
@@ -112,7 +114,7 @@
           "text": "Time",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 110,
             "y": 233.5,
@@ -177,25 +179,25 @@
             "name": "Screen Position",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Widescreen Settings",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "TV Resolution",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Screen Burn-in Reduction",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Back",
@@ -211,19 +213,19 @@
           },
           {
             "name": "Screen Position",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Widescreen Settings",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "TV Resolution",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Screen Burn-in Reduction",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Back",
@@ -272,7 +274,7 @@
           "text": "Screen Position",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 110,
             "y": 83.5,
@@ -289,7 +291,7 @@
           "text": "Widescreen Settings",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 110,
             "y": 158.5,
@@ -306,7 +308,7 @@
           "text": "TV Resolution",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 110,
             "y": 233.5,
@@ -323,7 +325,7 @@
           "text": "Screen Burn-in Reduction",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 110,
             "y": 308.5,
@@ -421,11 +423,11 @@
             "fontSize": "25px"
           },
           {
-            "name": "\u25c0",
+            "name": "◀",
             "fontSize": "26px"
           },
           {
-            "name": "\u25b6",
+            "name": "▶",
             "fontSize": "26px"
           },
           {
@@ -882,13 +884,13 @@
             "name": "Sensor Bar Position",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Sensitivity",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Back",
@@ -904,11 +906,11 @@
           },
           {
             "name": "Sensor Bar Position",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Sensitivity",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Back",
@@ -957,7 +959,7 @@
           "text": "Sensor Bar Position",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 110,
             "y": 158.5,
@@ -974,7 +976,7 @@
           "text": "Sensitivity",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 110,
             "y": 233.5,
@@ -1233,11 +1235,11 @@
             "fontSize": "25px"
           },
           {
-            "name": "\u2212",
+            "name": "−",
             "fontSize": "22px"
           },
           {
-            "name": "\uff0b",
+            "name": "＋",
             "fontSize": "22px"
           },
           {
@@ -1595,19 +1597,19 @@
             "name": "Connection Settings",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Console Information",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "User Agreements",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Back",
@@ -1623,15 +1625,15 @@
           },
           {
             "name": "Connection Settings",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Console Information",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "User Agreements",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Back",
@@ -1680,7 +1682,7 @@
           "text": "Connection Settings",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 110,
             "y": 121,
@@ -1697,7 +1699,7 @@
           "text": "Console Information",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 110,
             "y": 196,
@@ -1714,7 +1716,7 @@
           "text": "User Agreements",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 110,
             "y": 271,
@@ -1946,19 +1948,19 @@
             "name": "WiiConnect24 On/Off",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Standby Connection",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Slot Illumination",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Back",
@@ -1974,15 +1976,15 @@
           },
           {
             "name": "WiiConnect24 On/Off",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Standby Connection",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Slot Illumination",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Back",
@@ -2031,7 +2033,7 @@
           "text": "WiiConnect24 On/Off",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 110,
             "y": 121,
@@ -2048,7 +2050,7 @@
           "text": "Standby Connection",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 110,
             "y": 196,
@@ -2065,7 +2067,7 @@
           "text": "Slot Illumination",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 110,
             "y": 271,
@@ -3469,13 +3471,13 @@
             "fontSize": "27px"
           },
           {
-            "name": "Fran\u00e7ais",
+            "name": "Français",
             "width": 420,
             "height": 70,
             "fontSize": "27px"
           },
           {
-            "name": "Espa\u00f1ol",
+            "name": "Español",
             "width": 420,
             "height": 70,
             "fontSize": "27px"
@@ -3503,11 +3505,11 @@
             "fontSize": "27px"
           },
           {
-            "name": "Fran\u00e7ais",
+            "name": "Français",
             "fontSize": "27px"
           },
           {
-            "name": "Espa\u00f1ol",
+            "name": "Español",
             "fontSize": "27px"
           },
           {
@@ -3558,7 +3560,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button.wii-system-button--choice",
-          "text": "Fran\u00e7ais",
+          "text": "Français",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "27px",
@@ -3575,7 +3577,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button.wii-system-button--choice",
-          "text": "Espa\u00f1ol",
+          "text": "Español",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "27px",
@@ -3701,11 +3703,11 @@
             "fontSize": "23px"
           },
           {
-            "name": "\u25b2",
+            "name": "▲",
             "fontSize": "22px"
           },
           {
-            "name": "\u25bc",
+            "name": "▼",
             "fontSize": "22px"
           },
           {
@@ -4203,7 +4205,7 @@
           "text": "Language",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 110,
             "y": 83,
@@ -4220,7 +4222,7 @@
           "text": "Country",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 110,
             "y": 158,
@@ -4237,7 +4239,7 @@
           "text": "Wii System Update",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 110,
             "y": 233,
@@ -4254,7 +4256,7 @@
           "text": "Format Wii System Memory",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 110,
             "y": 308,
@@ -4791,7 +4793,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u2039",
+          "text": "‹",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "22px",
@@ -4808,7 +4810,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u203a",
+          "text": "›",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "22px",
@@ -5247,7 +5249,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u2039",
+          "text": "‹",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "22px",
@@ -5264,7 +5266,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u203a",
+          "text": "›",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "22px",
@@ -5778,7 +5780,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u2039",
+          "text": "‹",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "22px",
@@ -5795,7 +5797,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u203a",
+          "text": "›",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "22px",
@@ -6132,7 +6134,7 @@
         },
         {
           "selector": "button.data-slot",
-          "text": "My Pok\u00e9mon Ranch data",
+          "text": "My Pokémon Ranch data",
           "type": null,
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "13px",
@@ -6302,7 +6304,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u2039",
+          "text": "‹",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "22px",
@@ -6319,7 +6321,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u203a",
+          "text": "›",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "22px",
@@ -6500,7 +6502,7 @@
       "elements": [
         {
           "selector": "h2.safety-title",
-          "text": "\u26a0\u00a0WARNING-HEALTH AND SAFETY",
+          "text": "⚠ WARNING-HEALTH AND SAFETY",
           "type": null,
           "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
           "fontSize": "21.44px",
@@ -6573,7 +6575,7 @@
         ],
         "text": [
           {
-            "name": "\u00d7",
+            "name": "×",
             "fontSize": "25px"
           },
           {
@@ -6590,7 +6592,7 @@
       "elements": [
         {
           "selector": "h2.safety-title",
-          "text": "\u26a0\u00a0WARNING-HEALTH AND SAFETY",
+          "text": "⚠ WARNING-HEALTH AND SAFETY",
           "type": null,
           "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
           "fontSize": "21.44px",
@@ -7517,7 +7519,7 @@
             "fontSize": "19px"
           },
           {
-            "name": "\u21b5",
+            "name": "↵",
             "fontSize": "24px"
           },
           {
@@ -7745,19 +7747,19 @@
             "fontSize": "30px"
           },
           {
-            "name": "\u25b2",
+            "name": "▲",
             "fontSize": "17px"
           },
           {
-            "name": "\u25bc",
+            "name": "▼",
             "fontSize": "17px"
           },
           {
-            "name": "\u25c0",
+            "name": "◀",
             "fontSize": "17px"
           },
           {
-            "name": "\u25b6",
+            "name": "▶",
             "fontSize": "17px"
           }
         ],
@@ -7788,14 +7790,14 @@
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "22px",
           "rect": {
-            "x": 84,
+            "x": 81,
             "y": 81,
             "width": 173.875,
             "height": 57,
             "top": 81,
-            "right": 257.875,
+            "right": 254.875,
             "bottom": 138,
-            "left": 84
+            "left": 81
           }
         },
         {
@@ -7868,13 +7870,13 @@
             "name": "Date",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Time",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Back",
@@ -7890,11 +7892,11 @@
           },
           {
             "name": "Date",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Time",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Back",
@@ -7943,7 +7945,7 @@
           "text": "Date",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 221,
             "y": 157,
@@ -7960,7 +7962,7 @@
           "text": "Time",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 221,
             "y": 233,
@@ -8025,25 +8027,25 @@
             "name": "Screen Position",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Widescreen Settings",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "TV Resolution",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Screen Burn-in Reduction",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Back",
@@ -8059,19 +8061,19 @@
           },
           {
             "name": "Screen Position",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Widescreen Settings",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "TV Resolution",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Screen Burn-in Reduction",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Back",
@@ -8120,7 +8122,7 @@
           "text": "Screen Position",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 221,
             "y": 81,
@@ -8137,7 +8139,7 @@
           "text": "Widescreen Settings",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 221,
             "y": 157,
@@ -8154,7 +8156,7 @@
           "text": "TV Resolution",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 221,
             "y": 233,
@@ -8171,7 +8173,7 @@
           "text": "Screen Burn-in Reduction",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 221,
             "y": 309,
@@ -8269,11 +8271,11 @@
             "fontSize": "25px"
           },
           {
-            "name": "\u25c0",
+            "name": "◀",
             "fontSize": "26px"
           },
           {
-            "name": "\u25b6",
+            "name": "▶",
             "fontSize": "26px"
           },
           {
@@ -8730,13 +8732,13 @@
             "name": "Sensor Bar Position",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Sensitivity",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Back",
@@ -8752,11 +8754,11 @@
           },
           {
             "name": "Sensor Bar Position",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Sensitivity",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Back",
@@ -8805,7 +8807,7 @@
           "text": "Sensor Bar Position",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 221,
             "y": 157,
@@ -8822,7 +8824,7 @@
           "text": "Sensitivity",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 221,
             "y": 233,
@@ -9081,11 +9083,11 @@
             "fontSize": "25px"
           },
           {
-            "name": "\u2212",
+            "name": "−",
             "fontSize": "22px"
           },
           {
-            "name": "\uff0b",
+            "name": "＋",
             "fontSize": "22px"
           },
           {
@@ -9443,19 +9445,19 @@
             "name": "Connection Settings",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Console Information",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "User Agreements",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Back",
@@ -9471,15 +9473,15 @@
           },
           {
             "name": "Connection Settings",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Console Information",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "User Agreements",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Back",
@@ -9528,7 +9530,7 @@
           "text": "Connection Settings",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 221,
             "y": 119,
@@ -9545,7 +9547,7 @@
           "text": "Console Information",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 221,
             "y": 195,
@@ -9562,7 +9564,7 @@
           "text": "User Agreements",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 221,
             "y": 271,
@@ -9794,19 +9796,19 @@
             "name": "WiiConnect24 On/Off",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Standby Connection",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Slot Illumination",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Back",
@@ -9822,15 +9824,15 @@
           },
           {
             "name": "WiiConnect24 On/Off",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Standby Connection",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Slot Illumination",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Back",
@@ -9879,7 +9881,7 @@
           "text": "WiiConnect24 On/Off",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 221,
             "y": 119,
@@ -9896,7 +9898,7 @@
           "text": "Standby Connection",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 221,
             "y": 195,
@@ -9913,7 +9915,7 @@
           "text": "Slot Illumination",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 221,
             "y": 271,
@@ -11317,13 +11319,13 @@
             "fontSize": "27px"
           },
           {
-            "name": "Fran\u00e7ais",
+            "name": "Français",
             "width": 420,
             "height": 70,
             "fontSize": "27px"
           },
           {
-            "name": "Espa\u00f1ol",
+            "name": "Español",
             "width": 420,
             "height": 70,
             "fontSize": "27px"
@@ -11351,11 +11353,11 @@
             "fontSize": "27px"
           },
           {
-            "name": "Fran\u00e7ais",
+            "name": "Français",
             "fontSize": "27px"
           },
           {
-            "name": "Espa\u00f1ol",
+            "name": "Español",
             "fontSize": "27px"
           },
           {
@@ -11406,7 +11408,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button.wii-system-button--choice",
-          "text": "Fran\u00e7ais",
+          "text": "Français",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "27px",
@@ -11423,7 +11425,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button.wii-system-button--choice",
-          "text": "Espa\u00f1ol",
+          "text": "Español",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "27px",
@@ -11549,11 +11551,11 @@
             "fontSize": "23px"
           },
           {
-            "name": "\u25b2",
+            "name": "▲",
             "fontSize": "22px"
           },
           {
-            "name": "\u25bc",
+            "name": "▼",
             "fontSize": "22px"
           },
           {
@@ -12051,7 +12053,7 @@
           "text": "Language",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 221,
             "y": 82,
@@ -12068,7 +12070,7 @@
           "text": "Country",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 221,
             "y": 158,
@@ -12085,7 +12087,7 @@
           "text": "Wii System Update",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 221,
             "y": 234,
@@ -12102,7 +12104,7 @@
           "text": "Format Wii System Memory",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "26px",
+          "fontSize": "24px",
           "rect": {
             "x": 221,
             "y": 310,
@@ -12639,7 +12641,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u2039",
+          "text": "‹",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "22px",
@@ -12656,7 +12658,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u203a",
+          "text": "›",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "22px",
@@ -13095,7 +13097,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u2039",
+          "text": "‹",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "22px",
@@ -13112,7 +13114,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u203a",
+          "text": "›",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "22px",
@@ -13626,7 +13628,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u2039",
+          "text": "‹",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "22px",
@@ -13643,7 +13645,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u203a",
+          "text": "›",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "22px",
@@ -13980,7 +13982,7 @@
         },
         {
           "selector": "button.data-slot",
-          "text": "My Pok\u00e9mon Ranch data",
+          "text": "My Pokémon Ranch data",
           "type": null,
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "13px",
@@ -14150,7 +14152,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u2039",
+          "text": "‹",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "22px",
@@ -14167,7 +14169,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u203a",
+          "text": "›",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "22px",
@@ -14348,7 +14350,7 @@
       "elements": [
         {
           "selector": "h2.safety-title",
-          "text": "\u26a0\u00a0WARNING-HEALTH AND SAFETY",
+          "text": "⚠ WARNING-HEALTH AND SAFETY",
           "type": null,
           "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
           "fontSize": "28.609px",
@@ -14421,7 +14423,7 @@
         ],
         "text": [
           {
-            "name": "\u00d7",
+            "name": "×",
             "fontSize": "25px"
           },
           {
@@ -14438,7 +14440,7 @@
       "elements": [
         {
           "selector": "h2.safety-title",
-          "text": "\u26a0\u00a0WARNING-HEALTH AND SAFETY",
+          "text": "⚠ WARNING-HEALTH AND SAFETY",
           "type": null,
           "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
           "fontSize": "28.609px",
@@ -15365,7 +15367,7 @@
             "fontSize": "19px"
           },
           {
-            "name": "\u21b5",
+            "name": "↵",
             "fontSize": "24px"
           },
           {
@@ -15593,19 +15595,19 @@
             "fontSize": "30px"
           },
           {
-            "name": "\u25b2",
+            "name": "▲",
             "fontSize": "17px"
           },
           {
-            "name": "\u25bc",
+            "name": "▼",
             "fontSize": "17px"
           },
           {
-            "name": "\u25c0",
+            "name": "◀",
             "fontSize": "17px"
           },
           {
-            "name": "\u25b6",
+            "name": "▶",
             "fontSize": "17px"
           }
         ],
@@ -15636,14 +15638,14 @@
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "22px",
           "rect": {
-            "x": 191,
+            "x": 188,
             "y": 81,
             "width": 173.875,
             "height": 57,
             "top": 81,
-            "right": 364.875,
+            "right": 361.875,
             "bottom": 138,
-            "left": 191
+            "left": 188
           }
         },
         {
@@ -15716,13 +15718,13 @@
             "name": "Date",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Time",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Back",
@@ -15738,11 +15740,11 @@
           },
           {
             "name": "Date",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Time",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Back",
@@ -15791,7 +15793,7 @@
           "text": "Date",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 165,
             "y": 237.75,
@@ -15808,7 +15810,7 @@
           "text": "Time",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 165,
             "y": 350.25,
@@ -15873,25 +15875,25 @@
             "name": "Screen Position",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Widescreen Settings",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "TV Resolution",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Screen Burn-in Reduction",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Back",
@@ -15907,19 +15909,19 @@
           },
           {
             "name": "Screen Position",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Widescreen Settings",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "TV Resolution",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Screen Burn-in Reduction",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Back",
@@ -15968,7 +15970,7 @@
           "text": "Screen Position",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 165,
             "y": 125.25,
@@ -15985,7 +15987,7 @@
           "text": "Widescreen Settings",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 165,
             "y": 237.75,
@@ -16002,7 +16004,7 @@
           "text": "TV Resolution",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 165,
             "y": 350.25,
@@ -16019,7 +16021,7 @@
           "text": "Screen Burn-in Reduction",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 165,
             "y": 462.75,
@@ -16117,11 +16119,11 @@
             "fontSize": "37.5px"
           },
           {
-            "name": "\u25c0",
+            "name": "◀",
             "fontSize": "39px"
           },
           {
-            "name": "\u25b6",
+            "name": "▶",
             "fontSize": "39px"
           },
           {
@@ -16578,13 +16580,13 @@
             "name": "Sensor Bar Position",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Sensitivity",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Back",
@@ -16600,11 +16602,11 @@
           },
           {
             "name": "Sensor Bar Position",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Sensitivity",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Back",
@@ -16653,7 +16655,7 @@
           "text": "Sensor Bar Position",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 165,
             "y": 237.75,
@@ -16670,7 +16672,7 @@
           "text": "Sensitivity",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 165,
             "y": 350.25,
@@ -16929,11 +16931,11 @@
             "fontSize": "37.5px"
           },
           {
-            "name": "\u2212",
+            "name": "−",
             "fontSize": "33px"
           },
           {
-            "name": "\uff0b",
+            "name": "＋",
             "fontSize": "33px"
           },
           {
@@ -17291,19 +17293,19 @@
             "name": "Connection Settings",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Console Information",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "User Agreements",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Back",
@@ -17319,15 +17321,15 @@
           },
           {
             "name": "Connection Settings",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Console Information",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "User Agreements",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Back",
@@ -17376,7 +17378,7 @@
           "text": "Connection Settings",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 165,
             "y": 181.5,
@@ -17393,7 +17395,7 @@
           "text": "Console Information",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 165,
             "y": 294,
@@ -17410,7 +17412,7 @@
           "text": "User Agreements",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 165,
             "y": 406.5,
@@ -17642,19 +17644,19 @@
             "name": "WiiConnect24 On/Off",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Standby Connection",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Slot Illumination",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Back",
@@ -17670,15 +17672,15 @@
           },
           {
             "name": "WiiConnect24 On/Off",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Standby Connection",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Slot Illumination",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Back",
@@ -17727,7 +17729,7 @@
           "text": "WiiConnect24 On/Off",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 165,
             "y": 181.5,
@@ -17744,7 +17746,7 @@
           "text": "Standby Connection",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 165,
             "y": 294,
@@ -17761,7 +17763,7 @@
           "text": "Slot Illumination",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 165,
             "y": 406.5,
@@ -19165,13 +19167,13 @@
             "fontSize": "40.5px"
           },
           {
-            "name": "Fran\u00e7ais",
+            "name": "Français",
             "width": 630,
             "height": 105,
             "fontSize": "40.5px"
           },
           {
-            "name": "Espa\u00f1ol",
+            "name": "Español",
             "width": 630,
             "height": 105,
             "fontSize": "40.5px"
@@ -19199,11 +19201,11 @@
             "fontSize": "40.5px"
           },
           {
-            "name": "Fran\u00e7ais",
+            "name": "Français",
             "fontSize": "40.5px"
           },
           {
-            "name": "Espa\u00f1ol",
+            "name": "Español",
             "fontSize": "40.5px"
           },
           {
@@ -19254,7 +19256,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button.wii-system-button--choice",
-          "text": "Fran\u00e7ais",
+          "text": "Français",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "40.5px",
@@ -19271,7 +19273,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button.wii-system-button--choice",
-          "text": "Espa\u00f1ol",
+          "text": "Español",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "40.5px",
@@ -19397,11 +19399,11 @@
             "fontSize": "34.5px"
           },
           {
-            "name": "\u25b2",
+            "name": "▲",
             "fontSize": "33px"
           },
           {
-            "name": "\u25bc",
+            "name": "▼",
             "fontSize": "33px"
           },
           {
@@ -19899,7 +19901,7 @@
           "text": "Language",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 165,
             "y": 124.5,
@@ -19916,7 +19918,7 @@
           "text": "Country",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 165,
             "y": 237,
@@ -19933,7 +19935,7 @@
           "text": "Wii System Update",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 165,
             "y": 349.5,
@@ -19950,7 +19952,7 @@
           "text": "Format Wii System Memory",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 165,
             "y": 462,
@@ -20487,7 +20489,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u2039",
+          "text": "‹",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "33px",
@@ -20504,7 +20506,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u203a",
+          "text": "›",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "33px",
@@ -20943,7 +20945,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u2039",
+          "text": "‹",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "33px",
@@ -20960,7 +20962,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u203a",
+          "text": "›",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "33px",
@@ -21474,7 +21476,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u2039",
+          "text": "‹",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "33px",
@@ -21491,7 +21493,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u203a",
+          "text": "›",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "33px",
@@ -21828,7 +21830,7 @@
         },
         {
           "selector": "button.data-slot",
-          "text": "My Pok\u00e9mon Ranch data",
+          "text": "My Pokémon Ranch data",
           "type": null,
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "19.5px",
@@ -21998,7 +22000,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u2039",
+          "text": "‹",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "33px",
@@ -22015,7 +22017,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u203a",
+          "text": "›",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "33px",
@@ -22196,7 +22198,7 @@
       "elements": [
         {
           "selector": "h2.safety-title",
-          "text": "\u26a0\u00a0WARNING-HEALTH AND SAFETY",
+          "text": "⚠ WARNING-HEALTH AND SAFETY",
           "type": null,
           "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
           "fontSize": "32.16px",
@@ -22269,7 +22271,7 @@
         ],
         "text": [
           {
-            "name": "\u00d7",
+            "name": "×",
             "fontSize": "25px"
           },
           {
@@ -22286,7 +22288,7 @@
       "elements": [
         {
           "selector": "h2.safety-title",
-          "text": "\u26a0\u00a0WARNING-HEALTH AND SAFETY",
+          "text": "⚠ WARNING-HEALTH AND SAFETY",
           "type": null,
           "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
           "fontSize": "32.16px",
@@ -23213,7 +23215,7 @@
             "fontSize": "28.5px"
           },
           {
-            "name": "\u21b5",
+            "name": "↵",
             "fontSize": "36px"
           },
           {
@@ -23441,19 +23443,19 @@
             "fontSize": "45px"
           },
           {
-            "name": "\u25b2",
+            "name": "▲",
             "fontSize": "25.5px"
           },
           {
-            "name": "\u25bc",
+            "name": "▼",
             "fontSize": "25.5px"
           },
           {
-            "name": "\u25c0",
+            "name": "◀",
             "fontSize": "25.5px"
           },
           {
-            "name": "\u25b6",
+            "name": "▶",
             "fontSize": "25.5px"
           }
         ],
@@ -23484,14 +23486,14 @@
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "33px",
           "rect": {
-            "x": 125.5,
+            "x": 121.5,
             "y": 121.5,
             "width": 260.8125,
             "height": 85.5,
             "top": 121.5,
-            "right": 386.3125,
+            "right": 382.3125,
             "bottom": 207,
-            "left": 125.5
+            "left": 121.5
           }
         },
         {
@@ -23564,13 +23566,13 @@
             "name": "Date",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Time",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Back",
@@ -23586,11 +23588,11 @@
           },
           {
             "name": "Date",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Time",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Back",
@@ -23639,7 +23641,7 @@
           "text": "Date",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 331,
             "y": 235.5,
@@ -23656,7 +23658,7 @@
           "text": "Time",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 331,
             "y": 349.5,
@@ -23721,25 +23723,25 @@
             "name": "Screen Position",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Widescreen Settings",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "TV Resolution",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Screen Burn-in Reduction",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Back",
@@ -23755,19 +23757,19 @@
           },
           {
             "name": "Screen Position",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Widescreen Settings",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "TV Resolution",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Screen Burn-in Reduction",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Back",
@@ -23816,7 +23818,7 @@
           "text": "Screen Position",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 331,
             "y": 121.5,
@@ -23833,7 +23835,7 @@
           "text": "Widescreen Settings",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 331,
             "y": 235.5,
@@ -23850,7 +23852,7 @@
           "text": "TV Resolution",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 331,
             "y": 349.5,
@@ -23867,7 +23869,7 @@
           "text": "Screen Burn-in Reduction",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 331,
             "y": 463.5,
@@ -23965,11 +23967,11 @@
             "fontSize": "37.5px"
           },
           {
-            "name": "\u25c0",
+            "name": "◀",
             "fontSize": "39px"
           },
           {
-            "name": "\u25b6",
+            "name": "▶",
             "fontSize": "39px"
           },
           {
@@ -24426,13 +24428,13 @@
             "name": "Sensor Bar Position",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Sensitivity",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Back",
@@ -24448,11 +24450,11 @@
           },
           {
             "name": "Sensor Bar Position",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Sensitivity",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Back",
@@ -24501,7 +24503,7 @@
           "text": "Sensor Bar Position",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 331,
             "y": 235.5,
@@ -24518,7 +24520,7 @@
           "text": "Sensitivity",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 331,
             "y": 349.5,
@@ -24777,11 +24779,11 @@
             "fontSize": "37.5px"
           },
           {
-            "name": "\u2212",
+            "name": "−",
             "fontSize": "33px"
           },
           {
-            "name": "\uff0b",
+            "name": "＋",
             "fontSize": "33px"
           },
           {
@@ -25139,19 +25141,19 @@
             "name": "Connection Settings",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Console Information",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "User Agreements",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Back",
@@ -25167,15 +25169,15 @@
           },
           {
             "name": "Connection Settings",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Console Information",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "User Agreements",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Back",
@@ -25224,7 +25226,7 @@
           "text": "Connection Settings",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 331,
             "y": 178.5,
@@ -25241,7 +25243,7 @@
           "text": "Console Information",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 331,
             "y": 292.5,
@@ -25258,7 +25260,7 @@
           "text": "User Agreements",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 331,
             "y": 406.5,
@@ -25490,19 +25492,19 @@
             "name": "WiiConnect24 On/Off",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Standby Connection",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Slot Illumination",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Back",
@@ -25518,15 +25520,15 @@
           },
           {
             "name": "WiiConnect24 On/Off",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Standby Connection",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Slot Illumination",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Back",
@@ -25575,7 +25577,7 @@
           "text": "WiiConnect24 On/Off",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 331,
             "y": 178.5,
@@ -25592,7 +25594,7 @@
           "text": "Standby Connection",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 331,
             "y": 292.5,
@@ -25609,7 +25611,7 @@
           "text": "Slot Illumination",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 331,
             "y": 406.5,
@@ -27013,13 +27015,13 @@
             "fontSize": "40.5px"
           },
           {
-            "name": "Fran\u00e7ais",
+            "name": "Français",
             "width": 630,
             "height": 105,
             "fontSize": "40.5px"
           },
           {
-            "name": "Espa\u00f1ol",
+            "name": "Español",
             "width": 630,
             "height": 105,
             "fontSize": "40.5px"
@@ -27047,11 +27049,11 @@
             "fontSize": "40.5px"
           },
           {
-            "name": "Fran\u00e7ais",
+            "name": "Français",
             "fontSize": "40.5px"
           },
           {
-            "name": "Espa\u00f1ol",
+            "name": "Español",
             "fontSize": "40.5px"
           },
           {
@@ -27102,7 +27104,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button.wii-system-button--choice",
-          "text": "Fran\u00e7ais",
+          "text": "Français",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "40.5px",
@@ -27119,7 +27121,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button.wii-system-button--choice",
-          "text": "Espa\u00f1ol",
+          "text": "Español",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "40.5px",
@@ -27245,11 +27247,11 @@
             "fontSize": "34.5px"
           },
           {
-            "name": "\u25b2",
+            "name": "▲",
             "fontSize": "33px"
           },
           {
-            "name": "\u25bc",
+            "name": "▼",
             "fontSize": "33px"
           },
           {
@@ -27747,7 +27749,7 @@
           "text": "Language",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 331,
             "y": 123,
@@ -27764,7 +27766,7 @@
           "text": "Country",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 331,
             "y": 237,
@@ -27781,7 +27783,7 @@
           "text": "Wii System Update",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 331,
             "y": 351,
@@ -27798,7 +27800,7 @@
           "text": "Format Wii System Memory",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
-          "fontSize": "39px",
+          "fontSize": "36px",
           "rect": {
             "x": 331,
             "y": 465,
@@ -28335,7 +28337,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u2039",
+          "text": "‹",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "33px",
@@ -28352,7 +28354,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u203a",
+          "text": "›",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "33px",
@@ -28791,7 +28793,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u2039",
+          "text": "‹",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "33px",
@@ -28808,7 +28810,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u203a",
+          "text": "›",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "33px",
@@ -29322,7 +29324,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u2039",
+          "text": "‹",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "33px",
@@ -29339,7 +29341,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u203a",
+          "text": "›",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "33px",
@@ -29676,7 +29678,7 @@
         },
         {
           "selector": "button.data-slot",
-          "text": "My Pok\u00e9mon Ranch data",
+          "text": "My Pokémon Ranch data",
           "type": null,
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "19.5px",
@@ -29846,7 +29848,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u2039",
+          "text": "‹",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "33px",
@@ -29863,7 +29865,7 @@
         },
         {
           "selector": "button.system-button.wii-system-button",
-          "text": "\u203a",
+          "text": "›",
           "type": "button",
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "33px",
@@ -30044,7 +30046,7 @@
       "elements": [
         {
           "selector": "h2.safety-title",
-          "text": "\u26a0\u00a0WARNING-HEALTH AND SAFETY",
+          "text": "⚠ WARNING-HEALTH AND SAFETY",
           "type": null,
           "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
           "fontSize": "42.88px",
@@ -30117,7 +30119,7 @@
         ],
         "text": [
           {
-            "name": "\u00d7",
+            "name": "×",
             "fontSize": "25px"
           },
           {
@@ -30134,7 +30136,7 @@
       "elements": [
         {
           "selector": "h2.safety-title",
-          "text": "\u26a0\u00a0WARNING-HEALTH AND SAFETY",
+          "text": "⚠ WARNING-HEALTH AND SAFETY",
           "type": null,
           "fontFamily": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif",
           "fontSize": "42.88px",
@@ -31061,7 +31063,7 @@
             "fontSize": "28.5px"
           },
           {
-            "name": "\u21b5",
+            "name": "↵",
             "fontSize": "36px"
           },
           {
@@ -31289,19 +31291,19 @@
             "fontSize": "45px"
           },
           {
-            "name": "\u25b2",
+            "name": "▲",
             "fontSize": "25.5px"
           },
           {
-            "name": "\u25bc",
+            "name": "▼",
             "fontSize": "25.5px"
           },
           {
-            "name": "\u25c0",
+            "name": "◀",
             "fontSize": "25.5px"
           },
           {
-            "name": "\u25b6",
+            "name": "▶",
             "fontSize": "25.5px"
           }
         ],
@@ -31332,14 +31334,14 @@
           "fontFamily": "\"Wii System\", sans-serif",
           "fontSize": "33px",
           "rect": {
-            "x": 285.5,
+            "x": 281.5,
             "y": 121.5,
             "width": 260.8125,
             "height": 85.5,
             "top": 121.5,
-            "right": 546.3125,
+            "right": 542.3125,
             "bottom": 207,
-            "left": 285.5
+            "left": 281.5
           }
         },
         {
@@ -34287,8 +34289,5 @@
         }
       ]
     }
-  ],
-  "captureSourceBase": "8aacaa48551935ca67640684df19365c92ce383e",
-  "captureIncludesWorkingTree": true,
-  "frameworkCommit": "b6aaefb22312c8130aff3bf875994cf6d511cb10"
+  ]
 }

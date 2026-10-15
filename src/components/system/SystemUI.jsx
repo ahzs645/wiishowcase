@@ -8,7 +8,7 @@ import tileGamecube from "../../../Wii.css/assets/interface/tile-gamecube.svg";
 import SystemArt from "./SystemArt";
 const TILES = { data: tileData, saves: tileData, settings: tileSettings, wii: tileWii, gamecube: tileGamecube };
 export function WiiTile({ kind, children, ...props }) {
-  return <WiiButton className={`system-tile wii-system-tile${TILES[kind] ? " has-supplied-surface" : ""}`} {...props}>
+  return <WiiButton data-tile-kind={kind} className={`system-tile wii-system-tile${TILES[kind] ? " has-supplied-surface" : ""}`} {...props}>
     {TILES[kind] ? <img className="wii-system-tile__surface" src={TILES[kind]} alt="" aria-hidden="true" /> : <SystemArt kind={kind} />}
     <span className="wii-system-tile__label">{children}</span>
   </WiiButton>;

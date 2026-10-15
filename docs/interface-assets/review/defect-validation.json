@@ -1,0 +1,162 @@
+{
+  "checks": [
+    "640: Format list label stays on one line",
+    "640: Format warning clears heading and footer by at least 12 scaled pixels",
+    "640: all remote labels clear the first control",
+    "640: letter heading reserves the taller blue strip",
+    "640: Save Letter stays on one line",
+    "854: Format list label stays on one line",
+    "854: Format warning clears heading and footer by at least 12 scaled pixels",
+    "854: all remote labels clear the first control",
+    "854: letter heading reserves the taller blue strip",
+    "854: Save Letter stays on one line",
+    "960: Format list label stays on one line",
+    "960: Format warning clears heading and footer by at least 12 scaled pixels",
+    "960: all remote labels clear the first control",
+    "960: letter heading reserves the taller blue strip",
+    "960: Save Letter stays on one line",
+    "1280: Format list label stays on one line",
+    "1280: Format warning clears heading and footer by at least 12 scaled pixels",
+    "1280: all remote labels clear the first control",
+    "1280: letter heading reserves the taller blue strip",
+    "1280: Save Letter stays on one line",
+    "4:3: message card grows proportionally with 480-to-720 frame height",
+    "16:9: message card grows proportionally with 480-to-720 frame height"
+  ],
+  "measurements": [
+    {
+      "width": 640,
+      "height": 480,
+      "warning": {
+        "top": 60.96875,
+        "bottom": 60.96875
+      },
+      "remote": [
+        {
+          "labelRight": 224.015625,
+          "controlLeft": 291.796875
+        },
+        {
+          "labelRight": 225.375,
+          "controlLeft": 291.796875
+        },
+        {
+          "labelRight": 276.03125,
+          "controlLeft": 291.796875
+        }
+      ],
+      "card": {
+        "width": 160,
+        "scale": 1
+      },
+      "letter": {
+        "headerHeight": 68,
+        "textTop": 18.59375,
+        "textBottom": 47.59375,
+        "scale": 1,
+        "saveHeight": 59
+      }
+    },
+    {
+      "width": 854,
+      "height": 480,
+      "warning": {
+        "top": 61.96875,
+        "bottom": 61.96875
+      },
+      "remote": [
+        {
+          "labelRight": 328,
+          "controlLeft": 395.78125
+        },
+        {
+          "labelRight": 329.359375,
+          "controlLeft": 395.78125
+        },
+        {
+          "labelRight": 380.015625,
+          "controlLeft": 395.78125
+        }
+      ],
+      "card": {
+        "width": 160,
+        "scale": 1
+      },
+      "letter": {
+        "headerHeight": 68,
+        "textTop": 18.59375,
+        "textBottom": 47.59375,
+        "scale": 1,
+        "saveHeight": 59
+      }
+    },
+    {
+      "width": 960,
+      "height": 720,
+      "warning": {
+        "top": 91.453125,
+        "bottom": 91.453125
+      },
+      "remote": [
+        {
+          "labelRight": 335.53125,
+          "controlLeft": 437.203125
+        },
+        {
+          "labelRight": 337.578125,
+          "controlLeft": 437.203125
+        },
+        {
+          "labelRight": 413.546875,
+          "controlLeft": 437.203125
+        }
+      ],
+      "card": {
+        "width": 240,
+        "scale": 1.5
+      },
+      "letter": {
+        "headerHeight": 102,
+        "textTop": 29.40625,
+        "textBottom": 72.40625,
+        "scale": 1.5,
+        "saveHeight": 88.5
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "warning": {
+        "top": 92.953125,
+        "bottom": 92.953125
+      },
+      "remote": [
+        {
+          "labelRight": 490.953125,
+          "controlLeft": 592.625
+        },
+        {
+          "labelRight": 493,
+          "controlLeft": 592.625
+        },
+        {
+          "labelRight": 568.96875,
+          "controlLeft": 592.625
+        }
+      ],
+      "card": {
+        "width": 240,
+        "scale": 1.5
+      },
+      "letter": {
+        "headerHeight": 102,
+        "textTop": 29.40625,
+        "textBottom": 72.40625,
+        "scale": 1.5,
+        "saveHeight": 88.5
+      }
+    }
+  ],
+  "errors": [],
+  "missing": []
+}

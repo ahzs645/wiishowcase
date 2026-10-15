@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   useSystemState,
   updateSystem,
@@ -40,6 +40,11 @@ export default function MessageTools({ onClose, dateKey, reply }) {
   const [posted, setPosted] = useState(false);
   const [friendMii, setFriendMii] = useState(false);
   const fileRef = useRef(null);
+  // Registration feedback belongs to the Address Book. Do not carry it onto
+  // a new paper surface, where it covered the supplied Wii footer artwork.
+  useEffect(() => {
+    if (screen === "Letter" || screen === "Memo") setNotice("");
+  }, [screen]);
   const edit = (label, value, onConfirm, multiline = false, maxLength = 1000) =>
     setKeyboard({
       message: label,

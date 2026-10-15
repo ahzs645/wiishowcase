@@ -1,0 +1,450 @@
+{
+  "scope": "The 66 states in interface-assets/comparison.json, not channel application interiors or other comparison collections.",
+  "method": "Manually inspected all four current captures per state on contact sheets with 50% source and prior overlays. Full-resolution images and a live browser were used to verify suspected defects. Static review is separate from interaction tests.",
+  "sourceRevision": "4a5fa10d7450b89cae7a35f2557c461b314e4922",
+  "globalFindings": [
+    "No screen is certified pixel-identical. Authentic licensed font files do not establish native glyph size, pane metrics or region/firmware matching.",
+    "Most sources are low-resolution 4:3 manual illustrations. Centered contain overlays preserve aspect; borders, crops and opposite aspect images are not geometrically registered.",
+    "Different content, selection states and dates are identified rather than scored as pixel error.",
+    "Missing or related references cannot establish native accuracy.",
+    "Phone Quit/OK were checked in the original capture and a live browser and are intact; the initial reduced-overview suspicion was withdrawn."
+  ],
+  "states": [
+    {
+      "id": "options",
+      "category": "artwork",
+      "findings": "Tile and footer anchors are close to the small 4:3 illustration. Supplied wrench angle, internal gradients, tile label weight and Back skin still differ; widescreen has no independent Options reference.",
+      "corrections": []
+    },
+    {
+      "id": "data-root",
+      "category": "artwork",
+      "findings": "Save Data reuses the four-icon Options artwork; the manual shows three storage icons. Channels still uses a reconstruction with different corner rounding, stack position and divider. Neither is an exact replacement.",
+      "corrections": []
+    },
+    {
+      "id": "save-chooser",
+      "category": "text",
+      "findings": "The GameCube two-line label sits against the bottom bezel. Platform silhouettes and tile borders remain softer/different from the manual; widescreen is a centered adaptation.",
+      "corrections": [
+        "Raised the GameCube label within the bezel and reduced its two-line text size."
+      ]
+    },
+    {
+      "id": "save-grid",
+      "category": "layout",
+      "findings": "The 5\u00d73 structure and tabs are present. Cell bevels, tab edges, spacing and footer text differ slightly from the illustration. The unknown Blocks Open value is intentional browser data.",
+      "corrections": []
+    },
+    {
+      "id": "channels-data",
+      "category": "limited",
+      "findings": "The available source is a Wii save grid, not the Channels grid. Shared tabs and 5\u00d73 structure are inspectable; native channel-cell cropping and item layout cannot be validated from this source.",
+      "corrections": []
+    },
+    {
+      "id": "sd-menu",
+      "category": "layout",
+      "findings": "Compared the wide captures against nintendo-menu-3 as well as the 4:3 manual. Wide cells and the footer curve/page-count position still drift. Empty-slot texture, background and return orb also differ; channel inventory is fixture content.",
+      "corrections": []
+    },
+    {
+      "id": "sd-start",
+      "category": "layout",
+      "findings": "The selected-title surface is a dialog over the grid rather than the native full presentation. Native side arrows and the To SD Card Menu label are missing; Copy to Wii Menu is an added browser action.",
+      "corrections": []
+    },
+    {
+      "id": "settings-one",
+      "category": "text",
+      "findings": "The four rows, page selector and side arrow are present. Label widths/weight and header-tab width differ from the 4:3 reference; the footer Back skin and background scanlines remain approximations. Source is 4.3E and app is 4.3U.",
+      "corrections": [
+        "Reduced shared list label size from 26 to 24 logical pixels."
+      ]
+    },
+    {
+      "id": "nickname",
+      "category": "layout",
+      "findings": "Field and two footer actions fit at all four sizes. Header tab and exact field/text metrics drift; saved-status text is added browser feedback and the nickname value differs.",
+      "corrections": []
+    },
+    {
+      "id": "date",
+      "category": "layout",
+      "findings": "All digits are visible in the full-size capture. The supplied arrows are smaller/flatter than the manual arrows, and date-column spacing does not exactly overlay. Date values differ; no independent wide source.",
+      "corrections": []
+    },
+    {
+      "id": "time",
+      "category": "layout",
+      "findings": "Complete hour/minute values fit. Arrow size and spacing, numeral metrics and header-tab width still differ; 14:30 versus 10:00 is fixture content, not a layout failure.",
+      "corrections": []
+    },
+    {
+      "id": "widescreen",
+      "category": "adapter",
+      "findings": "Both aspect choices and selected brackets are visible. Added screen glyphs and Automatic action are absent from the manual. Choice dimensions and wide placement differ from the 4:3 illustration.",
+      "corrections": []
+    },
+    {
+      "id": "sound",
+      "category": "layout",
+      "findings": "Three choices and both footer actions remain visible. Row spacing, label metrics, gradients and red selection brackets differ. Mono versus Stereo selection is fixture state.",
+      "corrections": []
+    },
+    {
+      "id": "settings-two",
+      "category": "text",
+      "findings": "All four destinations and both arrows fit. Header/label metrics and button surface remain different from the small reference; page 2 selection is consistent at both resolutions.",
+      "corrections": [
+        "Reduced shared list label size from 26 to 24 logical pixels."
+      ]
+    },
+    {
+      "id": "settings-three",
+      "category": "text",
+      "findings": "Format Wii System Memory wraps to two lines only in widescreen, while the reference uses one line. The fourth row is crowded. Header/footer proportions and reconstructed surfaces remain separate fidelity work.",
+      "corrections": [
+        "Reduced shared list label size and kept labels on one line in both aspect modes."
+      ]
+    },
+    {
+      "id": "home-menu",
+      "category": "layout",
+      "findings": "The two-plus-one action layout fits. Native HOME reference has different header, action spacing, footer/battery placement and an opaque dark central treatment; the app retains a translucent channel background and supplied remote illustration.",
+      "corrections": []
+    },
+    {
+      "id": "remote-settings",
+      "category": "text",
+      "findings": "Connection text runs under Reconnect in the full-size original. Native volume glyphs, gauge and row-frame proportions differ; charge-unavailable feedback is a browser addition. The manual source is a cropped panel, so whole-frame overlay registration is invalid.",
+      "corrections": [
+        "Reserved 150 logical pixels for row labels so Connection clears Reconnect."
+      ]
+    },
+    {
+      "id": "message-board",
+      "category": "scaling",
+      "findings": "Card width and its text clamp to fixed pixel minima, so cards shrink relative to the board at 720p. Footer/date and navigation differ from the native reference; the System update card is different content from the two sample letters.",
+      "corrections": [
+        "Replaced fixed pixel minima with frame-scaled card, text, avatar and pin dimensions."
+      ]
+    },
+    {
+      "id": "create-message",
+      "category": "artwork",
+      "findings": "Supplied Memo shows a pencil rather than the native small Memo card. Address Book cover lacks the complete native title treatment, and the open envelope/choice spacing differs. All three labels and Back are visible.",
+      "corrections": []
+    },
+    {
+      "id": "memo-composer",
+      "category": "text",
+      "findings": "The title sits high in its grey strip. Mii-frame size, ruled-paper spacing and lower actions differ from the reference. Supplied artwork is preserved; it does not establish native geometry.",
+      "corrections": [
+        "Prevented the heading from shrinking and centered it inside a fixed-height strip."
+      ]
+    },
+    {
+      "id": "system-keyboard",
+      "category": "layout",
+      "findings": "Full-resolution inspection shows Quit and OK intact. Key labels, language/layout controls, input height and prediction-row treatment differ from the system reference. Shop-derived surfaces and chosen Shop behavior remain deliberate.",
+      "corrections": []
+    },
+    {
+      "id": "system-symbols",
+      "category": "limited",
+      "findings": "Accent glyphs and actions fit at both resolutions. The source shows QWERTY, not this accent state, so accent ordering and native state geometry cannot be verified. This is not a symbols match.",
+      "corrections": []
+    },
+    {
+      "id": "system-phone",
+      "category": "layout",
+      "findings": "Checked the original 640\u00d7480 image and live browser after the overview suggested a clipped Quit: Quit/OK are intact. Phone case rail, key grid and backspace fit; native space/language/layout controls and prediction treatment differ.",
+      "corrections": []
+    },
+    {
+      "id": "message-open-memo",
+      "category": "layout",
+      "findings": "Title is too high in the supplied strip and trash overlaps the paper corner. Native reference is 16:9, while the 4:3 overlays contain that full source; paper width/placement, rules and body text cannot be read as a direct 4:3 pixel match.",
+      "corrections": [
+        "Centered the title lower inside its paper strip."
+      ]
+    },
+    {
+      "id": "calendar",
+      "category": "layout",
+      "findings": "Grid and embedded Back fit at both resolutions. Native example is a different month and row count; selected day and message icons differ. Footer type/height and pane shadow remain different. Supplied dated recreations are an additional comparison, not native evidence.",
+      "corrections": []
+    },
+    {
+      "id": "address-book",
+      "category": "layout",
+      "findings": "Five empty rows fit. Native page-marker diamond, page-turn arrow art, cover edge and lower button positions are missing/different. The console number is an added line; blank versus populated rows is fixture state.",
+      "corrections": []
+    },
+    {
+      "id": "letter-composer",
+      "category": "text",
+      "findings": "Letter title is visibly cut against the upper paper edge. Stale Friend registered feedback overlaps the baked-in Wii footer, and Save Letter wraps. Source is a Memo composer, so letter-specific geometry remains unverified.",
+      "corrections": [
+        "Matched the heading/body heights to the taller supplied blue strip, cleared stale registration feedback and kept Save Letter on one line."
+      ]
+    },
+    {
+      "id": "letter-open",
+      "category": "text",
+      "findings": "Sender title is cut at the top; Saved locally overlaps the supplied Wii footer. Trash is positioned on the paper rather than outside it. Sender/recipient wording, paper rules and photo differ from the native letter example.",
+      "corrections": [
+        "Centered title lower inside the taller blue strip and moved local delivery status above the supplied Wii footer."
+      ]
+    },
+    {
+      "id": "calendar-settings",
+      "category": "no-source",
+      "findings": "Date/Time submenu, heading and Back fit consistently across four captures. No native reference was collected for this intermediate screen; only internal consistency can be assessed.",
+      "corrections": [
+        "Shared list type uses the same maintained 24-unit token."
+      ]
+    },
+    {
+      "id": "screen-settings",
+      "category": "no-source",
+      "findings": "Four destinations fit. Long labels approach the button edges. Native submenu screenshot is missing, so ordering, spacing and title placement are unverified.",
+      "corrections": [
+        "Shared list type reduced to retain edge clearance for long labels."
+      ]
+    },
+    {
+      "id": "screen-position",
+      "category": "adapter",
+      "findings": "Offset value and side arrows fit. The adjustment brackets are smaller/inset differently, native arrow art differs, and Reset position is an added action. The browser does not change physical video output.",
+      "corrections": []
+    },
+    {
+      "id": "tv-resolution",
+      "category": "adapter",
+      "findings": "Two choices and footer actions fit; choice spacing and labels differ slightly from the illustration. The extra display-output note and inability to change a physical TV output are intentional browser behavior.",
+      "corrections": []
+    },
+    {
+      "id": "burn-in",
+      "category": "layout",
+      "findings": "Both choices, selection marks and footer fit. The two-row group is vertically offset from the small manual illustration, with different skin/label and bracket metrics.",
+      "corrections": []
+    },
+    {
+      "id": "sensor-bar",
+      "category": "no-source",
+      "findings": "Both destinations and Back fit consistently. No native reference for the intermediate Sensor Bar submenu; exact placement and typography remain unverified.",
+      "corrections": [
+        "Shared list type uses the same maintained 24-unit token."
+      ]
+    },
+    {
+      "id": "sensor-position",
+      "category": "layout",
+      "findings": "Two choices fit. Group position, label weight, choice edges and selection-bracket dimensions drift from the 4:3 illustration; wide layout has no independent source.",
+      "corrections": []
+    },
+    {
+      "id": "sensitivity",
+      "category": "adapter",
+      "findings": "Preview is a smaller square rather than the native rectangular IR field. Browser range input and numeric value differ from the diamond slider, and Back/Confirm replace Press A. The two preview dots do not establish physical sensor calibration.",
+      "corrections": []
+    },
+    {
+      "id": "parental-controls",
+      "category": "adapter",
+      "findings": "The PIN/enable/rating form is a browser setup view. Source is the native completed-settings summary; these states cannot be aligned. The inline rounded controls do not reproduce the native summary table.",
+      "corrections": []
+    },
+    {
+      "id": "internet",
+      "category": "layout",
+      "findings": "Three destinations fit, but vertical placement/gaps differ visibly from the illustration. Surfaces and labels have different metrics; native wide placement is unverified.",
+      "corrections": [
+        "Shared list type uses the same maintained 24-unit token; row placement remains unresolved."
+      ]
+    },
+    {
+      "id": "wiiconnect24",
+      "category": "adapter",
+      "findings": "On/Off and footer fit; the local-delivery note is extra content. Button spacing/selection state differs. This does not reproduce the retired service.",
+      "corrections": []
+    },
+    {
+      "id": "connect24-menu",
+      "category": "no-source",
+      "findings": "Three destination labels and Back fit in both modes. No native submenu source collected; row placement and the On/Off wording remain unverified.",
+      "corrections": [
+        "Shared list type uses the same maintained 24-unit token."
+      ]
+    },
+    {
+      "id": "standby-downloads",
+      "category": "adapter",
+      "findings": "On/Off fit with added browser-delivery note. Source title is Standby Downloads and app uses Standby Connection; region/firmware naming has not been reconciled. Selection and vertical position differ.",
+      "corrections": []
+    },
+    {
+      "id": "slot-illumination",
+      "category": "layout",
+      "findings": "All three choices fit; row positions, labels and bracket/skin dimensions drift from the manual. This stores a preference without operating a physical disc-slot LED.",
+      "corrections": []
+    },
+    {
+      "id": "parental-rating",
+      "category": "adapter",
+      "findings": "Six text options replace the native one-rating carousel/icon. Instruction placement and footer labels differ. Current source cannot justify claiming the same visual layout.",
+      "corrections": []
+    },
+    {
+      "id": "secret-question",
+      "category": "no-source",
+      "findings": "Question and answer actions fit. No native view source; native question picker, answer entry and state-specific layout remain unverified.",
+      "corrections": []
+    },
+    {
+      "id": "connection-profiles",
+      "category": "adapter",
+      "findings": "Three saved-profile rows plus two browser controls replace the native three split-column rows. Rounded action skin, row heights, title and selected state differ.",
+      "corrections": []
+    },
+    {
+      "id": "connection-type",
+      "category": "layout",
+      "findings": "Wired/wireless choices fit. Native connection-number header and button skin/height are different. This selects a preference and uses the existing browser network.",
+      "corrections": []
+    },
+    {
+      "id": "console-information",
+      "category": "no-source",
+      "findings": "Grouped Wii Number and online status remain visible at all four sizes. No native Console Information view collected; this browser-local summary is not a measured native replica.",
+      "corrections": []
+    },
+    {
+      "id": "user-agreements",
+      "category": "no-source",
+      "findings": "Browser storage/network explanation fits. This is custom copy without a native source, not the Nintendo agreement flow.",
+      "corrections": []
+    },
+    {
+      "id": "language",
+      "category": "layout",
+      "findings": "Three choices fit. Row placement, label metrics, action skin and selection brackets differ slightly from the illustration; full translated interface coverage remains separate.",
+      "corrections": []
+    },
+    {
+      "id": "country",
+      "category": "adapter",
+      "findings": "Visible list is a regional subset near its end, with two rows instead of the reference four-row viewport. Scroll arrows, instruction placement and Confirm versus OK differ.",
+      "corrections": []
+    },
+    {
+      "id": "format-memory",
+      "category": "text",
+      "findings": "Warning fills almost all the space between heading and footer, with inadequate breathing room. Browser-specific copy is intentional but oversized; source footer says Cancel rather than Back.",
+      "corrections": [
+        "Reduced warning type/gaps and widened its text column to restore padding."
+      ]
+    },
+    {
+      "id": "format-confirm",
+      "category": "limited",
+      "findings": "Confirmation dialog fits. Available source is the preceding warning, not this modal. Background warning is crowded, and native dialog geometry is unverified.",
+      "corrections": [
+        "Underlying Format warning receives the shared spacing fix."
+      ]
+    },
+    {
+      "id": "update-current",
+      "category": "limited",
+      "findings": "Result modal and OK fit. Available source is the update prompt, not the already-current result; exact native modal layout and type remain unverified.",
+      "corrections": [
+        "Underlying Settings list receives the shared label fix."
+      ]
+    },
+    {
+      "id": "gamecube-data",
+      "category": "limited",
+      "findings": "Slot A/B, 5\u00d73 cells and no-card status fit. Source is Wii Save Data rather than a GameCube view. Small GameCube breadcrumb title and physical-card behavior remain adaptations.",
+      "corrections": []
+    },
+    {
+      "id": "save-selected",
+      "category": "limited",
+      "findings": "Item action dialog and Copy/Move/Erase fit. Native source only shows the underlying grid, so dialog layout and title artwork remain unverified.",
+      "corrections": []
+    },
+    {
+      "id": "save-copy-confirm",
+      "category": "limited",
+      "findings": "Copy prompt and Back/Yes/No fit. No reference for the confirmation state; the grid source is not evidence of native modal accuracy.",
+      "corrections": []
+    },
+    {
+      "id": "channel-selected",
+      "category": "limited",
+      "findings": "Item dialog and three actions fit over the channel grid. Native source is a save grid, with neither channel actions nor the modal state.",
+      "corrections": []
+    },
+    {
+      "id": "operations-guide",
+      "category": "adapter",
+      "findings": "Custom guide scrolls inside a limited panel, leaving lower paragraphs outside the initial view. Heading, panel and close/remote controls fit; native channel-specific guide reference is missing.",
+      "corrections": []
+    },
+    {
+      "id": "reconnect",
+      "category": "adapter",
+      "findings": "QR and manual exchange fit. Manual-input and auxiliary labels become small at 720p compared with the QR. Native 1+2 reconnect panel is a different interaction, not a visual match.",
+      "corrections": []
+    },
+    {
+      "id": "address-register",
+      "category": "limited",
+      "findings": "Registration fields and footer fit. Source is Address Book cover, not the registration form; detailed native workflow/layout remains unverified.",
+      "corrections": []
+    },
+    {
+      "id": "friend-details",
+      "category": "limited",
+      "findings": "Friend name/number and Back/Create Letter/Erase fit. Behind the modal, the avatar card has the same resolution scaling problem as Message Board. Source only shows the book list.",
+      "corrections": [
+        "Background card uses frame-scaled dimensions."
+      ]
+    },
+    {
+      "id": "friend-erase",
+      "category": "limited",
+      "findings": "Erase confirmation fits. Background card scales inconsistently between 480/720. Source shows book rows, not the erase confirmation.",
+      "corrections": [
+        "Background card uses frame-scaled dimensions."
+      ]
+    },
+    {
+      "id": "keyboard-predictions",
+      "category": "layout",
+      "findings": "Suggestions and all keyboard actions fit. The native three-word suggestion rail, language book icon and layout toggle differ. hel/hello/help versus neighbor is fixture content.",
+      "corrections": []
+    },
+    {
+      "id": "sd-memory-error",
+      "category": "adapter",
+      "findings": "Full-slot browser fixture dialog and Data Management action fit. Native source offers Auto Manage and Quit and refers to launch memory; browser adapter models occupied menu slots, so these errors are semantically different.",
+      "corrections": []
+    },
+    {
+      "id": "gamecube-slot-b",
+      "category": "limited",
+      "findings": "Slot B selection and no-card status fit. Native source is Wii Save Data, so GameCube slot styling and empty-card state remain unverified.",
+      "corrections": []
+    },
+    {
+      "id": "save-sd",
+      "category": "limited",
+      "findings": "SD Card selected tab, empty 5\u00d73 grid and Back fit. Source has Wii selected and one save; SD-specific state and native capacity are not established.",
+      "corrections": []
+    }
+  ]
+}

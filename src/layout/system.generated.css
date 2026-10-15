@@ -39,6 +39,9 @@
   --system-settings-list-gap: 11;
   --system-settings-index-action-width: 275;
   --system-settings-label-spacing: -0.35;
+  --system-settings-label-size: 24;
+  --system-remote-label-width: 150;
+  --system-message-card-width: 160;
   --system-settings-title-spacing: 0;
   --system-storage-content-width: 640;
   --system-storage-header: 72;

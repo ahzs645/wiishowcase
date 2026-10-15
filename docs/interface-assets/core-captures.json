@@ -1,5 +1,5 @@
 {
-  "baselineRevision": "8aacaa48551935ca67640684df19365c92ce383e",
+  "baselineRevision": "4a5fa10d7450b89cae7a35f2557c461b314e4922",
   "captures": [
     {
       "id": "options",
@@ -649,7 +649,7 @@
             "fontSize": "19.5px"
           },
           {
-            "name": "My Pok\u00e9mon Ranch data",
+            "name": "My Pokémon Ranch data",
             "width": 135.59375,
             "height": 135,
             "fontSize": "19.5px"
@@ -809,7 +809,7 @@
             "fontSize": "13px"
           },
           {
-            "name": "My Pok\u00e9mon Ranch data",
+            "name": "My Pokémon Ranch data",
             "width": 90.390625,
             "height": 90,
             "fontSize": "13px"
@@ -947,7 +947,7 @@
         ],
         "text": [
           {
-            "name": "\u25b6",
+            "name": "▶",
             "fontSize": "37.5px"
           },
           {
@@ -1001,7 +1001,7 @@
         ],
         "text": [
           {
-            "name": "\u25b6",
+            "name": "▶",
             "fontSize": "25px"
           },
           {
@@ -1146,25 +1146,25 @@
             "name": "Console Nickname",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Calendar",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Screen",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Sound",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Next Settings page",
@@ -1204,19 +1204,19 @@
           },
           {
             "name": "Console Nickname",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Calendar",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Screen",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Sound",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "",
@@ -1264,25 +1264,25 @@
             "name": "Console Nickname",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Calendar",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Screen",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Sound",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Next Settings page",
@@ -1322,19 +1322,19 @@
           },
           {
             "name": "Console Nickname",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Calendar",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Screen",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Sound",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "",
@@ -2202,25 +2202,25 @@
             "name": "Parental Controls",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Sensor Bar",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Internet",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "WiiConnect24",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Previous Settings page",
@@ -2266,19 +2266,19 @@
           },
           {
             "name": "Parental Controls",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Sensor Bar",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Internet",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "WiiConnect24",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "",
@@ -2330,25 +2330,25 @@
             "name": "Parental Controls",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Sensor Bar",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Internet",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "WiiConnect24",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Previous Settings page",
@@ -2394,19 +2394,19 @@
           },
           {
             "name": "Parental Controls",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Sensor Bar",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Internet",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "WiiConnect24",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "",
@@ -2458,25 +2458,25 @@
             "name": "Language",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Country",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Wii System Update",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Format Wii System Memory",
             "width": 630,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Previous Settings page",
@@ -2516,19 +2516,19 @@
           },
           {
             "name": "Language",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Country",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Wii System Update",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Format Wii System Memory",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "",
@@ -2576,25 +2576,25 @@
             "name": "Language",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Country",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Wii System Update",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Format Wii System Memory",
             "width": 420,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Previous Settings page",
@@ -2634,19 +2634,19 @@
           },
           {
             "name": "Language",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Country",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Wii System Update",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Format Wii System Memory",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "",
@@ -2684,9 +2684,6 @@
       "before": "home-menu",
       "note": "Operations Guide is adapted to this application. Battery capacity is unavailable for browser controllers.",
       "geometry": {
-        "id": "home-menu",
-        "mode": "4:3",
-        "scale": "720-line",
         "width": 960,
         "height": 720,
         "controls": [
@@ -2758,9 +2755,6 @@
       "before": "home-menu",
       "note": "Operations Guide is adapted to this application. Battery capacity is unavailable for browser controllers.",
       "geometry": {
-        "id": "home-menu",
-        "mode": "4:3",
-        "scale": "480-line",
         "width": 640,
         "height": 480,
         "controls": [
@@ -2858,19 +2852,19 @@
           },
           {
             "name": "On",
-            "width": 225.703125,
+            "width": 199.453125,
             "height": 67.5,
             "fontSize": "33px"
           },
           {
             "name": "Off",
-            "width": 225.703125,
+            "width": 199.453125,
             "height": 67.5,
             "fontSize": "33px"
           },
           {
             "name": "Reconnect",
-            "width": 464.90625,
+            "width": 412.40625,
             "height": 67.5,
             "fontSize": "33px"
           },
@@ -2952,19 +2946,19 @@
           },
           {
             "name": "On",
-            "width": 150.125,
+            "width": 132.625,
             "height": 45,
             "fontSize": "22px"
           },
           {
             "name": "Off",
-            "width": 150.140625,
+            "width": 132.640625,
             "height": 45,
             "fontSize": "22px"
           },
           {
             "name": "Reconnect",
-            "width": 309.265625,
+            "width": 274.265625,
             "height": 45,
             "fontSize": "22px"
           },
@@ -3046,8 +3040,8 @@
           },
           {
             "name": "Open System from Wii System",
-            "width": 180,
-            "height": 152.234375,
+            "width": 240,
+            "height": 187.09375,
             "fontSize": "13.3333px"
           },
           {
@@ -3134,8 +3128,8 @@
           },
           {
             "name": "Open System from Wii System",
-            "width": 180,
-            "height": 141.1875,
+            "width": 160,
+            "height": 125.375,
             "fontSize": "13.3333px"
           },
           {
@@ -3835,7 +3829,7 @@
         ],
         "text": [
           {
-            "name": "\u21b5",
+            "name": "↵",
             "fontSize": "36px"
           },
           {
@@ -4063,19 +4057,19 @@
             "fontSize": "45px"
           },
           {
-            "name": "\u25b2",
+            "name": "▲",
             "fontSize": "25.5px"
           },
           {
-            "name": "\u25bc",
+            "name": "▼",
             "fontSize": "25.5px"
           },
           {
-            "name": "\u25c0",
+            "name": "◀",
             "fontSize": "25.5px"
           },
           {
-            "name": "\u25b6",
+            "name": "▶",
             "fontSize": "25.5px"
           }
         ],
@@ -4469,7 +4463,7 @@
         ],
         "text": [
           {
-            "name": "\u21b5",
+            "name": "↵",
             "fontSize": "24px"
           },
           {
@@ -4697,19 +4691,19 @@
             "fontSize": "30px"
           },
           {
-            "name": "\u25b2",
+            "name": "▲",
             "fontSize": "17px"
           },
           {
-            "name": "\u25bc",
+            "name": "▼",
             "fontSize": "17px"
           },
           {
-            "name": "\u25c0",
+            "name": "◀",
             "fontSize": "17px"
           },
           {
-            "name": "\u25b6",
+            "name": "▶",
             "fontSize": "17px"
           }
         ],
@@ -4759,283 +4753,283 @@
             "fontSize": "27px"
           },
           {
-            "name": "\u00e0",
+            "name": "à",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00e2",
+            "name": "â",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00e6",
+            "name": "æ",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00e7",
+            "name": "ç",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00e9",
+            "name": "é",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00e8",
+            "name": "è",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00ea",
+            "name": "ê",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00eb",
+            "name": "ë",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00ee",
+            "name": "î",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00ef",
+            "name": "ï",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00f4",
+            "name": "ô",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u0153",
+            "name": "œ",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00f9",
+            "name": "ù",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00fb",
+            "name": "û",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00fc",
+            "name": "ü",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00ff",
+            "name": "ÿ",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00e1",
+            "name": "á",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00ed",
+            "name": "í",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00f3",
+            "name": "ó",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00fa",
+            "name": "ú",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00f1",
+            "name": "ñ",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00bf",
+            "name": "¿",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00a1",
+            "name": "¡",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00c0",
+            "name": "À",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00c2",
+            "name": "Â",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00c6",
+            "name": "Æ",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00c7",
+            "name": "Ç",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00c9",
+            "name": "É",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00c8",
+            "name": "È",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00ca",
+            "name": "Ê",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00cb",
+            "name": "Ë",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00ce",
+            "name": "Î",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00cf",
+            "name": "Ï",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00d4",
+            "name": "Ô",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u0152",
+            "name": "Œ",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00d9",
+            "name": "Ù",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00db",
+            "name": "Û",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00dc",
+            "name": "Ü",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u0178",
+            "name": "Ÿ",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00c1",
+            "name": "Á",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00cd",
+            "name": "Í",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00d3",
+            "name": "Ó",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00da",
+            "name": "Ú",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00d1",
+            "name": "Ñ",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00e0",
+            "name": "à",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00e2",
+            "name": "â",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00e6",
+            "name": "æ",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
@@ -5103,7 +5097,7 @@
         ],
         "text": [
           {
-            "name": "\u21b5",
+            "name": "↵",
             "fontSize": "36px"
           },
           {
@@ -5119,191 +5113,191 @@
             "fontSize": "27px"
           },
           {
-            "name": "\u00e0",
+            "name": "à",
             "fontSize": "36px"
           },
           {
-            "name": "\u00e2",
+            "name": "â",
             "fontSize": "36px"
           },
           {
-            "name": "\u00e6",
+            "name": "æ",
             "fontSize": "36px"
           },
           {
-            "name": "\u00e7",
+            "name": "ç",
             "fontSize": "36px"
           },
           {
-            "name": "\u00e9",
+            "name": "é",
             "fontSize": "36px"
           },
           {
-            "name": "\u00e8",
+            "name": "è",
             "fontSize": "36px"
           },
           {
-            "name": "\u00ea",
+            "name": "ê",
             "fontSize": "36px"
           },
           {
-            "name": "\u00eb",
+            "name": "ë",
             "fontSize": "36px"
           },
           {
-            "name": "\u00ee",
+            "name": "î",
             "fontSize": "36px"
           },
           {
-            "name": "\u00ef",
+            "name": "ï",
             "fontSize": "36px"
           },
           {
-            "name": "\u00f4",
+            "name": "ô",
             "fontSize": "36px"
           },
           {
-            "name": "\u0153",
+            "name": "œ",
             "fontSize": "36px"
           },
           {
-            "name": "\u00f9",
+            "name": "ù",
             "fontSize": "36px"
           },
           {
-            "name": "\u00fb",
+            "name": "û",
             "fontSize": "36px"
           },
           {
-            "name": "\u00fc",
+            "name": "ü",
             "fontSize": "36px"
           },
           {
-            "name": "\u00ff",
+            "name": "ÿ",
             "fontSize": "36px"
           },
           {
-            "name": "\u00e1",
+            "name": "á",
             "fontSize": "36px"
           },
           {
-            "name": "\u00ed",
+            "name": "í",
             "fontSize": "36px"
           },
           {
-            "name": "\u00f3",
+            "name": "ó",
             "fontSize": "36px"
           },
           {
-            "name": "\u00fa",
+            "name": "ú",
             "fontSize": "36px"
           },
           {
-            "name": "\u00f1",
+            "name": "ñ",
             "fontSize": "36px"
           },
           {
-            "name": "\u00bf",
+            "name": "¿",
             "fontSize": "36px"
           },
           {
-            "name": "\u00a1",
+            "name": "¡",
             "fontSize": "36px"
           },
           {
-            "name": "\u00c0",
+            "name": "À",
             "fontSize": "36px"
           },
           {
-            "name": "\u00c2",
+            "name": "Â",
             "fontSize": "36px"
           },
           {
-            "name": "\u00c6",
+            "name": "Æ",
             "fontSize": "36px"
           },
           {
-            "name": "\u00c7",
+            "name": "Ç",
             "fontSize": "36px"
           },
           {
-            "name": "\u00c9",
+            "name": "É",
             "fontSize": "36px"
           },
           {
-            "name": "\u00c8",
+            "name": "È",
             "fontSize": "36px"
           },
           {
-            "name": "\u00ca",
+            "name": "Ê",
             "fontSize": "36px"
           },
           {
-            "name": "\u00cb",
+            "name": "Ë",
             "fontSize": "36px"
           },
           {
-            "name": "\u00ce",
+            "name": "Î",
             "fontSize": "36px"
           },
           {
-            "name": "\u00cf",
+            "name": "Ï",
             "fontSize": "36px"
           },
           {
-            "name": "\u00d4",
+            "name": "Ô",
             "fontSize": "36px"
           },
           {
-            "name": "\u0152",
+            "name": "Œ",
             "fontSize": "36px"
           },
           {
-            "name": "\u00d9",
+            "name": "Ù",
             "fontSize": "36px"
           },
           {
-            "name": "\u00db",
+            "name": "Û",
             "fontSize": "36px"
           },
           {
-            "name": "\u00dc",
+            "name": "Ü",
             "fontSize": "36px"
           },
           {
-            "name": "\u0178",
+            "name": "Ÿ",
             "fontSize": "36px"
           },
           {
-            "name": "\u00c1",
+            "name": "Á",
             "fontSize": "36px"
           },
           {
-            "name": "\u00cd",
+            "name": "Í",
             "fontSize": "36px"
           },
           {
-            "name": "\u00d3",
+            "name": "Ó",
             "fontSize": "36px"
           },
           {
-            "name": "\u00da",
+            "name": "Ú",
             "fontSize": "36px"
           },
           {
-            "name": "\u00d1",
+            "name": "Ñ",
             "fontSize": "36px"
           },
           {
-            "name": "\u00e0",
+            "name": "à",
             "fontSize": "36px"
           },
           {
-            "name": "\u00e2",
+            "name": "â",
             "fontSize": "36px"
           },
           {
-            "name": "\u00e6",
+            "name": "æ",
             "fontSize": "36px"
           },
           {
@@ -5331,19 +5325,19 @@
             "fontSize": "45px"
           },
           {
-            "name": "\u25b2",
+            "name": "▲",
             "fontSize": "25.5px"
           },
           {
-            "name": "\u25bc",
+            "name": "▼",
             "fontSize": "25.5px"
           },
           {
-            "name": "\u25c0",
+            "name": "◀",
             "fontSize": "25.5px"
           },
           {
-            "name": "\u25b6",
+            "name": "▶",
             "fontSize": "25.5px"
           }
         ],
@@ -5393,283 +5387,283 @@
             "fontSize": "18px"
           },
           {
-            "name": "\u00e0",
+            "name": "à",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00e2",
+            "name": "â",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00e6",
+            "name": "æ",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00e7",
+            "name": "ç",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00e9",
+            "name": "é",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00e8",
+            "name": "è",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00ea",
+            "name": "ê",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00eb",
+            "name": "ë",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00ee",
+            "name": "î",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00ef",
+            "name": "ï",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00f4",
+            "name": "ô",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u0153",
+            "name": "œ",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00f9",
+            "name": "ù",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00fb",
+            "name": "û",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00fc",
+            "name": "ü",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00ff",
+            "name": "ÿ",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00e1",
+            "name": "á",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00ed",
+            "name": "í",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00f3",
+            "name": "ó",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00fa",
+            "name": "ú",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00f1",
+            "name": "ñ",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00bf",
+            "name": "¿",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00a1",
+            "name": "¡",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00c0",
+            "name": "À",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00c2",
+            "name": "Â",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00c6",
+            "name": "Æ",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00c7",
+            "name": "Ç",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00c9",
+            "name": "É",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00c8",
+            "name": "È",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00ca",
+            "name": "Ê",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00cb",
+            "name": "Ë",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00ce",
+            "name": "Î",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00cf",
+            "name": "Ï",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00d4",
+            "name": "Ô",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u0152",
+            "name": "Œ",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00d9",
+            "name": "Ù",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00db",
+            "name": "Û",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00dc",
+            "name": "Ü",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u0178",
+            "name": "Ÿ",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00c1",
+            "name": "Á",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00cd",
+            "name": "Í",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00d3",
+            "name": "Ó",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00da",
+            "name": "Ú",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00d1",
+            "name": "Ñ",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00e0",
+            "name": "à",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00e2",
+            "name": "â",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00e6",
+            "name": "æ",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
@@ -5737,7 +5731,7 @@
         ],
         "text": [
           {
-            "name": "\u21b5",
+            "name": "↵",
             "fontSize": "24px"
           },
           {
@@ -5753,191 +5747,191 @@
             "fontSize": "18px"
           },
           {
-            "name": "\u00e0",
+            "name": "à",
             "fontSize": "24px"
           },
           {
-            "name": "\u00e2",
+            "name": "â",
             "fontSize": "24px"
           },
           {
-            "name": "\u00e6",
+            "name": "æ",
             "fontSize": "24px"
           },
           {
-            "name": "\u00e7",
+            "name": "ç",
             "fontSize": "24px"
           },
           {
-            "name": "\u00e9",
+            "name": "é",
             "fontSize": "24px"
           },
           {
-            "name": "\u00e8",
+            "name": "è",
             "fontSize": "24px"
           },
           {
-            "name": "\u00ea",
+            "name": "ê",
             "fontSize": "24px"
           },
           {
-            "name": "\u00eb",
+            "name": "ë",
             "fontSize": "24px"
           },
           {
-            "name": "\u00ee",
+            "name": "î",
             "fontSize": "24px"
           },
           {
-            "name": "\u00ef",
+            "name": "ï",
             "fontSize": "24px"
           },
           {
-            "name": "\u00f4",
+            "name": "ô",
             "fontSize": "24px"
           },
           {
-            "name": "\u0153",
+            "name": "œ",
             "fontSize": "24px"
           },
           {
-            "name": "\u00f9",
+            "name": "ù",
             "fontSize": "24px"
           },
           {
-            "name": "\u00fb",
+            "name": "û",
             "fontSize": "24px"
           },
           {
-            "name": "\u00fc",
+            "name": "ü",
             "fontSize": "24px"
           },
           {
-            "name": "\u00ff",
+            "name": "ÿ",
             "fontSize": "24px"
           },
           {
-            "name": "\u00e1",
+            "name": "á",
             "fontSize": "24px"
           },
           {
-            "name": "\u00ed",
+            "name": "í",
             "fontSize": "24px"
           },
           {
-            "name": "\u00f3",
+            "name": "ó",
             "fontSize": "24px"
           },
           {
-            "name": "\u00fa",
+            "name": "ú",
             "fontSize": "24px"
           },
           {
-            "name": "\u00f1",
+            "name": "ñ",
             "fontSize": "24px"
           },
           {
-            "name": "\u00bf",
+            "name": "¿",
             "fontSize": "24px"
           },
           {
-            "name": "\u00a1",
+            "name": "¡",
             "fontSize": "24px"
           },
           {
-            "name": "\u00c0",
+            "name": "À",
             "fontSize": "24px"
           },
           {
-            "name": "\u00c2",
+            "name": "Â",
             "fontSize": "24px"
           },
           {
-            "name": "\u00c6",
+            "name": "Æ",
             "fontSize": "24px"
           },
           {
-            "name": "\u00c7",
+            "name": "Ç",
             "fontSize": "24px"
           },
           {
-            "name": "\u00c9",
+            "name": "É",
             "fontSize": "24px"
           },
           {
-            "name": "\u00c8",
+            "name": "È",
             "fontSize": "24px"
           },
           {
-            "name": "\u00ca",
+            "name": "Ê",
             "fontSize": "24px"
           },
           {
-            "name": "\u00cb",
+            "name": "Ë",
             "fontSize": "24px"
           },
           {
-            "name": "\u00ce",
+            "name": "Î",
             "fontSize": "24px"
           },
           {
-            "name": "\u00cf",
+            "name": "Ï",
             "fontSize": "24px"
           },
           {
-            "name": "\u00d4",
+            "name": "Ô",
             "fontSize": "24px"
           },
           {
-            "name": "\u0152",
+            "name": "Œ",
             "fontSize": "24px"
           },
           {
-            "name": "\u00d9",
+            "name": "Ù",
             "fontSize": "24px"
           },
           {
-            "name": "\u00db",
+            "name": "Û",
             "fontSize": "24px"
           },
           {
-            "name": "\u00dc",
+            "name": "Ü",
             "fontSize": "24px"
           },
           {
-            "name": "\u0178",
+            "name": "Ÿ",
             "fontSize": "24px"
           },
           {
-            "name": "\u00c1",
+            "name": "Á",
             "fontSize": "24px"
           },
           {
-            "name": "\u00cd",
+            "name": "Í",
             "fontSize": "24px"
           },
           {
-            "name": "\u00d3",
+            "name": "Ó",
             "fontSize": "24px"
           },
           {
-            "name": "\u00da",
+            "name": "Ú",
             "fontSize": "24px"
           },
           {
-            "name": "\u00d1",
+            "name": "Ñ",
             "fontSize": "24px"
           },
           {
-            "name": "\u00e0",
+            "name": "à",
             "fontSize": "24px"
           },
           {
-            "name": "\u00e2",
+            "name": "â",
             "fontSize": "24px"
           },
           {
-            "name": "\u00e6",
+            "name": "æ",
             "fontSize": "24px"
           },
           {
@@ -5965,19 +5959,19 @@
             "fontSize": "30px"
           },
           {
-            "name": "\u25b2",
+            "name": "▲",
             "fontSize": "17px"
           },
           {
-            "name": "\u25bc",
+            "name": "▼",
             "fontSize": "17px"
           },
           {
-            "name": "\u25c0",
+            "name": "◀",
             "fontSize": "17px"
           },
           {
-            "name": "\u25b6",
+            "name": "▶",
             "fontSize": "17px"
           }
         ],
@@ -6155,7 +6149,7 @@
         ],
         "text": [
           {
-            "name": "\u21b5",
+            "name": "↵",
             "fontSize": "36px"
           },
           {
@@ -6223,19 +6217,19 @@
             "fontSize": "45px"
           },
           {
-            "name": "\u25b2",
+            "name": "▲",
             "fontSize": "25.5px"
           },
           {
-            "name": "\u25bc",
+            "name": "▼",
             "fontSize": "25.5px"
           },
           {
-            "name": "\u25c0",
+            "name": "◀",
             "fontSize": "25.5px"
           },
           {
-            "name": "\u25b6",
+            "name": "▶",
             "fontSize": "25.5px"
           },
           {
@@ -6429,7 +6423,7 @@
         ],
         "text": [
           {
-            "name": "\u21b5",
+            "name": "↵",
             "fontSize": "24px"
           },
           {
@@ -6497,19 +6491,19 @@
             "fontSize": "30px"
           },
           {
-            "name": "\u25b2",
+            "name": "▲",
             "fontSize": "17px"
           },
           {
-            "name": "\u25bc",
+            "name": "▼",
             "fontSize": "17px"
           },
           {
-            "name": "\u25c0",
+            "name": "◀",
             "fontSize": "17px"
           },
           {
-            "name": "\u25b6",
+            "name": "▶",
             "fontSize": "17px"
           },
           {
@@ -6795,11 +6789,11 @@
             "fontSize": "39px"
           },
           {
-            "name": "\u2039",
+            "name": "‹",
             "fontSize": "49.5px"
           },
           {
-            "name": "\u203a",
+            "name": "›",
             "fontSize": "49.5px"
           },
           {
@@ -6873,11 +6867,11 @@
             "fontSize": "26px"
           },
           {
-            "name": "\u2039",
+            "name": "‹",
             "fontSize": "33px"
           },
           {
-            "name": "\u203a",
+            "name": "›",
             "fontSize": "33px"
           },
           {
@@ -6925,7 +6919,7 @@
           {
             "name": "Write a letter",
             "width": 717,
-            "height": 192.609375,
+            "height": 197.109375,
             "fontSize": "36px"
           },
           {
@@ -6938,13 +6932,13 @@
             "name": "Back",
             "width": 292.5,
             "height": 88.5,
-            "fontSize": "37.5px"
+            "fontSize": "33px"
           },
           {
             "name": "Save Letter",
             "width": 292.5,
-            "height": 117,
-            "fontSize": "37.5px"
+            "height": 88.5,
+            "fontSize": "33px"
           }
         ],
         "text": [
@@ -6970,11 +6964,11 @@
           },
           {
             "name": "Back",
-            "fontSize": "37.5px"
+            "fontSize": "33px"
           },
           {
             "name": "Save Letter",
-            "fontSize": "37.5px"
+            "fontSize": "33px"
           }
         ],
         "failures": []
@@ -7013,7 +7007,7 @@
           {
             "name": "Write a letter",
             "width": 478,
-            "height": 128.40625,
+            "height": 131.40625,
             "fontSize": "24px"
           },
           {
@@ -7026,13 +7020,13 @@
             "name": "Back",
             "width": 195,
             "height": 59,
-            "fontSize": "25px"
+            "fontSize": "22px"
           },
           {
             "name": "Save Letter",
             "width": 195,
-            "height": 78,
-            "fontSize": "25px"
+            "height": 59,
+            "fontSize": "22px"
           }
         ],
         "text": [
@@ -7058,11 +7052,11 @@
           },
           {
             "name": "Back",
-            "fontSize": "25px"
+            "fontSize": "22px"
           },
           {
             "name": "Save Letter",
-            "fontSize": "25px"
+            "fontSize": "22px"
           }
         ],
         "failures": []
@@ -7833,7 +7827,7 @@
             "fontSize": "19.5px"
           },
           {
-            "name": "My Pok\u00e9mon Ranch data",
+            "name": "My Pokémon Ranch data",
             "width": 135.59375,
             "height": 135,
             "fontSize": "19.5px"
@@ -7993,7 +7987,7 @@
             "fontSize": "13px"
           },
           {
-            "name": "My Pok\u00e9mon Ranch data",
+            "name": "My Pokémon Ranch data",
             "width": 90.390625,
             "height": 90,
             "fontSize": "13px"
@@ -8131,7 +8125,7 @@
         ],
         "text": [
           {
-            "name": "\u25b6",
+            "name": "▶",
             "fontSize": "37.5px"
           },
           {
@@ -8185,7 +8179,7 @@
         ],
         "text": [
           {
-            "name": "\u25b6",
+            "name": "▶",
             "fontSize": "25px"
           },
           {
@@ -8330,25 +8324,25 @@
             "name": "Console Nickname",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Calendar",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Screen",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Sound",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Next Settings page",
@@ -8388,19 +8382,19 @@
           },
           {
             "name": "Console Nickname",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Calendar",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Screen",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Sound",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "",
@@ -8448,25 +8442,25 @@
             "name": "Console Nickname",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Calendar",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Screen",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Sound",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Next Settings page",
@@ -8506,19 +8500,19 @@
           },
           {
             "name": "Console Nickname",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Calendar",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Screen",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Sound",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "",
@@ -9386,25 +9380,25 @@
             "name": "Parental Controls",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Sensor Bar",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Internet",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "WiiConnect24",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Previous Settings page",
@@ -9450,19 +9444,19 @@
           },
           {
             "name": "Parental Controls",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Sensor Bar",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Internet",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "WiiConnect24",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "",
@@ -9514,25 +9508,25 @@
             "name": "Parental Controls",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Sensor Bar",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Internet",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "WiiConnect24",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Previous Settings page",
@@ -9578,19 +9572,19 @@
           },
           {
             "name": "Parental Controls",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Sensor Bar",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Internet",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "WiiConnect24",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "",
@@ -9642,25 +9636,25 @@
             "name": "Language",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Country",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Wii System Update",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Format Wii System Memory",
             "width": 618,
             "height": 96,
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Previous Settings page",
@@ -9700,19 +9694,19 @@
           },
           {
             "name": "Language",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Country",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Wii System Update",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "Format Wii System Memory",
-            "fontSize": "39px"
+            "fontSize": "36px"
           },
           {
             "name": "",
@@ -9760,25 +9754,25 @@
             "name": "Language",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Country",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Wii System Update",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Format Wii System Memory",
             "width": 412,
             "height": 64,
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Previous Settings page",
@@ -9818,19 +9812,19 @@
           },
           {
             "name": "Language",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Country",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Wii System Update",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "Format Wii System Memory",
-            "fontSize": "26px"
+            "fontSize": "24px"
           },
           {
             "name": "",
@@ -9868,9 +9862,6 @@
       "before": "home-menu",
       "note": "Operations Guide is adapted to this application. Battery capacity is unavailable for browser controllers.",
       "geometry": {
-        "id": "home-menu",
-        "mode": "16:9",
-        "scale": "720-line",
         "width": 1280,
         "height": 720,
         "controls": [
@@ -9942,9 +9933,6 @@
       "before": "home-menu",
       "note": "Operations Guide is adapted to this application. Battery capacity is unavailable for browser controllers.",
       "geometry": {
-        "id": "home-menu",
-        "mode": "16:9",
-        "scale": "480-line",
         "width": 854,
         "height": 480,
         "controls": [
@@ -10042,19 +10030,19 @@
           },
           {
             "name": "On",
-            "width": 245,
+            "width": 218.75,
             "height": 67.5,
             "fontSize": "33px"
           },
           {
             "name": "Off",
-            "width": 245,
+            "width": 218.75,
             "height": 67.5,
             "fontSize": "33px"
           },
           {
             "name": "Reconnect",
-            "width": 503.5,
+            "width": 451,
             "height": 67.5,
             "fontSize": "33px"
           },
@@ -10136,19 +10124,19 @@
           },
           {
             "name": "On",
-            "width": 162.984375,
+            "width": 145.484375,
             "height": 45,
             "fontSize": "22px"
           },
           {
             "name": "Off",
-            "width": 163,
+            "width": 145.5,
             "height": 45,
             "fontSize": "22px"
           },
           {
             "name": "Reconnect",
-            "width": 334.984375,
+            "width": 299.984375,
             "height": 45,
             "fontSize": "22px"
           },
@@ -10230,8 +10218,8 @@
           },
           {
             "name": "Open System from Wii System",
-            "width": 180,
-            "height": 152.234375,
+            "width": 240,
+            "height": 187.09375,
             "fontSize": "13.3333px"
           },
           {
@@ -10318,8 +10306,8 @@
           },
           {
             "name": "Open System from Wii System",
-            "width": 180,
-            "height": 141.1875,
+            "width": 160,
+            "height": 125.375,
             "fontSize": "13.3333px"
           },
           {
@@ -11019,7 +11007,7 @@
         ],
         "text": [
           {
-            "name": "\u21b5",
+            "name": "↵",
             "fontSize": "36px"
           },
           {
@@ -11247,19 +11235,19 @@
             "fontSize": "45px"
           },
           {
-            "name": "\u25b2",
+            "name": "▲",
             "fontSize": "25.5px"
           },
           {
-            "name": "\u25bc",
+            "name": "▼",
             "fontSize": "25.5px"
           },
           {
-            "name": "\u25c0",
+            "name": "◀",
             "fontSize": "25.5px"
           },
           {
-            "name": "\u25b6",
+            "name": "▶",
             "fontSize": "25.5px"
           }
         ],
@@ -11653,7 +11641,7 @@
         ],
         "text": [
           {
-            "name": "\u21b5",
+            "name": "↵",
             "fontSize": "24px"
           },
           {
@@ -11881,19 +11869,19 @@
             "fontSize": "30px"
           },
           {
-            "name": "\u25b2",
+            "name": "▲",
             "fontSize": "17px"
           },
           {
-            "name": "\u25bc",
+            "name": "▼",
             "fontSize": "17px"
           },
           {
-            "name": "\u25c0",
+            "name": "◀",
             "fontSize": "17px"
           },
           {
-            "name": "\u25b6",
+            "name": "▶",
             "fontSize": "17px"
           }
         ],
@@ -11943,283 +11931,283 @@
             "fontSize": "27px"
           },
           {
-            "name": "\u00e0",
+            "name": "à",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00e2",
+            "name": "â",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00e6",
+            "name": "æ",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00e7",
+            "name": "ç",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00e9",
+            "name": "é",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00e8",
+            "name": "è",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00ea",
+            "name": "ê",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00eb",
+            "name": "ë",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00ee",
+            "name": "î",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00ef",
+            "name": "ï",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00f4",
+            "name": "ô",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u0153",
+            "name": "œ",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00f9",
+            "name": "ù",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00fb",
+            "name": "û",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00fc",
+            "name": "ü",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00ff",
+            "name": "ÿ",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00e1",
+            "name": "á",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00ed",
+            "name": "í",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00f3",
+            "name": "ó",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00fa",
+            "name": "ú",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00f1",
+            "name": "ñ",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00bf",
+            "name": "¿",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00a1",
+            "name": "¡",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00c0",
+            "name": "À",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00c2",
+            "name": "Â",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00c6",
+            "name": "Æ",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00c7",
+            "name": "Ç",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00c9",
+            "name": "É",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00c8",
+            "name": "È",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00ca",
+            "name": "Ê",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00cb",
+            "name": "Ë",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00ce",
+            "name": "Î",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00cf",
+            "name": "Ï",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00d4",
+            "name": "Ô",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u0152",
+            "name": "Œ",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00d9",
+            "name": "Ù",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00db",
+            "name": "Û",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00dc",
+            "name": "Ü",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u0178",
+            "name": "Ÿ",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00c1",
+            "name": "Á",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00cd",
+            "name": "Í",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00d3",
+            "name": "Ó",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00da",
+            "name": "Ú",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00d1",
+            "name": "Ñ",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00e0",
+            "name": "à",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00e2",
+            "name": "â",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
           },
           {
-            "name": "\u00e6",
+            "name": "æ",
             "width": 68.671875,
             "height": 56.046875,
             "fontSize": "36px"
@@ -12287,7 +12275,7 @@
         ],
         "text": [
           {
-            "name": "\u21b5",
+            "name": "↵",
             "fontSize": "36px"
           },
           {
@@ -12303,191 +12291,191 @@
             "fontSize": "27px"
           },
           {
-            "name": "\u00e0",
+            "name": "à",
             "fontSize": "36px"
           },
           {
-            "name": "\u00e2",
+            "name": "â",
             "fontSize": "36px"
           },
           {
-            "name": "\u00e6",
+            "name": "æ",
             "fontSize": "36px"
           },
           {
-            "name": "\u00e7",
+            "name": "ç",
             "fontSize": "36px"
           },
           {
-            "name": "\u00e9",
+            "name": "é",
             "fontSize": "36px"
           },
           {
-            "name": "\u00e8",
+            "name": "è",
             "fontSize": "36px"
           },
           {
-            "name": "\u00ea",
+            "name": "ê",
             "fontSize": "36px"
           },
           {
-            "name": "\u00eb",
+            "name": "ë",
             "fontSize": "36px"
           },
           {
-            "name": "\u00ee",
+            "name": "î",
             "fontSize": "36px"
           },
           {
-            "name": "\u00ef",
+            "name": "ï",
             "fontSize": "36px"
           },
           {
-            "name": "\u00f4",
+            "name": "ô",
             "fontSize": "36px"
           },
           {
-            "name": "\u0153",
+            "name": "œ",
             "fontSize": "36px"
           },
           {
-            "name": "\u00f9",
+            "name": "ù",
             "fontSize": "36px"
           },
           {
-            "name": "\u00fb",
+            "name": "û",
             "fontSize": "36px"
           },
           {
-            "name": "\u00fc",
+            "name": "ü",
             "fontSize": "36px"
           },
           {
-            "name": "\u00ff",
+            "name": "ÿ",
             "fontSize": "36px"
           },
           {
-            "name": "\u00e1",
+            "name": "á",
             "fontSize": "36px"
           },
           {
-            "name": "\u00ed",
+            "name": "í",
             "fontSize": "36px"
           },
           {
-            "name": "\u00f3",
+            "name": "ó",
             "fontSize": "36px"
           },
           {
-            "name": "\u00fa",
+            "name": "ú",
             "fontSize": "36px"
           },
           {
-            "name": "\u00f1",
+            "name": "ñ",
             "fontSize": "36px"
           },
           {
-            "name": "\u00bf",
+            "name": "¿",
             "fontSize": "36px"
           },
           {
-            "name": "\u00a1",
+            "name": "¡",
             "fontSize": "36px"
           },
           {
-            "name": "\u00c0",
+            "name": "À",
             "fontSize": "36px"
           },
           {
-            "name": "\u00c2",
+            "name": "Â",
             "fontSize": "36px"
           },
           {
-            "name": "\u00c6",
+            "name": "Æ",
             "fontSize": "36px"
           },
           {
-            "name": "\u00c7",
+            "name": "Ç",
             "fontSize": "36px"
           },
           {
-            "name": "\u00c9",
+            "name": "É",
             "fontSize": "36px"
           },
           {
-            "name": "\u00c8",
+            "name": "È",
             "fontSize": "36px"
           },
           {
-            "name": "\u00ca",
+            "name": "Ê",
             "fontSize": "36px"
           },
           {
-            "name": "\u00cb",
+            "name": "Ë",
             "fontSize": "36px"
           },
           {
-            "name": "\u00ce",
+            "name": "Î",
             "fontSize": "36px"
           },
           {
-            "name": "\u00cf",
+            "name": "Ï",
             "fontSize": "36px"
           },
           {
-            "name": "\u00d4",
+            "name": "Ô",
             "fontSize": "36px"
           },
           {
-            "name": "\u0152",
+            "name": "Œ",
             "fontSize": "36px"
           },
           {
-            "name": "\u00d9",
+            "name": "Ù",
             "fontSize": "36px"
           },
           {
-            "name": "\u00db",
+            "name": "Û",
             "fontSize": "36px"
           },
           {
-            "name": "\u00dc",
+            "name": "Ü",
             "fontSize": "36px"
           },
           {
-            "name": "\u0178",
+            "name": "Ÿ",
             "fontSize": "36px"
           },
           {
-            "name": "\u00c1",
+            "name": "Á",
             "fontSize": "36px"
           },
           {
-            "name": "\u00cd",
+            "name": "Í",
             "fontSize": "36px"
           },
           {
-            "name": "\u00d3",
+            "name": "Ó",
             "fontSize": "36px"
           },
           {
-            "name": "\u00da",
+            "name": "Ú",
             "fontSize": "36px"
           },
           {
-            "name": "\u00d1",
+            "name": "Ñ",
             "fontSize": "36px"
           },
           {
-            "name": "\u00e0",
+            "name": "à",
             "fontSize": "36px"
           },
           {
-            "name": "\u00e2",
+            "name": "â",
             "fontSize": "36px"
           },
           {
-            "name": "\u00e6",
+            "name": "æ",
             "fontSize": "36px"
           },
           {
@@ -12515,19 +12503,19 @@
             "fontSize": "45px"
           },
           {
-            "name": "\u25b2",
+            "name": "▲",
             "fontSize": "25.5px"
           },
           {
-            "name": "\u25bc",
+            "name": "▼",
             "fontSize": "25.5px"
           },
           {
-            "name": "\u25c0",
+            "name": "◀",
             "fontSize": "25.5px"
           },
           {
-            "name": "\u25b6",
+            "name": "▶",
             "fontSize": "25.5px"
           }
         ],
@@ -12577,283 +12565,283 @@
             "fontSize": "18px"
           },
           {
-            "name": "\u00e0",
+            "name": "à",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00e2",
+            "name": "â",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00e6",
+            "name": "æ",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00e7",
+            "name": "ç",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00e9",
+            "name": "é",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00e8",
+            "name": "è",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00ea",
+            "name": "ê",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00eb",
+            "name": "ë",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00ee",
+            "name": "î",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00ef",
+            "name": "ï",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00f4",
+            "name": "ô",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u0153",
+            "name": "œ",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00f9",
+            "name": "ù",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00fb",
+            "name": "û",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00fc",
+            "name": "ü",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00ff",
+            "name": "ÿ",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00e1",
+            "name": "á",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00ed",
+            "name": "í",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00f3",
+            "name": "ó",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00fa",
+            "name": "ú",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00f1",
+            "name": "ñ",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00bf",
+            "name": "¿",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00a1",
+            "name": "¡",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00c0",
+            "name": "À",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00c2",
+            "name": "Â",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00c6",
+            "name": "Æ",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00c7",
+            "name": "Ç",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00c9",
+            "name": "É",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00c8",
+            "name": "È",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00ca",
+            "name": "Ê",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00cb",
+            "name": "Ë",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00ce",
+            "name": "Î",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00cf",
+            "name": "Ï",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00d4",
+            "name": "Ô",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u0152",
+            "name": "Œ",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00d9",
+            "name": "Ù",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00db",
+            "name": "Û",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00dc",
+            "name": "Ü",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u0178",
+            "name": "Ÿ",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00c1",
+            "name": "Á",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00cd",
+            "name": "Í",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00d3",
+            "name": "Ó",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00da",
+            "name": "Ú",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00d1",
+            "name": "Ñ",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00e0",
+            "name": "à",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00e2",
+            "name": "â",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
           },
           {
-            "name": "\u00e6",
+            "name": "æ",
             "width": 45.78125,
             "height": 37.359375,
             "fontSize": "24px"
@@ -12921,7 +12909,7 @@
         ],
         "text": [
           {
-            "name": "\u21b5",
+            "name": "↵",
             "fontSize": "24px"
           },
           {
@@ -12937,191 +12925,191 @@
             "fontSize": "18px"
           },
           {
-            "name": "\u00e0",
+            "name": "à",
             "fontSize": "24px"
           },
           {
-            "name": "\u00e2",
+            "name": "â",
             "fontSize": "24px"
           },
           {
-            "name": "\u00e6",
+            "name": "æ",
             "fontSize": "24px"
           },
           {
-            "name": "\u00e7",
+            "name": "ç",
             "fontSize": "24px"
           },
           {
-            "name": "\u00e9",
+            "name": "é",
             "fontSize": "24px"
           },
           {
-            "name": "\u00e8",
+            "name": "è",
             "fontSize": "24px"
           },
           {
-            "name": "\u00ea",
+            "name": "ê",
             "fontSize": "24px"
           },
           {
-            "name": "\u00eb",
+            "name": "ë",
             "fontSize": "24px"
           },
           {
-            "name": "\u00ee",
+            "name": "î",
             "fontSize": "24px"
           },
           {
-            "name": "\u00ef",
+            "name": "ï",
             "fontSize": "24px"
           },
           {
-            "name": "\u00f4",
+            "name": "ô",
             "fontSize": "24px"
           },
           {
-            "name": "\u0153",
+            "name": "œ",
             "fontSize": "24px"
           },
           {
-            "name": "\u00f9",
+            "name": "ù",
             "fontSize": "24px"
           },
           {
-            "name": "\u00fb",
+            "name": "û",
             "fontSize": "24px"
           },
           {
-            "name": "\u00fc",
+            "name": "ü",
             "fontSize": "24px"
           },
           {
-            "name": "\u00ff",
+            "name": "ÿ",
             "fontSize": "24px"
           },
           {
-            "name": "\u00e1",
+            "name": "á",
             "fontSize": "24px"
           },
           {
-            "name": "\u00ed",
+            "name": "í",
             "fontSize": "24px"
           },
           {
-            "name": "\u00f3",
+            "name": "ó",
             "fontSize": "24px"
           },
           {
-            "name": "\u00fa",
+            "name": "ú",
             "fontSize": "24px"
           },
           {
-            "name": "\u00f1",
+            "name": "ñ",
             "fontSize": "24px"
           },
           {
-            "name": "\u00bf",
+            "name": "¿",
             "fontSize": "24px"
           },
           {
-            "name": "\u00a1",
+            "name": "¡",
             "fontSize": "24px"
           },
           {
-            "name": "\u00c0",
+            "name": "À",
             "fontSize": "24px"
           },
           {
-            "name": "\u00c2",
+            "name": "Â",
             "fontSize": "24px"
           },
           {
-            "name": "\u00c6",
+            "name": "Æ",
             "fontSize": "24px"
           },
           {
-            "name": "\u00c7",
+            "name": "Ç",
             "fontSize": "24px"
           },
           {
-            "name": "\u00c9",
+            "name": "É",
             "fontSize": "24px"
           },
           {
-            "name": "\u00c8",
+            "name": "È",
             "fontSize": "24px"
           },
           {
-            "name": "\u00ca",
+            "name": "Ê",
             "fontSize": "24px"
           },
           {
-            "name": "\u00cb",
+            "name": "Ë",
             "fontSize": "24px"
           },
           {
-            "name": "\u00ce",
+            "name": "Î",
             "fontSize": "24px"
           },
           {
-            "name": "\u00cf",
+            "name": "Ï",
             "fontSize": "24px"
           },
           {
-            "name": "\u00d4",
+            "name": "Ô",
             "fontSize": "24px"
           },
           {
-            "name": "\u0152",
+            "name": "Œ",
             "fontSize": "24px"
           },
           {
-            "name": "\u00d9",
+            "name": "Ù",
             "fontSize": "24px"
           },
           {
-            "name": "\u00db",
+            "name": "Û",
             "fontSize": "24px"
           },
           {
-            "name": "\u00dc",
+            "name": "Ü",
             "fontSize": "24px"
           },
           {
-            "name": "\u0178",
+            "name": "Ÿ",
             "fontSize": "24px"
           },
           {
-            "name": "\u00c1",
+            "name": "Á",
             "fontSize": "24px"
           },
           {
-            "name": "\u00cd",
+            "name": "Í",
             "fontSize": "24px"
           },
           {
-            "name": "\u00d3",
+            "name": "Ó",
             "fontSize": "24px"
           },
           {
-            "name": "\u00da",
+            "name": "Ú",
             "fontSize": "24px"
           },
           {
-            "name": "\u00d1",
+            "name": "Ñ",
             "fontSize": "24px"
           },
           {
-            "name": "\u00e0",
+            "name": "à",
             "fontSize": "24px"
           },
           {
-            "name": "\u00e2",
+            "name": "â",
             "fontSize": "24px"
           },
           {
-            "name": "\u00e6",
+            "name": "æ",
             "fontSize": "24px"
           },
           {
@@ -13149,19 +13137,19 @@
             "fontSize": "30px"
           },
           {
-            "name": "\u25b2",
+            "name": "▲",
             "fontSize": "17px"
           },
           {
-            "name": "\u25bc",
+            "name": "▼",
             "fontSize": "17px"
           },
           {
-            "name": "\u25c0",
+            "name": "◀",
             "fontSize": "17px"
           },
           {
-            "name": "\u25b6",
+            "name": "▶",
             "fontSize": "17px"
           }
         ],
@@ -13339,7 +13327,7 @@
         ],
         "text": [
           {
-            "name": "\u21b5",
+            "name": "↵",
             "fontSize": "36px"
           },
           {
@@ -13407,19 +13395,19 @@
             "fontSize": "45px"
           },
           {
-            "name": "\u25b2",
+            "name": "▲",
             "fontSize": "25.5px"
           },
           {
-            "name": "\u25bc",
+            "name": "▼",
             "fontSize": "25.5px"
           },
           {
-            "name": "\u25c0",
+            "name": "◀",
             "fontSize": "25.5px"
           },
           {
-            "name": "\u25b6",
+            "name": "▶",
             "fontSize": "25.5px"
           },
           {
@@ -13613,7 +13601,7 @@
         ],
         "text": [
           {
-            "name": "\u21b5",
+            "name": "↵",
             "fontSize": "24px"
           },
           {
@@ -13681,19 +13669,19 @@
             "fontSize": "30px"
           },
           {
-            "name": "\u25b2",
+            "name": "▲",
             "fontSize": "17px"
           },
           {
-            "name": "\u25bc",
+            "name": "▼",
             "fontSize": "17px"
           },
           {
-            "name": "\u25c0",
+            "name": "◀",
             "fontSize": "17px"
           },
           {
-            "name": "\u25b6",
+            "name": "▶",
             "fontSize": "17px"
           },
           {
@@ -13979,11 +13967,11 @@
             "fontSize": "39px"
           },
           {
-            "name": "\u2039",
+            "name": "‹",
             "fontSize": "49.5px"
           },
           {
-            "name": "\u203a",
+            "name": "›",
             "fontSize": "49.5px"
           },
           {
@@ -14057,11 +14045,11 @@
             "fontSize": "26px"
           },
           {
-            "name": "\u2039",
+            "name": "‹",
             "fontSize": "33px"
           },
           {
-            "name": "\u203a",
+            "name": "›",
             "fontSize": "33px"
           },
           {
@@ -14109,7 +14097,7 @@
           {
             "name": "Write a letter",
             "width": 717,
-            "height": 192.609375,
+            "height": 197.109375,
             "fontSize": "36px"
           },
           {
@@ -14122,13 +14110,13 @@
             "name": "Back",
             "width": 292.5,
             "height": 88.5,
-            "fontSize": "37.5px"
+            "fontSize": "33px"
           },
           {
             "name": "Save Letter",
             "width": 292.5,
-            "height": 117,
-            "fontSize": "37.5px"
+            "height": 88.5,
+            "fontSize": "33px"
           }
         ],
         "text": [
@@ -14154,11 +14142,11 @@
           },
           {
             "name": "Back",
-            "fontSize": "37.5px"
+            "fontSize": "33px"
           },
           {
             "name": "Save Letter",
-            "fontSize": "37.5px"
+            "fontSize": "33px"
           }
         ],
         "failures": []
@@ -14197,7 +14185,7 @@
           {
             "name": "Write a letter",
             "width": 478,
-            "height": 128.40625,
+            "height": 131.40625,
             "fontSize": "24px"
           },
           {
@@ -14210,13 +14198,13 @@
             "name": "Back",
             "width": 195,
             "height": 59,
-            "fontSize": "25px"
+            "fontSize": "22px"
           },
           {
             "name": "Save Letter",
             "width": 195,
-            "height": 78,
-            "fontSize": "25px"
+            "height": 59,
+            "fontSize": "22px"
           }
         ],
         "text": [
@@ -14242,11 +14230,11 @@
           },
           {
             "name": "Back",
-            "fontSize": "25px"
+            "fontSize": "22px"
           },
           {
             "name": "Save Letter",
-            "fontSize": "25px"
+            "fontSize": "22px"
           }
         ],
         "failures": []
@@ -14408,7 +14396,7 @@
     "4:3: native-size Options bounds and centre hits",
     {
       "mode": "4:3",
-      "nativeSize": "640\u00d7480",
+      "nativeSize": "640×480",
       "hits": [
         {
           "label": "Data Management",
@@ -14464,7 +14452,7 @@
     "16:9: native-size Options bounds and centre hits",
     {
       "mode": "16:9",
-      "nativeSize": "854\u00d7480",
+      "nativeSize": "854×480",
       "hits": [
         {
           "label": "Data Management",
@@ -14487,7 +14475,5 @@
     "No missing production assets"
   ],
   "errors": [],
-  "missing": [],
-  "captureIncludesWorkingTree": true,
-  "frameworkCommit": "b6aaefb22312c8130aff3bf875994cf6d511cb10"
+  "missing": []
 }

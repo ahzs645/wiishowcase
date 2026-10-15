@@ -56,10 +56,12 @@
     "build:storage-refinement": "node scripts/build-storage-refinement.mjs && python scripts/render-storage-refinement.py",
     "test:storage-refinement-viewer": "node scripts/check-storage-refinement.mjs",
     "test:interface-assets": "node scripts/test-interface-assets.mjs",
-    "build:interface-assets": "node scripts/build-interface-asset-catalog.mjs && SYSTEM_COMPARISON_OUTPUT=docs/interface-assets SYSTEM_COMPARISON_BASELINE=system-menu-refinement node scripts/build-system-menu-fixes.mjs && SYSTEM_COMPARISON_OUTPUT=docs/interface-assets SYSTEM_COMPARISON_BASELINE=system-menu-refinement python scripts/render-system-menu-fixes.py",
+    "build:interface-assets": "node scripts/build-interface-asset-catalog.mjs && SYSTEM_COMPARISON_OUTPUT=docs/interface-assets SYSTEM_COMPARISON_BASELINE=system-menu-refinement node scripts/build-system-menu-fixes.mjs && SYSTEM_COMPARISON_OUTPUT=docs/interface-assets SYSTEM_COMPARISON_BASELINE=system-menu-refinement python scripts/render-system-menu-fixes.py && node scripts/build-interface-visual-review.mjs",
     "test:interface-assets-viewer": "SYSTEM_COMPARISON_OUTPUT=docs/interface-assets EXPECTED_COMPARISON_STATES=66 COMPARISON_URL=http://localhost:4957/interface-assets/ node scripts/check-system-menu-fixes-viewer.mjs",
     "test:interface-asset-catalog": "node scripts/check-interface-asset-catalog.mjs",
-    "test:system-menu-refinement-viewer": "SYSTEM_COMPARISON_OUTPUT=docs/system-menu-refinement COMPARISON_URL=http://localhost:4957/system-menu-refinement/ node scripts/check-system-menu-fixes-viewer.mjs"
+    "test:system-menu-refinement-viewer": "SYSTEM_COMPARISON_OUTPUT=docs/system-menu-refinement COMPARISON_URL=http://localhost:4957/system-menu-refinement/ node scripts/check-system-menu-fixes-viewer.mjs",
+    "test:interface-visual-defects": "node scripts/test-interface-visual-defects.mjs",
+    "test:interface-visual-review": "node scripts/check-interface-visual-review.mjs"
   },
   "dependencies": {
     "@firstform/wii-channel-renderer": "file:wewad/packages/wii-channel-renderer",

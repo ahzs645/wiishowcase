@@ -1,6 +1,59 @@
 /* Wii.css owns artwork/surfaces/states; this file only fits those shared
    elements into the showcase's existing source-linked coordinate adapters. */
 .menu-clock-date { line-height: var(--layout-date-line-height); }
+.native-settings-page .system-settings-list .system-button {
+  font-size: calc(var(--system-settings-label-size) * var(--system-scale));
+  white-space: nowrap;
+}
+.remote-setting-row > span {
+  flex-basis: calc(var(--system-remote-label-width) * var(--system-scale));
+  white-space: nowrap;
+}
+.native-format-warning {
+  max-width: calc(410 * var(--system-scale));
+  font-size: calc(21 * var(--system-scale));
+  line-height: 1.35;
+  gap: calc(14 * var(--system-scale));
+}
+.native-storage-page [data-tile-kind="gamecube"] > .wii-system-tile__label {
+  bottom: 5%;
+  height: 27%;
+  font-size: calc(18 * var(--system-scale));
+  line-height: 1.1;
+}
+.message-board-card {
+  width: calc(var(--system-message-card-width) * var(--system-scale));
+  min-height: calc(86 * var(--system-scale));
+  padding: calc(9 * var(--system-scale));
+  padding-bottom: calc(20 * var(--system-scale));
+  border-width: calc(1.2 * var(--system-scale));
+  border-top-width: calc(12 * var(--system-scale));
+  border-radius: calc(9 * var(--system-scale));
+  outline-width: calc(4 * var(--system-scale));
+  box-shadow: calc(9 * var(--system-scale)) calc(9 * var(--system-scale)) #0002;
+}
+.message-board-card-pin {
+  top: calc(-23 * var(--system-scale));
+  width: calc(22 * var(--system-scale));
+  height: calc(22 * var(--system-scale));
+}
+.message-board-card-header { margin-bottom: calc(5 * var(--system-scale)); }
+.message-board-card-avatar {
+  width: calc(35 * var(--system-scale));
+  height: calc(35 * var(--system-scale));
+  font-size: calc(13 * var(--system-scale));
+}
+.message-board-card-avatar.is-full-avatar { width: calc(30 * var(--system-scale)); }
+.message-board-card-preview {
+  font-size: calc(16 * var(--system-scale));
+  margin-top: calc(5 * var(--system-scale));
+  padding: 0 calc(4 * var(--system-scale)) calc(4 * var(--system-scale));
+}
+.message-board-card-type-label {
+  top: calc(-6 * var(--system-scale));
+  right: calc(9 * var(--system-scale));
+  font-size: calc(11 * var(--system-scale));
+}
 .native-settings-page .native-number-column input,
 .native-settings-page .native-number-separator {
   font-family: var(--system-numeric-font-family);
@@ -76,6 +129,11 @@
 .system-surface-composer .system-dialog.wii-message-paper > h2 {
   background: transparent;
   border: 0;
+  flex: 0 0 calc(44 * var(--system-scale));
+  display: grid;
+  place-items: center;
+  padding: 0 calc(8 * var(--system-scale));
+  line-height: 1.2;
 }
 .system-surface-composer .system-dialog.wii-message-paper {
   background-size: 100% calc(379 * var(--system-scale));
@@ -84,6 +142,20 @@
 .system-surface-composer .system-dialog.wii-message-paper .system-dialog-body {
   background: transparent;
   border: 0;
+}
+.system-surface-composer .system-dialog.wii-message-paper--letter > h2 {
+  /* The supplied letter has a taller blue strip than the grey Memo strip. */
+  flex-basis: calc(68 * var(--system-scale));
+}
+.system-surface-composer .system-dialog.wii-message-paper--letter .system-dialog-body {
+  height: calc(311 * var(--system-scale));
+}
+.system-surface-composer .wii-message-paper--letter .message-write-body {
+  min-height: calc(124 * var(--system-scale));
+}
+.system-surface-composer .wii-message-paper--letter .system-actions .system-button {
+  font-size: calc(22 * var(--system-scale));
+  white-space: nowrap;
 }
 .system-surface-composer .system-dialog.wii-message-paper .message-write-body {
   background: transparent;
@@ -95,9 +167,25 @@
   padding-top: calc(46 * var(--system-scale));
 }
 .message-board-memo.wii-message-paper .message-board-memo-title {
-  top: calc(4 * var(--system-scale));
+  top: calc(12 * var(--system-scale));
   height: calc(36 * var(--system-scale));
   font-size: calc(23 * var(--system-scale));
+  line-height: 1.2;
+  display: grid;
+  place-items: center;
+}
+.message-board-memo.wii-message-paper--letter .message-board-memo-title {
+  top: calc(24 * var(--system-scale));
+}
+.message-local-status {
+  position: absolute;
+  bottom: calc(44 * var(--system-scale));
+  left: 5%;
+  width: 90%;
+  text-align: center;
+}
+.message-board-memo:has(.message-local-status) .message-board-memo-lines {
+  padding-bottom: calc(35 * var(--system-scale));
 }
 .message-board-memo.wii-message-paper .message-board-memo-lines span,
 .message-board-memo.wii-message-paper .message-board-memo-lines a {

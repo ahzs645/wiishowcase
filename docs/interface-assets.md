@@ -123,3 +123,51 @@ beside the viewer; source crop/state and browser substitutions remain visible.
 
 Only the system/date fonts are preloaded by the app. The other supplied weights
 load when used; the catalog deliberately loads all eight for comparison.
+
+## Complete manual overlay review, 15 October
+
+[Review all 66 screens](interface-assets/review/) contains individual findings for
+all 264 captures: 640×480, 854×480, 960×720 and 1280×720. Each initial inspection
+sheet shows the actual screen with a 50% native-source overlay, where available,
+and a 50% prior-capture overlay. Initial evidence is preserved from 4a5fa10;
+current captures and interactive overlays reflect the corrections. Twenty
+affected states received a visual follow-up. These are static inspections using
+contact sheets and full-resolution follow-ups, distinct from interaction tests.
+
+The review found and corrected Settings labels wrapping only in widescreen,
+Connection running underneath Reconnect, cards shrinking relative to the Message
+Board at 720p, the GameCube label crowding its bezel, high/cut paper titles,
+stale registration feedback covering the supplied Wii mark, delivery status
+covering the letter footer, and an oversized Format warning. Layout values remain
+in the shared registry; supplied surfaces and button behavior remain in Wii.css.
+The Letter adapter now accounts for its taller blue strip rather than using the
+grey Memo strip's height. Shop's keyboard profile is unchanged.
+
+A suspected clipped phone Quit button was disproved by the original image and a
+live browser check. It is not listed as a defect or a fix.
+
+Native fidelity is still incomplete. HOME/SD proportions, supplied versus native
+art differences, Address Book details, date/time arrows and several network and
+parental-control views remain documented. Eight states lack native references;
+others have only related states or low-resolution/cropped illustrations. A
+contain-fitted opposite-aspect overlay is not a registered native measurement.
+No accuracy percentage or pixel-identical status is assigned.
+
+Validation: fresh core interaction and sizing run (84 interactions, 120 geometry
+cases), 140 additional captures, 48 font/art checks, 22 targeted rendering checks,
+8 keyboard-focus checks, 4 HOME checks and 528 interactive viewer combinations.
+The review ledger hashes all initial sheets, current images, before images and
+native references; its viewer checks all 330 displayed/expandable image assets,
+search, category filters and narrow widths.
+
+Rebuild the review after updating the comparison manifest:
+
+```sh
+node scripts/build-interface-visual-review.mjs
+npm run test:interface-visual-defects
+npm run test:interface-visual-review
+```
+
+Render new inspection sheets with `scripts/render-interface-review-sheets.py`.
+Rendering does not perform a manual inspection. Keep old sheets under their
+source revision, and update the notes only after viewing the new evidence.
