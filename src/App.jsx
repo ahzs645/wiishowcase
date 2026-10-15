@@ -653,10 +653,7 @@ function HostApp() {
   // Open pairing screen and start hosting a new controller slot
   const openPairing = useCallback(async () => {
     setShowPairing(true);
-    const result = await startHosting();
-    if (result) {
-      setPairingControllerId(result.controllerId);
-    }
+    await startHosting(setPairingControllerId);
   }, [startHosting]);
 
   const closePairing = useCallback(() => {
@@ -877,11 +874,22 @@ function HostApp() {
       <PairingScreen
         visible={showPairing}
         offer={currentPairing?.offer}
-        state={currentPairing?.state || "creating"}
+        state={
+          currentPairing?.state ||
+          (pairingControllerId != null ? "failed" : "creating")
+        }
+        error={currentPairing?.error}
         connectedCount={connectedCount}
         availableSlots={availableSlots}
         onAcceptAnswer={handleAcceptAnswer}
-        onStartPairing={openPairing}
+        onStartPairing={() => {
+          if (
+            pairingControllerId != null &&
+            currentPairing?.state !== "connected"
+          )
+            disconnectOne(pairingControllerId);
+          openPairing();
+        }}
         onClose={closePairing}
       />
 

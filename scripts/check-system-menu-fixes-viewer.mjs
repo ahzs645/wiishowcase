@@ -71,7 +71,9 @@ try {
   assert.match(await page.locator("#confidence").innerText(), /No same-view/);
   await page.selectOption("#interface", "standby-downloads");
   await page.selectOption("#layer", "before");
-  assert.ok(await page.locator("#no-before").isVisible());
+  if (process.env.SYSTEM_COMPARISON_OUTPUT)
+    assert.ok(!(await page.locator("#no-before").isVisible()));
+  else assert.ok(await page.locator("#no-before").isVisible());
   await page.setViewportSize({ width: 390, height: 844 });
   assert.ok(
     await page.evaluate(
@@ -85,7 +87,7 @@ try {
   );
 } finally {
   await fs.writeFile(
-    "docs/system-menu-fixes/viewer-validation.json",
+    `${process.env.SYSTEM_COMPARISON_OUTPUT || "docs/system-menu-fixes"}/viewer-validation.json`,
     JSON.stringify(report, null, 2) + "\n",
   );
   await browser.close();

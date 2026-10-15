@@ -11,6 +11,7 @@ export default function useWebRTC(role, onMessage) {
   const [state, setState] = useState("idle"); // idle | creating | waiting | connected | failed
   const [offer, setOffer] = useState(null); // encoded offer string (host)
   const [answer, setAnswer] = useState(null); // encoded answer string (companion)
+  const [error, setError] = useState("");
   const connRef = useRef(null);
 
   // Tear down on unmount
@@ -80,6 +81,7 @@ export default function useWebRTC(role, onMessage) {
     async (encodedOffer) => {
       connRef.current?.close();
       setState("creating");
+      setError("");
 
       const conn = createConnection({
         role: "companion",
@@ -96,7 +98,16 @@ export default function useWebRTC(role, onMessage) {
       });
       connRef.current = conn;
 
-      const encodedAnswer = await conn.acceptOffer(encodedOffer);
+      let encodedAnswer;
+      try {
+        encodedAnswer = await conn.acceptOffer(encodedOffer);
+      } catch (error) {
+        if (connRef.current === conn) {
+          setState("failed");
+          setError(error.message);
+        }
+        throw error;
+      }
       if (connRef.current !== conn) throw new Error("Connection was replaced.");
       setAnswer(encodedAnswer);
       setState("waiting"); // waiting for host to accept our answer
@@ -122,12 +133,14 @@ export default function useWebRTC(role, onMessage) {
     setState("idle");
     setOffer(null);
     setAnswer(null);
+    setError("");
   }, []);
 
   return {
     state,
     offer,
     answer,
+    error,
     startHosting,
     acceptAnswer,
     acceptOffer,

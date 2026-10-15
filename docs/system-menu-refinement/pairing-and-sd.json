@@ -1,0 +1,194 @@
+{
+  "checks": [
+    "Visible 480-line QR decodes at rendered resolution",
+    "Manual answer code is accepted in an isolated host context",
+    "640: SD full-menu dialog fits",
+    "640: SD full-menu management callback works",
+    "854: SD full-menu dialog fits",
+    "854: SD full-menu management callback works",
+    "960: SD full-menu dialog fits",
+    "960: SD full-menu management callback works",
+    "1280: SD full-menu dialog fits",
+    "1280: SD full-menu management callback works"
+  ],
+  "captures": [
+    {
+      "id": "sd-memory-error",
+      "title": "SD full Wii Menu slot flow (simulated inventory)",
+      "mode": "4:3",
+      "width": 640,
+      "height": 480,
+      "image": "current/sd-memory-error-640x480.png",
+      "reference": "manual-484",
+      "referenceRole": "browser-adaptation",
+      "geometry": {
+        "width": 640,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Back",
+            "width": 100,
+            "height": 40.390625,
+            "fontSize": "22px"
+          },
+          {
+            "name": "Data Management",
+            "width": 237.28125,
+            "height": 40.390625,
+            "fontSize": "22px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Wii System Memory is full",
+            "fontSize": "24px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "22px"
+          },
+          {
+            "name": "Data Management",
+            "fontSize": "22px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "sd-memory-error",
+      "title": "SD full Wii Menu slot flow (simulated inventory)",
+      "mode": "16:9",
+      "width": 854,
+      "height": 480,
+      "image": "current/sd-memory-error-854x480.png",
+      "reference": "manual-484",
+      "referenceRole": "browser-adaptation",
+      "geometry": {
+        "width": 854,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Back",
+            "width": 100,
+            "height": 40.390625,
+            "fontSize": "22px"
+          },
+          {
+            "name": "Data Management",
+            "width": 237.28125,
+            "height": 40.390625,
+            "fontSize": "22px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Wii System Memory is full",
+            "fontSize": "24px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "22px"
+          },
+          {
+            "name": "Data Management",
+            "fontSize": "22px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "sd-memory-error",
+      "title": "SD full Wii Menu slot flow (simulated inventory)",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "current/sd-memory-error-960x720.png",
+      "reference": "manual-484",
+      "referenceRole": "browser-adaptation",
+      "geometry": {
+        "width": 960,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Back",
+            "width": 150,
+            "height": 60.59375,
+            "fontSize": "33px"
+          },
+          {
+            "name": "Data Management",
+            "width": 355.90625,
+            "height": 60.59375,
+            "fontSize": "33px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Wii System Memory is full",
+            "fontSize": "36px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "33px"
+          },
+          {
+            "name": "Data Management",
+            "fontSize": "33px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "sd-memory-error",
+      "title": "SD full Wii Menu slot flow (simulated inventory)",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "current/sd-memory-error-1280x720.png",
+      "reference": "manual-484",
+      "referenceRole": "browser-adaptation",
+      "geometry": {
+        "width": 1280,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Back",
+            "width": 150,
+            "height": 60.59375,
+            "fontSize": "33px"
+          },
+          {
+            "name": "Data Management",
+            "width": 355.90625,
+            "height": 60.59375,
+            "fontSize": "33px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Wii System Memory is full",
+            "fontSize": "36px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "33px"
+          },
+          {
+            "name": "Data Management",
+            "fontSize": "33px"
+          }
+        ],
+        "failures": []
+      }
+    }
+  ],
+  "manualExchange": {
+    "signalingState": "stable",
+    "connectionState": "new",
+    "candidateCount": 0,
+    "limitation": "Default STUN configuration produced no ICE candidates in this run. Manual SDP exchange was accepted. Connectivity with configured TURN is verified separately in automatic-pairing-validation.json."
+  }
+}

@@ -9,11 +9,9 @@
  *   Companion: acceptOffer(encoded) → getEncodedAnswer() → [display code]
  */
 
-const RTC_CONFIG = {
-  iceServers: [{ urls: 'stun:stun.l.google.com:19302' }],
-};
+import { loadRTCConfiguration } from "./rtcConfig";
 
-const CHANNEL_LABEL = 'wii-control';
+const CHANNEL_LABEL = "wii-control";
 
 /**
  * Encode SDP + candidates into a URL-safe base64 string.
@@ -25,9 +23,9 @@ export function encodeSDP(description) {
   });
   // Use base64 and make it URL-safe
   return btoa(unescape(encodeURIComponent(json)))
-    .replace(/\+/g, '-')
-    .replace(/\//g, '_')
-    .replace(/=+$/, '');
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_")
+    .replace(/=+$/, "");
 }
 
 /**
@@ -35,8 +33,8 @@ export function encodeSDP(description) {
  */
 export function decodeSDP(encoded) {
   // Strip any whitespace from copy-paste, then restore standard base64
-  let b64 = encoded.replace(/\s/g, '').replace(/-/g, '+').replace(/_/g, '/');
-  while (b64.length % 4) b64 += '=';
+  let b64 = encoded.replace(/\s/g, "").replace(/-/g, "+").replace(/_/g, "/");
+  while (b64.length % 4) b64 += "=";
   const json = decodeURIComponent(escape(atob(b64)));
   const { type, sdp } = JSON.parse(json);
   return new RTCSessionDescription({ type, sdp });
@@ -54,14 +52,14 @@ export function decodeSDP(encoded) {
  */
 export function createConnection(opts = {}) {
   const {
-    role = 'host',
+    role = "host",
     onStateChange,
     onMessage,
     onChannelOpen,
     onChannelClose,
   } = opts;
 
-  const pc = new RTCPeerConnection(RTC_CONFIG);
+  const pc = new RTCPeerConnection({ iceServers: [] });
   let dataChannel = null;
   let gatheringPromiseResolve = null;
 
@@ -69,6 +67,32 @@ export function createConnection(opts = {}) {
   const gatheringComplete = new Promise((resolve) => {
     gatheringPromiseResolve = resolve;
   });
+  async function configure() {
+    pc.setConfiguration(opts.rtcConfig || (await loadRTCConfiguration()));
+  }
+  async function finishGathering() {
+    let timer;
+    try {
+      await Promise.race([
+        gatheringComplete,
+        new Promise((_, reject) => {
+          timer = setTimeout(
+            () =>
+              reject(
+                new Error(
+                  "Your browser could not finish the connection setup. Try a different network.",
+                ),
+              ),
+            12000,
+          );
+        }),
+      ]);
+      if (pc.signalingState === "closed")
+        throw new Error("Connection was closed.");
+    } finally {
+      clearTimeout(timer);
+    }
+  }
 
   pc.oniceconnectionstatechange = () => {
     onStateChange?.(pc.iceConnectionState);
@@ -79,7 +103,7 @@ export function createConnection(opts = {}) {
   };
 
   pc.onicegatheringstatechange = () => {
-    if (pc.iceGatheringState === 'complete') {
+    if (pc.iceGatheringState === "complete") {
       gatheringPromiseResolve?.();
     }
   };
@@ -111,6 +135,7 @@ export function createConnection(opts = {}) {
      * Returns the encoded offer string.
      */
     async createOffer() {
+      await configure();
       // Host creates the data channel
       dataChannel = pc.createDataChannel(CHANNEL_LABEL, { ordered: true });
       setupChannel(dataChannel);
@@ -119,7 +144,7 @@ export function createConnection(opts = {}) {
       await pc.setLocalDescription(offer);
 
       // Wait for ICE candidates to be gathered
-      await gatheringComplete;
+      await finishGathering();
 
       return encodeSDP(pc.localDescription);
     },
@@ -137,6 +162,7 @@ export function createConnection(opts = {}) {
      * Returns the encoded answer string.
      */
     async acceptOffer(encodedOffer) {
+      await configure();
       const offer = decodeSDP(encodedOffer);
       await pc.setRemoteDescription(offer);
 
@@ -144,7 +170,7 @@ export function createConnection(opts = {}) {
       await pc.setLocalDescription(answer);
 
       // Wait for ICE candidates to be gathered
-      await gatheringComplete;
+      await finishGathering();
 
       return encodeSDP(pc.localDescription);
     },
@@ -153,8 +179,10 @@ export function createConnection(opts = {}) {
      * Send a message over the data channel.
      */
     send(data) {
-      if (dataChannel?.readyState === 'open') {
-        dataChannel.send(typeof data === 'string' ? data : JSON.stringify(data));
+      if (dataChannel?.readyState === "open") {
+        dataChannel.send(
+          typeof data === "string" ? data : JSON.stringify(data),
+        );
       }
     },
 
@@ -162,7 +190,7 @@ export function createConnection(opts = {}) {
      * Get the current data channel state.
      */
     getChannelState() {
-      return dataChannel?.readyState ?? 'closed';
+      return dataChannel?.readyState ?? "closed";
     },
 
     /**
@@ -171,6 +199,7 @@ export function createConnection(opts = {}) {
     close() {
       dataChannel?.close();
       pc.close();
+      gatheringPromiseResolve?.();
     },
   };
 }

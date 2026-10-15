@@ -97,3 +97,8 @@ Their manifest updates screen ownership automatically. New Settings destinations
 use browser adapters; the firmware label describes the retail 4.3 layout
 profile, not an emulated console firmware. Original glyphs/textures, regional
 translations and physical hardware still have explicit limits.
+
+The second pass adds a centered Settings content area, separate aspect anchors,
+full-skin versus cyan-outline bounds, and fitted text tracking. The active screen
+index now selects the latest comparison manifest. Independent measurements and
+rendered checks are linked in [the refinement report](system-menu-refinement.md).

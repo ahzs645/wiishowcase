@@ -59,6 +59,16 @@ try {
     await page.goto(`${base}?screen=settings&channelPreview=1`);
     await b("Wii Settings").click();
     await b("Sound").click();
+    const choiceBefore = await page
+      .locator(".native-choice-list")
+      .boundingBox();
+    await b("Confirm").click();
+    await page.getByText("Settings saved.", { exact: true }).waitFor();
+    const choiceAfter = await page.locator(".native-choice-list").boundingBox();
+    check(
+      `${width}: saving choices does not move the selector`,
+      Math.abs(choiceBefore.y - choiceAfter.y) < 1,
+    );
     const sound = (await state()).settings.sound;
     await b(sound === "Mono" ? "Stereo" : "Mono").click();
     await back();
@@ -71,6 +81,18 @@ try {
     await back();
     await b("Calendar").click();
     await b("Date").click();
+    const dateBefore = await page
+      .locator(".native-number-selector")
+      .boundingBox();
+    await b("Confirm").click();
+    await page.getByText("Settings saved.", { exact: true }).waitFor();
+    const dateAfter = await page
+      .locator(".native-number-selector")
+      .boundingBox();
+    check(
+      `${width}: saving date does not move its digit columns`,
+      Math.abs(dateBefore.y - dateAfter.y) < 1,
+    );
     await page.getByLabel("Year", { exact: true }).fill("2028");
     await page.getByLabel("Month", { exact: true }).fill("2");
     await page.getByLabel("Day", { exact: true }).fill("29");

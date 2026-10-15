@@ -13,12 +13,46 @@
   --system-action-height: 62;
   --system-action-size: 26;
   --system-field-width: 450;
-  --system-digit-size: 58;
+  --system-digit-size: 64;
   --system-digit-gap: 12;
   --system-paper-width: 526;
   --system-paper-height: 384;
   --system-book-width: 474;
   --system-book-height: 368;
+  --system-settings-content-width: 640;
+  --system-settings-header: 68;
+  --system-settings-footer: 92;
+  --system-settings-title-left: 25;
+  --system-settings-title-width: 430;
+  --system-settings-leaf-title-left: 94;
+  --system-settings-version-right: 33;
+  --system-settings-action-inset: 35;
+  --system-settings-action-top: 6;
+  --system-settings-arrow-right: 33;
+  --system-settings-page-right: 34;
+  --system-settings-list-top: 15;
+  --system-settings-list-width: 420;
+  --system-settings-list-height: 64;
+  --system-settings-list-gap: 11;
+  --system-settings-index-action-width: 275;
+  --system-settings-label-spacing: -0.35;
+  --system-settings-title-spacing: 0;
+}
+.wii-169 {
+  --system-settings-title-left: 32;
+  --system-settings-title-width: 420;
+  --system-settings-version-right: 46;
+  --system-settings-action-inset: 42;
+  --system-settings-action-top: 8;
+  --system-settings-arrow-right: 41;
+  --system-settings-page-right: 42;
+  --system-settings-header: 66;
+  --system-settings-list-top: 16;
+  --system-settings-list-width: 412;
+  --system-settings-list-gap: 12;
+  --system-settings-index-action-width: 268;
+  --system-settings-label-spacing: -0.6;
+  --system-settings-title-spacing: -0.4;
 }
 @font-face { font-family: "Wii System"; src: url("/fonts/system/mplus-1p-400-latin.woff") format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
 @font-face { font-family: "Wii System"; src: url("/fonts/system/mplus-1p-500-latin.woff") format("woff"); font-weight: 500; font-style: normal; font-display: swap; }

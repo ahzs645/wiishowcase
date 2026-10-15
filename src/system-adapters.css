@@ -1455,3 +1455,207 @@ wii-keyboard .wii-keyboard--system.is-phone-layout .wii-keyboard-key--space {
   grid-column: 1/-1;
   font-size: calc(13 * var(--system-scale)) !important;
 }
+
+/* Refined from independent 4:3 / 16:9 Settings captures. The wide shell keeps
+   a centered 640-unit content area; channel-menu geometry is separate. */
+.native-settings-page {
+  --settings-side-inset: max(
+    0px,
+    calc(
+      (100% - var(--system-settings-content-width) * var(--system-scale)) / 2
+    )
+  );
+}
+.native-settings-page .system-settings-shell header {
+  position: relative;
+  height: calc(var(--system-settings-header) * var(--system-scale));
+  padding: 0;
+  border-bottom-width: calc(2 * var(--system-scale));
+}
+.native-settings-page .system-settings-shell h1 {
+  position: absolute;
+  bottom: 0;
+  left: calc(
+    var(--settings-side-inset) + var(--system-settings-leaf-title-left) *
+      var(--system-scale)
+  );
+  width: calc(var(--system-settings-title-width) * var(--system-scale));
+  min-width: 0;
+  max-width: none;
+  height: calc(36 * var(--system-scale));
+  line-height: calc(36 * var(--system-scale));
+  padding: 0 calc(9 * var(--system-scale));
+  border-radius: calc(9 * var(--system-scale)) calc(20 * var(--system-scale)) 0
+    0;
+  box-shadow: inset 0 calc(-2 * var(--system-scale)) #c7c9cc;
+  white-space: nowrap;
+  z-index: 1;
+}
+.native-settings-page.system-settings-index .system-settings-shell h1 {
+  left: calc(
+    var(--settings-side-inset) + var(--system-settings-title-left) *
+      var(--system-scale)
+  );
+  min-width: 0;
+}
+.native-settings-page .system-version {
+  position: absolute;
+  right: calc(
+    var(--settings-side-inset) + var(--system-settings-version-right) *
+      var(--system-scale)
+  );
+  bottom: 0;
+  font-size: calc(22 * var(--system-scale));
+  padding-bottom: calc(3 * var(--system-scale));
+}
+.native-settings-page .system-wii-logo {
+  display: none;
+}
+.native-settings-tabs {
+  position: absolute;
+  left: calc(var(--settings-side-inset) + 23 * var(--system-scale));
+  bottom: 0;
+  display: flex;
+  gap: calc(3 * var(--system-scale));
+}
+.native-settings-tabs i {
+  display: block;
+  width: calc(28 * var(--system-scale));
+  height: calc(21 * var(--system-scale));
+  border: calc(1 * var(--system-scale)) solid #888;
+  background: linear-gradient(#797478, #49484c);
+  border-radius: calc(3 * var(--system-scale)) calc(3 * var(--system-scale)) 0 0;
+}
+.native-settings-tabs i:nth-child(2) {
+  background: linear-gradient(#9e9b9f, #68666c);
+}
+.native-settings-tabs i:nth-child(3) {
+  background: linear-gradient(#bbb7bd, #807d85);
+}
+.native-settings-page .system-settings-shell footer {
+  height: calc(var(--system-settings-footer) * var(--system-scale));
+  align-items: flex-start;
+  padding: calc(var(--system-settings-action-top) * var(--system-scale))
+    calc(
+      var(--settings-side-inset) + var(--system-settings-action-inset) *
+        var(--system-scale)
+    )
+    0;
+  background: linear-gradient(#020303, #222728);
+  border-top: calc(2 * var(--system-scale)) solid #eee;
+}
+.native-settings-page .system-settings-shell footer > .system-button {
+  width: calc(270 * var(--system-scale));
+  max-width: 48%;
+  height: calc(62 * var(--system-scale));
+  border: 0;
+  box-shadow: none;
+  background: url("/art/system/settings-action.svg") center / 100% 100%
+    no-repeat;
+}
+.native-settings-page.system-settings-index
+  .system-settings-shell
+  .wii-settings-back {
+  width: calc(270 * var(--system-scale));
+}
+.native-settings-page.system-settings-index .system-settings-shell main {
+  padding-top: calc(var(--system-settings-list-top) * var(--system-scale));
+}
+.native-settings-page .system-settings-list .system-button,
+.native-settings-page .native-choice-list > .system-button,
+.native-settings-page
+  .native-choice-list
+  > .system-button[aria-pressed="true"] {
+  background: url("/art/system/settings-choice.svg") center / 100% 100%
+    no-repeat;
+  border: 0;
+  box-shadow: none;
+  letter-spacing: calc(-0.35 * var(--system-scale));
+}
+.native-settings-page .system-settings-pages {
+  right: calc(
+    var(--settings-side-inset) + var(--system-settings-page-right) *
+      var(--system-scale)
+  );
+  bottom: calc(-42 * var(--system-scale));
+}
+.native-settings-page .native-settings-arrow {
+  top: calc(138 * var(--system-scale));
+  width: calc(46 * var(--system-scale));
+  height: calc(48 * var(--system-scale));
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  text-shadow: none;
+}
+.native-settings-page .native-settings-arrow.is-next {
+  right: calc(
+    var(--settings-side-inset) + var(--system-settings-arrow-right) *
+      var(--system-scale)
+  );
+}
+.native-settings-page .native-settings-arrow.is-prev {
+  left: calc(
+    var(--settings-side-inset) + var(--system-settings-arrow-right) *
+      var(--system-scale)
+  );
+}
+.native-settings-page .native-settings-arrow svg {
+  width: 100%;
+  height: 100%;
+  fill: #91eaff;
+  stroke: #2f94c5;
+  stroke-width: 2;
+  filter: drop-shadow(0 1px 1px #baddea);
+}
+.native-settings-page .native-settings-arrow.is-prev svg {
+  transform: scaleX(-1);
+}
+.native-settings-page .system-status {
+  position: absolute;
+  left: 5%;
+  bottom: calc(7 * var(--system-scale));
+  width: 90%;
+  margin: 0;
+}
+.native-settings-page .native-number-column input {
+  font-weight: 500;
+  width: calc(92 * var(--system-scale));
+}
+.native-settings-page .native-number-column input[aria-label="Year"] {
+  width: calc(174 * var(--system-scale));
+}
+.native-settings-page .native-number-separator {
+  font-size: calc(var(--system-digit-size) * var(--system-scale));
+  font-weight: 500;
+}
+/* The vector skin includes its outer white rim; its DOM box is wider than the
+   cyan outline measured in the original capture. Keep these bounds distinct. */
+.native-settings-page .system-settings-list {
+  width: calc(var(--system-settings-list-width) * var(--system-scale));
+  gap: calc(var(--system-settings-list-gap) * var(--system-scale));
+}
+.native-settings-page .system-settings-list .system-button {
+  height: calc(var(--system-settings-list-height) * var(--system-scale));
+  min-height: calc(var(--system-settings-list-height) * var(--system-scale));
+}
+.native-settings-page.system-settings-index
+  .system-settings-shell
+  .wii-settings-back {
+  width: calc(var(--system-settings-index-action-width) * var(--system-scale));
+}
+.native-settings-page .system-settings-shell h1 {
+  letter-spacing: calc(
+    var(--system-settings-title-spacing) * var(--system-scale)
+  );
+}
+.native-settings-page .system-settings-list .system-button {
+  letter-spacing: calc(
+    var(--system-settings-label-spacing) * var(--system-scale)
+  );
+}
+.native-settings-page .system-settings-list .system-button:hover:not(:disabled),
+.native-settings-page .native-choice-list > .system-button:hover:not(:disabled),
+.native-settings-page .system-settings-shell footer > .system-button:hover:not(:disabled) {
+  filter: brightness(1.035) drop-shadow(0 0 calc(2 * var(--system-scale)) #2ebce6aa);
+}

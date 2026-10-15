@@ -38,50 +38,64 @@ export default function useMultiWebRTC(onMessage) {
    * Start hosting a new controller slot.
    * Returns { offer, controllerId } or null if all slots are full.
    */
-  const startHosting = useCallback(async () => {
-    if (availableIdsRef.current.length === 0) return null;
-    const id = availableIdsRef.current.shift();
+  const startHosting = useCallback(
+    async (onReserved) => {
+      if (availableIdsRef.current.length === 0) return null;
+      const id = availableIdsRef.current.shift();
 
-    const conn = createConnection({
-      role: "host",
-      onStateChange: (s) => {
-        if (s === "connected" && connectionsRef.current[id] === conn) {
+      const conn = createConnection({
+        role: "host",
+        onStateChange: (s) => {
+          if (s === "connected" && connectionsRef.current[id] === conn) {
+            setControllers((prev) => ({
+              ...prev,
+              [id]: { ...prev[id], state: "connected" },
+            }));
+          }
+          if (s === "failed" || s === "disconnected") {
+            if (connectionsRef.current[id] === conn) releaseId(id);
+          }
+        },
+        onMessage: (msg) => {
+          if (connectionsRef.current[id] === conn)
+            onMessageRef.current(id, msg);
+        },
+        onChannelOpen: () => {
+          if (connectionsRef.current[id] !== conn) return;
+          // Send controller assignment to companion
+          conn.send({ type: "welcome", controllerId: id });
           setControllers((prev) => ({
             ...prev,
             [id]: { ...prev[id], state: "connected" },
           }));
-        }
-        if (s === "failed" || s === "disconnected") {
+        },
+        onChannelClose: () => {
           if (connectionsRef.current[id] === conn) releaseId(id);
-        }
-      },
-      onMessage: (msg) => {
-        if (connectionsRef.current[id] === conn) onMessageRef.current(id, msg);
-      },
-      onChannelOpen: () => {
-        if (connectionsRef.current[id] !== conn) return;
-        // Send controller assignment to companion
-        conn.send({ type: "welcome", controllerId: id });
+        },
+      });
+
+      connectionsRef.current[id] = conn;
+      setControllers((prev) => ({ ...prev, [id]: { state: "creating" } }));
+      onReserved?.(id);
+      try {
+        const offer = await conn.createOffer();
+        if (connectionsRef.current[id] !== conn) return null;
         setControllers((prev) => ({
           ...prev,
-          [id]: { ...prev[id], state: "connected" },
+          [id]: { state: "waiting", offer },
         }));
-      },
-      onChannelClose: () => {
-        if (connectionsRef.current[id] === conn) releaseId(id);
-      },
-    });
-
-    connectionsRef.current[id] = conn;
-
-    const offer = await conn.createOffer();
-    setControllers((prev) => ({
-      ...prev,
-      [id]: { state: "waiting", offer },
-    }));
-
-    return { offer, controllerId: id };
-  }, [releaseId]);
+        return { offer, controllerId: id };
+      } catch (error) {
+        if (connectionsRef.current[id] !== conn) return null;
+        setControllers((prev) => ({
+          ...prev,
+          [id]: { state: "failed", error: error.message },
+        }));
+        return { controllerId: id };
+      }
+    },
+    [releaseId],
+  );
 
   /**
    * Accept a companion's answer for a specific controller slot.
@@ -89,7 +103,19 @@ export default function useMultiWebRTC(onMessage) {
   const acceptAnswer = useCallback(async (controllerId, encodedAnswer) => {
     const conn = connectionsRef.current[controllerId];
     if (!conn) return;
-    await conn.acceptAnswer(encodedAnswer);
+    try {
+      await conn.acceptAnswer(encodedAnswer);
+    } catch {
+      setControllers((prev) => ({
+        ...prev,
+        [controllerId]: {
+          ...prev[controllerId],
+          state: "failed",
+          error:
+            "That answer code could not be accepted. Please retry pairing.",
+        },
+      }));
+    }
   }, []);
 
   /**

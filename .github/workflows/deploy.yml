@@ -40,6 +40,9 @@ jobs:
         run: npm run fetch:wii-css
 
       - run: npm run build
+        env:
+          VITE_SIGNALING_RELAY_URL: ${{ vars.WII_SIGNALING_RELAY_URL }}
+          VITE_RTC_CONFIG_URL: ${{ vars.WII_RTC_CONFIG_URL }}
 
       - uses: actions/upload-pages-artifact@v3
         with:

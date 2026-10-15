@@ -1,0 +1,9 @@
+{
+  "transport": "Deterministic browser mock; real React input/control flow",
+  "checks": [
+    "Turning rumble on after off sends a pulse through the controller transport",
+    "Reconnect resets the pool and a stale close callback cannot release the new peer",
+    "Paired A+B picks a channel and A places it without opening its banner",
+    "Closing a pending pairing tears down the unused connection"
+  ]
+}

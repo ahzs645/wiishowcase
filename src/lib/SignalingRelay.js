@@ -1,109 +1,105 @@
-/**
- * Signaling relay that works cross-device via HTTP polling,
- * with BroadcastChannel as a fast same-browser optimization.
- */
-
-/**
- * Generate a short random session ID.
- */
+/** HTTP answer exchange, with BroadcastChannel as a same-browser fast path. */
 export function generateSessionId() {
-  return Math.random().toString(36).substring(2, 10);
+  return Array.from(crypto.getRandomValues(new Uint8Array(16)), (n) =>
+    n.toString(16).padStart(2, "0"),
+  ).join("");
 }
-
-/**
- * Companion: POST the answer to the signaling server.
- */
-let relayUnavailable = false;
+const unavailableSessions = new Set();
 const signalURL = (sessionId) =>
-  `${import.meta.env?.VITE_SIGNALING_RELAY_URL || "/api/signal"}/${encodeURIComponent(sessionId)}`;
+  `${(import.meta.env?.VITE_SIGNALING_RELAY_URL || "/api/signal").replace(/\/+$/, "")}/${encodeURIComponent(sessionId)}`;
 export async function postAnswer(sessionId, answer) {
-  // Try BroadcastChannel first (same-browser fast path)
   try {
-    const bc = new BroadcastChannel("wii-webrtc-signaling");
-    bc.postMessage({ type: "answer", answer, sessionId });
-    setTimeout(() => bc.close(), 5000);
-  } catch {
-    // BroadcastChannel not supported
-  }
-
-  // Also POST to HTTP relay (cross-device path)
-  if (relayUnavailable) return false;
+    const channel = new BroadcastChannel("wii-webrtc-signaling");
+    channel.postMessage({ type: "answer", answer, sessionId });
+    setTimeout(() => channel.close(), 1000);
+  } catch {}
+  const url = signalURL(sessionId);
+  if (unavailableSessions.has(url)) return false;
   try {
-    const response = await fetch(signalURL(sessionId), {
+    const response = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ answer }),
+      signal: AbortSignal.timeout(5000),
     });
-    if (!response.ok) {
-      relayUnavailable = true;
+    if (
+      [404, 405].includes(response.status) ||
+      (response.ok &&
+        !response.headers.get("content-type")?.includes("application/json"))
+    )
+      unavailableSessions.add(url);
+    if (
+      !response.ok ||
+      !response.headers.get("content-type")?.includes("application/json")
+    )
       return false;
-    }
-    return true;
-  } catch (e) {
-    relayUnavailable = true;
-    return false;
-  }
-}
-
-/**
- * Host: Poll for the companion's answer.
- * Returns a cleanup function.
- */
-export function pollForAnswer(sessionId, onAnswer, onAvailability) {
-  let stopped = false;
-
-  // Fast path: BroadcastChannel (same-browser)
-  let bc;
-  try {
-    bc = new BroadcastChannel("wii-webrtc-signaling");
-    bc.onmessage = (event) => {
-      if (event.data?.type === "answer" && event.data.answer) {
-        if (!event.data.sessionId || event.data.sessionId === sessionId) {
-          onAnswer(event.data.answer);
-          stop();
-        }
-      }
-    };
+    return (await response.json()).ok === true;
   } catch {
-    // BroadcastChannel not supported
-  }
-
-  // Slow path: HTTP polling (cross-device)
-  async function poll() {
-    while (!stopped) {
-      try {
-        const res = await fetch(signalURL(sessionId));
-        if (stopped) return;
-        if (
-          !res.ok ||
-          !res.headers.get("content-type")?.includes("application/json")
-        ) {
-          onAvailability?.(false);
-          break; // Keep BroadcastChannel/manual exchange; stop hammering a missing endpoint.
-        }
-        const data = await res.json();
-        if (stopped) return;
-        onAvailability?.(true);
-        if (data.answer) {
-          onAnswer(data.answer);
-          stop();
-          return;
-        }
-      } catch {
+    return false;
+  } // The companion's next retry may recover a transient failure.
+}
+export function pollForAnswer(sessionId, onAnswer, onAvailability) {
+  let stopped = false,
+    timer,
+    channel,
+    controller;
+  const deliver = (answer) => {
+    if (stopped) return;
+    stop();
+    onAnswer(answer);
+  };
+  try {
+    channel = new BroadcastChannel("wii-webrtc-signaling");
+    channel.onmessage = ({ data }) => {
+      if (
+        data?.type === "answer" &&
+        data.sessionId === sessionId &&
+        typeof data.answer === "string" &&
+        data.answer
+      )
+        deliver(data.answer);
+    };
+  } catch {}
+  const deadline = Date.now() + 300000;
+  async function poll(attempt = 0) {
+    if (stopped || Date.now() >= deadline) return;
+    controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 5000);
+    try {
+      const response = await fetch(signalURL(sessionId), {
+        cache: "no-store",
+        signal: controller.signal,
+      });
+      if (stopped) return;
+      if (
+        [404, 405].includes(response.status) ||
+        (response.ok &&
+          !response.headers.get("content-type")?.includes("application/json"))
+      ) {
         onAvailability?.(false);
-        break;
+        return;
       }
-      await new Promise((r) => setTimeout(r, 1000));
+      if (!response.ok) throw new Error("Relay unavailable");
+      const { answer } = await response.json();
+      if (stopped) return;
+      onAvailability?.(true);
+      if (typeof answer === "string" && answer) return deliver(answer);
+      timer = setTimeout(() => poll(0), 1000);
+    } catch {
+      if (stopped) return;
+      onAvailability?.(false);
+      if (attempt < 2)
+        timer = setTimeout(() => poll(attempt + 1), 1000 * (attempt + 1));
+    } finally {
+      clearTimeout(timeout);
     }
   }
-  poll();
-
+  void poll();
   function stop() {
     stopped = true;
-    try {
-      bc?.close();
-    } catch {}
+    clearTimeout(timer);
+    controller?.abort();
+    channel?.close();
   }
-
   return stop;
 }

@@ -1,0 +1,7 @@
+{
+  "name": "wiishowcase-controller-relay",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": { "start": "node relay.mjs" }
+}

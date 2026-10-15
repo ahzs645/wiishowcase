@@ -16,6 +16,7 @@ export default function PairingScreen({
   visible,
   offer,
   state, // 'creating' | 'waiting' | 'connected' | 'failed'
+  error,
   connectedCount,
   availableSlots,
   onAcceptAnswer,
@@ -183,7 +184,7 @@ export default function PairingScreen({
 
         {state === "failed" && (
           <div className="pairing-status pairing-failed">
-            <p>Connection failed. Please try again.</p>
+            <p>{error || "Connection failed. Please try again."}</p>
             <button className="pairing-submit" onClick={handlePairAnother}>
               Retry
             </button>

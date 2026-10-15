@@ -1,0 +1,89 @@
+{
+  "method": "Neutral bright connected components in predefined original source regions, fitted with preserved aspect. These measure bright pane/fill bounds, not the complete dark border or DOM hit area. Crop, annotation and edge thresholds introduce uncertainty of roughly 2\u20134 logical pixels. Sources are independent of implementation values.",
+  "measurements": [
+    {
+      "source": "copetti-settings",
+      "mode": "4:3",
+      "originalSize": [
+        640,
+        476
+      ],
+      "frame": [
+        640,
+        480
+      ],
+      "anchors": {
+        "title": {
+          "sourceXYWH": [
+            25,
+            28,
+            423,
+            34
+          ],
+          "containFitXYWH": [
+            25.0,
+            30.0,
+            423.0,
+            34.0
+          ]
+        },
+        "back": {
+          "sourceXYWH": [
+            35,
+            394,
+            275,
+            62
+          ],
+          "containFitXYWH": [
+            35.0,
+            396.0,
+            275.0,
+            62.0
+          ]
+        }
+      }
+    },
+    {
+      "source": "settings-wii-guide",
+      "mode": "16:9",
+      "originalSize": [
+        1920,
+        1080
+      ],
+      "frame": [
+        854,
+        480
+      ],
+      "anchors": {
+        "title": {
+          "sourceXYWH": [
+            314,
+            64,
+            941,
+            76
+          ],
+          "containFitXYWH": [
+            139.8888888888889,
+            28.444444444444443,
+            418.2222222222222,
+            33.77777777777778
+          ]
+        },
+        "back": {
+          "sourceXYWH": [
+            335,
+            893,
+            603,
+            141
+          ],
+          "containFitXYWH": [
+            149.22222222222226,
+            396.88888888888886,
+            268.0,
+            62.666666666666664
+          ]
+        }
+      }
+    }
+  ]
+}

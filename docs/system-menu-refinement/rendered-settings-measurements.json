@@ -1,0 +1,701 @@
+{
+  "method": "Actual DOM and platform fonts after independent source measurement. DOM bounds and source bright-fill bounds differ; do not interpret deltas as a native pixel-accuracy score.",
+  "captures": [
+    {
+      "id": "settings-one",
+      "width": 640,
+      "height": 480,
+      "metrics": {
+        ".system-settings-shell h1": {
+          "rect": {
+            "x": 25,
+            "y": 30,
+            "width": 430,
+            "height": 36,
+            "top": 30,
+            "right": 455,
+            "bottom": 66,
+            "left": 25
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "25px",
+          "fontWeight": "400"
+        },
+        ".system-version": {
+          "rect": {
+            "x": 512.453125,
+            "y": 30,
+            "width": 94.546875,
+            "height": 36,
+            "top": 30,
+            "right": 607,
+            "bottom": 66,
+            "left": 512.453125
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "22px",
+          "fontWeight": "400"
+        },
+        ".system-settings-list .system-button": {
+          "rect": {
+            "x": 110,
+            "y": 83,
+            "width": 420,
+            "height": 64,
+            "top": 83,
+            "right": 530,
+            "bottom": 147,
+            "left": 110
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "26px",
+          "fontWeight": "500"
+        },
+        ".wii-settings-back": {
+          "rect": {
+            "x": 35,
+            "y": 396,
+            "width": 273.59375,
+            "height": 62,
+            "top": 396,
+            "right": 308.59375,
+            "bottom": 458,
+            "left": 35
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "27px",
+          "fontWeight": "400"
+        },
+        ".native-settings-arrow": {
+          "rect": {
+            "x": 561,
+            "y": 206,
+            "width": 46,
+            "height": 48,
+            "top": 206,
+            "right": 607,
+            "bottom": 254,
+            "left": 561
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "28px",
+          "fontWeight": "400"
+        },
+        ".system-settings-pages": {
+          "rect": {
+            "x": 470,
+            "y": 396,
+            "width": 136,
+            "height": 34,
+            "top": 396,
+            "right": 606,
+            "bottom": 430,
+            "left": 470
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "20px",
+          "fontWeight": "400"
+        },
+        ".native-number-column input": null
+      },
+      "fonts": {
+        "fonts": [
+          {
+            "familyName": "Wii System 500",
+            "postScriptName": "WiiSystem-500",
+            "isCustomFont": true,
+            "glyphCount": 16
+          }
+        ]
+      }
+    },
+    {
+      "id": "date",
+      "width": 640,
+      "height": 480,
+      "metrics": {
+        ".system-settings-shell h1": {
+          "rect": {
+            "x": 94,
+            "y": 30,
+            "width": 430,
+            "height": 36,
+            "top": 30,
+            "right": 524,
+            "bottom": 66,
+            "left": 94
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "25px",
+          "fontWeight": "400"
+        },
+        ".system-version": null,
+        ".system-settings-list .system-button": null,
+        ".wii-settings-back": {
+          "rect": {
+            "x": 35,
+            "y": 396,
+            "width": 270,
+            "height": 62,
+            "top": 396,
+            "right": 305,
+            "bottom": 458,
+            "left": 35
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "26px",
+          "fontWeight": "400"
+        },
+        ".native-settings-arrow": null,
+        ".system-settings-pages": null,
+        ".native-number-column input": {
+          "rect": {
+            "x": 83.140625,
+            "y": 186.40625,
+            "width": 92,
+            "height": 83.1875,
+            "top": 186.40625,
+            "right": 175.140625,
+            "bottom": 269.59375,
+            "left": 83.140625
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "64px",
+          "fontWeight": "500"
+        }
+      },
+      "fonts": {
+        "fonts": [
+          {
+            "familyName": "Wii System 500",
+            "postScriptName": "WiiSystem-500",
+            "isCustomFont": true,
+            "glyphCount": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "settings-one",
+      "width": 854,
+      "height": 480,
+      "metrics": {
+        ".system-settings-shell h1": {
+          "rect": {
+            "x": 139,
+            "y": 28,
+            "width": 420,
+            "height": 36,
+            "top": 28,
+            "right": 559,
+            "bottom": 64,
+            "left": 139
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "25px",
+          "fontWeight": "400"
+        },
+        ".system-version": {
+          "rect": {
+            "x": 606.453125,
+            "y": 28,
+            "width": 94.546875,
+            "height": 36,
+            "top": 28,
+            "right": 701,
+            "bottom": 64,
+            "left": 606.453125
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "22px",
+          "fontWeight": "400"
+        },
+        ".system-settings-list .system-button": {
+          "rect": {
+            "x": 221,
+            "y": 82,
+            "width": 412,
+            "height": 64,
+            "top": 82,
+            "right": 633,
+            "bottom": 146,
+            "left": 221
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "26px",
+          "fontWeight": "500"
+        },
+        ".wii-settings-back": {
+          "rect": {
+            "x": 149,
+            "y": 398,
+            "width": 266.875,
+            "height": 62,
+            "top": 398,
+            "right": 415.875,
+            "bottom": 460,
+            "left": 149
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "27px",
+          "fontWeight": "400"
+        },
+        ".native-settings-arrow": {
+          "rect": {
+            "x": 660,
+            "y": 204,
+            "width": 46,
+            "height": 48,
+            "top": 204,
+            "right": 706,
+            "bottom": 252,
+            "left": 660
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "28px",
+          "fontWeight": "400"
+        },
+        ".system-settings-pages": {
+          "rect": {
+            "x": 569,
+            "y": 396,
+            "width": 136,
+            "height": 34,
+            "top": 396,
+            "right": 705,
+            "bottom": 430,
+            "left": 569
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "20px",
+          "fontWeight": "400"
+        },
+        ".native-number-column input": null
+      },
+      "fonts": {
+        "fonts": [
+          {
+            "familyName": "Wii System 500",
+            "postScriptName": "WiiSystem-500",
+            "isCustomFont": true,
+            "glyphCount": 16
+          }
+        ]
+      }
+    },
+    {
+      "id": "date",
+      "width": 854,
+      "height": 480,
+      "metrics": {
+        ".system-settings-shell h1": {
+          "rect": {
+            "x": 201,
+            "y": 28,
+            "width": 420,
+            "height": 36,
+            "top": 28,
+            "right": 621,
+            "bottom": 64,
+            "left": 201
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "25px",
+          "fontWeight": "400"
+        },
+        ".system-version": null,
+        ".system-settings-list .system-button": null,
+        ".wii-settings-back": {
+          "rect": {
+            "x": 149,
+            "y": 398,
+            "width": 266.875,
+            "height": 62,
+            "top": 398,
+            "right": 415.875,
+            "bottom": 460,
+            "left": 149
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "26px",
+          "fontWeight": "400"
+        },
+        ".native-settings-arrow": null,
+        ".system-settings-pages": null,
+        ".native-number-column input": {
+          "rect": {
+            "x": 190.140625,
+            "y": 185.40625,
+            "width": 92,
+            "height": 83.1875,
+            "top": 185.40625,
+            "right": 282.140625,
+            "bottom": 268.59375,
+            "left": 190.140625
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "64px",
+          "fontWeight": "500"
+        }
+      },
+      "fonts": {
+        "fonts": [
+          {
+            "familyName": "Wii System 500",
+            "postScriptName": "WiiSystem-500",
+            "isCustomFont": true,
+            "glyphCount": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "settings-one",
+      "width": 960,
+      "height": 720,
+      "metrics": {
+        ".system-settings-shell h1": {
+          "rect": {
+            "x": 37.5,
+            "y": 45,
+            "width": 645,
+            "height": 54,
+            "top": 45,
+            "right": 682.5,
+            "bottom": 99,
+            "left": 37.5
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "37.5px",
+          "fontWeight": "400"
+        },
+        ".system-version": {
+          "rect": {
+            "x": 768.6875,
+            "y": 45,
+            "width": 141.8125,
+            "height": 54,
+            "top": 45,
+            "right": 910.5,
+            "bottom": 99,
+            "left": 768.6875
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "33px",
+          "fontWeight": "400"
+        },
+        ".system-settings-list .system-button": {
+          "rect": {
+            "x": 165,
+            "y": 124.5,
+            "width": 630,
+            "height": 96,
+            "top": 124.5,
+            "right": 795,
+            "bottom": 220.5,
+            "left": 165
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "39px",
+          "fontWeight": "500"
+        },
+        ".wii-settings-back": {
+          "rect": {
+            "x": 52.5,
+            "y": 594,
+            "width": 410.390625,
+            "height": 93,
+            "top": 594,
+            "right": 462.890625,
+            "bottom": 687,
+            "left": 52.5
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "40.5px",
+          "fontWeight": "400"
+        },
+        ".native-settings-arrow": {
+          "rect": {
+            "x": 841.5,
+            "y": 309,
+            "width": 69,
+            "height": 72,
+            "top": 309,
+            "right": 910.5,
+            "bottom": 381,
+            "left": 841.5
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "42px",
+          "fontWeight": "400"
+        },
+        ".system-settings-pages": {
+          "rect": {
+            "x": 705,
+            "y": 594,
+            "width": 204,
+            "height": 51,
+            "top": 594,
+            "right": 909,
+            "bottom": 645,
+            "left": 705
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "30px",
+          "fontWeight": "400"
+        },
+        ".native-number-column input": null
+      },
+      "fonts": {
+        "fonts": [
+          {
+            "familyName": "Wii System 500",
+            "postScriptName": "WiiSystem-500",
+            "isCustomFont": true,
+            "glyphCount": 16
+          }
+        ]
+      }
+    },
+    {
+      "id": "date",
+      "width": 960,
+      "height": 720,
+      "metrics": {
+        ".system-settings-shell h1": {
+          "rect": {
+            "x": 141,
+            "y": 45,
+            "width": 645,
+            "height": 54,
+            "top": 45,
+            "right": 786,
+            "bottom": 99,
+            "left": 141
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "37.5px",
+          "fontWeight": "400"
+        },
+        ".system-version": null,
+        ".system-settings-list .system-button": null,
+        ".wii-settings-back": {
+          "rect": {
+            "x": 52.5,
+            "y": 594,
+            "width": 405,
+            "height": 93,
+            "top": 594,
+            "right": 457.5,
+            "bottom": 687,
+            "left": 52.5
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "39px",
+          "fontWeight": "400"
+        },
+        ".native-settings-arrow": null,
+        ".system-settings-pages": null,
+        ".native-number-column input": {
+          "rect": {
+            "x": 124.703125,
+            "y": 279.59375,
+            "width": 138,
+            "height": 124.796875,
+            "top": 279.59375,
+            "right": 262.703125,
+            "bottom": 404.390625,
+            "left": 124.703125
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "96px",
+          "fontWeight": "500"
+        }
+      },
+      "fonts": {
+        "fonts": [
+          {
+            "familyName": "Wii System 500",
+            "postScriptName": "WiiSystem-500",
+            "isCustomFont": true,
+            "glyphCount": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "settings-one",
+      "width": 1280,
+      "height": 720,
+      "metrics": {
+        ".system-settings-shell h1": {
+          "rect": {
+            "x": 208,
+            "y": 42,
+            "width": 630,
+            "height": 54,
+            "top": 42,
+            "right": 838,
+            "bottom": 96,
+            "left": 208
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "37.5px",
+          "fontWeight": "400"
+        },
+        ".system-version": {
+          "rect": {
+            "x": 909.1875,
+            "y": 42,
+            "width": 141.8125,
+            "height": 54,
+            "top": 42,
+            "right": 1051,
+            "bottom": 96,
+            "left": 909.1875
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "33px",
+          "fontWeight": "400"
+        },
+        ".system-settings-list .system-button": {
+          "rect": {
+            "x": 331,
+            "y": 123,
+            "width": 618,
+            "height": 96,
+            "top": 123,
+            "right": 949,
+            "bottom": 219,
+            "left": 331
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "39px",
+          "fontWeight": "500"
+        },
+        ".wii-settings-back": {
+          "rect": {
+            "x": 223,
+            "y": 597,
+            "width": 400.3125,
+            "height": 93,
+            "top": 597,
+            "right": 623.3125,
+            "bottom": 690,
+            "left": 223
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "40.5px",
+          "fontWeight": "400"
+        },
+        ".native-settings-arrow": {
+          "rect": {
+            "x": 989.5,
+            "y": 306,
+            "width": 69,
+            "height": 72,
+            "top": 306,
+            "right": 1058.5,
+            "bottom": 378,
+            "left": 989.5
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "42px",
+          "fontWeight": "400"
+        },
+        ".system-settings-pages": {
+          "rect": {
+            "x": 853,
+            "y": 594,
+            "width": 204,
+            "height": 51,
+            "top": 594,
+            "right": 1057,
+            "bottom": 645,
+            "left": 853
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "30px",
+          "fontWeight": "400"
+        },
+        ".native-number-column input": null
+      },
+      "fonts": {
+        "fonts": [
+          {
+            "familyName": "Wii System 500",
+            "postScriptName": "WiiSystem-500",
+            "isCustomFont": true,
+            "glyphCount": 16
+          }
+        ]
+      }
+    },
+    {
+      "id": "date",
+      "width": 1280,
+      "height": 720,
+      "metrics": {
+        ".system-settings-shell h1": {
+          "rect": {
+            "x": 301,
+            "y": 42,
+            "width": 630,
+            "height": 54,
+            "top": 42,
+            "right": 931,
+            "bottom": 96,
+            "left": 301
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "37.5px",
+          "fontWeight": "400"
+        },
+        ".system-version": null,
+        ".system-settings-list .system-button": null,
+        ".wii-settings-back": {
+          "rect": {
+            "x": 223,
+            "y": 597,
+            "width": 400.3125,
+            "height": 93,
+            "top": 597,
+            "right": 623.3125,
+            "bottom": 690,
+            "left": 223
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "39px",
+          "fontWeight": "400"
+        },
+        ".native-settings-arrow": null,
+        ".system-settings-pages": null,
+        ".native-number-column input": {
+          "rect": {
+            "x": 284.703125,
+            "y": 278.09375,
+            "width": 138,
+            "height": 124.796875,
+            "top": 278.09375,
+            "right": 422.703125,
+            "bottom": 402.890625,
+            "left": 284.703125
+          },
+          "fontFamily": "\"Wii System\", sans-serif",
+          "fontSize": "96px",
+          "fontWeight": "500"
+        }
+      },
+      "fonts": {
+        "fonts": [
+          {
+            "familyName": "Wii System 500",
+            "postScriptName": "WiiSystem-500",
+            "isCustomFont": true,
+            "glyphCount": 1
+          }
+        ]
+      }
+    }
+  ]
+}

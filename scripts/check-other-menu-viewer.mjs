@@ -25,7 +25,7 @@ try {
     if (r.status() >= 400)
       report.missing.push({ url: r.url(), status: r.status() });
   });
-  await page.goto("http://localhost:4957/other-menus/");
+  await page.goto("http://localhost:4957/other-menus/?historical=1");
   const ids = await page
     .locator("#interface option")
     .evaluateAll((options) => options.map((o) => o.value));

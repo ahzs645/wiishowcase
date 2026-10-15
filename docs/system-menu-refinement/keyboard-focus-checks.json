@@ -1,0 +1,15 @@
+{
+  "checks": [
+    "640x480: QWERTY Tab / Shift+Tab wrap only through visible controls",
+    "640x480: Phone Tab / Shift+Tab wrap only through visible controls",
+    "854x480: QWERTY Tab / Shift+Tab wrap only through visible controls",
+    "854x480: Phone Tab / Shift+Tab wrap only through visible controls",
+    "960x720: QWERTY Tab / Shift+Tab wrap only through visible controls",
+    "960x720: Phone Tab / Shift+Tab wrap only through visible controls",
+    "1280x720: QWERTY Tab / Shift+Tab wrap only through visible controls",
+    "1280x720: Phone Tab / Shift+Tab wrap only through visible controls"
+  ],
+  "errors": [],
+  "reusedFromRevision": "cb8b37bf252a863820128787e9fa4ad1b8463ec8",
+  "reuseReason": "The HOME and keyboard layouts are unchanged in this pass; fresh core captures cover their rendered states."
+}

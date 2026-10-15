@@ -14,6 +14,7 @@ for (const name of [
   "layout-reference",
   "other-menus",
   "system-menu-fixes",
+  "system-menu-refinement",
   "interface-audit.md",
   "interface-improvements.md",
   "interface-sizing.md",
@@ -23,6 +24,7 @@ for (const name of [
   "layout-reference.md",
   "other-menus.md",
   "system-menu-fixes.md",
+  "system-menu-refinement.md",
 ]) {
   const source = path.join(root, "docs", name);
   try {

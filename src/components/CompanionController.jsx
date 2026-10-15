@@ -59,7 +59,7 @@ export default function CompanionController({ encodedOffer, sessionId }) {
     }
   }, []);
 
-  const { state, answer, acceptOffer, send, disconnect } = useWebRTC(
+  const { state, answer, error, acceptOffer, send, disconnect } = useWebRTC(
     "companion",
     handleHostMessage,
   );
@@ -281,7 +281,7 @@ export default function CompanionController({ encodedOffer, sessionId }) {
 
           {state === "failed" && (
             <div className="companion-status">
-              <p>Connection failed.</p>
+              <p>{error || "Connection failed."}</p>
               <p className="companion-hint">
                 Close this page and scan the QR code again.
               </p>

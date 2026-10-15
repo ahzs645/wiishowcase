@@ -95,7 +95,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=options",
+      "viewer": "../system-menu-refinement/?interface=options",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -137,7 +137,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=data-root",
+      "viewer": "../system-menu-refinement/?interface=data-root",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -179,7 +179,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=save-chooser",
+      "viewer": "../system-menu-refinement/?interface=save-chooser",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -221,7 +221,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=save-grid",
+      "viewer": "../system-menu-refinement/?interface=save-grid",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -263,7 +263,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=channels-data",
+      "viewer": "../system-menu-refinement/?interface=channels-data",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -272,7 +272,7 @@
       "validation": {
         "date": "2026-10-14",
         "change": "Storage/card silhouettes, selected GameCube Slot A, native channel thumbnails, Disc excluded, unknown console capacity labeled.",
-        "remaining": "Only a related native view/state is available; detailed native geometry remains unverified."
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
@@ -306,7 +306,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=sd-menu",
+      "viewer": "../system-menu-refinement/?interface=sd-menu",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -348,7 +348,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=sd-start",
+      "viewer": "../system-menu-refinement/?interface=sd-start",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -391,7 +391,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=settings-one",
+      "viewer": "../system-menu-refinement/?interface=settings-one",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -399,7 +399,7 @@
       },
       "validation": {
         "date": "2026-10-14",
-        "change": "Frame-scaled font, fitted list widths, firmware profile label, side arrows and footer actions.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -433,7 +433,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=nickname",
+      "viewer": "../system-menu-refinement/?interface=nickname",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -441,7 +441,7 @@
       },
       "validation": {
         "date": "2026-10-14",
-        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -475,7 +475,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=date",
+      "viewer": "../system-menu-refinement/?interface=date",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -483,7 +483,7 @@
       },
       "validation": {
         "date": "2026-10-14",
-        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -517,7 +517,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=time",
+      "viewer": "../system-menu-refinement/?interface=time",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -525,7 +525,7 @@
       },
       "validation": {
         "date": "2026-10-14",
-        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -559,7 +559,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=widescreen",
+      "viewer": "../system-menu-refinement/?interface=widescreen",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -567,7 +567,7 @@
       },
       "validation": {
         "date": "2026-10-14",
-        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -601,7 +601,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=sound",
+      "viewer": "../system-menu-refinement/?interface=sound",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -609,7 +609,7 @@
       },
       "validation": {
         "date": "2026-10-14",
-        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -643,7 +643,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=settings-two",
+      "viewer": "../system-menu-refinement/?interface=settings-two",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -651,7 +651,7 @@
       },
       "validation": {
         "date": "2026-10-14",
-        "change": "Frame-scaled font, fitted list widths, firmware profile label, side arrows and footer actions.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -685,7 +685,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=settings-three",
+      "viewer": "../system-menu-refinement/?interface=settings-three",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -693,7 +693,7 @@
       },
       "validation": {
         "date": "2026-10-14",
-        "change": "Frame-scaled font, fitted list widths, firmware profile label, side arrows and footer actions.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -727,7 +727,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=home-menu",
+      "viewer": "../system-menu-refinement/?interface=home-menu",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -769,7 +769,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=remote-settings",
+      "viewer": "../system-menu-refinement/?interface=remote-settings",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -811,7 +811,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=message-board",
+      "viewer": "../system-menu-refinement/?interface=message-board",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -853,7 +853,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=create-message",
+      "viewer": "../system-menu-refinement/?interface=create-message",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -895,7 +895,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=memo-composer",
+      "viewer": "../system-menu-refinement/?interface=memo-composer",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -937,7 +937,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=system-keyboard",
+      "viewer": "../system-menu-refinement/?interface=system-keyboard",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -979,7 +979,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=system-symbols",
+      "viewer": "../system-menu-refinement/?interface=system-symbols",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -988,7 +988,7 @@
       "validation": {
         "date": "2026-10-14",
         "change": "Bundled system font, larger phone matrix, case/number rail, scroll/suggestion controls. Shop profile retained.",
-        "remaining": "Only a related native view/state is available; detailed native geometry remains unverified."
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
@@ -1021,7 +1021,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=system-phone",
+      "viewer": "../system-menu-refinement/?interface=system-phone",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -1063,7 +1063,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=message-open-memo",
+      "viewer": "../system-menu-refinement/?interface=message-open-memo",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -1105,7 +1105,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=calendar",
+      "viewer": "../system-menu-refinement/?interface=calendar",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -1147,7 +1147,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=address-book",
+      "viewer": "../system-menu-refinement/?interface=address-book",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -1189,7 +1189,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=letter-composer",
+      "viewer": "../system-menu-refinement/?interface=letter-composer",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -1198,7 +1198,7 @@
       "validation": {
         "date": "2026-10-14",
         "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
-        "remaining": "Only a related native view/state is available; detailed native geometry remains unverified."
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
@@ -1231,7 +1231,7 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=letter-open",
+      "viewer": "../system-menu-refinement/?interface=letter-open",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -1273,7 +1273,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=gamecube-data",
+      "viewer": "../system-menu-refinement/?interface=gamecube-data",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -1315,7 +1315,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=save-selected",
+      "viewer": "../system-menu-refinement/?interface=save-selected",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -1357,7 +1357,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=save-copy-confirm",
+      "viewer": "../system-menu-refinement/?interface=save-copy-confirm",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -1399,7 +1399,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=channel-selected",
+      "viewer": "../system-menu-refinement/?interface=channel-selected",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -1407,7 +1407,7 @@
       },
       "validation": {
         "date": "2026-10-14",
-        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -1439,7 +1439,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=calendar-settings",
+      "viewer": "../system-menu-refinement/?interface=calendar-settings",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -1447,7 +1447,7 @@
       },
       "validation": {
         "date": "2026-10-14",
-        "change": "Shared Settings font/shell and navigation to the new Date and Time selectors.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -1479,7 +1479,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=screen-settings",
+      "viewer": "../system-menu-refinement/?interface=screen-settings",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -1487,7 +1487,7 @@
       },
       "validation": {
         "date": "2026-10-14",
-        "change": "Shared Settings font/shell and navigation to screen-specific controls.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -1519,7 +1519,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=sensor-bar",
+      "viewer": "../system-menu-refinement/?interface=sensor-bar",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -1527,7 +1527,7 @@
       },
       "validation": {
         "date": "2026-10-14",
-        "change": "Shared Settings font/shell with separate position and sensitivity destinations.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -1561,7 +1561,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=screen-position",
+      "viewer": "../system-menu-refinement/?interface=screen-position",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -1569,7 +1569,7 @@
       },
       "validation": {
         "date": "2026-10-14",
-        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -1603,7 +1603,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=tv-resolution",
+      "viewer": "../system-menu-refinement/?interface=tv-resolution",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -1611,7 +1611,7 @@
       },
       "validation": {
         "date": "2026-10-14",
-        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -1645,7 +1645,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=burn-in",
+      "viewer": "../system-menu-refinement/?interface=burn-in",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -1653,7 +1653,7 @@
       },
       "validation": {
         "date": "2026-10-14",
-        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -1687,7 +1687,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=sensor-position",
+      "viewer": "../system-menu-refinement/?interface=sensor-position",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -1695,7 +1695,7 @@
       },
       "validation": {
         "date": "2026-10-14",
-        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -1729,7 +1729,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=sensitivity",
+      "viewer": "../system-menu-refinement/?interface=sensitivity",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -1737,7 +1737,7 @@
       },
       "validation": {
         "date": "2026-10-14",
-        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -1771,7 +1771,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=parental-controls",
+      "viewer": "../system-menu-refinement/?interface=parental-controls",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -1779,8 +1779,8 @@
       },
       "validation": {
         "date": "2026-10-14",
-        "change": "PIN setup/gate with Secret Question and Game Rating destinations; online preferences remain protected.",
-        "remaining": "Only a related native view/state is available; detailed native geometry remains unverified."
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
@@ -1813,7 +1813,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=internet",
+      "viewer": "../system-menu-refinement/?interface=internet",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -1821,7 +1821,7 @@
       },
       "validation": {
         "date": "2026-10-14",
-        "change": "Connection Settings, Console Information and User Agreements hierarchy behind the existing PIN gate.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -1855,7 +1855,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=wiiconnect24",
+      "viewer": "../system-menu-refinement/?interface=wiiconnect24",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -1863,7 +1863,7 @@
       },
       "validation": {
         "date": "2026-10-14",
-        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -1897,7 +1897,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=language",
+      "viewer": "../system-menu-refinement/?interface=language",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -1905,7 +1905,7 @@
       },
       "validation": {
         "date": "2026-10-14",
-        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -1939,7 +1939,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=country",
+      "viewer": "../system-menu-refinement/?interface=country",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -1947,7 +1947,7 @@
       },
       "validation": {
         "date": "2026-10-14",
-        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -1981,7 +1981,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=format-memory",
+      "viewer": "../system-menu-refinement/?interface=format-memory",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -2023,7 +2023,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=format-confirm",
+      "viewer": "../system-menu-refinement/?interface=format-confirm",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -2031,8 +2031,8 @@
       },
       "validation": {
         "date": "2026-10-14",
-        "change": "Shared isolated confirmation dialog; cancellation preserves records and confirmation resets local browser state.",
-        "remaining": "Only a related native view/state is available; detailed native geometry remains unverified."
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
@@ -2065,7 +2065,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=update-current",
+      "viewer": "../system-menu-refinement/?interface=update-current",
       "audit": {
         "date": "2026-10-14",
         "priority": "P1",
@@ -2074,7 +2074,7 @@
       "validation": {
         "date": "2026-10-14",
         "change": "Fitted type/button sizes, dialog focus entry/trap/return, background isolation and local Escape.",
-        "remaining": "Only a related native view/state is available; detailed native geometry remains unverified."
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
@@ -2105,7 +2105,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=operations-guide",
+      "viewer": "../system-menu-refinement/?interface=operations-guide",
       "audit": {
         "date": "2026-10-14",
         "priority": "P1",
@@ -2147,7 +2147,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=reconnect",
+      "viewer": "../system-menu-refinement/?interface=reconnect",
       "audit": {
         "date": "2026-10-14",
         "priority": "P1",
@@ -2155,8 +2155,8 @@
       },
       "validation": {
         "date": "2026-10-14",
-        "change": "Fitted, decodable QR/manual exchange layout and explicit relay fallback. Manual SDP exchange tested in isolated browser contexts; data channel unverified.",
-        "remaining": "Only a related native view/state is available; detailed native geometry remains unverified."
+        "change": "Standalone signaling service, Vite preview support, secure session IDs, bounded setup and recoverable errors. Automatic HTTP pairing, Player 2 and real HOME input passed through local TURN/TCP.",
+        "remaining": "Production automatic exchange awaits an HTTPS backend host. Physical phone motion and arbitrary Internet/NAT coverage remain unverified."
       }
     },
     {
@@ -2189,7 +2189,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=address-register",
+      "viewer": "../system-menu-refinement/?interface=address-register",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -2198,7 +2198,7 @@
       "validation": {
         "date": "2026-10-14",
         "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
-        "remaining": "Only a related native view/state is available; detailed native geometry remains unverified."
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
@@ -2231,7 +2231,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=friend-details",
+      "viewer": "../system-menu-refinement/?interface=friend-details",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -2240,7 +2240,7 @@
       "validation": {
         "date": "2026-10-14",
         "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
-        "remaining": "Only a related native view/state is available; detailed native geometry remains unverified."
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
@@ -2273,7 +2273,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=friend-erase",
+      "viewer": "../system-menu-refinement/?interface=friend-erase",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -2282,7 +2282,7 @@
       "validation": {
         "date": "2026-10-14",
         "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
-        "remaining": "Only a related native view/state is available; detailed native geometry remains unverified."
+        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
     {
@@ -2315,7 +2315,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=keyboard-predictions",
+      "viewer": "../system-menu-refinement/?interface=keyboard-predictions",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
@@ -2357,10 +2357,10 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=standby-downloads",
+      "viewer": "../system-menu-refinement/?interface=standby-downloads",
       "validation": {
         "date": "2026-10-14",
-        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -2394,10 +2394,10 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=slot-illumination",
+      "viewer": "../system-menu-refinement/?interface=slot-illumination",
       "validation": {
         "date": "2026-10-14",
-        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -2431,10 +2431,10 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=parental-rating",
+      "viewer": "../system-menu-refinement/?interface=parental-rating",
       "validation": {
         "date": "2026-10-14",
-        "change": "Rating preference selector with Back/Confirm. Age-based channel enforcement awaits rating metadata.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -2468,10 +2468,10 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=connection-profiles",
+      "viewer": "../system-menu-refinement/?interface=connection-profiles",
       "validation": {
         "date": "2026-10-14",
-        "change": "Three saved connection preferences plus browser online-data/test controls.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -2503,10 +2503,10 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=user-agreements",
+      "viewer": "../system-menu-refinement/?interface=user-agreements",
       "validation": {
         "date": "2026-10-14",
-        "change": "Reachable browser storage/network explanation. Retired Nintendo service enrollment is unavailable.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -2540,7 +2540,7 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=sd-memory-error",
+      "viewer": "../system-menu-refinement/?interface=sd-memory-error",
       "validation": {
         "date": "2026-10-14",
         "change": "Curved footer, page count/navigation, selected-title panel and full-menu management flow.",
@@ -2575,10 +2575,10 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=connect24-menu",
+      "viewer": "../system-menu-refinement/?interface=connect24-menu",
       "validation": {
         "date": "2026-10-14",
-        "change": "WiiConnect24, Standby Connection and Slot Illumination destinations.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -2610,10 +2610,10 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=secret-question",
+      "viewer": "../system-menu-refinement/?interface=secret-question",
       "validation": {
         "date": "2026-10-14",
-        "change": "Dedicated selector layout, draft values and Confirm/Back semantics; browser native date/time controls removed.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -2647,10 +2647,10 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=connection-type",
+      "viewer": "../system-menu-refinement/?interface=connection-type",
       "validation": {
         "date": "2026-10-14",
-        "change": "Wired/wireless preference selection; the browser continues to use its existing network.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     },
@@ -2682,10 +2682,10 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-fixes/?interface=console-information",
+      "viewer": "../system-menu-refinement/?interface=console-information",
       "validation": {
         "date": "2026-10-14",
-        "change": "Grouped local Wii Number and browser connection status.",
+        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
       }
     }

@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "Closing while generating closes its reserved peer",
+    "Late offer cannot reopen or leak the closed session",
+    "Offer-generation failure reaches a retryable state",
+    "Repeated failures release pending controller slots",
+    "Invalid manual answer has a visible recovery path",
+    "Recovery reuses Player 2 rather than leaking its slot",
+    "Closing an established pairing keeps the controller connected"
+  ],
+  "errors": []
+}

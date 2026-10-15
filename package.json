@@ -47,7 +47,12 @@
     "capture:other-menus:core": "node scripts/capture-other-menu-core.mjs",
     "test:system-menu-fixes": "node scripts/test-system-menu-fixes.mjs && node scripts/test-system-pairing.mjs && node scripts/test-system-keyboard-focus.mjs",
     "build:system-menu-fixes": "node scripts/build-system-menu-fixes.mjs && python scripts/render-system-menu-fixes.py",
-    "test:system-menu-fixes-viewer": "node scripts/check-system-menu-fixes-viewer.mjs"
+    "test:system-menu-fixes-viewer": "node scripts/check-system-menu-fixes-viewer.mjs",
+    "relay:serve": "node server/relay.mjs",
+    "test:relay": "node scripts/test-signaling-relay.mjs && node scripts/test-pairing-lifecycle.mjs",
+    "test:automatic-pairing": "node scripts/test-automatic-controller-pairing.mjs",
+    "build:system-menu-refinement": "SYSTEM_COMPARISON_OUTPUT=docs/system-menu-refinement SYSTEM_COMPARISON_BASELINE=system-menu-fixes node scripts/build-system-menu-fixes.mjs && SYSTEM_COMPARISON_OUTPUT=docs/system-menu-refinement SYSTEM_COMPARISON_BASELINE=system-menu-fixes python scripts/render-system-menu-fixes.py",
+    "test:system-menu-refinement-viewer": "SYSTEM_COMPARISON_OUTPUT=docs/system-menu-refinement COMPARISON_URL=http://localhost:4957/system-menu-refinement/ node scripts/check-system-menu-fixes-viewer.mjs"
   },
   "dependencies": {
     "@firstform/wii-channel-renderer": "file:wewad/packages/wii-channel-renderer",
@@ -60,6 +65,7 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^6.0.2",
     "concurrently": "^9.2.1",
+    "jsqr": "^1.4.0",
     "playwright": "^1.57.0",
     "sass": "^1.97.3",
     "vite": "^8.0.16"

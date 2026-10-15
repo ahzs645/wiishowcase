@@ -1,0 +1,26 @@
+{
+  "checks": [
+    "Rendered 480-line QR with real network candidates decodes",
+    "Automatic HTTP exchange connects isolated host and companion",
+    "Both peers fetched temporary TURN credentials from the actual cross-origin service",
+    "Automatic path used GET and POST",
+    "Host answer field was never filled",
+    "Both native peer connections are connected",
+    "Companion receives Player 2 assignment",
+    "Actual companion HOME input reaches host over data channel",
+    "Disconnect removes the paired controller"
+  ],
+  "errors": [],
+  "http": {
+    "hostPolls": 3,
+    "companionPosts": 1,
+    "configRequests": 3,
+    "hostConfigRequests": 1,
+    "companionConfigRequests": 2
+  },
+  "transport": "Native Chromium WebRTC via ephemeral localhost coturn/TCP; isolated browser contexts; BroadcastChannel disabled.",
+  "connections": {
+    "host": "connected",
+    "companion": "connected"
+  }
+}

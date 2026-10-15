@@ -259,7 +259,9 @@ export default function SettingsPanel({
             aria-label="Previous Settings page"
             onClick={() => setPage(page - 1)}
           >
-            ◀
+            <svg viewBox="0 0 46 48" aria-hidden="true">
+              <path d="m12 5 23 19-23 19 5-19z" />
+            </svg>
           </button>
         )}
         {page < 2 && (
@@ -268,7 +270,9 @@ export default function SettingsPanel({
             aria-label="Next Settings page"
             onClick={() => setPage(page + 1)}
           >
-            ▶
+            <svg viewBox="0 0 46 48" aria-hidden="true">
+              <path d="m12 5 23 19-23 19 5-19z" />
+            </svg>
           </button>
         )}
         <div className="system-settings-pages">
@@ -739,7 +743,7 @@ export default function SettingsPanel({
   return (
     <div
       ref={ref}
-      className={`wii-settings-screen system-settings native-system-settings${dataGrid ? " system-data-screen" : ""}${screen === "Wii Settings" ? " system-settings-index" : ""}`}
+      className={`wii-settings-screen system-settings native-system-settings${path[0] === "Wii Settings" ? " native-settings-page" : ""}${dataGrid ? " system-data-screen" : ""}${screen === "Wii Settings" ? " system-settings-index" : ""}`}
       data-settings-path={screen || "Options"}
       onKeyDown={(e) => {
         if (e.key === "Escape") {
@@ -751,6 +755,13 @@ export default function SettingsPanel({
     >
       <section className="system-settings-shell">
         <header>
+          {path[0] === "Wii Settings" && screen !== "Wii Settings" && (
+            <span className="native-settings-tabs" aria-hidden="true">
+              <i />
+              <i />
+              <i />
+            </span>
+          )}
           <h1 className={!screen ? "system-visually-hidden" : undefined}>
             {title}
           </h1>

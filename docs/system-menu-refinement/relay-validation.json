@@ -1,0 +1,30 @@
+{
+  "checks": [
+    "Default RTC endpoint returns STUN without permanent credentials",
+    "RTC endpoint rejects unlisted origins",
+    "RTC endpoint is read-only",
+    "RTC endpoint supports cross-origin preflight",
+    "Standalone relay health check works",
+    "Empty session returns JSON without caching",
+    "Allowed frontend passes preflight",
+    "Unlisted origins are rejected",
+    "Malformed session rejected",
+    "Non-JSON post rejected",
+    "Invalid JSON rejected",
+    "Companion answer stored",
+    "Host receives exact answer",
+    "Duplicate retries are idempotent",
+    "Conflicting answer rejected",
+    "Session storage is bounded",
+    "Expired answers are removed",
+    "Expired session frees capacity",
+    "Oversized payload rejected",
+    "Session IDs use 128 random bits",
+    "Client POST accepts standalone JSON result",
+    "Isolated host automatically receives HTTP answer",
+    "Answer delivered once",
+    "Transient POST reports failure",
+    "Transient POST can recover",
+    "Closing pairing aborts the in-flight poll"
+  ]
+}
