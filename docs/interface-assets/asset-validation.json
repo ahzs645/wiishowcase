@@ -234,7 +234,7 @@
       "measurements": [
         {
           "label": "Hour",
-          "value": "10",
+          "value": "13",
           "font": "500 64px / 83.2px \"FOT-Rodin Pro\", sans-serif",
           "width": 92,
           "scrollWidth": 92,
@@ -242,7 +242,7 @@
         },
         {
           "label": "Minute",
-          "value": "43",
+          "value": "10",
           "font": "500 64px / 83.2px \"FOT-Rodin Pro\", sans-serif",
           "width": 92,
           "scrollWidth": 92,
@@ -288,7 +288,7 @@
       "measurements": [
         {
           "label": "Hour",
-          "value": "10",
+          "value": "13",
           "font": "500 64px / 83.2px \"FOT-Rodin Pro\", sans-serif",
           "width": 92,
           "scrollWidth": 92,
@@ -296,7 +296,7 @@
         },
         {
           "label": "Minute",
-          "value": "43",
+          "value": "10",
           "font": "500 64px / 83.2px \"FOT-Rodin Pro\", sans-serif",
           "width": 92,
           "scrollWidth": 92,
@@ -342,7 +342,7 @@
       "measurements": [
         {
           "label": "Hour",
-          "value": "10",
+          "value": "13",
           "font": "500 96px / 124.8px \"FOT-Rodin Pro\", sans-serif",
           "width": 138,
           "scrollWidth": 138,
@@ -350,7 +350,7 @@
         },
         {
           "label": "Minute",
-          "value": "43",
+          "value": "10",
           "font": "500 96px / 124.8px \"FOT-Rodin Pro\", sans-serif",
           "width": 138,
           "scrollWidth": 138,
@@ -396,7 +396,7 @@
       "measurements": [
         {
           "label": "Hour",
-          "value": "10",
+          "value": "13",
           "font": "500 96px / 124.8px \"FOT-Rodin Pro\", sans-serif",
           "width": 138,
           "scrollWidth": 138,
@@ -404,7 +404,7 @@
         },
         {
           "label": "Minute",
-          "value": "43",
+          "value": "10",
           "font": "500 96px / 124.8px \"FOT-Rodin Pro\", sans-serif",
           "width": 138,
           "scrollWidth": 138,

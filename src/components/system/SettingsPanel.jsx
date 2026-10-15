@@ -11,6 +11,7 @@ import { WiiButton, WiiTile, SystemDialog } from "./SystemUI";
 import { ChoiceList, DateSelector, TimeSelector } from "./SettingsControls";
 import SystemKeyboard from "./SystemKeyboard";
 import SystemArt from "./SystemArt";
+import { SecretQuestion, ConsoleInformation, UserAgreements, SECRET_QUESTIONS } from "./ReferenceSettings";
 
 const PAGES = [
   ["Console Nickname", "Calendar", "Screen", "Sound"],
@@ -91,6 +92,8 @@ export default function SettingsPanel({
   const [keyboard, setKeyboard] = useState(null),
     [confirm, setConfirm] = useState(false),
     [pin, setPin] = useState("");
+  const [secretStep, setSecretStep] = useState("question");
+  const [agreementStep, setAgreementStep] = useState("prompt");
   const [unlocked, setUnlocked] = useState(false),
     [notice, setNotice] = useState("");
   const [date, setDate] = useState("2026-01-01"),
@@ -102,6 +105,7 @@ export default function SettingsPanel({
   const dataGrid =
     path[0] === "Data Management" &&
     ["Wii", "Nintendo GameCube", "Channels"].includes(screen);
+  const referenceLeaf = ["Secret Question", "Console Information", "User Agreements"].includes(screen);
   const storageScreen = !screen || path[0] === "Data Management";
   const storageTitleArt = {
     "Save Data": "saves",
@@ -114,6 +118,8 @@ export default function SettingsPanel({
     setDraft({ ...settings });
     setNotice("");
     setConfirm(false);
+    setSecretStep("question");
+    setAgreementStep("prompt");
     const now = new Date(Date.now() + settings.timeOffset);
     setDate(
       `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`,
@@ -140,13 +146,15 @@ export default function SettingsPanel({
   }, [visible, initialPath]);
   const go = (label) => {
     setPath((old) => [...old, label]);
-    setUnlocked(false);
+    if (!(screen === "Parental Controls" && ["Secret Question", "Game Rating"].includes(label))) setUnlocked(false);
     setPin("");
   };
   const back = () => {
+    if (screen === "Secret Question" && secretStep === "answer") { setSecretStep("question"); return; }
+    if (screen === "User Agreements" && agreementStep !== "prompt") { setAgreementStep(agreementStep === "document" ? "notice" : "prompt"); return; }
     if (path.length) setPath(path.slice(0, -1));
     else onBack();
-    setUnlocked(false);
+    if (!["Secret Question", "Game Rating"].includes(screen)) setUnlocked(false);
     setNotice("");
   };
   const save = () => {
@@ -219,7 +227,7 @@ export default function SettingsPanel({
   let content,
     extraFooter = null;
   const needsConfirm =
-    Boolean(FIELDS[screen]) || ["Date", "Time"].includes(screen);
+    (Boolean(FIELDS[screen]) && screen !== "Secret Question") || ["Date", "Time"].includes(screen);
   if (path[0] === "Data Management")
     content = (
       <DataManagement
@@ -595,22 +603,33 @@ export default function SettingsPanel({
           </p>
         </div>
       );
-  else if (screen === "Secret Question")
+  else if (screen === "Secret Question") {
     content = (
-      <div className="native-secret">
-        <p>Choose a question and answer for your PIN.</p>
-        <WiiButton
-          onClick={() => edit("secretQuestion", "Secret question", 80)}
-        >
-          {draft.secretQuestion || "What is your favourite food?"}
-        </WiiButton>
-        <WiiButton
-          onClick={() => edit("secretAnswer", "Secret answer", 30, true)}
-        >
-          {draft.secretAnswer ? "••••••" : "Enter answer"}
-        </WiiButton>
-      </div>
+      <SecretQuestion
+        draft={draft}
+        answerStep={secretStep === "answer"}
+        change={change}
+        edit={edit}
+      />
     );
+    extraFooter = (
+      <WiiButton
+        variant="action"
+        disabled={secretStep === "answer" && !draft.secretAnswer?.trim()}
+        onClick={() => {
+          if (secretStep === "question") {
+            if (!draft.secretQuestion) change("secretQuestion", SECRET_QUESTIONS[0]);
+            setSecretStep("answer");
+          } else {
+            save();
+            setPath(path.slice(0, -1));
+          }
+        }}
+      >
+        OK
+      </WiiButton>
+    );
+  }
   else if (screen === "Game Rating")
     content = (
       <div className="native-rating">
@@ -690,28 +709,31 @@ export default function SettingsPanel({
         ))}
       </div>
     );
-  else if (screen === "Console Information")
-    content = (
-      <div className="native-information">
-        <p>Wii Number</p>
-        <strong>{system.wiiNumber.match(/.{1,4}/g).join(" ")}</strong>
-        <p>
-          {navigator.onLine
-            ? "This display is online."
-            : "This display is offline."}
-        </p>
-      </div>
-    );
-  else if (screen === "User Agreements")
-    content = (
-      <div className="native-information">
-        <p>This recreation stores settings and messages on this device.</p>
-        <p>
-          It does not connect to Nintendo's discontinued Wii services. Online
-          channel data uses your browser connection.
-        </p>
-      </div>
-    );
+  else if (screen === "Console Information") content = <ConsoleInformation />;
+  else if (screen === "User Agreements") {
+    content = <UserAgreements step={agreementStep} />;
+    if (agreementStep === "prompt") {
+      extraFooter = <>
+        <WiiButton variant="action" onClick={() => setAgreementStep("notice")}>Yes</WiiButton>
+        <WiiButton variant="action" onClick={() => {
+          setSetting("userAgreementAccepted", false);
+          back();
+        }}>No</WiiButton>
+      </>;
+    } else if (agreementStep === "notice") {
+      extraFooter = (
+        <WiiButton variant="action" onClick={() => setAgreementStep("document")}>Next</WiiButton>
+      );
+    } else {
+      extraFooter = [true, false].map(accepted => (
+        <WiiButton key={String(accepted)} variant="action" onClick={() => {
+          setSetting("userAgreementAccepted", accepted);
+          setNotice("Choice saved on this device.");
+          setAgreementStep("prompt");
+        }}>{accepted ? "I ACCEPT" : "I DO NOT ACCEPT"}</WiiButton>
+      ));
+    }
+  }
   else if (screen === "Format Wii System Memory") {
     content = (
       <div className="native-format-warning">
@@ -731,13 +753,15 @@ export default function SettingsPanel({
     ? "Wii Options"
     : screen === "Wii Settings"
       ? `Wii System Settings ${page + 1}`
+      : screen === "Secret Question"
+        ? "Parental Controls"
       : screen === "WiiConnect24 On/Off"
         ? "WiiConnect24"
         : screen;
   return (
     <div
       ref={ref}
-      className={`wii-settings-screen system-settings native-system-settings${path[0] === "Wii Settings" ? " native-settings-page" : ""}${storageScreen ? " native-storage-page" : ""}${dataGrid ? " system-data-screen" : ""}${screen === "Wii Settings" ? " system-settings-index" : ""}`}
+      className={`wii-settings-screen system-settings native-system-settings${path[0] === "Wii Settings" ? " native-settings-page" : ""}${storageScreen ? " native-storage-page" : ""}${referenceLeaf ? " native-reference-leaf" : ""}${screen === "User Agreements" ? ` native-agreement-page native-agreement-page--${agreementStep}` : ""}${dataGrid ? " system-data-screen" : ""}${screen === "Wii Settings" ? " system-settings-index" : ""}`}
       data-settings-path={screen || "Options"}
       onKeyDown={(e) => {
         if (e.key === "Escape") {
@@ -786,9 +810,11 @@ export default function SettingsPanel({
           </p>
         </main>
         <footer>
-          <WiiButton className="wii-settings-back" variant="action" onClick={back}>
-            Back
-          </WiiButton>
+          {(screen !== "User Agreements" || agreementStep === "notice") && (
+            <WiiButton className="wii-settings-back" variant="action" onClick={back}>
+              Back
+            </WiiButton>
+          )}
           {needsConfirm && <WiiButton variant="action" onClick={save}>Confirm</WiiButton>}
           {extraFooter}
         </footer>

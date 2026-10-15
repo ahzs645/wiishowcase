@@ -45,6 +45,19 @@ try{
  await p.setViewportSize({width:1440,height:1000});
  await p.locator('.card[data-id="wku-10"]').evaluate(e=>e.click());
  await p.screenshot({path:'/workspace/scratch/reference-expansion/gallery-console-information.png'});
+ for(const [id,phase] of [['parental-22','secret-question-answer'],['wiimart-27','user-agreements-notice'],['wiimart-28','user-agreements-document']]){
+  await p.locator(`.card[data-id="${id}"]`).evaluate(e=>e.click());assert.ok((await p.locator('#current').getAttribute('src')).includes(phase));assert.ok((await p.locator('#current-caption a').getAttribute('href')).includes('reference-followup/#'+phase));
+ }
+ const followup=JSON.parse(await fs.readFile('docs/interface-assets/reference-followup/review.json'));
+ assert.equal(followup.states.length,8);assert.equal(followup.captures,32);
+ for(const state of followup.states){
+  assert.equal(state.manuallyInspected,true);assert.equal(state.captures.length,4);
+  for(const item of [state.sheet,...state.captures,...state.captures.map(c=>c.before).filter(Boolean)]){
+   assert.equal(crypto.createHash('sha256').update(await fs.readFile('docs/interface-assets/reference-followup/'+item.image)).digest('hex'),item.sha256);
+  }
+ }
+ await p.goto('http://localhost:4957/interface-assets/reference-followup/');assert.equal(await p.locator('article').count(),8);
+ for(const width of [375,640,854,1280]){await p.setViewportSize({width,height:900});assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1))}
  assert.deepEqual(errors,[]);
 }finally{await browser.close()}
 console.log(`PASS: 50 original hashes/images; ${captures} capture/overlay combinations; ${unmapped} additional-flow references; filters and responsive widths.`);

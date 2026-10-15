@@ -139,16 +139,16 @@ try {
     await geometry("rating-confirmed");
     await back();
     await b("Secret Question").click();
-    await b("Enter answer").click();
+    await b("OK", page.locator(".system-settings-shell footer")).click();
+    await b("Secret answer").click();
     const kb = page.locator("wii-keyboard .is-open");
     await kb.locator(".wii-keyboard-input").fill("Pasta");
     await b("OK", kb).click();
-    await b("Confirm").click();
+    await b("OK", page.locator(".system-settings-shell footer")).click();
     check(
       `${width}: secret answer saves`,
       (await state()).settings.secretAnswer === "Pasta",
     );
-    await back();
     await back();
     await b("Internet").click();
     await b("Connection Settings").click();

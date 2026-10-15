@@ -4756,7 +4756,7 @@
           "height": 480,
           "mode": "4:3",
           "image": "../current/secret-question-640x480.png",
-          "sha256": "c52df67e328d2eabaee887fe66c372e7a98fd67b9a87be3251e97794359d513b",
+          "sha256": "aa76d67ce4f274fe5e01dee2f4615dfa75c1e1bfd7d1cb22d253a02f38a83849",
           "reference": null,
           "before": {
             "image": "../../system-menu-refinement/current/secret-question-640x480.png",
@@ -4768,7 +4768,7 @@
           "height": 480,
           "mode": "16:9",
           "image": "../current/secret-question-854x480.png",
-          "sha256": "2993fe8636515a81cb4ff9a2f8d90f6270775128560f491caf3dea1a28c8bb65",
+          "sha256": "bfc670589257190123339b2b93efeed6b47f39cda7b38285957e71975d12f01b",
           "reference": null,
           "before": {
             "image": "../../system-menu-refinement/current/secret-question-854x480.png",
@@ -4780,7 +4780,7 @@
           "height": 720,
           "mode": "4:3",
           "image": "../current/secret-question-960x720.png",
-          "sha256": "c7db5fa351df73b4f4cb7a824861f7983afafb5d3d017a498167da3a7ed18aaa",
+          "sha256": "39747b9d5ef80565c4e7ff2e1ca684f4fe0ff68662640a8855ff0cceff5a4db6",
           "reference": null,
           "before": {
             "image": "../../system-menu-refinement/current/secret-question-960x720.png",
@@ -4792,7 +4792,7 @@
           "height": 720,
           "mode": "16:9",
           "image": "../current/secret-question-1280x720.png",
-          "sha256": "e8f486c2c15a0a16044ad465dcfefc52ebcf563a6bda56592a22d1c3d2ad7a49",
+          "sha256": "298de29dae81afeb9d4db47be92636da2ac4a3d17b30698821e2d55a0756105a",
           "reference": null,
           "before": {
             "image": "../../system-menu-refinement/current/secret-question-1280x720.png",
@@ -5051,7 +5051,7 @@
           "height": 480,
           "mode": "4:3",
           "image": "../current/console-information-640x480.png",
-          "sha256": "f392ed05051fd1c1f2e7c805cf36b89677205c8561f2bcf0e32f03fd0710b2b5",
+          "sha256": "fa6dcd68c18f9d0ba0c9f44a00c48cd157ba54e1ab546148f849396db4abbd1c",
           "reference": null,
           "before": {
             "image": "../../system-menu-refinement/current/console-information-640x480.png",
@@ -5063,7 +5063,7 @@
           "height": 480,
           "mode": "16:9",
           "image": "../current/console-information-854x480.png",
-          "sha256": "ff0324da564fe1424194acf914f1d35bc6449b7049d9a16560477179f93dfac0",
+          "sha256": "c1acf1939c6c15856ba293891aff97584da47226b60065697a447e7719034c67",
           "reference": null,
           "before": {
             "image": "../../system-menu-refinement/current/console-information-854x480.png",
@@ -5075,7 +5075,7 @@
           "height": 720,
           "mode": "4:3",
           "image": "../current/console-information-960x720.png",
-          "sha256": "498364236ca84aa43827a94d54d401b6a754654f4e5e0e4a1f84e7276bdeef62",
+          "sha256": "a3d78dc4e3d64d8d2ab6b5cdbdf96275bbd634f393f05d0f63e83ddbfdce3aec",
           "reference": null,
           "before": {
             "image": "../../system-menu-refinement/current/console-information-960x720.png",
@@ -5087,7 +5087,7 @@
           "height": 720,
           "mode": "16:9",
           "image": "../current/console-information-1280x720.png",
-          "sha256": "38ea202dccb3577b0d5afa7605043b2231ee926e9650364a3d82c58a00a00bcb",
+          "sha256": "1ce13d8699d2edcd9c25e0cdaa7f36f45a760b582bad3d997a2e8f0722941ef1",
           "reference": null,
           "before": {
             "image": "../../system-menu-refinement/current/console-information-1280x720.png",
@@ -5120,7 +5120,7 @@
           "height": 480,
           "mode": "4:3",
           "image": "../current/user-agreements-640x480.png",
-          "sha256": "577bb49b2a2f7e8ed81f944fdd5518219561b269626d82f72abdba6aea5fbc02",
+          "sha256": "7ece92cad2613513aee23f2ee95e6689493b5460af6025b361c76878ff6ef956",
           "reference": null,
           "before": {
             "image": "../../system-menu-refinement/current/user-agreements-640x480.png",
@@ -5132,7 +5132,7 @@
           "height": 480,
           "mode": "16:9",
           "image": "../current/user-agreements-854x480.png",
-          "sha256": "f98b6b683cb1a45dd372e1e35954cec1ab12b797d8f09b4e1a7f629e1e03df92",
+          "sha256": "add5dd9e85b9b1d89d42d187376ca2ee606d70331d6a6da2452c0c4a84fbd443",
           "reference": null,
           "before": {
             "image": "../../system-menu-refinement/current/user-agreements-854x480.png",
@@ -5144,7 +5144,7 @@
           "height": 720,
           "mode": "4:3",
           "image": "../current/user-agreements-960x720.png",
-          "sha256": "cc98511e73e5276e7403430d6ac0505a681cad03d010377ff4af5c08e3cbe117",
+          "sha256": "7c23cb664a7afe6024f47d013b9a0b6f2bd8573d07f1274d8be09f7b469a733a",
           "reference": null,
           "before": {
             "image": "../../system-menu-refinement/current/user-agreements-960x720.png",
@@ -5156,7 +5156,7 @@
           "height": 720,
           "mode": "16:9",
           "image": "../current/user-agreements-1280x720.png",
-          "sha256": "63cc4b187b413ec88baf8f580c68c38cd2379979ffb501fd621f557098496efb",
+          "sha256": "28de876551a32132b39b78541f923016d2033b8c073f124c56ddc2779053251c",
           "reference": null,
           "before": {
             "image": "../../system-menu-refinement/current/user-agreements-1280x720.png",
@@ -5873,7 +5873,7 @@
           "height": 480,
           "mode": "4:3",
           "image": "../current/save-selected-640x480.png",
-          "sha256": "8870f8d40f235f9eef7a4cbe638aa78bb1cec8184b3bbf2c22d9b0a9a8585d18",
+          "sha256": "3c9dd79e0e5191baffe6a91a5c990215116d86f7249b16d076f9c3bf92270568",
           "reference": {
             "id": "manual-314",
             "image": "../../interface-audit/references/manual-314.png",
@@ -5896,7 +5896,7 @@
           "height": 480,
           "mode": "16:9",
           "image": "../current/save-selected-854x480.png",
-          "sha256": "466db5f379dc90bd6ca17f936c311300f823aa6b5ec768575f40281ab82bcf5a",
+          "sha256": "c6d8fe8c3f508e7c1a865f3b99635b3b603637aead6a90b2c2377f3c2d89b02f",
           "reference": {
             "id": "manual-314",
             "image": "../../interface-audit/references/manual-314.png",
@@ -5919,7 +5919,7 @@
           "height": 720,
           "mode": "4:3",
           "image": "../current/save-selected-960x720.png",
-          "sha256": "032ef37229214cd5ef191a0f9c7e05119bf28887de425f940213f097473126c5",
+          "sha256": "ec7ab3266800c2929cc0cd1c828649970aff9aaaa679bda920ac747bedead72c",
           "reference": {
             "id": "manual-314",
             "image": "../../interface-audit/references/manual-314.png",
@@ -5942,7 +5942,7 @@
           "height": 720,
           "mode": "16:9",
           "image": "../current/save-selected-1280x720.png",
-          "sha256": "16f55016bb7d352ec8491083cc6b7bbbafe030e357959ce683ee790ec893fab4",
+          "sha256": "7c6bc65b0805715059d3469d5d1813db3b3c0c603dca69293aed140e8b8f12f3",
           "reference": {
             "id": "manual-314",
             "image": "../../interface-audit/references/manual-314.png",
@@ -6099,7 +6099,7 @@
           "height": 480,
           "mode": "4:3",
           "image": "../current/channel-selected-640x480.png",
-          "sha256": "aa441901edcbc0d938f0874fa75065fccb7ad43d13653ab6114bc8835b0ec8ab",
+          "sha256": "69e8a90743873efad9473b14f6a6c0a6c579f91ec354761626ec950bdd8150f2",
           "reference": {
             "id": "manual-314",
             "image": "../../interface-audit/references/manual-314.png",
@@ -6122,7 +6122,7 @@
           "height": 480,
           "mode": "16:9",
           "image": "../current/channel-selected-854x480.png",
-          "sha256": "ec5beda41801765c6f51737da0db2529c0b9857c5a3778586f7d99acf7d427d6",
+          "sha256": "1e311ee18273a21d17a0c74f536ae35d6c362af57f5f0810d0a42e9f3180ca87",
           "reference": {
             "id": "manual-314",
             "image": "../../interface-audit/references/manual-314.png",
@@ -6145,7 +6145,7 @@
           "height": 720,
           "mode": "4:3",
           "image": "../current/channel-selected-960x720.png",
-          "sha256": "1b0413c08626fd6ed690f4e093a304474f44f11cfc2bf1a9eabdae8c2838c997",
+          "sha256": "4d7000b937f037769ec6c46794d0e294ceca4a86e1075043e3bdedb98a451cad",
           "reference": {
             "id": "manual-314",
             "image": "../../interface-audit/references/manual-314.png",
@@ -6168,7 +6168,7 @@
           "height": 720,
           "mode": "16:9",
           "image": "../current/channel-selected-1280x720.png",
-          "sha256": "13d3df8d24317e0e1d345a4c783a655d1705d8272dbc8084defd3d66686974d4",
+          "sha256": "20f5a1c635bc96cdd4604288ad189ef7b4fd53e00b15ddb4e8928c687c23c407",
           "reference": {
             "id": "manual-314",
             "image": "../../interface-audit/references/manual-314.png",
@@ -7076,7 +7076,7 @@
           "height": 480,
           "mode": "4:3",
           "image": "../details/save-sd-640x480.png",
-          "sha256": "85262f5446090253d1bf9374c41fd6c5a7967c02f0561b6510c2fa178ce1e25d",
+          "sha256": "353dda2fc871a40ba68f98258287ccc9b4ba33e1fb57be298f46230943f5f15e",
           "reference": {
             "id": "manual-314",
             "image": "../../interface-audit/references/manual-314.png",
@@ -7099,7 +7099,7 @@
           "height": 480,
           "mode": "16:9",
           "image": "../details/save-sd-854x480.png",
-          "sha256": "e941f3357c6cad81827cc6810a3315626ba3bb8d317bdb2da01e373ec79a7752",
+          "sha256": "7b7e1eb32f052f3b35261265e070221a5bef3c19968ce203f431bc2c0d2e3a67",
           "reference": {
             "id": "manual-314",
             "image": "../../interface-audit/references/manual-314.png",
@@ -7145,7 +7145,7 @@
           "height": 720,
           "mode": "16:9",
           "image": "../details/save-sd-1280x720.png",
-          "sha256": "d8c8e11dfebb13a9aeec5266ff635bbfccf85df8ab3650598df5e9637e984fe9",
+          "sha256": "5fe16713bff679267235b7a75284043d0a671e88965e585180a033fbf30c4dbf",
           "reference": {
             "id": "manual-314",
             "image": "../../interface-audit/references/manual-314.png",

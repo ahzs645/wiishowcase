@@ -1,0 +1,1770 @@
+{
+  "date": "2026-10-15",
+  "baselineRevision": "ff99a17ad807c8219c3badea29ff29dd0db00a2e",
+  "includesWorkingTree": true,
+  "checks": [
+    "640: question selection has no answer field",
+    "640: question arrow selects another question",
+    "640: blank answer cannot be saved",
+    "640: Back from answer returns to question",
+    "640: question and answer save together",
+    "640: Back discards unsaved question",
+    "640: returning from secret-answer editing preserves the authorized parental session",
+    "640: Console Information labels hardware without fabricating addresses",
+    "640: agreement document scrolls within its panel",
+    "640: local acceptance does not enable online data",
+    "640: agreement can be declined",
+    "640: No returns to Internet",
+    "640: agreement choice survives reload",
+    "640: cancelled copy leaves one save",
+    "640: channel actions follow native order",
+    "640: item modal traps focus 0",
+    "640: item modal traps focus 1",
+    "640: item modal traps focus 2",
+    "640: item modal traps focus 3",
+    "640: item modal traps focus 4",
+    "640: item modal traps focus 5",
+    "640: Escape closes only item dialog and returns focus",
+    "854: question selection has no answer field",
+    "854: question arrow selects another question",
+    "854: blank answer cannot be saved",
+    "854: Back from answer returns to question",
+    "854: question and answer save together",
+    "854: Back discards unsaved question",
+    "854: returning from secret-answer editing preserves the authorized parental session",
+    "854: Console Information labels hardware without fabricating addresses",
+    "854: agreement document scrolls within its panel",
+    "854: local acceptance does not enable online data",
+    "854: agreement can be declined",
+    "854: No returns to Internet",
+    "854: agreement choice survives reload",
+    "854: cancelled copy leaves one save",
+    "854: channel actions follow native order",
+    "854: item modal traps focus 0",
+    "854: item modal traps focus 1",
+    "854: item modal traps focus 2",
+    "854: item modal traps focus 3",
+    "854: item modal traps focus 4",
+    "854: item modal traps focus 5",
+    "854: Escape closes only item dialog and returns focus",
+    "960: question selection has no answer field",
+    "960: question arrow selects another question",
+    "960: blank answer cannot be saved",
+    "960: Back from answer returns to question",
+    "960: question and answer save together",
+    "960: Back discards unsaved question",
+    "960: returning from secret-answer editing preserves the authorized parental session",
+    "960: Console Information labels hardware without fabricating addresses",
+    "960: agreement document scrolls within its panel",
+    "960: local acceptance does not enable online data",
+    "960: agreement can be declined",
+    "960: No returns to Internet",
+    "960: agreement choice survives reload",
+    "960: cancelled copy leaves one save",
+    "960: channel actions follow native order",
+    "960: item modal traps focus 0",
+    "960: item modal traps focus 1",
+    "960: item modal traps focus 2",
+    "960: item modal traps focus 3",
+    "960: item modal traps focus 4",
+    "960: item modal traps focus 5",
+    "960: Escape closes only item dialog and returns focus",
+    "1280: question selection has no answer field",
+    "1280: question arrow selects another question",
+    "1280: blank answer cannot be saved",
+    "1280: Back from answer returns to question",
+    "1280: question and answer save together",
+    "1280: Back discards unsaved question",
+    "1280: returning from secret-answer editing preserves the authorized parental session",
+    "1280: Console Information labels hardware without fabricating addresses",
+    "1280: agreement document scrolls within its panel",
+    "1280: local acceptance does not enable online data",
+    "1280: agreement can be declined",
+    "1280: No returns to Internet",
+    "1280: agreement choice survives reload",
+    "1280: cancelled copy leaves one save",
+    "1280: channel actions follow native order",
+    "1280: item modal traps focus 0",
+    "1280: item modal traps focus 1",
+    "1280: item modal traps focus 2",
+    "1280: item modal traps focus 3",
+    "1280: item modal traps focus 4",
+    "1280: item modal traps focus 5",
+    "1280: Escape closes only item dialog and returns focus"
+  ],
+  "captures": [
+    {
+      "id": "secret-question",
+      "title": "Choose a secret question",
+      "width": 640,
+      "height": 480,
+      "mode": "4:3",
+      "image": "current/secret-question-640x480.png",
+      "sha256": "aa76d67ce4f274fe5e01dee2f4615dfa75c1e1bfd7d1cb22d253a02f38a83849",
+      "sourceIds": [
+        "parental-21"
+      ],
+      "geometry": {
+        "width": 640,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Next secret question",
+            "width": 60,
+            "height": 46,
+            "fontSize": "22px"
+          },
+          {
+            "name": "Back",
+            "width": 270,
+            "height": 55,
+            "fontSize": "24px"
+          },
+          {
+            "name": "OK",
+            "width": 270,
+            "height": 55,
+            "fontSize": "24px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Parental Controls",
+            "fontSize": "23px"
+          },
+          {
+            "name": "",
+            "fontSize": "22px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "24px"
+          },
+          {
+            "name": "OK",
+            "fontSize": "24px"
+          }
+        ],
+        "failures": []
+      },
+      "before": {
+        "image": "before/secret-question-640x480.png",
+        "sha256": "c52df67e328d2eabaee887fe66c372e7a98fd67b9a87be3251e97794359d513b"
+      }
+    },
+    {
+      "id": "secret-question-answer",
+      "title": "Answer the secret question",
+      "width": 640,
+      "height": 480,
+      "mode": "4:3",
+      "image": "current/secret-question-answer-640x480.png",
+      "sha256": "72990a1155272bd43664f4900dba3f452b2ea4fba94dcfb39ba13eada79277ff",
+      "sourceIds": [
+        "parental-22"
+      ],
+      "geometry": {
+        "width": 640,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Secret answer",
+            "width": 400,
+            "height": 60,
+            "fontSize": "20px"
+          },
+          {
+            "name": "Back",
+            "width": 270,
+            "height": 55,
+            "fontSize": "24px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Parental Controls",
+            "fontSize": "23px"
+          },
+          {
+            "name": "",
+            "fontSize": "20px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "24px"
+          },
+          {
+            "name": "OK",
+            "fontSize": "24px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "console-information",
+      "title": "Console Information",
+      "width": 640,
+      "height": 480,
+      "mode": "4:3",
+      "image": "current/console-information-640x480.png",
+      "sha256": "fa6dcd68c18f9d0ba0c9f44a00c48cd157ba54e1ab546148f849396db4abbd1c",
+      "sourceIds": [
+        "wku-10"
+      ],
+      "geometry": {
+        "width": 640,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Back",
+            "width": 270,
+            "height": 55,
+            "fontSize": "24px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Console Information",
+            "fontSize": "23px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "24px"
+          }
+        ],
+        "failures": []
+      },
+      "before": {
+        "image": "before/console-information-640x480.png",
+        "sha256": "f392ed05051fd1c1f2e7c805cf36b89677205c8561f2bcf0e32f03fd0710b2b5"
+      }
+    },
+    {
+      "id": "user-agreements",
+      "title": "User Agreements — services prompt",
+      "width": 640,
+      "height": 480,
+      "mode": "4:3",
+      "image": "current/user-agreements-640x480.png",
+      "sha256": "7ece92cad2613513aee23f2ee95e6689493b5460af6025b361c76878ff6ef956",
+      "sourceIds": [
+        "wiimart-23"
+      ],
+      "geometry": {
+        "width": 640,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Yes",
+            "width": 270,
+            "height": 55,
+            "fontSize": "24px"
+          },
+          {
+            "name": "No",
+            "width": 270,
+            "height": 55,
+            "fontSize": "24px"
+          }
+        ],
+        "text": [
+          {
+            "name": "User Agreements",
+            "fontSize": "23px"
+          },
+          {
+            "name": "Yes",
+            "fontSize": "24px"
+          },
+          {
+            "name": "No",
+            "fontSize": "24px"
+          }
+        ],
+        "failures": []
+      },
+      "before": {
+        "image": "before/user-agreements-640x480.png",
+        "sha256": "577bb49b2a2f7e8ed81f944fdd5518219561b269626d82f72abdba6aea5fbc02"
+      }
+    },
+    {
+      "id": "user-agreements-notice",
+      "title": "User Agreements — review notice",
+      "width": 640,
+      "height": 480,
+      "mode": "4:3",
+      "image": "current/user-agreements-notice-640x480.png",
+      "sha256": "65f2a1ac94323e2e510de45638821c091f3c4b41e65a7f0b5e1d5c22d49e3709",
+      "sourceIds": [
+        "wiimart-27"
+      ],
+      "geometry": {
+        "width": 640,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Back",
+            "width": 270,
+            "height": 55,
+            "fontSize": "24px"
+          },
+          {
+            "name": "Next",
+            "width": 270,
+            "height": 55,
+            "fontSize": "24px"
+          }
+        ],
+        "text": [
+          {
+            "name": "User Agreements",
+            "fontSize": "23px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "24px"
+          },
+          {
+            "name": "Next",
+            "fontSize": "24px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "user-agreements-document",
+      "title": "User Agreements — recreation document",
+      "width": 640,
+      "height": 480,
+      "mode": "4:3",
+      "image": "current/user-agreements-document-640x480.png",
+      "sha256": "d7969e82ad7ba36f8ccc8d1c1b836f814baf000f09e17b06db8a5364b4174226",
+      "sourceIds": [
+        "wiimart-28"
+      ],
+      "geometry": {
+        "width": 640,
+        "height": 480,
+        "controls": [
+          {
+            "name": "I ACCEPT",
+            "width": 295.671875,
+            "height": 55,
+            "fontSize": "21px"
+          },
+          {
+            "name": "I DO NOT ACCEPT",
+            "width": 295.671875,
+            "height": 55,
+            "fontSize": "21px"
+          }
+        ],
+        "text": [
+          {
+            "name": "User Agreements",
+            "fontSize": "23px"
+          },
+          {
+            "name": "Wii Showcase — local recreation",
+            "fontSize": "16px"
+          },
+          {
+            "name": "I ACCEPT",
+            "fontSize": "21px"
+          },
+          {
+            "name": "I DO NOT ACCEPT",
+            "fontSize": "21px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "save-selected",
+      "title": "Save Data item actions",
+      "width": 640,
+      "height": 480,
+      "mode": "4:3",
+      "image": "current/save-selected-640x480.png",
+      "sha256": "3c9dd79e0e5191baffe6a91a5c990215116d86f7249b16d076f9c3bf92270568",
+      "sourceIds": [],
+      "geometry": {
+        "width": 640,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Copy",
+            "width": 164,
+            "height": 52,
+            "fontSize": "23px"
+          },
+          {
+            "name": "Move",
+            "width": 164,
+            "height": 52,
+            "fontSize": "23px"
+          },
+          {
+            "name": "Erase",
+            "width": 164,
+            "height": 52,
+            "fontSize": "23px"
+          },
+          {
+            "name": "Back",
+            "width": 224,
+            "height": 60,
+            "fontSize": "26px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Copy",
+            "fontSize": "23px"
+          },
+          {
+            "name": "Move",
+            "fontSize": "23px"
+          },
+          {
+            "name": "Erase",
+            "fontSize": "23px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "26px"
+          }
+        ],
+        "failures": []
+      },
+      "before": {
+        "image": "before/save-selected-640x480.png",
+        "sha256": "8870f8d40f235f9eef7a4cbe638aa78bb1cec8184b3bbf2c22d9b0a9a8585d18"
+      }
+    },
+    {
+      "id": "channel-selected",
+      "title": "Channel Data item actions",
+      "width": 640,
+      "height": 480,
+      "mode": "4:3",
+      "image": "current/channel-selected-640x480.png",
+      "sha256": "69e8a90743873efad9473b14f6a6c0a6c579f91ec354761626ec950bdd8150f2",
+      "sourceIds": [
+        "nwr-sd-13"
+      ],
+      "geometry": {
+        "width": 640,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Move",
+            "width": 164,
+            "height": 52,
+            "fontSize": "23px"
+          },
+          {
+            "name": "Copy",
+            "width": 164,
+            "height": 52,
+            "fontSize": "23px"
+          },
+          {
+            "name": "Erase",
+            "width": 164,
+            "height": 52,
+            "fontSize": "23px"
+          },
+          {
+            "name": "Back",
+            "width": 224,
+            "height": 60,
+            "fontSize": "26px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Move",
+            "fontSize": "23px"
+          },
+          {
+            "name": "Copy",
+            "fontSize": "23px"
+          },
+          {
+            "name": "Erase",
+            "fontSize": "23px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "26px"
+          }
+        ],
+        "failures": []
+      },
+      "before": {
+        "image": "before/channel-selected-640x480.png",
+        "sha256": "aa441901edcbc0d938f0874fa75065fccb7ad43d13653ab6114bc8835b0ec8ab"
+      }
+    },
+    {
+      "id": "secret-question",
+      "title": "Choose a secret question",
+      "width": 854,
+      "height": 480,
+      "mode": "16:9",
+      "image": "current/secret-question-854x480.png",
+      "sha256": "bfc670589257190123339b2b93efeed6b47f39cda7b38285957e71975d12f01b",
+      "sourceIds": [
+        "parental-21"
+      ],
+      "geometry": {
+        "width": 854,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Next secret question",
+            "width": 60,
+            "height": 46,
+            "fontSize": "22px"
+          },
+          {
+            "name": "Back",
+            "width": 266.875,
+            "height": 55,
+            "fontSize": "24px"
+          },
+          {
+            "name": "OK",
+            "width": 266.875,
+            "height": 55,
+            "fontSize": "24px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Parental Controls",
+            "fontSize": "23px"
+          },
+          {
+            "name": "",
+            "fontSize": "22px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "24px"
+          },
+          {
+            "name": "OK",
+            "fontSize": "24px"
+          }
+        ],
+        "failures": []
+      },
+      "before": {
+        "image": "before/secret-question-854x480.png",
+        "sha256": "2993fe8636515a81cb4ff9a2f8d90f6270775128560f491caf3dea1a28c8bb65"
+      }
+    },
+    {
+      "id": "secret-question-answer",
+      "title": "Answer the secret question",
+      "width": 854,
+      "height": 480,
+      "mode": "16:9",
+      "image": "current/secret-question-answer-854x480.png",
+      "sha256": "31644028a6ba7342ec175930ff5b44ddfbd64b3f24e755ad31d5671635ea338e",
+      "sourceIds": [
+        "parental-22"
+      ],
+      "geometry": {
+        "width": 854,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Secret answer",
+            "width": 400,
+            "height": 60,
+            "fontSize": "20px"
+          },
+          {
+            "name": "Back",
+            "width": 266.875,
+            "height": 55,
+            "fontSize": "24px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Parental Controls",
+            "fontSize": "23px"
+          },
+          {
+            "name": "",
+            "fontSize": "20px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "24px"
+          },
+          {
+            "name": "OK",
+            "fontSize": "24px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "console-information",
+      "title": "Console Information",
+      "width": 854,
+      "height": 480,
+      "mode": "16:9",
+      "image": "current/console-information-854x480.png",
+      "sha256": "c1acf1939c6c15856ba293891aff97584da47226b60065697a447e7719034c67",
+      "sourceIds": [
+        "wku-10"
+      ],
+      "geometry": {
+        "width": 854,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Back",
+            "width": 266.875,
+            "height": 55,
+            "fontSize": "24px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Console Information",
+            "fontSize": "23px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "24px"
+          }
+        ],
+        "failures": []
+      },
+      "before": {
+        "image": "before/console-information-854x480.png",
+        "sha256": "ff0324da564fe1424194acf914f1d35bc6449b7049d9a16560477179f93dfac0"
+      }
+    },
+    {
+      "id": "user-agreements",
+      "title": "User Agreements — services prompt",
+      "width": 854,
+      "height": 480,
+      "mode": "16:9",
+      "image": "current/user-agreements-854x480.png",
+      "sha256": "add5dd9e85b9b1d89d42d187376ca2ee606d70331d6a6da2452c0c4a84fbd443",
+      "sourceIds": [
+        "wiimart-23"
+      ],
+      "geometry": {
+        "width": 854,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Yes",
+            "width": 266.875,
+            "height": 55,
+            "fontSize": "24px"
+          },
+          {
+            "name": "No",
+            "width": 266.875,
+            "height": 55,
+            "fontSize": "24px"
+          }
+        ],
+        "text": [
+          {
+            "name": "User Agreements",
+            "fontSize": "23px"
+          },
+          {
+            "name": "Yes",
+            "fontSize": "24px"
+          },
+          {
+            "name": "No",
+            "fontSize": "24px"
+          }
+        ],
+        "failures": []
+      },
+      "before": {
+        "image": "before/user-agreements-854x480.png",
+        "sha256": "f98b6b683cb1a45dd372e1e35954cec1ab12b797d8f09b4e1a7f629e1e03df92"
+      }
+    },
+    {
+      "id": "user-agreements-notice",
+      "title": "User Agreements — review notice",
+      "width": 854,
+      "height": 480,
+      "mode": "16:9",
+      "image": "current/user-agreements-notice-854x480.png",
+      "sha256": "ee98b96df793298fd7beb4bd288d532d575818eab6575637a10ffdf3e18fd746",
+      "sourceIds": [
+        "wiimart-27"
+      ],
+      "geometry": {
+        "width": 854,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Back",
+            "width": 266.875,
+            "height": 55,
+            "fontSize": "24px"
+          },
+          {
+            "name": "Next",
+            "width": 266.875,
+            "height": 55,
+            "fontSize": "24px"
+          }
+        ],
+        "text": [
+          {
+            "name": "User Agreements",
+            "fontSize": "23px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "24px"
+          },
+          {
+            "name": "Next",
+            "fontSize": "24px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "user-agreements-document",
+      "title": "User Agreements — recreation document",
+      "width": 854,
+      "height": 480,
+      "mode": "16:9",
+      "image": "current/user-agreements-document-854x480.png",
+      "sha256": "39433ef37edb945f7ade61c2ab436177d5d2a6482ed798e9fab9f87591899538",
+      "sourceIds": [
+        "wiimart-28"
+      ],
+      "geometry": {
+        "width": 854,
+        "height": 480,
+        "controls": [
+          {
+            "name": "I ACCEPT",
+            "width": 295.671875,
+            "height": 55,
+            "fontSize": "21px"
+          },
+          {
+            "name": "I DO NOT ACCEPT",
+            "width": 295.671875,
+            "height": 55,
+            "fontSize": "21px"
+          }
+        ],
+        "text": [
+          {
+            "name": "User Agreements",
+            "fontSize": "23px"
+          },
+          {
+            "name": "Wii Showcase — local recreation",
+            "fontSize": "16px"
+          },
+          {
+            "name": "I ACCEPT",
+            "fontSize": "21px"
+          },
+          {
+            "name": "I DO NOT ACCEPT",
+            "fontSize": "21px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "save-selected",
+      "title": "Save Data item actions",
+      "width": 854,
+      "height": 480,
+      "mode": "16:9",
+      "image": "current/save-selected-854x480.png",
+      "sha256": "c6d8fe8c3f508e7c1a865f3b99635b3b603637aead6a90b2c2377f3c2d89b02f",
+      "sourceIds": [],
+      "geometry": {
+        "width": 854,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Copy",
+            "width": 164,
+            "height": 52,
+            "fontSize": "23px"
+          },
+          {
+            "name": "Move",
+            "width": 164,
+            "height": 52,
+            "fontSize": "23px"
+          },
+          {
+            "name": "Erase",
+            "width": 164,
+            "height": 52,
+            "fontSize": "23px"
+          },
+          {
+            "name": "Back",
+            "width": 224,
+            "height": 60,
+            "fontSize": "26px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Copy",
+            "fontSize": "23px"
+          },
+          {
+            "name": "Move",
+            "fontSize": "23px"
+          },
+          {
+            "name": "Erase",
+            "fontSize": "23px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "26px"
+          }
+        ],
+        "failures": []
+      },
+      "before": {
+        "image": "before/save-selected-854x480.png",
+        "sha256": "466db5f379dc90bd6ca17f936c311300f823aa6b5ec768575f40281ab82bcf5a"
+      }
+    },
+    {
+      "id": "channel-selected",
+      "title": "Channel Data item actions",
+      "width": 854,
+      "height": 480,
+      "mode": "16:9",
+      "image": "current/channel-selected-854x480.png",
+      "sha256": "1e311ee18273a21d17a0c74f536ae35d6c362af57f5f0810d0a42e9f3180ca87",
+      "sourceIds": [
+        "nwr-sd-13"
+      ],
+      "geometry": {
+        "width": 854,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Move",
+            "width": 164,
+            "height": 52,
+            "fontSize": "23px"
+          },
+          {
+            "name": "Copy",
+            "width": 164,
+            "height": 52,
+            "fontSize": "23px"
+          },
+          {
+            "name": "Erase",
+            "width": 164,
+            "height": 52,
+            "fontSize": "23px"
+          },
+          {
+            "name": "Back",
+            "width": 224,
+            "height": 60,
+            "fontSize": "26px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Move",
+            "fontSize": "23px"
+          },
+          {
+            "name": "Copy",
+            "fontSize": "23px"
+          },
+          {
+            "name": "Erase",
+            "fontSize": "23px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "26px"
+          }
+        ],
+        "failures": []
+      },
+      "before": {
+        "image": "before/channel-selected-854x480.png",
+        "sha256": "ec5beda41801765c6f51737da0db2529c0b9857c5a3778586f7d99acf7d427d6"
+      }
+    },
+    {
+      "id": "secret-question",
+      "title": "Choose a secret question",
+      "width": 960,
+      "height": 720,
+      "mode": "4:3",
+      "image": "current/secret-question-960x720.png",
+      "sha256": "39747b9d5ef80565c4e7ff2e1ca684f4fe0ff68662640a8855ff0cceff5a4db6",
+      "sourceIds": [
+        "parental-21"
+      ],
+      "geometry": {
+        "width": 960,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Next secret question",
+            "width": 90,
+            "height": 69,
+            "fontSize": "33px"
+          },
+          {
+            "name": "Back",
+            "width": 405,
+            "height": 82.5,
+            "fontSize": "36px"
+          },
+          {
+            "name": "OK",
+            "width": 405,
+            "height": 82.5,
+            "fontSize": "36px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Parental Controls",
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "33px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "36px"
+          },
+          {
+            "name": "OK",
+            "fontSize": "36px"
+          }
+        ],
+        "failures": []
+      },
+      "before": {
+        "image": "before/secret-question-960x720.png",
+        "sha256": "c7db5fa351df73b4f4cb7a824861f7983afafb5d3d017a498167da3a7ed18aaa"
+      }
+    },
+    {
+      "id": "secret-question-answer",
+      "title": "Answer the secret question",
+      "width": 960,
+      "height": 720,
+      "mode": "4:3",
+      "image": "current/secret-question-answer-960x720.png",
+      "sha256": "9a8cbdbf0b6a395139d9b00d2391568bf60dd4332dc72bacf6da2d0ddc4995af",
+      "sourceIds": [
+        "parental-22"
+      ],
+      "geometry": {
+        "width": 960,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Secret answer",
+            "width": 600,
+            "height": 90,
+            "fontSize": "30px"
+          },
+          {
+            "name": "Back",
+            "width": 405,
+            "height": 82.5,
+            "fontSize": "36px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Parental Controls",
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "30px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "36px"
+          },
+          {
+            "name": "OK",
+            "fontSize": "36px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "console-information",
+      "title": "Console Information",
+      "width": 960,
+      "height": 720,
+      "mode": "4:3",
+      "image": "current/console-information-960x720.png",
+      "sha256": "a3d78dc4e3d64d8d2ab6b5cdbdf96275bbd634f393f05d0f63e83ddbfdce3aec",
+      "sourceIds": [
+        "wku-10"
+      ],
+      "geometry": {
+        "width": 960,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Back",
+            "width": 405,
+            "height": 82.5,
+            "fontSize": "36px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Console Information",
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "36px"
+          }
+        ],
+        "failures": []
+      },
+      "before": {
+        "image": "before/console-information-960x720.png",
+        "sha256": "498364236ca84aa43827a94d54d401b6a754654f4e5e0e4a1f84e7276bdeef62"
+      }
+    },
+    {
+      "id": "user-agreements",
+      "title": "User Agreements — services prompt",
+      "width": 960,
+      "height": 720,
+      "mode": "4:3",
+      "image": "current/user-agreements-960x720.png",
+      "sha256": "7c23cb664a7afe6024f47d013b9a0b6f2bd8573d07f1274d8be09f7b469a733a",
+      "sourceIds": [
+        "wiimart-23"
+      ],
+      "geometry": {
+        "width": 960,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Yes",
+            "width": 405,
+            "height": 82.5,
+            "fontSize": "36px"
+          },
+          {
+            "name": "No",
+            "width": 405,
+            "height": 82.5,
+            "fontSize": "36px"
+          }
+        ],
+        "text": [
+          {
+            "name": "User Agreements",
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Yes",
+            "fontSize": "36px"
+          },
+          {
+            "name": "No",
+            "fontSize": "36px"
+          }
+        ],
+        "failures": []
+      },
+      "before": {
+        "image": "before/user-agreements-960x720.png",
+        "sha256": "cc98511e73e5276e7403430d6ac0505a681cad03d010377ff4af5c08e3cbe117"
+      }
+    },
+    {
+      "id": "user-agreements-notice",
+      "title": "User Agreements — review notice",
+      "width": 960,
+      "height": 720,
+      "mode": "4:3",
+      "image": "current/user-agreements-notice-960x720.png",
+      "sha256": "65406ab6a0bcdf9d71ee4482a880078d09f077025a9dce5160d6923ad3c1e4ff",
+      "sourceIds": [
+        "wiimart-27"
+      ],
+      "geometry": {
+        "width": 960,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Back",
+            "width": 405,
+            "height": 82.5,
+            "fontSize": "36px"
+          },
+          {
+            "name": "Next",
+            "width": 405,
+            "height": 82.5,
+            "fontSize": "36px"
+          }
+        ],
+        "text": [
+          {
+            "name": "User Agreements",
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "36px"
+          },
+          {
+            "name": "Next",
+            "fontSize": "36px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "user-agreements-document",
+      "title": "User Agreements — recreation document",
+      "width": 960,
+      "height": 720,
+      "mode": "4:3",
+      "image": "current/user-agreements-document-960x720.png",
+      "sha256": "0cb0c337158814682b8a2ecb39a4966ba610833d90f2f5e80dc80679c81b0821",
+      "sourceIds": [
+        "wiimart-28"
+      ],
+      "geometry": {
+        "width": 960,
+        "height": 720,
+        "controls": [
+          {
+            "name": "I ACCEPT",
+            "width": 443.515625,
+            "height": 82.5,
+            "fontSize": "31.5px"
+          },
+          {
+            "name": "I DO NOT ACCEPT",
+            "width": 443.515625,
+            "height": 82.5,
+            "fontSize": "31.5px"
+          }
+        ],
+        "text": [
+          {
+            "name": "User Agreements",
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Wii Showcase — local recreation",
+            "fontSize": "24px"
+          },
+          {
+            "name": "I ACCEPT",
+            "fontSize": "31.5px"
+          },
+          {
+            "name": "I DO NOT ACCEPT",
+            "fontSize": "31.5px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "save-selected",
+      "title": "Save Data item actions",
+      "width": 960,
+      "height": 720,
+      "mode": "4:3",
+      "image": "current/save-selected-960x720.png",
+      "sha256": "ec7ab3266800c2929cc0cd1c828649970aff9aaaa679bda920ac747bedead72c",
+      "sourceIds": [],
+      "geometry": {
+        "width": 960,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Copy",
+            "width": 246,
+            "height": 78,
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Move",
+            "width": 246,
+            "height": 78,
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Erase",
+            "width": 246,
+            "height": 78,
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Back",
+            "width": 336,
+            "height": 90,
+            "fontSize": "39px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Copy",
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Move",
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Erase",
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "39px"
+          }
+        ],
+        "failures": []
+      },
+      "before": {
+        "image": "before/save-selected-960x720.png",
+        "sha256": "032ef37229214cd5ef191a0f9c7e05119bf28887de425f940213f097473126c5"
+      }
+    },
+    {
+      "id": "channel-selected",
+      "title": "Channel Data item actions",
+      "width": 960,
+      "height": 720,
+      "mode": "4:3",
+      "image": "current/channel-selected-960x720.png",
+      "sha256": "4d7000b937f037769ec6c46794d0e294ceca4a86e1075043e3bdedb98a451cad",
+      "sourceIds": [
+        "nwr-sd-13"
+      ],
+      "geometry": {
+        "width": 960,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Move",
+            "width": 246,
+            "height": 78,
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Copy",
+            "width": 246,
+            "height": 78,
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Erase",
+            "width": 246,
+            "height": 78,
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Back",
+            "width": 336,
+            "height": 90,
+            "fontSize": "39px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Move",
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Copy",
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Erase",
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "39px"
+          }
+        ],
+        "failures": []
+      },
+      "before": {
+        "image": "before/channel-selected-960x720.png",
+        "sha256": "1b0413c08626fd6ed690f4e093a304474f44f11cfc2bf1a9eabdae8c2838c997"
+      }
+    },
+    {
+      "id": "secret-question",
+      "title": "Choose a secret question",
+      "width": 1280,
+      "height": 720,
+      "mode": "16:9",
+      "image": "current/secret-question-1280x720.png",
+      "sha256": "298de29dae81afeb9d4db47be92636da2ac4a3d17b30698821e2d55a0756105a",
+      "sourceIds": [
+        "parental-21"
+      ],
+      "geometry": {
+        "width": 1280,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Next secret question",
+            "width": 90,
+            "height": 69,
+            "fontSize": "33px"
+          },
+          {
+            "name": "Back",
+            "width": 400.3125,
+            "height": 82.5,
+            "fontSize": "36px"
+          },
+          {
+            "name": "OK",
+            "width": 400.3125,
+            "height": 82.5,
+            "fontSize": "36px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Parental Controls",
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "33px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "36px"
+          },
+          {
+            "name": "OK",
+            "fontSize": "36px"
+          }
+        ],
+        "failures": []
+      },
+      "before": {
+        "image": "before/secret-question-1280x720.png",
+        "sha256": "e8f486c2c15a0a16044ad465dcfefc52ebcf563a6bda56592a22d1c3d2ad7a49"
+      }
+    },
+    {
+      "id": "secret-question-answer",
+      "title": "Answer the secret question",
+      "width": 1280,
+      "height": 720,
+      "mode": "16:9",
+      "image": "current/secret-question-answer-1280x720.png",
+      "sha256": "c154e8546f15f84fda70ef37f5413bf161304f7c306a8814023cc4c5abfbf0b6",
+      "sourceIds": [
+        "parental-22"
+      ],
+      "geometry": {
+        "width": 1280,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Secret answer",
+            "width": 600,
+            "height": 90,
+            "fontSize": "30px"
+          },
+          {
+            "name": "Back",
+            "width": 400.3125,
+            "height": 82.5,
+            "fontSize": "36px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Parental Controls",
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "30px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "36px"
+          },
+          {
+            "name": "OK",
+            "fontSize": "36px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "console-information",
+      "title": "Console Information",
+      "width": 1280,
+      "height": 720,
+      "mode": "16:9",
+      "image": "current/console-information-1280x720.png",
+      "sha256": "1ce13d8699d2edcd9c25e0cdaa7f36f45a760b582bad3d997a2e8f0722941ef1",
+      "sourceIds": [
+        "wku-10"
+      ],
+      "geometry": {
+        "width": 1280,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Back",
+            "width": 400.3125,
+            "height": 82.5,
+            "fontSize": "36px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Console Information",
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "36px"
+          }
+        ],
+        "failures": []
+      },
+      "before": {
+        "image": "before/console-information-1280x720.png",
+        "sha256": "38ea202dccb3577b0d5afa7605043b2231ee926e9650364a3d82c58a00a00bcb"
+      }
+    },
+    {
+      "id": "user-agreements",
+      "title": "User Agreements — services prompt",
+      "width": 1280,
+      "height": 720,
+      "mode": "16:9",
+      "image": "current/user-agreements-1280x720.png",
+      "sha256": "28de876551a32132b39b78541f923016d2033b8c073f124c56ddc2779053251c",
+      "sourceIds": [
+        "wiimart-23"
+      ],
+      "geometry": {
+        "width": 1280,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Yes",
+            "width": 400.3125,
+            "height": 82.5,
+            "fontSize": "36px"
+          },
+          {
+            "name": "No",
+            "width": 400.3125,
+            "height": 82.5,
+            "fontSize": "36px"
+          }
+        ],
+        "text": [
+          {
+            "name": "User Agreements",
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Yes",
+            "fontSize": "36px"
+          },
+          {
+            "name": "No",
+            "fontSize": "36px"
+          }
+        ],
+        "failures": []
+      },
+      "before": {
+        "image": "before/user-agreements-1280x720.png",
+        "sha256": "63cc4b187b413ec88baf8f580c68c38cd2379979ffb501fd621f557098496efb"
+      }
+    },
+    {
+      "id": "user-agreements-notice",
+      "title": "User Agreements — review notice",
+      "width": 1280,
+      "height": 720,
+      "mode": "16:9",
+      "image": "current/user-agreements-notice-1280x720.png",
+      "sha256": "d58498cc97f01d021fda595eec7c7dda9c09b1412d01e9f2568c058a62ca5ce3",
+      "sourceIds": [
+        "wiimart-27"
+      ],
+      "geometry": {
+        "width": 1280,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Back",
+            "width": 400.3125,
+            "height": 82.5,
+            "fontSize": "36px"
+          },
+          {
+            "name": "Next",
+            "width": 400.3125,
+            "height": 82.5,
+            "fontSize": "36px"
+          }
+        ],
+        "text": [
+          {
+            "name": "User Agreements",
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "36px"
+          },
+          {
+            "name": "Next",
+            "fontSize": "36px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "user-agreements-document",
+      "title": "User Agreements — recreation document",
+      "width": 1280,
+      "height": 720,
+      "mode": "16:9",
+      "image": "current/user-agreements-document-1280x720.png",
+      "sha256": "cb6c6aa2c4780742e42aef239d8ce4edff9d937b4e5f3a975e8ae869af2e97b5",
+      "sourceIds": [
+        "wiimart-28"
+      ],
+      "geometry": {
+        "width": 1280,
+        "height": 720,
+        "controls": [
+          {
+            "name": "I ACCEPT",
+            "width": 443.515625,
+            "height": 82.5,
+            "fontSize": "31.5px"
+          },
+          {
+            "name": "I DO NOT ACCEPT",
+            "width": 443.515625,
+            "height": 82.5,
+            "fontSize": "31.5px"
+          }
+        ],
+        "text": [
+          {
+            "name": "User Agreements",
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Wii Showcase — local recreation",
+            "fontSize": "24px"
+          },
+          {
+            "name": "I ACCEPT",
+            "fontSize": "31.5px"
+          },
+          {
+            "name": "I DO NOT ACCEPT",
+            "fontSize": "31.5px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "save-selected",
+      "title": "Save Data item actions",
+      "width": 1280,
+      "height": 720,
+      "mode": "16:9",
+      "image": "current/save-selected-1280x720.png",
+      "sha256": "7c6bc65b0805715059d3469d5d1813db3b3c0c603dca69293aed140e8b8f12f3",
+      "sourceIds": [],
+      "geometry": {
+        "width": 1280,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Copy",
+            "width": 246,
+            "height": 78,
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Move",
+            "width": 246,
+            "height": 78,
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Erase",
+            "width": 246,
+            "height": 78,
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Back",
+            "width": 336,
+            "height": 90,
+            "fontSize": "39px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Copy",
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Move",
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Erase",
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "39px"
+          }
+        ],
+        "failures": []
+      },
+      "before": {
+        "image": "before/save-selected-1280x720.png",
+        "sha256": "16f55016bb7d352ec8491083cc6b7bbbafe030e357959ce683ee790ec893fab4"
+      }
+    },
+    {
+      "id": "channel-selected",
+      "title": "Channel Data item actions",
+      "width": 1280,
+      "height": 720,
+      "mode": "16:9",
+      "image": "current/channel-selected-1280x720.png",
+      "sha256": "20f5a1c635bc96cdd4604288ad189ef7b4fd53e00b15ddb4e8928c687c23c407",
+      "sourceIds": [
+        "nwr-sd-13"
+      ],
+      "geometry": {
+        "width": 1280,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Move",
+            "width": 246,
+            "height": 78,
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Copy",
+            "width": 246,
+            "height": 78,
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Erase",
+            "width": 246,
+            "height": 78,
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Back",
+            "width": 336,
+            "height": 90,
+            "fontSize": "39px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Move",
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Copy",
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Erase",
+            "fontSize": "34.5px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "39px"
+          }
+        ],
+        "failures": []
+      },
+      "before": {
+        "image": "before/channel-selected-1280x720.png",
+        "sha256": "13d3df8d24317e0e1d345a4c783a655d1705d8272dbc8084defd3d66686974d4"
+      }
+    }
+  ],
+  "errors": []
+}

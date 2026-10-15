@@ -46,6 +46,7 @@
         {
           "id": "options",
           "title": "Wii Options",
+          "followup": false,
           "captures": [
             {
               "width": 960,
@@ -99,6 +100,7 @@
         {
           "id": "settings-one",
           "title": "Wii System Settings 1",
+          "followup": false,
           "captures": [
             {
               "width": 960,
@@ -152,6 +154,7 @@
         {
           "id": "settings-two",
           "title": "Wii System Settings 2",
+          "followup": false,
           "captures": [
             {
               "width": 960,
@@ -205,6 +208,7 @@
         {
           "id": "internet",
           "title": "Internet settings",
+          "followup": false,
           "captures": [
             {
               "width": 640,
@@ -249,7 +253,7 @@
       "states": [
         "console-information"
       ],
-      "notes": "Native view shows MAC Address and LAN Adapter MAC Address. The current adapter shows different information. Source intentionally obscures a MAC address.",
+      "notes": "Native view shows MAC Address and LAN Adapter MAC Address. The adapter now uses those labels with unavailable-in-browser values, since web pages cannot read hardware addresses. Source intentionally obscures a MAC address.",
       "limits": "Source is 575×390 with unverified display aspect/cropping. Preserve original ratio; structure comparison only. English US. Version 3.4U is visible only on the Settings 1 image in this series.",
       "comparisonUse": "structure-only",
       "aspect": "unverified",
@@ -258,6 +262,7 @@
         {
           "id": "console-information",
           "title": "Console Information",
+          "followup": false,
           "captures": [
             {
               "width": 640,
@@ -411,6 +416,7 @@
         {
           "id": "sd-menu",
           "title": "SD Card Menu",
+          "followup": false,
           "captures": [
             {
               "width": 960,
@@ -464,6 +470,7 @@
         {
           "id": "sd-menu",
           "title": "SD Card Menu",
+          "followup": false,
           "captures": [
             {
               "width": 960,
@@ -517,6 +524,7 @@
         {
           "id": "sd-start",
           "title": "SD Channel controls",
+          "followup": false,
           "captures": [
             {
               "width": 960,
@@ -570,6 +578,7 @@
         {
           "id": "channels-data",
           "title": "Channel Data Management",
+          "followup": false,
           "captures": [
             {
               "width": 960,
@@ -614,7 +623,7 @@
       "states": [
         "channel-selected"
       ],
-      "notes": "Actual selected-channel action panel with thumbnail, block count and three actions.",
+      "notes": "Actual selected-channel action panel with thumbnail, block count and Move / Copy / Erase. The adapter now follows this structure; unknown channel block sizes remain unavailable, and exact panel geometry/artwork is approximate.",
       "limits": "Photograph of a display with perspective, bezel and publisher watermark. Structure and flow evidence only; no direct pixel alignment. English; March 25, 2009 article establishes the 4.0 release era, not an installed firmware revision.",
       "comparisonUse": "structure-only",
       "aspect": "unverified",
@@ -623,6 +632,7 @@
         {
           "id": "channel-selected",
           "title": "Channel Data item actions",
+          "followup": false,
           "captures": [
             {
               "width": 640,
@@ -676,6 +686,7 @@
         {
           "id": "sd-memory-error",
           "title": "SD full Wii Menu slot flow (simulated inventory)",
+          "followup": false,
           "captures": [
             {
               "width": 640,
@@ -829,6 +840,7 @@
         {
           "id": "options",
           "title": "Wii Options",
+          "followup": false,
           "captures": [
             {
               "width": 960,
@@ -882,6 +894,7 @@
         {
           "id": "settings-one",
           "title": "Wii System Settings 1",
+          "followup": false,
           "captures": [
             {
               "width": 960,
@@ -935,6 +948,7 @@
         {
           "id": "settings-two",
           "title": "Wii System Settings 2",
+          "followup": false,
           "captures": [
             {
               "width": 960,
@@ -988,6 +1002,7 @@
         {
           "id": "parental-controls",
           "title": "Parental Controls setup",
+          "followup": false,
           "captures": [
             {
               "width": 640,
@@ -1041,6 +1056,7 @@
         {
           "id": "parental-controls",
           "title": "Parental Controls setup",
+          "followup": false,
           "captures": [
             {
               "width": 640,
@@ -1094,6 +1110,7 @@
         {
           "id": "parental-controls",
           "title": "Parental Controls setup",
+          "followup": false,
           "captures": [
             {
               "width": 640,
@@ -1147,6 +1164,7 @@
         {
           "id": "parental-controls",
           "title": "Parental Controls setup",
+          "followup": false,
           "captures": [
             {
               "width": 640,
@@ -1191,7 +1209,7 @@
       "states": [
         "secret-question"
       ],
-      "notes": "Native question selector and down arrow with Back / OK; current adapter also exposes an answer field in this view.",
+      "notes": "Native question selector and down arrow with Back / OK. The updated adapter separates selection from answer entry; only the two questions visible in collected sources plus existing locally saved questions are currently available.",
       "limits": "Mixed cropped/resized captures and display photographs, some with tutorial annotations. Original display aspect is unverified. English/ESRB; 3.1U visible on Settings 1 only, not established for every image.",
       "comparisonUse": "structure-only",
       "aspect": "unverified",
@@ -1200,6 +1218,7 @@
         {
           "id": "secret-question",
           "title": "Secret Question",
+          "followup": false,
           "captures": [
             {
               "width": 640,
@@ -1242,41 +1261,42 @@
       ],
       "sha256": "d37d3aa995ab39a777963680c4ea1d89fe72f2237efc43fbf988911c921cf17a",
       "states": [
-        "secret-question"
+        "secret-question-answer"
       ],
-      "notes": "Separate answer step; compare question, prompt and answer-field hierarchy.",
+      "notes": "Separate answer step. The adapter now uses the same question/prompt/answer hierarchy; selected question and answer remain local draft values until OK.",
       "limits": "Mixed cropped/resized captures and display photographs, some with tutorial annotations. Original display aspect is unverified. English/ESRB; 3.1U visible on Settings 1 only, not established for every image.",
       "comparisonUse": "structure-only",
       "aspect": "unverified",
       "visuallyInspected": true,
       "comparisons": [
         {
-          "id": "secret-question",
-          "title": "Secret Question",
+          "id": "secret-question-answer",
+          "title": "Answer the secret question",
+          "followup": true,
           "captures": [
             {
               "width": 640,
               "height": 480,
               "mode": "4:3",
-              "image": "../current/secret-question-640x480.png"
+              "image": "../reference-followup/current/secret-question-answer-640x480.png"
             },
             {
               "width": 854,
               "height": 480,
               "mode": "16:9",
-              "image": "../current/secret-question-854x480.png"
+              "image": "../reference-followup/current/secret-question-answer-854x480.png"
             },
             {
               "width": 960,
               "height": 720,
               "mode": "4:3",
-              "image": "../current/secret-question-960x720.png"
+              "image": "../reference-followup/current/secret-question-answer-960x720.png"
             },
             {
               "width": 1280,
               "height": 720,
               "mode": "16:9",
-              "image": "../current/secret-question-1280x720.png"
+              "image": "../reference-followup/current/secret-question-answer-1280x720.png"
             }
           ]
         }
@@ -1306,6 +1326,7 @@
         {
           "id": "parental-controls",
           "title": "Parental Controls setup",
+          "followup": false,
           "captures": [
             {
               "width": 640,
@@ -1359,6 +1380,7 @@
         {
           "id": "parental-controls",
           "title": "Parental Controls setup",
+          "followup": false,
           "captures": [
             {
               "width": 640,
@@ -1412,6 +1434,7 @@
         {
           "id": "parental-rating",
           "title": "Game Rating",
+          "followup": false,
           "captures": [
             {
               "width": 640,
@@ -1465,6 +1488,7 @@
         {
           "id": "parental-controls",
           "title": "Parental Controls setup",
+          "followup": false,
           "captures": [
             {
               "width": 640,
@@ -1518,6 +1542,7 @@
         {
           "id": "parental-controls",
           "title": "Parental Controls setup",
+          "followup": false,
           "captures": [
             {
               "width": 640,
@@ -1591,6 +1616,7 @@
         {
           "id": "parental-controls",
           "title": "Parental Controls setup",
+          "followup": false,
           "captures": [
             {
               "width": 640,
@@ -1684,6 +1710,7 @@
         {
           "id": "parental-controls",
           "title": "Parental Controls setup",
+          "followup": false,
           "captures": [
             {
               "width": 640,
@@ -1777,6 +1804,7 @@
         {
           "id": "settings-two",
           "title": "Wii System Settings 2",
+          "followup": false,
           "captures": [
             {
               "width": 960,
@@ -1821,7 +1849,7 @@
       "states": [
         "user-agreements"
       ],
-      "notes": "Would you like to use the Wii Shop Channel and WiiConnect24? Yes / No step. Different from current agreement-text adapter.",
+      "notes": "Would you like to use the Wii Shop Channel and WiiConnect24? Yes / No step, now represented in the adapter. The recreation labels service enrollment as unavailable.",
       "limits": "Community WiiMart revival guide; modified consoles/services may be involved. Captures have scanlines and nonstandard 834×456 or 800×438 bounds. Do not treat file ratio as verified 16:9 or infer firmware.",
       "comparisonUse": "structure-only",
       "aspect": "unverified",
@@ -1830,6 +1858,7 @@
         {
           "id": "user-agreements",
           "title": "User Agreements",
+          "followup": false,
           "captures": [
             {
               "width": 640,
@@ -1883,6 +1912,7 @@
         {
           "id": "user-agreements",
           "title": "User Agreements",
+          "followup": false,
           "captures": [
             {
               "width": 640,
@@ -1936,6 +1966,7 @@
         {
           "id": "settings-three",
           "title": "Wii System Settings 3",
+          "followup": false,
           "captures": [
             {
               "width": 960,
@@ -1989,6 +2020,7 @@
         {
           "id": "country",
           "title": "Country",
+          "followup": false,
           "captures": [
             {
               "width": 640,
@@ -2031,41 +2063,42 @@
       ],
       "sha256": "4042b6957809187cb4d51b989946a40efb5be47d39b23b56d85c6db4949a1353",
       "states": [
-        "user-agreements"
+        "user-agreements-notice"
       ],
-      "notes": "Separate review notice with Next before agreement contents.",
+      "notes": "Separate review notice with Next before agreement contents, now represented as a distinct adapter step. Back is an added browser navigation control.",
       "limits": "Community WiiMart revival guide; modified consoles/services may be involved. Captures have scanlines and nonstandard 834×456 or 800×438 bounds. Do not treat file ratio as verified 16:9 or infer firmware.",
       "comparisonUse": "structure-only",
       "aspect": "unverified",
       "visuallyInspected": true,
       "comparisons": [
         {
-          "id": "user-agreements",
-          "title": "User Agreements",
+          "id": "user-agreements-notice",
+          "title": "User Agreements — review notice",
+          "followup": true,
           "captures": [
             {
               "width": 640,
               "height": 480,
               "mode": "4:3",
-              "image": "../current/user-agreements-640x480.png"
+              "image": "../reference-followup/current/user-agreements-notice-640x480.png"
             },
             {
               "width": 854,
               "height": 480,
               "mode": "16:9",
-              "image": "../current/user-agreements-854x480.png"
+              "image": "../reference-followup/current/user-agreements-notice-854x480.png"
             },
             {
               "width": 960,
               "height": 720,
               "mode": "4:3",
-              "image": "../current/user-agreements-960x720.png"
+              "image": "../reference-followup/current/user-agreements-notice-960x720.png"
             },
             {
               "width": 1280,
               "height": 720,
               "mode": "16:9",
-              "image": "../current/user-agreements-1280x720.png"
+              "image": "../reference-followup/current/user-agreements-notice-1280x720.png"
             }
           ]
         }
@@ -2084,41 +2117,42 @@
       ],
       "sha256": "cfef062ad978b77f9814505ec56e90addf6b327c18c6c6c7a109cafb35b3f734",
       "states": [
-        "user-agreements"
+        "user-agreements-document"
       ],
-      "notes": "Scrollable document and I ACCEPT / I DO NOT ACCEPT. Visible document date June 22, 2010 is not a firmware identifier. Community guide may use restored service assets.",
+      "notes": "Scrollable document and I ACCEPT / I DO NOT ACCEPT. The adapter explicitly displays its own recreation notice rather than Nintendo terms. Visible source document date June 22, 2010 is not a firmware identifier.",
       "limits": "Community WiiMart revival guide; modified consoles/services may be involved. Captures have scanlines and nonstandard 834×456 or 800×438 bounds. Do not treat file ratio as verified 16:9 or infer firmware.",
       "comparisonUse": "structure-only",
       "aspect": "unverified",
       "visuallyInspected": true,
       "comparisons": [
         {
-          "id": "user-agreements",
-          "title": "User Agreements",
+          "id": "user-agreements-document",
+          "title": "User Agreements — recreation document",
+          "followup": true,
           "captures": [
             {
               "width": 640,
               "height": 480,
               "mode": "4:3",
-              "image": "../current/user-agreements-640x480.png"
+              "image": "../reference-followup/current/user-agreements-document-640x480.png"
             },
             {
               "width": 854,
               "height": 480,
               "mode": "16:9",
-              "image": "../current/user-agreements-854x480.png"
+              "image": "../reference-followup/current/user-agreements-document-854x480.png"
             },
             {
               "width": 960,
               "height": 720,
               "mode": "4:3",
-              "image": "../current/user-agreements-960x720.png"
+              "image": "../reference-followup/current/user-agreements-document-960x720.png"
             },
             {
               "width": 1280,
               "height": 720,
               "mode": "16:9",
-              "image": "../current/user-agreements-1280x720.png"
+              "image": "../reference-followup/current/user-agreements-document-1280x720.png"
             }
           ]
         }

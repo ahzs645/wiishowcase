@@ -1,0 +1,1980 @@
+{
+  "scope": "Manual visual follow-up of all 32 changed/new captures at 640x480, 854x480, 960x720 and 1280x720, including source and prior overlays where available. Eight inspection sheets were viewed after generation; this is separate from the historical 66-screen review.",
+  "states": [
+    {
+      "id": "secret-question",
+      "title": "Choose a secret question",
+      "findings": "Now uses Parental Controls title, a two-line prompt, rectangular question field, down arrow and Back/OK. Header/footer and text sizes are reduced from the prior adapter. Source is cropped and its aspect is unverified. Only two source-confirmed question options plus any existing saved question are available; the full native question inventory remains incomplete.",
+      "manuallyInspected": true,
+      "sheet": {
+        "image": "secret-question.jpg",
+        "sha256": "d9435b67743f780e2a398e6eace26ebae7be4ba02e3f6b496961d125d984efe4"
+      },
+      "sources": [
+        {
+          "id": "parental-21",
+          "title": "Choose a secret question",
+          "family": "parental",
+          "image": "images/parental-21.png",
+          "sourceURL": "https://www.techsolutions.support.com/how-to/how-to-set-up-parental-controls-on-a-nintendo-wii-12240",
+          "imageURL": "https://cdn.prod.website-files.com/67fd668f758dd19469aa48ca/67fd6690758dd19469aaa663_12240-40817.png",
+          "originalSize": [
+            602,
+            433
+          ],
+          "sha256": "e7575826c2bc208cd0d2ef3e5f9fa0abef7fc1f4e47645cf4468d35136a40871",
+          "states": [
+            "secret-question"
+          ],
+          "notes": "Native question selector and down arrow with Back / OK. The updated adapter separates selection from answer entry; only the two questions visible in collected sources plus existing locally saved questions are currently available.",
+          "limits": "Mixed cropped/resized captures and display photographs, some with tutorial annotations. Original display aspect is unverified. English/ESRB; 3.1U visible on Settings 1 only, not established for every image.",
+          "comparisonUse": "structure-only",
+          "aspect": "unverified",
+          "visuallyInspected": true
+        }
+      ],
+      "captures": [
+        {
+          "id": "secret-question",
+          "title": "Choose a secret question",
+          "width": 640,
+          "height": 480,
+          "mode": "4:3",
+          "image": "current/secret-question-640x480.png",
+          "sha256": "aa76d67ce4f274fe5e01dee2f4615dfa75c1e1bfd7d1cb22d253a02f38a83849",
+          "sourceIds": [
+            "parental-21"
+          ],
+          "geometry": {
+            "width": 640,
+            "height": 480,
+            "controls": [
+              {
+                "name": "Next secret question",
+                "width": 60,
+                "height": 46,
+                "fontSize": "22px"
+              },
+              {
+                "name": "Back",
+                "width": 270,
+                "height": 55,
+                "fontSize": "24px"
+              },
+              {
+                "name": "OK",
+                "width": 270,
+                "height": 55,
+                "fontSize": "24px"
+              }
+            ],
+            "text": [
+              {
+                "name": "Parental Controls",
+                "fontSize": "23px"
+              },
+              {
+                "name": "",
+                "fontSize": "22px"
+              },
+              {
+                "name": "Back",
+                "fontSize": "24px"
+              },
+              {
+                "name": "OK",
+                "fontSize": "24px"
+              }
+            ],
+            "failures": []
+          },
+          "before": {
+            "image": "before/secret-question-640x480.png",
+            "sha256": "c52df67e328d2eabaee887fe66c372e7a98fd67b9a87be3251e97794359d513b"
+          }
+        },
+        {
+          "id": "secret-question",
+          "title": "Choose a secret question",
+          "width": 854,
+          "height": 480,
+          "mode": "16:9",
+          "image": "current/secret-question-854x480.png",
+          "sha256": "bfc670589257190123339b2b93efeed6b47f39cda7b38285957e71975d12f01b",
+          "sourceIds": [
+            "parental-21"
+          ],
+          "geometry": {
+            "width": 854,
+            "height": 480,
+            "controls": [
+              {
+                "name": "Next secret question",
+                "width": 60,
+                "height": 46,
+                "fontSize": "22px"
+              },
+              {
+                "name": "Back",
+                "width": 266.875,
+                "height": 55,
+                "fontSize": "24px"
+              },
+              {
+                "name": "OK",
+                "width": 266.875,
+                "height": 55,
+                "fontSize": "24px"
+              }
+            ],
+            "text": [
+              {
+                "name": "Parental Controls",
+                "fontSize": "23px"
+              },
+              {
+                "name": "",
+                "fontSize": "22px"
+              },
+              {
+                "name": "Back",
+                "fontSize": "24px"
+              },
+              {
+                "name": "OK",
+                "fontSize": "24px"
+              }
+            ],
+            "failures": []
+          },
+          "before": {
+            "image": "before/secret-question-854x480.png",
+            "sha256": "2993fe8636515a81cb4ff9a2f8d90f6270775128560f491caf3dea1a28c8bb65"
+          }
+        },
+        {
+          "id": "secret-question",
+          "title": "Choose a secret question",
+          "width": 960,
+          "height": 720,
+          "mode": "4:3",
+          "image": "current/secret-question-960x720.png",
+          "sha256": "39747b9d5ef80565c4e7ff2e1ca684f4fe0ff68662640a8855ff0cceff5a4db6",
+          "sourceIds": [
+            "parental-21"
+          ],
+          "geometry": {
+            "width": 960,
+            "height": 720,
+            "controls": [
+              {
+                "name": "Next secret question",
+                "width": 90,
+                "height": 69,
+                "fontSize": "33px"
+              },
+              {
+                "name": "Back",
+                "width": 405,
+                "height": 82.5,
+                "fontSize": "36px"
+              },
+              {
+                "name": "OK",
+                "width": 405,
+                "height": 82.5,
+                "fontSize": "36px"
+              }
+            ],
+            "text": [
+              {
+                "name": "Parental Controls",
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "",
+                "fontSize": "33px"
+              },
+              {
+                "name": "Back",
+                "fontSize": "36px"
+              },
+              {
+                "name": "OK",
+                "fontSize": "36px"
+              }
+            ],
+            "failures": []
+          },
+          "before": {
+            "image": "before/secret-question-960x720.png",
+            "sha256": "c7db5fa351df73b4f4cb7a824861f7983afafb5d3d017a498167da3a7ed18aaa"
+          }
+        },
+        {
+          "id": "secret-question",
+          "title": "Choose a secret question",
+          "width": 1280,
+          "height": 720,
+          "mode": "16:9",
+          "image": "current/secret-question-1280x720.png",
+          "sha256": "298de29dae81afeb9d4db47be92636da2ac4a3d17b30698821e2d55a0756105a",
+          "sourceIds": [
+            "parental-21"
+          ],
+          "geometry": {
+            "width": 1280,
+            "height": 720,
+            "controls": [
+              {
+                "name": "Next secret question",
+                "width": 90,
+                "height": 69,
+                "fontSize": "33px"
+              },
+              {
+                "name": "Back",
+                "width": 400.3125,
+                "height": 82.5,
+                "fontSize": "36px"
+              },
+              {
+                "name": "OK",
+                "width": 400.3125,
+                "height": 82.5,
+                "fontSize": "36px"
+              }
+            ],
+            "text": [
+              {
+                "name": "Parental Controls",
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "",
+                "fontSize": "33px"
+              },
+              {
+                "name": "Back",
+                "fontSize": "36px"
+              },
+              {
+                "name": "OK",
+                "fontSize": "36px"
+              }
+            ],
+            "failures": []
+          },
+          "before": {
+            "image": "before/secret-question-1280x720.png",
+            "sha256": "e8f486c2c15a0a16044ad465dcfefc52ebcf563a6bda56592a22d1c3d2ad7a49"
+          }
+        }
+      ]
+    },
+    {
+      "id": "secret-question-answer",
+      "title": "Answer the secret question",
+      "findings": "Answer entry is a distinct step with question, prompt and rectangular answer field. Back returns to selection without committing; OK saves both values. Blank-answer OK is disabled, so its appearance differs from the filled source. Header position, field offsets, arrow artwork and proportions remain fitted approximations.",
+      "manuallyInspected": true,
+      "sheet": {
+        "image": "secret-question-answer.jpg",
+        "sha256": "14d8f536713a60ee6e261b9b028a610bada7d67abe351e69b941c35bae94f723"
+      },
+      "sources": [
+        {
+          "id": "parental-22",
+          "title": "Answer the secret question",
+          "family": "parental",
+          "image": "images/parental-22.png",
+          "sourceURL": "https://www.techsolutions.support.com/how-to/how-to-set-up-parental-controls-on-a-nintendo-wii-12240",
+          "imageURL": "https://cdn.prod.website-files.com/67fd668f758dd19469aa48ca/67fd6690758dd19469aaa662_12240-40818.png",
+          "originalSize": [
+            500,
+            365
+          ],
+          "sha256": "d37d3aa995ab39a777963680c4ea1d89fe72f2237efc43fbf988911c921cf17a",
+          "states": [
+            "secret-question-answer"
+          ],
+          "notes": "Separate answer step. The adapter now uses the same question/prompt/answer hierarchy; selected question and answer remain local draft values until OK.",
+          "limits": "Mixed cropped/resized captures and display photographs, some with tutorial annotations. Original display aspect is unverified. English/ESRB; 3.1U visible on Settings 1 only, not established for every image.",
+          "comparisonUse": "structure-only",
+          "aspect": "unverified",
+          "visuallyInspected": true
+        }
+      ],
+      "captures": [
+        {
+          "id": "secret-question-answer",
+          "title": "Answer the secret question",
+          "width": 640,
+          "height": 480,
+          "mode": "4:3",
+          "image": "current/secret-question-answer-640x480.png",
+          "sha256": "72990a1155272bd43664f4900dba3f452b2ea4fba94dcfb39ba13eada79277ff",
+          "sourceIds": [
+            "parental-22"
+          ],
+          "geometry": {
+            "width": 640,
+            "height": 480,
+            "controls": [
+              {
+                "name": "Secret answer",
+                "width": 400,
+                "height": 60,
+                "fontSize": "20px"
+              },
+              {
+                "name": "Back",
+                "width": 270,
+                "height": 55,
+                "fontSize": "24px"
+              }
+            ],
+            "text": [
+              {
+                "name": "Parental Controls",
+                "fontSize": "23px"
+              },
+              {
+                "name": "",
+                "fontSize": "20px"
+              },
+              {
+                "name": "Back",
+                "fontSize": "24px"
+              },
+              {
+                "name": "OK",
+                "fontSize": "24px"
+              }
+            ],
+            "failures": []
+          }
+        },
+        {
+          "id": "secret-question-answer",
+          "title": "Answer the secret question",
+          "width": 854,
+          "height": 480,
+          "mode": "16:9",
+          "image": "current/secret-question-answer-854x480.png",
+          "sha256": "31644028a6ba7342ec175930ff5b44ddfbd64b3f24e755ad31d5671635ea338e",
+          "sourceIds": [
+            "parental-22"
+          ],
+          "geometry": {
+            "width": 854,
+            "height": 480,
+            "controls": [
+              {
+                "name": "Secret answer",
+                "width": 400,
+                "height": 60,
+                "fontSize": "20px"
+              },
+              {
+                "name": "Back",
+                "width": 266.875,
+                "height": 55,
+                "fontSize": "24px"
+              }
+            ],
+            "text": [
+              {
+                "name": "Parental Controls",
+                "fontSize": "23px"
+              },
+              {
+                "name": "",
+                "fontSize": "20px"
+              },
+              {
+                "name": "Back",
+                "fontSize": "24px"
+              },
+              {
+                "name": "OK",
+                "fontSize": "24px"
+              }
+            ],
+            "failures": []
+          }
+        },
+        {
+          "id": "secret-question-answer",
+          "title": "Answer the secret question",
+          "width": 960,
+          "height": 720,
+          "mode": "4:3",
+          "image": "current/secret-question-answer-960x720.png",
+          "sha256": "9a8cbdbf0b6a395139d9b00d2391568bf60dd4332dc72bacf6da2d0ddc4995af",
+          "sourceIds": [
+            "parental-22"
+          ],
+          "geometry": {
+            "width": 960,
+            "height": 720,
+            "controls": [
+              {
+                "name": "Secret answer",
+                "width": 600,
+                "height": 90,
+                "fontSize": "30px"
+              },
+              {
+                "name": "Back",
+                "width": 405,
+                "height": 82.5,
+                "fontSize": "36px"
+              }
+            ],
+            "text": [
+              {
+                "name": "Parental Controls",
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "",
+                "fontSize": "30px"
+              },
+              {
+                "name": "Back",
+                "fontSize": "36px"
+              },
+              {
+                "name": "OK",
+                "fontSize": "36px"
+              }
+            ],
+            "failures": []
+          }
+        },
+        {
+          "id": "secret-question-answer",
+          "title": "Answer the secret question",
+          "width": 1280,
+          "height": 720,
+          "mode": "16:9",
+          "image": "current/secret-question-answer-1280x720.png",
+          "sha256": "c154e8546f15f84fda70ef37f5413bf161304f7c306a8814023cc4c5abfbf0b6",
+          "sourceIds": [
+            "parental-22"
+          ],
+          "geometry": {
+            "width": 1280,
+            "height": 720,
+            "controls": [
+              {
+                "name": "Secret answer",
+                "width": 600,
+                "height": 90,
+                "fontSize": "30px"
+              },
+              {
+                "name": "Back",
+                "width": 400.3125,
+                "height": 82.5,
+                "fontSize": "36px"
+              }
+            ],
+            "text": [
+              {
+                "name": "Parental Controls",
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "",
+                "fontSize": "30px"
+              },
+              {
+                "name": "Back",
+                "fontSize": "36px"
+              },
+              {
+                "name": "OK",
+                "fontSize": "36px"
+              }
+            ],
+            "failures": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "console-information",
+      "title": "Console Information",
+      "findings": "The incorrect Wii Number/online-status group is replaced with native MAC Address and LAN Adapter MAC Address groups. Browser values and explanatory text deliberately differ because hardware identifiers cannot be read. Header/footer are smaller. Unverified source resizing prevents precise alignment, especially in 16:9.",
+      "manuallyInspected": true,
+      "sheet": {
+        "image": "console-information.jpg",
+        "sha256": "b68fd96fc9c86bead2704985f26a07f4c4c3ea081d81d65c80a84683dbf2169e"
+      },
+      "sources": [
+        {
+          "id": "wku-10",
+          "title": "Console Information — MAC addresses",
+          "family": "wku",
+          "image": "images/wku-10.png",
+          "sourceURL": "https://www.wku.edu/its/toppertech/wii.php",
+          "imageURL": "https://www.wku.edu/its/toppertech/images/wii6.png",
+          "originalSize": [
+            575,
+            390
+          ],
+          "sha256": "9b4f256e4c13585af14545ee66b281f816bb53f65ba9a6fa4fa0f063d7110a9f",
+          "states": [
+            "console-information"
+          ],
+          "notes": "Native view shows MAC Address and LAN Adapter MAC Address. The adapter now uses those labels with unavailable-in-browser values, since web pages cannot read hardware addresses. Source intentionally obscures a MAC address.",
+          "limits": "Source is 575×390 with unverified display aspect/cropping. Preserve original ratio; structure comparison only. English US. Version 3.4U is visible only on the Settings 1 image in this series.",
+          "comparisonUse": "structure-only",
+          "aspect": "unverified",
+          "visuallyInspected": true
+        }
+      ],
+      "captures": [
+        {
+          "id": "console-information",
+          "title": "Console Information",
+          "width": 640,
+          "height": 480,
+          "mode": "4:3",
+          "image": "current/console-information-640x480.png",
+          "sha256": "fa6dcd68c18f9d0ba0c9f44a00c48cd157ba54e1ab546148f849396db4abbd1c",
+          "sourceIds": [
+            "wku-10"
+          ],
+          "geometry": {
+            "width": 640,
+            "height": 480,
+            "controls": [
+              {
+                "name": "Back",
+                "width": 270,
+                "height": 55,
+                "fontSize": "24px"
+              }
+            ],
+            "text": [
+              {
+                "name": "Console Information",
+                "fontSize": "23px"
+              },
+              {
+                "name": "Back",
+                "fontSize": "24px"
+              }
+            ],
+            "failures": []
+          },
+          "before": {
+            "image": "before/console-information-640x480.png",
+            "sha256": "f392ed05051fd1c1f2e7c805cf36b89677205c8561f2bcf0e32f03fd0710b2b5"
+          }
+        },
+        {
+          "id": "console-information",
+          "title": "Console Information",
+          "width": 854,
+          "height": 480,
+          "mode": "16:9",
+          "image": "current/console-information-854x480.png",
+          "sha256": "c1acf1939c6c15856ba293891aff97584da47226b60065697a447e7719034c67",
+          "sourceIds": [
+            "wku-10"
+          ],
+          "geometry": {
+            "width": 854,
+            "height": 480,
+            "controls": [
+              {
+                "name": "Back",
+                "width": 266.875,
+                "height": 55,
+                "fontSize": "24px"
+              }
+            ],
+            "text": [
+              {
+                "name": "Console Information",
+                "fontSize": "23px"
+              },
+              {
+                "name": "Back",
+                "fontSize": "24px"
+              }
+            ],
+            "failures": []
+          },
+          "before": {
+            "image": "before/console-information-854x480.png",
+            "sha256": "ff0324da564fe1424194acf914f1d35bc6449b7049d9a16560477179f93dfac0"
+          }
+        },
+        {
+          "id": "console-information",
+          "title": "Console Information",
+          "width": 960,
+          "height": 720,
+          "mode": "4:3",
+          "image": "current/console-information-960x720.png",
+          "sha256": "a3d78dc4e3d64d8d2ab6b5cdbdf96275bbd634f393f05d0f63e83ddbfdce3aec",
+          "sourceIds": [
+            "wku-10"
+          ],
+          "geometry": {
+            "width": 960,
+            "height": 720,
+            "controls": [
+              {
+                "name": "Back",
+                "width": 405,
+                "height": 82.5,
+                "fontSize": "36px"
+              }
+            ],
+            "text": [
+              {
+                "name": "Console Information",
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Back",
+                "fontSize": "36px"
+              }
+            ],
+            "failures": []
+          },
+          "before": {
+            "image": "before/console-information-960x720.png",
+            "sha256": "498364236ca84aa43827a94d54d401b6a754654f4e5e0e4a1f84e7276bdeef62"
+          }
+        },
+        {
+          "id": "console-information",
+          "title": "Console Information",
+          "width": 1280,
+          "height": 720,
+          "mode": "16:9",
+          "image": "current/console-information-1280x720.png",
+          "sha256": "1ce13d8699d2edcd9c25e0cdaa7f36f45a760b582bad3d997a2e8f0722941ef1",
+          "sourceIds": [
+            "wku-10"
+          ],
+          "geometry": {
+            "width": 1280,
+            "height": 720,
+            "controls": [
+              {
+                "name": "Back",
+                "width": 400.3125,
+                "height": 82.5,
+                "fontSize": "36px"
+              }
+            ],
+            "text": [
+              {
+                "name": "Console Information",
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Back",
+                "fontSize": "36px"
+              }
+            ],
+            "failures": []
+          },
+          "before": {
+            "image": "before/console-information-1280x720.png",
+            "sha256": "38ea202dccb3577b0d5afa7605043b2231ee926e9650364a3d82c58a00a00bcb"
+          }
+        }
+      ]
+    },
+    {
+      "id": "user-agreements",
+      "title": "User Agreements — services prompt",
+      "findings": "Yes/No service prompt now replaces the generic information page. Recreation-specific enrollment limits remain visible. Buttons, header and prompt have the expected hierarchy; source scanlines/crop and exact wide layout are unverified.",
+      "manuallyInspected": true,
+      "sheet": {
+        "image": "user-agreements.jpg",
+        "sha256": "ced7188836a9f67180e142b297040779f8d322959d632ddb27ddcbe6caabbea1"
+      },
+      "sources": [
+        {
+          "id": "wiimart-23",
+          "title": "User Agreements — enable services?",
+          "family": "wiimart",
+          "image": "images/wiimart-23.png",
+          "sourceURL": "https://github.com/WiiMart/WiiMart.org/blob/main/support.html",
+          "imageURL": "https://raw.githubusercontent.com/WiiMart/WiiMart.org/main/media/screenshot-eula-help-2.png",
+          "originalSize": [
+            834,
+            456
+          ],
+          "sha256": "95289bc9d7cd7eea55cf564638acb9cc1ef29580a1aa1e869a019bc018f6cfbc",
+          "states": [
+            "user-agreements"
+          ],
+          "notes": "Would you like to use the Wii Shop Channel and WiiConnect24? Yes / No step, now represented in the adapter. The recreation labels service enrollment as unavailable.",
+          "limits": "Community WiiMart revival guide; modified consoles/services may be involved. Captures have scanlines and nonstandard 834×456 or 800×438 bounds. Do not treat file ratio as verified 16:9 or infer firmware.",
+          "comparisonUse": "structure-only",
+          "aspect": "unverified",
+          "visuallyInspected": true
+        }
+      ],
+      "captures": [
+        {
+          "id": "user-agreements",
+          "title": "User Agreements — services prompt",
+          "width": 640,
+          "height": 480,
+          "mode": "4:3",
+          "image": "current/user-agreements-640x480.png",
+          "sha256": "7ece92cad2613513aee23f2ee95e6689493b5460af6025b361c76878ff6ef956",
+          "sourceIds": [
+            "wiimart-23"
+          ],
+          "geometry": {
+            "width": 640,
+            "height": 480,
+            "controls": [
+              {
+                "name": "Yes",
+                "width": 270,
+                "height": 55,
+                "fontSize": "24px"
+              },
+              {
+                "name": "No",
+                "width": 270,
+                "height": 55,
+                "fontSize": "24px"
+              }
+            ],
+            "text": [
+              {
+                "name": "User Agreements",
+                "fontSize": "23px"
+              },
+              {
+                "name": "Yes",
+                "fontSize": "24px"
+              },
+              {
+                "name": "No",
+                "fontSize": "24px"
+              }
+            ],
+            "failures": []
+          },
+          "before": {
+            "image": "before/user-agreements-640x480.png",
+            "sha256": "577bb49b2a2f7e8ed81f944fdd5518219561b269626d82f72abdba6aea5fbc02"
+          }
+        },
+        {
+          "id": "user-agreements",
+          "title": "User Agreements — services prompt",
+          "width": 854,
+          "height": 480,
+          "mode": "16:9",
+          "image": "current/user-agreements-854x480.png",
+          "sha256": "add5dd9e85b9b1d89d42d187376ca2ee606d70331d6a6da2452c0c4a84fbd443",
+          "sourceIds": [
+            "wiimart-23"
+          ],
+          "geometry": {
+            "width": 854,
+            "height": 480,
+            "controls": [
+              {
+                "name": "Yes",
+                "width": 266.875,
+                "height": 55,
+                "fontSize": "24px"
+              },
+              {
+                "name": "No",
+                "width": 266.875,
+                "height": 55,
+                "fontSize": "24px"
+              }
+            ],
+            "text": [
+              {
+                "name": "User Agreements",
+                "fontSize": "23px"
+              },
+              {
+                "name": "Yes",
+                "fontSize": "24px"
+              },
+              {
+                "name": "No",
+                "fontSize": "24px"
+              }
+            ],
+            "failures": []
+          },
+          "before": {
+            "image": "before/user-agreements-854x480.png",
+            "sha256": "f98b6b683cb1a45dd372e1e35954cec1ab12b797d8f09b4e1a7f629e1e03df92"
+          }
+        },
+        {
+          "id": "user-agreements",
+          "title": "User Agreements — services prompt",
+          "width": 960,
+          "height": 720,
+          "mode": "4:3",
+          "image": "current/user-agreements-960x720.png",
+          "sha256": "7c23cb664a7afe6024f47d013b9a0b6f2bd8573d07f1274d8be09f7b469a733a",
+          "sourceIds": [
+            "wiimart-23"
+          ],
+          "geometry": {
+            "width": 960,
+            "height": 720,
+            "controls": [
+              {
+                "name": "Yes",
+                "width": 405,
+                "height": 82.5,
+                "fontSize": "36px"
+              },
+              {
+                "name": "No",
+                "width": 405,
+                "height": 82.5,
+                "fontSize": "36px"
+              }
+            ],
+            "text": [
+              {
+                "name": "User Agreements",
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Yes",
+                "fontSize": "36px"
+              },
+              {
+                "name": "No",
+                "fontSize": "36px"
+              }
+            ],
+            "failures": []
+          },
+          "before": {
+            "image": "before/user-agreements-960x720.png",
+            "sha256": "cc98511e73e5276e7403430d6ac0505a681cad03d010377ff4af5c08e3cbe117"
+          }
+        },
+        {
+          "id": "user-agreements",
+          "title": "User Agreements — services prompt",
+          "width": 1280,
+          "height": 720,
+          "mode": "16:9",
+          "image": "current/user-agreements-1280x720.png",
+          "sha256": "28de876551a32132b39b78541f923016d2033b8c073f124c56ddc2779053251c",
+          "sourceIds": [
+            "wiimart-23"
+          ],
+          "geometry": {
+            "width": 1280,
+            "height": 720,
+            "controls": [
+              {
+                "name": "Yes",
+                "width": 400.3125,
+                "height": 82.5,
+                "fontSize": "36px"
+              },
+              {
+                "name": "No",
+                "width": 400.3125,
+                "height": 82.5,
+                "fontSize": "36px"
+              }
+            ],
+            "text": [
+              {
+                "name": "User Agreements",
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Yes",
+                "fontSize": "36px"
+              },
+              {
+                "name": "No",
+                "fontSize": "36px"
+              }
+            ],
+            "failures": []
+          },
+          "before": {
+            "image": "before/user-agreements-1280x720.png",
+            "sha256": "63cc4b187b413ec88baf8f580c68c38cd2379979ffb501fd621f557098496efb"
+          }
+        }
+      ]
+    },
+    {
+      "id": "user-agreements-notice",
+      "title": "User Agreements — review notice",
+      "findings": "The review notice and Next are a separate step. This adapter adds Back and explanatory recreation text; native source has only Next. Header, frame and fonts are shared approximations.",
+      "manuallyInspected": true,
+      "sheet": {
+        "image": "user-agreements-notice.jpg",
+        "sha256": "67ff64cb005ae6b552fed7dbfd3e7eda45dea1b742614cd1fb844f35b69e4612"
+      },
+      "sources": [
+        {
+          "id": "wiimart-27",
+          "title": "User Agreements — review notice",
+          "family": "wiimart",
+          "image": "images/wiimart-27.webp",
+          "sourceURL": "https://github.com/WiiMart/WiiMart.org/blob/main/support.html",
+          "imageURL": "https://raw.githubusercontent.com/WiiMart/WiiMart.org/main/media/screenshot-eula-help-3.png",
+          "originalSize": [
+            834,
+            456
+          ],
+          "sha256": "4042b6957809187cb4d51b989946a40efb5be47d39b23b56d85c6db4949a1353",
+          "states": [
+            "user-agreements-notice"
+          ],
+          "notes": "Separate review notice with Next before agreement contents, now represented as a distinct adapter step. Back is an added browser navigation control.",
+          "limits": "Community WiiMart revival guide; modified consoles/services may be involved. Captures have scanlines and nonstandard 834×456 or 800×438 bounds. Do not treat file ratio as verified 16:9 or infer firmware.",
+          "comparisonUse": "structure-only",
+          "aspect": "unverified",
+          "visuallyInspected": true
+        }
+      ],
+      "captures": [
+        {
+          "id": "user-agreements-notice",
+          "title": "User Agreements — review notice",
+          "width": 640,
+          "height": 480,
+          "mode": "4:3",
+          "image": "current/user-agreements-notice-640x480.png",
+          "sha256": "65f2a1ac94323e2e510de45638821c091f3c4b41e65a7f0b5e1d5c22d49e3709",
+          "sourceIds": [
+            "wiimart-27"
+          ],
+          "geometry": {
+            "width": 640,
+            "height": 480,
+            "controls": [
+              {
+                "name": "Back",
+                "width": 270,
+                "height": 55,
+                "fontSize": "24px"
+              },
+              {
+                "name": "Next",
+                "width": 270,
+                "height": 55,
+                "fontSize": "24px"
+              }
+            ],
+            "text": [
+              {
+                "name": "User Agreements",
+                "fontSize": "23px"
+              },
+              {
+                "name": "Back",
+                "fontSize": "24px"
+              },
+              {
+                "name": "Next",
+                "fontSize": "24px"
+              }
+            ],
+            "failures": []
+          }
+        },
+        {
+          "id": "user-agreements-notice",
+          "title": "User Agreements — review notice",
+          "width": 854,
+          "height": 480,
+          "mode": "16:9",
+          "image": "current/user-agreements-notice-854x480.png",
+          "sha256": "ee98b96df793298fd7beb4bd288d532d575818eab6575637a10ffdf3e18fd746",
+          "sourceIds": [
+            "wiimart-27"
+          ],
+          "geometry": {
+            "width": 854,
+            "height": 480,
+            "controls": [
+              {
+                "name": "Back",
+                "width": 266.875,
+                "height": 55,
+                "fontSize": "24px"
+              },
+              {
+                "name": "Next",
+                "width": 266.875,
+                "height": 55,
+                "fontSize": "24px"
+              }
+            ],
+            "text": [
+              {
+                "name": "User Agreements",
+                "fontSize": "23px"
+              },
+              {
+                "name": "Back",
+                "fontSize": "24px"
+              },
+              {
+                "name": "Next",
+                "fontSize": "24px"
+              }
+            ],
+            "failures": []
+          }
+        },
+        {
+          "id": "user-agreements-notice",
+          "title": "User Agreements — review notice",
+          "width": 960,
+          "height": 720,
+          "mode": "4:3",
+          "image": "current/user-agreements-notice-960x720.png",
+          "sha256": "65406ab6a0bcdf9d71ee4482a880078d09f077025a9dce5160d6923ad3c1e4ff",
+          "sourceIds": [
+            "wiimart-27"
+          ],
+          "geometry": {
+            "width": 960,
+            "height": 720,
+            "controls": [
+              {
+                "name": "Back",
+                "width": 405,
+                "height": 82.5,
+                "fontSize": "36px"
+              },
+              {
+                "name": "Next",
+                "width": 405,
+                "height": 82.5,
+                "fontSize": "36px"
+              }
+            ],
+            "text": [
+              {
+                "name": "User Agreements",
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Back",
+                "fontSize": "36px"
+              },
+              {
+                "name": "Next",
+                "fontSize": "36px"
+              }
+            ],
+            "failures": []
+          }
+        },
+        {
+          "id": "user-agreements-notice",
+          "title": "User Agreements — review notice",
+          "width": 1280,
+          "height": 720,
+          "mode": "16:9",
+          "image": "current/user-agreements-notice-1280x720.png",
+          "sha256": "d58498cc97f01d021fda595eec7c7dda9c09b1412d01e9f2568c058a62ca5ce3",
+          "sourceIds": [
+            "wiimart-27"
+          ],
+          "geometry": {
+            "width": 1280,
+            "height": 720,
+            "controls": [
+              {
+                "name": "Back",
+                "width": 400.3125,
+                "height": 82.5,
+                "fontSize": "36px"
+              },
+              {
+                "name": "Next",
+                "width": 400.3125,
+                "height": 82.5,
+                "fontSize": "36px"
+              }
+            ],
+            "text": [
+              {
+                "name": "User Agreements",
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Back",
+                "fontSize": "36px"
+              },
+              {
+                "name": "Next",
+                "fontSize": "36px"
+              }
+            ],
+            "failures": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "user-agreements-document",
+      "title": "User Agreements — recreation document",
+      "findings": "Scrollable white document panel and I ACCEPT / I DO NOT ACCEPT actions replace a missing step. The document is explicitly for Wii Showcase, not Nintendo terms. Acceptance/decline only changes a local preference and never enables online data. Source document content, scrollbar artwork and exact geometry differ intentionally or remain approximate.",
+      "manuallyInspected": true,
+      "sheet": {
+        "image": "user-agreements-document.jpg",
+        "sha256": "9ec729b4016a8dbf2051652f4b9afb75620e3cdaf394b254fb21100f9b574bc8"
+      },
+      "sources": [
+        {
+          "id": "wiimart-28",
+          "title": "Network Services User Agreement",
+          "family": "wiimart",
+          "image": "images/wiimart-28.webp",
+          "sourceURL": "https://github.com/WiiMart/WiiMart.org/blob/main/support.html",
+          "imageURL": "https://raw.githubusercontent.com/WiiMart/WiiMart.org/main/media/screenshot-eula-help-4.png",
+          "originalSize": [
+            800,
+            438
+          ],
+          "sha256": "cfef062ad978b77f9814505ec56e90addf6b327c18c6c6c7a109cafb35b3f734",
+          "states": [
+            "user-agreements-document"
+          ],
+          "notes": "Scrollable document and I ACCEPT / I DO NOT ACCEPT. The adapter explicitly displays its own recreation notice rather than Nintendo terms. Visible source document date June 22, 2010 is not a firmware identifier.",
+          "limits": "Community WiiMart revival guide; modified consoles/services may be involved. Captures have scanlines and nonstandard 834×456 or 800×438 bounds. Do not treat file ratio as verified 16:9 or infer firmware.",
+          "comparisonUse": "structure-only",
+          "aspect": "unverified",
+          "visuallyInspected": true
+        }
+      ],
+      "captures": [
+        {
+          "id": "user-agreements-document",
+          "title": "User Agreements — recreation document",
+          "width": 640,
+          "height": 480,
+          "mode": "4:3",
+          "image": "current/user-agreements-document-640x480.png",
+          "sha256": "d7969e82ad7ba36f8ccc8d1c1b836f814baf000f09e17b06db8a5364b4174226",
+          "sourceIds": [
+            "wiimart-28"
+          ],
+          "geometry": {
+            "width": 640,
+            "height": 480,
+            "controls": [
+              {
+                "name": "I ACCEPT",
+                "width": 295.671875,
+                "height": 55,
+                "fontSize": "21px"
+              },
+              {
+                "name": "I DO NOT ACCEPT",
+                "width": 295.671875,
+                "height": 55,
+                "fontSize": "21px"
+              }
+            ],
+            "text": [
+              {
+                "name": "User Agreements",
+                "fontSize": "23px"
+              },
+              {
+                "name": "Wii Showcase — local recreation",
+                "fontSize": "16px"
+              },
+              {
+                "name": "I ACCEPT",
+                "fontSize": "21px"
+              },
+              {
+                "name": "I DO NOT ACCEPT",
+                "fontSize": "21px"
+              }
+            ],
+            "failures": []
+          }
+        },
+        {
+          "id": "user-agreements-document",
+          "title": "User Agreements — recreation document",
+          "width": 854,
+          "height": 480,
+          "mode": "16:9",
+          "image": "current/user-agreements-document-854x480.png",
+          "sha256": "39433ef37edb945f7ade61c2ab436177d5d2a6482ed798e9fab9f87591899538",
+          "sourceIds": [
+            "wiimart-28"
+          ],
+          "geometry": {
+            "width": 854,
+            "height": 480,
+            "controls": [
+              {
+                "name": "I ACCEPT",
+                "width": 295.671875,
+                "height": 55,
+                "fontSize": "21px"
+              },
+              {
+                "name": "I DO NOT ACCEPT",
+                "width": 295.671875,
+                "height": 55,
+                "fontSize": "21px"
+              }
+            ],
+            "text": [
+              {
+                "name": "User Agreements",
+                "fontSize": "23px"
+              },
+              {
+                "name": "Wii Showcase — local recreation",
+                "fontSize": "16px"
+              },
+              {
+                "name": "I ACCEPT",
+                "fontSize": "21px"
+              },
+              {
+                "name": "I DO NOT ACCEPT",
+                "fontSize": "21px"
+              }
+            ],
+            "failures": []
+          }
+        },
+        {
+          "id": "user-agreements-document",
+          "title": "User Agreements — recreation document",
+          "width": 960,
+          "height": 720,
+          "mode": "4:3",
+          "image": "current/user-agreements-document-960x720.png",
+          "sha256": "0cb0c337158814682b8a2ecb39a4966ba610833d90f2f5e80dc80679c81b0821",
+          "sourceIds": [
+            "wiimart-28"
+          ],
+          "geometry": {
+            "width": 960,
+            "height": 720,
+            "controls": [
+              {
+                "name": "I ACCEPT",
+                "width": 443.515625,
+                "height": 82.5,
+                "fontSize": "31.5px"
+              },
+              {
+                "name": "I DO NOT ACCEPT",
+                "width": 443.515625,
+                "height": 82.5,
+                "fontSize": "31.5px"
+              }
+            ],
+            "text": [
+              {
+                "name": "User Agreements",
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Wii Showcase — local recreation",
+                "fontSize": "24px"
+              },
+              {
+                "name": "I ACCEPT",
+                "fontSize": "31.5px"
+              },
+              {
+                "name": "I DO NOT ACCEPT",
+                "fontSize": "31.5px"
+              }
+            ],
+            "failures": []
+          }
+        },
+        {
+          "id": "user-agreements-document",
+          "title": "User Agreements — recreation document",
+          "width": 1280,
+          "height": 720,
+          "mode": "16:9",
+          "image": "current/user-agreements-document-1280x720.png",
+          "sha256": "cb6c6aa2c4780742e42aef239d8ce4edff9d937b4e5f3a975e8ae869af2e97b5",
+          "sourceIds": [
+            "wiimart-28"
+          ],
+          "geometry": {
+            "width": 1280,
+            "height": 720,
+            "controls": [
+              {
+                "name": "I ACCEPT",
+                "width": 443.515625,
+                "height": 82.5,
+                "fontSize": "31.5px"
+              },
+              {
+                "name": "I DO NOT ACCEPT",
+                "width": 443.515625,
+                "height": 82.5,
+                "fontSize": "31.5px"
+              }
+            ],
+            "text": [
+              {
+                "name": "User Agreements",
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Wii Showcase — local recreation",
+                "fontSize": "24px"
+              },
+              {
+                "name": "I ACCEPT",
+                "fontSize": "31.5px"
+              },
+              {
+                "name": "I DO NOT ACCEPT",
+                "fontSize": "31.5px"
+              }
+            ],
+            "failures": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "save-selected",
+      "title": "Save Data item actions",
+      "findings": "Selected save data now uses a thumbnail/block summary, item name and larger action row. Modal Back appears at the frame footer while focus and Escape stay in the dialog. No exact native Wii-save item reference was collected; the generic save thumbnail remains a reconstruction and this screen is not certified against a matching source.",
+      "manuallyInspected": true,
+      "sheet": {
+        "image": "save-selected.jpg",
+        "sha256": "011b12d12db5713c8dc7a2167175cec47a807b2a28635138af28b9e05fdefc71"
+      },
+      "sources": [],
+      "captures": [
+        {
+          "id": "save-selected",
+          "title": "Save Data item actions",
+          "width": 640,
+          "height": 480,
+          "mode": "4:3",
+          "image": "current/save-selected-640x480.png",
+          "sha256": "3c9dd79e0e5191baffe6a91a5c990215116d86f7249b16d076f9c3bf92270568",
+          "sourceIds": [],
+          "geometry": {
+            "width": 640,
+            "height": 480,
+            "controls": [
+              {
+                "name": "Copy",
+                "width": 164,
+                "height": 52,
+                "fontSize": "23px"
+              },
+              {
+                "name": "Move",
+                "width": 164,
+                "height": 52,
+                "fontSize": "23px"
+              },
+              {
+                "name": "Erase",
+                "width": 164,
+                "height": 52,
+                "fontSize": "23px"
+              },
+              {
+                "name": "Back",
+                "width": 224,
+                "height": 60,
+                "fontSize": "26px"
+              }
+            ],
+            "text": [
+              {
+                "name": "Copy",
+                "fontSize": "23px"
+              },
+              {
+                "name": "Move",
+                "fontSize": "23px"
+              },
+              {
+                "name": "Erase",
+                "fontSize": "23px"
+              },
+              {
+                "name": "Back",
+                "fontSize": "26px"
+              }
+            ],
+            "failures": []
+          },
+          "before": {
+            "image": "before/save-selected-640x480.png",
+            "sha256": "8870f8d40f235f9eef7a4cbe638aa78bb1cec8184b3bbf2c22d9b0a9a8585d18"
+          }
+        },
+        {
+          "id": "save-selected",
+          "title": "Save Data item actions",
+          "width": 854,
+          "height": 480,
+          "mode": "16:9",
+          "image": "current/save-selected-854x480.png",
+          "sha256": "c6d8fe8c3f508e7c1a865f3b99635b3b603637aead6a90b2c2377f3c2d89b02f",
+          "sourceIds": [],
+          "geometry": {
+            "width": 854,
+            "height": 480,
+            "controls": [
+              {
+                "name": "Copy",
+                "width": 164,
+                "height": 52,
+                "fontSize": "23px"
+              },
+              {
+                "name": "Move",
+                "width": 164,
+                "height": 52,
+                "fontSize": "23px"
+              },
+              {
+                "name": "Erase",
+                "width": 164,
+                "height": 52,
+                "fontSize": "23px"
+              },
+              {
+                "name": "Back",
+                "width": 224,
+                "height": 60,
+                "fontSize": "26px"
+              }
+            ],
+            "text": [
+              {
+                "name": "Copy",
+                "fontSize": "23px"
+              },
+              {
+                "name": "Move",
+                "fontSize": "23px"
+              },
+              {
+                "name": "Erase",
+                "fontSize": "23px"
+              },
+              {
+                "name": "Back",
+                "fontSize": "26px"
+              }
+            ],
+            "failures": []
+          },
+          "before": {
+            "image": "before/save-selected-854x480.png",
+            "sha256": "466db5f379dc90bd6ca17f936c311300f823aa6b5ec768575f40281ab82bcf5a"
+          }
+        },
+        {
+          "id": "save-selected",
+          "title": "Save Data item actions",
+          "width": 960,
+          "height": 720,
+          "mode": "4:3",
+          "image": "current/save-selected-960x720.png",
+          "sha256": "ec7ab3266800c2929cc0cd1c828649970aff9aaaa679bda920ac747bedead72c",
+          "sourceIds": [],
+          "geometry": {
+            "width": 960,
+            "height": 720,
+            "controls": [
+              {
+                "name": "Copy",
+                "width": 246,
+                "height": 78,
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Move",
+                "width": 246,
+                "height": 78,
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Erase",
+                "width": 246,
+                "height": 78,
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Back",
+                "width": 336,
+                "height": 90,
+                "fontSize": "39px"
+              }
+            ],
+            "text": [
+              {
+                "name": "Copy",
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Move",
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Erase",
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Back",
+                "fontSize": "39px"
+              }
+            ],
+            "failures": []
+          },
+          "before": {
+            "image": "before/save-selected-960x720.png",
+            "sha256": "032ef37229214cd5ef191a0f9c7e05119bf28887de425f940213f097473126c5"
+          }
+        },
+        {
+          "id": "save-selected",
+          "title": "Save Data item actions",
+          "width": 1280,
+          "height": 720,
+          "mode": "16:9",
+          "image": "current/save-selected-1280x720.png",
+          "sha256": "7c6bc65b0805715059d3469d5d1813db3b3c0c603dca69293aed140e8b8f12f3",
+          "sourceIds": [],
+          "geometry": {
+            "width": 1280,
+            "height": 720,
+            "controls": [
+              {
+                "name": "Copy",
+                "width": 246,
+                "height": 78,
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Move",
+                "width": 246,
+                "height": 78,
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Erase",
+                "width": 246,
+                "height": 78,
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Back",
+                "width": 336,
+                "height": 90,
+                "fontSize": "39px"
+              }
+            ],
+            "text": [
+              {
+                "name": "Copy",
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Move",
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Erase",
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Back",
+                "fontSize": "39px"
+              }
+            ],
+            "failures": []
+          },
+          "before": {
+            "image": "before/save-selected-1280x720.png",
+            "sha256": "16f55016bb7d352ec8491083cc6b7bbbafe030e357959ce683ee790ec893fab4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "channel-selected",
+      "title": "Channel Data item actions",
+      "findings": "The native structural match is stronger: thumbnail/block information above item name, followed by Move / Copy / Erase in the source order. Known Mii art is reused. Unknown channel sizes remain unavailable rather than invented. Panel width, action shapes, title placement and background proportions still differ from the photographed SD Card Menu Data example.",
+      "manuallyInspected": true,
+      "sheet": {
+        "image": "channel-selected.jpg",
+        "sha256": "3ff4a87ec6213c57fe33286ad8ab313d8c541a1efaec2e41469b3017ab48968a"
+      },
+      "sources": [
+        {
+          "id": "nwr-sd-13",
+          "title": "Channel item — Move, Copy, Erase",
+          "family": "nwr-sd",
+          "image": "images/nwr-sd-13.jpg",
+          "sourceURL": "https://www.nintendoworldreport.com/news/18036/the-wii-sd-card-menu-a-walkthrough",
+          "imageURL": "https://www.nintendoworldreport.com/media/18031/1/14.jpg",
+          "originalSize": [
+            853,
+            571
+          ],
+          "sha256": "fa4eb81ae3dd575c2d6296b1c218941c0937cb7dc1c879ba80c4f058d815ebe3",
+          "states": [
+            "channel-selected"
+          ],
+          "notes": "Actual selected-channel action panel with thumbnail, block count and Move / Copy / Erase. The adapter now follows this structure; unknown channel block sizes remain unavailable, and exact panel geometry/artwork is approximate.",
+          "limits": "Photograph of a display with perspective, bezel and publisher watermark. Structure and flow evidence only; no direct pixel alignment. English; March 25, 2009 article establishes the 4.0 release era, not an installed firmware revision.",
+          "comparisonUse": "structure-only",
+          "aspect": "unverified",
+          "visuallyInspected": true
+        }
+      ],
+      "captures": [
+        {
+          "id": "channel-selected",
+          "title": "Channel Data item actions",
+          "width": 640,
+          "height": 480,
+          "mode": "4:3",
+          "image": "current/channel-selected-640x480.png",
+          "sha256": "69e8a90743873efad9473b14f6a6c0a6c579f91ec354761626ec950bdd8150f2",
+          "sourceIds": [
+            "nwr-sd-13"
+          ],
+          "geometry": {
+            "width": 640,
+            "height": 480,
+            "controls": [
+              {
+                "name": "Move",
+                "width": 164,
+                "height": 52,
+                "fontSize": "23px"
+              },
+              {
+                "name": "Copy",
+                "width": 164,
+                "height": 52,
+                "fontSize": "23px"
+              },
+              {
+                "name": "Erase",
+                "width": 164,
+                "height": 52,
+                "fontSize": "23px"
+              },
+              {
+                "name": "Back",
+                "width": 224,
+                "height": 60,
+                "fontSize": "26px"
+              }
+            ],
+            "text": [
+              {
+                "name": "Move",
+                "fontSize": "23px"
+              },
+              {
+                "name": "Copy",
+                "fontSize": "23px"
+              },
+              {
+                "name": "Erase",
+                "fontSize": "23px"
+              },
+              {
+                "name": "Back",
+                "fontSize": "26px"
+              }
+            ],
+            "failures": []
+          },
+          "before": {
+            "image": "before/channel-selected-640x480.png",
+            "sha256": "aa441901edcbc0d938f0874fa75065fccb7ad43d13653ab6114bc8835b0ec8ab"
+          }
+        },
+        {
+          "id": "channel-selected",
+          "title": "Channel Data item actions",
+          "width": 854,
+          "height": 480,
+          "mode": "16:9",
+          "image": "current/channel-selected-854x480.png",
+          "sha256": "1e311ee18273a21d17a0c74f536ae35d6c362af57f5f0810d0a42e9f3180ca87",
+          "sourceIds": [
+            "nwr-sd-13"
+          ],
+          "geometry": {
+            "width": 854,
+            "height": 480,
+            "controls": [
+              {
+                "name": "Move",
+                "width": 164,
+                "height": 52,
+                "fontSize": "23px"
+              },
+              {
+                "name": "Copy",
+                "width": 164,
+                "height": 52,
+                "fontSize": "23px"
+              },
+              {
+                "name": "Erase",
+                "width": 164,
+                "height": 52,
+                "fontSize": "23px"
+              },
+              {
+                "name": "Back",
+                "width": 224,
+                "height": 60,
+                "fontSize": "26px"
+              }
+            ],
+            "text": [
+              {
+                "name": "Move",
+                "fontSize": "23px"
+              },
+              {
+                "name": "Copy",
+                "fontSize": "23px"
+              },
+              {
+                "name": "Erase",
+                "fontSize": "23px"
+              },
+              {
+                "name": "Back",
+                "fontSize": "26px"
+              }
+            ],
+            "failures": []
+          },
+          "before": {
+            "image": "before/channel-selected-854x480.png",
+            "sha256": "ec5beda41801765c6f51737da0db2529c0b9857c5a3778586f7d99acf7d427d6"
+          }
+        },
+        {
+          "id": "channel-selected",
+          "title": "Channel Data item actions",
+          "width": 960,
+          "height": 720,
+          "mode": "4:3",
+          "image": "current/channel-selected-960x720.png",
+          "sha256": "4d7000b937f037769ec6c46794d0e294ceca4a86e1075043e3bdedb98a451cad",
+          "sourceIds": [
+            "nwr-sd-13"
+          ],
+          "geometry": {
+            "width": 960,
+            "height": 720,
+            "controls": [
+              {
+                "name": "Move",
+                "width": 246,
+                "height": 78,
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Copy",
+                "width": 246,
+                "height": 78,
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Erase",
+                "width": 246,
+                "height": 78,
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Back",
+                "width": 336,
+                "height": 90,
+                "fontSize": "39px"
+              }
+            ],
+            "text": [
+              {
+                "name": "Move",
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Copy",
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Erase",
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Back",
+                "fontSize": "39px"
+              }
+            ],
+            "failures": []
+          },
+          "before": {
+            "image": "before/channel-selected-960x720.png",
+            "sha256": "1b0413c08626fd6ed690f4e093a304474f44f11cfc2bf1a9eabdae8c2838c997"
+          }
+        },
+        {
+          "id": "channel-selected",
+          "title": "Channel Data item actions",
+          "width": 1280,
+          "height": 720,
+          "mode": "16:9",
+          "image": "current/channel-selected-1280x720.png",
+          "sha256": "20f5a1c635bc96cdd4604288ad189ef7b4fd53e00b15ddb4e8928c687c23c407",
+          "sourceIds": [
+            "nwr-sd-13"
+          ],
+          "geometry": {
+            "width": 1280,
+            "height": 720,
+            "controls": [
+              {
+                "name": "Move",
+                "width": 246,
+                "height": 78,
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Copy",
+                "width": 246,
+                "height": 78,
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Erase",
+                "width": 246,
+                "height": 78,
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Back",
+                "width": 336,
+                "height": 90,
+                "fontSize": "39px"
+              }
+            ],
+            "text": [
+              {
+                "name": "Move",
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Copy",
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Erase",
+                "fontSize": "34.5px"
+              },
+              {
+                "name": "Back",
+                "fontSize": "39px"
+              }
+            ],
+            "failures": []
+          },
+          "before": {
+            "image": "before/channel-selected-1280x720.png",
+            "sha256": "13d3df8d24317e0e1d345a4c783a655d1705d8272dbc8084defd3d66686974d4"
+          }
+        }
+      ]
+    }
+  ],
+  "remaining": [
+    "Full native parental setup wizard, returning-user PIN recovery and remaining secret-question options are not yet reproduced.",
+    "SD Menu onboarding, Auto Manage criteria and channel-list flows remain absent; the existing occupied-slot error fixture has different semantics from native memory-block exhaustion.",
+    "Calendar settings, Screen settings, Sensor Bar submenu, WiiConnect24 submenu and Operations Guide still lack usable direct references.",
+    "Original SD/storage capacity, native channel block metadata, region/firmware-specific variants and exact 16:9 geometry remain unverified.",
+    "No native pixel-accuracy percentage is assigned. Source images retain their original bytes and ratios; opacity overlays are uncalibrated."
+  ],
+  "reviewedCaptures": {
+    "current/secret-question-640x480.png": "aa76d67ce4f274fe5e01dee2f4615dfa75c1e1bfd7d1cb22d253a02f38a83849",
+    "current/secret-question-answer-640x480.png": "72990a1155272bd43664f4900dba3f452b2ea4fba94dcfb39ba13eada79277ff",
+    "current/console-information-640x480.png": "fa6dcd68c18f9d0ba0c9f44a00c48cd157ba54e1ab546148f849396db4abbd1c",
+    "current/user-agreements-640x480.png": "7ece92cad2613513aee23f2ee95e6689493b5460af6025b361c76878ff6ef956",
+    "current/user-agreements-notice-640x480.png": "65f2a1ac94323e2e510de45638821c091f3c4b41e65a7f0b5e1d5c22d49e3709",
+    "current/user-agreements-document-640x480.png": "d7969e82ad7ba36f8ccc8d1c1b836f814baf000f09e17b06db8a5364b4174226",
+    "current/save-selected-640x480.png": "3c9dd79e0e5191baffe6a91a5c990215116d86f7249b16d076f9c3bf92270568",
+    "current/channel-selected-640x480.png": "69e8a90743873efad9473b14f6a6c0a6c579f91ec354761626ec950bdd8150f2",
+    "current/secret-question-854x480.png": "bfc670589257190123339b2b93efeed6b47f39cda7b38285957e71975d12f01b",
+    "current/secret-question-answer-854x480.png": "31644028a6ba7342ec175930ff5b44ddfbd64b3f24e755ad31d5671635ea338e",
+    "current/console-information-854x480.png": "c1acf1939c6c15856ba293891aff97584da47226b60065697a447e7719034c67",
+    "current/user-agreements-854x480.png": "add5dd9e85b9b1d89d42d187376ca2ee606d70331d6a6da2452c0c4a84fbd443",
+    "current/user-agreements-notice-854x480.png": "ee98b96df793298fd7beb4bd288d532d575818eab6575637a10ffdf3e18fd746",
+    "current/user-agreements-document-854x480.png": "39433ef37edb945f7ade61c2ab436177d5d2a6482ed798e9fab9f87591899538",
+    "current/save-selected-854x480.png": "c6d8fe8c3f508e7c1a865f3b99635b3b603637aead6a90b2c2377f3c2d89b02f",
+    "current/channel-selected-854x480.png": "1e311ee18273a21d17a0c74f536ae35d6c362af57f5f0810d0a42e9f3180ca87",
+    "current/secret-question-960x720.png": "39747b9d5ef80565c4e7ff2e1ca684f4fe0ff68662640a8855ff0cceff5a4db6",
+    "current/secret-question-answer-960x720.png": "9a8cbdbf0b6a395139d9b00d2391568bf60dd4332dc72bacf6da2d0ddc4995af",
+    "current/console-information-960x720.png": "a3d78dc4e3d64d8d2ab6b5cdbdf96275bbd634f393f05d0f63e83ddbfdce3aec",
+    "current/user-agreements-960x720.png": "7c23cb664a7afe6024f47d013b9a0b6f2bd8573d07f1274d8be09f7b469a733a",
+    "current/user-agreements-notice-960x720.png": "65406ab6a0bcdf9d71ee4482a880078d09f077025a9dce5160d6923ad3c1e4ff",
+    "current/user-agreements-document-960x720.png": "0cb0c337158814682b8a2ecb39a4966ba610833d90f2f5e80dc80679c81b0821",
+    "current/save-selected-960x720.png": "ec7ab3266800c2929cc0cd1c828649970aff9aaaa679bda920ac747bedead72c",
+    "current/channel-selected-960x720.png": "4d7000b937f037769ec6c46794d0e294ceca4a86e1075043e3bdedb98a451cad",
+    "current/secret-question-1280x720.png": "298de29dae81afeb9d4db47be92636da2ac4a3d17b30698821e2d55a0756105a",
+    "current/secret-question-answer-1280x720.png": "c154e8546f15f84fda70ef37f5413bf161304f7c306a8814023cc4c5abfbf0b6",
+    "current/console-information-1280x720.png": "1ce13d8699d2edcd9c25e0cdaa7f36f45a760b582bad3d997a2e8f0722941ef1",
+    "current/user-agreements-1280x720.png": "28de876551a32132b39b78541f923016d2033b8c073f124c56ddc2779053251c",
+    "current/user-agreements-notice-1280x720.png": "d58498cc97f01d021fda595eec7c7dda9c09b1412d01e9f2568c058a62ca5ce3",
+    "current/user-agreements-document-1280x720.png": "cb6c6aa2c4780742e42aef239d8ce4edff9d937b4e5f3a975e8ae869af2e97b5",
+    "current/save-selected-1280x720.png": "7c6bc65b0805715059d3469d5d1813db3b3c0c603dca69293aed140e8b8f12f3",
+    "current/channel-selected-1280x720.png": "20f5a1c635bc96cdd4604288ad189ef7b4fd53e00b15ddb4e8928c687c23c407"
+  },
+  "date": "2026-10-15",
+  "baselineRevision": "ff99a17ad807c8219c3badea29ff29dd0db00a2e",
+  "checks": 88,
+  "captures": 32
+}

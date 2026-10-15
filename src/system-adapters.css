@@ -1809,3 +1809,100 @@ wii-keyboard .wii-keyboard--system.is-phone-layout .wii-keyboard-key--space {
   bottom: calc(-66 * var(--system-scale));
   font-size: calc(20 * var(--system-scale));
 }
+
+/* Supplementary source pass: cropped/photographed native views. These anchors
+   fit structure; they do not claim recovered native pixel coordinates. */
+.native-reference-leaf {
+  --system-settings-header: var(--system-reference-header);
+  --system-settings-footer: var(--system-reference-footer);
+  --system-settings-title-width: var(--system-reference-title-width);
+}
+.native-reference-leaf .system-settings-shell h1 {
+  height: calc(var(--system-reference-title-height) * var(--system-scale));
+  line-height: calc(var(--system-reference-title-height) * var(--system-scale));
+  font-size: calc(23 * var(--system-scale));
+}
+.native-reference-leaf .system-settings-shell footer > .system-button {
+  height: calc(55 * var(--system-scale));
+  min-height: 0;
+  font-size: calc(24 * var(--system-scale));
+}
+.native-reference-leaf .native-secret {
+  align-self: stretch;
+  height: 100%;
+  position: relative;
+  font-size: calc(var(--system-reference-text-size) * var(--system-scale));
+  padding-top: calc(24 * var(--system-scale));
+  gap: calc(12 * var(--system-scale));
+}
+.native-secret p { margin: 0; line-height: 1.35; }
+.native-reference-field,
+.native-secret .system-button.native-reference-field {
+  display: block;
+  width: min(100%, calc(var(--system-reference-field-width) * var(--system-scale)));
+  min-height: calc(var(--system-reference-field-height) * var(--system-scale));
+  border: calc(2 * var(--system-scale)) solid #c4c4c4;
+  border-radius: 0;
+  background: #fff;
+  box-shadow: none;
+  color: #303030;
+  padding: calc(3 * var(--system-scale)) calc(8 * var(--system-scale));
+  font: inherit;
+  text-align: left;
+  white-space: normal;
+  line-height: 1.3;
+}
+.native-secret-selector {
+  position: absolute;
+  top: calc(192 * var(--system-scale));
+  width: min(100%, calc(var(--system-reference-field-width) * var(--system-scale)));
+}
+.native-secret-selector .native-reference-field { width: 100%; }
+.native-secret .native-question-arrow {
+  display: grid;
+  place-items: center;
+  width: calc(60 * var(--system-scale));
+  height: calc(46 * var(--system-scale));
+  min-height: 0;
+  padding: 0;
+  margin: calc(10 * var(--system-scale)) auto 0;
+  background: none;
+  border: 0;
+  box-shadow: none;
+}
+.native-question-arrow .wii-icon { transform: rotate(90deg); font-size: calc(30 * var(--system-scale)); color: #9ae5f4; }
+.native-secret--answer .native-secret-question-text { margin-bottom: calc(20 * var(--system-scale)); }
+.native-secret--answer > .system-button.native-reference-field { width: calc(400 * var(--system-scale)); }
+.native-console-information {
+  width: 100%; height: 100%; text-align: center;
+  font-size: calc(var(--system-reference-text-size) * var(--system-scale));
+}
+.native-console-information dl { margin: calc(44 * var(--system-scale)) 0 0; }
+.native-console-information dl > div + div { margin-top: calc(70 * var(--system-scale)); }
+.native-console-information dd { margin: calc(8 * var(--system-scale)) 0 0; font-size: calc(26 * var(--system-scale)); }
+.native-console-information .native-lan-address { color: #949a9a; }
+.native-console-information .native-capability-note { font-size: calc(13 * var(--system-scale)); margin: calc(30 * var(--system-scale)) auto 0; }
+.native-agreement-prompt { width: 100%; text-align: center; font-size: calc(var(--system-reference-text-size) * var(--system-scale)); }
+.native-agreement-prompt p { margin: 0; line-height: 1.5; }
+.native-agreement-prompt .native-capability-note { font-size: calc(13 * var(--system-scale)); margin: calc(38 * var(--system-scale)) auto 0; }
+.native-agreement-document {
+  width: calc(450 * var(--system-scale)); max-width: 100%; height: calc(294 * var(--system-scale));
+  overflow-y: auto; background: #fff; color: #242424;
+  padding: calc(16 * var(--system-scale)); font-size: calc(16 * var(--system-scale));
+  text-align: center; border: calc(1 * var(--system-scale)) solid #bdbdbd;
+}
+.native-agreement-document h2 { font-size: inherit; margin: 0 0 1em; }
+.native-agreement-page--prompt .system-settings-shell footer { justify-content: center; gap: calc(12 * var(--system-scale)); }
+.native-agreement-page--document .system-settings-shell footer { padding-left: calc(var(--settings-side-inset) + 12 * var(--system-scale)); padding-right: calc(var(--settings-side-inset) + 12 * var(--system-scale)); gap: calc(10 * var(--system-scale)); }
+.native-agreement-page--document .system-settings-shell footer > .system-button { width: calc(300 * var(--system-scale)); font-size: calc(21 * var(--system-scale)); }
+.system-surface-data-item .system-dialog { position: static; width: calc(560 * var(--system-scale)); max-width: 95%; overflow: visible; background: #f8f8f8; color: #303030; border: calc(2 * var(--system-scale)) solid #a4b4b8; }
+.system-surface-data-item .system-dialog h2 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); padding: 0; }
+.system-surface-data-item .system-dialog-body { padding: calc(24 * var(--system-scale)); }
+.native-data-item-summary { display: flex; align-items: center; gap: calc(20 * var(--system-scale)); text-align: left; font-size: calc(20 * var(--system-scale)); }
+.native-data-item-preview { width: calc(96 * var(--system-scale)); height: calc(72 * var(--system-scale)); background: #e1e3e4; border: calc(2 * var(--system-scale)) solid #c2c6c8; display: grid; place-items: center; flex: none; }
+.native-data-item-preview img, .native-data-item-preview svg { width: 100%; height: 100%; object-fit: contain; }
+.native-data-item-name { font-size: calc(24 * var(--system-scale)); margin: calc(20 * var(--system-scale)) 0; }
+.native-data-item-actions { display: flex; flex-wrap: nowrap; gap: calc(8 * var(--system-scale)); }
+.native-data-item-actions > .system-button { flex: 1; min-width: 0; padding: 0; font-size: calc(23 * var(--system-scale)); height: calc(52 * var(--system-scale)); }
+.system-surface-data-item .system-dialog > .system-actions { padding: 0; border: 0; }
+.system-surface-data-item .system-dialog > .system-actions > .system-button { position: absolute; bottom: calc(28 * var(--system-scale)); left: max(calc(34 * var(--system-scale)), calc((100% - 640 * var(--system-scale)) / 2 + 34 * var(--system-scale))); width: calc(224 * var(--system-scale)); height: calc(60 * var(--system-scale)); font-size: calc(26 * var(--system-scale)); }

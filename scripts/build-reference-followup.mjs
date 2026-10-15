@@ -1,0 +1,19 @@
+import fs from 'node:fs/promises';
+import crypto from 'node:crypto';
+const dir='docs/interface-assets/reference-followup';
+const capture=JSON.parse(await fs.readFile(`${dir}/captures.json`));
+const notes=JSON.parse(await fs.readFile(`${dir}/notes.json`));
+const refs=JSON.parse(await fs.readFile('docs/interface-assets/references/references.json')).references;
+const hash=async p=>crypto.createHash('sha256').update(await fs.readFile(p)).digest('hex');
+const states=[];
+for(const [id,findings] of Object.entries(notes.states)){
+ const captures=capture.captures.filter(c=>c.id===id);
+ if(captures.length!==4)throw Error(`Four captures required: ${id}`);
+ for(const c of captures){if(notes.reviewedCaptures?.[c.image]!==c.sha256)throw Error(`Capture changed after manual inspection: ${c.image}. Inspect it before updating the review notes.`);if(await hash(`${dir}/${c.image}`)!==c.sha256)throw Error(`Stale capture ${c.image}`);if(c.before&&await hash(`${dir}/${c.before.image}`)!==c.before.sha256)throw Error(`Stale before ${c.image}`)}
+ states.push({id,title:captures[0].title,findings,manuallyInspected:true,sheet:{image:`${id}.jpg`,sha256:await hash(`${dir}/${id}.jpg`)},sources:[...new Set(captures.flatMap(c=>c.sourceIds))].map(id=>refs.find(r=>r.id===id)),captures});
+}
+const report={...notes,date:capture.date,baselineRevision:capture.baselineRevision,checks:capture.checks.length,captures:capture.captures.length,states};
+await fs.writeFile(`${dir}/review.json`,JSON.stringify(report,null,2)+'\n');
+const esc=v=>String(v).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('"','&quot;');
+await fs.writeFile(`${dir}/index.html`,`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Source-backed Wii interface fixes</title><style>*{box-sizing:border-box}body{margin:0;background:#edf2f5;color:#203545;font:16px/1.55 system-ui}main{max-width:1480px;margin:auto;padding:24px}header,article{padding:24px;background:white;margin-bottom:24px;border-radius:10px}a{color:#075c9b}h1{font-size:28px}h2{font-size:23px}img{max-width:100%;height:auto;display:block}.notice{padding:12px;background:#fff1d8;border-left:4px solid #b87b20}.sizes{display:flex;gap:12px;flex-wrap:wrap}details{margin:12px 0}summary{cursor:pointer}@media(max-width:700px){main{padding:8px}header,article{padding:14px}}</style><main><header><h1>Source-backed interface fixes</h1><p>${esc(notes.scope)}</p><p><a href="../references/">Interactive source overlays</a> · <a href="../review/">Historical 66-screen review</a> · <a href="review.json">Follow-up findings and evidence hashes</a></p><p class="notice">32 fresh captures, ${report.checks} flow checks. Source photographs and crops are structure-only references; their display aspect is unverified. The source column keeps its original ratio, including in wide comparisons. No screen is certified pixel-identical.</p><h2>Remaining work</h2><ul>${notes.remaining.map(n=>`<li>${esc(n)}</li>`).join('')}</ul><nav>${states.map(s=>`<a href="#${s.id}">${esc(s.title)}</a>`).join(' · ')}</nav></header>${states.map(s=>`<article id="${s.id}"><h2>${esc(s.title)}</h2><p>${esc(s.findings)}</p><p>${s.sources.map(r=>`<a href="../references/#${r.id}">${esc(r.id)} — interactive comparison</a> · <a href="${esc(r.sourceURL)}">Publisher</a>`).join('<br>')||'No exact matching native screenshot collected.'}</p><p class="sizes">${[...s.captures].sort((a,b)=>a.height-b.height||a.width-b.width).map(c=>`<a href="${c.image}">${c.width}×${c.height}</a>`).join('')}</p><a href="${s.sheet.image}"><img loading="lazy" width="1440" height="1320" src="${s.sheet.image}" alt="${esc(s.title)}: four sizes, native source, current capture, uncalibrated source overlay and pre-change capture where available"></a></article>`).join('')}</main></html>`);
+console.log(`Built visual follow-up: ${states.length} states, ${report.captures} captures, ${report.checks} flow checks`);

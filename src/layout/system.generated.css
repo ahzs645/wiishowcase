@@ -61,6 +61,13 @@
   --system-storage-label-size: 20;
   --system-storage-gamecube-title-size: 11;
   --system-storage-gamecube-title-icon: 21;
+  --system-reference-header: 56;
+  --system-reference-footer: 70;
+  --system-reference-title-width: 360;
+  --system-reference-title-height: 30;
+  --system-reference-text-size: 20;
+  --system-reference-field-width: 570;
+  --system-reference-field-height: 60;
   --system-calendar-width: 526;
   --system-calendar-action-width: 158;
   --system-calendar-action-height: 52;

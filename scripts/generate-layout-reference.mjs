@@ -71,9 +71,11 @@ const references = layout.evidence.referenceIds.map((id) => {
   if (!ref) throw new Error(`Unknown layout reference: ${id}`);
   return ref;
 });
+const supplementary = await read("interface-assets/references/references.json");
+const systemReferences = [...manifest.references, ...supplementary.references];
 for (const screen of Object.values(SYSTEM_LAYOUT.screens)) {
   for (const id of screen.sources) {
-    if (!manifest.references.some((reference) => reference.id === id))
+    if (!systemReferences.some((reference) => reference.id === id))
       throw new Error(`Unknown system layout reference: ${id}`);
   }
 }

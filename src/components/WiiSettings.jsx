@@ -162,6 +162,7 @@ function DataManagement({ path, setPath, system }) {
       {selected && (
         <SystemDialog
           title={selected.name}
+          variant={operation ? "dialog" : "data-item"}
           onBack={() => {
             setSelected(null);
             setOperation(null);
@@ -185,13 +186,14 @@ function DataManagement({ path, setPath, system }) {
             </p>
           ) : (
             <>
-              <p>
+              <div className="native-data-item-summary"><div className="native-data-item-preview"><DataPreview item={selected} /></div><p>
                 {typeof selected.blocks === "number"
                   ? `${selected.blocks} blocks`
                   : "Block size unavailable"}
-              </p>
-              <div className="system-actions">
-                {["Copy", "Move", "Erase"].map((action) => (
+              </p></div>
+              <p className="native-data-item-name">{selected.name}</p>
+              <div className="system-actions native-data-item-actions">
+                {(isChannels ? ["Move", "Copy", "Erase"] : ["Copy", "Move", "Erase"]).map((action) => (
                   <WiiButton
                     key={action}
                     disabled={selected.id === "disc"}

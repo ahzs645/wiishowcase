@@ -82,9 +82,9 @@ const specificChanges = {
   "connection-type":
     "Wired/wireless preference selection; the browser continues to use its existing network.",
   "console-information":
-    "Grouped local Wii Number and browser connection status.",
+    "Native MAC Address and LAN Adapter MAC Address groups; browser hardware identifiers are explicitly unavailable.",
   "user-agreements":
-    "Reachable browser storage/network explanation. Retired Nintendo service enrollment is unavailable.",
+    "Native-style service prompt, review notice and scrollable recreation document. Acceptance is local; Nintendo enrollment remains unavailable.",
   "format-memory":
     "Larger warning text and separate footer Format action for local browser data.",
   "format-confirm":
@@ -230,7 +230,7 @@ const page = assetPass
       .replace("Before — original audit", "Before — 8aacaa4 / prior matching capture")
       .replace("Before captures preserve the 14 October audit.", "Before captures use the latest matching storage capture at 8aacaa4 or the preceding full menu collection. Fonts and surfaces are now shared with Wii.css.")
       .replace("../system-menu-fixes.md", "../interface-assets.md")
-      .replace('<a href="comparison.json">Capture evidence</a>', '<a href="comparison.json">Capture evidence</a> · <a href="review/">Complete manual visual review: all 66 screens, findings and corrections</a> · <a href="references/">Additional screenshot references</a>')
+      .replace('<a href="comparison.json">Capture evidence</a>', '<a href="comparison.json">Capture evidence</a> · <a href="review/">Complete manual visual review: all 66 screens, findings and corrections</a> · <a href="references/">Additional screenshot references</a> · <a href="reference-followup/">Source-backed fixes and four-size review</a>')
       .replace("These are tested browser adapters. Original fonts, artwork and some native screen details remain approximate.", "These are tested browser adapters using the user’s licensed Rodin fonts and supplied artwork. Native layout precision, retained reconstructions and raster source resolution remain separately labeled.")
       .replace("<section><h2>Verification and remaining limits</h2>", '<section><h2>Uploaded files and shared components</h2><p><a href="catalog.html">Inspect every source file, every Illustrator artboard, runtime exports and all eight font specimens</a>. Exact Wii.css matches are reused rather than copied into new drawings.</p><p><a href="asset-validation.json">Actual platform-font, complete numeric-field and pressed-state checks</a> · <a href="calendar-comparisons.html">Interactive Calendar compared with the supplied dated references</a></p></section><section><h2>Verification and remaining limits</h2>')
   : refinement

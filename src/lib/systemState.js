@@ -36,6 +36,7 @@ const settingsDefaults = {
   parentalRating: "All ages",
   secretQuestion: "",
   secretAnswer: "",
+  userAgreementAccepted: false,
   connections: ["None", "None", "None"],
 };
 export function dateKey(date = new Date()) {

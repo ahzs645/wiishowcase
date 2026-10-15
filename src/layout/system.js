@@ -73,6 +73,13 @@ export const SYSTEM_LAYOUT = {
     storageLabelSize: 20,
     storageGamecubeTitleSize: 11,
     storageGamecubeTitleIcon: 21,
+    referenceHeader: 56,
+    referenceFooter: 70,
+    referenceTitleWidth: 360,
+    referenceTitleHeight: 30,
+    referenceTextSize: 20,
+    referenceFieldWidth: 570,
+    referenceFieldHeight: 60,
     calendarWidth: 526,
     calendarActionWidth: 158,
     calendarActionHeight: 52,
@@ -98,7 +105,8 @@ export const SYSTEM_LAYOUT = {
   screens: {
     storage: {
       component: "SettingsPanel/DataManagement/SystemArt",
-      sources: ["manual-316", "manual-315", "manual-312", "manual-314"],
+      sources: ["manual-316", "manual-315", "manual-312", "manual-314", "nwr-sd-13"],
+      supplementarySourceManifest: "interface-assets/references/references.json",
       confidence: "Low-resolution 4:3 manual illustrations; 16:9 uses a centered content adaptation, pending an independent native wide reference.",
     },
     settings: {
@@ -110,6 +118,12 @@ export const SYSTEM_LAYOUT = {
         "manual-327",
         "manual-328",
       ],
+    },
+    referenceLeaves: {
+      component: "ReferenceSettings",
+      sourceManifest: "interface-assets/references/references.json",
+      sources: ["parental-21", "wku-10", "wiimart-23"],
+      confidence: "Structure fitted from cropped captures, photographs and revival documentation. Aspect and exact geometry are unverified; browser hardware identifiers and retired-service enrollment are unavailable.",
     },
     selectors: {
       component: "SettingsControls",
