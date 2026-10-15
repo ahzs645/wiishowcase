@@ -197,6 +197,28 @@ if (systemFixes)
     if (existing) Object.assign(existing, updated);
     else screens.push(updated);
   }
+// A focused follow-up replaces only its own states; retain evidence and links
+// for the other system menus from the full comparison above.
+try {
+  const storage = await read("storage-menu-refinement/comparison.json");
+  for (const state of storage.states) {
+    const existing = screens.find((screen) => screen.id === state.id);
+    const updated = {
+      id: state.id,
+      title: state.title,
+      layoutStatus: "Storage registry and screen adapter; 4:3 manual-derived, wide adaptation",
+      implementation: "src/layout/system.js; src/system-adapters.css; SettingsPanel/DataManagement/SystemArt",
+      references: [...new Set(state.captures.map(c => c.reference.id))],
+      captures: state.captures.map(({mode,width,height}) => ({mode,width,height})),
+      viewer: `../storage-menu-refinement/?interface=${encodeURIComponent(state.id)}`,
+      validation: { baselineRevision: storage.baselineRevision, change: state.change, remaining: storage.limits.join(" ") },
+    };
+    if (existing) Object.assign(existing, updated);
+    else screens.push(updated);
+  }
+} catch (error) {
+  if (error.code !== "ENOENT") throw error;
+}
 const link = (url, label) => `<a href="${escape(url)}">${escape(label)}</a>`;
 const table = (headers, rows) =>
   `<div class="table-scroll"><table><thead><tr>${headers.map((h) => `<th>${escape(h)}</th>`).join("")}</tr></thead><tbody>${rows.map((row) => `<tr>${row.map((cell) => `<td>${cell}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;

@@ -1659,3 +1659,153 @@ wii-keyboard .wii-keyboard--system.is-phone-layout .wii-keyboard-key--space {
 .native-settings-page .system-settings-shell footer > .system-button:hover:not(:disabled) {
   filter: brightness(1.035) drop-shadow(0 0 calc(2 * var(--system-scale)) #2ebce6aa);
 }
+
+/* Options/storage have their own manual-derived proportions. The source is
+   4:3; centering this 640-unit area in wide mode is a documented adaptation. */
+.native-storage-page {
+  --storage-side-inset: max(0px, calc((100% - var(--system-storage-content-width) * var(--system-scale)) / 2));
+}
+.native-storage-page .system-settings-shell header {
+  position: relative;
+  height: calc(var(--system-storage-header) * var(--system-scale));
+  padding: 0;
+  border-bottom: calc(2 * var(--system-scale)) solid #bfc4c5;
+}
+.native-storage-page .system-settings-shell h1:not(.system-visually-hidden) {
+  position: absolute;
+  bottom: 0;
+  left: calc(var(--storage-side-inset) + 24 * var(--system-scale));
+  width: calc(294 * var(--system-scale));
+  min-width: 0;
+  height: calc(32 * var(--system-scale));
+  padding: 0 calc(7 * var(--system-scale));
+  display: flex;
+  align-items: center;
+  gap: calc(6 * var(--system-scale));
+  font-size: calc(22 * var(--system-scale));
+  line-height: 1.4;
+  border-radius: calc(8 * var(--system-scale)) calc(18 * var(--system-scale)) 0 0;
+  white-space: nowrap;
+}
+.native-storage-page[data-settings-path="Save Data"] .system-settings-shell h1 {
+  left: calc(var(--storage-side-inset) + 64 * var(--system-scale));
+  width: calc(280 * var(--system-scale));
+}
+.native-storage-page .system-settings-shell h1 .system-tile-art-svg {
+  width: calc(27 * var(--system-scale));
+  height: calc(27 * var(--system-scale));
+  flex: none;
+}
+.native-storage-breadcrumbs {
+  position: absolute;
+  bottom: 0;
+  left: calc(var(--storage-side-inset) + 24 * var(--system-scale));
+  display: flex;
+  gap: calc(2 * var(--system-scale));
+}
+.native-storage-breadcrumbs .system-tile-art-svg {
+  width: calc(27 * var(--system-scale));
+  height: calc(21 * var(--system-scale));
+  border-radius: calc(3 * var(--system-scale)) calc(3 * var(--system-scale)) 0 0;
+  background: linear-gradient(#aaa, #555);
+}
+.native-storage-page .system-wii-logo {
+  position: absolute;
+  right: calc(var(--storage-side-inset) + 36 * var(--system-scale));
+  bottom: calc(2 * var(--system-scale));
+  font-size: calc(30 * var(--system-scale));
+}
+.native-storage-page .system-settings-shell main {
+  padding: calc(var(--system-storage-tile-top) * var(--system-scale)) 0 0;
+  justify-content: flex-start;
+}
+.native-storage-page .system-tile-grid {
+  width: calc((2 * var(--system-storage-tile-width) + var(--system-storage-tile-gap)) * var(--system-scale));
+  gap: calc(var(--system-storage-tile-gap) * var(--system-scale));
+}
+.native-storage-page .system-tile {
+  flex: none;
+  width: calc(var(--system-storage-tile-width) * var(--system-scale));
+  height: calc(var(--system-storage-tile-height) * var(--system-scale));
+  padding: calc(7 * var(--system-scale));
+  border-radius: calc(5 * var(--system-scale));
+  background: linear-gradient(#bfc2c5, #f8fafa 71%, white);
+  box-shadow: inset 0 0 0 calc(3 * var(--system-scale)) #faffff;
+  cursor: pointer;
+}
+.native-storage-page .system-tile:focus-visible {
+  outline: calc(3 * var(--system-scale)) solid #21bdf3;
+  outline-offset: calc(3 * var(--system-scale));
+}
+.native-storage-page .system-tile:active {
+  transform: scale(0.98);
+}
+.native-storage-page .system-tile > .system-tile-art-svg {
+  width: 90%;
+  height: calc(142 * var(--system-scale));
+}
+.native-storage-page .system-tile > span:last-child {
+  flex: none;
+  height: calc(44 * var(--system-scale));
+  font-size: calc(var(--system-storage-label-size) * var(--system-scale));
+  line-height: 1.05;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-top: calc(1 * var(--system-scale)) solid #d4d9d9;
+}
+.native-storage-page .system-settings-shell footer {
+  position: relative;
+  height: calc(var(--system-storage-footer) * var(--system-scale));
+  padding: calc(var(--system-storage-action-top) * var(--system-scale)) calc(var(--storage-side-inset) + var(--system-storage-action-inset) * var(--system-scale)) 0;
+  align-items: flex-start;
+  border-top: calc(2 * var(--system-scale)) solid #bfc4c5;
+}
+.native-storage-page .system-settings-shell footer > .system-button {
+  width: calc(var(--system-storage-action-width) * var(--system-scale));
+  height: calc(60 * var(--system-scale));
+  font-size: calc(25 * var(--system-scale));
+  border: 0;
+  background: url("/art/system/settings-action.svg") center / 100% 100% no-repeat;
+  box-shadow: none;
+}
+.native-storage-page .system-settings-shell footer > .system-button:hover {
+  filter: brightness(1.04) drop-shadow(0 0 calc(2 * var(--system-scale)) #2ebce6aa);
+}
+.native-storage-page.system-data-screen .system-settings-shell h1 {
+  left: calc(var(--storage-side-inset) + 84 * var(--system-scale));
+  width: calc(154 * var(--system-scale));
+  font-size: calc(21 * var(--system-scale));
+}
+.native-storage-page.system-data-screen[data-settings-path="Nintendo GameCube"] .system-settings-shell h1 {
+  font-size: calc(12 * var(--system-scale));
+  gap: calc(2 * var(--system-scale));
+  padding-inline: calc(3 * var(--system-scale));
+}
+.native-storage-page.system-data-screen .system-settings-shell main {
+  padding: calc(var(--system-storage-grid-top) * var(--system-scale)) 0 0;
+}
+.native-storage-page.system-data-screen .system-tabs {
+  left: calc(var(--storage-side-inset) + 250 * var(--system-scale));
+  gap: calc(12 * var(--system-scale));
+}
+.native-storage-page.system-data-screen .system-tabs .system-button {
+  width: calc(184 * var(--system-scale));
+  height: calc(58 * var(--system-scale));
+  font-size: calc(25 * var(--system-scale));
+}
+.native-storage-page .data-grid {
+  width: calc(var(--system-storage-grid-width) * var(--system-scale));
+  column-gap: calc(var(--system-storage-column-gap) * var(--system-scale));
+  row-gap: calc(var(--system-storage-row-gap) * var(--system-scale));
+}
+.native-storage-page .data-slot {
+  height: calc(var(--system-storage-slot-height) * var(--system-scale));
+}
+.native-storage-page .data-status {
+  z-index: 1;
+  right: calc(var(--storage-side-inset) + 38 * var(--system-scale));
+  bottom: calc(-66 * var(--system-scale));
+  font-size: calc(20 * var(--system-scale));
+}

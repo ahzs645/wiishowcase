@@ -220,6 +220,7 @@ const page = refinement
         "Before captures preserve the first fixes at cb8b37b.",
       )
       .replace("../system-menu-fixes.md", "../system-menu-refinement.md")
+      .replace("<h1>Wii system menus: implemented fixes</h1>", '<h1>Wii system menus: implemented fixes</h1><p class="note"><a href="../storage-menu-refinement/">Newer Options and Data Management sizing pass</a> — original / before / after, both aspects and 480/720 lines. Storage captures in this earlier full collection are preserved.</p>')
       .replace(
         '<a href="../other-menus/?historical=1">Original audit</a>',
         '<a href="../other-menus/?historical=1">Original audit</a>',

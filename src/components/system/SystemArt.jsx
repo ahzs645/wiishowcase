@@ -18,9 +18,9 @@ export default function SystemArt({ kind }) {
   );
   const card = (x = 125) => (
     <g>
-      <rect x={x} y="42" width="32" height="48" rx="2" />
-      <rect x={x + 4} y="47" width="24" height="14" fill="#e4e6e6" />
-      <path d={`M${x + 5} 68h22m-22 7h22m-22 7h22`} strokeWidth="2" />
+      <path d={`M${x} 47h4v-5h24v5h4v37h-32z`} />
+      <rect x={x + 4} y="51" width="24" height="20" fill="#e4e6e6" />
+      <path d={`M${x + 5} 77h22`} strokeWidth="2" />
     </g>
   );
   return (

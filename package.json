@@ -52,6 +52,9 @@
     "test:relay": "node scripts/test-signaling-relay.mjs && node scripts/test-pairing-lifecycle.mjs",
     "test:automatic-pairing": "node scripts/test-automatic-controller-pairing.mjs",
     "build:system-menu-refinement": "SYSTEM_COMPARISON_OUTPUT=docs/system-menu-refinement SYSTEM_COMPARISON_BASELINE=system-menu-fixes node scripts/build-system-menu-fixes.mjs && SYSTEM_COMPARISON_OUTPUT=docs/system-menu-refinement SYSTEM_COMPARISON_BASELINE=system-menu-fixes python scripts/render-system-menu-fixes.py",
+    "capture:storage-refinement": "node scripts/capture-storage-refinement.mjs",
+    "build:storage-refinement": "node scripts/build-storage-refinement.mjs && python scripts/render-storage-refinement.py",
+    "test:storage-refinement-viewer": "node scripts/check-storage-refinement.mjs",
     "test:system-menu-refinement-viewer": "SYSTEM_COMPARISON_OUTPUT=docs/system-menu-refinement COMPARISON_URL=http://localhost:4957/system-menu-refinement/ node scripts/check-system-menu-fixes-viewer.mjs"
   },
   "dependencies": {

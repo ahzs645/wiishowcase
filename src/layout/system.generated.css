@@ -37,6 +37,22 @@
   --system-settings-index-action-width: 275;
   --system-settings-label-spacing: -0.35;
   --system-settings-title-spacing: 0;
+  --system-storage-content-width: 640;
+  --system-storage-header: 72;
+  --system-storage-footer: 100;
+  --system-storage-tile-top: 60;
+  --system-storage-tile-width: 264;
+  --system-storage-tile-height: 210;
+  --system-storage-tile-gap: 48;
+  --system-storage-grid-width: 492;
+  --system-storage-grid-top: 14;
+  --system-storage-slot-height: 90;
+  --system-storage-column-gap: 10;
+  --system-storage-row-gap: 6;
+  --system-storage-action-width: 224;
+  --system-storage-action-inset: 34;
+  --system-storage-action-top: 12;
+  --system-storage-label-size: 20;
 }
 .wii-169 {
   --system-settings-title-left: 32;

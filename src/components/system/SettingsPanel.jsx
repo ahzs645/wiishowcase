@@ -103,6 +103,13 @@ export default function SettingsPanel({
   const dataGrid =
     path[0] === "Data Management" &&
     ["Wii", "Nintendo GameCube", "Channels"].includes(screen);
+  const storageScreen = !screen || path[0] === "Data Management";
+  const storageTitleArt = {
+    "Save Data": "saves",
+    Wii: "wii",
+    "Nintendo GameCube": "gamecube",
+    Channels: "channels",
+  }[screen] || "data";
   const change = (key, value) => setDraft((old) => ({ ...old, [key]: value }));
   useEffect(() => {
     setDraft({ ...settings });
@@ -737,13 +744,11 @@ export default function SettingsPanel({
       ? `Wii System Settings ${page + 1}`
       : screen === "WiiConnect24 On/Off"
         ? "WiiConnect24"
-        : dataGrid && screen !== "Channels"
-          ? "Save Data"
-          : screen;
+        : screen;
   return (
     <div
       ref={ref}
-      className={`wii-settings-screen system-settings native-system-settings${path[0] === "Wii Settings" ? " native-settings-page" : ""}${dataGrid ? " system-data-screen" : ""}${screen === "Wii Settings" ? " system-settings-index" : ""}`}
+      className={`wii-settings-screen system-settings native-system-settings${path[0] === "Wii Settings" ? " native-settings-page" : ""}${storageScreen ? " native-storage-page" : ""}${dataGrid ? " system-data-screen" : ""}${screen === "Wii Settings" ? " system-settings-index" : ""}`}
       data-settings-path={screen || "Options"}
       onKeyDown={(e) => {
         if (e.key === "Escape") {
@@ -755,6 +760,12 @@ export default function SettingsPanel({
     >
       <section className="system-settings-shell">
         <header>
+          {storageScreen && path.length > 1 && (
+            <span className="native-storage-breadcrumbs" aria-hidden="true">
+              <SystemArt kind="data" />
+              {dataGrid && <SystemArt kind="saves" />}
+            </span>
+          )}
           {path[0] === "Wii Settings" && screen !== "Wii Settings" && (
             <span className="native-settings-tabs" aria-hidden="true">
               <i />
@@ -763,6 +774,9 @@ export default function SettingsPanel({
             </span>
           )}
           <h1 className={!screen ? "system-visually-hidden" : undefined}>
+            {storageScreen && screen && (
+              <SystemArt kind={storageTitleArt} />
+            )}
             {title}
           </h1>
           {screen === "Wii Settings" ? (

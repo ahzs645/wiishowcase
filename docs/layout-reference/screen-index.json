@@ -68,143 +68,138 @@
     {
       "id": "options",
       "title": "Wii Options",
-      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
-      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
+      "layoutStatus": "Storage registry and screen adapter; 4:3 manual-derived, wide adaptation",
+      "implementation": "src/layout/system.js; src/system-adapters.css; SettingsPanel/DataManagement/SystemArt",
       "references": [
         "manual-316"
       ],
       "captures": [
         {
           "mode": "4:3",
-          "width": 960,
-          "height": 720
-        },
-        {
-          "mode": "4:3",
           "width": 640,
           "height": 480
         },
         {
           "mode": "16:9",
-          "width": 1280,
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
           "height": 720
         },
         {
           "mode": "16:9",
-          "width": 854,
-          "height": 480
+          "width": 1280,
+          "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=options",
+      "viewer": "../storage-menu-refinement/?interface=options",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Tile width/spacing, small corner Wii label, frame rules and recreated device/wrench art differ; the two destinations now work."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Storage/card silhouettes, selected GameCube Slot A, native channel thumbnails, Disc excluded, unknown console capacity labeled.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "baselineRevision": "75c61ab9a6ce7bd56ef3ff26366ce0a1d40f0c71",
+        "change": "Wider tiles at the manual's lower vertical anchor, a shorter Back control and taller footer; gradients replace the strong horizontal tile stripes.",
+        "remaining": "Native sources are 131–164-pixel-wide Nintendo manual illustrations. Edge uncertainty is about 4–8 logical pixels after enlargement; no pixel-accuracy percentage is claimed. All native sources are 4:3. Wide mode keeps a centered 640-unit content area; it awaits an independent native 16:9 storage reference. M PLUS 1p glyphs, SVG silhouettes and control surfaces remain permitted reconstructions, not original Nintendo fonts/textures. GameCube, Channels and item dialogs use related native references. Browser storage and unavailable block counts remain browser adapters."
       }
     },
     {
       "id": "data-root",
       "title": "Data Management",
-      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
-      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
+      "layoutStatus": "Storage registry and screen adapter; 4:3 manual-derived, wide adaptation",
+      "implementation": "src/layout/system.js; src/system-adapters.css; SettingsPanel/DataManagement/SystemArt",
       "references": [
         "manual-315"
       ],
       "captures": [
         {
           "mode": "4:3",
-          "width": 960,
-          "height": 720
-        },
-        {
-          "mode": "4:3",
           "width": 640,
           "height": 480
         },
         {
           "mode": "16:9",
-          "width": 1280,
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
           "height": 720
         },
         {
           "mode": "16:9",
-          "width": 854,
-          "height": 480
+          "width": 1280,
+          "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=data-root",
+      "viewer": "../storage-menu-refinement/?interface=data-root",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Generic folder/grid illustrations replace the original device/channel artwork. Heading tab lacks the breadcrumb icon; footer and tile margins differ."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Storage/card silhouettes, selected GameCube Slot A, native channel thumbnails, Disc excluded, unknown console capacity labeled.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "baselineRevision": "75c61ab9a6ce7bd56ef3ff26366ce0a1d40f0c71",
+        "change": "Dedicated storage shell, compact icon/title breadcrumb, fitted tile labels and a narrower footer action.",
+        "remaining": "Native sources are 131–164-pixel-wide Nintendo manual illustrations. Edge uncertainty is about 4–8 logical pixels after enlargement; no pixel-accuracy percentage is claimed. All native sources are 4:3. Wide mode keeps a centered 640-unit content area; it awaits an independent native 16:9 storage reference. M PLUS 1p glyphs, SVG silhouettes and control surfaces remain permitted reconstructions, not original Nintendo fonts/textures. GameCube, Channels and item dialogs use related native references. Browser storage and unavailable block counts remain browser adapters."
       }
     },
     {
       "id": "save-chooser",
       "title": "Save Data platforms",
-      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
-      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
+      "layoutStatus": "Storage registry and screen adapter; 4:3 manual-derived, wide adaptation",
+      "implementation": "src/layout/system.js; src/system-adapters.css; SettingsPanel/DataManagement/SystemArt",
       "references": [
         "manual-312"
       ],
       "captures": [
         {
           "mode": "4:3",
-          "width": 960,
-          "height": 720
-        },
-        {
-          "mode": "4:3",
           "width": 640,
           "height": 480
         },
         {
           "mode": "16:9",
-          "width": 1280,
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
           "height": 720
         },
         {
           "mode": "16:9",
-          "width": 854,
-          "height": 480
+          "width": 1280,
+          "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=save-chooser",
+      "viewer": "../storage-menu-refinement/?interface=save-chooser",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Wii and GameCube use the same generic save graphic. Native platform/device silhouettes, text wrapping and title breadcrumb are missing."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Storage/card silhouettes, selected GameCube Slot A, native channel thumbnails, Disc excluded, unknown console capacity labeled.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "baselineRevision": "75c61ab9a6ce7bd56ef3ff26366ce0a1d40f0c71",
+        "change": "Fitted Wii/GameCube cards, a two-line GameCube label and compact breadcrumb header.",
+        "remaining": "Native sources are 131–164-pixel-wide Nintendo manual illustrations. Edge uncertainty is about 4–8 logical pixels after enlargement; no pixel-accuracy percentage is claimed. All native sources are 4:3. Wide mode keeps a centered 640-unit content area; it awaits an independent native 16:9 storage reference. M PLUS 1p glyphs, SVG silhouettes and control surfaces remain permitted reconstructions, not original Nintendo fonts/textures. GameCube, Channels and item dialogs use related native references. Browser storage and unavailable block counts remain browser adapters."
       }
     },
     {
       "id": "save-grid",
       "title": "Wii Save Data",
-      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
-      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
+      "layoutStatus": "Storage registry and screen adapter; 4:3 manual-derived, wide adaptation",
+      "implementation": "src/layout/system.js; src/system-adapters.css; SettingsPanel/DataManagement/SystemArt",
       "references": [
         "manual-314"
       ],
       "captures": [
-        {
-          "mode": "4:3",
-          "width": 960,
-          "height": 720
-        },
         {
           "mode": "4:3",
           "width": 640,
@@ -212,41 +207,41 @@
         },
         {
           "mode": "16:9",
-          "width": 1280,
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
           "height": 720
         },
         {
           "mode": "16:9",
-          "width": 854,
-          "height": 480
+          "width": 1280,
+          "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=save-grid",
+      "viewer": "../storage-menu-refinement/?interface=save-grid",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "The 5×3 structure exists, but grid/tab/title geometry, cell bevels, placeholder save art and bottom status differ. Native Blocks Open is replaced with a local item count."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Storage/card silhouettes, selected GameCube Slot A, native channel thumbnails, Disc excluded, unknown console capacity labeled.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "baselineRevision": "75c61ab9a6ce7bd56ef3ff26366ce0a1d40f0c71",
+        "change": "The shorter header moves the grid upward; larger slots, independent row/column gaps, storage tabs and footer count match the manual's structural anchors.",
+        "remaining": "Native sources are 131–164-pixel-wide Nintendo manual illustrations. Edge uncertainty is about 4–8 logical pixels after enlargement; no pixel-accuracy percentage is claimed. All native sources are 4:3. Wide mode keeps a centered 640-unit content area; it awaits an independent native 16:9 storage reference. M PLUS 1p glyphs, SVG silhouettes and control surfaces remain permitted reconstructions, not original Nintendo fonts/textures. GameCube, Channels and item dialogs use related native references. Browser storage and unavailable block counts remain browser adapters."
       }
     },
     {
       "id": "channels-data",
       "title": "Channel Data Management",
-      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
-      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
+      "layoutStatus": "Storage registry and screen adapter; 4:3 manual-derived, wide adaptation",
+      "implementation": "src/layout/system.js; src/system-adapters.css; SettingsPanel/DataManagement/SystemArt",
       "references": [
         "manual-314"
       ],
       "captures": [
-        {
-          "mode": "4:3",
-          "width": 960,
-          "height": 720
-        },
         {
           "mode": "4:3",
           "width": 640,
@@ -254,25 +249,30 @@
         },
         {
           "mode": "16:9",
-          "width": 1280,
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
           "height": 720
         },
         {
           "mode": "16:9",
-          "width": 854,
-          "height": 480
+          "width": 1280,
+          "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=channels-data",
+      "viewer": "../storage-menu-refinement/?interface=channels-data",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Uses the Save Data illustration as a structural reference, not a matched Channels capture. Menu-only Disc is included as a disabled data item; Forecast falls back to text and other previews use rough static crops."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Storage/card silhouettes, selected GameCube Slot A, native channel thumbnails, Disc excluded, unknown console capacity labeled.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "baselineRevision": "75c61ab9a6ce7bd56ef3ff26366ce0a1d40f0c71",
+        "change": "Channel inventory in the fitted storage shell; Disc stays excluded and existing channel thumbnails remain frozen.",
+        "remaining": "Native sources are 131–164-pixel-wide Nintendo manual illustrations. Edge uncertainty is about 4–8 logical pixels after enlargement; no pixel-accuracy percentage is claimed. All native sources are 4:3. Wide mode keeps a centered 640-unit content area; it awaits an independent native 16:9 storage reference. M PLUS 1p glyphs, SVG silhouettes and control surfaces remain permitted reconstructions, not original Nintendo fonts/textures. GameCube, Channels and item dialogs use related native references. Browser storage and unavailable block counts remain browser adapters."
       }
     },
     {
@@ -1246,8 +1246,8 @@
     {
       "id": "gamecube-data",
       "title": "GameCube Save Data",
-      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
-      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
+      "layoutStatus": "Storage registry and screen adapter; 4:3 manual-derived, wide adaptation",
+      "implementation": "src/layout/system.js; src/system-adapters.css; SettingsPanel/DataManagement/SystemArt",
       "references": [
         "manual-314"
       ],
@@ -1273,23 +1273,23 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=gamecube-data",
+      "viewer": "../storage-menu-refinement/?interface=gamecube-data",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Slot A/Slot B exist, but the initial storage state is Wii, so neither slot is selected. The empty-card message and generic Wii storage shell are browser substitutes; the source is a related Wii save grid."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Storage/card silhouettes, selected GameCube Slot A, native channel thumbnails, Disc excluded, unknown console capacity labeled.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "baselineRevision": "75c61ab9a6ce7bd56ef3ff26366ce0a1d40f0c71",
+        "change": "Shared storage geometry with Slot A selected and the browser's no-memory-card status.",
+        "remaining": "Native sources are 131–164-pixel-wide Nintendo manual illustrations. Edge uncertainty is about 4–8 logical pixels after enlargement; no pixel-accuracy percentage is claimed. All native sources are 4:3. Wide mode keeps a centered 640-unit content area; it awaits an independent native 16:9 storage reference. M PLUS 1p glyphs, SVG silhouettes and control surfaces remain permitted reconstructions, not original Nintendo fonts/textures. GameCube, Channels and item dialogs use related native references. Browser storage and unavailable block counts remain browser adapters."
       }
     },
     {
       "id": "save-selected",
       "title": "Save Data item actions",
-      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
-      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
+      "layoutStatus": "Storage registry and screen adapter; 4:3 manual-derived, wide adaptation",
+      "implementation": "src/layout/system.js; src/system-adapters.css; SettingsPanel/DataManagement/SystemArt",
       "references": [
         "manual-314"
       ],
@@ -1315,23 +1315,23 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=save-selected",
+      "viewer": "../storage-menu-refinement/?interface=save-selected",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Item actions use a generic titled dialog with block text and Copy/Move/Erase buttons. The current source is only the parent grid, so no exact action-panel comparison is claimed."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Storage/card silhouettes, selected GameCube Slot A, native channel thumbnails, Disc excluded, unknown console capacity labeled.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "baselineRevision": "75c61ab9a6ce7bd56ef3ff26366ce0a1d40f0c71",
+        "change": "Item actions remain isolated from the resized storage shell; this source does not depict the native item dialog.",
+        "remaining": "Native sources are 131–164-pixel-wide Nintendo manual illustrations. Edge uncertainty is about 4–8 logical pixels after enlargement; no pixel-accuracy percentage is claimed. All native sources are 4:3. Wide mode keeps a centered 640-unit content area; it awaits an independent native 16:9 storage reference. M PLUS 1p glyphs, SVG silhouettes and control surfaces remain permitted reconstructions, not original Nintendo fonts/textures. GameCube, Channels and item dialogs use related native references. Browser storage and unavailable block counts remain browser adapters."
       }
     },
     {
       "id": "save-copy-confirm",
       "title": "Save Data Copy confirmation",
-      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
-      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
+      "layoutStatus": "Storage registry and screen adapter; 4:3 manual-derived, wide adaptation",
+      "implementation": "src/layout/system.js; src/system-adapters.css; SettingsPanel/DataManagement/SystemArt",
       "references": [
         "manual-314"
       ],
@@ -1357,23 +1357,23 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=save-copy-confirm",
+      "viewer": "../storage-menu-refinement/?interface=save-copy-confirm",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "The confirmation has generic Back/Yes/No placement. Only a parent grid source is available; Copy and cancellation work in the regression."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Storage/card silhouettes, selected GameCube Slot A, native channel thumbnails, Disc excluded, unknown console capacity labeled.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "baselineRevision": "75c61ab9a6ce7bd56ef3ff26366ce0a1d40f0c71",
+        "change": "Copy cancellation preserves saved data; this source only supports the underlying grid layout.",
+        "remaining": "Native sources are 131–164-pixel-wide Nintendo manual illustrations. Edge uncertainty is about 4–8 logical pixels after enlargement; no pixel-accuracy percentage is claimed. All native sources are 4:3. Wide mode keeps a centered 640-unit content area; it awaits an independent native 16:9 storage reference. M PLUS 1p glyphs, SVG silhouettes and control surfaces remain permitted reconstructions, not original Nintendo fonts/textures. GameCube, Channels and item dialogs use related native references. Browser storage and unavailable block counts remain browser adapters."
       }
     },
     {
       "id": "channel-selected",
-      "title": "Channel Data item actions",
-      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
-      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
+      "title": "Channel item actions",
+      "layoutStatus": "Storage registry and screen adapter; 4:3 manual-derived, wide adaptation",
+      "implementation": "src/layout/system.js; src/system-adapters.css; SettingsPanel/DataManagement/SystemArt",
       "references": [
         "manual-314"
       ],
@@ -1399,16 +1399,16 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=channel-selected",
+      "viewer": "../storage-menu-refinement/?interface=channel-selected",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Channel actions reuse the generic save dialog; selected-channel icon/banner and native action-panel geometry are not reproduced. The reference is a related save grid."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "baselineRevision": "75c61ab9a6ce7bd56ef3ff26366ce0a1d40f0c71",
+        "change": "Channel actions remain reachable above the fitted storage shell; the native reference is a related save-grid view.",
+        "remaining": "Native sources are 131–164-pixel-wide Nintendo manual illustrations. Edge uncertainty is about 4–8 logical pixels after enlargement; no pixel-accuracy percentage is claimed. All native sources are 4:3. Wide mode keeps a centered 640-unit content area; it awaits an independent native 16:9 storage reference. M PLUS 1p glyphs, SVG silhouettes and control surfaces remain permitted reconstructions, not original Nintendo fonts/textures. GameCube, Channels and item dialogs use related native references. Browser storage and unavailable block counts remain browser adapters."
       }
     },
     {
@@ -2687,6 +2687,80 @@
         "date": "2026-10-14",
         "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
         "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+      }
+    },
+    {
+      "id": "save-sd",
+      "title": "SD Card save data",
+      "layoutStatus": "Storage registry and screen adapter; 4:3 manual-derived, wide adaptation",
+      "implementation": "src/layout/system.js; src/system-adapters.css; SettingsPanel/DataManagement/SystemArt",
+      "references": [
+        "manual-314"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../storage-menu-refinement/?interface=save-sd",
+      "validation": {
+        "baselineRevision": "75c61ab9a6ce7bd56ef3ff26366ce0a1d40f0c71",
+        "change": "The same storage geometry with the actual SD inventory and selected SD tab.",
+        "remaining": "Native sources are 131–164-pixel-wide Nintendo manual illustrations. Edge uncertainty is about 4–8 logical pixels after enlargement; no pixel-accuracy percentage is claimed. All native sources are 4:3. Wide mode keeps a centered 640-unit content area; it awaits an independent native 16:9 storage reference. M PLUS 1p glyphs, SVG silhouettes and control surfaces remain permitted reconstructions, not original Nintendo fonts/textures. GameCube, Channels and item dialogs use related native references. Browser storage and unavailable block counts remain browser adapters."
+      }
+    },
+    {
+      "id": "gamecube-slot-b",
+      "title": "GameCube Slot B",
+      "layoutStatus": "Storage registry and screen adapter; 4:3 manual-derived, wide adaptation",
+      "implementation": "src/layout/system.js; src/system-adapters.css; SettingsPanel/DataManagement/SystemArt",
+      "references": [
+        "manual-314"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../storage-menu-refinement/?interface=gamecube-slot-b",
+      "validation": {
+        "baselineRevision": "75c61ab9a6ce7bd56ef3ff26366ce0a1d40f0c71",
+        "change": "Actual Slot B selection in the fitted storage shell.",
+        "remaining": "Native sources are 131–164-pixel-wide Nintendo manual illustrations. Edge uncertainty is about 4–8 logical pixels after enlargement; no pixel-accuracy percentage is claimed. All native sources are 4:3. Wide mode keeps a centered 640-unit content area; it awaits an independent native 16:9 storage reference. M PLUS 1p glyphs, SVG silhouettes and control surfaces remain permitted reconstructions, not original Nintendo fonts/textures. GameCube, Channels and item dialogs use related native references. Browser storage and unavailable block counts remain browser adapters."
       }
     }
   ]

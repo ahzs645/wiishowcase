@@ -102,7 +102,11 @@ function DataManagement({ path, setPath, system }) {
                       : "saves"
               }
             />
-            <span>{label}</span>
+            <span>
+              {label === "Nintendo GameCube" ? (
+                <>Nintendo<br />GameCube</>
+              ) : label}
+            </span>
           </button>
         ))}
       </div>

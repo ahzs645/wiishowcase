@@ -1,0 +1,164 @@
+{
+  "method": "Cyan tile-edge pixels (B-R>18, G-R>10, B>100) within independent source regions; contain fit preserves original aspect. Footer rows use peak average brightness in the lower divider band. Bounds describe filtered source edges, not complete DOM hit boxes.",
+  "uncertainty": "Small manual sources and filtered outlines introduce about 4\u20138 logical pixels of uncertainty; no native pixel-accuracy score.",
+  "measurements": [
+    {
+      "reference": "manual-316",
+      "sourceURL": "https://csassets.nintendo.com/noaext/image/private/t_KA_PDF/WiiChEng#page=22",
+      "originalManifestSHA256": "12fd7e51340cb069373070d99d247b0abc52e1219b547bd1b3d64b14b077a9a1",
+      "measuredPNGAssetSHA256": "51f3720d71eaab6a14f6dc2b36cd3a4d200e8f8f43ad4d5948768f9870acc435",
+      "originalSize": [
+        164,
+        123
+      ],
+      "containScale": 3.902439024390244,
+      "containInset": [
+        0.0,
+        0.0
+      ],
+      "cyanTileEdges": [
+        {
+          "sourceBounds": [
+            8,
+            33,
+            67,
+            54
+          ],
+          "containFit640x480": [
+            31.21951219512195,
+            128.78048780487805,
+            261.4634146341463,
+            210.73170731707316
+          ]
+        },
+        {
+          "sourceBounds": [
+            89,
+            33,
+            67,
+            54
+          ],
+          "containFit640x480": [
+            347.3170731707317,
+            128.78048780487805,
+            261.4634146341463,
+            210.73170731707316
+          ]
+        }
+      ],
+      "footerDividerSourceY": 97,
+      "footerDividerContainY": 378.5365853658536
+    },
+    {
+      "reference": "manual-315",
+      "sourceURL": "https://csassets.nintendo.com/noaext/image/private/t_KA_PDF/WiiChEng#page=22",
+      "originalManifestSHA256": "660a8132782eed3b3afa0b5a43927e3f4c8a6dbdc57c9499c1bc0e591b7eeda8",
+      "measuredPNGAssetSHA256": "054437107ba1246f0bd761fb035c3e8cbef8dac0ed81a5f8e4f7526fe5bc19ab",
+      "originalSize": [
+        131,
+        99
+      ],
+      "containScale": 4.848484848484849,
+      "containInset": [
+        2.4242424242424363,
+        0.0
+      ],
+      "cyanTileEdges": [
+        {
+          "sourceBounds": [
+            6,
+            27,
+            54,
+            43
+          ],
+          "containFit640x480": [
+            31.51515151515153,
+            130.9090909090909,
+            261.8181818181818,
+            208.4848484848485
+          ]
+        },
+        {
+          "sourceBounds": [
+            71,
+            27,
+            54,
+            43
+          ],
+          "containFit640x480": [
+            346.6666666666667,
+            130.9090909090909,
+            261.8181818181818,
+            208.4848484848485
+          ]
+        }
+      ],
+      "footerDividerSourceY": 78,
+      "footerDividerContainY": 378.1818181818182
+    },
+    {
+      "reference": "manual-312",
+      "sourceURL": "https://csassets.nintendo.com/noaext/image/private/t_KA_PDF/WiiChEng#page=22",
+      "originalManifestSHA256": "b737765df406f895d49a1e519f7db7c7aef19c28f06adf4662109e50db67cad1",
+      "measuredPNGAssetSHA256": "21c1592b7bb78c16e0866c264286f7ad6770a4e2f72dc9a79a12c14c0591040e",
+      "originalSize": [
+        164,
+        123
+      ],
+      "containScale": 3.902439024390244,
+      "containInset": [
+        0.0,
+        0.0
+      ],
+      "cyanTileEdges": [
+        {
+          "sourceBounds": [
+            8,
+            33,
+            67,
+            54
+          ],
+          "containFit640x480": [
+            31.21951219512195,
+            128.78048780487805,
+            261.4634146341463,
+            210.73170731707316
+          ]
+        },
+        {
+          "sourceBounds": [
+            89,
+            33,
+            67,
+            54
+          ],
+          "containFit640x480": [
+            347.3170731707317,
+            128.78048780487805,
+            261.4634146341463,
+            210.73170731707316
+          ]
+        }
+      ],
+      "footerDividerSourceY": 97,
+      "footerDividerContainY": 378.5365853658536
+    },
+    {
+      "reference": "manual-314",
+      "sourceURL": "https://csassets.nintendo.com/noaext/image/private/t_KA_PDF/WiiChEng#page=22",
+      "originalManifestSHA256": "09d1e98d99bba98fbae69a36cc386c6857842cc6016ef08ef2c846e055d4e94e",
+      "measuredPNGAssetSHA256": "9acff7b6d38bc6c37dcef662941c3183e12adc59ba496e2be1e9638b55ad74ce",
+      "originalSize": [
+        163,
+        122
+      ],
+      "containScale": 3.9263803680981595,
+      "containInset": [
+        0.0,
+        0.49079754601226
+      ],
+      "footerDividerSourceY": 96,
+      "footerDividerContainY": 377.4233128834355
+    }
+  ]
+}
