@@ -1,0 +1,8 @@
+{
+  "frameworkCommit": "b6aaefb22312c8130aff3bf875994cf6d511cb10",
+  "deploymentRun": 38768427867,
+  "packageSHA256": "d4f92e3ec94ad06b94e41d0874fa305ace0bdfa28f70b6ce2aed02bfe46cba75",
+  "sharedModulePresent": true,
+  "sharedAssetCount": 40,
+  "genericPackageExcludesFonts": true
+}

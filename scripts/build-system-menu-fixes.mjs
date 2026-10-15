@@ -2,6 +2,9 @@ import fs from "node:fs/promises";
 const output = process.env.SYSTEM_COMPARISON_OUTPUT || "docs/system-menu-fixes";
 const baselineFolder = process.env.SYSTEM_COMPARISON_BASELINE || "other-menus";
 const refinement = baselineFolder === "system-menu-fixes";
+const assetPass = output === "docs/interface-assets";
+const storageBaseline = assetPass ? JSON.parse(await fs.readFile("docs/storage-menu-refinement/comparison.json", "utf8")) : null;
+const assetValidation = assetPass ? JSON.parse(await fs.readFile(`${output}/asset-validation.json`, "utf8")) : null;
 const read = async (p) => JSON.parse(await fs.readFile(p, "utf8"));
 const [
   baseline,
@@ -13,7 +16,7 @@ const [
   home,
   keyboardFocus,
 ] = await Promise.all([
-  read(`docs/${baselineFolder}/${refinement ? "comparison" : "audit"}.json`),
+  read(`docs/${baselineFolder}/${baselineFolder !== "other-menus" ? "comparison" : "audit"}.json`),
   read(`${output}/core-captures.json`),
   read(`${output}/additional-captures.json`),
   read("docs/interface-audit/references.json"),
@@ -22,7 +25,7 @@ const [
   read(`${output}/home-layout-checks.json`),
   read(`${output}/keyboard-focus-checks.json`),
 ]);
-const captures = [...core.captures, ...extra.captures, ...pairing.captures];
+const captures = [...core.captures, ...extra.captures, ...pairing.captures, ...(assetValidation?.captures.filter(c=>["save-sd","gamecube-slot-b"].includes(c.id)) || [])];
 const changes = {
   settings:
     "Frame-scaled font, fitted list widths, firmware profile label, side arrows and footer actions.",
@@ -88,7 +91,9 @@ const specificChanges = {
     "Shared isolated confirmation dialog; cancellation preserves records and confirmation resets local browser state.",
 };
 const states = [...new Set(captures.map((c) => c.id))].map((id) => {
-  const old = baseline.states.find((s) => s.id === id),
+  const storageOld = storageBaseline?.states.find(s => s.id === id);
+  const previousFolder = storageOld ? "storage-menu-refinement" : baselineFolder;
+  const old = storageOld || baseline.states.find((s) => s.id === id),
     entries = captures.filter((c) => c.id === id);
   if (entries.length !== 4) throw Error(`${id}: expected all four sizes`);
   return {
@@ -96,13 +101,15 @@ const states = [...new Set(captures.map((c) => c.id))].map((id) => {
     title: entries[0].title,
     group: old?.group || "New destinations",
     change:
-      refinement && (category(id) === "settings" || category(id) === "selector")
+      assetPass
+        ? "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks."
+        : refinement && (category(id) === "settings" || category(id) === "selector")
         ? "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved."
         : specificChanges[id] || changes[category(id)],
     remaining:
       old?.referenceRole && old.referenceRole !== "same-view"
         ? "Only a related native view/state is available; detailed native geometry remains unverified."
-        : "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain.",
+        : assetPass ? "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions." : "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain.",
     captures: entries.map((c) => {
       const prev = old?.captures.find(
           (p) => p.width === c.width && p.height === c.height,
@@ -114,7 +121,7 @@ const states = [...new Set(captures.map((c) => c.id))].map((id) => {
       const reference = manifest.references.find((r) => r.id === refID) || null;
       return {
         ...c,
-        before: prev ? `../${baselineFolder}/${prev.image}` : null,
+        before: prev ? `../${previousFolder}/${prev.image}` : null,
         reference,
         referenceRole:
           old?.captures.find(
@@ -139,8 +146,8 @@ const failures = captures.flatMap((c) =>
 if (failures.length)
   throw Error(`${failures.length} remaining geometry findings`);
 const report = {
-  date: "2026-10-14",
-  baselineRevision: refinement
+  date: assetPass ? "2026-10-15" : "2026-10-14",
+  baselineRevision: assetPass ? "8aacaa48551935ca67640684df19365c92ce383e" : refinement
     ? "cb8b37bf252a863820128787e9fa4ad1b8463ec8"
     : "b89f23f3fbd1221a7aa4a00b707c7e538b93ac57",
   states,
@@ -170,6 +177,12 @@ const report = {
     "Country options and rating preferences are an adapter subset; full regional firmware, interface translations and age-based channel enforcement need corresponding content metadata.",
   ],
 };
+if (assetPass) {
+  report.inventory = await read(`${output}/inventory.json`);
+  report.assetValidation = await read(`${output}/asset-validation.json`);
+  report.limits[0] = "The user confirmed licensed public-site embedding of the supplied Rodin/NewRodin fonts. Latin web subsets are site-specific; the generic Wii.css package still excludes fonts.";
+  report.limits[3] = "Backend hosting remains deferred. This pass changes static interface assets and reusable controls, not the previously verified pairing transport.";
+}
 if (refinement) {
   report.relayValidation = await read(`${output}/relay-validation.json`);
   report.automaticPairing = await read(
@@ -212,7 +225,14 @@ function update(){const s=report.states.find(s=>s.id===sel.value),c=s.captures.f
 const native=$('#layer').value==='reference',src=native?(c.reference?'../interface-audit/'+c.reference.image:null):c.before;$('#overlay').style.display=src?'block':'none';if(src)$('#overlay').src=src;$('#overlay').style.opacity=Number($('#alpha').value)/100;$('#overlay').style.mixBlendMode=$('#difference').checked?'difference':'normal';$('#percent').textContent=$('#alpha').value+'%';$('#confidence').textContent=native?(c.reference?c.referenceRole+' · '+(c.reference.mode===c.mode?'Same source aspect. ':'Illustration/opposite aspect; contain fit. ')+c.reference.notes:'No same-view native source collected.'):(c.before?'Identical application viewport sizes; whole-frame alignment. Values and content may differ.':'No before adapter. Use Original Wii for structural evidence where available.');$('#source').replaceChildren();if(native&&c.reference)$('#source').append(link(c.reference.sourceURL,c.reference.title+' — source'),node('p',c.reference.originalSize.join('×')+' original pixels; no inferred native accuracy score.'));$('#geometry').textContent='Visible control bounds, text and center-hit checks passed for this capture.';history.replaceState(null,'','?interface='+encodeURIComponent(s.id)+'&mode='+encodeURIComponent(c.mode)+'&height='+c.height)}
 for(const e of [sel,mode,height,$('#layer'),$('#alpha'),$('#difference')])e.addEventListener('input',update);for(const [id,d]of [['previous',-1],['next',1]])$('#'+id).onclick=()=>{sel.selectedIndex=(sel.selectedIndex+d+report.states.length)%report.states.length;update()};$('#summary').textContent=report.summary.states+' states · '+report.summary.captures+' captures · both aspect ratios at 480 and 720 lines.';$('#verification').textContent=report.summary.coreChecks+' core interaction checks, '+report.summary.interactionChecks+' added checks, '+report.summary.pairingChecks+' pairing/SD checks, '+report.summary.homeLayoutChecks+' HOME placement checks and '+report.summary.keyboardFocusChecks+' keyboard focus checks; no captured geometry failures, unexpected assets or page errors. Missing automatic relay requests are recorded separately.';for(const limit of report.limits)$('#limits').append(node('li',limit));update();
 </script></html>`;
-const page = refinement
+const page = assetPass
+  ? html
+      .replace("Before — original audit", "Before — 8aacaa4 / prior matching capture")
+      .replace("Before captures preserve the 14 October audit.", "Before captures use the latest matching storage capture at 8aacaa4 or the preceding full menu collection. Fonts and surfaces are now shared with Wii.css.")
+      .replace("../system-menu-fixes.md", "../interface-assets.md")
+      .replace("These are tested browser adapters. Original fonts, artwork and some native screen details remain approximate.", "These are tested browser adapters using the user’s licensed Rodin fonts and supplied artwork. Native layout precision, retained reconstructions and raster source resolution remain separately labeled.")
+      .replace("<section><h2>Verification and remaining limits</h2>", '<section><h2>Uploaded files and shared components</h2><p><a href="catalog.html">Inspect every source file, every Illustrator artboard, runtime exports and all eight font specimens</a>. Exact Wii.css matches are reused rather than copied into new drawings.</p><p><a href="asset-validation.json">Actual platform-font, complete numeric-field and pressed-state checks</a> · <a href="calendar-comparisons.html">Interactive Calendar compared with the supplied dated references</a></p></section><section><h2>Verification and remaining limits</h2>')
+  : refinement
   ? html
       .replaceAll("Before — original audit", "Before — cb8b37b")
       .replace(

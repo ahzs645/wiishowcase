@@ -1,0 +1,142 @@
+/* Wii.css owns artwork/surfaces/states; this file only fits those shared
+   elements into the showcase's existing source-linked coordinate adapters. */
+.menu-clock-date { line-height: var(--layout-date-line-height); }
+.native-settings-page .native-number-column input,
+.native-settings-page .native-number-separator {
+  font-family: var(--system-numeric-font-family);
+  font-weight: 500;
+}
+.native-settings-page .native-number-column input[aria-label="Year"] {
+  width: calc(var(--system-digit-year-width) * var(--system-scale));
+}
+.native-storage-page.system-data-screen[data-settings-path="Nintendo GameCube"] .system-settings-shell h1 {
+  font-size: calc(var(--system-storage-gamecube-title-size) * var(--system-scale));
+}
+.native-storage-page.system-data-screen[data-settings-path="Nintendo GameCube"] .system-settings-shell h1 .system-tile-art-svg {
+  width: calc(var(--system-storage-gamecube-title-icon) * var(--system-scale));
+  height: calc(var(--system-storage-gamecube-title-icon) * var(--system-scale));
+}
+.system-wii-logo .wii-icon-wii {
+  --wii-icon-size: calc(22 * var(--system-scale));
+  --wii-icon-color: #eee;
+  vertical-align: baseline;
+}
+.native-storage-page .wii-system-tile.has-supplied-surface {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+.native-storage-page .wii-system-tile > .wii-system-tile__surface {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: fill;
+  filter: none;
+}
+.native-storage-page .wii-system-tile > .wii-system-tile__label {
+  position: absolute;
+  left: 7%;
+  bottom: 3%;
+  width: 86%;
+  height: 24%;
+  min-height: 0;
+  border: 0;
+  background: transparent;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.message-choice-art { width: 100%; object-fit: contain; }
+.remote-setting-row .wii-icon-control-plus,
+.remote-setting-row .wii-icon-control-minus {
+  --wii-icon-size: calc(36 * var(--system-scale));
+}
+.home-menu-buttons .system-button {
+  font-family: var(--system-numeric-font-family);
+}
+.home-menu-buttons .system-button:last-child {
+  padding-inline: calc(10 * var(--system-scale));
+  white-space: nowrap;
+}
+.system-surface-composer .system-dialog.wii-message-paper,
+.message-board-memo.wii-message-paper {
+  background-image: var(--wii-system-memo-paper);
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+}
+.system-surface-composer .system-dialog.wii-message-paper--letter,
+.message-board-memo.wii-message-paper--letter {
+  background-image: var(--wii-system-letter-paper);
+}
+.system-surface-composer .system-dialog.wii-message-paper > h2 {
+  background: transparent;
+  border: 0;
+}
+.system-surface-composer .system-dialog.wii-message-paper {
+  background-size: 100% calc(379 * var(--system-scale));
+  background-position: top center;
+}
+.system-surface-composer .system-dialog.wii-message-paper .system-dialog-body {
+  background: transparent;
+  border: 0;
+}
+.system-surface-composer .system-dialog.wii-message-paper .message-write-body {
+  background: transparent;
+}
+.system-surface-composer .system-dialog.wii-message-paper > .system-actions {
+  border: 0;
+}
+.message-board-memo.wii-message-paper {
+  padding-top: calc(46 * var(--system-scale));
+}
+.message-board-memo.wii-message-paper .message-board-memo-title {
+  top: calc(4 * var(--system-scale));
+  height: calc(36 * var(--system-scale));
+  font-size: calc(23 * var(--system-scale));
+}
+.message-board-memo.wii-message-paper .message-board-memo-lines span,
+.message-board-memo.wii-message-paper .message-board-memo-lines a {
+  border: 0;
+}
+.message-board-memo.wii-message-paper .message-board-memo-wii-logo {
+  display: none;
+}
+.message-board-card.is-type-invite {
+  background: var(--wii-system-envelope) center / 100% 100% no-repeat;
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+}
+.message-board-card.is-type-invite .message-board-card-header,
+.message-board-card.is-type-invite .message-board-card-preview,
+.message-board-card.is-type-invite .message-board-card-type-label {
+  visibility: hidden;
+}
+.sd-footer-menu:has(.wii-icon-footer-menu) { border: 0; background: none; box-shadow: none; }
+.sd-footer-menu .wii-icon-footer-menu { --wii-icon-size: calc(65 * var(--system-scale)); }
+.native-settings-arrow .wii-icon-control-next { --wii-icon-size: calc(46 * var(--system-scale)); }
+.native-settings-arrow.is-prev .wii-icon-control-next { transform: scaleX(-1); }
+.native-number-column .wii-icon-control-next { --wii-icon-size: calc(34 * var(--system-scale)); transform: rotate(-90deg); }
+.native-number-column button:last-child .wii-icon-control-next { transform: rotate(90deg); }
+.wii-menu-calendar-wrapper .wii-calendar-container {
+  --wii-calendar-width: calc(var(--system-calendar-width) * var(--system-scale));
+  max-width: none;
+  font-family: var(--system-numeric-font-family);
+}
+.wii-menu-calendar-wrapper .wii-calendar-month {
+  font-family: var(--system-numeric-font-family);
+}
+.wii-menu-calendar-wrapper .wii-calendar-footer { position: relative; }
+.wii-menu-calendar-wrapper .calendar-native-back {
+  position: absolute;
+  left: calc(10 * var(--system-scale));
+  bottom: calc(10 * var(--system-scale));
+  width: calc(var(--system-calendar-action-width) * var(--system-scale));
+  height: calc(var(--system-calendar-action-height) * var(--system-scale));
+  font-size: calc(23 * var(--system-scale));
+}

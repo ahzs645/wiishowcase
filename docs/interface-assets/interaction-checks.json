@@ -1,0 +1,4679 @@
+{
+  "checks": [
+    "640: saving choices does not move the selector",
+    "640: Back discards unconfirmed choice",
+    "640: saving date does not move its digit columns",
+    "640: date clamps leap day",
+    "640: standby preference saves",
+    "640: illumination preference saves",
+    "640: rating preference saves",
+    "640: secret answer saves",
+    "640: connection profile saves",
+    "640: Update isolates background",
+    "640: Update focus stays inside 0",
+    "640: Update focus stays inside 1",
+    "640: Update focus stays inside 2",
+    "640: Update focus stays inside 3",
+    "640: Update focus stays inside 4",
+    "640: Update focus stays inside 5",
+    "640: Update focus stays inside 6",
+    "640: Update focus stays inside 7",
+    "640: Update Escape preserves Settings",
+    "640: phone numeric types digit",
+    "640: phone restores letter group",
+    "640: phone uppercase click",
+    "640: physical keyboard types",
+    "640: letter erase cancellation preserves message",
+    "854: saving choices does not move the selector",
+    "854: Back discards unconfirmed choice",
+    "854: saving date does not move its digit columns",
+    "854: date clamps leap day",
+    "854: standby preference saves",
+    "854: illumination preference saves",
+    "854: rating preference saves",
+    "854: secret answer saves",
+    "854: connection profile saves",
+    "854: Update isolates background",
+    "854: Update focus stays inside 0",
+    "854: Update focus stays inside 1",
+    "854: Update focus stays inside 2",
+    "854: Update focus stays inside 3",
+    "854: Update focus stays inside 4",
+    "854: Update focus stays inside 5",
+    "854: Update focus stays inside 6",
+    "854: Update focus stays inside 7",
+    "854: Update Escape preserves Settings",
+    "854: phone numeric types digit",
+    "854: phone restores letter group",
+    "854: phone uppercase click",
+    "854: physical keyboard types",
+    "854: letter erase cancellation preserves message",
+    "960: saving choices does not move the selector",
+    "960: Back discards unconfirmed choice",
+    "960: saving date does not move its digit columns",
+    "960: date clamps leap day",
+    "960: standby preference saves",
+    "960: illumination preference saves",
+    "960: rating preference saves",
+    "960: secret answer saves",
+    "960: connection profile saves",
+    "960: Update isolates background",
+    "960: Update focus stays inside 0",
+    "960: Update focus stays inside 1",
+    "960: Update focus stays inside 2",
+    "960: Update focus stays inside 3",
+    "960: Update focus stays inside 4",
+    "960: Update focus stays inside 5",
+    "960: Update focus stays inside 6",
+    "960: Update focus stays inside 7",
+    "960: Update Escape preserves Settings",
+    "960: phone numeric types digit",
+    "960: phone restores letter group",
+    "960: phone uppercase click",
+    "960: physical keyboard types",
+    "960: letter erase cancellation preserves message",
+    "1280: saving choices does not move the selector",
+    "1280: Back discards unconfirmed choice",
+    "1280: saving date does not move its digit columns",
+    "1280: date clamps leap day",
+    "1280: standby preference saves",
+    "1280: illumination preference saves",
+    "1280: rating preference saves",
+    "1280: secret answer saves",
+    "1280: connection profile saves",
+    "1280: Update isolates background",
+    "1280: Update focus stays inside 0",
+    "1280: Update focus stays inside 1",
+    "1280: Update focus stays inside 2",
+    "1280: Update focus stays inside 3",
+    "1280: Update focus stays inside 4",
+    "1280: Update focus stays inside 5",
+    "1280: Update focus stays inside 6",
+    "1280: Update focus stays inside 7",
+    "1280: Update Escape preserves Settings",
+    "1280: phone numeric types digit",
+    "1280: phone restores letter group",
+    "1280: phone uppercase click",
+    "1280: physical keyboard types",
+    "1280: letter erase cancellation preserves message"
+  ],
+  "geometry": [
+    {
+      "id": "date-draft",
+      "width": 640,
+      "height": 480,
+      "controls": [
+        {
+          "name": "Increase month",
+          "width": 45,
+          "height": 34,
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Decrease month",
+          "width": 45,
+          "height": 34,
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Increase day",
+          "width": 45,
+          "height": 34,
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Decrease day",
+          "width": 45,
+          "height": 34,
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Increase year",
+          "width": 45,
+          "height": 34,
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Decrease year",
+          "width": 45,
+          "height": 34,
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Back",
+          "width": 270,
+          "height": 62,
+          "fontSize": "26px"
+        },
+        {
+          "name": "Confirm",
+          "width": 270,
+          "height": 62,
+          "fontSize": "26px"
+        }
+      ],
+      "text": [
+        {
+          "name": "Date",
+          "fontSize": "25px"
+        },
+        {
+          "name": "",
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "",
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "",
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "",
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "",
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "",
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Back",
+          "fontSize": "26px"
+        },
+        {
+          "name": "Confirm",
+          "fontSize": "26px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "rating-confirmed",
+      "width": 640,
+      "height": 480,
+      "controls": [
+        {
+          "name": "All ages",
+          "width": 430.09375,
+          "height": 36,
+          "fontSize": "20px"
+        },
+        {
+          "name": "Everyone",
+          "width": 430.09375,
+          "height": 36,
+          "fontSize": "20px"
+        },
+        {
+          "name": "Everyone 10+",
+          "width": 430.09375,
+          "height": 36,
+          "fontSize": "20px"
+        },
+        {
+          "name": "Teen",
+          "width": 430.09375,
+          "height": 36,
+          "fontSize": "20px"
+        },
+        {
+          "name": "Mature 17+",
+          "width": 430.09375,
+          "height": 36,
+          "fontSize": "20px"
+        },
+        {
+          "name": "Adults Only",
+          "width": 430.09375,
+          "height": 36,
+          "fontSize": "20px"
+        },
+        {
+          "name": "Back",
+          "width": 270,
+          "height": 62,
+          "fontSize": "26px"
+        },
+        {
+          "name": "Confirm",
+          "width": 270,
+          "height": 62,
+          "fontSize": "26px"
+        }
+      ],
+      "text": [
+        {
+          "name": "Game Rating",
+          "fontSize": "25px"
+        },
+        {
+          "name": "All ages",
+          "fontSize": "20px"
+        },
+        {
+          "name": "Everyone",
+          "fontSize": "20px"
+        },
+        {
+          "name": "Everyone 10+",
+          "fontSize": "20px"
+        },
+        {
+          "name": "Teen",
+          "fontSize": "20px"
+        },
+        {
+          "name": "Mature 17+",
+          "fontSize": "20px"
+        },
+        {
+          "name": "Adults Only",
+          "fontSize": "20px"
+        },
+        {
+          "name": "Back",
+          "fontSize": "26px"
+        },
+        {
+          "name": "Confirm",
+          "fontSize": "26px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "update-current",
+      "width": 640,
+      "height": 480,
+      "controls": [
+        {
+          "name": "OK",
+          "width": 205,
+          "height": 58,
+          "fontSize": "26px"
+        }
+      ],
+      "text": [
+        {
+          "name": "OK",
+          "fontSize": "26px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "operations-guide",
+      "width": 640,
+      "height": 480,
+      "controls": [
+        {
+          "name": "Close HOME Menu",
+          "width": 145.359375,
+          "height": 40,
+          "fontSize": "19px"
+        },
+        {
+          "name": "Wii Remote Settings",
+          "width": 246.5625,
+          "height": 25,
+          "fontSize": "21px"
+        }
+      ],
+      "text": [
+        {
+          "name": "Close",
+          "fontSize": "19px"
+        },
+        {
+          "name": "Operations Guide",
+          "fontSize": "22.5px"
+        },
+        {
+          "name": "Wii Remote Settings",
+          "fontSize": "21px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "reconnect",
+      "width": 640,
+      "height": 480,
+      "controls": [
+        {
+          "name": "Close pairing",
+          "width": 36,
+          "height": 38,
+          "fontSize": "25px"
+        }
+      ],
+      "text": [
+        {
+          "name": "×",
+          "fontSize": "25px"
+        },
+        {
+          "name": "Pair Wii Remote",
+          "fontSize": "23px"
+        },
+        {
+          "name": "Connect",
+          "fontSize": "15px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "system-phone",
+      "width": 640,
+      "height": 480,
+      "controls": [
+        {
+          "name": "Return",
+          "width": 64,
+          "height": 57.59375,
+          "fontSize": "24px"
+        },
+        {
+          "name": "English",
+          "width": 179.1875,
+          "height": 38.390625,
+          "fontSize": "23px"
+        },
+        {
+          "name": "More",
+          "width": 118.9375,
+          "height": 31.578125,
+          "fontSize": "23px"
+        },
+        {
+          "name": "QWERTY",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "18px"
+        },
+        {
+          "name": ".,?!",
+          "width": 128,
+          "height": 57.59375,
+          "fontSize": "25px"
+        },
+        {
+          "name": "abc",
+          "width": 128,
+          "height": 57.59375,
+          "fontSize": "25px"
+        },
+        {
+          "name": "def",
+          "width": 128,
+          "height": 57.59375,
+          "fontSize": "25px"
+        },
+        {
+          "name": "ghi",
+          "width": 128,
+          "height": 57.59375,
+          "fontSize": "25px"
+        },
+        {
+          "name": "jkl",
+          "width": 128,
+          "height": 57.59375,
+          "fontSize": "25px"
+        },
+        {
+          "name": "mno",
+          "width": 128,
+          "height": 57.59375,
+          "fontSize": "25px"
+        },
+        {
+          "name": "pqrs",
+          "width": 128,
+          "height": 57.59375,
+          "fontSize": "25px"
+        },
+        {
+          "name": "tuv",
+          "width": 128,
+          "height": 57.59375,
+          "fontSize": "25px"
+        },
+        {
+          "name": "wxyz",
+          "width": 128,
+          "height": 57.59375,
+          "fontSize": "25px"
+        },
+        {
+          "name": "Backspace",
+          "width": 64,
+          "height": 57.59375,
+          "fontSize": "24px"
+        },
+        {
+          "name": "Space",
+          "width": 236.796875,
+          "height": 38.390625,
+          "fontSize": "24px"
+        },
+        {
+          "name": "OK",
+          "width": 181.046875,
+          "height": 56.828125,
+          "fontSize": "30px"
+        },
+        {
+          "name": "Quit",
+          "width": 181.046875,
+          "height": 56.828125,
+          "fontSize": "30px"
+        },
+        {
+          "name": "Scroll text up",
+          "width": 32,
+          "height": 33.59375,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Scroll text down",
+          "width": 32,
+          "height": 33.59375,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Previous suggestions",
+          "width": 38.390625,
+          "height": 28.796875,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Next suggestions",
+          "width": 38.390625,
+          "height": 28.796875,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Phone Abc mode",
+          "width": 102.390625,
+          "height": 42.875,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Phone abc mode",
+          "width": 102.390625,
+          "height": 42.859375,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Phone ABC mode",
+          "width": 102.390625,
+          "height": 42.875,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Phone 123 mode",
+          "width": 102.390625,
+          "height": 42.859375,
+          "fontSize": "17px"
+        }
+      ],
+      "text": [
+        {
+          "name": "↵",
+          "fontSize": "24px"
+        },
+        {
+          "name": "English",
+          "fontSize": "23px"
+        },
+        {
+          "name": "More",
+          "fontSize": "23px"
+        },
+        {
+          "name": "QWERTY",
+          "fontSize": "18px"
+        },
+        {
+          "name": ".,?!",
+          "fontSize": "25px"
+        },
+        {
+          "name": "abc",
+          "fontSize": "25px"
+        },
+        {
+          "name": "def",
+          "fontSize": "25px"
+        },
+        {
+          "name": "ghi",
+          "fontSize": "25px"
+        },
+        {
+          "name": "jkl",
+          "fontSize": "25px"
+        },
+        {
+          "name": "mno",
+          "fontSize": "25px"
+        },
+        {
+          "name": "pqrs",
+          "fontSize": "25px"
+        },
+        {
+          "name": "tuv",
+          "fontSize": "25px"
+        },
+        {
+          "name": "wxyz",
+          "fontSize": "25px"
+        },
+        {
+          "name": "",
+          "fontSize": "24px"
+        },
+        {
+          "name": "Space",
+          "fontSize": "24px"
+        },
+        {
+          "name": "OK",
+          "fontSize": "30px"
+        },
+        {
+          "name": "Quit",
+          "fontSize": "30px"
+        },
+        {
+          "name": "▲",
+          "fontSize": "17px"
+        },
+        {
+          "name": "▼",
+          "fontSize": "17px"
+        },
+        {
+          "name": "◀",
+          "fontSize": "17px"
+        },
+        {
+          "name": "▶",
+          "fontSize": "17px"
+        },
+        {
+          "name": "Abc",
+          "fontSize": "17px"
+        },
+        {
+          "name": "abc",
+          "fontSize": "17px"
+        },
+        {
+          "name": "ABC",
+          "fontSize": "17px"
+        },
+        {
+          "name": "123",
+          "fontSize": "17px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "system-phone-numeric",
+      "width": 640,
+      "height": 480,
+      "controls": [
+        {
+          "name": "Return",
+          "width": 64,
+          "height": 57.59375,
+          "fontSize": "24px"
+        },
+        {
+          "name": "English",
+          "width": 179.1875,
+          "height": 38.390625,
+          "fontSize": "23px"
+        },
+        {
+          "name": "More",
+          "width": 118.9375,
+          "height": 31.578125,
+          "fontSize": "23px"
+        },
+        {
+          "name": "QWERTY",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "18px"
+        },
+        {
+          "name": "1",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "2",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "3",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "4",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "5",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "6",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "7",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "8",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "9",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "0",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "@",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": ".",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "Backspace",
+          "width": 64,
+          "height": 57.59375,
+          "fontSize": "24px"
+        },
+        {
+          "name": "Space",
+          "width": 236.796875,
+          "height": 38.390625,
+          "fontSize": "24px"
+        },
+        {
+          "name": "OK",
+          "width": 181.046875,
+          "height": 56.828125,
+          "fontSize": "30px"
+        },
+        {
+          "name": "Quit",
+          "width": 181.046875,
+          "height": 56.828125,
+          "fontSize": "30px"
+        },
+        {
+          "name": "Scroll text up",
+          "width": 32,
+          "height": 33.59375,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Scroll text down",
+          "width": 32,
+          "height": 33.59375,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Previous suggestions",
+          "width": 38.390625,
+          "height": 28.796875,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Next suggestions",
+          "width": 38.390625,
+          "height": 28.796875,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Phone Abc mode",
+          "width": 102.390625,
+          "height": 42.875,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Phone abc mode",
+          "width": 102.390625,
+          "height": 42.859375,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Phone ABC mode",
+          "width": 102.390625,
+          "height": 42.875,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Phone 123 mode",
+          "width": 102.390625,
+          "height": 42.859375,
+          "fontSize": "17px"
+        }
+      ],
+      "text": [
+        {
+          "name": "↵",
+          "fontSize": "24px"
+        },
+        {
+          "name": "English",
+          "fontSize": "23px"
+        },
+        {
+          "name": "More",
+          "fontSize": "23px"
+        },
+        {
+          "name": "QWERTY",
+          "fontSize": "18px"
+        },
+        {
+          "name": "1",
+          "fontSize": "25px"
+        },
+        {
+          "name": "2",
+          "fontSize": "25px"
+        },
+        {
+          "name": "3",
+          "fontSize": "25px"
+        },
+        {
+          "name": "4",
+          "fontSize": "25px"
+        },
+        {
+          "name": "5",
+          "fontSize": "25px"
+        },
+        {
+          "name": "6",
+          "fontSize": "25px"
+        },
+        {
+          "name": "7",
+          "fontSize": "25px"
+        },
+        {
+          "name": "8",
+          "fontSize": "25px"
+        },
+        {
+          "name": "9",
+          "fontSize": "25px"
+        },
+        {
+          "name": "0",
+          "fontSize": "25px"
+        },
+        {
+          "name": "@",
+          "fontSize": "25px"
+        },
+        {
+          "name": ".",
+          "fontSize": "25px"
+        },
+        {
+          "name": "",
+          "fontSize": "24px"
+        },
+        {
+          "name": "Space",
+          "fontSize": "24px"
+        },
+        {
+          "name": "OK",
+          "fontSize": "30px"
+        },
+        {
+          "name": "Quit",
+          "fontSize": "30px"
+        },
+        {
+          "name": "▲",
+          "fontSize": "17px"
+        },
+        {
+          "name": "▼",
+          "fontSize": "17px"
+        },
+        {
+          "name": "◀",
+          "fontSize": "17px"
+        },
+        {
+          "name": "▶",
+          "fontSize": "17px"
+        },
+        {
+          "name": "Abc",
+          "fontSize": "17px"
+        },
+        {
+          "name": "abc",
+          "fontSize": "17px"
+        },
+        {
+          "name": "ABC",
+          "fontSize": "17px"
+        },
+        {
+          "name": "123",
+          "fontSize": "17px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "system-phone-accents",
+      "width": 640,
+      "height": 480,
+      "controls": [
+        {
+          "name": "Return",
+          "width": 64,
+          "height": 57.59375,
+          "fontSize": "24px"
+        },
+        {
+          "name": "English",
+          "width": 179.1875,
+          "height": 38.390625,
+          "fontSize": "23px"
+        },
+        {
+          "name": "More",
+          "width": 118.9375,
+          "height": 31.578125,
+          "fontSize": "23px"
+        },
+        {
+          "name": "QWERTY",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "18px"
+        },
+        {
+          "name": "ÀÂÆ",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "Ç",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "ÉÈÊË",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "ÎÏ",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "ÔŒ",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "ÙÛÜ",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "Ÿ",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "Á",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "Í",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "Ó",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "Ú",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "Ñ",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "Backspace",
+          "width": 64,
+          "height": 57.59375,
+          "fontSize": "24px"
+        },
+        {
+          "name": "Space",
+          "width": 236.796875,
+          "height": 38.390625,
+          "fontSize": "24px"
+        },
+        {
+          "name": "OK",
+          "width": 181.046875,
+          "height": 56.828125,
+          "fontSize": "30px"
+        },
+        {
+          "name": "Quit",
+          "width": 181.046875,
+          "height": 56.828125,
+          "fontSize": "30px"
+        },
+        {
+          "name": "Scroll text up",
+          "width": 32,
+          "height": 33.59375,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Scroll text down",
+          "width": 32,
+          "height": 33.59375,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Previous suggestions",
+          "width": 38.390625,
+          "height": 28.796875,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Next suggestions",
+          "width": 38.390625,
+          "height": 28.796875,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Phone Abc mode",
+          "width": 102.390625,
+          "height": 42.875,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Phone abc mode",
+          "width": 102.390625,
+          "height": 42.859375,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Phone ABC mode",
+          "width": 102.390625,
+          "height": 42.875,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Phone 123 mode",
+          "width": 102.390625,
+          "height": 42.859375,
+          "fontSize": "17px"
+        }
+      ],
+      "text": [
+        {
+          "name": "↵",
+          "fontSize": "24px"
+        },
+        {
+          "name": "English",
+          "fontSize": "23px"
+        },
+        {
+          "name": "More",
+          "fontSize": "23px"
+        },
+        {
+          "name": "QWERTY",
+          "fontSize": "18px"
+        },
+        {
+          "name": "ÀÂÆ",
+          "fontSize": "25px"
+        },
+        {
+          "name": "Ç",
+          "fontSize": "25px"
+        },
+        {
+          "name": "ÉÈÊË",
+          "fontSize": "25px"
+        },
+        {
+          "name": "ÎÏ",
+          "fontSize": "25px"
+        },
+        {
+          "name": "ÔŒ",
+          "fontSize": "25px"
+        },
+        {
+          "name": "ÙÛÜ",
+          "fontSize": "25px"
+        },
+        {
+          "name": "Ÿ",
+          "fontSize": "25px"
+        },
+        {
+          "name": "Á",
+          "fontSize": "25px"
+        },
+        {
+          "name": "Í",
+          "fontSize": "25px"
+        },
+        {
+          "name": "Ó",
+          "fontSize": "25px"
+        },
+        {
+          "name": "Ú",
+          "fontSize": "25px"
+        },
+        {
+          "name": "Ñ",
+          "fontSize": "25px"
+        },
+        {
+          "name": "",
+          "fontSize": "24px"
+        },
+        {
+          "name": "Space",
+          "fontSize": "24px"
+        },
+        {
+          "name": "OK",
+          "fontSize": "30px"
+        },
+        {
+          "name": "Quit",
+          "fontSize": "30px"
+        },
+        {
+          "name": "▲",
+          "fontSize": "17px"
+        },
+        {
+          "name": "▼",
+          "fontSize": "17px"
+        },
+        {
+          "name": "◀",
+          "fontSize": "17px"
+        },
+        {
+          "name": "▶",
+          "fontSize": "17px"
+        },
+        {
+          "name": "Abc",
+          "fontSize": "17px"
+        },
+        {
+          "name": "abc",
+          "fontSize": "17px"
+        },
+        {
+          "name": "ABC",
+          "fontSize": "17px"
+        },
+        {
+          "name": "123",
+          "fontSize": "17px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "letter-open",
+      "width": 640,
+      "height": 480,
+      "controls": [
+        {
+          "name": "Back",
+          "width": 192.48516845703125,
+          "height": 58.2391357421875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "Erase letter",
+          "width": 47.380958557128906,
+          "height": 47.380958557128906,
+          "fontSize": "25px"
+        }
+      ],
+      "text": [
+        {
+          "name": "Memo",
+          "fontSize": "23px"
+        },
+        {
+          "name": "Back",
+          "fontSize": "25px"
+        },
+        {
+          "name": "",
+          "fontSize": "25px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "date-draft",
+      "width": 854,
+      "height": 480,
+      "controls": [
+        {
+          "name": "Increase month",
+          "width": 45,
+          "height": 34,
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Decrease month",
+          "width": 45,
+          "height": 34,
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Increase day",
+          "width": 45,
+          "height": 34,
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Decrease day",
+          "width": 45,
+          "height": 34,
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Increase year",
+          "width": 45,
+          "height": 34,
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Decrease year",
+          "width": 45,
+          "height": 34,
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Back",
+          "width": 266.875,
+          "height": 62,
+          "fontSize": "26px"
+        },
+        {
+          "name": "Confirm",
+          "width": 266.875,
+          "height": 62,
+          "fontSize": "26px"
+        }
+      ],
+      "text": [
+        {
+          "name": "Date",
+          "fontSize": "25px"
+        },
+        {
+          "name": "",
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "",
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "",
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "",
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "",
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "",
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Back",
+          "fontSize": "26px"
+        },
+        {
+          "name": "Confirm",
+          "fontSize": "26px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "rating-confirmed",
+      "width": 854,
+      "height": 480,
+      "controls": [
+        {
+          "name": "All ages",
+          "width": 573.890625,
+          "height": 36,
+          "fontSize": "20px"
+        },
+        {
+          "name": "Everyone",
+          "width": 573.890625,
+          "height": 36,
+          "fontSize": "20px"
+        },
+        {
+          "name": "Everyone 10+",
+          "width": 573.890625,
+          "height": 36,
+          "fontSize": "20px"
+        },
+        {
+          "name": "Teen",
+          "width": 573.890625,
+          "height": 36,
+          "fontSize": "20px"
+        },
+        {
+          "name": "Mature 17+",
+          "width": 573.890625,
+          "height": 36,
+          "fontSize": "20px"
+        },
+        {
+          "name": "Adults Only",
+          "width": 573.890625,
+          "height": 36,
+          "fontSize": "20px"
+        },
+        {
+          "name": "Back",
+          "width": 266.875,
+          "height": 62,
+          "fontSize": "26px"
+        },
+        {
+          "name": "Confirm",
+          "width": 266.875,
+          "height": 62,
+          "fontSize": "26px"
+        }
+      ],
+      "text": [
+        {
+          "name": "Game Rating",
+          "fontSize": "25px"
+        },
+        {
+          "name": "All ages",
+          "fontSize": "20px"
+        },
+        {
+          "name": "Everyone",
+          "fontSize": "20px"
+        },
+        {
+          "name": "Everyone 10+",
+          "fontSize": "20px"
+        },
+        {
+          "name": "Teen",
+          "fontSize": "20px"
+        },
+        {
+          "name": "Mature 17+",
+          "fontSize": "20px"
+        },
+        {
+          "name": "Adults Only",
+          "fontSize": "20px"
+        },
+        {
+          "name": "Back",
+          "fontSize": "26px"
+        },
+        {
+          "name": "Confirm",
+          "fontSize": "26px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "update-current",
+      "width": 854,
+      "height": 480,
+      "controls": [
+        {
+          "name": "OK",
+          "width": 205,
+          "height": 58,
+          "fontSize": "26px"
+        }
+      ],
+      "text": [
+        {
+          "name": "OK",
+          "fontSize": "26px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "operations-guide",
+      "width": 854,
+      "height": 480,
+      "controls": [
+        {
+          "name": "Close HOME Menu",
+          "width": 145.359375,
+          "height": 40,
+          "fontSize": "19px"
+        },
+        {
+          "name": "Wii Remote Settings",
+          "width": 246.5625,
+          "height": 25,
+          "fontSize": "21px"
+        }
+      ],
+      "text": [
+        {
+          "name": "Close",
+          "fontSize": "19px"
+        },
+        {
+          "name": "Operations Guide",
+          "fontSize": "22.5px"
+        },
+        {
+          "name": "Wii Remote Settings",
+          "fontSize": "21px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "reconnect",
+      "width": 854,
+      "height": 480,
+      "controls": [
+        {
+          "name": "Close pairing",
+          "width": 36,
+          "height": 38,
+          "fontSize": "25px"
+        }
+      ],
+      "text": [
+        {
+          "name": "×",
+          "fontSize": "25px"
+        },
+        {
+          "name": "Pair Wii Remote",
+          "fontSize": "23px"
+        },
+        {
+          "name": "Connect",
+          "fontSize": "15px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "system-phone",
+      "width": 854,
+      "height": 480,
+      "controls": [
+        {
+          "name": "Return",
+          "width": 64,
+          "height": 57.59375,
+          "fontSize": "24px"
+        },
+        {
+          "name": "English",
+          "width": 179.1875,
+          "height": 38.390625,
+          "fontSize": "23px"
+        },
+        {
+          "name": "More",
+          "width": 118.9375,
+          "height": 31.578125,
+          "fontSize": "23px"
+        },
+        {
+          "name": "QWERTY",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "18px"
+        },
+        {
+          "name": ".,?!",
+          "width": 128,
+          "height": 57.59375,
+          "fontSize": "25px"
+        },
+        {
+          "name": "abc",
+          "width": 128,
+          "height": 57.59375,
+          "fontSize": "25px"
+        },
+        {
+          "name": "def",
+          "width": 128,
+          "height": 57.59375,
+          "fontSize": "25px"
+        },
+        {
+          "name": "ghi",
+          "width": 128,
+          "height": 57.59375,
+          "fontSize": "25px"
+        },
+        {
+          "name": "jkl",
+          "width": 128,
+          "height": 57.59375,
+          "fontSize": "25px"
+        },
+        {
+          "name": "mno",
+          "width": 128,
+          "height": 57.59375,
+          "fontSize": "25px"
+        },
+        {
+          "name": "pqrs",
+          "width": 128,
+          "height": 57.59375,
+          "fontSize": "25px"
+        },
+        {
+          "name": "tuv",
+          "width": 128,
+          "height": 57.59375,
+          "fontSize": "25px"
+        },
+        {
+          "name": "wxyz",
+          "width": 128,
+          "height": 57.59375,
+          "fontSize": "25px"
+        },
+        {
+          "name": "Backspace",
+          "width": 64,
+          "height": 57.59375,
+          "fontSize": "24px"
+        },
+        {
+          "name": "Space",
+          "width": 236.796875,
+          "height": 38.390625,
+          "fontSize": "24px"
+        },
+        {
+          "name": "OK",
+          "width": 181.046875,
+          "height": 56.828125,
+          "fontSize": "30px"
+        },
+        {
+          "name": "Quit",
+          "width": 181.046875,
+          "height": 56.828125,
+          "fontSize": "30px"
+        },
+        {
+          "name": "Scroll text up",
+          "width": 32,
+          "height": 33.59375,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Scroll text down",
+          "width": 32,
+          "height": 33.59375,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Previous suggestions",
+          "width": 38.390625,
+          "height": 28.796875,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Next suggestions",
+          "width": 38.390625,
+          "height": 28.796875,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Phone Abc mode",
+          "width": 102.390625,
+          "height": 42.875,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Phone abc mode",
+          "width": 102.390625,
+          "height": 42.859375,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Phone ABC mode",
+          "width": 102.390625,
+          "height": 42.875,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Phone 123 mode",
+          "width": 102.390625,
+          "height": 42.859375,
+          "fontSize": "17px"
+        }
+      ],
+      "text": [
+        {
+          "name": "↵",
+          "fontSize": "24px"
+        },
+        {
+          "name": "English",
+          "fontSize": "23px"
+        },
+        {
+          "name": "More",
+          "fontSize": "23px"
+        },
+        {
+          "name": "QWERTY",
+          "fontSize": "18px"
+        },
+        {
+          "name": ".,?!",
+          "fontSize": "25px"
+        },
+        {
+          "name": "abc",
+          "fontSize": "25px"
+        },
+        {
+          "name": "def",
+          "fontSize": "25px"
+        },
+        {
+          "name": "ghi",
+          "fontSize": "25px"
+        },
+        {
+          "name": "jkl",
+          "fontSize": "25px"
+        },
+        {
+          "name": "mno",
+          "fontSize": "25px"
+        },
+        {
+          "name": "pqrs",
+          "fontSize": "25px"
+        },
+        {
+          "name": "tuv",
+          "fontSize": "25px"
+        },
+        {
+          "name": "wxyz",
+          "fontSize": "25px"
+        },
+        {
+          "name": "",
+          "fontSize": "24px"
+        },
+        {
+          "name": "Space",
+          "fontSize": "24px"
+        },
+        {
+          "name": "OK",
+          "fontSize": "30px"
+        },
+        {
+          "name": "Quit",
+          "fontSize": "30px"
+        },
+        {
+          "name": "▲",
+          "fontSize": "17px"
+        },
+        {
+          "name": "▼",
+          "fontSize": "17px"
+        },
+        {
+          "name": "◀",
+          "fontSize": "17px"
+        },
+        {
+          "name": "▶",
+          "fontSize": "17px"
+        },
+        {
+          "name": "Abc",
+          "fontSize": "17px"
+        },
+        {
+          "name": "abc",
+          "fontSize": "17px"
+        },
+        {
+          "name": "ABC",
+          "fontSize": "17px"
+        },
+        {
+          "name": "123",
+          "fontSize": "17px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "system-phone-numeric",
+      "width": 854,
+      "height": 480,
+      "controls": [
+        {
+          "name": "Return",
+          "width": 64,
+          "height": 57.59375,
+          "fontSize": "24px"
+        },
+        {
+          "name": "English",
+          "width": 179.1875,
+          "height": 38.390625,
+          "fontSize": "23px"
+        },
+        {
+          "name": "More",
+          "width": 118.9375,
+          "height": 31.578125,
+          "fontSize": "23px"
+        },
+        {
+          "name": "QWERTY",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "18px"
+        },
+        {
+          "name": "1",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "2",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "3",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "4",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "5",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "6",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "7",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "8",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "9",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "0",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "@",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": ".",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "Backspace",
+          "width": 64,
+          "height": 57.59375,
+          "fontSize": "24px"
+        },
+        {
+          "name": "Space",
+          "width": 236.796875,
+          "height": 38.390625,
+          "fontSize": "24px"
+        },
+        {
+          "name": "OK",
+          "width": 181.046875,
+          "height": 56.828125,
+          "fontSize": "30px"
+        },
+        {
+          "name": "Quit",
+          "width": 181.046875,
+          "height": 56.828125,
+          "fontSize": "30px"
+        },
+        {
+          "name": "Scroll text up",
+          "width": 32,
+          "height": 33.59375,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Scroll text down",
+          "width": 32,
+          "height": 33.59375,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Previous suggestions",
+          "width": 38.390625,
+          "height": 28.796875,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Next suggestions",
+          "width": 38.390625,
+          "height": 28.796875,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Phone Abc mode",
+          "width": 102.390625,
+          "height": 42.875,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Phone abc mode",
+          "width": 102.390625,
+          "height": 42.859375,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Phone ABC mode",
+          "width": 102.390625,
+          "height": 42.875,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Phone 123 mode",
+          "width": 102.390625,
+          "height": 42.859375,
+          "fontSize": "17px"
+        }
+      ],
+      "text": [
+        {
+          "name": "↵",
+          "fontSize": "24px"
+        },
+        {
+          "name": "English",
+          "fontSize": "23px"
+        },
+        {
+          "name": "More",
+          "fontSize": "23px"
+        },
+        {
+          "name": "QWERTY",
+          "fontSize": "18px"
+        },
+        {
+          "name": "1",
+          "fontSize": "25px"
+        },
+        {
+          "name": "2",
+          "fontSize": "25px"
+        },
+        {
+          "name": "3",
+          "fontSize": "25px"
+        },
+        {
+          "name": "4",
+          "fontSize": "25px"
+        },
+        {
+          "name": "5",
+          "fontSize": "25px"
+        },
+        {
+          "name": "6",
+          "fontSize": "25px"
+        },
+        {
+          "name": "7",
+          "fontSize": "25px"
+        },
+        {
+          "name": "8",
+          "fontSize": "25px"
+        },
+        {
+          "name": "9",
+          "fontSize": "25px"
+        },
+        {
+          "name": "0",
+          "fontSize": "25px"
+        },
+        {
+          "name": "@",
+          "fontSize": "25px"
+        },
+        {
+          "name": ".",
+          "fontSize": "25px"
+        },
+        {
+          "name": "",
+          "fontSize": "24px"
+        },
+        {
+          "name": "Space",
+          "fontSize": "24px"
+        },
+        {
+          "name": "OK",
+          "fontSize": "30px"
+        },
+        {
+          "name": "Quit",
+          "fontSize": "30px"
+        },
+        {
+          "name": "▲",
+          "fontSize": "17px"
+        },
+        {
+          "name": "▼",
+          "fontSize": "17px"
+        },
+        {
+          "name": "◀",
+          "fontSize": "17px"
+        },
+        {
+          "name": "▶",
+          "fontSize": "17px"
+        },
+        {
+          "name": "Abc",
+          "fontSize": "17px"
+        },
+        {
+          "name": "abc",
+          "fontSize": "17px"
+        },
+        {
+          "name": "ABC",
+          "fontSize": "17px"
+        },
+        {
+          "name": "123",
+          "fontSize": "17px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "system-phone-accents",
+      "width": 854,
+      "height": 480,
+      "controls": [
+        {
+          "name": "Return",
+          "width": 64,
+          "height": 57.59375,
+          "fontSize": "24px"
+        },
+        {
+          "name": "English",
+          "width": 179.1875,
+          "height": 38.390625,
+          "fontSize": "23px"
+        },
+        {
+          "name": "More",
+          "width": 118.9375,
+          "height": 31.578125,
+          "fontSize": "23px"
+        },
+        {
+          "name": "QWERTY",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "18px"
+        },
+        {
+          "name": "ÀÂÆ",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "Ç",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "ÉÈÊË",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "ÎÏ",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "ÔŒ",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "ÙÛÜ",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "Ÿ",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "Á",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "Í",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "Ó",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "Ú",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "Ñ",
+          "width": 128,
+          "height": 43.1875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "Backspace",
+          "width": 64,
+          "height": 57.59375,
+          "fontSize": "24px"
+        },
+        {
+          "name": "Space",
+          "width": 236.796875,
+          "height": 38.390625,
+          "fontSize": "24px"
+        },
+        {
+          "name": "OK",
+          "width": 181.046875,
+          "height": 56.828125,
+          "fontSize": "30px"
+        },
+        {
+          "name": "Quit",
+          "width": 181.046875,
+          "height": 56.828125,
+          "fontSize": "30px"
+        },
+        {
+          "name": "Scroll text up",
+          "width": 32,
+          "height": 33.59375,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Scroll text down",
+          "width": 32,
+          "height": 33.59375,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Previous suggestions",
+          "width": 38.390625,
+          "height": 28.796875,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Next suggestions",
+          "width": 38.390625,
+          "height": 28.796875,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Phone Abc mode",
+          "width": 102.390625,
+          "height": 42.875,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Phone abc mode",
+          "width": 102.390625,
+          "height": 42.859375,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Phone ABC mode",
+          "width": 102.390625,
+          "height": 42.875,
+          "fontSize": "17px"
+        },
+        {
+          "name": "Phone 123 mode",
+          "width": 102.390625,
+          "height": 42.859375,
+          "fontSize": "17px"
+        }
+      ],
+      "text": [
+        {
+          "name": "↵",
+          "fontSize": "24px"
+        },
+        {
+          "name": "English",
+          "fontSize": "23px"
+        },
+        {
+          "name": "More",
+          "fontSize": "23px"
+        },
+        {
+          "name": "QWERTY",
+          "fontSize": "18px"
+        },
+        {
+          "name": "ÀÂÆ",
+          "fontSize": "25px"
+        },
+        {
+          "name": "Ç",
+          "fontSize": "25px"
+        },
+        {
+          "name": "ÉÈÊË",
+          "fontSize": "25px"
+        },
+        {
+          "name": "ÎÏ",
+          "fontSize": "25px"
+        },
+        {
+          "name": "ÔŒ",
+          "fontSize": "25px"
+        },
+        {
+          "name": "ÙÛÜ",
+          "fontSize": "25px"
+        },
+        {
+          "name": "Ÿ",
+          "fontSize": "25px"
+        },
+        {
+          "name": "Á",
+          "fontSize": "25px"
+        },
+        {
+          "name": "Í",
+          "fontSize": "25px"
+        },
+        {
+          "name": "Ó",
+          "fontSize": "25px"
+        },
+        {
+          "name": "Ú",
+          "fontSize": "25px"
+        },
+        {
+          "name": "Ñ",
+          "fontSize": "25px"
+        },
+        {
+          "name": "",
+          "fontSize": "24px"
+        },
+        {
+          "name": "Space",
+          "fontSize": "24px"
+        },
+        {
+          "name": "OK",
+          "fontSize": "30px"
+        },
+        {
+          "name": "Quit",
+          "fontSize": "30px"
+        },
+        {
+          "name": "▲",
+          "fontSize": "17px"
+        },
+        {
+          "name": "▼",
+          "fontSize": "17px"
+        },
+        {
+          "name": "◀",
+          "fontSize": "17px"
+        },
+        {
+          "name": "▶",
+          "fontSize": "17px"
+        },
+        {
+          "name": "Abc",
+          "fontSize": "17px"
+        },
+        {
+          "name": "abc",
+          "fontSize": "17px"
+        },
+        {
+          "name": "ABC",
+          "fontSize": "17px"
+        },
+        {
+          "name": "123",
+          "fontSize": "17px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "letter-open",
+      "width": 854,
+      "height": 480,
+      "controls": [
+        {
+          "name": "Back",
+          "width": 192.48797607421875,
+          "height": 58.23992919921875,
+          "fontSize": "25px"
+        },
+        {
+          "name": "Erase letter",
+          "width": 47.38165283203125,
+          "height": 47.38165283203125,
+          "fontSize": "25px"
+        }
+      ],
+      "text": [
+        {
+          "name": "Memo",
+          "fontSize": "23px"
+        },
+        {
+          "name": "Back",
+          "fontSize": "25px"
+        },
+        {
+          "name": "",
+          "fontSize": "25px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "date-draft",
+      "width": 960,
+      "height": 720,
+      "controls": [
+        {
+          "name": "Increase month",
+          "width": 67.5,
+          "height": 51,
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Decrease month",
+          "width": 67.5,
+          "height": 51,
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Increase day",
+          "width": 67.5,
+          "height": 51,
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Decrease day",
+          "width": 67.5,
+          "height": 51,
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Increase year",
+          "width": 67.5,
+          "height": 51,
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Decrease year",
+          "width": 67.5,
+          "height": 51,
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Back",
+          "width": 405,
+          "height": 93,
+          "fontSize": "39px"
+        },
+        {
+          "name": "Confirm",
+          "width": 405,
+          "height": 93,
+          "fontSize": "39px"
+        }
+      ],
+      "text": [
+        {
+          "name": "Date",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "",
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "",
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "",
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "",
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "",
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "",
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Back",
+          "fontSize": "39px"
+        },
+        {
+          "name": "Confirm",
+          "fontSize": "39px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "rating-confirmed",
+      "width": 960,
+      "height": 720,
+      "controls": [
+        {
+          "name": "All ages",
+          "width": 645.125,
+          "height": 54,
+          "fontSize": "30px"
+        },
+        {
+          "name": "Everyone",
+          "width": 645.125,
+          "height": 54,
+          "fontSize": "30px"
+        },
+        {
+          "name": "Everyone 10+",
+          "width": 645.125,
+          "height": 54,
+          "fontSize": "30px"
+        },
+        {
+          "name": "Teen",
+          "width": 645.125,
+          "height": 54,
+          "fontSize": "30px"
+        },
+        {
+          "name": "Mature 17+",
+          "width": 645.125,
+          "height": 54,
+          "fontSize": "30px"
+        },
+        {
+          "name": "Adults Only",
+          "width": 645.125,
+          "height": 54,
+          "fontSize": "30px"
+        },
+        {
+          "name": "Back",
+          "width": 405,
+          "height": 93,
+          "fontSize": "39px"
+        },
+        {
+          "name": "Confirm",
+          "width": 405,
+          "height": 93,
+          "fontSize": "39px"
+        }
+      ],
+      "text": [
+        {
+          "name": "Game Rating",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "All ages",
+          "fontSize": "30px"
+        },
+        {
+          "name": "Everyone",
+          "fontSize": "30px"
+        },
+        {
+          "name": "Everyone 10+",
+          "fontSize": "30px"
+        },
+        {
+          "name": "Teen",
+          "fontSize": "30px"
+        },
+        {
+          "name": "Mature 17+",
+          "fontSize": "30px"
+        },
+        {
+          "name": "Adults Only",
+          "fontSize": "30px"
+        },
+        {
+          "name": "Back",
+          "fontSize": "39px"
+        },
+        {
+          "name": "Confirm",
+          "fontSize": "39px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "update-current",
+      "width": 960,
+      "height": 720,
+      "controls": [
+        {
+          "name": "OK",
+          "width": 307.5,
+          "height": 87,
+          "fontSize": "39px"
+        }
+      ],
+      "text": [
+        {
+          "name": "OK",
+          "fontSize": "39px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "operations-guide",
+      "width": 960,
+      "height": 720,
+      "controls": [
+        {
+          "name": "Close HOME Menu",
+          "width": 217.03125,
+          "height": 59,
+          "fontSize": "28.5px"
+        },
+        {
+          "name": "Wii Remote Settings",
+          "width": 366.984375,
+          "height": 38,
+          "fontSize": "31.5px"
+        }
+      ],
+      "text": [
+        {
+          "name": "Close",
+          "fontSize": "28.5px"
+        },
+        {
+          "name": "Operations Guide",
+          "fontSize": "33.75px"
+        },
+        {
+          "name": "Wii Remote Settings",
+          "fontSize": "31.5px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "reconnect",
+      "width": 960,
+      "height": 720,
+      "controls": [
+        {
+          "name": "Close pairing",
+          "width": 36,
+          "height": 38,
+          "fontSize": "25px"
+        }
+      ],
+      "text": [
+        {
+          "name": "×",
+          "fontSize": "25px"
+        },
+        {
+          "name": "Pair Wii Remote",
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "Connect",
+          "fontSize": "15px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "system-phone",
+      "width": 960,
+      "height": 720,
+      "controls": [
+        {
+          "name": "Return",
+          "width": 96,
+          "height": 86.390625,
+          "fontSize": "36px"
+        },
+        {
+          "name": "English",
+          "width": 268.796875,
+          "height": 57.59375,
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "More",
+          "width": 178.40625,
+          "height": 47.359375,
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "QWERTY",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "27px"
+        },
+        {
+          "name": ".,?!",
+          "width": 192,
+          "height": 86.390625,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "abc",
+          "width": 192,
+          "height": 86.390625,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "def",
+          "width": 192,
+          "height": 86.390625,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "ghi",
+          "width": 192,
+          "height": 86.390625,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "jkl",
+          "width": 192,
+          "height": 86.390625,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "mno",
+          "width": 192,
+          "height": 86.390625,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "pqrs",
+          "width": 192,
+          "height": 86.390625,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "tuv",
+          "width": 192,
+          "height": 86.390625,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "wxyz",
+          "width": 192,
+          "height": 86.390625,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Backspace",
+          "width": 96,
+          "height": 86.390625,
+          "fontSize": "36px"
+        },
+        {
+          "name": "Space",
+          "width": 355.1875,
+          "height": 57.59375,
+          "fontSize": "36px"
+        },
+        {
+          "name": "OK",
+          "width": 271.578125,
+          "height": 85.25,
+          "fontSize": "45px"
+        },
+        {
+          "name": "Quit",
+          "width": 271.578125,
+          "height": 85.25,
+          "fontSize": "45px"
+        },
+        {
+          "name": "Scroll text up",
+          "width": 48,
+          "height": 50.390625,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Scroll text down",
+          "width": 48,
+          "height": 50.390625,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Previous suggestions",
+          "width": 57.59375,
+          "height": 43.1875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Next suggestions",
+          "width": 57.59375,
+          "height": 43.1875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Phone Abc mode",
+          "width": 153.59375,
+          "height": 64.296875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Phone abc mode",
+          "width": 153.59375,
+          "height": 64.296875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Phone ABC mode",
+          "width": 153.59375,
+          "height": 64.296875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Phone 123 mode",
+          "width": 153.59375,
+          "height": 64.296875,
+          "fontSize": "25.5px"
+        }
+      ],
+      "text": [
+        {
+          "name": "↵",
+          "fontSize": "36px"
+        },
+        {
+          "name": "English",
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "More",
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "QWERTY",
+          "fontSize": "27px"
+        },
+        {
+          "name": ".,?!",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "abc",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "def",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "ghi",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "jkl",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "mno",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "pqrs",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "tuv",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "wxyz",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "",
+          "fontSize": "36px"
+        },
+        {
+          "name": "Space",
+          "fontSize": "36px"
+        },
+        {
+          "name": "OK",
+          "fontSize": "45px"
+        },
+        {
+          "name": "Quit",
+          "fontSize": "45px"
+        },
+        {
+          "name": "▲",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "▼",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "◀",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "▶",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Abc",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "abc",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "ABC",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "123",
+          "fontSize": "25.5px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "system-phone-numeric",
+      "width": 960,
+      "height": 720,
+      "controls": [
+        {
+          "name": "Return",
+          "width": 96,
+          "height": 86.390625,
+          "fontSize": "36px"
+        },
+        {
+          "name": "English",
+          "width": 268.796875,
+          "height": 57.59375,
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "More",
+          "width": 178.40625,
+          "height": 47.359375,
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "QWERTY",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "27px"
+        },
+        {
+          "name": "1",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "2",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "3",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "4",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "5",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "6",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "7",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "8",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "9",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "0",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "@",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": ".",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Backspace",
+          "width": 96,
+          "height": 86.390625,
+          "fontSize": "36px"
+        },
+        {
+          "name": "Space",
+          "width": 355.1875,
+          "height": 57.59375,
+          "fontSize": "36px"
+        },
+        {
+          "name": "OK",
+          "width": 271.578125,
+          "height": 85.25,
+          "fontSize": "45px"
+        },
+        {
+          "name": "Quit",
+          "width": 271.578125,
+          "height": 85.25,
+          "fontSize": "45px"
+        },
+        {
+          "name": "Scroll text up",
+          "width": 48,
+          "height": 50.390625,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Scroll text down",
+          "width": 48,
+          "height": 50.390625,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Previous suggestions",
+          "width": 57.59375,
+          "height": 43.1875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Next suggestions",
+          "width": 57.59375,
+          "height": 43.1875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Phone Abc mode",
+          "width": 153.59375,
+          "height": 64.296875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Phone abc mode",
+          "width": 153.59375,
+          "height": 64.296875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Phone ABC mode",
+          "width": 153.59375,
+          "height": 64.296875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Phone 123 mode",
+          "width": 153.59375,
+          "height": 64.296875,
+          "fontSize": "25.5px"
+        }
+      ],
+      "text": [
+        {
+          "name": "↵",
+          "fontSize": "36px"
+        },
+        {
+          "name": "English",
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "More",
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "QWERTY",
+          "fontSize": "27px"
+        },
+        {
+          "name": "1",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "2",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "3",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "4",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "5",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "6",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "7",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "8",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "9",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "0",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "@",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": ".",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "",
+          "fontSize": "36px"
+        },
+        {
+          "name": "Space",
+          "fontSize": "36px"
+        },
+        {
+          "name": "OK",
+          "fontSize": "45px"
+        },
+        {
+          "name": "Quit",
+          "fontSize": "45px"
+        },
+        {
+          "name": "▲",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "▼",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "◀",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "▶",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Abc",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "abc",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "ABC",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "123",
+          "fontSize": "25.5px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "system-phone-accents",
+      "width": 960,
+      "height": 720,
+      "controls": [
+        {
+          "name": "Return",
+          "width": 96,
+          "height": 86.390625,
+          "fontSize": "36px"
+        },
+        {
+          "name": "English",
+          "width": 268.796875,
+          "height": 57.59375,
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "More",
+          "width": 178.40625,
+          "height": 47.359375,
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "QWERTY",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "27px"
+        },
+        {
+          "name": "ÀÂÆ",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Ç",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "ÉÈÊË",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "ÎÏ",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "ÔŒ",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "ÙÛÜ",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Ÿ",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Á",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Í",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Ó",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Ú",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Ñ",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Backspace",
+          "width": 96,
+          "height": 86.390625,
+          "fontSize": "36px"
+        },
+        {
+          "name": "Space",
+          "width": 355.1875,
+          "height": 57.59375,
+          "fontSize": "36px"
+        },
+        {
+          "name": "OK",
+          "width": 271.578125,
+          "height": 85.25,
+          "fontSize": "45px"
+        },
+        {
+          "name": "Quit",
+          "width": 271.578125,
+          "height": 85.25,
+          "fontSize": "45px"
+        },
+        {
+          "name": "Scroll text up",
+          "width": 48,
+          "height": 50.390625,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Scroll text down",
+          "width": 48,
+          "height": 50.390625,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Previous suggestions",
+          "width": 57.59375,
+          "height": 43.1875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Next suggestions",
+          "width": 57.59375,
+          "height": 43.1875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Phone Abc mode",
+          "width": 153.59375,
+          "height": 64.296875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Phone abc mode",
+          "width": 153.59375,
+          "height": 64.296875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Phone ABC mode",
+          "width": 153.59375,
+          "height": 64.296875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Phone 123 mode",
+          "width": 153.59375,
+          "height": 64.296875,
+          "fontSize": "25.5px"
+        }
+      ],
+      "text": [
+        {
+          "name": "↵",
+          "fontSize": "36px"
+        },
+        {
+          "name": "English",
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "More",
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "QWERTY",
+          "fontSize": "27px"
+        },
+        {
+          "name": "ÀÂÆ",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Ç",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "ÉÈÊË",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "ÎÏ",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "ÔŒ",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "ÙÛÜ",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Ÿ",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Á",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Í",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Ó",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Ú",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Ñ",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "",
+          "fontSize": "36px"
+        },
+        {
+          "name": "Space",
+          "fontSize": "36px"
+        },
+        {
+          "name": "OK",
+          "fontSize": "45px"
+        },
+        {
+          "name": "Quit",
+          "fontSize": "45px"
+        },
+        {
+          "name": "▲",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "▼",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "◀",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "▶",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Abc",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "abc",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "ABC",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "123",
+          "fontSize": "25.5px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "letter-open",
+      "width": 960,
+      "height": 720,
+      "controls": [
+        {
+          "name": "Back",
+          "width": 288.7308349609375,
+          "height": 87.359619140625,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Erase letter",
+          "width": 71.07221221923828,
+          "height": 71.07221221923828,
+          "fontSize": "37.5px"
+        }
+      ],
+      "text": [
+        {
+          "name": "Memo",
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "Back",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "",
+          "fontSize": "37.5px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "date-draft",
+      "width": 1280,
+      "height": 720,
+      "controls": [
+        {
+          "name": "Increase month",
+          "width": 67.5,
+          "height": 51,
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Decrease month",
+          "width": 67.5,
+          "height": 51,
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Increase day",
+          "width": 67.5,
+          "height": 51,
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Decrease day",
+          "width": 67.5,
+          "height": 51,
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Increase year",
+          "width": 67.5,
+          "height": 51,
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Decrease year",
+          "width": 67.5,
+          "height": 51,
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Back",
+          "width": 400.3125,
+          "height": 93,
+          "fontSize": "39px"
+        },
+        {
+          "name": "Confirm",
+          "width": 400.3125,
+          "height": 93,
+          "fontSize": "39px"
+        }
+      ],
+      "text": [
+        {
+          "name": "Date",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "",
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "",
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "",
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "",
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "",
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "",
+          "fontSize": "13.3333px"
+        },
+        {
+          "name": "Back",
+          "fontSize": "39px"
+        },
+        {
+          "name": "Confirm",
+          "fontSize": "39px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "rating-confirmed",
+      "width": 1280,
+      "height": 720,
+      "controls": [
+        {
+          "name": "All ages",
+          "width": 860.171875,
+          "height": 54,
+          "fontSize": "30px"
+        },
+        {
+          "name": "Everyone",
+          "width": 860.171875,
+          "height": 54,
+          "fontSize": "30px"
+        },
+        {
+          "name": "Everyone 10+",
+          "width": 860.171875,
+          "height": 54,
+          "fontSize": "30px"
+        },
+        {
+          "name": "Teen",
+          "width": 860.171875,
+          "height": 54,
+          "fontSize": "30px"
+        },
+        {
+          "name": "Mature 17+",
+          "width": 860.171875,
+          "height": 54,
+          "fontSize": "30px"
+        },
+        {
+          "name": "Adults Only",
+          "width": 860.171875,
+          "height": 54,
+          "fontSize": "30px"
+        },
+        {
+          "name": "Back",
+          "width": 400.3125,
+          "height": 93,
+          "fontSize": "39px"
+        },
+        {
+          "name": "Confirm",
+          "width": 400.3125,
+          "height": 93,
+          "fontSize": "39px"
+        }
+      ],
+      "text": [
+        {
+          "name": "Game Rating",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "All ages",
+          "fontSize": "30px"
+        },
+        {
+          "name": "Everyone",
+          "fontSize": "30px"
+        },
+        {
+          "name": "Everyone 10+",
+          "fontSize": "30px"
+        },
+        {
+          "name": "Teen",
+          "fontSize": "30px"
+        },
+        {
+          "name": "Mature 17+",
+          "fontSize": "30px"
+        },
+        {
+          "name": "Adults Only",
+          "fontSize": "30px"
+        },
+        {
+          "name": "Back",
+          "fontSize": "39px"
+        },
+        {
+          "name": "Confirm",
+          "fontSize": "39px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "update-current",
+      "width": 1280,
+      "height": 720,
+      "controls": [
+        {
+          "name": "OK",
+          "width": 307.5,
+          "height": 87,
+          "fontSize": "39px"
+        }
+      ],
+      "text": [
+        {
+          "name": "OK",
+          "fontSize": "39px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "operations-guide",
+      "width": 1280,
+      "height": 720,
+      "controls": [
+        {
+          "name": "Close HOME Menu",
+          "width": 217.03125,
+          "height": 59,
+          "fontSize": "28.5px"
+        },
+        {
+          "name": "Wii Remote Settings",
+          "width": 366.984375,
+          "height": 38,
+          "fontSize": "31.5px"
+        }
+      ],
+      "text": [
+        {
+          "name": "Close",
+          "fontSize": "28.5px"
+        },
+        {
+          "name": "Operations Guide",
+          "fontSize": "33.75px"
+        },
+        {
+          "name": "Wii Remote Settings",
+          "fontSize": "31.5px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "reconnect",
+      "width": 1280,
+      "height": 720,
+      "controls": [
+        {
+          "name": "Close pairing",
+          "width": 36,
+          "height": 38,
+          "fontSize": "25px"
+        }
+      ],
+      "text": [
+        {
+          "name": "×",
+          "fontSize": "25px"
+        },
+        {
+          "name": "Pair Wii Remote",
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "Connect",
+          "fontSize": "15px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "system-phone",
+      "width": 1280,
+      "height": 720,
+      "controls": [
+        {
+          "name": "Return",
+          "width": 96,
+          "height": 86.390625,
+          "fontSize": "36px"
+        },
+        {
+          "name": "English",
+          "width": 268.796875,
+          "height": 57.59375,
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "More",
+          "width": 178.40625,
+          "height": 47.359375,
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "QWERTY",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "27px"
+        },
+        {
+          "name": ".,?!",
+          "width": 192,
+          "height": 86.390625,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "abc",
+          "width": 192,
+          "height": 86.390625,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "def",
+          "width": 192,
+          "height": 86.390625,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "ghi",
+          "width": 192,
+          "height": 86.390625,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "jkl",
+          "width": 192,
+          "height": 86.390625,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "mno",
+          "width": 192,
+          "height": 86.390625,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "pqrs",
+          "width": 192,
+          "height": 86.390625,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "tuv",
+          "width": 192,
+          "height": 86.390625,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "wxyz",
+          "width": 192,
+          "height": 86.390625,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Backspace",
+          "width": 96,
+          "height": 86.390625,
+          "fontSize": "36px"
+        },
+        {
+          "name": "Space",
+          "width": 355.1875,
+          "height": 57.59375,
+          "fontSize": "36px"
+        },
+        {
+          "name": "OK",
+          "width": 271.578125,
+          "height": 85.25,
+          "fontSize": "45px"
+        },
+        {
+          "name": "Quit",
+          "width": 271.578125,
+          "height": 85.25,
+          "fontSize": "45px"
+        },
+        {
+          "name": "Scroll text up",
+          "width": 48,
+          "height": 50.390625,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Scroll text down",
+          "width": 48,
+          "height": 50.390625,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Previous suggestions",
+          "width": 57.59375,
+          "height": 43.1875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Next suggestions",
+          "width": 57.59375,
+          "height": 43.1875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Phone Abc mode",
+          "width": 153.59375,
+          "height": 64.296875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Phone abc mode",
+          "width": 153.59375,
+          "height": 64.296875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Phone ABC mode",
+          "width": 153.59375,
+          "height": 64.296875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Phone 123 mode",
+          "width": 153.59375,
+          "height": 64.296875,
+          "fontSize": "25.5px"
+        }
+      ],
+      "text": [
+        {
+          "name": "↵",
+          "fontSize": "36px"
+        },
+        {
+          "name": "English",
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "More",
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "QWERTY",
+          "fontSize": "27px"
+        },
+        {
+          "name": ".,?!",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "abc",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "def",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "ghi",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "jkl",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "mno",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "pqrs",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "tuv",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "wxyz",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "",
+          "fontSize": "36px"
+        },
+        {
+          "name": "Space",
+          "fontSize": "36px"
+        },
+        {
+          "name": "OK",
+          "fontSize": "45px"
+        },
+        {
+          "name": "Quit",
+          "fontSize": "45px"
+        },
+        {
+          "name": "▲",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "▼",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "◀",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "▶",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Abc",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "abc",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "ABC",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "123",
+          "fontSize": "25.5px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "system-phone-numeric",
+      "width": 1280,
+      "height": 720,
+      "controls": [
+        {
+          "name": "Return",
+          "width": 96,
+          "height": 86.390625,
+          "fontSize": "36px"
+        },
+        {
+          "name": "English",
+          "width": 268.796875,
+          "height": 57.59375,
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "More",
+          "width": 178.40625,
+          "height": 47.359375,
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "QWERTY",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "27px"
+        },
+        {
+          "name": "1",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "2",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "3",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "4",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "5",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "6",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "7",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "8",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "9",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "0",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "@",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": ".",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Backspace",
+          "width": 96,
+          "height": 86.390625,
+          "fontSize": "36px"
+        },
+        {
+          "name": "Space",
+          "width": 355.1875,
+          "height": 57.59375,
+          "fontSize": "36px"
+        },
+        {
+          "name": "OK",
+          "width": 271.578125,
+          "height": 85.25,
+          "fontSize": "45px"
+        },
+        {
+          "name": "Quit",
+          "width": 271.578125,
+          "height": 85.25,
+          "fontSize": "45px"
+        },
+        {
+          "name": "Scroll text up",
+          "width": 48,
+          "height": 50.390625,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Scroll text down",
+          "width": 48,
+          "height": 50.390625,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Previous suggestions",
+          "width": 57.59375,
+          "height": 43.1875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Next suggestions",
+          "width": 57.59375,
+          "height": 43.1875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Phone Abc mode",
+          "width": 153.59375,
+          "height": 64.296875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Phone abc mode",
+          "width": 153.59375,
+          "height": 64.296875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Phone ABC mode",
+          "width": 153.59375,
+          "height": 64.296875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Phone 123 mode",
+          "width": 153.59375,
+          "height": 64.296875,
+          "fontSize": "25.5px"
+        }
+      ],
+      "text": [
+        {
+          "name": "↵",
+          "fontSize": "36px"
+        },
+        {
+          "name": "English",
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "More",
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "QWERTY",
+          "fontSize": "27px"
+        },
+        {
+          "name": "1",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "2",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "3",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "4",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "5",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "6",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "7",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "8",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "9",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "0",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "@",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": ".",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "",
+          "fontSize": "36px"
+        },
+        {
+          "name": "Space",
+          "fontSize": "36px"
+        },
+        {
+          "name": "OK",
+          "fontSize": "45px"
+        },
+        {
+          "name": "Quit",
+          "fontSize": "45px"
+        },
+        {
+          "name": "▲",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "▼",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "◀",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "▶",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Abc",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "abc",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "ABC",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "123",
+          "fontSize": "25.5px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "system-phone-accents",
+      "width": 1280,
+      "height": 720,
+      "controls": [
+        {
+          "name": "Return",
+          "width": 96,
+          "height": 86.390625,
+          "fontSize": "36px"
+        },
+        {
+          "name": "English",
+          "width": 268.796875,
+          "height": 57.59375,
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "More",
+          "width": 178.40625,
+          "height": 47.359375,
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "QWERTY",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "27px"
+        },
+        {
+          "name": "ÀÂÆ",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Ç",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "ÉÈÊË",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "ÎÏ",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "ÔŒ",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "ÙÛÜ",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Ÿ",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Á",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Í",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Ó",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Ú",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Ñ",
+          "width": 192,
+          "height": 64.796875,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Backspace",
+          "width": 96,
+          "height": 86.390625,
+          "fontSize": "36px"
+        },
+        {
+          "name": "Space",
+          "width": 355.1875,
+          "height": 57.59375,
+          "fontSize": "36px"
+        },
+        {
+          "name": "OK",
+          "width": 271.578125,
+          "height": 85.25,
+          "fontSize": "45px"
+        },
+        {
+          "name": "Quit",
+          "width": 271.578125,
+          "height": 85.25,
+          "fontSize": "45px"
+        },
+        {
+          "name": "Scroll text up",
+          "width": 48,
+          "height": 50.390625,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Scroll text down",
+          "width": 48,
+          "height": 50.390625,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Previous suggestions",
+          "width": 57.59375,
+          "height": 43.1875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Next suggestions",
+          "width": 57.59375,
+          "height": 43.1875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Phone Abc mode",
+          "width": 153.59375,
+          "height": 64.296875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Phone abc mode",
+          "width": 153.59375,
+          "height": 64.296875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Phone ABC mode",
+          "width": 153.59375,
+          "height": 64.296875,
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Phone 123 mode",
+          "width": 153.59375,
+          "height": 64.296875,
+          "fontSize": "25.5px"
+        }
+      ],
+      "text": [
+        {
+          "name": "↵",
+          "fontSize": "36px"
+        },
+        {
+          "name": "English",
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "More",
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "QWERTY",
+          "fontSize": "27px"
+        },
+        {
+          "name": "ÀÂÆ",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Ç",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "ÉÈÊË",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "ÎÏ",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "ÔŒ",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "ÙÛÜ",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Ÿ",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Á",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Í",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Ó",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Ú",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Ñ",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "",
+          "fontSize": "36px"
+        },
+        {
+          "name": "Space",
+          "fontSize": "36px"
+        },
+        {
+          "name": "OK",
+          "fontSize": "45px"
+        },
+        {
+          "name": "Quit",
+          "fontSize": "45px"
+        },
+        {
+          "name": "▲",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "▼",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "◀",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "▶",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "Abc",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "abc",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "ABC",
+          "fontSize": "25.5px"
+        },
+        {
+          "name": "123",
+          "fontSize": "25.5px"
+        }
+      ],
+      "failures": []
+    },
+    {
+      "id": "letter-open",
+      "width": 1280,
+      "height": 720,
+      "controls": [
+        {
+          "name": "Back",
+          "width": 287.5801696777344,
+          "height": 87.011474609375,
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "Erase letter",
+          "width": 70.78897094726562,
+          "height": 70.7889633178711,
+          "fontSize": "37.5px"
+        }
+      ],
+      "text": [
+        {
+          "name": "Memo",
+          "fontSize": "34.5px"
+        },
+        {
+          "name": "Back",
+          "fontSize": "37.5px"
+        },
+        {
+          "name": "",
+          "fontSize": "37.5px"
+        }
+      ],
+      "failures": []
+    }
+  ],
+  "errors": []
+}

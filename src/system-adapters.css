@@ -1550,7 +1550,7 @@ wii-keyboard .wii-keyboard--system.is-phone-layout .wii-keyboard-key--space {
   height: calc(62 * var(--system-scale));
   border: 0;
   box-shadow: none;
-  background: url("/art/system/settings-action.svg") center / 100% 100%
+  background: var(--wii-system-action-surface) center / 100% 100%
     no-repeat;
 }
 .native-settings-page.system-settings-index
@@ -1566,7 +1566,7 @@ wii-keyboard .wii-keyboard--system.is-phone-layout .wii-keyboard-key--space {
 .native-settings-page
   .native-choice-list
   > .system-button[aria-pressed="true"] {
-  background: url("/art/system/settings-choice.svg") center / 100% 100%
+  background: var(--wii-system-choice-surface) center / 100% 100%
     no-repeat;
   border: 0;
   box-shadow: none;
@@ -1767,7 +1767,7 @@ wii-keyboard .wii-keyboard--system.is-phone-layout .wii-keyboard-key--space {
   height: calc(60 * var(--system-scale));
   font-size: calc(25 * var(--system-scale));
   border: 0;
-  background: url("/art/system/settings-action.svg") center / 100% 100% no-repeat;
+  background: var(--wii-system-action-surface) center / 100% 100% no-repeat;
   box-shadow: none;
 }
 .native-storage-page .system-settings-shell footer > .system-button:hover {

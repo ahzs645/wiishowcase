@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import { chromium } from "playwright";
 import { interfaceGeometry } from "./lib/interface-geometry.mjs";
-const output = "docs/system-menu-fixes",
+const output = process.env.FIXES_ARTIFACTS || "docs/system-menu-fixes",
   report = { checks: [], captures: [] };
 const browser = await chromium.launch({
   executablePath: "/usr/bin/chromium",

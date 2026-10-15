@@ -15,6 +15,7 @@ export function ChoiceList({ values, value, onChange, label, wide = false }) {
         return (
           <WiiButton
             key={String(key)}
+            variant="choice"
             aria-pressed={value === key}
             onClick={() => onChange(key)}
           >
@@ -37,9 +38,7 @@ export function NumberColumn({ label, value, min, max, digits = 2, onChange }) {
         aria-label={`Increase ${label.toLowerCase()}`}
         onClick={() => change(value + 1)}
       >
-        <svg viewBox="0 0 32 22" aria-hidden="true">
-          <path d="M2 20 16 2l14 18-14-6z" />
-        </svg>
+        <span className="wii-icon wii-icon-control-next" aria-hidden="true" />
       </button>
       <input
         aria-label={label}
@@ -63,9 +62,7 @@ export function NumberColumn({ label, value, min, max, digits = 2, onChange }) {
         aria-label={`Decrease ${label.toLowerCase()}`}
         onClick={() => change(value - 1)}
       >
-        <svg viewBox="0 0 32 22" aria-hidden="true">
-          <path d="m2 2 14 18L30 2 16 8z" />
-        </svg>
+        <span className="wii-icon wii-icon-control-next" aria-hidden="true" />
       </button>
     </div>
   );

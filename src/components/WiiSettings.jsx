@@ -2,8 +2,7 @@ import SettingsPanel from "./system/SettingsPanel";
 import { useState } from "react";
 import { channelTransfer, updateSystem } from "../lib/systemState";
 import { CHANNEL_CATALOG } from "./WiiMenu";
-import { WiiButton, SystemDialog } from "./system/SystemUI";
-import SystemArt from "./system/SystemArt";
+import { WiiButton, WiiTile, SystemDialog } from "./system/SystemUI";
 
 const DATA_ART = Object.fromEntries(
   ["mii", "photo", "shop", "news", "forecast", "pokemon-ranch"].map((id) => [
@@ -82,8 +81,8 @@ function DataManagement({ path, setPath, system }) {
           ? ["Save Data", "Channels"]
           : ["Wii", "Nintendo GameCube"]
         ).map((label) => (
-          <button
-            className="system-tile"
+          <WiiTile
+            kind={label === "Channels" ? "channels" : label === "Nintendo GameCube" ? "gamecube" : label === "Wii" ? "wii" : "saves"}
             key={label}
             onClick={() => {
               setPath([...path, label]);
@@ -91,23 +90,10 @@ function DataManagement({ path, setPath, system }) {
               setStorage("Wii");
             }}
           >
-            <SystemArt
-              kind={
-                label === "Channels"
-                  ? "channels"
-                  : label === "Nintendo GameCube"
-                    ? "gamecube"
-                    : label === "Wii"
-                      ? "wii"
-                      : "saves"
-              }
-            />
-            <span>
               {label === "Nintendo GameCube" ? (
                 <>Nintendo<br />GameCube</>
               ) : label}
-            </span>
-          </button>
+          </WiiTile>
         ))}
       </div>
     );

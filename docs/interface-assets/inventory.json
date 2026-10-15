@@ -1,0 +1,959 @@
+{
+  "inputFiles": [
+    {
+      "file": "button/wii button.ai",
+      "bytes": 476411,
+      "sha256": "2390371aeae28db0218b5fe566c19f1b218395033a0fb3048897c2271ae00a11",
+      "existingWiiCSS": null,
+      "artboards": [
+        {
+          "page": 1,
+          "size": [
+            576.0,
+            448.0
+          ],
+          "vectorDrawings": 1,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-button-page-1.png"
+        }
+      ],
+      "decision": "Reviewed every artboard; export matches above, retain embedded raster/reference distinction"
+    },
+    {
+      "file": "fonts/fonts/FOT-NewRodin Pro DB.otf",
+      "bytes": 3724836,
+      "sha256": "b55c8711d8e55e776297f57fb9a194c297a347b6b1caa639cc9e307207d5d81b",
+      "existingWiiCSS": "assets/fonts/FOT-NewRodin Pro DB.otf",
+      "decision": "Reuse existing Wii.css asset; font variants are licensed for this showcase only"
+    },
+    {
+      "file": "fonts/fonts/FOT-Rodin Pro B.otf",
+      "bytes": 2742132,
+      "sha256": "0987c57944b505e7bc62b51efc2102942aacb9ec735a4276e86572a8c8be5ac7",
+      "existingWiiCSS": "assets/fonts/FOT-Rodin Pro B.otf",
+      "decision": "Reuse existing Wii.css asset; font variants are licensed for this showcase only"
+    },
+    {
+      "file": "fonts/fonts/FOT-Rodin Pro DB.otf",
+      "bytes": 2700192,
+      "sha256": "2e8564c84f71a5d1c7df3ae7bc8ced31977f17ade235b47792d19d391fd85df1",
+      "existingWiiCSS": "assets/fonts/FOT-Rodin Pro DB.otf",
+      "decision": "Reuse existing Wii.css asset; font variants are licensed for this showcase only"
+    },
+    {
+      "file": "fonts/fonts/FOT-Rodin Pro EB.otf",
+      "bytes": 2843208,
+      "sha256": "b0013f87969d49b3e217dd79ec8fd881334ff6ccee87742f42fa6db4f9f7f61c",
+      "existingWiiCSS": "assets/fonts/FOT-Rodin Pro EB.otf",
+      "decision": "Reuse existing Wii.css asset; font variants are licensed for this showcase only"
+    },
+    {
+      "file": "fonts/fonts/FOT-Rodin Pro L.otf",
+      "bytes": 2656696,
+      "sha256": "a4e50ea09a68ebfa0c53b86dbd491fff19e2cbdcb7ba3656189a741f3c95a50d",
+      "existingWiiCSS": "assets/fonts/FOT-Rodin Pro L.otf",
+      "decision": "Reuse existing Wii.css asset; font variants are licensed for this showcase only"
+    },
+    {
+      "file": "fonts/fonts/FOT-Rodin Pro M.otf",
+      "bytes": 2654592,
+      "sha256": "45440dbe0626a532f6598dc0f2699af1053b2d6242e24d50a17f43c101e06bcc",
+      "existingWiiCSS": "assets/fonts/FOT-Rodin Pro M.otf",
+      "decision": "Reuse existing Wii.css asset; font variants are licensed for this showcase only"
+    },
+    {
+      "file": "fonts/fonts/FOT-Rodin Pro UB.otf",
+      "bytes": 2891704,
+      "sha256": "af74ffa094e3cd867295da93916b9719688b7d161834a2559044209a395f8783",
+      "existingWiiCSS": "assets/fonts/FOT-Rodin Pro UB.otf",
+      "decision": "Reuse existing Wii.css asset; font variants are licensed for this showcase only"
+    },
+    {
+      "file": "fonts/fonts/fot-new-rodin-pro-eb.otf",
+      "bytes": 3825804,
+      "sha256": "c2b53684f5268927489d8146a25579f9fe1d2ae1d79a1451e1e89d3a6f79902f",
+      "existingWiiCSS": "assets/fonts/fot-new-rodin-pro-eb.otf",
+      "decision": "Reuse existing Wii.css asset; font variants are licensed for this showcase only"
+    },
+    {
+      "file": "illustrator/Wii Illustrator/2x/Asset 2@2x.png",
+      "bytes": 7190,
+      "sha256": "0c7166d91e62c52b1eb749816c4df33d29a544c7210a5916c159766851997f60",
+      "existingWiiCSS": null,
+      "decision": "Runtime export or retained alternative; see exports and mapping"
+    },
+    {
+      "file": "illustrator/Wii Illustrator/2x/Asset 3@2x.png",
+      "bytes": 13109,
+      "sha256": "5ec4ae0ad555768535d298a3f2730b583174b232aa40a3efc832fc69f447e7d2",
+      "existingWiiCSS": null,
+      "decision": "Runtime export or retained alternative; see exports and mapping"
+    },
+    {
+      "file": "illustrator/Wii Illustrator/2x/Asset 4@2x.png",
+      "bytes": 5953,
+      "sha256": "cdad3d99f99caf2a87e57a20e4795f8d1a3c887e4c802d237426197d23304d60",
+      "existingWiiCSS": null,
+      "decision": "Runtime export or retained alternative; see exports and mapping"
+    },
+    {
+      "file": "illustrator/Wii Illustrator/2x/Asset 5@2x.png",
+      "bytes": 8119,
+      "sha256": "e2d3a27682fc7ab50c0095d3928ec77179f6ec8f1b0a1da5d7c49d45628ab7f4",
+      "existingWiiCSS": null,
+      "decision": "Runtime export or retained alternative; see exports and mapping"
+    },
+    {
+      "file": "illustrator/Wii Illustrator/Calendar/Screenshot 2026-02-08 at 12.05.09\u202fPM.png",
+      "bytes": 624087,
+      "sha256": "939212c7499171ddf3964ec6551fe369cdcef1c8e2b1ec8a01e64bd7aa9dc388",
+      "existingWiiCSS": null,
+      "decision": "Dated calendar reference; keep interactive calendar instead of baking in its dates"
+    },
+    {
+      "file": "illustrator/Wii Illustrator/Calendar/Screenshot 2026-02-08 at 12.05.16\u202fPM.png",
+      "bytes": 664387,
+      "sha256": "4a1fcb883cee764270188cf32afe0113bd472a11eef7b97691615dbabfcb9af6",
+      "existingWiiCSS": null,
+      "decision": "Dated calendar reference; keep interactive calendar instead of baking in its dates"
+    },
+    {
+      "file": "illustrator/Wii Illustrator/Calendar/Screenshot 2026-02-09 at 12.41.24\u202fPM.png",
+      "bytes": 188400,
+      "sha256": "f945ca1b0e20b60a83898a74631c10e38afe87ef73c7386313ba87aff6131e67",
+      "existingWiiCSS": null,
+      "decision": "Dated calendar reference; keep interactive calendar instead of baking in its dates"
+    },
+    {
+      "file": "illustrator/Wii Illustrator/SVG/Asset 1.svg",
+      "bytes": 6734,
+      "sha256": "e74c00f70e8c1659c5da022c6220b4af9e0aa28e40c1fdcb2af8efec53a8c6a3",
+      "existingWiiCSS": null,
+      "decision": "Runtime export or retained alternative; see exports and mapping"
+    },
+    {
+      "file": "illustrator/Wii Illustrator/Wii Art Board copy.ai",
+      "bytes": 9620954,
+      "sha256": "66d7a24bad745bdcc8804e4345abeef74156dfd322027c4e99a70f67e053aac0",
+      "existingWiiCSS": null,
+      "artboards": [
+        {
+          "page": 1,
+          "size": [
+            405.6820068359375,
+            396.59100341796875
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-copy-page-1.png"
+        },
+        {
+          "page": 2,
+          "size": [
+            472.3059997558594,
+            396.59100341796875
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-copy-page-2.png"
+        },
+        {
+          "page": 3,
+          "size": [
+            184.03399658203125,
+            130.82000732421875
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-copy-page-3.png"
+        },
+        {
+          "page": 4,
+          "size": [
+            190.51499938964844,
+            137.17100524902344
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-copy-page-4.png"
+        },
+        {
+          "page": 5,
+          "size": [
+            227.77200317382812,
+            137.17100524902344
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-copy-page-5.png"
+        },
+        {
+          "page": 6,
+          "size": [
+            245.7449951171875,
+            295.6289978027344
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-copy-page-6.png"
+        },
+        {
+          "page": 7,
+          "size": [
+            196.47799682617188,
+            207.2220001220703
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-copy-page-7.png"
+        },
+        {
+          "page": 8,
+          "size": [
+            134.23699951171875,
+            137.9409942626953
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-copy-page-8.png"
+        },
+        {
+          "page": 9,
+          "size": [
+            44.08509826660156,
+            86.87359619140625
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-copy-page-9.png"
+        },
+        {
+          "page": 10,
+          "size": [
+            89.466796875,
+            89.466796875
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-copy-page-10.png"
+        },
+        {
+          "page": 11,
+          "size": [
+            787.5,
+            348.75
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-copy-page-11.png"
+        },
+        {
+          "page": 12,
+          "size": [
+            808.3759765625,
+            348.75
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-copy-page-12.png"
+        },
+        {
+          "page": 13,
+          "size": [
+            820.2639770507812,
+            373.6189880371094
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-copy-page-13.png"
+        },
+        {
+          "page": 14,
+          "size": [
+            767.6179809570312,
+            373.6189880371094
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-copy-page-14.png"
+        },
+        {
+          "page": 15,
+          "size": [
+            786.2979736328125,
+            417.77398681640625
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-copy-page-15.png"
+        },
+        {
+          "page": 16,
+          "size": [
+            820.2639770507812,
+            417.77398681640625
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-copy-page-16.png"
+        },
+        {
+          "page": 17,
+          "size": [
+            717.9140014648438,
+            384.9849853515625
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-copy-page-17.png"
+        },
+        {
+          "page": 18,
+          "size": [
+            696.968017578125,
+            369.48699951171875
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-copy-page-18.png"
+        },
+        {
+          "page": 19,
+          "size": [
+            650.8759765625,
+            409.89300537109375
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-copy-page-19.png"
+        },
+        {
+          "page": 20,
+          "size": [
+            623.2050170898438,
+            400.1340026855469
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-copy-page-20.png"
+        }
+      ],
+      "decision": "Reviewed every artboard; export matches above, retain embedded raster/reference distinction"
+    },
+    {
+      "file": "illustrator/Wii Illustrator/Wii Art Board.ai",
+      "bytes": 9625301,
+      "sha256": "dcdc7524acec7505bf3c075be6fafb7dff8c924ccfb95e4da5c0971043796022",
+      "existingWiiCSS": null,
+      "artboards": [
+        {
+          "page": 1,
+          "size": [
+            405.6820068359375,
+            396.59100341796875
+          ],
+          "vectorDrawings": 8,
+          "embeddedImages": 0,
+          "blank": false,
+          "preview": "sources/wii-art-board-page-1.png"
+        },
+        {
+          "page": 2,
+          "size": [
+            472.3059997558594,
+            396.59100341796875
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-page-2.png"
+        },
+        {
+          "page": 3,
+          "size": [
+            184.03399658203125,
+            130.82000732421875
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-page-3.png"
+        },
+        {
+          "page": 4,
+          "size": [
+            190.51499938964844,
+            137.17100524902344
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-page-4.png"
+        },
+        {
+          "page": 5,
+          "size": [
+            227.77200317382812,
+            137.17100524902344
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-page-5.png"
+        },
+        {
+          "page": 6,
+          "size": [
+            245.7449951171875,
+            295.6289978027344
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-page-6.png"
+        },
+        {
+          "page": 7,
+          "size": [
+            196.47799682617188,
+            207.2220001220703
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-page-7.png"
+        },
+        {
+          "page": 8,
+          "size": [
+            134.23699951171875,
+            137.9409942626953
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-page-8.png"
+        },
+        {
+          "page": 9,
+          "size": [
+            44.08509826660156,
+            86.87359619140625
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-page-9.png"
+        },
+        {
+          "page": 10,
+          "size": [
+            89.466796875,
+            89.466796875
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-page-10.png"
+        },
+        {
+          "page": 11,
+          "size": [
+            787.5,
+            348.75
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-page-11.png"
+        },
+        {
+          "page": 12,
+          "size": [
+            808.3759765625,
+            348.75
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-page-12.png"
+        },
+        {
+          "page": 13,
+          "size": [
+            820.2639770507812,
+            373.6189880371094
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-page-13.png"
+        },
+        {
+          "page": 14,
+          "size": [
+            767.6179809570312,
+            373.6189880371094
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-page-14.png"
+        },
+        {
+          "page": 15,
+          "size": [
+            786.2979736328125,
+            417.77398681640625
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-page-15.png"
+        },
+        {
+          "page": 16,
+          "size": [
+            820.2639770507812,
+            417.77398681640625
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-page-16.png"
+        },
+        {
+          "page": 17,
+          "size": [
+            717.9140014648438,
+            384.9849853515625
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-page-17.png"
+        },
+        {
+          "page": 18,
+          "size": [
+            696.968017578125,
+            369.48699951171875
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-page-18.png"
+        },
+        {
+          "page": 19,
+          "size": [
+            650.8759765625,
+            409.89300537109375
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-page-19.png"
+        },
+        {
+          "page": 20,
+          "size": [
+            623.2050170898438,
+            400.1340026855469
+          ],
+          "vectorDrawings": 32,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/wii-art-board-page-20.png"
+        }
+      ],
+      "decision": "Reviewed every artboard; export matches above, retain embedded raster/reference distinction"
+    },
+    {
+      "file": "illustrator/Wii Illustrator/Wii remote.ai",
+      "bytes": 2402682,
+      "sha256": "1778dfa906d99a13d038ba0af31dd696fc88a9832cebccfa77ac07057ed86eed",
+      "existingWiiCSS": null,
+      "artboards": [
+        {
+          "page": 1,
+          "size": [
+            595.2760009765625,
+            841.8900146484375
+          ],
+          "vectorDrawings": 113,
+          "embeddedImages": 0,
+          "blank": false,
+          "preview": "sources/wii-remote-page-1.png"
+        },
+        {
+          "page": 2,
+          "size": [
+            706.6290283203125,
+            501.69000244140625
+          ],
+          "vectorDrawings": 0,
+          "embeddedImages": 0,
+          "blank": true,
+          "preview": "sources/wii-remote-page-2.png"
+        }
+      ],
+      "decision": "Reviewed every artboard; export matches above, retain embedded raster/reference distinction"
+    },
+    {
+      "file": "illustrator/Wii Illustrator/envelope.ai",
+      "bytes": 2419743,
+      "sha256": "954a16768aa122981e9aee0788923e20f3b640d82d6ad9c32603b5e7ab99552c",
+      "existingWiiCSS": null,
+      "artboards": [
+        {
+          "page": 1,
+          "size": [
+            595.2760009765625,
+            841.8900146484375
+          ],
+          "vectorDrawings": 8,
+          "embeddedImages": 1,
+          "blank": false,
+          "preview": "sources/envelope-page-1.png"
+        },
+        {
+          "page": 2,
+          "size": [
+            471.3370056152344,
+            449.8550109863281
+          ],
+          "vectorDrawings": 2,
+          "embeddedImages": 0,
+          "blank": false,
+          "preview": "sources/envelope-page-2.png"
+        }
+      ],
+      "decision": "Reviewed every artboard; export matches above, retain embedded raster/reference distinction"
+    },
+    {
+      "file": "illustrator/Wii Illustrator/wii-logo.svg",
+      "bytes": 1246,
+      "sha256": "9d2c7a44c65707deaa3efe84fcc16aaf804c4a58a742dde3fc84ee0ca0026723",
+      "existingWiiCSS": "assets/icons/wii-logo.svg",
+      "decision": "Reuse existing Wii.css asset; font variants are licensed for this showcase only"
+    },
+    {
+      "file": "svg/SVG/5.5 pro attempt/wii_envelope_remake_final.svg",
+      "bytes": 6226,
+      "sha256": "5436d1164014808b91f2d76474820ea10f70d2d7cf3b77ec18ba868ef675606d",
+      "existingWiiCSS": null,
+      "decision": "Runtime export or retained alternative; see exports and mapping"
+    },
+    {
+      "file": "svg/SVG/5.5 pro attempt/wii_open_envelope_remake_final.svg",
+      "bytes": 9175,
+      "sha256": "aa117192080e47bbbc9d916454389f93f835974cacc042d8d4f911703cd1d84d",
+      "existingWiiCSS": null,
+      "decision": "Runtime export or retained alternative; see exports and mapping"
+    },
+    {
+      "file": "svg/SVG/SVG/Asset 1.svg",
+      "bytes": 1315,
+      "sha256": "7ec75efd9d055df061db89e405b8559d30a2f3c4287dc91c423118e5aeeefbf0",
+      "existingWiiCSS": "assets/icons/letter-pin.svg",
+      "decision": "Reuse existing Wii.css asset; font variants are licensed for this showcase only"
+    },
+    {
+      "file": "svg/SVG/mail-icon-tinted.svg",
+      "bytes": 326,
+      "sha256": "4d032a1566937376a82e198355cafdd6e65cd17fe2c5ba30087048762a5e534b",
+      "existingWiiCSS": "assets/icons/mail-tinted.svg",
+      "decision": "Reuse existing Wii.css asset; font variants are licensed for this showcase only"
+    },
+    {
+      "file": "svg/SVG/svgviewer-output.svg",
+      "bytes": 1521,
+      "sha256": "1a25d9ab63d7f33f402d7c799d36fc18f6646827fd6b2a6fe67555520f5161b2",
+      "existingWiiCSS": null,
+      "decision": "Runtime export or retained alternative; see exports and mapping"
+    }
+  ],
+  "exports": [
+    {
+      "asset": "envelope-open.svg",
+      "source": "svg/SVG/5.5 pro attempt/wii_open_envelope_remake_final.svg",
+      "operation": "Supplied SVG paths/filters preserved; remove only its full-canvas grey presentation rectangle for transparent UI integration",
+      "use": "Create Letter choice",
+      "sha256": "3e98ade17231b93758794e909f442e6535905275b55602d15bf3023e4fbba6d4"
+    },
+    {
+      "asset": "envelope-closed.svg",
+      "source": "svg/SVG/5.5 pro attempt/wii_envelope_remake_final.svg",
+      "operation": "Supplied SVG paths/filters preserved; remove only its full-canvas tan presentation rectangle for transparent UI integration",
+      "use": "Message Board letter cards",
+      "sha256": "936650b4e48a5ab1c6e1e55419e16be21fe52b267571ee4ca692f1b24052292d"
+    },
+    {
+      "asset": "address-book.png",
+      "source": "illustrator/Wii Illustrator/2x/Asset 5@2x.png",
+      "operation": "Original supplied file; unchanged bytes",
+      "use": "Address Book choice",
+      "sha256": "e2d3a27682fc7ab50c0095d3928ec77179f6ec8f1b0a1da5d7c49d45628ab7f4"
+    },
+    {
+      "asset": "memo-paper.png",
+      "source": "illustrator/Wii Illustrator/2x/Asset 3@2x.png",
+      "operation": "Original supplied file; unchanged bytes",
+      "use": "Memo composer and opened Memo paper",
+      "sha256": "5ec4ae0ad555768535d298a3f2730b583174b232aa40a3efc832fc69f447e7d2"
+    },
+    {
+      "asset": "settings-tile.png",
+      "source": "illustrator/Wii Illustrator/2x/Asset 2@2x.png",
+      "operation": "Original supplied file; unchanged bytes",
+      "use": "Settings tile artwork and surface reference",
+      "sha256": "0c7166d91e62c52b1eb749816c4df33d29a544c7210a5916c159766851997f60"
+    },
+    {
+      "asset": "console.png",
+      "source": "illustrator/Wii Illustrator/2x/Asset 4@2x.png",
+      "operation": "Original supplied file; unchanged bytes",
+      "use": "Storage console thumbnail reference; cyan guide line retained in source, unused in runtime",
+      "sha256": "cdad3d99f99caf2a87e57a20e4795f8d1a3c887e4c802d237426197d23304d60"
+    },
+    {
+      "asset": "data-tile.png",
+      "source": "Wii Art Board.ai page 11",
+      "operation": "Extract embedded image with its original PDF soft alpha mask; convert source CMYK to sRGB",
+      "use": "Data Management and Save Data tile art",
+      "sha256": "9ac8fb381414dec7211e1517fa036aca3bb3872f31e2bbb3111286ca028deb97"
+    },
+    {
+      "asset": "wii-tile.png",
+      "source": "Wii Art Board.ai page 13",
+      "operation": "Extract embedded image with its original PDF soft alpha mask; convert source CMYK to sRGB",
+      "use": "Wii save platform tile art",
+      "sha256": "20978489fa5db9c0af6d8f55bcbcd91b290ba10d9f2d682741fd78385bbedcb6"
+    },
+    {
+      "asset": "gamecube-tile.png",
+      "source": "Wii Art Board.ai page 14",
+      "operation": "Extract embedded image with its original PDF soft alpha mask; convert source CMYK to sRGB",
+      "use": "GameCube save platform tile art",
+      "sha256": "64604427f2d92884a94b92cbde14268984faf568b81564ff36efc77953018a1b"
+    },
+    {
+      "asset": "controls.png",
+      "source": "Wii Art Board.ai page 17",
+      "operation": "Extract embedded image with its original PDF soft alpha mask; convert source CMYK to sRGB",
+      "use": "Remote plus/minus and selector arrows",
+      "sha256": "daf5402404b10eb5df1ffad55d604f7db6c60ccd16c9a3540fb9281432b03ed4"
+    },
+    {
+      "asset": "glyph-fragments.png",
+      "source": "Wii Art Board.ai page 18",
+      "operation": "Extract embedded image with its original PDF soft alpha mask; convert source CMYK to sRGB",
+      "use": "Unassigned raster glyph fragments; no complete matching runtime element established",
+      "sha256": "b3ec168da07b7f85775010edceb89b59d76dff9237bec3ea536fe14e4c827fee"
+    },
+    {
+      "asset": "disc-and-mail.png",
+      "source": "Wii Art Board.ai page 19",
+      "operation": "Extract embedded image with its original PDF soft alpha mask; convert source CMYK to sRGB",
+      "use": "Disc/mail reference variants; native channel renderer and existing vector track icons retained",
+      "sha256": "f4772eea76c91cb1a61b5fb2a8534d8ef3ec3d8a1912eea6a165e6768a5d81f5"
+    },
+    {
+      "asset": "footer-controls.png",
+      "source": "Wii Art Board.ai page 20",
+      "operation": "Extract embedded image with its original PDF soft alpha mask; convert source CMYK to sRGB",
+      "use": "Wii Menu / Calendar / Create Message icon artwork",
+      "sha256": "8461e3a65b221f2cc6e6aba689d6f2ac1df76f8a6ccfded95a4d8a06368d87b6"
+    },
+    {
+      "asset": "envelope-white.png",
+      "source": "Wii Art Board.ai page 4",
+      "operation": "Extract embedded image with its original PDF soft alpha mask; convert source CMYK to sRGB",
+      "use": "White envelope reference variant",
+      "sha256": "2eec9956624318148af793f2a76620c72d01cfc8ff6bbef322b5c21ba699d3b0"
+    },
+    {
+      "asset": "memo-card.png",
+      "source": "Wii Art Board.ai page 5",
+      "operation": "Extract embedded image with its original PDF soft alpha mask; convert source CMYK to sRGB",
+      "use": "Message Board Memo card surface",
+      "sha256": "123e90d35cb2a523494edd2dfe01baf73b188cf3db46eef4e45c8f48ce4126d3"
+    },
+    {
+      "asset": "computer.png",
+      "source": "Wii Art Board.ai page 8",
+      "operation": "Extract embedded image with its original PDF soft alpha mask; convert source CMYK to sRGB",
+      "use": "Address registration computer reference",
+      "sha256": "41ad46dad5749a25cc50a4b1591979b25834a348fb3ec7c9e3b4a1b10aae460d"
+    },
+    {
+      "asset": "phone.png",
+      "source": "Wii Art Board.ai page 9",
+      "operation": "Extract embedded image with its original PDF soft alpha mask; convert source CMYK to sRGB",
+      "use": "Address registration phone reference",
+      "sha256": "6eb7f4362fa0f01e2e03827faed87fbb1c2f03d1631700a360f1a48e3d40f40b"
+    },
+    {
+      "asset": "data-art.svg",
+      "source": "data-tile.png",
+      "operation": "Unmodified image inside SVG viewport [39, 60, 204, 75]",
+      "use": "Replace custom console/card storage silhouette",
+      "sha256": "23fa7056262e02dc0209ef11ee0f1fd10181b016243e3a9ad8baf7b40e8552cc"
+    },
+    {
+      "asset": "wii-art.svg",
+      "source": "wii-tile.png",
+      "operation": "Unmodified image inside SVG viewport [60, 29, 160, 101]",
+      "use": "Replace Wii/SD platform silhouette",
+      "sha256": "3317f2b8aec288cdd5eecc8b7384301711f5cdf65d021bb84a199f16a289f0e9"
+    },
+    {
+      "asset": "gamecube-art.svg",
+      "source": "gamecube-tile.png",
+      "operation": "Unmodified image inside SVG viewport [110, 56, 55, 59]",
+      "use": "Replace custom GameCube card silhouette",
+      "sha256": "cc69bf1f4abbf40c8f7f9d1747c8c20fa6442956e72cd562a555bade225279f9"
+    },
+    {
+      "asset": "settings-art.svg",
+      "source": "settings-tile.png",
+      "operation": "Unmodified image inside SVG viewport [172, 44, 220, 260]",
+      "use": "Settings wrench from supplied high-resolution tile",
+      "sha256": "d4e5c6a3f69a8110dc86b8287f07d8c304c176987f935b07bc197e40ac0abc97"
+    },
+    {
+      "asset": "control-plus.svg",
+      "source": "controls.png",
+      "operation": "Unmodified image inside SVG viewport [29, 22, 80, 81]",
+      "use": "Remote volume increase",
+      "sha256": "cc001913de293b71dcce9fa73f7a0795e6f6a0d3b48a83d169f59f9af0bc794c"
+    },
+    {
+      "asset": "control-minus.svg",
+      "source": "controls.png",
+      "operation": "Unmodified image inside SVG viewport [157, 22, 80, 81]",
+      "use": "Remote volume decrease",
+      "sha256": "8b01082a9f2c9b0529a0b46a78ea2268368ffe5cf0dcb5624c5ea284653d0f21"
+    },
+    {
+      "asset": "control-next.svg",
+      "source": "controls.png",
+      "operation": "Unmodified image inside SVG viewport [119, 37, 27, 48]",
+      "use": "Shared selector / page arrow",
+      "sha256": "ca8cf50930f221c3874751f7f6ac55427ea09c7dcf1fd1cbdd5c7a5a1c1d8db4"
+    },
+    {
+      "asset": "control-previous.svg",
+      "source": "controls.png",
+      "operation": "Unmodified image inside SVG viewport [291, 37, 29, 48]",
+      "use": "Shared previous arrow",
+      "sha256": "b57c74e85d2d184ddb4fb79da3b46e325723eb830e1ecf19c9ed491d432cfd41"
+    },
+    {
+      "asset": "footer-menu.svg",
+      "source": "footer-controls.png",
+      "operation": "Unmodified image inside SVG viewport [27, 4, 76, 76]",
+      "use": "SD Menu Wii return button",
+      "sha256": "2541f8bcb75628bb2ed8d5f63e162a893a8f409ebcac4d4a3a61ba0a9e25d29c"
+    },
+    {
+      "asset": "footer-calendar.svg",
+      "source": "footer-controls.png",
+      "operation": "Unmodified image inside SVG viewport [118, 4, 76, 76]",
+      "use": "Calendar source / reference",
+      "sha256": "ff1e0cb25b2fd94173daa4d1fe20290dff3acab6bd9a5cc1559d113ca16cd0a2"
+    },
+    {
+      "asset": "footer-create.svg",
+      "source": "footer-controls.png",
+      "operation": "Unmodified image inside SVG viewport [199, 4, 76, 76]",
+      "use": "Create Message source / reference",
+      "sha256": "8938d4b5b8cfcd234048efcb668f6f724d3c2083b1732c3dc30f43c714e94d56"
+    },
+    {
+      "asset": "tile-data.svg",
+      "source": "data-tile.png",
+      "operation": "Unmodified image inside SVG viewport [15, 19, 250, 196]",
+      "use": "Complete supplied Data Management tile; live label overlays blank label panel",
+      "sha256": "269afd64cc53c251671bd0e3085483e536aba2362c75f24fe0c891df93272e95"
+    },
+    {
+      "asset": "tile-settings.svg",
+      "source": "settings-tile.png",
+      "operation": "Unmodified image inside SVG viewport [27, 34, 498, 390]",
+      "use": "Complete supplied Settings tile; live label overlays blank label panel",
+      "sha256": "6b5eb264f46e716cace6b3d65f8016470fb2867b2207078174947de6a48dbc08"
+    },
+    {
+      "asset": "tile-wii.svg",
+      "source": "wii-tile.png",
+      "operation": "Unmodified image inside SVG viewport [13, 6, 249, 195]",
+      "use": "Complete supplied Wii platform tile",
+      "sha256": "6b99d7ec391b6775b55b995f900e689889d72930c4b7b15f3833a2138f9e4f8b"
+    },
+    {
+      "asset": "tile-gamecube.svg",
+      "source": "gamecube-tile.png",
+      "operation": "Unmodified image inside SVG viewport [13, 5, 249, 195]",
+      "use": "Complete supplied GameCube platform tile",
+      "sha256": "a3d9466bae56cc52c105d2c2c9df6d3c6eef3b323f84ff0ffe12490015cb6903"
+    },
+    {
+      "asset": "memo-paper-surface.svg",
+      "source": "memo-paper.png",
+      "operation": "Unmodified image inside SVG viewport [12, 10, 768, 555]",
+      "use": "Supplied Memo paper with transparent export padding excluded",
+      "sha256": "4eaa8f818844bd2d02519017883a6002574597994a7be376d99bd30a66cb355e"
+    },
+    {
+      "asset": "memo-choice.svg",
+      "source": "Wii Art Board.ai page 20",
+      "operation": "PDF-to-SVG with outlined text, viewport [491, 110, 109, 142]",
+      "use": "Replace hand-drawn Memo choice with supplied notepad vector",
+      "sha256": "a8abb1cf50938427d5e760d6fc84144b2382a97d0d915839785aac2c791a6b5e"
+    },
+    {
+      "asset": "letter-paper.svg",
+      "source": "Wii Art Board.ai page 1",
+      "operation": "PDF-to-SVG with outlined text, viewport [6, 26, 394, 279]",
+      "use": "Letter composer / opened letter paper from supplied vector artboard",
+      "sha256": "b7e2836141cad7c8a19328446076b81d470bf4561a5e6f2a9c6d9b19530e8649"
+    },
+    {
+      "asset": "remote.svg",
+      "source": "Wii remote.ai page 1",
+      "operation": "PDF-to-SVG with outlined text, viewport [352, 171, 99, 382]",
+      "use": "HOME Remote Settings artwork; exported white remote only",
+      "sha256": "9e643aa1125b96c14a68c479707d6cf6f68ddf7f9cdb2489fdfee348c380cf6b"
+    }
+  ],
+  "fontAuthorization": "User confirmed web-embedding rights for the public Wii showcase in this conversation on 2026-10-15. Font subsets are site-specific and excluded from the generic Wii.css package.",
+  "limits": [
+    "An Illustrator extension does not make its embedded raster images vector artwork.",
+    "Calendar screenshot dates are reference content, not an application replacement.",
+    "Blank artboards and clipped reference fragments have no runtime replacement.",
+    "Sprite viewports and PDF clipping preserve source pixels/paths; source guides are excluded by viewport selection."
+  ]
+}

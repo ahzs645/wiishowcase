@@ -55,6 +55,7 @@
       "dateBottom": 38,
       "dateFontSize": 32,
       "dateFontWeight": 700,
+      "dateLineHeight": 1.25,
       "periodFontSize": 18,
       "periodGap": 16,
       "periodBottom": -5,
@@ -112,8 +113,8 @@
     ],
     "colonRadius": 2.5,
     "fontFamily": "Wii Menu Date",
-    "fontAsset": "public/fonts/menu/mplus-1p-bold-latin.woff",
-    "fontStatus": "OFL M PLUS subset approximates Rodin; segmented time glyphs are recreated SVG artwork.",
+    "fontAsset": "public/fonts/licensed/rodin-b-latin.woff2",
+    "fontStatus": "User-supplied FOT-Rodin Pro B web subset, licensed for this public showcase; segmented time glyphs remain recreated SVG artwork.",
     "fallbackRegion": "E",
     "countryRegions": {
       "United States": "U",

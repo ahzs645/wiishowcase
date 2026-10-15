@@ -1,0 +1,70 @@
+{
+  "authorization": "User confirmed licensed public-site web embedding on 2026-10-15. These proprietary files are not MIT assets or generic Wii.css distribution assets.",
+  "scope": "Latin, extended Latin, punctuation and UI symbols; other scripts use browser fallback.",
+  "fonts": [
+    {
+      "source": "FOT-NewRodin Pro DB.otf",
+      "sourceSHA256": "b55c8711d8e55e776297f57fb9a194c297a347b6b1caa639cc9e307207d5d81b",
+      "asset": "public/fonts/licensed/newrodin-db-latin.woff2",
+      "bytes": 48636,
+      "family": "FOT-NewRodin Pro DB",
+      "nominalWeight": 600
+    },
+    {
+      "source": "fot-new-rodin-pro-eb.otf",
+      "sourceSHA256": "c2b53684f5268927489d8146a25579f9fe1d2ae1d79a1451e1e89d3a6f79902f",
+      "asset": "public/fonts/licensed/newrodin-eb-latin.woff2",
+      "bytes": 49616,
+      "family": "FOT-NewRodin Pro EB",
+      "nominalWeight": 800
+    },
+    {
+      "source": "FOT-Rodin Pro L.otf",
+      "sourceSHA256": "a4e50ea09a68ebfa0c53b86dbd491fff19e2cbdcb7ba3656189a741f3c95a50d",
+      "asset": "public/fonts/licensed/rodin-l-latin.woff2",
+      "bytes": 32328,
+      "family": "FOT-Rodin Pro L",
+      "nominalWeight": 300
+    },
+    {
+      "source": "FOT-Rodin Pro M.otf",
+      "sourceSHA256": "45440dbe0626a532f6598dc0f2699af1053b2d6242e24d50a17f43c101e06bcc",
+      "asset": "public/fonts/licensed/rodin-m-latin.woff2",
+      "bytes": 32816,
+      "family": "FOT-Rodin Pro M",
+      "nominalWeight": 500
+    },
+    {
+      "source": "FOT-Rodin Pro DB.otf",
+      "sourceSHA256": "2e8564c84f71a5d1c7df3ae7bc8ced31977f17ade235b47792d19d391fd85df1",
+      "asset": "public/fonts/licensed/rodin-db-latin.woff2",
+      "bytes": 33560,
+      "family": "FOT-Rodin Pro DB",
+      "nominalWeight": 600
+    },
+    {
+      "source": "FOT-Rodin Pro B.otf",
+      "sourceSHA256": "0987c57944b505e7bc62b51efc2102942aacb9ec735a4276e86572a8c8be5ac7",
+      "asset": "public/fonts/licensed/rodin-b-latin.woff2",
+      "bytes": 34264,
+      "family": "FOT-Rodin Pro B",
+      "nominalWeight": 700
+    },
+    {
+      "source": "FOT-Rodin Pro EB.otf",
+      "sourceSHA256": "b0013f87969d49b3e217dd79ec8fd881334ff6ccee87742f42fa6db4f9f7f61c",
+      "asset": "public/fonts/licensed/rodin-eb-latin.woff2",
+      "bytes": 34356,
+      "family": "FOT-Rodin Pro EB",
+      "nominalWeight": 800
+    },
+    {
+      "source": "FOT-Rodin Pro UB.otf",
+      "sourceSHA256": "af74ffa094e3cd867295da93916b9719688b7d161834a2559044209a395f8783",
+      "asset": "public/fonts/licensed/rodin-ub-latin.woff2",
+      "bytes": 33812,
+      "family": "FOT-Rodin Pro UB",
+      "nominalWeight": 900
+    }
+  ]
+}

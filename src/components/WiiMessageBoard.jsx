@@ -271,7 +271,7 @@ function MessageMemo({ message, onClose, onReply, onDelete }) {
         ref={modal.ref}
         tabIndex={-1}
         onKeyDown={modal.onKeyDown}
-        className={`message-board-memo ${type.cardClassName}`}
+        className={`message-board-memo wii-message-paper${message.type === "memo" ? "" : " wii-message-paper--letter"} ${type.cardClassName}`}
         role="dialog"
         aria-modal="true"
         aria-labelledby={dialogTitleId}

@@ -4,8 +4,15 @@ export const SYSTEM_LAYOUT = {
   profile: "retail-wii-4x-system",
   font: {
     family: "Wii System",
-    source: "M PLUS 1p (SIL OFL)",
-    approximation: true,
+    source: "User-supplied FOT-NewRodin Pro DB/EB; licensed public-site embedding confirmed 2026-10-15",
+    approximation: false,
+    numericFamily: "FOT-Rodin Pro",
+    faces: [
+      { family: "Wii System", weight: 400, asset: "public/fonts/licensed/newrodin-db-latin.woff2" },
+      { family: "Wii System", weight: 500, asset: "public/fonts/licensed/newrodin-db-latin.woff2" },
+      { family: "Wii System", weight: 700, asset: "public/fonts/licensed/newrodin-eb-latin.woff2" },
+      ...[[300,"l"],[500,"m"],[600,"db"],[700,"b"],[800,"eb"],[900,"ub"]].map(([weight, suffix]) => ({ family: "FOT-Rodin Pro", weight, asset: `public/fonts/licensed/rodin-${suffix}-latin.woff2` })),
+    ],
   },
   tokens: {
     header: 64,
@@ -22,6 +29,7 @@ export const SYSTEM_LAYOUT = {
     fieldWidth: 450,
     digitSize: 64,
     digitGap: 12,
+    digitYearWidth: 180,
     paperWidth: 526,
     paperHeight: 384,
     bookWidth: 474,
@@ -60,6 +68,11 @@ export const SYSTEM_LAYOUT = {
     storageActionInset: 34,
     storageActionTop: 12,
     storageLabelSize: 20,
+    storageGamecubeTitleSize: 11,
+    storageGamecubeTitleIcon: 21,
+    calendarWidth: 526,
+    calendarActionWidth: 158,
+    calendarActionHeight: 52,
   },
   modes: {
     "16:9": {
@@ -135,7 +148,7 @@ export const SYSTEM_LAYOUT = {
     },
   },
   limits: [
-    "Fonts/artwork are approximations",
+    "Supplied Rodin glyphs are authentic; artwork and native layout matching remain independently assessed",
     "Some references are cropped or related states",
     "Physical Wii hardware and retired online services use browser adapters",
   ],

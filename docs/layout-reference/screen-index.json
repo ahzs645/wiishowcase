@@ -68,138 +68,143 @@
     {
       "id": "options",
       "title": "Wii Options",
-      "layoutStatus": "Storage registry and screen adapter; 4:3 manual-derived, wide adaptation",
-      "implementation": "src/layout/system.js; src/system-adapters.css; SettingsPanel/DataManagement/SystemArt",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-316"
       ],
       "captures": [
         {
           "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
           "width": 640,
           "height": 480
         },
         {
           "mode": "16:9",
-          "width": 854,
-          "height": 480
-        },
-        {
-          "mode": "4:3",
-          "width": 960,
+          "width": 1280,
           "height": 720
         },
         {
           "mode": "16:9",
-          "width": 1280,
-          "height": 720
+          "width": 854,
+          "height": 480
         }
       ],
-      "viewer": "../storage-menu-refinement/?interface=options",
+      "viewer": "../interface-assets/?interface=options",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Tile width/spacing, small corner Wii label, frame rules and recreated device/wrench art differ; the two destinations now work."
       },
       "validation": {
-        "baselineRevision": "75c61ab9a6ce7bd56ef3ff26366ce0a1d40f0c71",
-        "change": "Wider tiles at the manual's lower vertical anchor, a shorter Back control and taller footer; gradients replace the strong horizontal tile stripes.",
-        "remaining": "Native sources are 131–164-pixel-wide Nintendo manual illustrations. Edge uncertainty is about 4–8 logical pixels after enlargement; no pixel-accuracy percentage is claimed. All native sources are 4:3. Wide mode keeps a centered 640-unit content area; it awaits an independent native 16:9 storage reference. M PLUS 1p glyphs, SVG silhouettes and control surfaces remain permitted reconstructions, not original Nintendo fonts/textures. GameCube, Channels and item dialogs use related native references. Browser storage and unavailable block counts remain browser adapters."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
       "id": "data-root",
       "title": "Data Management",
-      "layoutStatus": "Storage registry and screen adapter; 4:3 manual-derived, wide adaptation",
-      "implementation": "src/layout/system.js; src/system-adapters.css; SettingsPanel/DataManagement/SystemArt",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-315"
       ],
       "captures": [
         {
           "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
           "width": 640,
           "height": 480
         },
         {
           "mode": "16:9",
-          "width": 854,
-          "height": 480
-        },
-        {
-          "mode": "4:3",
-          "width": 960,
+          "width": 1280,
           "height": 720
         },
         {
           "mode": "16:9",
-          "width": 1280,
-          "height": 720
+          "width": 854,
+          "height": 480
         }
       ],
-      "viewer": "../storage-menu-refinement/?interface=data-root",
+      "viewer": "../interface-assets/?interface=data-root",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Generic folder/grid illustrations replace the original device/channel artwork. Heading tab lacks the breadcrumb icon; footer and tile margins differ."
       },
       "validation": {
-        "baselineRevision": "75c61ab9a6ce7bd56ef3ff26366ce0a1d40f0c71",
-        "change": "Dedicated storage shell, compact icon/title breadcrumb, fitted tile labels and a narrower footer action.",
-        "remaining": "Native sources are 131–164-pixel-wide Nintendo manual illustrations. Edge uncertainty is about 4–8 logical pixels after enlargement; no pixel-accuracy percentage is claimed. All native sources are 4:3. Wide mode keeps a centered 640-unit content area; it awaits an independent native 16:9 storage reference. M PLUS 1p glyphs, SVG silhouettes and control surfaces remain permitted reconstructions, not original Nintendo fonts/textures. GameCube, Channels and item dialogs use related native references. Browser storage and unavailable block counts remain browser adapters."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
       "id": "save-chooser",
       "title": "Save Data platforms",
-      "layoutStatus": "Storage registry and screen adapter; 4:3 manual-derived, wide adaptation",
-      "implementation": "src/layout/system.js; src/system-adapters.css; SettingsPanel/DataManagement/SystemArt",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-312"
       ],
       "captures": [
         {
           "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "4:3",
           "width": 640,
           "height": 480
         },
         {
           "mode": "16:9",
-          "width": 854,
-          "height": 480
-        },
-        {
-          "mode": "4:3",
-          "width": 960,
+          "width": 1280,
           "height": 720
         },
         {
           "mode": "16:9",
-          "width": 1280,
-          "height": 720
+          "width": 854,
+          "height": 480
         }
       ],
-      "viewer": "../storage-menu-refinement/?interface=save-chooser",
+      "viewer": "../interface-assets/?interface=save-chooser",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Wii and GameCube use the same generic save graphic. Native platform/device silhouettes, text wrapping and title breadcrumb are missing."
       },
       "validation": {
-        "baselineRevision": "75c61ab9a6ce7bd56ef3ff26366ce0a1d40f0c71",
-        "change": "Fitted Wii/GameCube cards, a two-line GameCube label and compact breadcrumb header.",
-        "remaining": "Native sources are 131–164-pixel-wide Nintendo manual illustrations. Edge uncertainty is about 4–8 logical pixels after enlargement; no pixel-accuracy percentage is claimed. All native sources are 4:3. Wide mode keeps a centered 640-unit content area; it awaits an independent native 16:9 storage reference. M PLUS 1p glyphs, SVG silhouettes and control surfaces remain permitted reconstructions, not original Nintendo fonts/textures. GameCube, Channels and item dialogs use related native references. Browser storage and unavailable block counts remain browser adapters."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
       "id": "save-grid",
       "title": "Wii Save Data",
-      "layoutStatus": "Storage registry and screen adapter; 4:3 manual-derived, wide adaptation",
-      "implementation": "src/layout/system.js; src/system-adapters.css; SettingsPanel/DataManagement/SystemArt",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-314"
       ],
       "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
         {
           "mode": "4:3",
           "width": 640,
@@ -207,41 +212,41 @@
         },
         {
           "mode": "16:9",
-          "width": 854,
-          "height": 480
-        },
-        {
-          "mode": "4:3",
-          "width": 960,
+          "width": 1280,
           "height": 720
         },
         {
           "mode": "16:9",
-          "width": 1280,
-          "height": 720
+          "width": 854,
+          "height": 480
         }
       ],
-      "viewer": "../storage-menu-refinement/?interface=save-grid",
+      "viewer": "../interface-assets/?interface=save-grid",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "The 5×3 structure exists, but grid/tab/title geometry, cell bevels, placeholder save art and bottom status differ. Native Blocks Open is replaced with a local item count."
       },
       "validation": {
-        "baselineRevision": "75c61ab9a6ce7bd56ef3ff26366ce0a1d40f0c71",
-        "change": "The shorter header moves the grid upward; larger slots, independent row/column gaps, storage tabs and footer count match the manual's structural anchors.",
-        "remaining": "Native sources are 131–164-pixel-wide Nintendo manual illustrations. Edge uncertainty is about 4–8 logical pixels after enlargement; no pixel-accuracy percentage is claimed. All native sources are 4:3. Wide mode keeps a centered 640-unit content area; it awaits an independent native 16:9 storage reference. M PLUS 1p glyphs, SVG silhouettes and control surfaces remain permitted reconstructions, not original Nintendo fonts/textures. GameCube, Channels and item dialogs use related native references. Browser storage and unavailable block counts remain browser adapters."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
       "id": "channels-data",
       "title": "Channel Data Management",
-      "layoutStatus": "Storage registry and screen adapter; 4:3 manual-derived, wide adaptation",
-      "implementation": "src/layout/system.js; src/system-adapters.css; SettingsPanel/DataManagement/SystemArt",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-314"
       ],
       "captures": [
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
         {
           "mode": "4:3",
           "width": 640,
@@ -249,30 +254,25 @@
         },
         {
           "mode": "16:9",
-          "width": 854,
-          "height": 480
-        },
-        {
-          "mode": "4:3",
-          "width": 960,
+          "width": 1280,
           "height": 720
         },
         {
           "mode": "16:9",
-          "width": 1280,
-          "height": 720
+          "width": 854,
+          "height": 480
         }
       ],
-      "viewer": "../storage-menu-refinement/?interface=channels-data",
+      "viewer": "../interface-assets/?interface=channels-data",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Uses the Save Data illustration as a structural reference, not a matched Channels capture. Menu-only Disc is included as a disabled data item; Forecast falls back to text and other previews use rough static crops."
       },
       "validation": {
-        "baselineRevision": "75c61ab9a6ce7bd56ef3ff26366ce0a1d40f0c71",
-        "change": "Channel inventory in the fitted storage shell; Disc stays excluded and existing channel thumbnails remain frozen.",
-        "remaining": "Native sources are 131–164-pixel-wide Nintendo manual illustrations. Edge uncertainty is about 4–8 logical pixels after enlargement; no pixel-accuracy percentage is claimed. All native sources are 4:3. Wide mode keeps a centered 640-unit content area; it awaits an independent native 16:9 storage reference. M PLUS 1p glyphs, SVG silhouettes and control surfaces remain permitted reconstructions, not original Nintendo fonts/textures. GameCube, Channels and item dialogs use related native references. Browser storage and unavailable block counts remain browser adapters."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -306,16 +306,16 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=sd-menu",
+      "viewer": "../interface-assets/?interface=sd-menu",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Working 240-slot paging sits in a different shell: top heading, striped blanks and a plain footer replace the native recessed page count, sculpted light footer, side arrows and help control. The small wide Nintendo source is independent but not suitable for fine font measurement."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Curved footer, page count/navigation, selected-title panel and full-menu management flow.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -348,16 +348,16 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=sd-start",
+      "viewer": "../interface-assets/?interface=sd-start",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "A generic centered dialog over the grid replaces the large native title-selection panel, channel icon, side arrows and bottom To SD Card Menu/Start actions. Current Start opens the existing banner preview, rather than establishing a full native SD launch path."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Curved footer, page count/navigation, selected-title panel and full-menu management flow.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -391,16 +391,16 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=settings-one",
+      "viewer": "../interface-assets/?interface=settings-one",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Missing next-page arrow and printed version area; header/logo/footer treatment differs. In wide mode the first button is about 16 logical units wider than the high-resolution reference outline. Font is platform fallback."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -433,16 +433,16 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=nickname",
+      "viewer": "../interface-assets/?interface=nickname",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Small rounded nickname button and explanatory paragraphs replace the long rectangular field. There is no footer Confirm; keyboard OK saves immediately."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -475,16 +475,16 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=date",
+      "viewer": "../interface-assets/?interface=date",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "A browser date input replaces the three large digit columns and up/down controls. Confirm is inline, not in the footer."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -517,16 +517,16 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=time",
+      "viewer": "../interface-assets/?interface=time",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "A browser time input replaces the large digit selector. Browser-local formatting and picker icon differ, and Confirm is inline."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -559,16 +559,16 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=widescreen",
+      "viewer": "../interface-assets/?interface=widescreen",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Three small wrapping pills include a browser-specific Automatic option. Native reference has two large side-by-side preview choices, selection brackets and Confirm."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -601,16 +601,16 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=sound",
+      "viewer": "../interface-assets/?interface=sound",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Three small horizontal pills replace a vertical stack of full-size choices. Selection uses cyan fill instead of corner brackets; no footer Confirm."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -643,16 +643,16 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=settings-two",
+      "viewer": "../interface-assets/?interface=settings-two",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Both side page arrows are absent, while clickable page numbers serve as navigation. The shared header/footer, glow/selection and font still differ."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -685,16 +685,16 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=settings-three",
+      "viewer": "../interface-assets/?interface=settings-three",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Previous-page arrow is absent; shared header/footer/font issues persist. Long Format text currently fits but uses different type metrics."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -727,16 +727,16 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=home-menu",
+      "viewer": "../interface-assets/?interface=home-menu",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Top/bottom bars, buttons and remote position differ from the cropped guide illustration. Close uses a house character rather than the HOME glyph. Green battery bars indicate connection, not measured charge."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Fitted guide/footer, shared modal focus, native 2+1 action placement and charge-unavailable indicators.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -769,16 +769,16 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=remote-settings",
+      "viewer": "../interface-assets/?interface=remote-settings",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Remote graphic scale, panel margins, meter spacing, row geometry and bottom battery/close rail differ. Controls work; physical speaker/battery behavior is adapted to browser controllers."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Fitted guide/footer, shared modal focus, native 2+1 action placement and charge-unavailable indicators.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -811,16 +811,16 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=message-board",
+      "viewer": "../interface-assets/?interface=message-board",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Footer/date typography and system-card/art treatment differ. The current inventory/date/message type differs from the original envelope capture, so card position differences are not treated as a measured defect."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -853,16 +853,16 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=create-message",
+      "viewer": "../interface-assets/?interface=create-message",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Recreated icons have different silhouettes, relative sizes and placement. Added text labels, background tone and Back rail differ from the cropped manual illustration."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -895,16 +895,16 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=memo-composer",
+      "viewer": "../interface-assets/?interface=memo-composer",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Sheet/title/ruled-line proportions and avatar affordance differ. Back/Post are detached buttons rather than the native edge rails; font is not native."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -937,16 +937,16 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=system-keyboard",
+      "viewer": "../interface-assets/?interface=system-keyboard",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Shop-derived keys fit, but input scroll arrows, native utility icons and layout-switch rail differ. A blank input does not show suggestions, which is expected; a separate typed-state capture proves they work."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Bundled system font, larger phone matrix, case/number rail, scroll/suggestion controls. Shop profile retained.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -979,16 +979,16 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=system-symbols",
+      "viewer": "../interface-assets/?interface=system-symbols",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Accent groups work, but only the normal QWERTY source is available. No native accent-page overlay or key-by-key match is claimed."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Bundled system font, larger phone matrix, case/number rail, scroll/suggestion controls. Shop profile retained.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -1021,16 +1021,16 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=system-phone",
+      "viewer": "../interface-assets/?interface=system-phone",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Small central numeric/T9 grid and Caps/Shift pills differ substantially from the official wide key matrix and left case/number rail."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Bundled system font, larger phone matrix, case/number rail, scroll/suggestion controls. Shop profile retained.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -1063,16 +1063,16 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=message-open-memo",
+      "viewer": "../interface-assets/?interface=message-open-memo",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "The native wide memo source has an external trash control and edge Back rail. Current Back/Erase buttons sit inside the sheet; backdrop, text and Mii treatment differ. 4:3 is not an independent reference match."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -1105,16 +1105,16 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=calendar",
+      "viewer": "../interface-assets/?interface=calendar",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Calendar panel is smaller and inset differently, with different arrow and Back placement, type weight and row/header proportions. Source month/day pattern differs and is cropped."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -1147,16 +1147,16 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=address-book",
+      "viewer": "../interface-assets/?interface=address-book",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Five-row structure exists, but avatars are glyph placeholders, side page arrows are inside the book, the Wii number is always printed below, and action rails differ."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -1189,16 +1189,16 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=letter-composer",
+      "viewer": "../interface-assets/?interface=letter-composer",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Memo art is only a related structural source for this letter view. Browser recipient select and file upload are exposed in the sheet; paper, avatar and bottom actions differ."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -1231,23 +1231,23 @@
           "height": 480
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=letter-open",
+      "viewer": "../interface-assets/?interface=letter-open",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "The blue title, Mii/photo placement, ruled text and action rails differ. Back/Reply/Erase are small internal buttons, while the native source places delete outside and Back/Reply at the lower edges. Letter content differs."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
       "id": "gamecube-data",
       "title": "GameCube Save Data",
-      "layoutStatus": "Storage registry and screen adapter; 4:3 manual-derived, wide adaptation",
-      "implementation": "src/layout/system.js; src/system-adapters.css; SettingsPanel/DataManagement/SystemArt",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-314"
       ],
@@ -1273,23 +1273,23 @@
           "height": 720
         }
       ],
-      "viewer": "../storage-menu-refinement/?interface=gamecube-data",
+      "viewer": "../interface-assets/?interface=gamecube-data",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Slot A/Slot B exist, but the initial storage state is Wii, so neither slot is selected. The empty-card message and generic Wii storage shell are browser substitutes; the source is a related Wii save grid."
       },
       "validation": {
-        "baselineRevision": "75c61ab9a6ce7bd56ef3ff26366ce0a1d40f0c71",
-        "change": "Shared storage geometry with Slot A selected and the browser's no-memory-card status.",
-        "remaining": "Native sources are 131–164-pixel-wide Nintendo manual illustrations. Edge uncertainty is about 4–8 logical pixels after enlargement; no pixel-accuracy percentage is claimed. All native sources are 4:3. Wide mode keeps a centered 640-unit content area; it awaits an independent native 16:9 storage reference. M PLUS 1p glyphs, SVG silhouettes and control surfaces remain permitted reconstructions, not original Nintendo fonts/textures. GameCube, Channels and item dialogs use related native references. Browser storage and unavailable block counts remain browser adapters."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
       "id": "save-selected",
       "title": "Save Data item actions",
-      "layoutStatus": "Storage registry and screen adapter; 4:3 manual-derived, wide adaptation",
-      "implementation": "src/layout/system.js; src/system-adapters.css; SettingsPanel/DataManagement/SystemArt",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-314"
       ],
@@ -1315,23 +1315,23 @@
           "height": 720
         }
       ],
-      "viewer": "../storage-menu-refinement/?interface=save-selected",
+      "viewer": "../interface-assets/?interface=save-selected",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Item actions use a generic titled dialog with block text and Copy/Move/Erase buttons. The current source is only the parent grid, so no exact action-panel comparison is claimed."
       },
       "validation": {
-        "baselineRevision": "75c61ab9a6ce7bd56ef3ff26366ce0a1d40f0c71",
-        "change": "Item actions remain isolated from the resized storage shell; this source does not depict the native item dialog.",
-        "remaining": "Native sources are 131–164-pixel-wide Nintendo manual illustrations. Edge uncertainty is about 4–8 logical pixels after enlargement; no pixel-accuracy percentage is claimed. All native sources are 4:3. Wide mode keeps a centered 640-unit content area; it awaits an independent native 16:9 storage reference. M PLUS 1p glyphs, SVG silhouettes and control surfaces remain permitted reconstructions, not original Nintendo fonts/textures. GameCube, Channels and item dialogs use related native references. Browser storage and unavailable block counts remain browser adapters."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
       "id": "save-copy-confirm",
       "title": "Save Data Copy confirmation",
-      "layoutStatus": "Storage registry and screen adapter; 4:3 manual-derived, wide adaptation",
-      "implementation": "src/layout/system.js; src/system-adapters.css; SettingsPanel/DataManagement/SystemArt",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-314"
       ],
@@ -1357,23 +1357,23 @@
           "height": 720
         }
       ],
-      "viewer": "../storage-menu-refinement/?interface=save-copy-confirm",
+      "viewer": "../interface-assets/?interface=save-copy-confirm",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "The confirmation has generic Back/Yes/No placement. Only a parent grid source is available; Copy and cancellation work in the regression."
       },
       "validation": {
-        "baselineRevision": "75c61ab9a6ce7bd56ef3ff26366ce0a1d40f0c71",
-        "change": "Copy cancellation preserves saved data; this source only supports the underlying grid layout.",
-        "remaining": "Native sources are 131–164-pixel-wide Nintendo manual illustrations. Edge uncertainty is about 4–8 logical pixels after enlargement; no pixel-accuracy percentage is claimed. All native sources are 4:3. Wide mode keeps a centered 640-unit content area; it awaits an independent native 16:9 storage reference. M PLUS 1p glyphs, SVG silhouettes and control surfaces remain permitted reconstructions, not original Nintendo fonts/textures. GameCube, Channels and item dialogs use related native references. Browser storage and unavailable block counts remain browser adapters."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
       "id": "channel-selected",
-      "title": "Channel item actions",
-      "layoutStatus": "Storage registry and screen adapter; 4:3 manual-derived, wide adaptation",
-      "implementation": "src/layout/system.js; src/system-adapters.css; SettingsPanel/DataManagement/SystemArt",
+      "title": "Channel Data item actions",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-314"
       ],
@@ -1399,16 +1399,16 @@
           "height": 720
         }
       ],
-      "viewer": "../storage-menu-refinement/?interface=channel-selected",
+      "viewer": "../interface-assets/?interface=channel-selected",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Channel actions reuse the generic save dialog; selected-channel icon/banner and native action-panel geometry are not reproduced. The reference is a related save grid."
       },
       "validation": {
-        "baselineRevision": "75c61ab9a6ce7bd56ef3ff26366ce0a1d40f0c71",
-        "change": "Channel actions remain reachable above the fitted storage shell; the native reference is a related save-grid view.",
-        "remaining": "Native sources are 131–164-pixel-wide Nintendo manual illustrations. Edge uncertainty is about 4–8 logical pixels after enlargement; no pixel-accuracy percentage is claimed. All native sources are 4:3. Wide mode keeps a centered 640-unit content area; it awaits an independent native 16:9 storage reference. M PLUS 1p glyphs, SVG silhouettes and control surfaces remain permitted reconstructions, not original Nintendo fonts/textures. GameCube, Channels and item dialogs use related native references. Browser storage and unavailable block counts remain browser adapters."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -1439,16 +1439,16 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=calendar-settings",
+      "viewer": "../interface-assets/?interface=calendar-settings",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Two generic Date/Time buttons are implemented. No exact reference for this intermediate menu was collected; do not infer its detailed layout from the date leaf screen."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -1479,16 +1479,16 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=screen-settings",
+      "viewer": "../interface-assets/?interface=screen-settings",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Four destinations are wired through the generic settings list. No same-view original Screen submenu is in the source set."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -1519,16 +1519,16 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=sensor-bar",
+      "viewer": "../interface-assets/?interface=sensor-bar",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Position and Sensitivity destinations work, but this intermediate page has no same-view screenshot reference."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -1561,16 +1561,16 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=screen-position",
+      "viewer": "../interface-assets/?interface=screen-position",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "A small cross preview and text buttons replace the framed screen-boundary preview, numeric displacement and native arrows. The offset persists immediately."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -1603,16 +1603,16 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=tv-resolution",
+      "viewer": "../interface-assets/?interface=tv-resolution",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Only explanatory browser text is shown. Native 480i/480p choice and Confirm are not represented; browser output cannot change a physical Wii video mode."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -1645,16 +1645,16 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=burn-in",
+      "viewer": "../interface-assets/?interface=burn-in",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Horizontal On/Off pills and an explanation replace stacked native choices and Confirm. The dimming preference itself is implemented."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -1687,16 +1687,16 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=sensor-position",
+      "viewer": "../interface-assets/?interface=sensor-position",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Horizontal Above/Below pills replace the vertical selection panel and Confirm; text adds the phone-controller adaptation."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -1729,16 +1729,16 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=sensitivity",
+      "viewer": "../interface-assets/?interface=sensitivity",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "The sensor preview is static dots; adjustment is a browser range input. Native source has a large preview, stepped meter, minus/plus and A-to-finish instruction."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -1771,16 +1771,16 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=parental-controls",
+      "viewer": "../interface-assets/?interface=parental-controls",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Only a PIN gate for Internet/WiiConnect24 is implemented. Native rating, secret-question and broader restriction flows are absent. The manual source shows a completed summary, not this initial setup."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -1813,16 +1813,16 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=internet",
+      "viewer": "../interface-assets/?interface=internet",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "A browser online-data toggle/status replaces the native Connection Settings/Console Information/User Agreements menu. Three connection slots and wireless/wired setup are absent."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -1855,16 +1855,16 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=wiiconnect24",
+      "viewer": "../interface-assets/?interface=wiiconnect24",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "A horizontal toggle and delivery explanation replace the native selector. Standby Downloads/Connection and Slot Illumination destinations are absent; no native delivery is claimed."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -1897,16 +1897,16 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=language",
+      "viewer": "../interface-assets/?interface=language",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Small horizontal English/French/Spanish pills replace stacked localized labels and Confirm. The regression verifies persistence, not full interface translation."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -1939,16 +1939,16 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=country",
+      "viewer": "../interface-assets/?interface=country",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Only seven countries appear as wrapping pills, without a native scroll list or Confirm. Country is also used as a compatibility inference for menu region."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -1981,16 +1981,16 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=format-memory",
+      "viewer": "../interface-assets/?interface=format-memory",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Generic detail paragraphs and a small Format button replace the centered warning with bottom Cancel/Format. Behavior intentionally resets local browser data only."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Larger warning text and separate footer Format action for local browser data.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -2023,16 +2023,16 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=format-confirm",
+      "viewer": "../interface-assets/?interface=format-confirm",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "An additional generic modal asks for Erase saved data. The manual source is the initial format prompt, so its second-stage geometry is unverified."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -2065,16 +2065,16 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=update-current",
+      "viewer": "../interface-assets/?interface=update-current",
       "audit": {
         "date": "2026-10-14",
         "priority": "P1",
         "finding": "The white update-result modal has tiny viewport-scaled text and an oversized OK button. It lacks modal focus isolation and Escape navigates underlying Settings. Native reference is the update prompt, not this result state."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Fitted type/button sizes, dialog focus entry/trap/return, background isolation and local Escape.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -2105,16 +2105,16 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=operations-guide",
+      "viewer": "../interface-assets/?interface=operations-guide",
       "audit": {
         "date": "2026-10-14",
         "priority": "P1",
         "finding": "The custom help text makes the HOME footer overflow in both 4:3 resolutions. No original game-specific guide reference is available; content is an intentional browser guide."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Fitted guide/footer, shared modal focus, native 2+1 action placement and charge-unavailable indicators.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -2147,16 +2147,16 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=reconnect",
+      "viewer": "../interface-assets/?interface=reconnect",
       "audit": {
         "date": "2026-10-14",
         "priority": "P1",
         "finding": "The QR pairing card cuts off the close button/title in both 480-line frames. Its focus/modality also differs from native reconnect. Local and production-origin relay checks returned 404; manual pairing remains a separate untested path."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Standalone signaling service, Vite preview support, secure session IDs, bounded setup and recoverable errors. Automatic HTTP pairing, Player 2 and real HOME input passed through local TURN/TCP.",
-        "remaining": "Production automatic exchange awaits an HTTPS backend host. Physical phone motion and arbitrary Internet/NAT coverage remain unverified."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -2189,16 +2189,16 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=address-register",
+      "viewer": "../interface-assets/?interface=address-register",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "A generic form combines Wii Number/email and nickname entry. The manual Wii-number/register source is a different step; native multi-step routing and art are incomplete."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -2231,16 +2231,16 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=friend-details",
+      "viewer": "../interface-assets/?interface=friend-details",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "A generic text detail page replaces a native contact card; only the list illustration is available. Create Letter/Erase work locally but geometry is unverified."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -2273,16 +2273,16 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=friend-erase",
+      "viewer": "../interface-assets/?interface=friend-erase",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Erase confirmation reuses the generic book dialog. Only a related list source is available, so exact prompt shape/placement is not claimed."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Paper/book sizing, outer actions, recipient chooser, styled photo attachment and optional contact Mii.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -2315,16 +2315,16 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=keyboard-predictions",
+      "viewer": "../interface-assets/?interface=keyboard-predictions",
       "audit": {
         "date": "2026-10-14",
         "priority": "P2",
         "finding": "Typing hel exposes working predictions. Input/scroll controls, suggestion navigation, language/More and layout-switch artwork still differ from the original typed-state source."
       },
       "validation": {
-        "date": "2026-10-14",
-        "change": "Bundled system font, larger phone matrix, case/number rail, scroll/suggestion controls. Shop profile retained.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -2357,11 +2357,11 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=standby-downloads",
+      "viewer": "../interface-assets/?interface=standby-downloads",
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -2394,11 +2394,11 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=slot-illumination",
+      "viewer": "../interface-assets/?interface=slot-illumination",
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -2431,11 +2431,11 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=parental-rating",
+      "viewer": "../interface-assets/?interface=parental-rating",
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -2468,11 +2468,11 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=connection-profiles",
+      "viewer": "../interface-assets/?interface=connection-profiles",
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -2503,11 +2503,11 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=user-agreements",
+      "viewer": "../interface-assets/?interface=user-agreements",
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -2540,11 +2540,11 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=sd-memory-error",
+      "viewer": "../interface-assets/?interface=sd-memory-error",
       "validation": {
-        "date": "2026-10-14",
-        "change": "Curved footer, page count/navigation, selected-title panel and full-menu management flow.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -2575,11 +2575,11 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=connect24-menu",
+      "viewer": "../interface-assets/?interface=connect24-menu",
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -2610,11 +2610,11 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=secret-question",
+      "viewer": "../interface-assets/?interface=secret-question",
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -2647,11 +2647,11 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=connection-type",
+      "viewer": "../interface-assets/?interface=connection-type",
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
@@ -2682,55 +2682,18 @@
           "height": 720
         }
       ],
-      "viewer": "../system-menu-refinement/?interface=console-information",
+      "viewer": "../interface-assets/?interface=console-information",
       "validation": {
-        "date": "2026-10-14",
-        "change": "Measured Settings content anchors in both aspects, curved button skins, fitted text and a stable status area. Date/time digits are larger; draft/cancel behavior is preserved.",
-        "remaining": "Fonts and reconstructed art remain approximations; original texture and firmware/state differences remain."
-      }
-    },
-    {
-      "id": "save-sd",
-      "title": "SD Card save data",
-      "layoutStatus": "Storage registry and screen adapter; 4:3 manual-derived, wide adaptation",
-      "implementation": "src/layout/system.js; src/system-adapters.css; SettingsPanel/DataManagement/SystemArt",
-      "references": [
-        "manual-314"
-      ],
-      "captures": [
-        {
-          "mode": "4:3",
-          "width": 640,
-          "height": 480
-        },
-        {
-          "mode": "16:9",
-          "width": 854,
-          "height": 480
-        },
-        {
-          "mode": "4:3",
-          "width": 960,
-          "height": 720
-        },
-        {
-          "mode": "16:9",
-          "width": 1280,
-          "height": 720
-        }
-      ],
-      "viewer": "../storage-menu-refinement/?interface=save-sd",
-      "validation": {
-        "baselineRevision": "75c61ab9a6ce7bd56ef3ff26366ce0a1d40f0c71",
-        "change": "The same storage geometry with the actual SD inventory and selected SD tab.",
-        "remaining": "Native sources are 131–164-pixel-wide Nintendo manual illustrations. Edge uncertainty is about 4–8 logical pixels after enlargement; no pixel-accuracy percentage is claimed. All native sources are 4:3. Wide mode keeps a centered 640-unit content area; it awaits an independent native 16:9 storage reference. M PLUS 1p glyphs, SVG silhouettes and control surfaces remain permitted reconstructions, not original Nintendo fonts/textures. GameCube, Channels and item dialogs use related native references. Browser storage and unavailable block counts remain browser adapters."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     },
     {
       "id": "gamecube-slot-b",
       "title": "GameCube Slot B",
-      "layoutStatus": "Storage registry and screen adapter; 4:3 manual-derived, wide adaptation",
-      "implementation": "src/layout/system.js; src/system-adapters.css; SettingsPanel/DataManagement/SystemArt",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
       "references": [
         "manual-314"
       ],
@@ -2756,11 +2719,48 @@
           "height": 720
         }
       ],
-      "viewer": "../storage-menu-refinement/?interface=gamecube-slot-b",
+      "viewer": "../interface-assets/?interface=gamecube-slot-b",
       "validation": {
-        "baselineRevision": "75c61ab9a6ce7bd56ef3ff26366ce0a1d40f0c71",
-        "change": "Actual Slot B selection in the fitted storage shell.",
-        "remaining": "Native sources are 131–164-pixel-wide Nintendo manual illustrations. Edge uncertainty is about 4–8 logical pixels after enlargement; no pixel-accuracy percentage is claimed. All native sources are 4:3. Wide mode keeps a centered 640-unit content area; it awaits an independent native 16:9 storage reference. M PLUS 1p glyphs, SVG silhouettes and control surfaces remain permitted reconstructions, not original Nintendo fonts/textures. GameCube, Channels and item dialogs use related native references. Browser storage and unavailable block counts remain browser adapters."
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
+      }
+    },
+    {
+      "id": "save-sd",
+      "title": "SD Card save data",
+      "layoutStatus": "System registry and screen adapter; native fidelity approximate",
+      "implementation": "src/layout/system.js; src/system-adapters.css; owning screen component",
+      "references": [
+        "manual-314"
+      ],
+      "captures": [
+        {
+          "mode": "4:3",
+          "width": 640,
+          "height": 480
+        },
+        {
+          "mode": "16:9",
+          "width": 854,
+          "height": 480
+        },
+        {
+          "mode": "4:3",
+          "width": 960,
+          "height": 720
+        },
+        {
+          "mode": "16:9",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "viewer": "../interface-assets/?interface=save-sd",
+      "validation": {
+        "date": "2026-10-15",
+        "change": "Licensed supplied Rodin fonts and shared Wii.css controls. Matching supplied tile, paper, envelope, Memo/Address Book and remote artwork replaces local drawings. Numeric fields use Rodin Medium with complete-value width checks.",
+        "remaining": "Supplied fonts/artwork are distinguished from retained reconstructions. Layout accuracy, low-resolution raster sources, region/firmware and browser-adapter limits remain independent questions."
       }
     }
   ]

@@ -17,6 +17,7 @@
   --layout-date-bottom: 38;
   --layout-date-font-size: 32;
   --layout-date-font-weight: 700;
+  --layout-date-line-height: 1.25;
   --layout-period-font-size: 18;
   --layout-period-gap: 16;
   --layout-period-bottom: -5;
@@ -46,10 +47,10 @@
   --layout-footer-left-shift: 1;
   --layout-sd-center-percent: 20.5529;
 }
-/* OFL Latin subset; approximates native Rodin. */
+/* Site-licensed user-supplied font; see public/fonts/licensed/manifest.json. */
 @font-face {
   font-family: "Wii Menu Date";
-  src: url("/fonts/menu/mplus-1p-bold-latin.woff") format("woff");
+  src: url("/fonts/licensed/rodin-b-latin.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;

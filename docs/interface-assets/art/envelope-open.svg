@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="763" height="773" viewBox="0 0 763 773" role="img" aria-label="Open soft yellow Wii-style envelope with a grey inner flap and layered shadows">
+  <defs>
+    
+    <path id="flap" d="M 22 326       L 344 30       C 357 17 369 7 382 6       C 396 6 410 17 423 30       L 745 326       L 692 461       L 78 461       Z" />
+
+    <path id="pocketShell" d="M 22 326 L 78 465 H 692 L 745 326 V 756 H 22 Z" />
+    <rect id="frontFace" x="22" y="465" width="724" height="289" />
+
+    <clipPath id="flapClip"><use href="#flap" /></clipPath>
+    <clipPath id="pocketClip"><use href="#pocketShell" /></clipPath>
+    <clipPath id="frontClip"><use href="#frontFace" /></clipPath>
+
+    <linearGradient id="flapBase" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d2cec2" />
+      <stop offset="0.20" stop-color="#c3c0b5" />
+      <stop offset="0.48" stop-color="#a6a79d" />
+      <stop offset="0.74" stop-color="#8c8e85" />
+      <stop offset="1" stop-color="#807f78" />
+    </linearGradient>
+
+    <radialGradient id="flapTopGlow" cx="50%" cy="0%" r="78%">
+      <stop offset="0" stop-color="#eee9d7" stop-opacity="0.05" />
+      <stop offset="0.34" stop-color="#d5d1c3" stop-opacity="0.03" />
+      <stop offset="1" stop-color="#868980" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="flapSideShade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#60635d" stop-opacity="0.10" />
+      <stop offset="0.22" stop-color="#ffffff" stop-opacity="0.00" />
+      <stop offset="0.50" stop-color="#ffffff" stop-opacity="0.00" />
+      <stop offset="0.78" stop-color="#ffffff" stop-opacity="0.00" />
+      <stop offset="1" stop-color="#545a54" stop-opacity="0.13" />
+    </linearGradient>
+
+    <linearGradient id="flapBottomDeepen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4b504b" stop-opacity="0" />
+      <stop offset="0.58" stop-color="#4b504b" stop-opacity="0.015" />
+      <stop offset="1" stop-color="#4b504b" stop-opacity="0.035" />
+    </linearGradient>
+
+    <linearGradient id="pocketBase" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffddb" />
+      <stop offset="0.20" stop-color="#fff9c4" />
+      <stop offset="0.82" stop-color="#fdf9c4" />
+      <stop offset="1" stop-color="#ede7b3" />
+    </linearGradient>
+
+    <linearGradient id="frontBase" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fdf9c4" />
+      <stop offset="0.90" stop-color="#fdf9c4" />
+      <stop offset="0.965" stop-color="#f2eab3" />
+      <stop offset="1" stop-color="#ede7b3" />
+    </linearGradient>
+
+    <radialGradient id="frontCenterGlow" cx="48%" cy="42%" r="92%">
+      <stop offset="0" stop-color="#fffed7" stop-opacity="0.02" />
+      <stop offset="0.55" stop-color="#fff9c4" stop-opacity="0.00" />
+      <stop offset="1" stop-color="#fff9c4" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="leftFaceLight" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#eeeedd" stop-opacity="0.88" />
+      <stop offset="0.18" stop-color="#fffedd" stop-opacity="0.96" />
+      <stop offset="0.54" stop-color="#fffbd0" stop-opacity="0.74" />
+      <stop offset="1" stop-color="#fdf9c4" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="rightFaceShade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fdf9c4" stop-opacity="0" />
+      <stop offset="0.42" stop-color="#f4eeb8" stop-opacity="0.42" />
+      <stop offset="0.78" stop-color="#e9e1ad" stop-opacity="0.82" />
+      <stop offset="1" stop-color="#d8d2a7" stop-opacity="0.82" />
+    </linearGradient>
+
+    <linearGradient id="leftWall" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9a9675" stop-opacity="0.16" />
+      <stop offset="0.18" stop-color="#ffffff" stop-opacity="0.34" />
+      <stop offset="0.62" stop-color="#fffbd0" stop-opacity="0.42" />
+      <stop offset="1" stop-color="#fff9c4" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="rightWall" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff9c4" stop-opacity="0" />
+      <stop offset="0.50" stop-color="#ece5b0" stop-opacity="0.38" />
+      <stop offset="1" stop-color="#8c886b" stop-opacity="0.28" />
+    </linearGradient>
+
+    <linearGradient id="bottomShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff9c4" stop-opacity="0" />
+      <stop offset="0.46" stop-color="#efe7ad" stop-opacity="0.22" />
+      <stop offset="1" stop-color="#d9d09a" stop-opacity="0.50" />
+    </linearGradient>
+
+    <linearGradient id="gapBand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e0e0e0" />
+      <stop offset="0.42" stop-color="#e5e5e5" />
+      <stop offset="1" stop-color="#dededb" />
+    </linearGradient>
+
+    <filter id="flapCast" x="-8%" y="-8%" width="116%" height="123%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3.4" result="blur" />
+      <feOffset in="blur" dx="0" dy="5" result="offset" />
+      <feFlood flood-color="#565b55" flood-opacity="0.42" result="color" />
+      <feComposite in="color" in2="offset" operator="in" result="shadow" />
+      <feMerge><feMergeNode in="shadow" /></feMerge>
+    </filter>
+
+    <filter id="softBlur" x="-35%" y="-35%" width="170%" height="170%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="5" />
+    </filter>
+
+    <filter id="wideBlur" x="-35%" y="-35%" width="170%" height="170%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="12" />
+    </filter>
+
+    <filter id="thinBlur" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="1.45" />
+    </filter>
+  </defs>
+
+  <rect x="22" y="754" width="724" height="4" fill="#7f7f77" />
+  <rect x="42" y="728" width="684" height="28" fill="#9a9361" opacity="0.14" filter="url(#wideBlur)" />
+  <rect x="735" y="338" width="14" height="420" fill="#777b73" opacity="0.22" filter="url(#softBlur)" />
+  <rect x="20" y="338" width="13" height="420" fill="#777b73" opacity="0.14" filter="url(#softBlur)" />
+
+  
+  <use href="#pocketShell" fill="url(#pocketBase)" />
+  <g clip-path="url(#pocketClip)">
+    <rect x="22" y="326" width="76" height="430" fill="url(#leftWall)" />
+    <rect x="676" y="326" width="69" height="430" fill="url(#rightWall)" />
+    <path d="M 22 326 L 78 465" stroke="#fffedf" stroke-width="3" stroke-linecap="round" opacity="0.55" />
+    <path d="M 745 326 L 692 465" stroke="#fffedf" stroke-width="3" stroke-linecap="round" opacity="0.36" />
+    <path d="M 744 333 L 744 465" stroke="#d9d3ad" stroke-width="3" opacity="0.62" />
+    <path d="M 22 326 L 78 465" stroke="#746f58" stroke-width="3" stroke-linecap="round" opacity="0.08" />
+    <path d="M 745 326 L 692 465" stroke="#746f58" stroke-width="3" stroke-linecap="round" opacity="0.10" />
+  </g>
+
+  
+  <use href="#flap" transform="translate(0 4)" fill="#565b55" opacity="0.13" />
+
+  
+  <use href="#flap" fill="url(#flapBase)" />
+  <g clip-path="url(#flapClip)">
+    <rect x="0" y="0" width="763" height="461" fill="url(#flapTopGlow)" />
+    <rect x="0" y="0" width="763" height="461" fill="url(#flapSideShade)" />
+    <rect x="0" y="365" width="763" height="96" fill="url(#flapBottomDeepen)" />
+    <path d="M 22 326 L 78 461" stroke="#4e544f" stroke-width="2" opacity="0.08" />
+    <path d="M 745 326 L 692 461" stroke="#4e544f" stroke-width="2" opacity="0.10" />
+    <line x1="80" y1="460" x2="690" y2="460" stroke="#5f635c" stroke-width="1" opacity="0.05" />
+  </g>
+
+  
+  <rect x="88" y="461" width="584" height="4" fill="url(#gapBand)" />
+  <rect x="78" y="459" width="614" height="2" fill="#555a54" opacity="0.08" />
+
+  
+  <use href="#frontFace" fill="url(#frontBase)" />
+  <g clip-path="url(#frontClip)">
+    <rect x="22" y="465" width="724" height="289" fill="url(#frontCenterGlow)" />
+    <rect x="22" y="465" width="58" height="289" fill="url(#leftFaceLight)" />
+    <rect x="707" y="465" width="38" height="289" fill="url(#rightFaceShade)" />
+    <rect x="744" y="465" width="2" height="289" fill="#d9d3ad" opacity="0.86" />
+    <rect x="22" y="722" width="724" height="32" fill="url(#bottomShade)" />
+    <ellipse cx="86" cy="746" rx="92" ry="22" fill="#a69b64" opacity="0.10" filter="url(#wideBlur)" />
+    <ellipse cx="684" cy="746" rx="98" ry="22" fill="#9e9564" opacity="0.10" filter="url(#wideBlur)" />
+      </g>
+
+  
+  <line x1="22" y1="754" x2="746" y2="754" stroke="#777a72" stroke-width="4" opacity="0.92" />
+  <line x1="23" y1="751" x2="744" y2="751" stroke="#fffbd0" stroke-width="2" opacity="0.46" />
+  <path d="M 22 326 V 754 H 745 V 326" fill="none" stroke="#8c8764" stroke-width="1" opacity="0.14" />
+</svg>

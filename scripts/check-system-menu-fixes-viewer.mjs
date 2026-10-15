@@ -25,7 +25,7 @@ try {
   const ids = await page
     .locator("#interface option")
     .evaluateAll((o) => o.map((n) => n.value));
-  assert.equal(ids.length, 64);
+  assert.equal(ids.length, Number(process.env.EXPECTED_COMPARISON_STATES || 64));
   for (const id of ids)
     for (const mode of ["4:3", "16:9"])
       for (const height of ["480", "720"]) {

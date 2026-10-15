@@ -1,7 +1,7 @@
 // Audit additional destinations omitted from the original 30-state regression.
 // Geometry failures are recorded rather than hiding the screen that exposed them.
 import fs from "node:fs/promises";
-import { spawn } from "node:child_process";
+import { spawn, execFileSync } from "node:child_process";
 import { chromium } from "playwright";
 import { interfaceGeometry } from "./lib/interface-geometry.mjs";
 
@@ -21,6 +21,8 @@ const server = spawn(
 const base = "http://localhost:4958/wiishowcase/";
 const report = {
   baselineRevision: "f198c02fd8c787a5581c0957486f8b164aca6732",
+  captureSourceBase: execFileSync("git", ["rev-parse", "HEAD"], {encoding:"utf8"}).trim(),
+  captureIncludesWorkingTree: true,
   captureDate: "2026-10-14",
   fixtureTime: "2026-10-12 12:00 America/Vancouver",
   captures: [],

@@ -102,3 +102,10 @@ The second pass adds a centered Settings content area, separate aspect anchors,
 full-skin versus cyan-outline bounds, and fitted text tracking. The active screen
 index now selects the latest comparison manifest. Independent measurements and
 rendered checks are linked in [the refinement report](system-menu-refinement.md).
+
+The supplied-assets pass moves reusable surfaces/artwork into Wii.css and fits
+them through `src/interface-assets.css`. The licensed font roles and numeric
+field widths remain in the system/menu registries. The active index now links
+all 66 captured system states to [these comparisons](interface-assets/) and
+their [complete asset replacement map](interface-assets/catalog.html). Native
+pane placement and source confidence remain separate from font authenticity.

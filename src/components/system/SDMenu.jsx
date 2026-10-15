@@ -89,7 +89,7 @@ export default function SDMenu({ visible, onBack, onChannel, onManage }) {
           aria-label="Wii Menu"
           onClick={onBack}
         >
-          <span className="wii-icon wii-icon-wii" aria-hidden="true" />
+          <span className="wii-icon wii-icon-footer-menu" aria-hidden="true" />
         </button>
         <span className="sd-page-count">
           {page + 1}

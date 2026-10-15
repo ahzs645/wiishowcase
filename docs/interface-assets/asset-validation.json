@@ -1,0 +1,2520 @@
+{
+  "checks": [
+    "640: both tiles use the shared supplied surfaces",
+    "640: system labels renders supplied font glyphs",
+    "640: shared tile pressed state preserves its hit area",
+    "640: Slot B uses the current shared shell",
+    "640: SD uses the current shared shell",
+    "640: complete Month digits fit the editable input",
+    "640: complete Day digits fit the editable input",
+    "640: complete Year digits fit the editable input",
+    "640: date numerals renders supplied font glyphs",
+    "640: complete Hour digits fit the editable input",
+    "640: complete Minute digits fit the editable input",
+    "640: time numerals renders supplied font glyphs",
+    "854: both tiles use the shared supplied surfaces",
+    "854: system labels renders supplied font glyphs",
+    "854: shared tile pressed state preserves its hit area",
+    "854: Slot B uses the current shared shell",
+    "854: SD uses the current shared shell",
+    "854: complete Month digits fit the editable input",
+    "854: complete Day digits fit the editable input",
+    "854: complete Year digits fit the editable input",
+    "854: date numerals renders supplied font glyphs",
+    "854: complete Hour digits fit the editable input",
+    "854: complete Minute digits fit the editable input",
+    "854: time numerals renders supplied font glyphs",
+    "960: both tiles use the shared supplied surfaces",
+    "960: system labels renders supplied font glyphs",
+    "960: shared tile pressed state preserves its hit area",
+    "960: Slot B uses the current shared shell",
+    "960: SD uses the current shared shell",
+    "960: complete Month digits fit the editable input",
+    "960: complete Day digits fit the editable input",
+    "960: complete Year digits fit the editable input",
+    "960: date numerals renders supplied font glyphs",
+    "960: complete Hour digits fit the editable input",
+    "960: complete Minute digits fit the editable input",
+    "960: time numerals renders supplied font glyphs",
+    "1280: both tiles use the shared supplied surfaces",
+    "1280: system labels renders supplied font glyphs",
+    "1280: shared tile pressed state preserves its hit area",
+    "1280: Slot B uses the current shared shell",
+    "1280: SD uses the current shared shell",
+    "1280: complete Month digits fit the editable input",
+    "1280: complete Day digits fit the editable input",
+    "1280: complete Year digits fit the editable input",
+    "1280: date numerals renders supplied font glyphs",
+    "1280: complete Hour digits fit the editable input",
+    "1280: complete Minute digits fit the editable input",
+    "1280: time numerals renders supplied font glyphs"
+  ],
+  "fonts": [
+    {
+      "width": 640,
+      "label": "system labels",
+      "fonts": [
+        {
+          "familyName": "FOT-NewRodin Pro DB",
+          "postScriptName": "NewRodinPro-DB",
+          "isCustomFont": true,
+          "glyphCount": 15
+        }
+      ]
+    },
+    {
+      "width": 640,
+      "label": "date numerals",
+      "fonts": [
+        {
+          "familyName": "FOT-Rodin Pro M",
+          "postScriptName": "RodinPro-M",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ]
+    },
+    {
+      "width": 640,
+      "label": "time numerals",
+      "fonts": [
+        {
+          "familyName": "FOT-Rodin Pro M",
+          "postScriptName": "RodinPro-M",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ]
+    },
+    {
+      "width": 854,
+      "label": "system labels",
+      "fonts": [
+        {
+          "familyName": "FOT-NewRodin Pro DB",
+          "postScriptName": "NewRodinPro-DB",
+          "isCustomFont": true,
+          "glyphCount": 15
+        }
+      ]
+    },
+    {
+      "width": 854,
+      "label": "date numerals",
+      "fonts": [
+        {
+          "familyName": "FOT-Rodin Pro M",
+          "postScriptName": "RodinPro-M",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ]
+    },
+    {
+      "width": 854,
+      "label": "time numerals",
+      "fonts": [
+        {
+          "familyName": "FOT-Rodin Pro M",
+          "postScriptName": "RodinPro-M",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ]
+    },
+    {
+      "width": 960,
+      "label": "system labels",
+      "fonts": [
+        {
+          "familyName": "FOT-NewRodin Pro DB",
+          "postScriptName": "NewRodinPro-DB",
+          "isCustomFont": true,
+          "glyphCount": 15
+        }
+      ]
+    },
+    {
+      "width": 960,
+      "label": "date numerals",
+      "fonts": [
+        {
+          "familyName": "FOT-Rodin Pro M",
+          "postScriptName": "RodinPro-M",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ]
+    },
+    {
+      "width": 960,
+      "label": "time numerals",
+      "fonts": [
+        {
+          "familyName": "FOT-Rodin Pro M",
+          "postScriptName": "RodinPro-M",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "label": "system labels",
+      "fonts": [
+        {
+          "familyName": "FOT-NewRodin Pro DB",
+          "postScriptName": "NewRodinPro-DB",
+          "isCustomFont": true,
+          "glyphCount": 15
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "label": "date numerals",
+      "fonts": [
+        {
+          "familyName": "FOT-Rodin Pro M",
+          "postScriptName": "RodinPro-M",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "label": "time numerals",
+      "fonts": [
+        {
+          "familyName": "FOT-Rodin Pro M",
+          "postScriptName": "RodinPro-M",
+          "isCustomFont": true,
+          "glyphCount": 1
+        }
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "id": "date",
+      "width": 640,
+      "height": 480,
+      "measurements": [
+        {
+          "label": "Month",
+          "value": "10",
+          "font": "500 64px / 83.2px \"FOT-Rodin Pro\", sans-serif",
+          "width": 92,
+          "scrollWidth": 92,
+          "textWidth": 88.31985473632812
+        },
+        {
+          "label": "Day",
+          "value": "15",
+          "font": "500 64px / 83.2px \"FOT-Rodin Pro\", sans-serif",
+          "width": 92,
+          "scrollWidth": 92,
+          "textWidth": 88.31985473632812
+        },
+        {
+          "label": "Year",
+          "value": "2026",
+          "font": "500 64px / 83.2px \"FOT-Rodin Pro\", sans-serif",
+          "width": 180,
+          "scrollWidth": 180,
+          "textWidth": 176.63970947265625
+        }
+      ]
+    },
+    {
+      "id": "time",
+      "width": 640,
+      "height": 480,
+      "measurements": [
+        {
+          "label": "Hour",
+          "value": "09",
+          "font": "500 64px / 83.2px \"FOT-Rodin Pro\", sans-serif",
+          "width": 92,
+          "scrollWidth": 92,
+          "textWidth": 88.31985473632812
+        },
+        {
+          "label": "Minute",
+          "value": "24",
+          "font": "500 64px / 83.2px \"FOT-Rodin Pro\", sans-serif",
+          "width": 92,
+          "scrollWidth": 92,
+          "textWidth": 88.31985473632812
+        }
+      ]
+    },
+    {
+      "id": "date",
+      "width": 854,
+      "height": 480,
+      "measurements": [
+        {
+          "label": "Month",
+          "value": "10",
+          "font": "500 64px / 83.2px \"FOT-Rodin Pro\", sans-serif",
+          "width": 92,
+          "scrollWidth": 92,
+          "textWidth": 88.31985473632812
+        },
+        {
+          "label": "Day",
+          "value": "15",
+          "font": "500 64px / 83.2px \"FOT-Rodin Pro\", sans-serif",
+          "width": 92,
+          "scrollWidth": 92,
+          "textWidth": 88.31985473632812
+        },
+        {
+          "label": "Year",
+          "value": "2026",
+          "font": "500 64px / 83.2px \"FOT-Rodin Pro\", sans-serif",
+          "width": 180,
+          "scrollWidth": 180,
+          "textWidth": 176.63970947265625
+        }
+      ]
+    },
+    {
+      "id": "time",
+      "width": 854,
+      "height": 480,
+      "measurements": [
+        {
+          "label": "Hour",
+          "value": "09",
+          "font": "500 64px / 83.2px \"FOT-Rodin Pro\", sans-serif",
+          "width": 92,
+          "scrollWidth": 92,
+          "textWidth": 88.31985473632812
+        },
+        {
+          "label": "Minute",
+          "value": "24",
+          "font": "500 64px / 83.2px \"FOT-Rodin Pro\", sans-serif",
+          "width": 92,
+          "scrollWidth": 92,
+          "textWidth": 88.31985473632812
+        }
+      ]
+    },
+    {
+      "id": "date",
+      "width": 960,
+      "height": 720,
+      "measurements": [
+        {
+          "label": "Month",
+          "value": "10",
+          "font": "500 96px / 124.8px \"FOT-Rodin Pro\", sans-serif",
+          "width": 138,
+          "scrollWidth": 138,
+          "textWidth": 132.47994995117188
+        },
+        {
+          "label": "Day",
+          "value": "15",
+          "font": "500 96px / 124.8px \"FOT-Rodin Pro\", sans-serif",
+          "width": 138,
+          "scrollWidth": 138,
+          "textWidth": 132.47994995117188
+        },
+        {
+          "label": "Year",
+          "value": "2026",
+          "font": "500 96px / 124.8px \"FOT-Rodin Pro\", sans-serif",
+          "width": 270,
+          "scrollWidth": 270,
+          "textWidth": 264.95989990234375
+        }
+      ]
+    },
+    {
+      "id": "time",
+      "width": 960,
+      "height": 720,
+      "measurements": [
+        {
+          "label": "Hour",
+          "value": "09",
+          "font": "500 96px / 124.8px \"FOT-Rodin Pro\", sans-serif",
+          "width": 138,
+          "scrollWidth": 138,
+          "textWidth": 132.47994995117188
+        },
+        {
+          "label": "Minute",
+          "value": "24",
+          "font": "500 96px / 124.8px \"FOT-Rodin Pro\", sans-serif",
+          "width": 138,
+          "scrollWidth": 138,
+          "textWidth": 132.47994995117188
+        }
+      ]
+    },
+    {
+      "id": "date",
+      "width": 1280,
+      "height": 720,
+      "measurements": [
+        {
+          "label": "Month",
+          "value": "10",
+          "font": "500 96px / 124.8px \"FOT-Rodin Pro\", sans-serif",
+          "width": 138,
+          "scrollWidth": 138,
+          "textWidth": 132.47994995117188
+        },
+        {
+          "label": "Day",
+          "value": "15",
+          "font": "500 96px / 124.8px \"FOT-Rodin Pro\", sans-serif",
+          "width": 138,
+          "scrollWidth": 138,
+          "textWidth": 132.47994995117188
+        },
+        {
+          "label": "Year",
+          "value": "2026",
+          "font": "500 96px / 124.8px \"FOT-Rodin Pro\", sans-serif",
+          "width": 270,
+          "scrollWidth": 270,
+          "textWidth": 264.95989990234375
+        }
+      ]
+    },
+    {
+      "id": "time",
+      "width": 1280,
+      "height": 720,
+      "measurements": [
+        {
+          "label": "Hour",
+          "value": "09",
+          "font": "500 96px / 124.8px \"FOT-Rodin Pro\", sans-serif",
+          "width": 138,
+          "scrollWidth": 138,
+          "textWidth": 132.47994995117188
+        },
+        {
+          "label": "Minute",
+          "value": "24",
+          "font": "500 96px / 124.8px \"FOT-Rodin Pro\", sans-serif",
+          "width": 138,
+          "scrollWidth": 138,
+          "textWidth": 132.47994995117188
+        }
+      ]
+    }
+  ],
+  "captures": [
+    {
+      "id": "gamecube-font-fit",
+      "width": 640,
+      "height": 480,
+      "image": "details/gamecube-font-fit-640x480.png",
+      "mode": "4:3",
+      "title": "gamecube-font-fit",
+      "reference": "manual-314",
+      "referenceRole": "related-state",
+      "geometry": {
+        "width": 640,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Slot A",
+            "width": 184,
+            "height": 58,
+            "fontSize": "25px"
+          },
+          {
+            "name": "Slot B",
+            "width": 184,
+            "height": 58,
+            "fontSize": "25px"
+          },
+          {
+            "name": "Back",
+            "width": 224,
+            "height": 60,
+            "fontSize": "25px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Nintendo GameCube",
+            "fontSize": "11px"
+          },
+          {
+            "name": "Slot A",
+            "fontSize": "25px"
+          },
+          {
+            "name": "Slot B",
+            "fontSize": "25px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "25px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "gamecube-slot-b",
+      "width": 640,
+      "height": 480,
+      "image": "details/gamecube-slot-b-640x480.png",
+      "mode": "4:3",
+      "title": "GameCube Slot B",
+      "reference": "manual-314",
+      "referenceRole": "related-state",
+      "geometry": {
+        "width": 640,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Slot A",
+            "width": 184,
+            "height": 58,
+            "fontSize": "25px"
+          },
+          {
+            "name": "Slot B",
+            "width": 184,
+            "height": 58,
+            "fontSize": "25px"
+          },
+          {
+            "name": "Back",
+            "width": 224,
+            "height": 60,
+            "fontSize": "25px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Nintendo GameCube",
+            "fontSize": "11px"
+          },
+          {
+            "name": "Slot A",
+            "fontSize": "25px"
+          },
+          {
+            "name": "Slot B",
+            "fontSize": "25px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "25px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "save-sd",
+      "width": 640,
+      "height": 480,
+      "image": "details/save-sd-640x480.png",
+      "mode": "4:3",
+      "title": "SD Card save data",
+      "reference": "manual-314",
+      "referenceRole": "related-state",
+      "geometry": {
+        "width": 640,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Wii",
+            "width": 184,
+            "height": 58,
+            "fontSize": "25px"
+          },
+          {
+            "name": "SD Card",
+            "width": 184,
+            "height": 58,
+            "fontSize": "25px"
+          },
+          {
+            "name": "Back",
+            "width": 224,
+            "height": 60,
+            "fontSize": "25px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Wii",
+            "fontSize": "21px"
+          },
+          {
+            "name": "Wii",
+            "fontSize": "25px"
+          },
+          {
+            "name": "SD Card",
+            "fontSize": "25px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "25px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "date-font-fit",
+      "width": 640,
+      "height": 480,
+      "image": "details/date-font-fit-640x480.png",
+      "mode": "4:3",
+      "title": "date-font-fit",
+      "reference": "manual-314",
+      "referenceRole": "related-state",
+      "geometry": {
+        "width": 640,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Increase month",
+            "width": 45,
+            "height": 34,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Decrease month",
+            "width": 45,
+            "height": 34,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Increase day",
+            "width": 45,
+            "height": 34,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Decrease day",
+            "width": 45,
+            "height": 34,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Increase year",
+            "width": 45,
+            "height": 34,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Decrease year",
+            "width": 45,
+            "height": 34,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Back",
+            "width": 270,
+            "height": 62,
+            "fontSize": "26px"
+          },
+          {
+            "name": "Confirm",
+            "width": 270,
+            "height": 62,
+            "fontSize": "26px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Date",
+            "fontSize": "25px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "26px"
+          },
+          {
+            "name": "Confirm",
+            "fontSize": "26px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "time-font-fit",
+      "width": 640,
+      "height": 480,
+      "image": "details/time-font-fit-640x480.png",
+      "mode": "4:3",
+      "title": "time-font-fit",
+      "reference": "manual-314",
+      "referenceRole": "related-state",
+      "geometry": {
+        "width": 640,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Increase hour",
+            "width": 45,
+            "height": 34,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Decrease hour",
+            "width": 45,
+            "height": 34,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Increase minute",
+            "width": 45,
+            "height": 34,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Decrease minute",
+            "width": 45,
+            "height": 34,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Back",
+            "width": 270,
+            "height": 62,
+            "fontSize": "26px"
+          },
+          {
+            "name": "Confirm",
+            "width": 270,
+            "height": 62,
+            "fontSize": "26px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Time",
+            "fontSize": "25px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "26px"
+          },
+          {
+            "name": "Confirm",
+            "fontSize": "26px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "gamecube-font-fit",
+      "width": 854,
+      "height": 480,
+      "image": "details/gamecube-font-fit-854x480.png",
+      "mode": "16:9",
+      "title": "gamecube-font-fit",
+      "reference": "manual-314",
+      "referenceRole": "related-state",
+      "geometry": {
+        "width": 854,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Slot A",
+            "width": 184,
+            "height": 58,
+            "fontSize": "25px"
+          },
+          {
+            "name": "Slot B",
+            "width": 184,
+            "height": 58,
+            "fontSize": "25px"
+          },
+          {
+            "name": "Back",
+            "width": 224,
+            "height": 60,
+            "fontSize": "25px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Nintendo GameCube",
+            "fontSize": "11px"
+          },
+          {
+            "name": "Slot A",
+            "fontSize": "25px"
+          },
+          {
+            "name": "Slot B",
+            "fontSize": "25px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "25px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "gamecube-slot-b",
+      "width": 854,
+      "height": 480,
+      "image": "details/gamecube-slot-b-854x480.png",
+      "mode": "16:9",
+      "title": "GameCube Slot B",
+      "reference": "manual-314",
+      "referenceRole": "related-state",
+      "geometry": {
+        "width": 854,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Slot A",
+            "width": 184,
+            "height": 58,
+            "fontSize": "25px"
+          },
+          {
+            "name": "Slot B",
+            "width": 184,
+            "height": 58,
+            "fontSize": "25px"
+          },
+          {
+            "name": "Back",
+            "width": 224,
+            "height": 60,
+            "fontSize": "25px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Nintendo GameCube",
+            "fontSize": "11px"
+          },
+          {
+            "name": "Slot A",
+            "fontSize": "25px"
+          },
+          {
+            "name": "Slot B",
+            "fontSize": "25px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "25px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "save-sd",
+      "width": 854,
+      "height": 480,
+      "image": "details/save-sd-854x480.png",
+      "mode": "16:9",
+      "title": "SD Card save data",
+      "reference": "manual-314",
+      "referenceRole": "related-state",
+      "geometry": {
+        "width": 854,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Wii",
+            "width": 184,
+            "height": 58,
+            "fontSize": "25px"
+          },
+          {
+            "name": "SD Card",
+            "width": 184,
+            "height": 58,
+            "fontSize": "25px"
+          },
+          {
+            "name": "Back",
+            "width": 224,
+            "height": 60,
+            "fontSize": "25px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Wii",
+            "fontSize": "21px"
+          },
+          {
+            "name": "Wii",
+            "fontSize": "25px"
+          },
+          {
+            "name": "SD Card",
+            "fontSize": "25px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "",
+            "fontSize": "13px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "25px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "date-font-fit",
+      "width": 854,
+      "height": 480,
+      "image": "details/date-font-fit-854x480.png",
+      "mode": "16:9",
+      "title": "date-font-fit",
+      "reference": "manual-314",
+      "referenceRole": "related-state",
+      "geometry": {
+        "width": 854,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Increase month",
+            "width": 45,
+            "height": 34,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Decrease month",
+            "width": 45,
+            "height": 34,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Increase day",
+            "width": 45,
+            "height": 34,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Decrease day",
+            "width": 45,
+            "height": 34,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Increase year",
+            "width": 45,
+            "height": 34,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Decrease year",
+            "width": 45,
+            "height": 34,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Back",
+            "width": 266.875,
+            "height": 62,
+            "fontSize": "26px"
+          },
+          {
+            "name": "Confirm",
+            "width": 266.875,
+            "height": 62,
+            "fontSize": "26px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Date",
+            "fontSize": "25px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "26px"
+          },
+          {
+            "name": "Confirm",
+            "fontSize": "26px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "time-font-fit",
+      "width": 854,
+      "height": 480,
+      "image": "details/time-font-fit-854x480.png",
+      "mode": "16:9",
+      "title": "time-font-fit",
+      "reference": "manual-314",
+      "referenceRole": "related-state",
+      "geometry": {
+        "width": 854,
+        "height": 480,
+        "controls": [
+          {
+            "name": "Increase hour",
+            "width": 45,
+            "height": 34,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Decrease hour",
+            "width": 45,
+            "height": 34,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Increase minute",
+            "width": 45,
+            "height": 34,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Decrease minute",
+            "width": 45,
+            "height": 34,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Back",
+            "width": 266.875,
+            "height": 62,
+            "fontSize": "26px"
+          },
+          {
+            "name": "Confirm",
+            "width": 266.875,
+            "height": 62,
+            "fontSize": "26px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Time",
+            "fontSize": "25px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "26px"
+          },
+          {
+            "name": "Confirm",
+            "fontSize": "26px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "gamecube-font-fit",
+      "width": 960,
+      "height": 720,
+      "image": "details/gamecube-font-fit-960x720.png",
+      "mode": "4:3",
+      "title": "gamecube-font-fit",
+      "reference": "manual-314",
+      "referenceRole": "related-state",
+      "geometry": {
+        "width": 960,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Slot A",
+            "width": 276,
+            "height": 87,
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "Slot B",
+            "width": 276,
+            "height": 87,
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "Back",
+            "width": 336,
+            "height": 90,
+            "fontSize": "37.5px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Nintendo GameCube",
+            "fontSize": "16.5px"
+          },
+          {
+            "name": "Slot A",
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "Slot B",
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "37.5px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "gamecube-slot-b",
+      "width": 960,
+      "height": 720,
+      "image": "details/gamecube-slot-b-960x720.png",
+      "mode": "4:3",
+      "title": "GameCube Slot B",
+      "reference": "manual-314",
+      "referenceRole": "related-state",
+      "geometry": {
+        "width": 960,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Slot A",
+            "width": 276,
+            "height": 87,
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "Slot B",
+            "width": 276,
+            "height": 87,
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "Back",
+            "width": 336,
+            "height": 90,
+            "fontSize": "37.5px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Nintendo GameCube",
+            "fontSize": "16.5px"
+          },
+          {
+            "name": "Slot A",
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "Slot B",
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "37.5px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "save-sd",
+      "width": 960,
+      "height": 720,
+      "image": "details/save-sd-960x720.png",
+      "mode": "4:3",
+      "title": "SD Card save data",
+      "reference": "manual-314",
+      "referenceRole": "related-state",
+      "geometry": {
+        "width": 960,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Wii",
+            "width": 276,
+            "height": 87,
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "SD Card",
+            "width": 276,
+            "height": 87,
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "Back",
+            "width": 336,
+            "height": 90,
+            "fontSize": "37.5px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Wii",
+            "fontSize": "31.5px"
+          },
+          {
+            "name": "Wii",
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "SD Card",
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "37.5px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "date-font-fit",
+      "width": 960,
+      "height": 720,
+      "image": "details/date-font-fit-960x720.png",
+      "mode": "4:3",
+      "title": "date-font-fit",
+      "reference": "manual-314",
+      "referenceRole": "related-state",
+      "geometry": {
+        "width": 960,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Increase month",
+            "width": 67.5,
+            "height": 51,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Decrease month",
+            "width": 67.5,
+            "height": 51,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Increase day",
+            "width": 67.5,
+            "height": 51,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Decrease day",
+            "width": 67.5,
+            "height": 51,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Increase year",
+            "width": 67.5,
+            "height": 51,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Decrease year",
+            "width": 67.5,
+            "height": 51,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Back",
+            "width": 405,
+            "height": 93,
+            "fontSize": "39px"
+          },
+          {
+            "name": "Confirm",
+            "width": 405,
+            "height": 93,
+            "fontSize": "39px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Date",
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "39px"
+          },
+          {
+            "name": "Confirm",
+            "fontSize": "39px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "time-font-fit",
+      "width": 960,
+      "height": 720,
+      "image": "details/time-font-fit-960x720.png",
+      "mode": "4:3",
+      "title": "time-font-fit",
+      "reference": "manual-314",
+      "referenceRole": "related-state",
+      "geometry": {
+        "width": 960,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Increase hour",
+            "width": 67.5,
+            "height": 51,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Decrease hour",
+            "width": 67.5,
+            "height": 51,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Increase minute",
+            "width": 67.5,
+            "height": 51,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Decrease minute",
+            "width": 67.5,
+            "height": 51,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Back",
+            "width": 405,
+            "height": 93,
+            "fontSize": "39px"
+          },
+          {
+            "name": "Confirm",
+            "width": 405,
+            "height": 93,
+            "fontSize": "39px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Time",
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "39px"
+          },
+          {
+            "name": "Confirm",
+            "fontSize": "39px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "gamecube-font-fit",
+      "width": 1280,
+      "height": 720,
+      "image": "details/gamecube-font-fit-1280x720.png",
+      "mode": "16:9",
+      "title": "gamecube-font-fit",
+      "reference": "manual-314",
+      "referenceRole": "related-state",
+      "geometry": {
+        "width": 1280,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Slot A",
+            "width": 276,
+            "height": 87,
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "Slot B",
+            "width": 276,
+            "height": 87,
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "Back",
+            "width": 336,
+            "height": 90,
+            "fontSize": "37.5px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Nintendo GameCube",
+            "fontSize": "16.5px"
+          },
+          {
+            "name": "Slot A",
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "Slot B",
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "37.5px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "gamecube-slot-b",
+      "width": 1280,
+      "height": 720,
+      "image": "details/gamecube-slot-b-1280x720.png",
+      "mode": "16:9",
+      "title": "GameCube Slot B",
+      "reference": "manual-314",
+      "referenceRole": "related-state",
+      "geometry": {
+        "width": 1280,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Slot A",
+            "width": 276,
+            "height": 87,
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "Slot B",
+            "width": 276,
+            "height": 87,
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "Back",
+            "width": 336,
+            "height": 90,
+            "fontSize": "37.5px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Nintendo GameCube",
+            "fontSize": "16.5px"
+          },
+          {
+            "name": "Slot A",
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "Slot B",
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "37.5px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "save-sd",
+      "width": 1280,
+      "height": 720,
+      "image": "details/save-sd-1280x720.png",
+      "mode": "16:9",
+      "title": "SD Card save data",
+      "reference": "manual-314",
+      "referenceRole": "related-state",
+      "geometry": {
+        "width": 1280,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Wii",
+            "width": 276,
+            "height": 87,
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "SD Card",
+            "width": 276,
+            "height": 87,
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "Back",
+            "width": 336,
+            "height": 90,
+            "fontSize": "37.5px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Wii",
+            "fontSize": "31.5px"
+          },
+          {
+            "name": "Wii",
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "SD Card",
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "19.5px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "37.5px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "date-font-fit",
+      "width": 1280,
+      "height": 720,
+      "image": "details/date-font-fit-1280x720.png",
+      "mode": "16:9",
+      "title": "date-font-fit",
+      "reference": "manual-314",
+      "referenceRole": "related-state",
+      "geometry": {
+        "width": 1280,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Increase month",
+            "width": 67.5,
+            "height": 51,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Decrease month",
+            "width": 67.5,
+            "height": 51,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Increase day",
+            "width": 67.5,
+            "height": 51,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Decrease day",
+            "width": 67.5,
+            "height": 51,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Increase year",
+            "width": 67.5,
+            "height": 51,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Decrease year",
+            "width": 67.5,
+            "height": 51,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Back",
+            "width": 400.3125,
+            "height": 93,
+            "fontSize": "39px"
+          },
+          {
+            "name": "Confirm",
+            "width": 400.3125,
+            "height": 93,
+            "fontSize": "39px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Date",
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "39px"
+          },
+          {
+            "name": "Confirm",
+            "fontSize": "39px"
+          }
+        ],
+        "failures": []
+      }
+    },
+    {
+      "id": "time-font-fit",
+      "width": 1280,
+      "height": 720,
+      "image": "details/time-font-fit-1280x720.png",
+      "mode": "16:9",
+      "title": "time-font-fit",
+      "reference": "manual-314",
+      "referenceRole": "related-state",
+      "geometry": {
+        "width": 1280,
+        "height": 720,
+        "controls": [
+          {
+            "name": "Increase hour",
+            "width": 67.5,
+            "height": 51,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Decrease hour",
+            "width": 67.5,
+            "height": 51,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Increase minute",
+            "width": 67.5,
+            "height": 51,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Decrease minute",
+            "width": 67.5,
+            "height": 51,
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Back",
+            "width": 400.3125,
+            "height": 93,
+            "fontSize": "39px"
+          },
+          {
+            "name": "Confirm",
+            "width": 400.3125,
+            "height": 93,
+            "fontSize": "39px"
+          }
+        ],
+        "text": [
+          {
+            "name": "Time",
+            "fontSize": "37.5px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "",
+            "fontSize": "13.3333px"
+          },
+          {
+            "name": "Back",
+            "fontSize": "39px"
+          },
+          {
+            "name": "Confirm",
+            "fontSize": "39px"
+          }
+        ],
+        "failures": []
+      }
+    }
+  ],
+  "errors": [],
+  "missing": []
+}

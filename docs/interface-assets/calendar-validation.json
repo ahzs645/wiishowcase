@@ -1,0 +1,307 @@
+{
+  "sources": [
+    {
+      "month": 1,
+      "name": "February",
+      "rows": 4,
+      "file": "Screenshot 2026-02-08 at 12.05.09 PM.png"
+    },
+    {
+      "month": 2,
+      "name": "March",
+      "rows": 5,
+      "file": "Screenshot 2026-02-08 at 12.05.16 PM.png"
+    },
+    {
+      "month": 4,
+      "name": "May",
+      "rows": 6,
+      "file": "Screenshot 2026-02-09 at 12.41.24 PM.png"
+    }
+  ],
+  "checks": [
+    "640: February has 4 dynamic week rows",
+    "640: February shared Back is inside the footer and receives hits",
+    "640: March has 5 dynamic week rows",
+    "640: March shared Back is inside the footer and receives hits",
+    "640: May has 6 dynamic week rows",
+    "640: May shared Back is inside the footer and receives hits",
+    "640: Back exits the actual calendar",
+    "854: February has 4 dynamic week rows",
+    "854: February shared Back is inside the footer and receives hits",
+    "854: March has 5 dynamic week rows",
+    "854: March shared Back is inside the footer and receives hits",
+    "854: May has 6 dynamic week rows",
+    "854: May shared Back is inside the footer and receives hits",
+    "854: Back exits the actual calendar",
+    "960: February has 4 dynamic week rows",
+    "960: February shared Back is inside the footer and receives hits",
+    "960: March has 5 dynamic week rows",
+    "960: March shared Back is inside the footer and receives hits",
+    "960: May has 6 dynamic week rows",
+    "960: May shared Back is inside the footer and receives hits",
+    "960: Back exits the actual calendar",
+    "1280: February has 4 dynamic week rows",
+    "1280: February shared Back is inside the footer and receives hits",
+    "1280: March has 5 dynamic week rows",
+    "1280: March shared Back is inside the footer and receives hits",
+    "1280: May has 6 dynamic week rows",
+    "1280: May shared Back is inside the footer and receives hits",
+    "1280: Back exits the actual calendar"
+  ],
+  "captures": [
+    {
+      "month": "February",
+      "mode": "4:3",
+      "width": 640,
+      "height": 480,
+      "image": "calendar/february-640x480.png",
+      "reference": "sources/Screenshot 2026-02-08 at 12.05.09 PM.png",
+      "metrics": {
+        "rect": {
+          "x": 57,
+          "y": 38.5,
+          "width": 526,
+          "height": 403,
+          "top": 38.5,
+          "right": 583,
+          "bottom": 441.5,
+          "left": 57
+        },
+        "font": "\"FOT-Rodin Pro\", sans-serif"
+      }
+    },
+    {
+      "month": "March",
+      "mode": "4:3",
+      "width": 640,
+      "height": 480,
+      "image": "calendar/march-640x480.png",
+      "reference": "sources/Screenshot 2026-02-08 at 12.05.16 PM.png",
+      "metrics": {
+        "rect": {
+          "x": 57,
+          "y": 38.5,
+          "width": 526,
+          "height": 403,
+          "top": 38.5,
+          "right": 583,
+          "bottom": 441.5,
+          "left": 57
+        },
+        "font": "\"FOT-Rodin Pro\", sans-serif"
+      }
+    },
+    {
+      "month": "May",
+      "mode": "4:3",
+      "width": 640,
+      "height": 480,
+      "image": "calendar/may-640x480.png",
+      "reference": "sources/Screenshot 2026-02-09 at 12.41.24 PM.png",
+      "metrics": {
+        "rect": {
+          "x": 57,
+          "y": 38.5,
+          "width": 526,
+          "height": 403,
+          "top": 38.5,
+          "right": 583,
+          "bottom": 441.5,
+          "left": 57
+        },
+        "font": "\"FOT-Rodin Pro\", sans-serif"
+      }
+    },
+    {
+      "month": "February",
+      "mode": "16:9",
+      "width": 854,
+      "height": 480,
+      "image": "calendar/february-854x480.png",
+      "reference": "sources/Screenshot 2026-02-08 at 12.05.09 PM.png",
+      "metrics": {
+        "rect": {
+          "x": 164,
+          "y": 38.5,
+          "width": 526,
+          "height": 403,
+          "top": 38.5,
+          "right": 690,
+          "bottom": 441.5,
+          "left": 164
+        },
+        "font": "\"FOT-Rodin Pro\", sans-serif"
+      }
+    },
+    {
+      "month": "March",
+      "mode": "16:9",
+      "width": 854,
+      "height": 480,
+      "image": "calendar/march-854x480.png",
+      "reference": "sources/Screenshot 2026-02-08 at 12.05.16 PM.png",
+      "metrics": {
+        "rect": {
+          "x": 164,
+          "y": 38.5,
+          "width": 526,
+          "height": 403,
+          "top": 38.5,
+          "right": 690,
+          "bottom": 441.5,
+          "left": 164
+        },
+        "font": "\"FOT-Rodin Pro\", sans-serif"
+      }
+    },
+    {
+      "month": "May",
+      "mode": "16:9",
+      "width": 854,
+      "height": 480,
+      "image": "calendar/may-854x480.png",
+      "reference": "sources/Screenshot 2026-02-09 at 12.41.24 PM.png",
+      "metrics": {
+        "rect": {
+          "x": 164,
+          "y": 38.5,
+          "width": 526,
+          "height": 403,
+          "top": 38.5,
+          "right": 690,
+          "bottom": 441.5,
+          "left": 164
+        },
+        "font": "\"FOT-Rodin Pro\", sans-serif"
+      }
+    },
+    {
+      "month": "February",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "calendar/february-960x720.png",
+      "reference": "sources/Screenshot 2026-02-08 at 12.05.09 PM.png",
+      "metrics": {
+        "rect": {
+          "x": 85.5,
+          "y": 58.75,
+          "width": 789,
+          "height": 602.5,
+          "top": 58.75,
+          "right": 874.5,
+          "bottom": 661.25,
+          "left": 85.5
+        },
+        "font": "\"FOT-Rodin Pro\", sans-serif"
+      }
+    },
+    {
+      "month": "March",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "calendar/march-960x720.png",
+      "reference": "sources/Screenshot 2026-02-08 at 12.05.16 PM.png",
+      "metrics": {
+        "rect": {
+          "x": 85.5,
+          "y": 58.75,
+          "width": 789,
+          "height": 602.5,
+          "top": 58.75,
+          "right": 874.5,
+          "bottom": 661.25,
+          "left": 85.5
+        },
+        "font": "\"FOT-Rodin Pro\", sans-serif"
+      }
+    },
+    {
+      "month": "May",
+      "mode": "4:3",
+      "width": 960,
+      "height": 720,
+      "image": "calendar/may-960x720.png",
+      "reference": "sources/Screenshot 2026-02-09 at 12.41.24 PM.png",
+      "metrics": {
+        "rect": {
+          "x": 85.5,
+          "y": 58.75,
+          "width": 789,
+          "height": 602.5,
+          "top": 58.75,
+          "right": 874.5,
+          "bottom": 661.25,
+          "left": 85.5
+        },
+        "font": "\"FOT-Rodin Pro\", sans-serif"
+      }
+    },
+    {
+      "month": "February",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "calendar/february-1280x720.png",
+      "reference": "sources/Screenshot 2026-02-08 at 12.05.09 PM.png",
+      "metrics": {
+        "rect": {
+          "x": 245.5,
+          "y": 58.75,
+          "width": 789,
+          "height": 602.5,
+          "top": 58.75,
+          "right": 1034.5,
+          "bottom": 661.25,
+          "left": 245.5
+        },
+        "font": "\"FOT-Rodin Pro\", sans-serif"
+      }
+    },
+    {
+      "month": "March",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "calendar/march-1280x720.png",
+      "reference": "sources/Screenshot 2026-02-08 at 12.05.16 PM.png",
+      "metrics": {
+        "rect": {
+          "x": 245.5,
+          "y": 58.75,
+          "width": 789,
+          "height": 602.5,
+          "top": 58.75,
+          "right": 1034.5,
+          "bottom": 661.25,
+          "left": 245.5
+        },
+        "font": "\"FOT-Rodin Pro\", sans-serif"
+      }
+    },
+    {
+      "month": "May",
+      "mode": "16:9",
+      "width": 1280,
+      "height": 720,
+      "image": "calendar/may-1280x720.png",
+      "reference": "sources/Screenshot 2026-02-09 at 12.41.24 PM.png",
+      "metrics": {
+        "rect": {
+          "x": 245.5,
+          "y": 58.75,
+          "width": 789,
+          "height": 602.5,
+          "top": 58.75,
+          "right": 1034.5,
+          "bottom": 661.25,
+          "left": 245.5
+        },
+        "font": "\"FOT-Rodin Pro\", sans-serif"
+      }
+    }
+  ],
+  "errors": []
+}

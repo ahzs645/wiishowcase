@@ -1,6 +1,8 @@
 /* Generated from src/layout/system.js. */
 :root {
   --system-font-family: "Wii System", sans-serif;
+  --system-numeric-font-family: "FOT-Rodin Pro", sans-serif;
+  --wii-font-system: var(--system-font-family);
   --system-header: 64;
   --system-footer: 86;
   --system-title-size: 25;
@@ -15,6 +17,7 @@
   --system-field-width: 450;
   --system-digit-size: 64;
   --system-digit-gap: 12;
+  --system-digit-year-width: 180;
   --system-paper-width: 526;
   --system-paper-height: 384;
   --system-book-width: 474;
@@ -53,6 +56,11 @@
   --system-storage-action-inset: 34;
   --system-storage-action-top: 12;
   --system-storage-label-size: 20;
+  --system-storage-gamecube-title-size: 11;
+  --system-storage-gamecube-title-icon: 21;
+  --system-calendar-width: 526;
+  --system-calendar-action-width: 158;
+  --system-calendar-action-height: 52;
 }
 .wii-169 {
   --system-settings-title-left: 32;
@@ -70,6 +78,12 @@
   --system-settings-label-spacing: -0.6;
   --system-settings-title-spacing: -0.4;
 }
-@font-face { font-family: "Wii System"; src: url("/fonts/system/mplus-1p-400-latin.woff") format("woff"); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: "Wii System"; src: url("/fonts/system/mplus-1p-500-latin.woff") format("woff"); font-weight: 500; font-style: normal; font-display: swap; }
-@font-face { font-family: "Wii System"; src: url("/fonts/system/mplus-1p-700-latin.woff") format("woff"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Wii System"; src: url("/fonts/licensed/newrodin-db-latin.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Wii System"; src: url("/fonts/licensed/newrodin-db-latin.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Wii System"; src: url("/fonts/licensed/newrodin-eb-latin.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "FOT-Rodin Pro"; src: url("/fonts/licensed/rodin-l-latin.woff2") format("woff2"); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: "FOT-Rodin Pro"; src: url("/fonts/licensed/rodin-m-latin.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "FOT-Rodin Pro"; src: url("/fonts/licensed/rodin-db-latin.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "FOT-Rodin Pro"; src: url("/fonts/licensed/rodin-b-latin.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "FOT-Rodin Pro"; src: url("/fonts/licensed/rodin-eb-latin.woff2") format("woff2"); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "FOT-Rodin Pro"; src: url("/fonts/licensed/rodin-ub-latin.woff2") format("woff2"); font-weight: 900; font-style: normal; font-display: swap; }

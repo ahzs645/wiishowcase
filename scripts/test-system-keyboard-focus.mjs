@@ -58,7 +58,7 @@ try {
 } finally {
   await browser.close();
   await fs.writeFile(
-    "docs/system-menu-fixes/keyboard-focus-checks.json",
+    `${process.env.FIXES_ARTIFACTS || "docs/system-menu-fixes"}/keyboard-focus-checks.json`,
     JSON.stringify(report, null, 2) + "\n",
   );
 }

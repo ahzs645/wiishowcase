@@ -18,6 +18,7 @@ const check = (label, v) => {
   console.log("PASS", label);
 };
 try {
+  if (!process.env.SD_ONLY) {
   const hostContext = await browser.newContext({
       viewport: { width: 640, height: 480 },
     }),
@@ -135,6 +136,7 @@ try {
   await companion.screenshot({ path: `${output}/companion-negotiated.png` });
   await companionContext.close();
   await hostContext.close();
+  }
   // The current eight-channel inventory cannot fill 47 unique internal slots.
   // Mount the real SD component with an in-memory future-inventory fixture.
   for (const [width, height] of [
@@ -155,8 +157,13 @@ try {
       const { createRoot } = ReactDOM;
       const { default: SDMenu } =
         await import("/wiishowcase/src/components/system/SDMenu.jsx");
-      const { updateSystem } =
-        await import("/wiishowcase/src/lib/systemState.js");
+      // A live Vite server may append a cache-busting timestamp after HMR.
+      // Seed the state instance consumed by the application, not a second
+      // singleton created by importing the bare URL alongside that version.
+      const stateURL = performance.getEntriesByType("resource")
+        .map(r => r.name)
+        .find(url => new URL(url).pathname.endsWith("/src/lib/systemState.js"));
+      const { updateSystem } = await import(stateURL || "/wiishowcase/src/lib/systemState.js");
       updateSystem((s) => ({
         ...s,
         sd: ["mii"],

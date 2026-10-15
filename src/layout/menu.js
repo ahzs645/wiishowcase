@@ -36,6 +36,7 @@ export const MENU_LAYOUT = {
       dateBottom: 38,
       dateFontSize: 32,
       dateFontWeight: 700,
+      dateLineHeight: 1.25,
       periodFontSize: 18,
       periodGap: 16,
       periodBottom: -5,
@@ -90,9 +91,9 @@ export const MENU_LAYOUT = {
     colonY: [10, 26],
     colonRadius: 2.5,
     fontFamily: "Wii Menu Date",
-    fontAsset: "public/fonts/menu/mplus-1p-bold-latin.woff",
+    fontAsset: "public/fonts/licensed/rodin-b-latin.woff2",
     fontStatus:
-      "OFL M PLUS subset approximates Rodin; segmented time glyphs are recreated SVG artwork.",
+      "User-supplied FOT-Rodin Pro B web subset, licensed for this public showcase; segmented time glyphs remain recreated SVG artwork.",
     fallbackRegion: "E",
     countryRegions: { "United States": "U", Canada: "U", Japan: "J" },
     regions: {

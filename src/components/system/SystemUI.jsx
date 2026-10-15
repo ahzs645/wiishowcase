@@ -1,11 +1,23 @@
 import { createPortal } from "react-dom";
 import { playSystemFeedback } from "../../lib/systemFeedback";
 import useSystemModal from "../../lib/useSystemModal";
-export function WiiButton({ children, onClick, onMouseEnter, ...props }) {
+import tileData from "../../../Wii.css/assets/interface/tile-data.svg";
+import tileSettings from "../../../Wii.css/assets/interface/tile-settings.svg";
+import tileWii from "../../../Wii.css/assets/interface/tile-wii.svg";
+import tileGamecube from "../../../Wii.css/assets/interface/tile-gamecube.svg";
+import SystemArt from "./SystemArt";
+const TILES = { data: tileData, saves: tileData, settings: tileSettings, wii: tileWii, gamecube: tileGamecube };
+export function WiiTile({ kind, children, ...props }) {
+  return <WiiButton className={`system-tile wii-system-tile${TILES[kind] ? " has-supplied-surface" : ""}`} {...props}>
+    {TILES[kind] ? <img className="wii-system-tile__surface" src={TILES[kind]} alt="" aria-hidden="true" /> : <SystemArt kind={kind} />}
+    <span className="wii-system-tile__label">{children}</span>
+  </WiiButton>;
+}
+export function WiiButton({ children, className = "", variant = "default", onClick, onMouseEnter, ...props }) {
   return (
     <button
       type="button"
-      className="system-button"
+      className={`system-button wii-system-button${variant === "default" ? "" : ` wii-system-button--${variant}`} ${className}`.trim()}
       {...props}
       onMouseEnter={(event) => {
         playSystemFeedback("hover");
@@ -44,7 +56,7 @@ export function SystemDialog({
       <section
         ref={modal.ref}
         tabIndex={-1}
-        className="system-dialog"
+        className={`system-dialog${variant === "composer" ? " wii-message-paper" : ""}${variant === "composer" && title === "Letter" ? " wii-message-paper--letter" : ""}`}
         role="dialog"
         aria-modal="true"
         aria-label={title}

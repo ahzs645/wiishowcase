@@ -7,11 +7,10 @@ import {
   getStorageError,
 } from "../../lib/systemState";
 import { resolveMenuRegion } from "../../lib/menuClock";
-import { WiiButton, SystemDialog } from "./SystemUI";
+import { WiiButton, WiiTile, SystemDialog } from "./SystemUI";
 import { ChoiceList, DateSelector, TimeSelector } from "./SettingsControls";
 import SystemKeyboard from "./SystemKeyboard";
 import SystemArt from "./SystemArt";
-import settingsIcon from "../../../Wii.css/assets/settings-icon.png";
 
 const PAGES = [
   ["Console Nickname", "Calendar", "Screen", "Sound"],
@@ -179,7 +178,7 @@ export default function SettingsPanel({
   const list = (labels) => (
     <div className="system-settings-list">
       {labels.map((label) => (
-        <WiiButton key={label} onClick={() => go(label)}>
+        <WiiButton key={label} variant="choice" onClick={() => go(label)}>
           {label}
         </WiiButton>
       ))}
@@ -234,14 +233,7 @@ export default function SettingsPanel({
     content = (
       <div className="system-tile-grid">
         {["Data Management", "Wii Settings"].map((label) => (
-          <button className="system-tile" key={label} onClick={() => go(label)}>
-            {label === "Wii Settings" ? (
-              <img src={settingsIcon} alt="" />
-            ) : (
-              <SystemArt kind="data" />
-            )}
-            <span>{label}</span>
-          </button>
+          <WiiTile kind={label === "Wii Settings" ? "settings" : "data"} key={label} onClick={() => go(label)}>{label}</WiiTile>
         ))}
       </div>
     );
@@ -252,6 +244,7 @@ export default function SettingsPanel({
           {PAGES[page].map((label) => (
             <WiiButton
               key={label}
+              variant="choice"
               onClick={() =>
                 label === "Wii System Update" ? onSystemUpdate() : go(label)
               }
@@ -266,9 +259,7 @@ export default function SettingsPanel({
             aria-label="Previous Settings page"
             onClick={() => setPage(page - 1)}
           >
-            <svg viewBox="0 0 46 48" aria-hidden="true">
-              <path d="m12 5 23 19-23 19 5-19z" />
-            </svg>
+            <span className="wii-icon wii-icon-control-next" aria-hidden="true" />
           </button>
         )}
         {page < 2 && (
@@ -277,9 +268,7 @@ export default function SettingsPanel({
             aria-label="Next Settings page"
             onClick={() => setPage(page + 1)}
           >
-            <svg viewBox="0 0 46 48" aria-hidden="true">
-              <path d="m12 5 23 19-23 19 5-19z" />
-            </svg>
+            <span className="wii-icon wii-icon-control-next" aria-hidden="true" />
           </button>
         )}
         <div className="system-settings-pages">
@@ -786,7 +775,7 @@ export default function SettingsPanel({
             </span>
           ) : (
             <span className="system-wii-logo" aria-hidden="true">
-              Wii
+              <span className="wii-icon wii-icon-wii" />
             </span>
           )}
         </header>
@@ -797,10 +786,10 @@ export default function SettingsPanel({
           </p>
         </main>
         <footer>
-          <button className="wii-settings-back system-button" onClick={back}>
+          <WiiButton className="wii-settings-back" variant="action" onClick={back}>
             Back
-          </button>
-          {needsConfirm && <WiiButton onClick={save}>Confirm</WiiButton>}
+          </WiiButton>
+          {needsConfirm && <WiiButton variant="action" onClick={save}>Confirm</WiiButton>}
           {extraFooter}
         </footer>
       </section>

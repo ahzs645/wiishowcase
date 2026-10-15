@@ -10,6 +10,7 @@ import './layout/menu.generated.css';
 import './layout/system.generated.css';
 import './system-interface.css';
 import './system-adapters.css';
+import './interface-assets.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

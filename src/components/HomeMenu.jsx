@@ -96,7 +96,7 @@ export default function HomeMenu({
                     )
                   }
                 >
-                  −
+                  <span className="wii-icon wii-icon-control-minus" aria-hidden="true" />
                 </WiiButton>
                 <div
                   className="remote-volume-bars"
@@ -123,7 +123,7 @@ export default function HomeMenu({
                     )
                   }
                 >
-                  ＋
+                  <span className="wii-icon wii-icon-control-plus" aria-hidden="true" />
                 </WiiButton>
               </div>
               <div className="remote-setting-row">

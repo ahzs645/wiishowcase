@@ -35,10 +35,10 @@ ${declarations(layout.tokens.common)}
 .wii-169 {
 ${declarations(layout.tokens.modes["16:9"])}
 }
-/* OFL Latin subset; approximates native Rodin. */
+/* Site-licensed user-supplied font; see public/fonts/licensed/manifest.json. */
 @font-face {
   font-family: "${layout.clock.fontFamily}";
-  src: url("/${layout.clock.fontAsset.replace(/^public\//, "")}") format("woff");
+  src: url("/${layout.clock.fontAsset.replace(/^public\//, "")}") format("${layout.clock.fontAsset.endsWith('.woff2') ? 'woff2' : 'woff'}");
   font-weight: ${layout.tokens.common.dateFontWeight};
   font-style: normal;
   font-display: swap;
@@ -47,6 +47,8 @@ ${declarations(layout.tokens.modes["16:9"])}
 const systemCSS = `/* Generated from src/layout/system.js. */
 :root {
   --system-font-family: "${SYSTEM_LAYOUT.font.family}", sans-serif;
+  --system-numeric-font-family: "${SYSTEM_LAYOUT.font.numericFamily}", sans-serif;
+  --wii-font-system: var(--system-font-family);
 ${Object.entries(SYSTEM_LAYOUT.tokens)
   .map(([key, value]) => `  --system-${kebab(key)}: ${value};`)
   .join("\n")}
@@ -59,7 +61,7 @@ ${Object.entries(SYSTEM_LAYOUT.modes || {})
         .join("\n")}\n}`,
   )
   .join("\n")}
-${[400, 500, 700].map((weight) => `@font-face { font-family: "Wii System"; src: url("/fonts/system/mplus-1p-${weight}-latin.woff") format("woff"); font-weight: ${weight}; font-style: normal; font-display: swap; }`).join("\n")}
+${SYSTEM_LAYOUT.font.faces.map(({family, weight, asset}) => `@font-face { font-family: "${family}"; src: url("/${asset.replace(/^public\//, '')}") format("woff2"); font-weight: ${weight}; font-style: normal; font-display: swap; }`).join("\n")}
 `;
 
 // Validate evidence joins rather than copying independent measurement values
@@ -75,10 +77,7 @@ for (const screen of Object.values(SYSTEM_LAYOUT.screens)) {
       throw new Error(`Unknown system layout reference: ${id}`);
   }
 }
-for (const weight of [400, 500, 700])
-  await fs.access(
-    path.join(root, `public/fonts/system/mplus-1p-${weight}-latin.woff`),
-  );
+for (const face of SYSTEM_LAYOUT.font.faces) await fs.access(path.join(root, face.asset));
 for (const evidence of [
   layout.evidence.research,
   layout.evidence.measurements,
@@ -157,7 +156,7 @@ if (otherMenus) {
 }
 let systemFixes,
   systemComparisonFolder = "system-menu-fixes";
-for (const folder of ["system-menu-fixes", "system-menu-refinement"]) {
+for (const folder of ["system-menu-fixes", "system-menu-refinement", "interface-assets"]) {
   try {
     systemFixes = await read(`${folder}/comparison.json`);
     systemComparisonFolder = folder;
@@ -202,6 +201,7 @@ if (systemFixes)
 try {
   const storage = await read("storage-menu-refinement/comparison.json");
   for (const state of storage.states) {
+    if (systemComparisonFolder === "interface-assets" && systemFixes.states.some(s=>s.id===state.id)) continue;
     const existing = screens.find((screen) => screen.id === state.id);
     const updated = {
       id: state.id,
@@ -229,6 +229,8 @@ const rows = Object.entries(layout.tokens.common).map(([name, value]) => [
   String(wide[name]),
   name.endsWith("Percent")
     ? "%"
+    : name.endsWith("LineHeight")
+      ? "unitless"
     : name.endsWith("Weight")
       ? "font weight"
       : "480-line units",

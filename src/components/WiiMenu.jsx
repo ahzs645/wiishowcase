@@ -2,6 +2,7 @@ import { useState, useCallback, useRef, useEffect, useMemo } from "react";
 import { useDateTime, ClockTime, ClockDate } from "./Clock";
 import ChannelCard from "./ChannelCard";
 import MenuCurve from "./system/MenuCurve";
+import { WiiButton } from "./system/SystemUI";
 import DiscChannelContent from "./channels/DiscChannelContent";
 import MiiChannelContent from "./channels/MiiChannelContent";
 import PhotoChannelContent from "./channels/PhotoChannelContent";
@@ -721,6 +722,7 @@ export default function WiiMenu({
           data-wii-calendar=""
           data-calendar-animation="drop"
           data-calendar-hidden=""
+          data-calendar-fit="none"
           className="wii-calendar"
         >
           <div
@@ -755,6 +757,7 @@ export default function WiiMenu({
                   ></table>
                 </div>
                 <div className="wii-calendar-footer">
+                  <WiiButton variant="action" className="calendar-native-back" onClick={closeCalendarMode}>Back</WiiButton>
                   <div
                     className="wii-calendar-month"
                     data-calendar-month=""
@@ -910,23 +913,6 @@ export default function WiiMenu({
           </div>
         </div>
 
-        {/* Calendar back track — slides in from the left when calendar is open */}
-        <div
-          className="wii-track-btn calendar-back-track"
-          aria-hidden={!calendarOpen || undefined}
-          inert={!calendarOpen ? "" : undefined}
-        >
-          <div className="calendar-back-track-capsule">
-            <button
-              className="wii-btn-start wii-btn-start-md"
-              onClick={closeCalendarMode}
-              type="button"
-            >
-              <div className="wii-btn-start-highlight-sharp"></div>
-              <span>Back</span>
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   );

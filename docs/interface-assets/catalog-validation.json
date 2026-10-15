@@ -1,0 +1,90 @@
+{
+  "sourceFiles": 27,
+  "artboards": 45,
+  "fontSpecimens": 8,
+  "calendarCombinations": 12,
+  "errors": [],
+  "missing": [],
+  "fonts": [
+    {
+      "fonts": [
+        {
+          "familyName": "FOT-NewRodin Pro DB",
+          "postScriptName": "NewRodinPro-DB",
+          "isCustomFont": true,
+          "glyphCount": 50
+        }
+      ]
+    },
+    {
+      "fonts": [
+        {
+          "familyName": "FOT-NewRodin Pro EB",
+          "postScriptName": "NewRodinPro-EB",
+          "isCustomFont": true,
+          "glyphCount": 50
+        }
+      ]
+    },
+    {
+      "fonts": [
+        {
+          "familyName": "FOT-Rodin Pro L",
+          "postScriptName": "RodinPro-L",
+          "isCustomFont": true,
+          "glyphCount": 51
+        }
+      ]
+    },
+    {
+      "fonts": [
+        {
+          "familyName": "FOT-Rodin Pro M",
+          "postScriptName": "RodinPro-M",
+          "isCustomFont": true,
+          "glyphCount": 51
+        }
+      ]
+    },
+    {
+      "fonts": [
+        {
+          "familyName": "FOT-Rodin Pro DB",
+          "postScriptName": "RodinPro-DB",
+          "isCustomFont": true,
+          "glyphCount": 50
+        }
+      ]
+    },
+    {
+      "fonts": [
+        {
+          "familyName": "FOT-Rodin Pro B",
+          "postScriptName": "RodinPro-B",
+          "isCustomFont": true,
+          "glyphCount": 50
+        }
+      ]
+    },
+    {
+      "fonts": [
+        {
+          "familyName": "FOT-Rodin Pro EB",
+          "postScriptName": "RodinPro-EB",
+          "isCustomFont": true,
+          "glyphCount": 50
+        }
+      ]
+    },
+    {
+      "fonts": [
+        {
+          "familyName": "FOT-Rodin Pro UB",
+          "postScriptName": "RodinPro-UB",
+          "isCustomFont": true,
+          "glyphCount": 50
+        }
+      ]
+    }
+  ]
+}

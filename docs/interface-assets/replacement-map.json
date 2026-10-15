@@ -1,0 +1,110 @@
+[
+  {
+    "element": "System action buttons",
+    "implementation": "Wii.css .wii-system-button; SystemUI.WiiButton",
+    "decision": "Standardized",
+    "detail": "One surface/state owner; React adds one sound adapter. Existing fitted action/choice SVGs are retained framework reconstructions."
+  },
+  {
+    "element": "Options and storage tiles",
+    "implementation": "Wii.css .wii-system-tile; SystemUI.WiiTile",
+    "decision": "Replaced",
+    "detail": "Supplied Data/Settings/Wii/GameCube card surfaces with live labels. Viewports exclude source padding; artwork keeps its original source pixels."
+  },
+  {
+    "element": "Storage breadcrumbs",
+    "implementation": "SystemArt + shared Wii.css exports",
+    "decision": "Replaced where matched",
+    "detail": "Supplied console/card artwork replaces local silhouettes. The Channels stack remains the existing reconstruction because the Address Book artwork has a different meaning."
+  },
+  {
+    "element": "Wii logos, mail and letter pin",
+    "implementation": "Existing Wii.css .wii-icon classes and assets",
+    "decision": "Reused",
+    "detail": "Uploaded files match the framework byte-for-byte; existing references are reused. Plain Settings Wii text now uses the shared vector logo."
+  },
+  {
+    "element": "Memo / Letter / Address Book choices",
+    "implementation": "MessageArt + Wii.css interface assets",
+    "decision": "Replaced",
+    "detail": "Supplied notepad vector, open envelope SVG and Address Book PNG replace hand-drawn shapes."
+  },
+  {
+    "element": "Memo composer / opened Memo",
+    "implementation": "Wii.css .wii-message-paper + fitted adapter",
+    "decision": "Replaced",
+    "detail": "Supplied paper replaces CSS surfaces; old painted body/header layers are cleared so the paper is visible. Text and buttons remain live."
+  },
+  {
+    "element": "Letter composer / opened letter",
+    "implementation": "Wii.css .wii-message-paper--letter",
+    "decision": "Replaced",
+    "detail": "Supplied vector paper with the original header, borders and logo. Recipients, attachments and local save behavior remain interactive."
+  },
+  {
+    "element": "Message Board invite envelopes",
+    "implementation": "Shared closed-envelope SVG",
+    "decision": "Replaced",
+    "detail": "Supplied envelope replaces the generic invite card surface. Only the full-canvas presentation backgrounds were removed from envelope SVGs."
+  },
+  {
+    "element": "HOME remote and volume controls",
+    "implementation": "Wii.css .wii-icon-remote / control-plus / control-minus",
+    "decision": "Replaced",
+    "detail": "Exported white remote vector and supplied plus/minus artwork replace the former icon and text glyphs."
+  },
+  {
+    "element": "Date/time and Settings arrows",
+    "implementation": "Wii.css .wii-icon-control-next",
+    "decision": "Replaced",
+    "detail": "Shared arrow artwork replaces inline triangles. Orientation is a layout transform; numeric fields use supplied Rodin Medium and complete-value width checks."
+  },
+  {
+    "element": "SD Menu return control",
+    "implementation": "Wii.css .wii-icon-footer-menu",
+    "decision": "Replaced",
+    "detail": "Supplied Wii orb replaces the locally reconstructed return icon. Page slots and sculpted footer remain the source-linked adapter."
+  },
+  {
+    "element": "Interactive Calendar",
+    "implementation": "Existing Wii.css calendar API + source-linked layout",
+    "decision": "Reused and fitted",
+    "detail": "Supplied dated February/March/May screenshots are comparison sources. Removed double fitting, used Rodin Medium and moved the shared Back button into the calendar footer."
+  },
+  {
+    "element": "System, keyboard, date and AM/PM fonts",
+    "implementation": "Site-licensed subsets + font roles in layout registry",
+    "decision": "Replaced",
+    "detail": "NewRodin DB/EB for system labels, Rodin Medium for editable numbers/calendar, Rodin Bold for menu date/AM/PM. All eight supplied faces have recorded hashes and specimens."
+  },
+  {
+    "element": "Shop keyboard behavior",
+    "implementation": "Existing Wii.css Shop keyboard profile",
+    "decision": "Retained",
+    "detail": "The chosen Shift policy, physical-key behavior and sound profile are preserved; system font sharing does not replace Shop input logic."
+  },
+  {
+    "element": "Channel banners, icons and application views",
+    "implementation": "Native WAD rendering + existing Wii.css channel primitives",
+    "decision": "Retained",
+    "detail": "Uploaded static imagery is not a replacement for animated native channel data or application input adapters."
+  },
+  {
+    "element": "Save-game icons, avatars, sensor and screen diagrams",
+    "implementation": "Existing fitted browser adapters",
+    "decision": "No matching replacement",
+    "detail": "The supplied archive does not contain matching game-save imagery, individual contact silhouettes or native hardware state diagrams."
+  },
+  {
+    "element": "Open Address Book pages and registration",
+    "implementation": "Existing interactive MessageTools forms",
+    "decision": "Retained",
+    "detail": "The supplied closed-book, computer and phone variants are cataloged; they do not replace an open book or a combined address field with a different semantic view."
+  },
+  {
+    "element": "Partial button, glyph fragments and alternate mail/disc art",
+    "implementation": "Source catalog / provenance",
+    "decision": "Reference only",
+    "detail": "The standalone AI is a border plus a clipped reference; fragmented glyphs are incomplete. Existing complete vector/native equivalents remain in use."
+  }
+]

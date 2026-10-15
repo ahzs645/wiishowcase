@@ -2,8 +2,56 @@
   "profile": "retail-wii-4x-system",
   "font": {
     "family": "Wii System",
-    "source": "M PLUS 1p (SIL OFL)",
-    "approximation": true
+    "source": "User-supplied FOT-NewRodin Pro DB/EB; licensed public-site embedding confirmed 2026-10-15",
+    "approximation": false,
+    "numericFamily": "FOT-Rodin Pro",
+    "faces": [
+      {
+        "family": "Wii System",
+        "weight": 400,
+        "asset": "public/fonts/licensed/newrodin-db-latin.woff2"
+      },
+      {
+        "family": "Wii System",
+        "weight": 500,
+        "asset": "public/fonts/licensed/newrodin-db-latin.woff2"
+      },
+      {
+        "family": "Wii System",
+        "weight": 700,
+        "asset": "public/fonts/licensed/newrodin-eb-latin.woff2"
+      },
+      {
+        "family": "FOT-Rodin Pro",
+        "weight": 300,
+        "asset": "public/fonts/licensed/rodin-l-latin.woff2"
+      },
+      {
+        "family": "FOT-Rodin Pro",
+        "weight": 500,
+        "asset": "public/fonts/licensed/rodin-m-latin.woff2"
+      },
+      {
+        "family": "FOT-Rodin Pro",
+        "weight": 600,
+        "asset": "public/fonts/licensed/rodin-db-latin.woff2"
+      },
+      {
+        "family": "FOT-Rodin Pro",
+        "weight": 700,
+        "asset": "public/fonts/licensed/rodin-b-latin.woff2"
+      },
+      {
+        "family": "FOT-Rodin Pro",
+        "weight": 800,
+        "asset": "public/fonts/licensed/rodin-eb-latin.woff2"
+      },
+      {
+        "family": "FOT-Rodin Pro",
+        "weight": 900,
+        "asset": "public/fonts/licensed/rodin-ub-latin.woff2"
+      }
+    ]
   },
   "tokens": {
     "header": 64,
@@ -20,6 +68,7 @@
     "fieldWidth": 450,
     "digitSize": 64,
     "digitGap": 12,
+    "digitYearWidth": 180,
     "paperWidth": 526,
     "paperHeight": 384,
     "bookWidth": 474,
@@ -57,7 +106,12 @@
     "storageActionWidth": 224,
     "storageActionInset": 34,
     "storageActionTop": 12,
-    "storageLabelSize": 20
+    "storageLabelSize": 20,
+    "storageGamecubeTitleSize": 11,
+    "storageGamecubeTitleIcon": 21,
+    "calendarWidth": 526,
+    "calendarActionWidth": 158,
+    "calendarActionHeight": 52
   },
   "modes": {
     "16:9": {
@@ -151,7 +205,7 @@
     }
   },
   "limits": [
-    "Fonts/artwork are approximations",
+    "Supplied Rodin glyphs are authentic; artwork and native layout matching remain independently assessed",
     "Some references are cropped or related states",
     "Physical Wii hardware and retired online services use browser adapters"
   ]
