@@ -148,7 +148,7 @@ live browser check. It is not listed as a defect or a fix.
 
 Native fidelity is still incomplete. HOME/SD proportions, supplied versus native
 art differences, Address Book details, date/time arrows and several network and
-parental-control views remain documented. Eight states lack native references;
+parental-control views remain documented. At the time of that review, eight states lacked native references;
 others have only related states or low-resolution/cropped illustrations. A
 contain-fitted opposite-aspect overlay is not a registered native measurement.
 No accuracy percentage or pixel-identical status is assigned.
@@ -171,3 +171,42 @@ npm run test:interface-visual-review
 Render new inspection sheets with `scripts/render-interface-review-sheets.py`.
 Rendering does not perform a manual inspection. Keep old sheets under their
 source revision, and update the notes only after viewing the new evidence.
+
+Additional screenshot research, October 15, 2026
+
+The [supplementary reference gallery](interface-assets/references/index.html)
+contains 50 newly collected and visually inspected images: 6 from Western
+Kentucky University, 15 from Nintendo World Report's March 2009 SD Menu
+walkthrough, 20 from Support.com's parental-controls guide, and 9 from WiiMart's
+support documentation. One previously collected NWR photo and one explicitly
+identified vWii dialog are excluded. Broken Nintendo image URLs and blocked
+sources are recorded in the source ledger rather than counted as screenshots.
+
+Thirty-four images map to 16 current screens, with all four capture sizes and
+optional opacity overlays. Sixteen show additional flows or components without
+a matching capture. The original files, dimensions, SHA-256 hashes, source URLs,
+view mappings and limitations are maintained in
+`interface-assets/references/references.json`. No images are downloaded during
+the build. All files retain their original bytes and proportions.
+
+The most useful new evidence is Console Information (MAC addresses rather than
+the current Wii Number display), separate secret-question selection and answer
+steps, and the User Agreements activation/review/document sequence. Actual
+Channels grid and selected-item photographs improve structural evidence for
+those storage screens. SD welcome/help, Auto Manage criteria and channel lists,
+and returning-user parental PIN prompts identify further flows to implement.
+
+All new sources are labeled **structure only**: photographs have perspective,
+some captures are cropped/resized or annotated, and the WiiMart material involves
+community-restored services. Dimensions alone do not establish 4:3 or 16:9.
+Only explicitly visible firmware labels are treated as confirmed. The gallery
+never stretches a source to our aspect ratio. Its overlay is uncalibrated and
+must not be used as a pixel-accuracy measurement. Existing review notes, initial
+inspection sheets and the historical eight-missing-reference count are retained;
+this supplementary collection provides new examples for three of those screens,
+not a new full manual overlay review.
+
+Rebuild with `npm run build:interface-references`. Serve `docs` on port 4957 and
+run `npm run test:interface-references` to check original hashes/image dimensions,
+all 136 capture/overlay combinations, missing-state handling, source filters and
+four responsive widths.

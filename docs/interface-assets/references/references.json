@@ -1,0 +1,1094 @@
+{
+  "date": "2026-10-15",
+  "scope": "Supplementary source research after the 66-screen manual review. Does not modify historical review findings or certify pixel accuracy.",
+  "references": [
+    {
+      "id": "wku-5",
+      "title": "Wii Menu with modified channel inventory",
+      "family": "wku",
+      "image": "images/wku-5.png",
+      "sourceURL": "https://www.wku.edu/its/toppertech/wii.php",
+      "imageURL": "https://www.wku.edu/its/toppertech/images/wii1.png?ox=",
+      "originalSize": [
+        575,
+        390
+      ],
+      "sha256": "c0c9cc959dc9c90adeb6f016ad14ba68c013b589b3dd1c9d958a186ea4092bc9",
+      "states": [],
+      "notes": "Visible Homebrew/USB entries; use only for shared menu chrome.",
+      "limits": "Source is 575\u00d7390 with unverified display aspect/cropping. Preserve original ratio; structure comparison only. English US. Version 3.4U is visible only on the Settings 1 image in this series.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "wku-6",
+      "title": "Wii Options",
+      "family": "wku",
+      "image": "images/wku-6.png",
+      "sourceURL": "https://www.wku.edu/its/toppertech/wii.php",
+      "imageURL": "https://www.wku.edu/its/toppertech/images/wii2.png",
+      "originalSize": [
+        575,
+        390
+      ],
+      "sha256": "d8bbe6f72eed0615a7c99d29c5e03884d4909a53deaafab19a456c6bec351c24",
+      "states": [
+        "options"
+      ],
+      "notes": "Pointer hover on Wii Settings.",
+      "limits": "Source is 575\u00d7390 with unverified display aspect/cropping. Preserve original ratio; structure comparison only. English US. Version 3.4U is visible only on the Settings 1 image in this series.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "wku-7",
+      "title": "System Settings 1 \u2014 3.4U",
+      "family": "wku",
+      "image": "images/wku-7.png",
+      "sourceURL": "https://www.wku.edu/its/toppertech/wii.php",
+      "imageURL": "https://www.wku.edu/its/toppertech/images/wii3.png",
+      "originalSize": [
+        575,
+        390
+      ],
+      "sha256": "156408d8d08cf7fa340175d699f18401a382130dd41108ebdfb00e22e81843ec",
+      "states": [
+        "settings-one"
+      ],
+      "notes": "Ver. 3.4U is visible. Hovered page arrow changes its size.",
+      "limits": "Source is 575\u00d7390 with unverified display aspect/cropping. Preserve original ratio; structure comparison only. English US. Version 3.4U is visible only on the Settings 1 image in this series.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "wku-8",
+      "title": "System Settings 2 \u2014 Internet hover",
+      "family": "wku",
+      "image": "images/wku-8.png",
+      "sourceURL": "https://www.wku.edu/its/toppertech/wii.php",
+      "imageURL": "https://www.wku.edu/its/toppertech/images/wii4.png",
+      "originalSize": [
+        575,
+        390
+      ],
+      "sha256": "c5db032390b9aa398d6ab7fee054fb7c77ef2f8c95baca54a6b690f14e0a5798",
+      "states": [
+        "settings-two"
+      ],
+      "notes": "Purple Internet hover fill and hand cursor.",
+      "limits": "Source is 575\u00d7390 with unverified display aspect/cropping. Preserve original ratio; structure comparison only. English US. Version 3.4U is visible only on the Settings 1 image in this series.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "wku-9",
+      "title": "Internet submenu",
+      "family": "wku",
+      "image": "images/wku-9.png",
+      "sourceURL": "https://www.wku.edu/its/toppertech/wii.php",
+      "imageURL": "https://www.wku.edu/its/toppertech/images/wii5.png",
+      "originalSize": [
+        575,
+        390
+      ],
+      "sha256": "a2d63542b04300a7ffc7b64faedbedbcacf8d54a897ffb410783799d68a10ef6",
+      "states": [
+        "internet"
+      ],
+      "notes": "Connection Settings, Console Information and User Agreements are separate rows.",
+      "limits": "Source is 575\u00d7390 with unverified display aspect/cropping. Preserve original ratio; structure comparison only. English US. Version 3.4U is visible only on the Settings 1 image in this series.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "wku-10",
+      "title": "Console Information \u2014 MAC addresses",
+      "family": "wku",
+      "image": "images/wku-10.png",
+      "sourceURL": "https://www.wku.edu/its/toppertech/wii.php",
+      "imageURL": "https://www.wku.edu/its/toppertech/images/wii6.png",
+      "originalSize": [
+        575,
+        390
+      ],
+      "sha256": "9b4f256e4c13585af14545ee66b281f816bb53f65ba9a6fa4fa0f063d7110a9f",
+      "states": [
+        "console-information"
+      ],
+      "notes": "Native view shows MAC Address and LAN Adapter MAC Address. The current adapter shows different information. Source intentionally obscures a MAC address.",
+      "limits": "Source is 575\u00d7390 with unverified display aspect/cropping. Preserve original ratio; structure comparison only. English US. Version 3.4U is visible only on the Settings 1 image in this series.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "nwr-sd-3",
+      "title": "SD footer icon close-up",
+      "family": "nwr-sd",
+      "image": "images/nwr-sd-3.jpg",
+      "sourceURL": "https://www.nintendoworldreport.com/news/18036/the-wii-sd-card-menu-a-walkthrough",
+      "imageURL": "https://www.nintendoworldreport.com/media/18031/1/9.jpg",
+      "originalSize": [
+        853,
+        571
+      ],
+      "sha256": "98df4d0af955b157ffa096a28987914d719e498985d6007d51e9484a3fecdebd",
+      "states": [],
+      "notes": "Cropped component photo, unsuitable for full-screen alignment.",
+      "limits": "Photograph of a display with perspective, bezel and publisher watermark. Structure and flow evidence only; no direct pixel alignment. English; March 25, 2009 article establishes the 4.0 release era, not an installed firmware revision.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "nwr-sd-5",
+      "title": "SD Menu welcome",
+      "family": "nwr-sd",
+      "image": "images/nwr-sd-5.jpg",
+      "sourceURL": "https://www.nintendoworldreport.com/news/18036/the-wii-sd-card-menu-a-walkthrough",
+      "imageURL": "https://www.nintendoworldreport.com/media/18031/1/8.jpg",
+      "originalSize": [
+        853,
+        571
+      ],
+      "sha256": "ee329b809d1a21bb086bb4cebb197656b75f6431d89bbd06aa6d1525aad01b4e",
+      "states": [],
+      "notes": "Missing onboarding step: Welcome to SD Card Menu.",
+      "limits": "Photograph of a display with perspective, bezel and publisher watermark. Structure and flow evidence only; no direct pixel alignment. English; March 25, 2009 article establishes the 4.0 release era, not an installed firmware revision.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "nwr-sd-6",
+      "title": "SD Menu save-data explanation",
+      "family": "nwr-sd",
+      "image": "images/nwr-sd-6.jpg",
+      "sourceURL": "https://www.nintendoworldreport.com/news/18036/the-wii-sd-card-menu-a-walkthrough",
+      "imageURL": "https://www.nintendoworldreport.com/media/18031/1/7.jpg",
+      "originalSize": [
+        853,
+        571
+      ],
+      "sha256": "29f73a3f963ce7dfe0094242fb65b537f2049c456d241bfd517df645a01e8d0d",
+      "states": [],
+      "notes": "Missing onboarding step: About Save Data.",
+      "limits": "Photograph of a display with perspective, bezel and publisher watermark. Structure and flow evidence only; no direct pixel alignment. English; March 25, 2009 article establishes the 4.0 release era, not an installed firmware revision.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "nwr-sd-7",
+      "title": "SD Menu caution",
+      "family": "nwr-sd",
+      "image": "images/nwr-sd-7.jpg",
+      "sourceURL": "https://www.nintendoworldreport.com/news/18036/the-wii-sd-card-menu-a-walkthrough",
+      "imageURL": "https://www.nintendoworldreport.com/media/18031/1/6.jpg",
+      "originalSize": [
+        853,
+        571
+      ],
+      "sha256": "f82390452e83fcda09a0964084bd8f402e0b0da77dcfb77cc10ab73e8e8bd16a",
+      "states": [],
+      "notes": "Missing onboarding step: removal/power warning.",
+      "limits": "Photograph of a display with perspective, bezel and publisher watermark. Structure and flow evidence only; no direct pixel alignment. English; March 25, 2009 article establishes the 4.0 release era, not an installed firmware revision.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "nwr-sd-8",
+      "title": "SD Menu help closing",
+      "family": "nwr-sd",
+      "image": "images/nwr-sd-8.jpg",
+      "sourceURL": "https://www.nintendoworldreport.com/news/18036/the-wii-sd-card-menu-a-walkthrough",
+      "imageURL": "https://www.nintendoworldreport.com/media/18031/1/5.jpg",
+      "originalSize": [
+        853,
+        571
+      ],
+      "sha256": "157510aed151866e23d794ead28c868503799ab87a836935645dc80868a4b86c",
+      "states": [],
+      "notes": "Missing onboarding step: help can be reopened using the question-mark button.",
+      "limits": "Photograph of a display with perspective, bezel and publisher watermark. Structure and flow evidence only; no direct pixel alignment. English; March 25, 2009 article establishes the 4.0 release era, not an installed firmware revision.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "nwr-sd-9",
+      "title": "Loading from the SD Card",
+      "family": "nwr-sd",
+      "image": "images/nwr-sd-9.jpg",
+      "sourceURL": "https://www.nintendoworldreport.com/news/18036/the-wii-sd-card-menu-a-walkthrough",
+      "imageURL": "https://www.nintendoworldreport.com/media/18031/1/4.jpg",
+      "originalSize": [
+        853,
+        571
+      ],
+      "sha256": "1a358645185ca01c4cbf9c38ffdc06980f15e1467f021c052bd1467fbe5ce1e1",
+      "states": [
+        "sd-menu"
+      ],
+      "notes": "Different state: native loading overlay over the SD grid.",
+      "limits": "Photograph of a display with perspective, bezel and publisher watermark. Structure and flow evidence only; no direct pixel alignment. English; March 25, 2009 article establishes the 4.0 release era, not an installed firmware revision.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "nwr-sd-10",
+      "title": "Populated SD Menu page 2",
+      "family": "nwr-sd",
+      "image": "images/nwr-sd-10.jpg",
+      "sourceURL": "https://www.nintendoworldreport.com/news/18036/the-wii-sd-card-menu-a-walkthrough",
+      "imageURL": "https://www.nintendoworldreport.com/media/18031/1/3.jpg",
+      "originalSize": [
+        853,
+        571
+      ],
+      "sha256": "80d1793dd6b7500d5c1434787fef6b44935f0c2020676c8ad982de538f410cc9",
+      "states": [
+        "sd-menu"
+      ],
+      "notes": "Compare grid, page counter and footer structure; channel inventory differs.",
+      "limits": "Photograph of a display with perspective, bezel and publisher watermark. Structure and flow evidence only; no direct pixel alignment. English; March 25, 2009 article establishes the 4.0 release era, not an installed firmware revision.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "nwr-sd-11",
+      "title": "SD title launch controls",
+      "family": "nwr-sd",
+      "image": "images/nwr-sd-11.jpg",
+      "sourceURL": "https://www.nintendoworldreport.com/news/18036/the-wii-sd-card-menu-a-walkthrough",
+      "imageURL": "https://www.nintendoworldreport.com/media/18031/1/11.jpg",
+      "originalSize": [
+        853,
+        571
+      ],
+      "sha256": "c0dee8344968a33833c0847d55a4c6fa55ab70bd15e58e4d8462db4bc809ce9d",
+      "states": [
+        "sd-start"
+      ],
+      "notes": "SECRET OF MANA selected; SD Card Menu / Start buttons and side arrows.",
+      "limits": "Photograph of a display with perspective, bezel and publisher watermark. Structure and flow evidence only; no direct pixel alignment. English; March 25, 2009 article establishes the 4.0 release era, not an installed firmware revision.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "nwr-sd-12",
+      "title": "Channel Data Management grid",
+      "family": "nwr-sd",
+      "image": "images/nwr-sd-12.jpg",
+      "sourceURL": "https://www.nintendoworldreport.com/news/18036/the-wii-sd-card-menu-a-walkthrough",
+      "imageURL": "https://www.nintendoworldreport.com/media/18031/1/13.jpg",
+      "originalSize": [
+        853,
+        571
+      ],
+      "sha256": "a92d0521c309b08cd696885ce00b63cf6171d4c60919aa53dd00db853cf0f14d",
+      "states": [
+        "channels-data"
+      ],
+      "notes": "Actual Channels screen with Wii / SD Card tabs and block count; stronger state match than Save Data illustrations.",
+      "limits": "Photograph of a display with perspective, bezel and publisher watermark. Structure and flow evidence only; no direct pixel alignment. English; March 25, 2009 article establishes the 4.0 release era, not an installed firmware revision.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "nwr-sd-13",
+      "title": "Channel item \u2014 Move, Copy, Erase",
+      "family": "nwr-sd",
+      "image": "images/nwr-sd-13.jpg",
+      "sourceURL": "https://www.nintendoworldreport.com/news/18036/the-wii-sd-card-menu-a-walkthrough",
+      "imageURL": "https://www.nintendoworldreport.com/media/18031/1/14.jpg",
+      "originalSize": [
+        853,
+        571
+      ],
+      "sha256": "fa4eb81ae3dd575c2d6296b1c218941c0937cb7dc1c879ba80c4f058d815ebe3",
+      "states": [
+        "channel-selected"
+      ],
+      "notes": "Actual selected-channel action panel with thumbnail, block count and three actions.",
+      "limits": "Photograph of a display with perspective, bezel and publisher watermark. Structure and flow evidence only; no direct pixel alignment. English; March 25, 2009 article establishes the 4.0 release era, not an installed firmware revision.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "nwr-sd-14",
+      "title": "SD launch memory error",
+      "family": "nwr-sd",
+      "image": "images/nwr-sd-14.jpg",
+      "sourceURL": "https://www.nintendoworldreport.com/news/18036/the-wii-sd-card-menu-a-walkthrough",
+      "imageURL": "https://www.nintendoworldreport.com/media/18031/1/15.jpg",
+      "originalSize": [
+        853,
+        571
+      ],
+      "sha256": "aedc0069e0bef264bf8c1dcb79c6c08894a94cbd433d179f63079b8869895761",
+      "states": [
+        "sd-memory-error"
+      ],
+      "notes": "Native memory error offers Auto Manage, Data Management Screen and Quit. Current fixture simulates occupied menu slots, a different condition.",
+      "limits": "Photograph of a display with perspective, bezel and publisher watermark. Structure and flow evidence only; no direct pixel alignment. English; March 25, 2009 article establishes the 4.0 release era, not an installed firmware revision.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "nwr-sd-15",
+      "title": "SD Auto Manage criteria",
+      "family": "nwr-sd",
+      "image": "images/nwr-sd-15.jpg",
+      "sourceURL": "https://www.nintendoworldreport.com/news/18036/the-wii-sd-card-menu-a-walkthrough",
+      "imageURL": "https://www.nintendoworldreport.com/media/18031/1/16.jpg",
+      "originalSize": [
+        853,
+        571
+      ],
+      "sha256": "4e6297d9d9b209e77b07dacb5221ed066e696da6e0f3f1450e75f12451ad1e97",
+      "states": [],
+      "notes": "Missing flow: rightmost page, lots of blocks, or a few blocks.",
+      "limits": "Photograph of a display with perspective, bezel and publisher watermark. Structure and flow evidence only; no direct pixel alignment. English; March 25, 2009 article establishes the 4.0 release era, not an installed firmware revision.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "nwr-sd-16",
+      "title": "SD Auto Manage \u2014 rightmost page",
+      "family": "nwr-sd",
+      "image": "images/nwr-sd-16.jpg",
+      "sourceURL": "https://www.nintendoworldreport.com/news/18036/the-wii-sd-card-menu-a-walkthrough",
+      "imageURL": "https://www.nintendoworldreport.com/media/18031/1/18.jpg",
+      "originalSize": [
+        853,
+        571
+      ],
+      "sha256": "fe88bafbf9fcb255102c59a80025c879624d010d525c308971d4095defc3008e",
+      "states": [],
+      "notes": "Missing flow: channel list confirmation and Next.",
+      "limits": "Photograph of a display with perspective, bezel and publisher watermark. Structure and flow evidence only; no direct pixel alignment. English; March 25, 2009 article establishes the 4.0 release era, not an installed firmware revision.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "nwr-sd-17",
+      "title": "SD Auto Manage \u2014 most blocks",
+      "family": "nwr-sd",
+      "image": "images/nwr-sd-17.jpg",
+      "sourceURL": "https://www.nintendoworldreport.com/news/18036/the-wii-sd-card-menu-a-walkthrough",
+      "imageURL": "https://www.nintendoworldreport.com/media/18031/1/19.jpg",
+      "originalSize": [
+        853,
+        571
+      ],
+      "sha256": "b5b46ac50d1eafe27ae39654e13930c8e0cfc54fbd8c486e17d844bc108e8ffb",
+      "states": [],
+      "notes": "Missing flow: channel list and Launching status.",
+      "limits": "Photograph of a display with perspective, bezel and publisher watermark. Structure and flow evidence only; no direct pixel alignment. English; March 25, 2009 article establishes the 4.0 release era, not an installed firmware revision.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "nwr-sd-18",
+      "title": "SD Auto Manage \u2014 fewest blocks",
+      "family": "nwr-sd",
+      "image": "images/nwr-sd-18.jpg",
+      "sourceURL": "https://www.nintendoworldreport.com/news/18036/the-wii-sd-card-menu-a-walkthrough",
+      "imageURL": "https://www.nintendoworldreport.com/media/18031/1/17.jpg",
+      "originalSize": [
+        853,
+        571
+      ],
+      "sha256": "46ef0d829882214abcde1ddc89fd2d1761d752985696863fe755f38294f76b9b",
+      "states": [],
+      "notes": "Missing flow: scrollable channel list and confirmation.",
+      "limits": "Photograph of a display with perspective, bezel and publisher watermark. Structure and flow evidence only; no direct pixel alignment. English; March 25, 2009 article establishes the 4.0 release era, not an installed firmware revision.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "parental-13",
+      "title": "Wii Menu \u2014 annotated Wii button",
+      "family": "parental",
+      "image": "images/parental-13.png",
+      "sourceURL": "https://www.techsolutions.support.com/how-to/how-to-set-up-parental-controls-on-a-nintendo-wii-12240",
+      "imageURL": "https://cdn.prod.website-files.com/67fd668f758dd19469aa48ca/67fd668f758dd19469aa4d55_12240-40809.png",
+      "originalSize": [
+        298,
+        223
+      ],
+      "sha256": "627e10a724026a92cf5bf5ccb778069b5e395b0f6e9f9180375d15798b6d5b95",
+      "states": [],
+      "notes": "Red/green tutorial rectangles are annotations, not native interface artwork.",
+      "limits": "Mixed cropped/resized captures and display photographs, some with tutorial annotations. Original display aspect is unverified. English/ESRB; 3.1U visible on Settings 1 only, not established for every image.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "parental-14",
+      "title": "Wii Options \u2014 Settings hover",
+      "family": "parental",
+      "image": "images/parental-14.png",
+      "sourceURL": "https://www.techsolutions.support.com/how-to/how-to-set-up-parental-controls-on-a-nintendo-wii-12240",
+      "imageURL": "https://cdn.prod.website-files.com/67fd668f758dd19469aa48ca/67fd6690758dd19469aaa65e_12240-40810.png",
+      "originalSize": [
+        500,
+        364
+      ],
+      "sha256": "7a490a81c2ebef585892d5f43f9caa83bc032453f5d49fbda7038cf28749fd26",
+      "states": [
+        "options"
+      ],
+      "notes": "Native Options tiles with hand cursor; crop differs from a complete video frame.",
+      "limits": "Mixed cropped/resized captures and display photographs, some with tutorial annotations. Original display aspect is unverified. English/ESRB; 3.1U visible on Settings 1 only, not established for every image.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "parental-15",
+      "title": "System Settings 1 \u2014 3.1U",
+      "family": "parental",
+      "image": "images/parental-15.png",
+      "sourceURL": "https://www.techsolutions.support.com/how-to/how-to-set-up-parental-controls-on-a-nintendo-wii-12240",
+      "imageURL": "https://cdn.prod.website-files.com/67fd668f758dd19469aa48ca/67fd6690758dd19469aaa65b_12240-40811.png",
+      "originalSize": [
+        500,
+        351
+      ],
+      "sha256": "1a648e60e692bb1793bce826cb3b92f470a4d08127b56287801679762ddf4a0d",
+      "states": [
+        "settings-one"
+      ],
+      "notes": "Ver. 3.1U is visible. Green ring around arrow is a tutorial annotation.",
+      "limits": "Mixed cropped/resized captures and display photographs, some with tutorial annotations. Original display aspect is unverified. English/ESRB; 3.1U visible on Settings 1 only, not established for every image.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "parental-16",
+      "title": "System Settings 2 \u2014 Parental Controls hover",
+      "family": "parental",
+      "image": "images/parental-16.png",
+      "sourceURL": "https://www.techsolutions.support.com/how-to/how-to-set-up-parental-controls-on-a-nintendo-wii-12240",
+      "imageURL": "https://cdn.prod.website-files.com/67fd668f758dd19469aa48ca/67fd6690758dd19469aaa660_12240-40812.png",
+      "originalSize": [
+        500,
+        369
+      ],
+      "sha256": "8dde125cc0e5457cbc62a700885080f082c8f9e79f383950906b5c870543eaba",
+      "states": [
+        "settings-two"
+      ],
+      "notes": "Purple hover fill and hand cursor.",
+      "limits": "Mixed cropped/resized captures and display photographs, some with tutorial annotations. Original display aspect is unverified. English/ESRB; 3.1U visible on Settings 1 only, not established for every image.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "parental-17",
+      "title": "Use Parental Controls?",
+      "family": "parental",
+      "image": "images/parental-17.png",
+      "sourceURL": "https://www.techsolutions.support.com/how-to/how-to-set-up-parental-controls-on-a-nintendo-wii-12240",
+      "imageURL": "https://cdn.prod.website-files.com/67fd668f758dd19469aa48ca/67fd6690758dd19469aaa658_12240-40813.png",
+      "originalSize": [
+        500,
+        364
+      ],
+      "sha256": "c80e6c41a14779104c65bd52d688dc2be781f9d3f8c31700fbc545ce23e672b3",
+      "states": [
+        "parental-controls"
+      ],
+      "notes": "Native initial Yes / No step precedes PIN entry; current adapter combines setup controls.",
+      "limits": "Mixed cropped/resized captures and display photographs, some with tutorial annotations. Original display aspect is unverified. English/ESRB; 3.1U visible on Settings 1 only, not established for every image.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "parental-18",
+      "title": "Choose a four-digit PIN",
+      "family": "parental",
+      "image": "images/parental-18.png",
+      "sourceURL": "https://www.techsolutions.support.com/how-to/how-to-set-up-parental-controls-on-a-nintendo-wii-12240",
+      "imageURL": "https://cdn.prod.website-files.com/67fd668f758dd19469aa48ca/67fd6690758dd19469aaa65a_12240-40814.png",
+      "originalSize": [
+        500,
+        362
+      ],
+      "sha256": "eb01a1f701d6d795b33ef71c9097015de6ef9396067bd250c77abfa4eb44294b",
+      "states": [
+        "parental-controls"
+      ],
+      "notes": "Separate native PIN-entry step with Back / OK; field is empty.",
+      "limits": "Mixed cropped/resized captures and display photographs, some with tutorial annotations. Original display aspect is unverified. English/ESRB; 3.1U visible on Settings 1 only, not established for every image.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "parental-19",
+      "title": "PIN entered",
+      "family": "parental",
+      "image": "images/parental-19.png",
+      "sourceURL": "https://www.techsolutions.support.com/how-to/how-to-set-up-parental-controls-on-a-nintendo-wii-12240",
+      "imageURL": "https://cdn.prod.website-files.com/67fd668f758dd19469aa48ca/67fd6690758dd19469aaa661_12240-40815.png",
+      "originalSize": [
+        600,
+        439
+      ],
+      "sha256": "c25df242f15dc4653472cfd5378e51db53470070a1cc334e2d053532b02bbaf4",
+      "states": [
+        "parental-controls"
+      ],
+      "notes": "Separate native PIN-entry step with masked digits and OK hover.",
+      "limits": "Mixed cropped/resized captures and display photographs, some with tutorial annotations. Original display aspect is unverified. English/ESRB; 3.1U visible on Settings 1 only, not established for every image.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "parental-20",
+      "title": "Re-enter the PIN",
+      "family": "parental",
+      "image": "images/parental-20.png",
+      "sourceURL": "https://www.techsolutions.support.com/how-to/how-to-set-up-parental-controls-on-a-nintendo-wii-12240",
+      "imageURL": "https://cdn.prod.website-files.com/67fd668f758dd19469aa48ca/67fd6690758dd19469aaa669_12240-40816.png",
+      "originalSize": [
+        499,
+        358
+      ],
+      "sha256": "491bd7146a19ef4fb8855d96c7ea1a84aa742568495b23307c6801aba333bb93",
+      "states": [
+        "parental-controls"
+      ],
+      "notes": "Native PIN confirmation step is separate from initial entry.",
+      "limits": "Mixed cropped/resized captures and display photographs, some with tutorial annotations. Original display aspect is unverified. English/ESRB; 3.1U visible on Settings 1 only, not established for every image.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "parental-21",
+      "title": "Choose a secret question",
+      "family": "parental",
+      "image": "images/parental-21.png",
+      "sourceURL": "https://www.techsolutions.support.com/how-to/how-to-set-up-parental-controls-on-a-nintendo-wii-12240",
+      "imageURL": "https://cdn.prod.website-files.com/67fd668f758dd19469aa48ca/67fd6690758dd19469aaa663_12240-40817.png",
+      "originalSize": [
+        602,
+        433
+      ],
+      "sha256": "e7575826c2bc208cd0d2ef3e5f9fa0abef7fc1f4e47645cf4468d35136a40871",
+      "states": [
+        "secret-question"
+      ],
+      "notes": "Native question selector and down arrow with Back / OK; current adapter also exposes an answer field in this view.",
+      "limits": "Mixed cropped/resized captures and display photographs, some with tutorial annotations. Original display aspect is unverified. English/ESRB; 3.1U visible on Settings 1 only, not established for every image.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "parental-22",
+      "title": "Answer the secret question",
+      "family": "parental",
+      "image": "images/parental-22.png",
+      "sourceURL": "https://www.techsolutions.support.com/how-to/how-to-set-up-parental-controls-on-a-nintendo-wii-12240",
+      "imageURL": "https://cdn.prod.website-files.com/67fd668f758dd19469aa48ca/67fd6690758dd19469aaa662_12240-40818.png",
+      "originalSize": [
+        500,
+        365
+      ],
+      "sha256": "d37d3aa995ab39a777963680c4ea1d89fe72f2237efc43fbf988911c921cf17a",
+      "states": [
+        "secret-question"
+      ],
+      "notes": "Separate answer step; compare question, prompt and answer-field hierarchy.",
+      "limits": "Mixed cropped/resized captures and display photographs, some with tutorial annotations. Original display aspect is unverified. English/ESRB; 3.1U visible on Settings 1 only, not established for every image.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "parental-23",
+      "title": "Parental Controls setup menu",
+      "family": "parental",
+      "image": "images/parental-23.png",
+      "sourceURL": "https://www.techsolutions.support.com/how-to/how-to-set-up-parental-controls-on-a-nintendo-wii-12240",
+      "imageURL": "https://cdn.prod.website-files.com/67fd668f758dd19469aa48ca/67fd6690758dd19469aaa65c_12240-40819.png",
+      "originalSize": [
+        500,
+        363
+      ],
+      "sha256": "d5576d8e663a211e8a94baa8edcd3efb135c191bcd8c9a7571bd1a9a72c7be0f",
+      "states": [
+        "parental-controls"
+      ],
+      "notes": "Game Settings and PIN / Other Settings; Clear settings / Settings Complete.",
+      "limits": "Mixed cropped/resized captures and display photographs, some with tutorial annotations. Original display aspect is unverified. English/ESRB; 3.1U visible on Settings 1 only, not established for every image.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "parental-24",
+      "title": "Game Settings and PIN overview",
+      "family": "parental",
+      "image": "images/parental-24.png",
+      "sourceURL": "https://www.techsolutions.support.com/how-to/how-to-set-up-parental-controls-on-a-nintendo-wii-12240",
+      "imageURL": "https://cdn.prod.website-files.com/67fd668f758dd19469aa48ca/67fd6690758dd19469aaa665_12240-40820.png",
+      "originalSize": [
+        500,
+        365
+      ],
+      "sha256": "88d023c20bc4cbd812e7e504fa4365418be1729d478292e61f3d103a065ab236",
+      "states": [
+        "parental-controls"
+      ],
+      "notes": "Native composite PIN, question, answer and rating summary; highlighted rating row.",
+      "limits": "Mixed cropped/resized captures and display photographs, some with tutorial annotations. Original display aspect is unverified. English/ESRB; 3.1U visible on Settings 1 only, not established for every image.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "parental-25",
+      "title": "Highest allowed game rating",
+      "family": "parental",
+      "image": "images/parental-25.png",
+      "sourceURL": "https://www.techsolutions.support.com/how-to/how-to-set-up-parental-controls-on-a-nintendo-wii-12240",
+      "imageURL": "https://cdn.prod.website-files.com/67fd668f758dd19469aa48ca/67fd6690758dd19469aaa65d_12240-40821.png",
+      "originalSize": [
+        500,
+        365
+      ],
+      "sha256": "095b0030ba4f5f9b87ef6f9bd405e6ca38d52d39745a6fc300ed6c06512b081f",
+      "states": [
+        "parental-rating"
+      ],
+      "notes": "Native rating selector with icon panel, down arrow and Cancel / OK.",
+      "limits": "Mixed cropped/resized captures and display photographs, some with tutorial annotations. Original display aspect is unverified. English/ESRB; 3.1U visible on Settings 1 only, not established for every image.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "parental-26",
+      "title": "Game Settings confirmation",
+      "family": "parental",
+      "image": "images/parental-26.png",
+      "sourceURL": "https://www.techsolutions.support.com/how-to/how-to-set-up-parental-controls-on-a-nintendo-wii-12240",
+      "imageURL": "https://cdn.prod.website-files.com/67fd668f758dd19469aa48ca/67fd6690758dd19469aaa66a_12240-40822.png",
+      "originalSize": [
+        500,
+        365
+      ],
+      "sha256": "a6d7f83a9dd1deac2f39144ff40e1784b44876e9541f97558de3b957e6bbbe13",
+      "states": [
+        "parental-controls"
+      ],
+      "notes": "Composite summary with selected ESRB E rating and Confirm hover.",
+      "limits": "Mixed cropped/resized captures and display photographs, some with tutorial annotations. Original display aspect is unverified. English/ESRB; 3.1U visible on Settings 1 only, not established for every image.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "parental-27",
+      "title": "Parental Other Settings selection",
+      "family": "parental",
+      "image": "images/parental-27.png",
+      "sourceURL": "https://www.techsolutions.support.com/how-to/how-to-set-up-parental-controls-on-a-nintendo-wii-12240",
+      "imageURL": "https://cdn.prod.website-files.com/67fd668f758dd19469aa48ca/67fd6690758dd19469aaa667_12240-40823.png",
+      "originalSize": [
+        500,
+        363
+      ],
+      "sha256": "970ec35aed087f5c6f803b00f5f09cf2adfa9448dac584604164bfd30d59a805",
+      "states": [
+        "parental-controls"
+      ],
+      "notes": "Green tutorial rectangle is external annotation.",
+      "limits": "Mixed cropped/resized captures and display photographs, some with tutorial annotations. Original display aspect is unverified. English/ESRB; 3.1U visible on Settings 1 only, not established for every image.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "parental-28",
+      "title": "Restrict Wii Points and purchases",
+      "family": "parental",
+      "image": "images/parental-28.png",
+      "sourceURL": "https://www.techsolutions.support.com/how-to/how-to-set-up-parental-controls-on-a-nintendo-wii-12240",
+      "imageURL": "https://cdn.prod.website-files.com/67fd668f758dd19469aa48ca/67fd6690758dd19469aaa65f_12240-40824.png",
+      "originalSize": [
+        500,
+        374
+      ],
+      "sha256": "58b11009ecf0ee410c4759d1267ef4df2056a8382cfbcd30d3f74a8062483369",
+      "states": [],
+      "notes": "Missing Other Settings restriction step. Tilted display photograph; use only for wording and control order.",
+      "limits": "Mixed cropped/resized captures and display photographs, some with tutorial annotations. Original display aspect is unverified. English/ESRB; 3.1U visible on Settings 1 only, not established for every image.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "parental-29",
+      "title": "Parental setup complete menu",
+      "family": "parental",
+      "image": "images/parental-29.png",
+      "sourceURL": "https://www.techsolutions.support.com/how-to/how-to-set-up-parental-controls-on-a-nintendo-wii-12240",
+      "imageURL": "https://cdn.prod.website-files.com/67fd668f758dd19469aa48ca/67fd6690758dd19469aaa664_12240-40825.png",
+      "originalSize": [
+        500,
+        366
+      ],
+      "sha256": "0f025471244bea05225fb2de01b9fdc70d047945ec8cf1553b60fd594cc54fa5",
+      "states": [
+        "parental-controls"
+      ],
+      "notes": "Settings Complete hover with separate Clear settings action.",
+      "limits": "Mixed cropped/resized captures and display photographs, some with tutorial annotations. Original display aspect is unverified. English/ESRB; 3.1U visible on Settings 1 only, not established for every image.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "parental-34",
+      "title": "Change Parental Controls?",
+      "family": "parental",
+      "image": "images/parental-34.png",
+      "sourceURL": "https://www.techsolutions.support.com/how-to/how-to-set-up-parental-controls-on-a-nintendo-wii-12240",
+      "imageURL": "https://cdn.prod.website-files.com/67fd668f758dd19469aa48ca/67fd6690758dd19469aaa659_12240-40830.png",
+      "originalSize": [
+        300,
+        171
+      ],
+      "sha256": "662989aa12ac2cbdaf38882de93e113f23b70d5ea4a7f57a7f96ffa269344f9c",
+      "states": [],
+      "notes": "Separate returning-user Yes / No prompt; small image.",
+      "limits": "Mixed cropped/resized captures and display photographs, some with tutorial annotations. Original display aspect is unverified. English/ESRB; 3.1U visible on Settings 1 only, not established for every image.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "parental-35",
+      "title": "Enter existing PIN",
+      "family": "parental",
+      "image": "images/parental-35.png",
+      "sourceURL": "https://www.techsolutions.support.com/how-to/how-to-set-up-parental-controls-on-a-nintendo-wii-12240",
+      "imageURL": "https://cdn.prod.website-files.com/67fd668f758dd19469aa48ca/67fd6690758dd19469aaa657_12240-40831.png",
+      "originalSize": [
+        300,
+        171
+      ],
+      "sha256": "09d615a3af12d088b500a1493a074bcd3ca6ee6ffa94ae04270290d27859a1cd",
+      "states": [],
+      "notes": "Returning-user Cancel / I forgot / OK actions; green tutorial rectangles are annotations.",
+      "limits": "Mixed cropped/resized captures and display photographs, some with tutorial annotations. Original display aspect is unverified. English/ESRB; 3.1U visible on Settings 1 only, not established for every image.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "parental-48",
+      "title": "Clear Parental Controls settings",
+      "family": "parental",
+      "image": "images/parental-48.png",
+      "sourceURL": "https://www.techsolutions.support.com/how-to/how-to-set-up-parental-controls-on-a-nintendo-wii-12240",
+      "imageURL": "https://cdn.prod.website-files.com/67fd668f758dd19469aa48ca/67fd6690758dd19469aaa668_12240-40844.png",
+      "originalSize": [
+        500,
+        363
+      ],
+      "sha256": "dbf77111af271ea671c736015817cf878f78e1e2fe7bfd7e3972ca006bb1ee77",
+      "states": [
+        "parental-controls"
+      ],
+      "notes": "Green tutorial outlines around footer buttons are external annotations.",
+      "limits": "Mixed cropped/resized captures and display photographs, some with tutorial annotations. Original display aspect is unverified. English/ESRB; 3.1U visible on Settings 1 only, not established for every image.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "wiimart-13",
+      "title": "Shop agreement-required prompt",
+      "family": "wiimart",
+      "image": "images/wiimart-13.png",
+      "sourceURL": "https://github.com/WiiMart/WiiMart.org/blob/main/support.html",
+      "imageURL": "https://raw.githubusercontent.com/WiiMart/WiiMart.org/main/media/screenshot-eula-help-0.png",
+      "originalSize": [
+        834,
+        456
+      ],
+      "sha256": "38d747172e3127cd27365fda1f8bb2ccfc73e3beeed38f6740a792fb6866f10a",
+      "states": [],
+      "notes": "Shop channel prompt links to User Agreements. Community revival documentation, not proof of stock Nintendo service behavior today.",
+      "limits": "Community WiiMart revival guide; modified consoles/services may be involved. Captures have scanlines and nonstandard 834\u00d7456 or 800\u00d7438 bounds. Do not treat file ratio as verified 16:9 or infer firmware.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "wiimart-14",
+      "title": "Wii Menu \u2014 Shop hover",
+      "family": "wiimart",
+      "image": "images/wiimart-14.png",
+      "sourceURL": "https://github.com/WiiMart/WiiMart.org/blob/main/support.html",
+      "imageURL": "https://raw.githubusercontent.com/WiiMart/WiiMart.org/main/media/screenshot-system-menu-wii.png",
+      "originalSize": [
+        834,
+        456
+      ],
+      "sha256": "cabbe2adec70d17cc29c378d7979d135ac35179081c2cb99dd019f1067f2e24b",
+      "states": [],
+      "notes": "Homebrew and other modified inventory visible. Useful menu/chrome context only.",
+      "limits": "Community WiiMart revival guide; modified consoles/services may be involved. Captures have scanlines and nonstandard 834\u00d7456 or 800\u00d7438 bounds. Do not treat file ratio as verified 16:9 or infer firmware.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "wiimart-18",
+      "title": "System Settings 2 \u2014 Internet hover",
+      "family": "wiimart",
+      "image": "images/wiimart-18.png",
+      "sourceURL": "https://github.com/WiiMart/WiiMart.org/blob/main/support.html",
+      "imageURL": "https://raw.githubusercontent.com/WiiMart/WiiMart.org/main/media/screenshot-eula-help-1.png",
+      "originalSize": [
+        834,
+        456
+      ],
+      "sha256": "3fb44ec95e93b53e4e3646dcb85640aa019c726e31a4637f1c3342be6ca221d3",
+      "states": [
+        "settings-two"
+      ],
+      "notes": "Community revival guide; native-looking Settings page with captured scanlines.",
+      "limits": "Community WiiMart revival guide; modified consoles/services may be involved. Captures have scanlines and nonstandard 834\u00d7456 or 800\u00d7438 bounds. Do not treat file ratio as verified 16:9 or infer firmware.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "wiimart-23",
+      "title": "User Agreements \u2014 enable services?",
+      "family": "wiimart",
+      "image": "images/wiimart-23.png",
+      "sourceURL": "https://github.com/WiiMart/WiiMart.org/blob/main/support.html",
+      "imageURL": "https://raw.githubusercontent.com/WiiMart/WiiMart.org/main/media/screenshot-eula-help-2.png",
+      "originalSize": [
+        834,
+        456
+      ],
+      "sha256": "95289bc9d7cd7eea55cf564638acb9cc1ef29580a1aa1e869a019bc018f6cfbc",
+      "states": [
+        "user-agreements"
+      ],
+      "notes": "Would you like to use the Wii Shop Channel and WiiConnect24? Yes / No step. Different from current agreement-text adapter.",
+      "limits": "Community WiiMart revival guide; modified consoles/services may be involved. Captures have scanlines and nonstandard 834\u00d7456 or 800\u00d7438 bounds. Do not treat file ratio as verified 16:9 or infer firmware.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "wiimart-24",
+      "title": "User Agreements \u2014 service unavailable",
+      "family": "wiimart",
+      "image": "images/wiimart-24.webp",
+      "sourceURL": "https://github.com/WiiMart/WiiMart.org/blob/main/support.html",
+      "imageURL": "https://raw.githubusercontent.com/WiiMart/WiiMart.org/main/media/screenshot-eula-help-3-issue.png",
+      "originalSize": [
+        834,
+        456
+      ],
+      "sha256": "04a2a9a6c4488eb8689f910485d2a1a53d51bb4286aec976b5f159082acdeceb",
+      "states": [
+        "user-agreements"
+      ],
+      "notes": "Related error state: service is not currently being offered. Not the agreement text view.",
+      "limits": "Community WiiMart revival guide; modified consoles/services may be involved. Captures have scanlines and nonstandard 834\u00d7456 or 800\u00d7438 bounds. Do not treat file ratio as verified 16:9 or infer firmware.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "wiimart-25",
+      "title": "System Settings 3 \u2014 Country hover",
+      "family": "wiimart",
+      "image": "images/wiimart-25.png",
+      "sourceURL": "https://github.com/WiiMart/WiiMart.org/blob/main/support.html",
+      "imageURL": "https://raw.githubusercontent.com/WiiMart/WiiMart.org/main/media/screenshot-country-help-1.png",
+      "originalSize": [
+        834,
+        456
+      ],
+      "sha256": "339f0e80c0cf7403817dfff4d891c34b5518234094b9cad8b819f15a05fd5edc",
+      "states": [
+        "settings-three"
+      ],
+      "notes": "Native-looking page 3 controls; firmware is not visible.",
+      "limits": "Community WiiMart revival guide; modified consoles/services may be involved. Captures have scanlines and nonstandard 834\u00d7456 or 800\u00d7438 bounds. Do not treat file ratio as verified 16:9 or infer firmware.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "wiimart-26",
+      "title": "Country list \u2014 United States",
+      "family": "wiimart",
+      "image": "images/wiimart-26.png",
+      "sourceURL": "https://github.com/WiiMart/WiiMart.org/blob/main/support.html",
+      "imageURL": "https://raw.githubusercontent.com/WiiMart/WiiMart.org/main/media/screenshot-country-help-2.png",
+      "originalSize": [
+        834,
+        456
+      ],
+      "sha256": "17c66021f62a2c634806df21777418b8ab4cadfdf92798a8586549b0251e71ef",
+      "states": [
+        "country"
+      ],
+      "notes": "Four-row country list near end of alphabet with scrollbar arrows; red focus corners and hand cursor.",
+      "limits": "Community WiiMart revival guide; modified consoles/services may be involved. Captures have scanlines and nonstandard 834\u00d7456 or 800\u00d7438 bounds. Do not treat file ratio as verified 16:9 or infer firmware.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "wiimart-27",
+      "title": "User Agreements \u2014 review notice",
+      "family": "wiimart",
+      "image": "images/wiimart-27.webp",
+      "sourceURL": "https://github.com/WiiMart/WiiMart.org/blob/main/support.html",
+      "imageURL": "https://raw.githubusercontent.com/WiiMart/WiiMart.org/main/media/screenshot-eula-help-3.png",
+      "originalSize": [
+        834,
+        456
+      ],
+      "sha256": "4042b6957809187cb4d51b989946a40efb5be47d39b23b56d85c6db4949a1353",
+      "states": [
+        "user-agreements"
+      ],
+      "notes": "Separate review notice with Next before agreement contents.",
+      "limits": "Community WiiMart revival guide; modified consoles/services may be involved. Captures have scanlines and nonstandard 834\u00d7456 or 800\u00d7438 bounds. Do not treat file ratio as verified 16:9 or infer firmware.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    },
+    {
+      "id": "wiimart-28",
+      "title": "Network Services User Agreement",
+      "family": "wiimart",
+      "image": "images/wiimart-28.webp",
+      "sourceURL": "https://github.com/WiiMart/WiiMart.org/blob/main/support.html",
+      "imageURL": "https://raw.githubusercontent.com/WiiMart/WiiMart.org/main/media/screenshot-eula-help-4.png",
+      "originalSize": [
+        800,
+        438
+      ],
+      "sha256": "cfef062ad978b77f9814505ec56e90addf6b327c18c6c6c7a109cafb35b3f734",
+      "states": [
+        "user-agreements"
+      ],
+      "notes": "Scrollable document and I ACCEPT / I DO NOT ACCEPT. Visible document date June 22, 2010 is not a firmware identifier. Community guide may use restored service assets.",
+      "limits": "Community WiiMart revival guide; modified consoles/services may be involved. Captures have scanlines and nonstandard 834\u00d7456 or 800\u00d7438 bounds. Do not treat file ratio as verified 16:9 or infer firmware.",
+      "comparisonUse": "structure-only",
+      "aspect": "unverified",
+      "visuallyInspected": true
+    }
+  ],
+  "rejectedOrDuplicate": [
+    {
+      "id": "nintendo-gamecube-0",
+      "imageURL": "https://www.nintendo.com/consumer/systems/wii/en_na/images/menus/gcnData.gif",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "nintendo-internet-0",
+      "imageURL": "https://www.nintendo.com/consumer/systems/wii/en_na/getOnline/images/wiimenu.gif",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "nintendo-internet-1",
+      "imageURL": "https://www.nintendo.com/consumer/systems/wii/en_na/getOnline/images/wiisettingsmenu.gif",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "nintendo-internet-2",
+      "imageURL": "https://www.nintendo.com/consumer/systems/wii/en_na/getOnline/images/wii_settings_arrow.png",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "nintendo-internet-3",
+      "imageURL": "https://www.nintendo.com/consumer/systems/wii/en_na/getOnline/images/wiisettingsInternet2.gif",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "nintendo-internet-4",
+      "imageURL": "https://www.nintendo.com/consumer/systems/wii/en_na/getOnline/images/wiisettingsInternet3.gif",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "nintendo-internet-5",
+      "imageURL": "https://www.nintendo.com/consumer/systems/wii/en_na/netflix/images/wiisettingsInternet4.png",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "nintendo-internet-6",
+      "imageURL": "https://www.nintendo.com/consumer/systems/wii/en_na/getOnline/images/sfap2.gif",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "nintendo-internet-7",
+      "imageURL": "https://www.nintendo.com/consumer/systems/wii/en_na/netflix/images/secureaccess.png",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "nintendo-internet-8",
+      "imageURL": "https://www.nintendo.com/consumer/systems/wii/en_na/getOnline/images/sfapun2.gif",
+      "reason": "HTTP Error 404: Not Found"
+    },
+    {
+      "id": "smash-settings-0",
+      "imageURL": "https://ssb.wiki.gallery/images/thumb/4/47/Wii-cfg-system-settings-2.jpg/800px-Wii-cfg-system-settings-2.jpg?20220131224832",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "smash-settings-2",
+      "imageURL": "https://ssb.wiki.gallery/images/thumb/4/47/Wii-cfg-system-settings-2.jpg/120px-Wii-cfg-system-settings-2.jpg?20220131224832",
+      "reason": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "nwr-sd-4",
+      "reason": "Already collected as nwr-menu40-context; excluded from new count."
+    },
+    {
+      "id": "wiimart-19",
+      "reason": "Publisher explicitly identifies this as a vWii update prompt; excluded from original Wii comparison set."
+    }
+  ]
+}
